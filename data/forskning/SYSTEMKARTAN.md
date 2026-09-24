@@ -2720,7 +2720,7 @@ i sviten själv (en --hoppa-over-rad) så CLI-kanon blir mindre avgörande.
 | E26 | Admin-panelen ("WordPress-drömmen") | Styrning | LEVER | 8 | 09-21 (s9-u1): kodstilla dag 3 (0 commits efter a20f15fa 09-18 — all rörelse DATA) men audit-driftloggen 643 kB / 2 338 r / 712 aktörer / 13 klasser (publicera-avvisad 0 = R2-knappen oklickad dag 5, val-filen saknas); svit 14/14 + requireAdmin 401 ×3 + /admin 200 egenmätt; juridik-FP 8→17→22→32 (0 FEL, samtliga negeranden-citat); FLYTTKLAR-etiketten återfödd i diff-JSON: 160/342 redo för uttag mot frusna 55; kvar: manuell spegling, publicera-E2E, IP-block, Elliott-test |
 | E27 | Studio (Z-portalen) | Styrning | LEVER | 9 | 09-22 (s9-u3): kodrörelse våg 214→226 EFTER 09-19-passningen (R2-stängsel per åtgärd 6a36717e · GET-payload-tak KURAT våg 215.1 7edca54d · kanonvyns byte-budget själreglerande våg 221+226; rond 154/våg 232 e536f8e1 = ENDAST verktyg/_r154-*.mjs, ej transportkod); GAP-REGISTER 36/36 UTTÖMT består (v181–188 + fakta-typer); transport **13 135 r** (+21 % sedan 09-19) · 35 rutter exakt oförändrade · 7 skickaV4-metoder; /studio 200 + stream 401 + tjanster/kommando 405 EGENA; sessions-DB:n (trådens sanningsägare) **1,96 GB** aktivt skriven; STORFYNDET VIDGAT: binärdriften — registry **3.14.1-27** (09-19: 3.12.3-26) mot installerad/körande **3.11.2-24** (paketkatalog orörd sedan 09-13; omstartade app-servrar kör ändå gamla) ⇒ bevakning/paritetstak-kön växer (v92-e2e = AKTUELL KÖ); -32031 + skal-kvot-häng kvar |
 | E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 7 | 09-21: FLAGGA 6→**7**, HARMONISERAD dom u2+u3 (samma omgång): "R2-verkställningen får inget att verkställa" MOTBEVISAD (u2: kundorder-mötet 21:52 med 10 åtgärder + R2-stängsel per rad i skarp drift, 6a36717e/v214-sviten; u3: verkställningsleden når LAGRUMMED KOD — f5a9ac2f 6 filer/748 r: GDPR art 5/13/17/25 + ÄL 22§ + ångerrätt i hårda grindar, i TRÄD väntar deploy) + beslutsminnet 97 poster + KANONISKT verktyg beslutsminne.mjs med LAGGRUNDEN-NEKA-grind (eldprov 4/4 + första verkliga fångstet; --las EGEN) + ROND 128 kunddelegation "alla rättsliga beslut grundas i lagar" (återkallelig, R2 kvarstår); men FLAGGAN KVAR: gap 1 (JSON-syntesfallback) lever i SAMMA kundorder-möte + ordförande 66 s/juridik 90 s ute (E33-precedensen kräver roten borta); ronder punktliga 14:43/17:43/20:43; protokoll 200 · mote 400 (tom POST = lever); sviten tsx-låst i fönstret |
-| E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | 09-20 (s9-u2): fabrik **220 klara/221** (+33/21 h; manifestets barn levande i ps) · 706 utdataloggar · beslutsminne **91** (rond 66, +14/dygn) · evighetsmotorn 882 kontroller · pumpor 1 d 16 h; **DÖDA-LÄNKAR-CRONEN driftsatt** (användar-crontab 04:17, 5 rader totalt): första organiska körningen 09-20 04:17 DRIFTFÖNSTER-klassad RÄTT (202/2 503 = 8,1 % > tak 5 %, rapport kasserad, inget falskt larm; testet 09-19 GRÖNT); **o117 reservationsmekanik** (verktyg 323 r + svit 24 PASS under flock, rotorsaka 5×) = protokollnumrets race-kur byggd men fabriken anropar ännu ej (grep 0) — gap 0 halvstängt; CRON_SECRET 0 env kvar · kunduppdragsfiler frånvarande · svitgapet för fabrik/evighet/uppdrag kvar (reservationssviten finns) |
+| E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | 09-24 (s9-u1): **cron-familjen 5→9 rader** — fyra nya medlemmar sedan 09-20: appdb-dump 02:50 (s10-u3) · natt-TBT 03:27 (o151/E41) · **BERODEVAKTEN 05:37 (o164**: wrapper + idempotent git-yta + svit 16 PASS; installad 15:32 09-24, första pulsen 09-25 — opulserad ännu) · **rop-hälsan 06:27 (o136) LARMKEDJAN driftbevisad**: OBSERVATION ×2 + FYND 09-22 + GRÖN 09-23 + VAKTFEL 09-24; **ronderingen DAEMON-ÄGD** (pumpor ropar styrelserond :43 var 3:e h + juridikgrind :37 varje timme — /etc-crontab-notis inaktuell); fabriken **374 klara/376** (+154) · 1 197 loggar · beslutsminne **217** (rond 98; +126) + rond 162 startade GIT-SPEGEL i data/forskning (5 poster, pre-09-24 git-lös) · evighetsmotorn 1 438 kontroller; protokollnumret **I DRIFT: 44 reservationer** men fabrikens adoption lever (grep 0); svitgapet DELVIS STÄNGT (pumpor-tick/protokoll/beroende-vakt-cron; agentfabrik+evighet kvar); MOTSIDA: nattens F6-OOM ⇒ pumpor-omstart ~06:08 (9 h 39 min ung) — överlevnad via omstart, ingen mekanisk watchdog; CRON_SECRET 0 kvar · kunduppdragsfiler frånvarande |
 | E30 | B2B / AK1A PRO | Styrning | INAKTIV | 6 | Väntar jurist (R2); ÅTERDIFFAD 09-19: /pro 500 LÄKT (byggklass; 200 + noindex + ISR-serverad som tier-ytorna), stängningsdoktrinen HEL (flagga AV ×3 · robots /pro/admin 16 block · sitemap 0 äkta /pro-URL · grindar 401/405/200-avsiktligt), sviter grön/grön/16-1 (G1 kvarstår), 3 API-rutter (talrättning), arProYta lever; G1-fix = teknisk köpost före aktivering |
 | E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | 09-24 (s9-u1): SPRÅKKONTRAKTET (o157:testa-sprakkontrakt.mjs) första dokvågs-omkörningen GRÖN EGEN — 0 fel · 0 OBS · 0/126 oprovade · exit 0 · rutter 63/18/18 · 15 speglade ytor 200×3 · 39 sv-only-ytar med EXAKT 404 · 0 asymmetrier (kontraktet självgodkännande ur FILSTRUKTUR — ny spegel träder automatiskt in, ingen manuell registrering); nyckeltalsguide-domen MASKINLÄSBAR i rapportens dom-fält (AVSIKT enbart-sv, o152 §restpost 2) + prod egenmätt sv 200/en 404/ar 404; lang-bindningen återmätt (`<html lang="en"` / `lang="ar" dir="rtl"`); ordlista 2 790→**2 803** r (o156:s dataset.guideLank ×3 rad 1836, en/ar bär ärlig in-Swedish-varning); DEPLOY-KLYFTA MÄTT: .next 09-22 06:04 ÄLDRE än o156 02:16/o157 02:21 (09-24) ⇒ guidens sitemap-post (sitemap.ts:134) + 33 dataset-inlänkar + guideLank-text i TRÄD, EJ live (live-sitemap 0 nyckeltalsguide-URL, egen räkning); kärnan exakt kodstilla (820/890/346/342/540 r) · speglar 18/språk · kön 320 + termbank 0 poster oförändrade; tier-portföljspeglar saknas (R2-väntat; kontraktet dömer 404 korrekt tills speglar byggs); I1-KVALITETS-audit fortfarande opåbörjad — VÄGKONTRAKT ≠ språkvalitets-audit, läget I1 kvar (= läget) |
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 09-21 (s9-u3): 489 kurser (+57/2 dygn, commit 15:31) = deep-courses 489 EGEN men STARTSIDAN levererar 476 = 13 bakom (gap 2 SKÄRPT till mätt live-divergens — ISR-fönster/räknarklyfta; vakten har sitt första exemplar); quiz/XP frusna dag 6; priser.json orörd 14 d (fbfb135f); koden stilla |
@@ -5673,7 +5673,33 @@ gap 1 kvarstår, FLAGGA och score oförändrade.*
   09-21: deploy-beroende — f5a9ac2f + beslutsminnesverktyget i träd men
   ej i prod tills nästa deploygrind (korsref E37 gap 9).
 
-## E29. Autonoma organet + cron-pipeline — LEVER — 8/10 *(uppdaterad 2026-09-20)*
+## E29. Autonoma organet + cron-pipeline — LEVER — 8/10 *(uppdaterad 2026-09-24)*
+
+*Uppdatering 2026-09-24 (dokvåg s9-u1, manifest auto-s9-1790257516357): fyra
+dagars rörelse, allt egenmätt 15:47–15:58 lokal. (1) CRON-FAMILJEN 5→9:
+användar-crontaben bär nu 9 kommandorader — fyra nya medlemmar sedan
+09-20-passningens lista: appdb-dump 02:50 (s10-u3, landad 09-20 19:33 samma
+kväll), natt-TBT 03:27 (o151, bokförd under E41), BERODEVAKTEN 05:37 (o164)
+och rop-hälsan 06:27 (o136) — den sistnämndas LARMKEDJA driftbevisad i skarpt
+läge: loggen 09-21→idag bär OBSERVATION ×2 (höglast-klass), FYND-larm 09-22,
+GRÖN 09-23, VAKTFEL 06:27 idag. (2) RONDERINGEN DAEMON-ÄGD: styrelseronden
+ropas av pumpor (min==43 && timme%3==1) + juridikgrind VARJE TIMME :37 —
+kartans /etc/crontab-notis i Nyckelfiler är inaktuell för rondens del;
+styrelse-rond.log 13:43 idag. (3) TILLVÄXT: fabriken 374 klara av 376
+statusfiler (+154), 1 197 utdataloggar (+491), beslutsminnet 217 poster i
+data/vakten/ (rond 98, senaste 11:43Z; +126) — och rond 162 startade 12:38
+idag en GIT-SPEGEL i data/forskning/ (5 poster; historiken före 09-24
+förblir git-lös), evighetsmotorn 1 438 kontroller (+556, senaste 13:48Z).
+(4) PROTOKOLLNUMRET I DRIFT: 44 reservationer sedan 09-20 men agentfabrik.mjs
+ansluter fortfarande ej (grep 0 återmätt). (5) SVITGAPET DELVIS STÄNGT:
+testa-pumpor-tick + testa-reservera-protokollnummer + testa-beroende-vakt-cron
+(16 PASS) tillkomna; agentfabrik + evighetsmotor kvar. ÄRLIG MOTSIDA: nattens
+F6-OOM (bygg Killed; rund 162:s dom "självläkande kedja: barn→RAM→
+dirigentbygg→push") — pumpor-daemonen 9 h 39 min ung (omstart ~06:08):
+pipelinen överlevde via omstart, inte utan avbrott. Score 8 kvar: bred
+tillväxt och larmkedjor bevisade, men fabrikens egen svit + CRON_SECRET
+(återmätt 0) + opulserade instrument (beroendevaktens första puls 09-25
+05:37) håller toppoängen. Se diff-tabellen i UPPDATERING-sektionen.*
 
 *Uppdatering 2026-09-20 (dokvåg s9-u2 2/3, manifest auto-s9-1789898701601):
 tre rörelser, allt egenmätt. (1) TILLVÄXT: fabriken 220 klara av 221
@@ -5765,16 +5791,20 @@ påbörjat 2026-09-13 (rond-promptens steg 6 hade aldrig exekverats innan).*
   42 motorer — 8 med cron, 3 med puls, 3 organ, **28 helt utan autonomi**;
   32/42 saknar test. CRON_SECRET vaktar endast OM satt — publika cron-
   endpoints annars (localhost-caller på Contabo + Vercel-header stöds).
-- **GAP:** (0) fabrikens delar (agentfabrik/evighetsmotor/pumpor) saknar
-  egen testsvit — RAM-vakt/timeout/lås är verifierade i drift men inte
-  regressions-testade, OCH syskonkoordineringen vilar delvis på disciplin:
-  delade namnresurser (kartrader · git-index) kolliderar utan mekanisk kur,
-  MEN protokollnummerserien har sedan o117 (09-20) en testad
-  reservationsmekanik under flock — fabrikens manifestmall ansluter den
-  ännu ej (adoption = resten av stängningen); (1) CRON_SECRET sätt i prod-env (en rad) eller bind
-  crons till localhost-only; (2) 28 motorer utan triggare — inventera vilka
+- **GAP:** (0) fabrikens delar: svitgapet DELVIS STÄNGT (09-24: pumpor-tick +
+  protokollnummer + beroende-vakt-cron sviter finnes, 16 PASS) MEN agentfabrik
+  + evighetsmotor saknar fortfarande egna regressions-sviter, OCH
+  syskonkoordineringen vilar delvis på disciplin: anspråksfiler + pivot har
+  löst racen 09-21/09-24 men ingen mekanisk kur i fabrikens mall, OCH
+  protokollnumrets adoption lever (grep 0 i agentfabrik.mjs återmätt 09-24
+  — trots 44 levande reservationer är det AGENTER, inte fabriken, som
+  reserverar); (1) CRON_SECRET sätt i prod-env (en rad) eller bind
+  crons till localhost-only (återmätt 0 i .env* 09-24); (2) 28 motorer utan triggare — inventera vilka
   som SKA vara autonoma (registeruppdatering!); (3) organrundornas resultat
-  syns ej i admin-utvecklingsradarn live.
+  syns ej i admin-utvecklingsradarn live; (4) NYTT 09-24: nattens F6-OOM visar
+  att daemon-/fabriksomstarter fortfarande är kedjans överlevnadsmekanism —
+  omstarten skedde via rond-diagnos, ingen mekanisk watchdog; beroendevaktens
+  cron är installerad men OPULSERAD t.o.m. första pulsen 09-25 05:37.
 
 ## E30. B2B / AK1A PRO — INAKTIV — 6/10 *(uppdaterad 2026-09-19)*
 
@@ -7217,3 +7247,59 @@ KVD: data-only — src/ orörd = INGET bygge · R2 orörd · data/blogg orörd �
 syskonytor orörda (u1:s E31-sektion orörd; u2:s E35/E41-sektion lämnad orörd —
 låg i trädet ocommittad vid min commit, åkte med i samma fil, deras worklog-rad
 deras egen) · E31-svitkörningen read-only mot prod.
+
+## UPPDATERING 2026-09-24 (dokvåg s9-u1, manifest auto-s9-1790257516357 — E29 Autonoma organet + cron-pipelinen diffad mot verkligheten; cron-familjen 5→9, ronderingen daemon-ägd, beslutsminnet 91→217 + ny git-spegel)
+
+Ett system, varje rad MÄTT i arbetsytan 2026-09-24 15:47–15:58 lokal —
+inte läst ur worklog. Anspråk disk-först FÖRE all mätning
+(data/vakten/auto-s9-1790257516357-s9-u1-ansprak.md, gitignorerad,
+15:47:13). VALSKÄL: E29 = aktiva LEVER-rader med ÄLDSTA passningen
+(2026-09-20) och störst obokförd rörelse sedan dess — s8-vågorna
+o136/o151/o161/o162/o164 + rond 162:s omstartskartläggning är ALLT
+cron-/fabrik-/organ-värld; syskon i förra manifestet tog E31/E35/E41/
+C17/E32/E33 (09-24). Syskonen i DETTA manifest har samma generiska
+uppdragstext — E29 vikes hit vid senare anspråk (race-precedensen från
+förra manifestet: substans före sekunder, klaim-mtime).
+
+| Mått | Kartan 09-20 | Verkligheten 2026-09-24 (mätning) |
+|---|---|---|
+| Användar-crontab | 5 rader | **9 kommandorader** — fyra nya sedan 09-20-listan: appdb-dump 02:50 (s10-u3, landad 09-20 19:33 = kvällen EFTER passningen) · natt-TBT 03:27 (o151, dom bokförd under E41) · BERODEVAKTEN 05:37 (o164) · rop-hälsa 06:27 (o136) |
+| Rop-hälsans larmkedja (o136) | fanns ej i kartan | **DRIFTBEVISAD i skarpt läge**: loggen 09-21→idag bär OBSERVATION ×2 (höglast-klass, trenddata) · **FYND-larm 09-22** · **GRÖN 09-23** · **VAKTFEL 06:27 idag** — instrumentet postar till molnagent-sessioner, det dör inte tyst |
+| Beroendevakten (o164) | (o164:s rotorsaka: instrumentdöd 4 dygn) | Wrapper + cron-rad `37 5 * * *` **installad 15:32 IDAG** (commit c6cbccd3) + SENASTE-yta levande (data/rapporter/beroende-halsa-SENASTE.md 15:28) + svit 16 PASS; **första mekaniska pulsen är 09-25 05:37 — opulserad ännu**, cron-loggen existerar ej (korrekt läge, inte fel) |
+| Styrelserond | "/etc/crontab på Contabo" (Nyckelfiler) | **DAEMON-ÄGD**: pumpor ropar styrelserond min==43 && timme%3==1 (8×/dygn) + **juridikgrind VARJE TIMME :37** (kartan kände ingen av raderna); styrelse-rond.log 13:43 idag — Nyckelfiler-notisen inaktuell för rondens del |
+| Fabriken | 220 klara/221 · 706 loggar | **374 klara/376 statusfiler (+154 på 4 dygn) · 1 197 utdataloggar (+491)**; två fabriksprocesser levande i ps under mätningen (den yngre 2 min — matar detta manifest) |
+| Beslutsminnet | 91 poster (rond 66) | **217 poster** (rond 98, senaste 11:43Z; +126) i data/vakten/ — OCH rond 162 startade 12:38 idag en **GIT-SPEGEL** i data/forskning/ (första git-historiken någonsin; 5 poster — historiken före 09-24 förblir git-lös) |
+| Evighetsmotorn | 882 kontroller | **1 438 kontroller** (+556; senaste 13:48Z = under mätfönstret; 11 vaktprompter) |
+| Pumpor-daemonen | 1 d 16 h | **9 h 39 min — OMKOPPLAD ~06:08 idag** efter nattens F6-OOM (bygg Killed i bygglog; rond 162 kartlade fabrikens omstart som "självläkande kedja: barn→RAM→dirigentbygg→push") — pipelinen överlevde via omstart, inte utan avbrott |
+| Protokollnumret | "mekanik testad, adoption reste" (o117) | **44 reservationer sedan 09-20 — mekaniken ANVÄNDS i drift**; men agentfabrik.mjs grep fortfarande **0** — det är AGENTER som reserverar, fabrikens manifestmall ansluter ännu ej |
+| Egna sviter (gap 0) | "fabrik/evighet/pumpor saknar" | **DELVIS STÄNGT**: testa-pumpor-tick.mjs + testa-reservera-protokollnummer.mjs + testa-beroende-vakt-cron.mjs (16 PASS) tillkomna; **agentfabrik + evighetsmotor kvar** utan egna sviter |
+| CRON_SECRET | 0 i .env* | **0 fortfarande** (närvaro återmätt) — gap 1 lever |
+| Kunduppdragsfiler | frånvarande | frånvarande (ingen order i flykt) |
+| Testsviter totalt | 156 | 189 (ls; syskonen i förra manifestet mätte 185/186 — differensen är i-flight syskonarbete, mitt nu-tal) |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| E29 | LEVER 8 → **LEVER 8** | Bred verklig tillväxt på fyra dagar — cron-familjen fördubblad, rop-hälsans larmkedja bevisad i skarpt läge (FYND + VAKTFEL verkligt postade), fabriken +154 klara manifest, beslutsminnet +126 + första git-spegeln, svitgapet delvis stängt med 16-PASS-sviten — MEN toppoängens restposter står kvar och en är FÄRSK: nattens OOM visar att kedjans överlevnad fortfarande betalas med omstarter via rond-diagnos (ingen mekanisk watchdog), fabrikens egen svit saknas, CRON_SECRET 0, beroendevaktens puls oslagen t.o.m. 09-25. E33/B14-precedensen: adoption och mekanisk puls är stängningen — 9:an väntar på imorgon 05:37 |
+
+Snitt **7,4** (303/41 oförändrad — ingen poängrörelse. Bokföringsnotis,
+ärligt: u2:s sektion (förra manifestet) räknade "303 → 304" efter E41 +1
+medan ÖVERSIKT-snittet står på 303 — interndiffen är syskonens yta, orörd
+här; nästa ÖVERSIKT-passning röder.)
+
+Kö till nästa E29-passning: (a) **09-25 05:37 = beroendevaktens första
+mekaniska puls** — läs data/vakten/beroende-vakt-cron.log (driftbevis eller
+ny instrumentdödsfynd; tom logg efter 05:37 = o50-klassen igen); (b) nattens
+F6-OOM-dom (bygg Killed) hör hemma i E34/E35:s värld — rund 162 har
+råmaterial; (c) protokollnumrets adoption i agentfabrikens manifestmall
+(44 reservationer lever, grep 0); (d) agentfabrik + evighetsmotor egna
+sviter; (e) E39:s gallringslöfte pekar ut E29 som naturlig hemvist
+(u3:s fynd 09-21, lever); (f) dagens 06:27 VAKTFEL-larm — kontrollera att
+det besvarats.
+
+KVD: data-only — src/ orörd = **INGET bygge** · tsc EGEN körd som bevis:
+**0 rader, exit 0** (`node node_modules/typescript/bin/tsc --noEmit`) ·
+R2 orörd (priser/tier/publicering orörda) · data/blogg/ orörd · crontab
+LÄST endast, aldrig skriven · syskonytor orörda (förra manifestets
+u1/u2/u3-sektioner orörda; detta manifests syskon har EJ landat i filen
+vid min skrivning — mina ytor: E29-blocket + ÖVERSIKT-rad E29 + denna
+sektion) · beslutsminnet/git-tester read-only.

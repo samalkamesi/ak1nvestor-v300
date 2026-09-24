@@ -22,13 +22,13 @@ while (Date.now() < deadline) {
       git(['fetch', 'prod', 'develop']);
       const m = git(['merge', 'FETCH_HEAD', '--no-edit']);
       const ut = execFileSync('node', ['verktyg/_r175-granska.mjs'], { cwd: ws, timeout: 300000 }).toString().split('\n').find(r => /^===/.test(r)) || '';
-      log(`EMOTTAG ${prodH.slice(0, 8)} (v166 ${status} klara=${klar}/24): ${ut} — merge: ${m.split('\n')[0].slice(0, 60)}`);
+      log(`EMOTTAG ${prodH.slice(0, 8)} (v166 ${status} klara=${klara}/24): ${ut} — merge: ${m.split('\n')[0].slice(0, 60)}`);
       if (/FEL [1-9]/.test(ut) || /· [1-9]\d* FEL/.test(ut)) log('OBS: FEL FYND — huvudagenten kurar');
     } catch (e) {
       log('FEL: ' + String(e.stdout || e.message).slice(0, 250));
     }
   } else {
-    log(`tick: v166 ${status} klara=${klar}/24 prod=${prodH.slice(0, 8)}`);
+    log(`tick: v166 ${status} klara=${klara}/24 prod=${prodH.slice(0, 8)}`);
   }
   if (status === 'klar' && klara === 24) { log('V166 FÄRDIGT: 24/24 — bevakare klar'); break; }
   await new Promise(r => setTimeout(r, 150000));

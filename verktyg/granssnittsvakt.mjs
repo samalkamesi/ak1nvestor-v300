@@ -819,7 +819,7 @@ fs.writeFileSync(fil, JSON.stringify(rapport, null, 2));
 
 const felrader = rapport.kombinationer.filter((k) => k.felAntal > 0);
 console.log("\n─".repeat(50));
-console.log(`GRÄNSSNITTSVAKTEN: ${rapport.fel} funnna bland ${rapport.kombinationer.length} kombinationer`);
+console.log(`GRÄNSSNITTSVAKTEN: ${rapport.fel} fynd bland ${rapport.kombinationer.length} kombinationer`);
 if (felrader.length) {
   for (const k of felrader.slice(0, 12)) {
     const m = k.matning;

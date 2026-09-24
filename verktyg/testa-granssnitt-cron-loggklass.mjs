@@ -86,7 +86,7 @@ function kor({ rader = [], exitKod = 0 }) {
   const r = kor({
     rader: [
       "──────────────────────────────────────────────────",
-      "GRÄNSSNITTSVAKTEN: 0 funnna bland 61 kombinationer",
+      "GRÄNSSNITTSVAKTEN: 0 fynd bland 61 kombinationer",
       "Rapport: /home/ak1a/AK1/data/vakten/granssnitt-2026-09-18T0941.json",
       "GRÄNSSNITTSVAKTEN: AVBRUTEN — DEPLOY PÅGÅR — transienta driftfel under deploy räknas ej som fynd (nästa körning mäter).",
     ],
@@ -103,7 +103,7 @@ function kor({ rader = [], exitKod = 0 }) {
   const r = kor({
     rader: [
       "──────────────────────────────────────────────────",
-      "GRÄNSSNITTSVAKTEN: 0 funnna bland 176 kombinationer",
+      "GRÄNSSNITTSVAKTEN: 0 fynd bland 176 kombinationer",
       "Rapport: /home/ak1a/AK1/data/vakten/granssnitt-2026-09-18T0524.json",
     ],
     exitKod: 0,
@@ -129,7 +129,7 @@ function kor({ rader = [], exitKod = 0 }) {
   const r = kor({
     rader: [
       "──────────────────────────────────────────────────",
-      "GRÄNSSNITTSVAKTEN: 3 funnna bland 176 kombinationer",
+      "GRÄNSSNITTSVAKTEN: 3 fynd bland 176 kombinationer",
       "  ⑴ light/390x844 /kurser: överflöd 12px, kontrast 1, utanför 0",
       "Rapport: /home/ak1a/AK1/data/vakten/granssnitt-2026-09-19T0117.json",
     ],
@@ -159,7 +159,7 @@ function kor({ rader = [], exitKod = 0 }) {
 // L7: skarp cron.log orörd av sviten (ägarhetsbevis — bara cron skriver den).
 {
   const före = fs.statSync(SKARP_LOGG);
-  kor({ rader: ["GRÄNSSNITTSVAKTEN: 0 funnna bland 176 kombinationer"], exitKod: 0 });
+  kor({ rader: ["GRÄNSSNITTSVAKTEN: 0 fynd bland 176 kombinationer"], exitKod: 0 });
   const efter = fs.statSync(SKARP_LOGG);
   kontroll("L7 skarp cron.log orörd", före.mtimeMs === efter.mtimeMs && före.size === efter.size);
 }

@@ -6658,3 +6658,28 @@ SLUT — sektion inlagd av s10-u2 (manifest auto-s10-1790010927032) 2026-09-21.
   (r148) pollar API-formen och kör riktad vakt autonomt vid grönt bygg.
 
 SLUT — sektion inlagd av huvudagenten (rond 149) 2026-09-21.
+
+## DR-ÖVNING 2026-09-24 MORGEN — BLAD 14 GRÖNT: 77,9 s · 60/1 424 981 · RPO +169 (s10-u2, auto-s10-1790225128873)
+
+- Kedja 1-restore på färskaste bladet db-2026-09-24.sql.gz (fött 02:31,
+  33,3 MB): markör GRÖN (CREATE 99/COPY 101) → skrap-DB → restore 77,9 s →
+  public 60 tabeller / 1 424 981 rader (+storage 68/1 425 117 · alla 99/
+  1 425 377) → fel 788 kända/0 okända → städning grön (PG17 down,
+  socketvägran oberoende eftermätt). Prod opåverkad; bladet ENDAST LÄST
+  (mtime+storlek identiska).
+- **RTO-fasfaktorns nya extrempunkt: 77,9 s = 6,6× nattbandet (11,5–15 s)**
+  vid load 7,29 (morgontopp + fabrikens aktiva omgång); även markörkollen
+  37,0 s (natt ~12 s). Rot = CPU/IO-konkurrens — arkiven friska (kontrakt
+  EXAKTA). Kvartalsövningens F1-regel (≤2026-12-24, TOM fabrik) belagd
+  tredje gången och skärps: RTO-mätning för protokoll ska ske i lugnt fönster.
+- RPO-diff kl 07:32: **+169 rader oskyddade** (5,03 h = 33,6 r/h, rkaq-
+  universumet ~32–36 r/h): board +160 · organ +9 · snapshots +0 (batch-
+  fönstret ≥15 h håller). Inga kunddata i gapet — maskinpuls endast.
+- Prediktionsdom 9/10 varav 5 PUNKT-EXAKTA (snapshots 1 328 340 · board
+  53 186 · fel 788/0 · tabell 60 · markörer) — seriens starkaste radkontrakt;
+  enda miss RTO-bandet (rot F1). Övningsgapet 09-21→09-24 (blad 12–13 aldrig
+  restore-bevisade) brutet; serien daglig igen.
+- Flock-serialisering i realtid om igen: syskonet (u1/u3, pid 2879420) tog
+  DR-flocken 05:33:30Z = ~90 s efter mitt fönster — deras städansvar.
+
+SLUT — sektion inlagd av s10-u2 (manifest auto-s10-1790225128873) 2026-09-24.

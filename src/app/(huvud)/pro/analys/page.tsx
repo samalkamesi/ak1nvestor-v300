@@ -66,7 +66,7 @@ export default function ProAnalysPage() {
         <p className="font-mono text-[11px] font-bold uppercase tracking-[0.28em] text-guld-djup">
           AK1A PRO · Screeningen
         </p>
-        <h1 className="mt-3 font-serif text-3xl font-bold sm:text-4xl">Analys</h1>
+        <h1 className="mt-3 font-serif text-4xl font-bold">Analys</h1>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground">
           Rådgivarens screeningbänk: hela universum ({rader.length > 0 ? rader.length : "100"}{" "}
           mätta bolag) på dina villkor — sortera på AKM1, AKM2 eller peer, filtrera på

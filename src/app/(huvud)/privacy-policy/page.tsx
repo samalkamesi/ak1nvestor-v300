@@ -56,7 +56,7 @@ const KATEGORIER: Array<{ rubrik: string; text: string }> = [
 export default function PrivacyPolicy() {
   return (
     <SeoPageShell breadcrumb={[{ name: "Integritetspolicy" }]}>
-      <h1 className="font-serif text-3xl font-bold">Integritetspolicy</h1>
+      <h1 className="font-serif text-4xl font-bold">Integritetspolicy</h1>
       <p className="mt-2 text-sm text-muted-foreground">
         Senast uppdaterad: 2026-09-07 · Enligt dataskyddsförordningen (GDPR, EU 2016/679) och
         dataskyddslagen (2018:218)

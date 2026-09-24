@@ -51,7 +51,7 @@ export default function ProRapporterPage() {
       <p className="font-mono text-[11px] font-bold uppercase tracking-[0.28em] text-guld-djup">
         AK1A PRO · Rapportverkstan
       </p>
-      <h1 className="mt-3 font-serif text-3xl font-bold sm:text-4xl">Rapportverkstan</h1>
+      <h1 className="mt-3 font-serif text-4xl font-bold">Rapportverkstan</h1>
       <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
         Bygg utskriftsklara rapporter i tre mallar — med firmans logo och kolofon i
         omslagsbandet, och metod- samt ansvarsdeklarationen mal-låst på sin sida:

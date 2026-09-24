@@ -233,7 +233,9 @@ export default async function MedlemskapPage() {
           },
         ])}
       />
-      <h1 className="font-serif text-4xl font-bold">Vår vision: kunskap är en rättighet</h1>
+      {/* v160 P2 (audit #7): eyebrow + mikrostrip — startens toppstruktur */}
+      <p className="text-xs uppercase tracking-widest text-gold">AK1A Research Lab</p>
+      <h1 className="mt-2 font-serif text-4xl font-bold">Vår vision: kunskap är en rättighet</h1>
       <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
         Fundamentalanalys ska vara tillgänglig för alla människor — som luft och vatten.
         Därför är <strong>Fas 1 helt gratis, för alltid</strong>. Vi tjänar inte på
@@ -257,6 +259,9 @@ export default async function MedlemskapPage() {
           </div>
         ))}
       </div>
+      <p className="mt-4 text-xs tracking-wide text-muted-foreground">
+        Fas 1 för alltid 0 kr · Inget kort krävs
+      </p>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2">
         {/* FAS 1 */}

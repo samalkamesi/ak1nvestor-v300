@@ -28,7 +28,9 @@ export default function AnalyserPage() {
   const analyses = getAnalyses();
   return (
     <SeoPageShell breadcrumb={[{ name: "Analyser" }]} wide>
-      <h1 className="font-serif text-4xl font-bold">Svensk aktieanalys</h1>
+      {/* v160 P2: eyebrow enligt bolag-sidans mönster (BRANDING-AUDIT #8) */}
+      <p className="text-xs uppercase tracking-widest text-gold">AK1A Research Lab</p>
+      <h1 className="mt-2 font-serif text-4xl font-bold">Svensk aktieanalys</h1>
       <p className="mt-4 text-muted-foreground leading-relaxed">
         Varje analys: 99 sidor. 20 variabler. Vi tillämpar samma metodik som
         institutionerna — AKM1:s fundamentalmodell kombinerad med våganalys — och

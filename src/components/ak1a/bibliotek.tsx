@@ -110,7 +110,8 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
       {/* Intro — kortstandard med marin axel-rad ovanför rubriken */}
       <div className="rounded-xl border border-gold/25 bg-card p-6">
         <div className="h-[3px] w-10 rounded-full bg-[#0E1B2E] dark:bg-gold/60" />
-        <h1 className="mt-3 font-serif text-3xl font-bold">
+        <p className="mt-3 text-xs uppercase tracking-widest text-gold">AK1A Research Lab</p>
+        <h1 className="mt-2 font-serif text-4xl font-bold">
           Biblioteket <span className="text-gold">📖</span>
         </h1>
         <p className="mt-2 max-w-3xl text-sm text-muted-foreground">

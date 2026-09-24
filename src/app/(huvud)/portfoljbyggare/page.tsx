@@ -3,6 +3,7 @@ import { pageMetadata, websiteJsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { StrukturData } from "@/components/seo/StrukturData";
 import { Portfoljbyggare } from "@/components/ak1a/portfoljbyggare";
+import { SektionsCta } from "@/components/ak1a/sektions-cta";
 
 export const dynamic = "force-static";
 // force-static ensamt ger s-maxage=31536000 (årslås, o10 §2) — revalidate
@@ -42,6 +43,9 @@ export default function PortfoljbyggarePage() {
       <div className="mt-10">
         <Portfoljbyggare />
       </div>
+
+      {/* v160 P2.5 (audit #4): sidans konverterings-CTA — startsidans standard */}
+      <SektionsCta />
     </SeoPageShell>
   );
 }

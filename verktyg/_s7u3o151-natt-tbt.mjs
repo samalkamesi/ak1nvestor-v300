@@ -20,7 +20,16 @@
  *           mätmiljö, ej kod (o155 §2). Organismen kör 24/7 sedan kundens
  *           direktiv — "natt = tyst"-premissen (o143 §3) hålls bara med
  *           lastvakt. Återprob efter värmningen (1b) — natt avbryter om
- *           lasten återvänt.
+ *           lasten återvänt. STEG 2B (o158, s7-u1 vakarövertag): slutprob
+ *           EFTER Lighthouse-körningen — det bevisade hålet: efter-vaktens
+ *           dom 2026-09-24T00:52Z bar lastOK=true men TBT 16 413 (värre än
+ *           98 %-lastfönstret) med kalib-drift 64,5→109,5 ms UNDER fönstret
+ *           = lasten återkom efter sista proben (1b). 2b provar tysthet +
+ *           kalib-drift-kvot vid mätningens slut; natt ogiltigförklarar
+ *           domen vid smyglast (exit 2 — ALDRIG röd dom på ogiltigt
+ *           fönster). Sond bokför endast fakta. REST (ärligt): pulserande
+ *           last avslutad före slutproben syns ej — post-hoc-kvotdiagnos
+ *           (o155 §5.3) täcker när tyst kalib-referens etablerats.
  *   Steg 1  prod 200-preflight: /superanalys + /kalkylator på localhost
  *   Steg 2  kanoniska prestanda-lighthouse.mjs med LH_JAMFOR=o139-fore
  *           (värmning sköts av verktygets egen körning)
@@ -61,6 +70,11 @@ const LAST_BUSY_MAX_PROC = 30; // < 30 % CPU-beläggning (4 kärnor)
 const LAST_L1_MAX = 1.5; // loadavg1 < 1,5 (37 % av 4 kärnor)
 const LAST_VANTA_MAX_MS = 12 * 60_000;
 const LAST_VANTA_STEG_MS = 30_000;
+// o158 steg 2b: kalib-drift-tak — samma arbetsloop får inte avvika > 50 %
+// från startprobens kalib vid mätningens slut (bevisfall: efter-vakten
+// 64,5→109,5 ms = 1,70x vid TBT 16 413 ⇒ smyglast; > 50 % genomströmning-
+// förändring = metallen var ej konstant under fönstret)
+const KALIB_DRIFT_MAX_KVOT = 1.5;
 
 const rap = { ts: new Date().toISOString(), lage: SOND ? "sond" : "natt", steg: [] };
 
@@ -171,6 +185,29 @@ const lh = await new Promise((res) => {
 rap.steg.push({ steg: "2-lighthouse", exit: lh.kod, svans: lh.ut.split("\n").slice(-6) });
 if (lh.kod !== 0) { skriv("pipelinefel"); console.error("PIPELINEFEL: LH-verktyget exit " + lh.kod); process.exit(3); }
 
+// ── Steg 2b (o158): LAST-SLUTPROB — dom gäller bara om fönstret var tyst
+//    hela vägen genom själva Lighthouse-körningen (~2 min). Hålet: o155:s
+//    prober (0b/1b) låg FÖRE mätningen; efter-vaktens anomali-dom bar
+//    lastOK=true med kalib-drift 1,70x och TBT 16 413 = last återkom
+//    EFTER sista proben. Tysthet + kalib-kvot vid slutet; natt-läge
+//    ogiltigförklarar (exit 2) — aldrig röd dom på smyglast-fönster. ────
+const lastSlut = await lasLast();
+const kalibKvot = Math.round((lastSlut.cpuKalibMs / (last.cpuKalibMs || 1)) * 100) / 100;
+const kalibDrift = kalibKvot > KALIB_DRIFT_MAX_KVOT || kalibKvot < 1 / KALIB_DRIFT_MAX_KVOT;
+const slutTystOK = lastSlut.tyst && !kalibDrift;
+rap.steg.push({
+  steg: "2b-last-slut", busyProc: lastSlut.busyProc, loadavg: lastSlut.loadavg,
+  cpuKalibMs: lastSlut.cpuKalibMs, kalibStart: last.cpuKalibMs, kalibKvot,
+  zcodeBarn: lastSlut.zcodeBarn, tyst: lastSlut.tyst, kalibDrift,
+  kriterier: { busyUnder: LAST_BUSY_MAX_PROC, l1Under: LAST_L1_MAX, kalibKvotUnder: KALIB_DRIFT_MAX_KVOT },
+  pass: SOND ? true : slutTystOK,
+});
+if (!SOND && !slutTystOK) {
+  skriv("avbruten-last-efter");
+  console.error(`AVBRUTEN: last ej tyst vid mätningens slut (busy ${lastSlut.busyProc} %, loadavg1 ${lastSlut.loadavg[0]}, kalib ${last.cpuKalibMs}→${lastSlut.cpuKalibMs} ms = ${kalibKvot}x, zcodeBarn ${lastSlut.zcodeBarn})`);
+  process.exit(2);
+}
+
 // ── Steg 3: maskinell dom (o139 §7.2, nattfönstret) ────────────────────────
 const efter = JSON.parse(readFileSync(join(LH_KAT, `${NAMN}-sammanfattning.json`), "utf8"));
 const fore = JSON.parse(readFileSync(join(LH_KAT, "o139-fore-sammanfattning.json"), "utf8"));
@@ -201,7 +238,9 @@ for (const e of efter.sidor) {
   });
 }
 skriv("körde-klart");
-const lastOK = SOND ? lastAter.tyst : last.tyst && lastAter.tyst; // o155: dom-barhet
+// o155: dom-barhet — o158 utvidgat med slutprovet (2b): samtliga prober
+// tysta (0b, 1b, 2b) OCH kalib driftlös inom taket genom hela fönstret
+const lastOK = SOND ? lastAter.tyst : last.tyst && lastAter.tyst && slutTystOK;
 writeFileSync(join(LH_KAT, `dom-${NAMN}.json`),
   JSON.stringify({ ...rap, lastOK, dom, sammanfattning: NAMN + "-sammanfattning.json" }, null, 2));
 

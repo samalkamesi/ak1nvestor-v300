@@ -1,0 +1,18 @@
+studio: auto s8-u1 o161 vaktens utdatakontrakt + F1-slutstängning
+
+Kur A: "funnna"-typo rotkurad i granssnittsvakt.mjs:822 OCH svitens 4
+mock-rader (testa-granssnitt-cron-loggklass.mjs) — sviten hårdkodade
+"utdata ordagrant ur källan" och kodifierade stavfelet; pariteten
+återställd mot källan. Bevis: node --check ×2, loggklass-sviten
+23 PASS · 0 FAIL, cron-grepparna opåverkade (prefix-only).
+
+Kur B: 48 F1-fynd domade via o145-grinden efter omkoll: 13 timeout-
+fynd (13/13 GRÖNA på 57–257 ms mot 10 s-taket = lastartefakter) +
+35 syntaxfels-fynd i _r158–_r161-familjen (35/35 GRÖNA utan kur =
+skriv-i-förlopp, ETT fönster 07:45–08:04Z). F1-kod 0 öppna i laget,
+höga/kritiska 15→0, bedömda 998→1048.
+
+KVD: tsc 0 · mimosa 777/0 GRÖN · inget bygge (src orörd) · R2 orörd ·
+data/blogg orörd. Protokoll: data/forskning/o161-…-s8.md, pool o161.
+Delade append-ytor (bedomningar/pool/worklog) kan bära syskon-append
+enligt o156-precedensen (append-only, ingen förlust).

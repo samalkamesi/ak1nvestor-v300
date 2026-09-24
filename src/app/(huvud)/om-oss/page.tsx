@@ -131,7 +131,7 @@ export default function OmOssPage() {
           </p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Link href="/medlemskap" className="inline-flex min-h-[44px] items-center rounded-lg bg-gold px-4 font-bold text-primary-foreground">Medlemskap</Link>
-            <Link href="/kurser" className="inline-flex min-h-[44px] items-center rounded-lg border border-gold/40 px-4 font-bold text-gold">Alla kurser</Link>
+            <Link href="/kurser" className="inline-flex min-h-[44px] items-center rounded-lg border border-gold/40 px-4 font-bold text-gold">Se kurserna</Link>
             <Link href="/bibliotek" className="inline-flex min-h-[44px] items-center rounded-lg border border-gold/40 px-4 font-bold text-gold">Biblioteket</Link>
           </div>
         </section>

@@ -5,6 +5,7 @@ import { StrukturData } from "@/components/seo/StrukturData";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { KonfluensTabell } from "@/components/ak1a/konfluens-tabell";
 import { VagkonGraf } from "@/components/ak1a/vagkon-graf";
+import { SektionsCta } from "@/components/ak1a/sektions-cta";
 
 export const dynamic = "force-static";
 // force-static ensamt ger s-maxage=31536000 (årslås, o10 §2) — revalidate
@@ -101,7 +102,7 @@ export default function KonfluensPage() {
           i värdefällor som förblir billiga i åratal) eller bara vändande vågor (och hamnar i
           momentum-köp utan golv under sig). Konfluensradarn vägrar nöja sig med halva bilden.
         </p>
-        <blockquote className="marin-panel rounded-xl border-l-4 border-gold p-4 font-serif text-base italic leading-relaxed text-[#EDE6D6] sm:p-5">
+        <blockquote className="marin-panel rounded-xl border-l-4 border-gold p-4 font-serif text-base italic leading-relaxed text-beige-hero sm:p-5">
           &quot;{KONSEPTET}&quot;
         </blockquote>
         <p>
@@ -123,9 +124,9 @@ export default function KonfluensPage() {
         <div className="mt-4 grid gap-3 md:grid-cols-3">
           {STEG.map((s, i) => (
             <div key={s.nr} className="marin-panel relative rounded-2xl border border-gold/30 p-5">
-              <p className="font-serif text-3xl font-bold text-[#E8C766]">{s.nr}</p>
-              <p className="mt-1 font-serif text-lg font-bold text-[#EDE6D6]">{s.namn}</p>
-              <p className="mt-2 text-xs leading-relaxed text-[#EDE6D6]/85">{s.text}</p>
+              <p className="font-serif text-3xl font-bold text-guld-hero">{s.nr}</p>
+              <p className="mt-1 font-serif text-lg font-bold text-beige-hero">{s.namn}</p>
+              <p className="mt-2 text-xs leading-relaxed text-beige-hero/85">{s.text}</p>
               {i < STEG.length - 1 && (
                 <span
                   aria-hidden
@@ -177,6 +178,9 @@ export default function KonfluensPage() {
         är pedagogisk analys — inte investeringsråd. Poängen är ett studieunderlag, aldrig en
         köp- eller säljsignal.
       </p>
+
+      {/* v160 P2.5 (audit #4): sidans konverterings-CTA — startsidans standard */}
+      <SektionsCta />
     </SeoPageShell>
   );
 }

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getAnalyses } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { SektionsCta } from "@/components/ak1a/sektions-cta";
 
 export const dynamic = "force-static";
 // force-static ensamt ger s-maxage=31536000 (årslås, o10 §2) — revalidate
@@ -28,7 +29,9 @@ export default function AnalyserPage() {
   const analyses = getAnalyses();
   return (
     <SeoPageShell breadcrumb={[{ name: "Analyser" }]} wide>
-      <h1 className="font-serif text-4xl font-bold">Svensk aktieanalys</h1>
+      {/* v160 P2: eyebrow enligt bolag-sidans mönster (BRANDING-AUDIT #8) */}
+      <p className="text-xs uppercase tracking-widest text-gold">AK1A Research Lab</p>
+      <h1 className="mt-2 font-serif text-4xl font-bold">Svensk aktieanalys</h1>
       <p className="mt-4 text-muted-foreground leading-relaxed">
         Varje analys: 99 sidor. 20 variabler. Vi tillämpar samma metodik som
         institutionerna — AKM1:s fundamentalmodell kombinerad med våganalys — och
@@ -79,6 +82,9 @@ export default function AnalyserPage() {
         bolagsuniverset, urval enligt kandidatregeln. Manuell djupanalys
         tillverkas här i rapportbanken.
       </p>
+
+      {/* v160 P2.5 (audit #4): sidans konverterings-CTA — startsidans standard */}
+      <SektionsCta />
     </SeoPageShell>
   );
 }

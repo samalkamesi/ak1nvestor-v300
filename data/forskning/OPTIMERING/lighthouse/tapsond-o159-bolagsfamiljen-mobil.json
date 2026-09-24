@@ -1,0 +1,109 @@
+{
+  "ts": "2026-09-24T11:46:59.761Z",
+  "ramMB": 3088,
+  "bas": "http://localhost:3000",
+  "viewport": "390x844",
+  "sidor": [
+    {
+      "sida": "/data/nyckeltalsguide",
+      "interaktiva": 55,
+      "fyndAntal": 1,
+      "fynd": [
+        {
+          "tag": "a",
+          "text": "Villkor",
+          "yta": "32x14",
+          "klass": "underline hover:text-[#E8C766]",
+          "href": "/villkor",
+          "vikt": 448
+        }
+      ]
+    },
+    {
+      "sida": "/bolag",
+      "interaktiva": 322,
+      "fyndAntal": 8,
+      "fynd": [
+        {
+          "tag": "a",
+          "text": "Villkor",
+          "yta": "32x14",
+          "klass": "underline hover:text-[#E8C766]",
+          "href": "/villkor",
+          "vikt": 448
+        },
+        {
+          "tag": "a",
+          "text": "Sanofi",
+          "yta": "40x16",
+          "klass": "font-medium text-gold underline-offset-2 hover:underline",
+          "href": "/bolag/san-pa",
+          "vikt": 640
+        },
+        {
+          "tag": "a",
+          "text": "L'Oréal",
+          "yta": "45x16",
+          "klass": "font-medium text-gold underline-offset-2 hover:underline",
+          "href": "/bolag/or-pa",
+          "vikt": 720
+        },
+        {
+          "tag": "a",
+          "text": "Danone",
+          "yta": "49x16",
+          "klass": "font-medium text-gold underline-offset-2 hover:underline",
+          "href": "/bolag/bn-pa",
+          "vikt": 784
+        },
+        {
+          "tag": "a",
+          "text": "AXA SA",
+          "yta": "50x16",
+          "klass": "font-medium text-gold underline-offset-2 hover:underline",
+          "href": "/bolag/cs-pa",
+          "vikt": 800
+        },
+        {
+          "tag": "a",
+          "text": "SAP SE",
+          "yta": "50x16",
+          "klass": "font-medium text-gold underline-offset-2 hover:underline",
+          "href": "/bolag/sap-de",
+          "vikt": 800
+        },
+        {
+          "tag": "a",
+          "text": "GSK plc",
+          "yta": "51x16",
+          "klass": "font-medium text-gold underline-offset-2 hover:underline",
+          "href": "/bolag/gsk-l",
+          "vikt": 816
+        },
+        {
+          "tag": "a",
+          "text": "ABB Ltd",
+          "yta": "51x16",
+          "klass": "font-medium text-gold underline-offset-2 hover:underline",
+          "href": "/bolag/abb-st",
+          "vikt": 816
+        }
+      ]
+    },
+    {
+      "sida": "/bolag/eqnr-ol",
+      "interaktiva": 79,
+      "fyndAntal": 1,
+      "fynd": [
+        {
+          "tag": "a",
+          "text": "Villkor",
+          "yta": "32x14",
+          "klass": "underline hover:text-[#E8C766]",
+          "href": "/villkor",
+          "vikt": 448
+        }
+      ]
+    }
+  ]
+}

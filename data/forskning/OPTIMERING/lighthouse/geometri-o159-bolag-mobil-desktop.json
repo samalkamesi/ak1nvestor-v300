@@ -1,0 +1,213 @@
+{
+  "ts": "2026-09-24T11:49:50.655Z",
+  "ramMB": 4043,
+  "sida": "/bolag",
+  "lagen": [
+    {
+      "namn": "mobil-390",
+      "w": 390,
+      "h": 844,
+      "dsf": 2,
+      "mobile": true,
+      "sidhojdPx": 18974,
+      "h1Top": 197,
+      "sektioner": [
+        {
+          "index": 0,
+          "rubrik": "Energi",
+          "top": 520,
+          "hojd": 1595,
+          "tabellRader": 25
+        },
+        {
+          "index": 1,
+          "rubrik": "Fastighet",
+          "top": 2155,
+          "hojd": 771,
+          "tabellRader": 17
+        },
+        {
+          "index": 2,
+          "rubrik": "Finans",
+          "top": 2966,
+          "hojd": 2247,
+          "tabellRader": 37
+        },
+        {
+          "index": 3,
+          "rubrik": "Hälsa",
+          "top": 5253,
+          "hojd": 1236,
+          "tabellRader": 26
+        },
+        {
+          "index": 4,
+          "rubrik": "Industri",
+          "top": 6529,
+          "hojd": 1392,
+          "tabellRader": 22
+        },
+        {
+          "index": 5,
+          "rubrik": "Kommunikation",
+          "top": 7961,
+          "hojd": 1414,
+          "tabellRader": 24
+        },
+        {
+          "index": 6,
+          "rubrik": "Konsument",
+          "top": 9415,
+          "hojd": 2320,
+          "tabellRader": 38
+        },
+        {
+          "index": 7,
+          "rubrik": "Material",
+          "top": 11775,
+          "hojd": 1636,
+          "tabellRader": 26
+        },
+        {
+          "index": 8,
+          "rubrik": "Teknik",
+          "top": 13451,
+          "hojd": 1422,
+          "tabellRader": 28
+        },
+        {
+          "index": 9,
+          "rubrik": "Tillväxt",
+          "top": 14913,
+          "hojd": 953,
+          "tabellRader": 19
+        },
+        {
+          "index": 10,
+          "rubrik": "Så läser du tabellen",
+          "top": 15906,
+          "hojd": 349,
+          "tabellRader": 0
+        },
+        {
+          "index": 11,
+          "rubrik": "Detta är utbildning — inte råd",
+          "top": 16287,
+          "hojd": 245,
+          "tabellRader": 0
+        },
+        {
+          "index": 12,
+          "rubrik": "Ditt nästa steg",
+          "top": 16572,
+          "hojd": 190,
+          "tabellRader": 0
+        }
+      ],
+      "medianSektionshojdPx": 1392
+    },
+    {
+      "namn": "desktop-1280",
+      "w": 1280,
+      "h": 900,
+      "dsf": 1,
+      "mobile": false,
+      "sidhojdPx": 14260,
+      "h1Top": 181,
+      "sektioner": [
+        {
+          "index": 0,
+          "rubrik": "Energi",
+          "top": 402,
+          "hojd": 1106,
+          "tabellRader": 25
+        },
+        {
+          "index": 1,
+          "rubrik": "Fastighet",
+          "top": 1548,
+          "hojd": 778,
+          "tabellRader": 17
+        },
+        {
+          "index": 2,
+          "rubrik": "Finans",
+          "top": 2366,
+          "hojd": 1598,
+          "tabellRader": 37
+        },
+        {
+          "index": 3,
+          "rubrik": "Hälsa",
+          "top": 4004,
+          "hojd": 1147,
+          "tabellRader": 26
+        },
+        {
+          "index": 4,
+          "rubrik": "Industri",
+          "top": 5191,
+          "hojd": 983,
+          "tabellRader": 22
+        },
+        {
+          "index": 5,
+          "rubrik": "Kommunikation",
+          "top": 6214,
+          "hojd": 1065,
+          "tabellRader": 24
+        },
+        {
+          "index": 6,
+          "rubrik": "Konsument",
+          "top": 7319,
+          "hojd": 2295,
+          "tabellRader": 38
+        },
+        {
+          "index": 7,
+          "rubrik": "Material",
+          "top": 9654,
+          "hojd": 1147,
+          "tabellRader": 26
+        },
+        {
+          "index": 8,
+          "rubrik": "Teknik",
+          "top": 10841,
+          "hojd": 1229,
+          "tabellRader": 28
+        },
+        {
+          "index": 9,
+          "rubrik": "Tillväxt",
+          "top": 12110,
+          "hojd": 860,
+          "tabellRader": 19
+        },
+        {
+          "index": 10,
+          "rubrik": "Så läser du tabellen",
+          "top": 13010,
+          "hojd": 200,
+          "tabellRader": 0
+        },
+        {
+          "index": 11,
+          "rubrik": "Detta är utbildning — inte råd",
+          "top": 13242,
+          "hojd": 148,
+          "tabellRader": 0
+        },
+        {
+          "index": 12,
+          "rubrik": "Ditt nästa steg",
+          "top": 13430,
+          "hojd": 92,
+          "tabellRader": 0
+        }
+      ],
+      "medianSektionshojdPx": 1065
+    }
+  ]
+}

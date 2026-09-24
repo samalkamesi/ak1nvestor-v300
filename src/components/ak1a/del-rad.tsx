@@ -94,14 +94,14 @@ export function DelRad({
         <button
           onClick={dela}
           disabled={delar}
-          className="inline-flex min-h-[36px] items-center gap-1.5 rounded-full border border-gold/30 px-3 py-1.5 text-xs font-semibold transition-colors hover:border-gold/60 hover:bg-gold/5 disabled:opacity-60"
+          className="inline-flex min-h-[44px] max-md:min-h-[52px] items-center gap-1.5 rounded-full border border-gold/30 px-3 py-1.5 text-xs font-semibold transition-colors hover:border-gold/60 hover:bg-gold/5 disabled:opacity-60"
         >
           <Share2 className="h-3.5 w-3.5" aria-hidden="true" />
           {delar ? "Förbereder…" : "Dela"}
         </button>
         <button
           onClick={kopieraLank}
-          className="inline-flex min-h-[36px] items-center gap-1.5 rounded-full border border-gold/30 px-3 py-1.5 text-xs font-semibold transition-colors hover:border-gold/60 hover:bg-gold/5"
+          className="inline-flex min-h-[44px] max-md:min-h-[52px] items-center gap-1.5 rounded-full border border-gold/30 px-3 py-1.5 text-xs font-semibold transition-colors hover:border-gold/60 hover:bg-gold/5"
         >
           <Link2 className="h-3.5 w-3.5" aria-hidden="true" />
           Kopiera länk

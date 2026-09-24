@@ -1,0 +1,26 @@
+// Neutral granskning av PROD:s d19-version efter konfliktval
+import fs from 'node:fs';
+const j = JSON.parse(fs.readFileSync('data/bokmaster/the-complete-turtletrader.json', 'utf8'));
+const ny = j.chapters.at(-1);
+const text = JSON.stringify(ny);
+let fel = 0;
+const ok = (n, v, d) => { console.log(`${v ? 'GRÖN' : 'RÖD'}  ${n}${d ? ' — ' + d : ''}`); if (!v) fel++; };
+ok('chapterCount == len', j.chapterCount === j.chapters.length, `${j.chapterCount}/${j.chapters.length}`);
+ok('totalMinutes == Σ', j.totalMinutes === j.chapters.reduce((a, k) => a + k.minutes, 0), `${j.totalMinutes}`);
+ok('kap 15 titel+num+min 11–14', ny.num === 15 && ny.title === 'Från boken till egen analys' && ny.minutes >= 11 && ny.minutes <= 14, `num=${ny.num} min=${ny.minutes}`);
+ok('quiz=3 + format + unika', ny.quiz.length === 3 && ny.quiz.every(q => q.q && q.alternativ.length === 4 && Number.isInteger(q.ratt) && q.ratt >= 0 && q.ratt <= 3 && q.tips) && new Set(ny.quiz.map(q => q.ratt)).size === 3, `ratt ${ny.quiz.map(q => q.ratt).join(',')}`);
+ok('utmaning+insikt+tabell', ['utmaning', 'insikt', 'tabell'].every(t => ny.blocks.some(b => b.type === t)), ny.blocks.map(b => b.type).join(','));
+const vm = JSON.parse(fs.readFileSync('data/varumarke.json', 'utf8'));
+const traif = vm.forbjudnaFraser.filter(f => new RegExp(f.fran, 'i').test(text));
+ok('varumärkesgrind 0/26', traif.length === 0, traif.join(';'));
+const lagBland = ['2022:260', '2022:261', '1985:716', '2022:482', '2005:59'].filter(l => text.includes(l));
+ok('lagrum endast 2007:528 ≥2', lagBland.length === 0 && (text.match(/2007:528/g) || []).length >= 2, `×${(text.match(/2007:528/g) || []).length}`);
+const karn = ['1983', '1984', '100 miljoner', 'Jerry Parker', 'Chesapeake', 'Liz Cheval', 'Paul Rabar', 'Tom Shanks', '1987–88', '100 000', '1 000 kr', '990 kr', '980 kr', '200', '396', '245', '+7 350', '105 360', '+5,4 %', '0,99', '1,075', '1,0536', 'konstruerade tal', 'inte historisk data', '2007:528'];
+const saknas = karn.filter(t => !text.includes(t));
+ok(`kärntal ${karn.length - saknas.length}/${karn.length}`, saknas.length === 0, saknas.join(','));
+ok('käll-/övningsdeklaration', /konstruerade tal/.test(text) && /inte historisk data/.test(text) && /2007:528/.test(text));
+const radgiv = [/\bköp\b[^.]*\baktie\b/i, /\bsälj\b[^.]*\baktie\b/i, /\bbör du köpa\b/i, /\brekommenderar (?:att )?köp/i].filter(re => re.test(text));
+ok('inga köp/sälj-formuleringar', radgiv.length === 0);
+ok('num-sekvens 1..15', j.chapters.every((k, i) => k.num === i + 1));
+console.log(fel === 0 ? `\nVALD d19 (prod): GRÖN — 11/11` : `\nRÖD — ${fel}`);
+process.exit(fel ? 1 : 0);

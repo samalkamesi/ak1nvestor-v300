@@ -15,7 +15,7 @@ import { uppmuntran } from "@/lib/pedagogik";
  *   2. Elevröster — STATISKT STARTLÄGE som successivt fylls med verkliga
  *      röster allteftersom de inkommer (förnamn + verklig nivå, aldrig påhittade
  *      citat när verkligheten finns)
- *   3. "Gå med gratis — det tar 30 sekunder"-CTA
+ *   3. "Börja gratis — det tar 30 sekunder"-CTA
  *
  * Ton enligt pedagogik.ts: vi tipsar, tvingar aldrig — och marknadsföringen
  * är siffror + elevers egna ord, aldrig press.
@@ -219,7 +219,7 @@ export function SocialProof({ className = "" }: { className?: string }) {
         <div className="mt-10 flex flex-col items-center gap-5 rounded-2xl border border-gold/25 bg-black/20 p-6 text-center sm:flex-row sm:justify-between sm:text-left">
           <div>
             <p className="font-serif text-xl font-semibold">
-              Gå med gratis — det tar 30 sekunder.
+              Börja gratis — det tar 30 sekunder.
             </p>
             <p className="mt-1 max-w-md text-sm opacity-70">{uppmuntran("start")}</p>
           </div>
@@ -228,7 +228,7 @@ export function SocialProof({ className = "" }: { className?: string }) {
               href="/logga-in"
               className="btn-guld-signatur inline-flex min-h-[44px] items-center gap-2 px-7 py-3 text-sm max-md:min-h-[52px]"
             >
-              Gå med gratis — det tar 30 sekunder
+              Börja gratis — det tar 30 sekunder
             </Link>
             <Link
               href="/kurser"

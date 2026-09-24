@@ -74,7 +74,7 @@ const KAKOR: Array<{ namn: string; kat: string; syfte: string; tid: string }> = 
 export default function CookiePolicy() {
   return (
     <SeoPageShell breadcrumb={[{ name: "Cookiepolicy" }]}>
-      <h1 className="font-serif text-3xl font-bold">Cookiepolicy</h1>
+      <h1 className="font-serif text-4xl font-bold">Cookiepolicy</h1>
       <p className="mt-2 text-sm text-muted-foreground">
         Senast uppdaterad: 2026-09-07 · Enligt lagen (2022:482) om elektronisk kommunikation, 6 kap.
         19–20 §§

@@ -50,7 +50,7 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
           Case study · {c.type}
           {c.isIllustrative ? " · Illustrativt exempel" : ""}
         </p>
-        <h1 className="mt-2 font-serif text-3xl font-bold">{c.title}</h1>
+        <h1 className="mt-2 font-serif text-4xl font-bold">{c.title}</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           {[c.company, c.ticker, c.sector, c.year].filter(Boolean).join(" · ")}
         </p>

@@ -40,6 +40,18 @@
   --color-card: var(--card);
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
+  /* v160 P3 (audit #11): hero-familjens tokens — TEMASTABILA (ingen .dark-
+     override, inget marin-scope-flipp) = raw-hex-ersättning med noll
+     visuell förändring; se :root-kommentaren.
+     GHOST-KONVENTION (v160 P3, audit #12): fylld ghost
+     (border-gold/50 bg-gold/10 text-gold) = sidsluts-CTA (SektionsCta);
+     outline-ghost (border-gold/50 text-gold, hover:bg-gold/10) = in-kropp-
+     länk och sekundära val. DelRad:s pill (border-gold/30 rounded-full)
+     = m8:s ikonrad-kontrakt — diskret, ALDRIG banner. */
+  --color-guld-hero: var(--guld-hero);
+  --color-beige-hero: var(--beige-hero);
+  --color-marin-morkast-hero: var(--marin-morkast-hero);
+  --color-marin-chip-hero: var(--marin-chip-hero);
   --color-bull: var(--bull);
   --color-bear: var(--bear);
   --color-neutral-signal: var(--neutral-signal);
@@ -101,6 +113,17 @@
   --koppar: #8C5A2B;               /* koppar/brons — data-accent */
   --koppar-lys: #8C5A2B;           /* ljus läge: bas-koppar 5.2:1 (UI-krav 3:1) — dark behåller #B07A3C */
   --guld-djup: #7A5E14;            /* mörkare guld — WCAG-löptext på cream */
+
+  /* ── Hero-familjen (v160 P3, audit #11) — marin-hero-ytornas raw-hex ──
+     TEMASTABILA medvetet: INGEN .dark-override och INTE med i marin-scope-
+     flippen — de skall bete sig exakt som de raw-hex de ersätter
+     (startsidans/fas2/fas3/medlemskapets/konfluensens/kurser-Ny-chipets/
+     pro:s hero-palett). Kontrast: beige-hero #EDE6D6 och guld-hero #E8C766
+     mot djup-marin #0E1B2E = 13,9:1 respektive 9,7:1 (se rad 71-74). */
+  --guld-hero: #E8C766;            /* hero-guld: ljus signatur på marin */
+  --beige-hero: #EDE6D6;           /* hero-beige: löptext på marin */
+  --marin-morkast-hero: #0A1422;   /* mörkast marin-chip i hero-familjen */
+  --marin-chip-hero: #16263D;      /* marin-chip i mörkt hero-läge */
 
   --background: #f5f1e8;
   --foreground: #0a0b0d;
@@ -1331,6 +1354,27 @@ html[lang="ar"] .cv-bloggkort {
   .cv-widget-kalk {
     content-visibility: auto;
     contain-intrinsic-size: auto 272.5rem;
+  }
+}
+
+/* ── PRESTANDA (o159): BOLAGSREGISTRETS BRANSCHTABELLER — /bolag
+   hydratiserar 2 166 element (13 sektioner varav 10 tabeller à 17–38
+   rader, 256 bolagslänkar) med Style & Layout 2 710 ms i longtasks
+   (747/726/672 ms) = TBT 4 324 ms — 3× syskonen i samma lastfönster
+   (nyckeltalsguide 1 424 · eqnr-ol 1 231; baslinje o159-fore: P42
+   LCP 6 105 · CLS 0). Kur enligt o139-precedensen: content-visibility
+   på tabellsektionerna ⇒ offscreen-tabellernas layout skjuts upp till
+   scroll. Reservationen sätts per sektion i BolagIndexVy via --cv-h ur
+   radantalet (kalibrerad mot geometri-o159-bolag-mobil-desktop.json,
+   mobil 390: höjd ≈ 68,6·rader − 300 px; 87rem = median-fallback).
+   Enbart mobil ≤640 px (o123:s avgränsning) — textsektionerna
+   (läsguide/disclaimer/CTA) är små och förs utan cv. Grindar: CLS 0
+   (o100-nivån) + LCP ±15 % + skroll-CLS i EFTER-mätningen; H1/headern
+   ligger ovanför sektionerna och berörs ej. */
+@media (max-width: 640px) {
+  .cv-bolagsektion {
+    content-visibility: auto;
+    contain-intrinsic-size: auto var(--cv-h, 87rem);
   }
 }
 

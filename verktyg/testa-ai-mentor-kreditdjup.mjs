@@ -595,7 +595,7 @@ GAMLA.forEach((f) => {
     "svaraLokaltTvangsmekanik", "svaraLokaltHandelsemotor", "svaraLokaltLonsamhetsgrund", "svaraLokaltKemisektor",
     "svaraLokaltStalsektor", "svaraLokaltCasepraktik", "svaraLokaltBeteendefallor", "svaraLokaltKategoristangning",
     "svaraLokaltBanksektorn", "svaraLokaltNotlasning", "svaraLokaltNykull", "svaraLokaltNyfodda",
-    "svaraLokaltSkuldordning", "svaraLokaltValideringsfonster", "svaraLokaltMarknadsrytm",
+    "svaraLokaltSkuldordning", "svaraLokaltValideringsfonster", "svaraLokaltEnhetsekonomi", "svaraLokaltNatverkseffekter", "svaraLokaltSlutstenarna", "svaraLokaltMarknadsrytm",
   ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

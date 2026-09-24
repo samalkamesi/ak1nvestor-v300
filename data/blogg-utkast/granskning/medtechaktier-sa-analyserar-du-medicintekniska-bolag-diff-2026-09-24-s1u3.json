@@ -1,0 +1,106 @@
+{
+  "granskat": "data/blogg-utkast/medtechaktier-sa-analyserar-du-medicintekniska-bolag.json (sv, HEAD) + medtechaktier-sa-analyserar-du-medicintekniska-bolag-en.json (en, ur git-objekt fcff5f84 — filen saknas i arbetsträdet efter reset till 6e15cbac)",
+  "granskadAv": "fabrik auto-s1-1790235302376 s1-u3 (granskningskön 3/3, pivot från m9 #3 — m9-familjen 6/6 flyttklar sedan 2026-09-21; B24 = FIFO-etta bland ogranskade)",
+  "rapport": "medtechaktier-sa-analyserar-du-medicintekniska-bolag-KONTROLL-2026-09-24-s1u3.md",
+  "bedomning": "FLYTTKLAR EFTER RÄTTNING — 7 poster sv + 2 poster en (5 språkfel + 2 källdatum/källkedja + 2 EN-följder), INGA TALFEL: 10/10 bolag gröna mot bolagsunivers.json (trappan 73,7/69,3/69,2/68,7/67,2/60,1/48,6/39,6 + Fresenius 25,4/Attendo 36,9; medianer 68,0/30,0/18,8/15,0; spann P/E 19,4–41,0; EV/EBIT 17,1/24,7/24,1; EBIT-marginaler 24,7/10,5; Sonova ROE 20,5; Ambu CAGR 10,75 %→10,8; Getinge-serien 28 292→34 969 = +23,6 % med 2 491→2 258 = −9,4 % och nettomarginal 8,8→6,5; hälso-gren 25 bolag varav 8 produktbolag), aritmetik 8/8 egenräknad (68/32-exemplet: 1 600/16 % → 2 280/+42,5 % = 4,25× → 1 100/−31 %), talparitet sv↔en 102 = 102 multiset-identiska, länkar 12 interna verifierade mot publicerade ytor + 3 externa levande (eur-lex 202, lakemedelsverket 200, fda.gov levande via WebFetch — curl träffar FDA-botdetektionen), juridik 2007:528 ren (rådverb 0, disclaimer exakt sista raden båda språken, utbildningsform), 911 0/6 mönster, varumärkesgrind 0, title 54/60 + 59/60, OG 152/155 ×2, readingMinutes 2 = round(ord/600) ×2, sökord i title+ingress+3 H2 ×2",
+  "anvandning": "Verkställ posterna B1–B7 i sv-originalfilen och E1–E2 i en-filen (efter dess återställning ur git-objektet: git checkout fcff5f84 -- data/blogg-utkast/medtechaktier-sa-analyserar-du-medicintekniska-bolag-en.json), därefter är paketen i -FLYTTKLART-PAKET-2026-09-24-s1u3.json / -en-FLYTTKLART-PAKET-2026-09-24-s1u3.json byte-färdiga för export till data/blogg/ — publicering förblir kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "B1",
+      "typ": "byt",
+      "fil": "medtechaktier-sa-analyserar-du-medicintekniska-bolag.json",
+      "falt": "body (Vad är medtech-aktier — produkter, inte molekyler)",
+      "gammalt": "varje operation, varje hörselanpassning, varje sångomsättning genererar en ny försäljning",
+      "nytt": "varje operation, varje hörselanpassning, varje såromsättning genererar en ny försäljning",
+      "orsak": "FELSTAVNING: 'sångomsättning' är inte ett ord; avsett är 'såromsättning' (förbandsbyten — förbrukningsförsäljningen som styckerolvattnet i Coloplast-klassen). EN-speglens 'bed turnover' är en feltydning av felstavningen och rättas i post E2."
+    },
+    {
+      "id": "B2",
+      "typ": "byt",
+      "fil": "medtechaktier-sa-analyserar-du-medicintekniska-bolag.json",
+      "falt": "body (Vad är medtech-aktier — produkter, inte molekyler)",
+      "gammalt": "För det tredig byggs moaten på installationsbas och kirurgens inlärning",
+      "nytt": "För det tredje byggs moaten på installationsbas och kirurgens inlärning",
+      "orsak": "BÖJNINGSFEL: 'tredig' → 'tredje'."
+    },
+    {
+      "id": "B3",
+      "typ": "byt",
+      "fil": "medtechaktier-sa-analyserar-du-medicintekniska-bolag.json",
+      "falt": "body (Regleringen — MDR, CE-märkning och FDA)",
+      "gammalt": "enligt EU:s förordning om medicintekniska produkter (MDR, 2017/745), som sortera produkter i riskklasser I–III",
+      "nytt": "enligt EU:s förordning om medicintekniska produkter (MDR, 2017/745), som sorterar produkter i riskklasser I–III",
+      "orsak": "TEMPUSFEL: 'sortera' → 'sorterar' (relativbisatsens predikat)."
+    },
+    {
+      "id": "B4",
+      "typ": "byt",
+      "fil": "medtechaktier-sa-analyserar-du-medicintekniska-bolag.json",
+      "falt": "body (Regleringen — MDR, CE-märkning och FDA)",
+      "gammalt": "ett certifierat produktbibliotek byggda över årter är svårt att kopiera",
+      "nytt": "ett certifierat produktbibliotek byggt över år är svårt att kopiera",
+      "orsak": "ORDFEL: 'årter' är inte svenskt; EN-versionens 'built over years' bekräftar avsett innehåll — kongruensen rättas samtidigt ('byggda' → 'byggt')."
+    },
+    {
+      "id": "B5",
+      "typ": "byt",
+      "fil": "medtechaktier-sa-analyserar-du-medicintekniska-bolag.json",
+      "falt": "body (Bruttomarginaltrappan — där medtech-moaten syns)",
+      "gammalt": "Hörapparaten går genom audnologen som anpassar den",
+      "nytt": "Hörapparaten går genom audiologen som anpassar den",
+      "orsak": "FELSTAVNING: yrkestiteln heter audiolog (EN 'audiologist' är korrekt i spegeln)."
+    },
+    {
+      "id": "B6",
+      "typ": "byt",
+      "fil": "medtechaktier-sa-analyserar-du-medicintekniska-bolag.json",
+      "falt": "body (ingress)",
+      "gammalt": "Guiden går igenom mekanismerna med universumets egna tal (rådata 2026-09-03).",
+      "nytt": "Guiden går igenom mekanismerna med universumets egna tal (rådata 2026-09-03/17/18).",
+      "orsak": "KÄLDDATUM OFULLSTÄNDIGT: fyra av tio bolag bär nyare rådata — Ambu/Straumann/Sonova hämtade 2026-09-18, Attendo 2026-09-17 (bolagsunivers.json 'hamtat'); trappans Ambu 60,1, Straumann 69,3/41,0, Sonova 73,7/20,5 och Attendos 36,9 kommer från dessa poster. B25-vårdguidens källrad använder redan '2026-09-03/17/18'."
+    },
+    {
+      "id": "B7",
+      "typ": "byt",
+      "fil": "medtechaktier-sa-analyserar-du-medicintekniska-bolag.json",
+      "falt": "body (källrad, sista utöver disclaimern)",
+      "gammalt": "_Källor: AK1A:s 100-bolagsuniversum (Yahoo Finance/MarketStack, rådata 2026-09-03);",
+      "nytt": "_Källor: AK1A:s 100-bolagsuniversum (Yahoo Finance/MarketStack/StockAnalysis med S&P-underlag, rådata 2026-09-03/17/18);",
+      "orsak": "KÄLLKEDJA OFULLSTÄNDIG: de fyra nyare posternas kalla är StockAnalysis (Ambu-noteringen redovisar den; S&P-underlag) — källraden nämner den inte, och datumet ska spegla 09-17/09-18 (samma rättning som B25:s källrad)."
+    },
+    {
+      "id": "E1",
+      "typ": "byt",
+      "fil": "medtechaktier-sa-analyserar-du-medicintekniska-bolag-en.json",
+      "falt": "body (ingress + källrad)",
+      "gammalt": "with the universe's own numbers (raw data 2026-09-03)",
+      "nytt": "with the universe's own numbers (raw data 2026-09-03/17/18)",
+      "orsak": "Samma källdatumsrättning som B6 (fyra bolag hämtade 09-17/09-18). Källraden rättas motsvarande: \"AK1A's 100-company universe (Yahoo Finance/MarketStack, raw data 2026-09-03)\" → \"AK1A's 100-company universe (Yahoo Finance/MarketStack/StockAnalysis with S&P data, raw data 2026-09-03/17/18)\"."
+    },
+    {
+      "id": "E2",
+      "typ": "byt",
+      "fil": "medtechaktier-sa-analyserar-du-medicintekniska-bolag-en.json",
+      "falt": "body (What are medtech stocks — products, not molecules)",
+      "gammalt": "every operation, every hearing aid fitting, every bed turnover generates a new sale",
+      "nytt": "every operation, every hearing aid fitting, every wound care turnover generates a new sale",
+      "orsak": "FELTYDNING AV SV-FELSTAVNINGEN: 'bed turnover' bygger på 'sångomsättning' (B1) — avsett är förbandsbytet ('wound care turnover'), som driver förbrukningsintäkterna i guidens egen mekanik."
+    }
+  ],
+  "flaggor": [
+    {
+      "id": "F1",
+      "grad": "flagga-till-huvudagenten",
+      "fil": "data/blogg-utkast/ (v161-speglarna)",
+      "laget": "Reset till 6e15cbac (rond 158-mottagningen) tog v161:s tre en-speglar ur arbetsträdet: medtech-en (1a8d4301), skog-en (188c8b47), vård-en (4f4a4749) — committade i fcff5f84-kedjan men frånvarande på disk och i HEAD:s historia. Återskapning: git checkout fcff5f84 -- data/blogg-utkast/medtechaktier-sa-analyserar-du-medicintekniska-bolag-en.json (samt motsvarande skog/vård-sökvägar). v161 bokfördes ' komplett (3/3 speglar emottagna)' — bokföringen och trädet säger olika.",
+      "motiv": "Granskningskön kan inte granska filer som inte finns på disk; B24-en kunde granskas endast ur git-objektet. Skog-en och vård-en väntar på samma behandling."
+    },
+    {
+      "id": "F2",
+      "grad": "notis-utan-post",
+      "fil": "båda språkversionerna",
+      "laget": "'Elekta saknar jämförbar vinstmultipel just där' / EN 'just there' är avigt i båda språken; 'för närvarande'/'currently' läsbarhetshöjer.",
+      "motiv": "Stilval, inte fel — lämnas utan post för att hålla diffen på säkra rättningar; föreslås vid nästa beröring av ytan."
+    }
+  ]
+}

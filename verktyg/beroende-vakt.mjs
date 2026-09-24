@@ -18,17 +18,30 @@
  * /tmp/ak1a-deploy.lock) — vakten är ett måttsystem, inte en verkställare.
  *
  * Körning:  node verktyg/beroende-vakt.mjs [--tidsgrans=120]
- * Lämnar:   data/rapporter/beroende-halsa-SENASTE.md (committad yta)
+ * Lämnar:   data/rapporter/beroende-halsa-SENASTE.md (committad yta — IDEMPOTENT
+ *            skriven sedan o164: kroppen jämförs före skrivning, oförändrad
+ *            läge skrivs ALDRIG om, så cron-alarmet smutsar inte git-trädet
+ *            vid oförändrat sårbarhetsläge; mätningstiden bor i timestamp-
+ *            json:n. Stdut bär raden SENASTE=ny|oforandrad för crons vikt.)
  *           data/vakten/beroende-vakt-<ts>.json (fullregister, gitignorat)
- * Stdut:    sista raden RESULTAT_JSON={...} (maskinläsbar)
+ * Stdut:    sista raden RESULTAT_JSON={...} (maskinläsbar), raden före SENASTE=…
  * Avslut:   0 = inga critical/high · 1 = critical/high finns · 2 = verktygsfel
+ * Överridning (sviten): BERODEVAKT_RAPPORTKATALOG / BERODEVAKT_VAKTKATALOG
+ *            (rotas mot repo) pekar utdata till tmp — sviten kör ÄKTA verktyget
+ *            mot mockad npm via PATH, aldrig mot prod-ytorna.
  */
 import { spawnSync } from "node:child_process";
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const rapportKat = process.env.BERODEVAKT_RAPPORTKATALOG
+  ? path.resolve(REPO, process.env.BERODEVAKT_RAPPORTKATALOG)
+  : path.join(REPO, "data", "rapporter");
+const vaktKat = process.env.BERODEVAKT_VAKTKATALOG
+  ? path.resolve(REPO, process.env.BERODEVAKT_VAKTKATALOG)
+  : path.join(REPO, "data", "vakten");
 const args = process.argv.slice(2);
 const tidsArg = args.find((a) => a.startsWith("--tidsgrans="));
 const TIDSGRANS = Math.max(30, parseInt(tidsArg ? tidsArg.split("=")[1] : "120", 10));
@@ -159,17 +172,37 @@ md.push(
   "_Genererad av `verktyg/beroende-vakt.mjs` (spår 8). Stdut-slutraden RESULTAT_JSON är maskinläsbar; avslutskod 1 vid critical/high = cron-larm._",
 );
 
+// ── rapport ─────────────────────────────────────────────────────────────────
+// o164: SENASTE.md är committad yta — tiden i rubrikraden får ALDRIG vara den
+// enda skillnaden (cron 05:37 skulle smutsa git-trädet varje morgon). Kroppen
+// (allt utom rubrikraden) jämförs mot den befintliga filen; identisk kropp ⇒
+// ingen skrivning (SENASTE=oforandrad, mätningen bor i timestamp-json:n).
+let senasteSkriven = true;
 try {
-  mkdirSync(path.join(REPO, "data", "rapporter"), { recursive: true });
-  writeFileSync(path.join(REPO, "data", "rapporter", "beroende-halsa-SENASTE.md"), md.join("\n") + "\n");
+  mkdirSync(rapportKat, { recursive: true });
+  const sokvag = path.join(rapportKat, "beroende-halsa-SENASTE.md");
+  const nyKropp = md.slice(1).join("\n") + "\n";
+  let oforandrad = false;
+  try {
+    const befintlig = readFileSync(sokvag, "utf8");
+    const befintligKropp = befintlig.split("\n").slice(1).join("\n");
+    oforandrad = befintligKropp === nyKropp;
+  } catch {
+    /* ingen befintlig fil än — första skrivningen */
+  }
+  if (oforandrad) {
+    senasteSkriven = false;
+  } else {
+    writeFileSync(sokvag, md.join("\n") + "\n");
+  }
 } catch (e) {
   console.error(`VARNING: rapportfilen kunde inte skrivas: ${e.message}`);
 }
 try {
-  mkdirSync(path.join(REPO, "data", "vakten"), { recursive: true });
+  mkdirSync(vaktKat, { recursive: true });
   const ts = nu.toISOString().replace(/[:.]/g, "-").slice(0, 19);
   writeFileSync(
-    path.join(REPO, "data", "vakten", `beroende-vakt-${ts}.json`),
+    path.join(vaktKat, `beroende-vakt-${ts}.json`),
     JSON.stringify({ tid: nu.toISOString(), sammanfattning: audit.metadata, sårbarheter, inomIntervall, majorSteg }, null, 2),
   );
 } catch {
@@ -177,6 +210,7 @@ try {
 }
 
 console.log(md.slice(2, 12).join("\n"));
+console.log(`SENASTE=${senasteSkriven ? "ny" : "oforandrad"}`);
 console.log(
   `RESULTAT_JSON={"sårbarheter":${sårbarheter.length},"critical":${antal("critical")},"high":${antal("high")},"moderate":${antal("moderate")},"inomIntervall":${inomIntervall.length},"majorSteg":${majorSteg.length}}`,
 );

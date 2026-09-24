@@ -3242,6 +3242,48 @@ dag-2-kvitto · pumpens landningstidsvarians tredje punkten · kvartal ≤
 SLUT — sektion inlagd av s10-u3 (manifest auto-s10-1789948522392) 2026-09-21.
 
 
+## S10-U3 (vakt 3/3, Fabrik-order "DR-övning: återställ, mät tid/rader, protokoll, städa lokal PG") — MORGON-DR BLAD 14 + APP-BLAD 14 i DUBBELREPLIK med syskon: tre dagars gap stängt, kurens dag-4-kvitto, RPO +169 (2026-09-24 07:26–07:39 lokal, GODKÄNT)
+
+- **VAL:** senaste restore-bevis var blad 11 (09-21); blad 12–14 (09-22…09-24)
+  och app-bladen 09-22…09-24 låg overifierade — gapet på tre dygn var spårets
+  nästa objekt. Anspråk disk-först med 10 låsta prediktioner
+  (data/vakten/s10u3-dr-blad14-2026-09-24-ansprak.md, gitignorerad).
+- **Körning 1 — db-2026-09-24.sql.gz (rkaq):** markör GRÖN 1 447 286/CREATE 99/
+  COPY 101 · restore **RTO 65,5 s** (fabrikslast, load 5,5–6,9) · public
+  **60/1 424 981** · fel **788 kända/0 okända** · snapshots **1 328 340** =
+  1 271 388+3×18 984 **EXAKT** · board **53 186** = 50 882+3×768 **EXAKT**.
+  Syskonet s10-u2 (manifest auto-s10-1790225128873) körde bladet 07:31 (AUTO,
+  RTO 77,9 s; deras app-blad = AUTO-3) — flocken
+  serialiserade korrekt och radkontrakten var IDENTISKA = blad 14 DUBBEL-
+  REPLIK-bevisat (determinismens femte par).
+- **Körning 2 — db-app-2026-09-24.sql.gz (aufr, 02:50-kuren):** markör GRÖN
+  2 295 323/418/420 · RTO 93,8 s · public **372/188 736** (+5 410 mot 09-21 =
+  skattningen EXAKT) · fel 2 611/0. **Kurens dag-4-kvitto: crontab 02:50 →
+  blad födt 02:54 → markör GRÖN → restore GRÖN — hela app-kedjan grön fjärde
+  dygnet i rad.**
+- **RPO-diff (07:37, prod ENDAST läst):** +169 rader @ ~5,1 h (board +160 ·
+  organ_health_logs +9 · 2/60 tabeller i rörelse) ≈ 33 r/h non-batch.
+  JSON: data/forskning/DR-RPO-DIFF-2026-09-24-MORGON.json.
+- **Prediktioner 9/10 + 4/4 app, varav 6 EXAKTA.** Miss P8 (organ 3 264 ∉
+  [3 215, 3 240]) rotorsaksbokförd: +36 var delta per 16,9 h, rätt modell
+  +2/h×24=+48/dygn ger 3 264 EXAKT — tredje förekomsten av klassen "band
+  låses mot fel enhet" (formaliseras i anspråksmallen).
+- **RTO-fasföljd femte punkten:** natt 11,8 s (tom fabrik) → kväll 36,9 s
+  (3 barn) → morgon-fabrik 65,5+77,9 s (omgång aktiv, ~5,5–6,6×) — DR-budget
+  räknas i värsta fas; kvartalsövning ≤2026-12-24 i tom fabrik.
+- **Städning (orderns steg 4, oberoende eftermätt):** PG17 down · psql-
+  socketvägran · arkiv ENDAST LÄST (SHA-256+mtime byte-identiska före/efter) ·
+  RAM 2 070 MB · disk 48 G · retention 14 db-blad (09-11…09-24, äldsta 13 d,
+  0 raderade — P10 EXAKT).
+- **Köposter:** F1 lever — cron-globen `db-*.sql.gz` raderar ALDRIG
+  db-app-*.sql.gz (5 blad ~442 MB, ~2,6 GB/30 dagar; verktygsägare = u2:O5-
+  linjen) · blad 12/13 individuella markörkollar nästa DR-pass.
+- Protokoll: data/forskning/DR-OVNING-2026-09-24-BLAD14.md + maskinella
+  DR-PROV-2026-09-24-AUTO-2.md (blad 14) och AUTO-4 (app-blad; syskonets
+  AUTO/AUTO-3 orörda).
+
+SLUT — sektion inlagd av s10-u3 (Fabrik, spår 10 vakt) 2026-09-24.
+
 ## ROND 147 [organ:Ψ] — F6 RAM-NÖD STÄNGD I ROTTEN MED VACCIN (2026-09-21, GODKÄNT)
 
 - **Symptom:** FYNN F6-rop "RAM 266 MB"; byggfönstret stängt, OOM-dödat bygg
@@ -6658,3 +6700,28 @@ SLUT — sektion inlagd av s10-u2 (manifest auto-s10-1790010927032) 2026-09-21.
   (r148) pollar API-formen och kör riktad vakt autonomt vid grönt bygg.
 
 SLUT — sektion inlagd av huvudagenten (rond 149) 2026-09-21.
+
+## DR-ÖVNING 2026-09-24 MORGEN — BLAD 14 GRÖNT: 77,9 s · 60/1 424 981 · RPO +169 (s10-u2, auto-s10-1790225128873)
+
+- Kedja 1-restore på färskaste bladet db-2026-09-24.sql.gz (fött 02:31,
+  33,3 MB): markör GRÖN (CREATE 99/COPY 101) → skrap-DB → restore 77,9 s →
+  public 60 tabeller / 1 424 981 rader (+storage 68/1 425 117 · alla 99/
+  1 425 377) → fel 788 kända/0 okända → städning grön (PG17 down,
+  socketvägran oberoende eftermätt). Prod opåverkad; bladet ENDAST LÄST
+  (mtime+storlek identiska).
+- **RTO-fasfaktorns nya extrempunkt: 77,9 s = 6,6× nattbandet (11,5–15 s)**
+  vid load 7,29 (morgontopp + fabrikens aktiva omgång); även markörkollen
+  37,0 s (natt ~12 s). Rot = CPU/IO-konkurrens — arkiven friska (kontrakt
+  EXAKTA). Kvartalsövningens F1-regel (≤2026-12-24, TOM fabrik) belagd
+  tredje gången och skärps: RTO-mätning för protokoll ska ske i lugnt fönster.
+- RPO-diff kl 07:32: **+169 rader oskyddade** (5,03 h = 33,6 r/h, rkaq-
+  universumet ~32–36 r/h): board +160 · organ +9 · snapshots +0 (batch-
+  fönstret ≥15 h håller). Inga kunddata i gapet — maskinpuls endast.
+- Prediktionsdom 9/10 varav 5 PUNKT-EXAKTA (snapshots 1 328 340 · board
+  53 186 · fel 788/0 · tabell 60 · markörer) — seriens starkaste radkontrakt;
+  enda miss RTO-bandet (rot F1). Övningsgapet 09-21→09-24 (blad 12–13 aldrig
+  restore-bevisade) brutet; serien daglig igen.
+- Flock-serialisering i realtid om igen: syskonet (u1/u3, pid 2879420) tog
+  DR-flocken 05:33:30Z = ~90 s efter mitt fönster — deras städansvar.
+
+SLUT — sektion inlagd av s10-u2 (manifest auto-s10-1790225128873) 2026-09-24.

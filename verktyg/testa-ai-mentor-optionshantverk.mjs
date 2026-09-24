@@ -77,7 +77,11 @@ const od = R.filter((r) => r.kategori === "OPTIONS & DERIVAT").length;
 const sBin = OPTIONSHANTVERK_MONSTER.find((m) => m.id === "binomialtradet").bygga(R);
 // Fönster 31 (s6-u3, _s6u3o31-): 12 → 13 — spår 5 födde od-09
 // försäkringsskrivandet 2026-09-20 (mentorväglös; kategorin 12/13 nådda).
-ok(`D2 registerdrivet tal (OPTIONS & DERIVAT ${od} — 12 nådda, od-09 mentorväglös)`, od === 13 && sBin.text.includes(`(${od} kurser)`));
+// Omgång 35 (s6-u2, _s6u2o35-): D2:s frysta od === 13 kurade till tak —
+// registret växte till 15 (od-10 kreditderivatet aktiverad omgång 33,
+// od-11 ränteswapen källaktiverad ×2 sedan omgång 34, primärt ledig);
+// modulen är redan registerdriven (odAntal) och bär det levande talet.
+ok(`D2 registerdrivet tal (OPTIONS & DERIVAT ${od} — registerdrivet tak)`, od >= 14 && sBin.text.includes(`(${od} kurser)`));
 // D03 — aritmetikkontroller (oberoende omräknade i testet, ej bara strängmatch)
 const sStr = OPTIONSHANTVERK_MONSTER.find((m) => m.id === "straddlen").bygga(R);
 const sDel = OPTIONSHANTVERK_MONSTER.find((m) => m.id === "deltat").bygga(R);
@@ -210,7 +214,7 @@ console.log("L — widget-synk (wiring i chat-widget.tsx speglar exporten)");
 {
   const widget = readFileSync(join(ROT, "src/components/ak1a/chat-widget.tsx"), "utf8");
   ok("L1 import finns", widget.includes('from "@/lib/ai-mentor-optionshantverk-fragor"'));
-  ok("L2 komposition FÖRE marknadsrytm (deras SIST-deklaration)", widget.includes("svaraLokaltOptionshantverk(q, KURSREGISTER) ?? svaraLokaltPengarstid(q, KURSREGISTER) ?? svaraLokaltVolatilitetsmekanik(q, KURSREGISTER) ?? svaraLokaltCoinvest(q, KURSREGISTER) ?? svaraLokaltTvangsmekanik(q, KURSREGISTER) ?? svaraLokaltHandelsemotor(q, KURSREGISTER) ?? svaraLokaltLonsamhetsgrund(q, KURSREGISTER) ?? svaraLokaltKemisektor(q, KURSREGISTER) ?? svaraLokaltStalsektor(q, KURSREGISTER) ?? svaraLokaltCasepraktik(q, KURSREGISTER) ?? svaraLokaltBeteendefallor(q, KURSREGISTER) ?? svaraLokaltMarknadsrytm(q, KURSREGISTER);"));
+  ok("L2 komposition FÖRE marknadsrytm (deras SIST-deklaration)", widget.includes("svaraLokaltOptionshantverk(q, KURSREGISTER) ?? svaraLokaltPengarstid(q, KURSREGISTER) ?? svaraLokaltVolatilitetsmekanik(q, KURSREGISTER) ?? svaraLokaltCoinvest(q, KURSREGISTER) ?? svaraLokaltTvangsmekanik(q, KURSREGISTER) ?? svaraLokaltHandelsemotor(q, KURSREGISTER) ?? svaraLokaltLonsamhetsgrund(q, KURSREGISTER) ?? svaraLokaltKemisektor(q, KURSREGISTER) ?? svaraLokaltStalsektor(q, KURSREGISTER) ?? svaraLokaltCasepraktik(q, KURSREGISTER) ?? svaraLokaltBeteendefallor(q, KURSREGISTER) ?? svaraLokaltKategoristangning(q, KURSREGISTER) ?? svaraLokaltBanksektorn(q, KURSREGISTER) ?? svaraLokaltNotlasning(q, KURSREGISTER) ?? svaraLokaltNykull(q, KURSREGISTER) ?? svaraLokaltNyfodda(q, KURSREGISTER) ?? svaraLokaltSkuldordning(q, KURSREGISTER) ?? svaraLokaltValideringsfonster(q, KURSREGISTER) ?? svaraLokaltEnhetsekonomi(q, KURSREGISTER) ?? svaraLokaltNatverkseffekter(q, KURSREGISTER) ?? svaraLokaltSlutstenarna(q, KURSREGISTER) ?? svaraLokaltMarknadsrytm(q, KURSREGISTER);"));
   // Fönster 31 (s6-u3, _s6u3o31-): u1 stålsektor + u2 casepraktik + u3
   // beteendefallor mellan kemisektor och marknadsrytm — substrängen följer.
   ok("L3 komposition EFTER balansdjup", widget.includes("svaraLokaltBalansdjup(q, KURSREGISTER) ?? svaraLokaltOptionshantverk(q, KURSREGISTER)"));

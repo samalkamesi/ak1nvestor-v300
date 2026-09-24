@@ -137,6 +137,16 @@ Agent-anrop, 4+ via fabriksmanifest.
 
 ## NÄSTA I KÖN (observatoriet — underhålls av huvudagenten vid varje vågbokföring)
 
+- ✓ V160 P2.5+P3 LEVERERAD OCH LIVE (2026-09-24): SektionsCta delad komponent + 8 monteringar (36e16593) · hero-guld-tokens 90 byten/7 filer (d447087e) · ghost-konvention + Öppna labbet-guld + delningsknappar 52px + undantagsdokumentation (ab276b84) — LIVE-bevisat 11:4xZ: guld-hero-klasser i HTML på /fas2 + /konfluens, "Börja gratis" i sidbottnarna. Brandingspåret därmed 15/15 kod + drift.
+- · V164 BOKAD (2026-09-24, skiftet fokus 4): FAS 3-FÖRBEREDELSE — nästa steg efter v159:s 20/20 Fas 2-djup: utvalda Fas 3-förberedelseytor ur fas3-ytkarta-2026-09.md (våg 202) som INTE är R2-zoner; "under byggnation — kommer snart"-doktrinen gäller alla löften.
+- ✓ V159 LEVERERAD (2026-09-24): Fas 2-djupet 20/20 indikatorer (626–952 ord, facit + räkneexempel) + branding-audit-kartan med 15 åtgärder — P1 levererad fb3f125a (guld-knapp ×5, 52px, kanoniska CTA-texter, social proof ×3), P2 levererad 0b458614 (H1-jämställning ×9, eyebrows ×4, mikrostripar ×2).
+- ✓ V161 LEVERERAD (2026-09-24): en-speglar medtech/vård/skog 3/3 (fcff5f84; återskapade ur git-objekt av s1-u3 efter byggloopens good-HEAD-reset — kvitto 38a01007).
+- ✓ DEPLOY-KUR STÄNGD (2026-09-24, rond 167 [Φ]): r163-dirigenten öppnade fönstret 11:28:39Z (barn=0, RAM 6546 MB), städade Turbopack-segmentet och byggde under flock — pm2-restart ~11:38Z, pulsvakten grön på samtliga 24 bygg-tillgångar 11:38:46Z. Live-bevis: / 200 · /fas2 200 + I live-sitemap · guld-hero LIVE. Dirigentprocessen dog efter BYGG-START-raden men utfallet fullbevisat (pm2 + pulsvakt + rondsond). Färsk kvalitetsvakt 11:49Z: 12/13 PASS (sitemap-kur VERIFIERAD, tsc GRÖN) — 1 nytt mimosa-fynd kurat samma rond (execFileSync-array i _s1u2 + new URL-vittne i rondsonden; arbetsytan 0 fynd GRÖN).
+- ✓ V164 SLÄPPT OCH PLOCKAT (2026-09-24 12:20-12:3x): push-poll instans 4 fullförde kedjan (PUSH-GRÖN 2a63f2f3 → SLAPP-V164); fabriken plockade vid :x5-pumpen — status "pågår", omgångar om 3 pågår nu. Emottag + KVD-granskning av 24 underlagen = vågen efter att omgångarna landar.
+- · V165 BOKAD (2026-09-24, rond 167 [Φ]): KVALITETSVAKT 13/13 GRÖN I PROD — mimosa-självhärdningen (3 egna runners → execFileSync-array, a42933df) landar med nästa push (poll instans 5 fångar inter-omgångsfönstret); därefter färsk vakt-körning. Interim: 3 FEL GUL (kurerna finns bara i ws).
+- · V170 REGISTERHÄRDNING LEVERERAD I YTA (2026-09-24, rond 170 [Φ], deploy via push): agentfabriken får två skydd mot omstarts-föräldralöshet (rond 162:s fynd) — (1) återbokföring: köad uppgift vars deklarerade filer redan finns = återfunnen leverans, körs aldrig om; (2) dubbelalstringsskydd: levande främmande fabriksbarn ⇒ "vantar-barn" + avslut i stället för dubbelomgång. Syntax + torrkvitto gröna.
+- · V166 BOKAD (2026-09-24, rond 167 [Φ], evighetskatalogen spår 1+7): emottag av fabrikens pågående auto-s7-prestandavåg (Lighthouse-före-mätningar ligger redan i prod-ytan) + granskningskön påminns (FLYTTKLAR-paket = R2, väntar kund — påminn, publicera aldrig autonomt).
+
 - · VERTIKALA SNITTET KOD LANDAD (rond 130 [Ψ], commit 9b05f298 i prod-trädet; deploy bevakas, stängs på live-kvitto + vaktkörning): kunduppdraget del 2 — ABB-passet A-Ö (bedöm-först-grind mekanisk: lagring FÖRE expertexponering; Fas 2 server-side ur members.member_type; art 13-kvittering i flödet). NÄSTA FAS efter live-stängning: PDF-sektionsextraktion på ~10 bolag (målets punkt 2) + fel-ledger spacing-intag (punkt 3) — styrelsens ordning: snittet bevisas FÖRE storskalig byggnad.
 - · VÅG 235 KOD LANDAD (rond 133 [Ψ], deploy = nästa poll med rent träd): BYGG×FABRIK-SEKVENSERING — dubbellager ur nattens OOM-rot: (1) ps-vaktens zcode-reserv rättad 300 → 850 MB/barn (dokumenterad topp ~0,8–1,1 GB: zcode-cli 400–470 + node-repl ~390; nattens 3-barnsläge krävde 4750 MB men vakten bara reserverade 900); (2) NY lasAktivaFabriksManifest-vakt i steg 2b: aktivt manifest (status ≠ "klar" — konservativt även vantar-ram/okända) ⇒ VÄNTAR-FABRIK skjuter upp byggstarten till nästa poll — sekvens, aldrig kapplöpning (manifest föder barn MITT I byggfönstret, osynligt för ps); SVÄLTSTOPP 30 min (FABRIKS_VANTE_MAX_MIN — kedjande 12-uppgiftsmanifest svälter aldrig deployer i evighet; därefter bygger synken med 850-reserven som fönsterskydd). Bevis: testa-prod-synk-ramvakt.mjs 22/22 PASS (nya V235-block: klar-blockerar-aldrig, okänd-status-aktiv, ogiltig-fil-ignoreras, saknad-katalog-vilar + strukturkontrakt på steg 2b). **LIVE 2026-09-21T06:37:17Z**: prod-synk.log bär första poll med nya koden — `NY KOD: d401d719 → 7d13c17c` + `1 zcode-barn (+850)` där samtliga tidigare poller skrev (+300) — reservrättningen verkställer i skarp drift. Full stängning väntar eldprovet: VÄNTAR-FABRIK-träff under aktivt manifest ELLER grön nattbyggnad.
 - ★ STYRELSE-MÅLEN 2026 (data/forskning/STYRELSE-MAL.md, kundorder
@@ -340,3 +350,21 @@ Agent-anrop, 4+ via fabriksmanifest.
 - ⚠ VÄNTAR KUND (R2 — verkställs ALDRIG autonomt) | styrelse-muadcvyf-cg1jm2 | Rendera art 13-informationen i själva första övningsflödet (mekanisk yta, ej bara policytext) med export/radering som medlem-funktion enligt beslut 1 punkt 3–4. | träffade: radering
 
 - [rond 131] Kunduppdragets vertikala snitt (ABB-passet /rapportakademin): LIVE-bevisat 2026-09-21 (200 + 401). Kvar för UPPDRAG KLART: gränssnittsvakt grön på nya sidan (vaktbevakare dispatcherad). Därefter: Fas 2-testelev-e2e (frivillig fördjupning) + nästa pass-bolag i akademin.
+
+
+## VÅG 165-167 — BOKADE rond 173 [organ:Φ] (2026-09-24; efter v164-totalstängningen)
+
+Kontext: v164 STÄNGT 24/24 (rond 171-173, 171 kontroller) — Fas 3:s
+djupunderlag komplett. VIKTIG FYNDSLAGA: samtliga 24 Fas 3-kursposter FINNS
+redan i bokmaster med fyllda chapters (14-20 kapitel; ak1ts-vaglarans-
+hierarki 20/220 min) — underlagen är DJUPUNDERLAG för integrering, inte
+byggstenar för saknade kurser.
+
+| Våg | Innehåll | Status |
+|---|---|---|
+| V165 | PUSH-KEDJAN: ws→prod + prod-vakt GRÖN | ✓ STÄNGD rond 174: PUSH-GRÖN 0107095f + PROD-VAKT 0 fel GRÖN + HTTPS 200 (bevis /tmp/r174-dirigent2.log) |
+| V166 | FAS 3-DJUPINTEGRERING: 24 djupkapitel (design FASTSTÄLLD rond 174: DESIGN-v166-djupintegrering.md) | SLÄPPT — manifest i prod-ko, fabriken plockar vid nästa rop |
+| V167 | FAS 2-DJUPINTEGRERING: v159:s 20 indikatorunderlag (indikatorer-01-10/11-20) binds till variabelkurserna V01-V20 (samma designmönster som v166) | BOKAD — efter v166 |
+
+R2 orörd: kursinnehåll = utbildning (2007:528); inga pris-/publicerings-
+ändringar. Fas 3-kurserna förbler låsta enligt kurs-access (under byggnation).

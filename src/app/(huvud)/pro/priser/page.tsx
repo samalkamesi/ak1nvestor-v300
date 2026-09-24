@@ -164,7 +164,7 @@ export default async function ProPriserPage() {
       <p className="font-mono text-[11px] font-bold uppercase tracking-[0.28em] text-guld-djup">
         AK1A PRO · Priser
       </p>
-      <h1 className="mt-3 font-serif text-3xl font-bold sm:text-4xl">
+      <h1 className="mt-3 font-serif text-4xl font-bold">
         Tre nivåer — per analytiker-seat
       </h1>
       <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">

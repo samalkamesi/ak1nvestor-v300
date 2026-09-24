@@ -1,0 +1,50 @@
+{
+  "granskat": "data/blogg-utkast/fastighetsaktier-sa-analyserar-du-fastighetsbolag-en.json",
+  "granskadAv": "agentfabrik s1-u1 (manifest auto-s1-1790235302376, 2026-09-24)",
+  "rapport": "fastighetsaktier-sa-analyserar-du-fastighetsbolag-en-KONTROLL-2026-09-24-s1u1.md",
+  "paket": "fastighetsaktier-sa-analyserar-du-fastighetsbolag-en-FLYTTKLART-PAKET-2026-09-24-s1u1.json",
+  "bedomning": "FLYTTKLART — 0 blockerande fynd; C1 verkställd i paketet; D-poster är förslag som kräver beslut",
+  "anvandning": "Verkställ 'byt'-poster exakt (sök/ersätt i fältet, strängarna är unika i filen) — eller flytta paketet, som redan bär C1 verkställd och publishedAt null. 'forslag' kräver beslut före verkställning. Originalet ändras av guidens ägare eller nästa våg — inte av granskaren. KOORDINERA C1 med originalets egna C1 (09-15) så att sv/en inte divergerar.",
+  "flaggTillOriginaletsAgare": [
+    "N1: originalets räntetäcknings-exempel '…innan täckningen når noll' är ett räknefel — fördubblad ränta (900/900) eller halverat resultat (450/450) ger täckning 1,0, aldrig 0. -en har redan rätt ('reaches 1.0, where profit no longer covers the interest'). FöreslagenSV: '…innan täckningen når 1,0 — där resultatet inte längre täcker räntan.'",
+    "N2: originalets C1–C2 (IAS 40-formulering, readingMinutes 3→2) från 09-15 är fortfarande overksatta i originalet (läst 2026-09-24)."
+  ],
+  "poster": [
+    {
+      "id": "C1",
+      "typ": "byt",
+      "fil": "fastighetsaktier-sa-analyserar-du-fastighetsbolag-en.json",
+      "falt": "body",
+      "gammalt": "Listed Swedish property companies report investment properties at fair value under IAS 40: each property is revalued continuously and the value changes — up or down — flow straight through the income statement. The same standard prohibits depreciation.",
+      "nytt": "Listed Swedish property companies apply IAS 40's fair value model — an active choice (the standard also permits cost, but the entire listed sector chooses fair value): each property is revalued continuously and the value changes — up or down — flow straight through the income statement. Under the fair value model there is no depreciation of investment properties.",
+      "orsak": "Faktaprecision (engelsk parallell till originalets C1 från 09-15): IAS 40 medger två modeller — omprissättning via resultat och avsaknad av avskrivningar följer av det aktiva modellvalet, inte av standarden själv. Originalets C1 är ännu ej verkställd i originalet; verkställ koordinerat"
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "fastighetsaktier-sa-analyserar-du-fastighetsbolag-en.json",
+      "falt": "body (NAV-sektion)",
+      "gammalt": "The industry association EPRA has standardized the net asset measures",
+      "nytt": "The European industry association EPRA has standardized the net asset measures",
+      "orsak": "Originalet säger 'Den europeiska branschorganisationen EPRA' — översättningen tappat 'europeiska'. EPRA = European Public Real Estate Association; regional precisio­n är del av källföring­en"
+    },
+    {
+      "id": "D2",
+      "typ": "forslag",
+      "fil": "fastighetsaktier-sa-analyserar-du-fastighetsbolag-en.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-17",
+      "nytt": "faktisk publiceringsdag vid flytt",
+      "orsak": "Värdet är skapandedatum. Paketet bär publishedAt null; vid manuell flytt till data/blogg/ sätts publiceringsdagen (publicering = kundens beslut, R2)"
+    },
+    {
+      "id": "D3",
+      "typ": "forslag",
+      "fil": "fastighetsaktier-sa-analyserar-du-fastighetsbolag-en.json",
+      "falt": "body (Sources)",
+      "gammalt": "- The Riksbank — policy rate history 2021–2024 ([riksbanken.se](https://www.riksbanken.se))",
+      "nytt": "- The Riksbank — policy rate history 2021–2024 ([riksbank.se — the policy rate](https://www.riksbank.se/en-gb/statistics/interest-rates-and-exchange-rates/policy-rate-lending-and-deposit-rate/))",
+      "orsak": "Parallell till originalets D1 (200-verifierad 2026-09-15): riksbank.se är kanonisk domän (riksbanken.se redirectar); djuplänk stärker spårbarheten för textens tyngsta faktapåstående. I samma beslut: IFRS djuplänk (…/ias-40-investment-property/) och Nasdaq SX35PI (indexes.nasdaqomx.com/Index/Overview/SX35PI) enligt originalets D1; EPRA-roten behålls"
+    }
+  ]
+}

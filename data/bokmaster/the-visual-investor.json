@@ -2,8 +2,8 @@
   "slug": "the-visual-investor",
   "category": "BOKMASTER",
   "weight": "KRITISK",
-  "chapterCount": 15,
-  "totalMinutes": 170,
+  "chapterCount": 16,
+  "totalMinutes": 183,
   "title": "The Visual Investor — Murphy: KOMPLETT",
   "summary": "John J. Murphy — teknisk analysens främste popularisatör, årtionden som analytiker i TV och chefsanalytiker på StockCharts — skrev The Visual Investor (1995; andra upplagan 2009) för dem som aldrig ska bli traders men ändå vill förstå vad priset säger: den fundamentalanalytiker som är trött på att ha rätt för tidigt, fondspararen, icke-teknikern. Tesen är radikal i sin enkelhet: diagrammet är marknadens mest komprimerade information — du behöver inte räkna, du behöver SE. Där Murphys lärobok Technical Analysis of the Financial Markets är ett helt kursverk är den här boken dörren in: tre kärnverktyg (trend, stöd/motstånd, volym) plus två sammanhang som ingen annan introbok ger — sektorsrotation med relativ styrka och intermarket-kedjan dollar–råvaror–räntor–aktier. Kursen går igenom boken kapitel för kapitel och mappar varje verktyg mot AK1TS-motorn (där MA50/MA200, volymtrend och momentum är rader i 25-cellersmatrisen) och AKM1:s variabler — 200-dagarskungslinjen är bokstavligen analys-motorns klassificerare, och divergensen mellan pris och oscillator är Vågfundamentets AK1TS-korsning en våning ner. Kontroverskapitlet ger EMH-skolan (Bachelier, Fama, Malkiel) och Lo:s adaptive markets sina röster — och AK1A:s syntes är hård: grafen är en datayta, inte spådom; mönsterläsning utan regler är subjektiv — därför kräver AK1TS determinism.",
   "minutes": 11,
@@ -26,7 +26,12 @@
     "12. Intermarket — obligationer, dollar, råvaror, aktier",
     "13. Diagram-praktik för fundamentalanalytikern — grafen som AK1TS-tola",
     "14. Kontroversen — brusets mönster? EMH, random walk och Murphys svar",
-    "15. Sammanfattning — den visuella investeraren (syntes AKM1 × AK1TS)"
+    "15. Sammanfattning — den visuella investeraren (syntes AKM1 × AK1TS)",
+    {
+      "num": 16,
+      "title": "Från boken till egen analys",
+      "minutes": 13
+    }
   ],
   "chapters": [
     {
@@ -1147,6 +1152,77 @@
           ],
           "ratt": 2,
           "tips": "Konflikten mellan bild och cell är inte fel — det är platsen där arbetet börjar."
+        }
+      ]
+    },
+    {
+      "num": 16,
+      "minutes": 13,
+      "title": "Från boken till egen analys",
+      "intro": "Femton kapitel har tränat det visuella ögat — det här tar steget från bokläsning till egen läsning. Du får hierarkin och frågeordningen i praktiken, ett fullständigt genomräknat trefönstersexempel på Ericsson B och fallgroparna mellan att se och att förutsäga. Underlaget är det granskade v164-arbetet (f09, 2026-09-24); allt nedan är utbildning i hur metoden läser grafer — inte investeringsråd (2007:528).",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Murphys bok har en enda bärande tanke, och efter femton kapitel är den fortfarande ryggraden: en prisgraf är komprimerad information, och ögat kan läsa den före formlerna. Innan en enda indikator räknats fram ser ett tränat öga trendens riktning (kapitel 2), var kursen vänt tidigare (kapitel 3) och hur engagerat handeln varit (kapitel 7). Därför ordnar kursen det ögat ser i en hierarki — alltid i samma ordning:\n\n1. Trendens riktning. Högre toppar och bottnar (uppåt), lägre (nedåt) eller ingen av delarna (sidledes). Det första och viktigaste svaret.\n2. Nivåerna. Horisontella zoner där kursen stannat och vänt förr — stöd under, motstånd över.\n3. Volymens form. Var handeln var tung och var den tunn.\n4. Först därefter: formler. Indikatorer och uträkningar bekräftar och preciserar bilden — de ersätter den aldrig. Glidande medelvärden (kapitel 6) och oscillatorer (kapitel 8) är bekräftare, inte ersättare.\n\nOrdningsföljden är poängen: att mäta först man sett. Se — mät — räkna."
+        },
+        {
+          "type": "text",
+          "content": "Så läggs hierarkin på en ny graf — samma sju frågor, alltid i samma ordning:\n\n1. Vilket fönster tittar du i? Månad, vecka eller dag — och är det medvetet valt? Börja alltid i det största fönstret.\n2. Peker helheten upp, ned eller sidledes? En fråga, tre svar.\n3. Var i rymden står kursen? Nära flerårstopp, mitt i intervallet eller nära flerårsbotten? Samma rörelse betyder olika saker på olika höjd.\n4. Vilka nivåer syns? Rita — mentalt eller med pennan — de horisontella linjer där kursen vänt minst två gånger förut.\n5. Hur ser svängarna ut? Jämför bottnars och toppars inbördes höjd — det är trenddefinitionen i praktiken.\n6. Var var volymen tung? Sök staplarna som sticker ut under svängar och brott.\n7. Nu — och först nu — räkna. Mät rörelserna i procent, fäst datum vid varje märke.\n\nRegelbundet förfarande gör läsningen reproducerbar: två elever som följer ordningen kommer till samma observationer, även om de drar olika slutsatser. Det är skillnaden mellan att titta och att läsa."
+        },
+        {
+          "type": "utmaning",
+          "content": "Sjufrågebladet: välj en aktie du redan har en AKM1-bedömning på — gärna ur din egen analysmapp. Öppna månadsgrafen (fem år) och besvara de sju frågorna skriftligen, en rad per fråga, i exakt ordning: fönstret, helheten, läget i rymden, nivåerna, svängarna, volymen — och först på rad sju mätningarna (procent och datum vid varje märke). Byt sedan till veckografen och dagsgrafen och upprepa frågorna två och tre. Avsluta med att jämföra ditt blad med AK1TS-motorns rader för samma aktie: pekar ögat och poängen samma håll? Där de skiljer sig har du hittat arbetspunkten — och ett blad värt att spara till nästa graf du möter."
+        },
+        {
+          "type": "text",
+          "content": "Trefönsterexemplet — tre fönster, samma aktie: Ericsson B. Verkliga kurser, Ericsson B (ERIC-B.ST), källa Yahoo Finance, hämtat 2026-09-24. En övning i att läsa — inte en rekommendation (2007:528).\n\nMånadsgrafen (fem år) — helheten. Månadsavslut topp dec 2021: 114,80 kr. Månadsavslut botten sep 2023: 50,01 kr. Fallet: (114,80 − 50,01) ÷ 114,80 = −56,4 %. Återhämtningen till månadsavslut april 2026: 120,10 kr = +140,2 % (kursen ×2,4). Senaste avslut: 94,26 kr = 21,5 % under apriltoppen. Månadsvyn avslöjar det största sammanhanget: en hel nedgångs- och återhämtningscykel — och att kursen idag står nära där allt började 2021. Den som bara ser denna vy vet formen men inte mekanismen.\n\nVeckografen (14 månader) — vändningen. Veckoavslutstoppen maj 2026: 125,85 kr. Veckoavslutsbotten juli: 91,52 kr. Fallet: (125,85 − 91,52) ÷ 125,85 = −27,3 % — en mellantrendsvändning som månadsgrafens lugna staplar nästan slukar. Efter botten: en bas mellan ~91 och ~100 kr, med högre bottnar (93,82 → 96,7 → 96,76). Veckovyn avslöjar var den stora bilden vände — information månadsgrafen suddar ut och dagsgrafen drunknar i."
+        },
+        {
+          "type": "text",
+          "content": "Dagsgrafen (fem månader) — mekanismen. Högsta dagavslut: 127,35 kr (2 juni). Lägsta: 91,50 kr (23 juli) — −28,2 %. Största enskilda dagsrörelse: 14 juli, 112,75 → 98,54 kr = −12,6 % på en dag, på 42,8 miljoner aktier mot ett snitt på 8,7 miljoner — 4,9× normal volym. Dagsvyn avslöjar exakt vilka dagar händerna hände och hur tung handeln var. Läst ensam ser den mestadels ut som brus.\n\nSlutsatsen är hierarkin själv: dagsgrafen detaljerar veckografen, veckografen detaljerar månadsgrafen — aldrig tvärtom. Tre fönster, tre sanna svar, en bild. Så läs exemplet: inte som ett utfästende om bolagets framtid, utan som övningen i att flytta information mellan fönster — procent för procent, datum för datum, volym mot snitt."
+        },
+        {
+          "type": "text",
+          "content": "Fyra fallgropar möter dig mellan syn och tillämpning:\n\nZoomfällan — kursens huvudfallgrop. Den som öppnar dagsgrafen först (eller bara) läser brus som struktur. Varje dagsvy ska bäddas i sin veckovy, varje veckovy i sin månadsvy. Helheten förloras en zoomning i taget — och återfås en utzoomning i taget.\n\nLinjalens självbedrägeri. Ögat hittar gärna mönster som passar: en trendlinje kan dras så att den \"fungerar\". Skyddet är räknekulturen från Fas 2:s trappsteg: mät i procent, fäst datum, redovisa öppet vad som skulle förändra läsningen.\n\nSkalningsillusioner. En kort yta med dramatiska staplar kan visa samma marknad som en lugn månadsgraf. Kursen visar samma data i flera skalor — kontrollera alltid axlarnas intervall innan du jämför två bilder.\n\nAtt förväxla se med förutsäga. Det visuella läget är en sannolikhetsbild av historik, inte ett löfte. Boken själv håller indikatorerna få — kursen gör likadant: få verktyg, hårt disciplinerade."
+        },
+        {
+          "type": "insikt",
+          "content": "Det här är Fas 3:s ingång — och kursens gåva till resten av plattformen. Frågeordningen är en checklista du kan köra på varje graf i AKM2-analyserna och i portföljmotorns övningsytor; räknekulturen (procent, datum, volym mot snitt) är rakt arv från Fas 2:s trappsteg. Samma trappa — månad → vecka → dag — bär vågornas grader och Murphy-systemets tidsramshierarki i grannkurserna. I AI-Mentorn kan du jämföra din egen sjufrågeläsning med modellens: ögat tränas mot samma bild. Kursen övar det hela plattformen vilar på — att se helheten före detaljen. Utbildningsmaterial: metoden beskriver hur grafer läses; inga investeringsråd, inga avkastningslöften (2007:528)."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket påstående fångar den visuella hierarkin?",
+          "alternativ": [
+            "Ögat läser trend, nivåer och volym först — formler och indikatorer bekräftar och preciserar bilden först därefter",
+            "Indikatorerna avgör trenden och grafen bekräftar dem",
+            "Volymen ska alltid bedömas före trendens riktning",
+            "Alla fyra stegen ska räknas fram samtidigt för att bilden ska gälla"
+          ],
+          "ratt": 0,
+          "tips": "Se — mät — räkna: ordningen är poängen, inte verktygen."
+        },
+        {
+          "q": "Vad visar trefönsterexemplet på Ericsson B?",
+          "alternativ": [
+            "Dagsgrafen ger helheten och månadsgrafen detaljerna",
+            "Alla tre fönstren ger alltid samma svar om marknaden",
+            "Dagsgrafen detaljerar veckografen, som detaljerar månadsgrafen — tre fönster, tre sanna svar, en bild",
+            "Endast månadsgrafen behövs; vecko- och dagsvyerna tillför bara brus"
+          ],
+          "ratt": 2,
+          "tips": "Fönstren är hierarkiska: det mindre detaljerar det större — aldrig tvärtom."
+        },
+        {
+          "q": "Vilket påstående om zoomfällan stämmer?",
+          "alternativ": [
+            "Den som öppnar dagsgrafen först läser strukturen tydligare",
+            "Den som öppnar dagsgrafen först riskerar att läsa brus som struktur — varje dagsvy ska bäddas i sin veckovy och månadsvy",
+            "Zoomfällan gäller bara månadsgrafer med långa serier",
+            "Zoomnivån spelar ingen roll om indikatorerna är korrekt inställda"
+          ],
+          "ratt": 1,
+          "tips": "Helheten förloras en zoomning i taget — och återfås en utzoomning i taget."
         }
       ]
     }

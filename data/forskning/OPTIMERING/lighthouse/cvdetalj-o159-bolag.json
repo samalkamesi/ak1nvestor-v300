@@ -1,0 +1,201 @@
+{
+  "ts": "2026-09-24T12:07:02.932Z",
+  "ramMB": 3930,
+  "kurCss": "@media (max-width: 640px) { section:has(> div.overflow-x-auto) { content-visibility: auto; contain-intrinsic-size: auto 87rem; } }",
+  "lagen": [
+    {
+      "lage": "utan-css",
+      "sidhojd": 18922,
+      "sektioner": [
+        {
+          "index": 0,
+          "harTabell": true,
+          "hojd": 1595,
+          "cv": "visible",
+          "rader": 25
+        },
+        {
+          "index": 1,
+          "harTabell": true,
+          "hojd": 771,
+          "cv": "visible",
+          "rader": 17
+        },
+        {
+          "index": 2,
+          "harTabell": true,
+          "hojd": 2247,
+          "cv": "visible",
+          "rader": 37
+        },
+        {
+          "index": 3,
+          "harTabell": true,
+          "hojd": 1236,
+          "cv": "visible",
+          "rader": 26
+        },
+        {
+          "index": 4,
+          "harTabell": true,
+          "hojd": 1392,
+          "cv": "visible",
+          "rader": 22
+        },
+        {
+          "index": 5,
+          "harTabell": true,
+          "hojd": 1414,
+          "cv": "visible",
+          "rader": 24
+        },
+        {
+          "index": 6,
+          "harTabell": true,
+          "hojd": 2320,
+          "cv": "visible",
+          "rader": 38
+        },
+        {
+          "index": 7,
+          "harTabell": true,
+          "hojd": 1636,
+          "cv": "visible",
+          "rader": 26
+        },
+        {
+          "index": 8,
+          "harTabell": true,
+          "hojd": 1422,
+          "cv": "visible",
+          "rader": 28
+        },
+        {
+          "index": 9,
+          "harTabell": true,
+          "hojd": 953,
+          "cv": "visible",
+          "rader": 19
+        },
+        {
+          "index": 10,
+          "harTabell": false,
+          "hojd": 323,
+          "cv": "visible",
+          "rader": 0
+        },
+        {
+          "index": 11,
+          "harTabell": false,
+          "hojd": 245,
+          "cv": "visible",
+          "rader": 0
+        },
+        {
+          "index": 12,
+          "harTabell": false,
+          "hojd": 190,
+          "cv": "visible",
+          "rader": 0
+        }
+      ]
+    },
+    {
+      "lage": "med-css",
+      "sidhojd": 17438,
+      "sektioner": [
+        {
+          "index": 0,
+          "harTabell": true,
+          "hojd": 1595,
+          "cv": "auto",
+          "rader": 25
+        },
+        {
+          "index": 1,
+          "harTabell": true,
+          "hojd": 771,
+          "cv": "auto",
+          "rader": 17
+        },
+        {
+          "index": 2,
+          "harTabell": true,
+          "hojd": 1392,
+          "cv": "auto",
+          "rader": 37
+        },
+        {
+          "index": 3,
+          "harTabell": true,
+          "hojd": 1392,
+          "cv": "auto",
+          "rader": 26
+        },
+        {
+          "index": 4,
+          "harTabell": true,
+          "hojd": 1392,
+          "cv": "auto",
+          "rader": 22
+        },
+        {
+          "index": 5,
+          "harTabell": true,
+          "hojd": 1392,
+          "cv": "auto",
+          "rader": 24
+        },
+        {
+          "index": 6,
+          "harTabell": true,
+          "hojd": 1392,
+          "cv": "auto",
+          "rader": 38
+        },
+        {
+          "index": 7,
+          "harTabell": true,
+          "hojd": 1392,
+          "cv": "auto",
+          "rader": 26
+        },
+        {
+          "index": 8,
+          "harTabell": true,
+          "hojd": 1392,
+          "cv": "auto",
+          "rader": 28
+        },
+        {
+          "index": 9,
+          "harTabell": true,
+          "hojd": 1392,
+          "cv": "auto",
+          "rader": 19
+        },
+        {
+          "index": 10,
+          "harTabell": false,
+          "hojd": 323,
+          "cv": "visible",
+          "rader": 0
+        },
+        {
+          "index": 11,
+          "harTabell": false,
+          "hojd": 245,
+          "cv": "visible",
+          "rader": 0
+        },
+        {
+          "index": 12,
+          "harTabell": false,
+          "hojd": 190,
+          "cv": "visible",
+          "rader": 0
+        }
+      ]
+    }
+  ]
+}

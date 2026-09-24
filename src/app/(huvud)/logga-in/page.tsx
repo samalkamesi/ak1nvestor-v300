@@ -31,6 +31,10 @@ export default function LoggaInPage() {
       <div className="mt-10">
         <MedlemInloggning />
       </div>
+      {/* v160 P2 (audit #9): mikrostrip — samma invändningsnycklar som heron */}
+      <p className="mt-4 text-center text-xs tracking-wide text-muted-foreground">
+        Fas 1 för alltid 0 kr · Inget kort krävs
+      </p>
       <p className="mt-4 text-center text-sm text-muted-foreground">
         Ditt konto följer dig mellan enheter — logga in var som helst.
       </p>

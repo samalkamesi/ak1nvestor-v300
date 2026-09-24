@@ -398,9 +398,9 @@ export default function ManifestPage() {
         <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
           <Link
             href="/laroplan"
-            className="inline-flex min-h-[44px] items-center justify-center rounded-md bg-gold px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90"
+            className="btn-guld-signatur inline-flex min-h-[52px] items-center justify-center px-5 py-3 text-sm"
           >
-            Börja gratis — öppna läroplanen
+            Börja gratis
           </Link>
           <Link
             href="/profil"

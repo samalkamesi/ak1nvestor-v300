@@ -5,6 +5,7 @@ import { VagfundamentMatris } from "@/components/ak1a/vagfundament-matris";
 import { VagkartaKort } from "@/components/ak1a/vagkarta-kort";
 import { VagkonGraf } from "@/components/ak1a/vagkon-graf";
 import { VagkurvaGraf, VAGKURVA_STANDARD_TICKERS } from "@/components/ak1a/vagkurva-graf";
+import { SektionsCta } from "@/components/ak1a/sektions-cta";
 
 // Statisk per default ger s-maxage=31536000 (årslås, o10 §2) — revalidate
 // binder det, samma mönster som /kurser sedan våg 82.
@@ -150,6 +151,9 @@ export default function VagfundamentPage() {
         kan köra matrisen för egna innehav och portföljen samlad i Min portfölj. All
         utdata är pedagogisk analys — inte investeringsråd.
       </p>
+
+      {/* v160 P2.5 (audit #4): sidans konverterings-CTA — startsidans standard */}
+      <SektionsCta />
     </SeoPageShell>
   );
 }

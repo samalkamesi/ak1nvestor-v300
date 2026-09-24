@@ -56,7 +56,8 @@ export function Topplista() {
     <div className="space-y-8">
       {/* Intro */}
       <div className="rounded-2xl border border-gold/30 bg-card p-6">
-        <h1 className="font-serif text-3xl font-bold">
+        <p className="text-xs uppercase tracking-widest text-gold">AK1A Research Lab</p>
+        <h1 className="mt-2 font-serif text-4xl font-bold">
           Topplistan <span className="text-gold">🏆</span>
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">

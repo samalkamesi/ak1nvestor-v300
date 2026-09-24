@@ -138,17 +138,17 @@ export default function ProPage() {
           }}
         />
         <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-          <p className="font-mono text-[11px] font-bold uppercase tracking-[0.28em] text-[#E8C766]/90">
+          <p className="font-mono text-[11px] font-bold uppercase tracking-[0.28em] text-guld-hero/90">
             B2B · Rådgivare · Analytiker · Institutioner
           </p>
-          <h1 className="mt-4 font-serif text-4xl font-bold leading-tight text-[#EDE6D6] sm:text-5xl">
+          <h1 className="mt-4 font-serif text-4xl font-bold leading-tight text-beige-hero sm:text-5xl">
             AK1A PRO — Analytikerplattformen
           </h1>
-          <p className="mt-5 max-w-2xl font-serif text-lg italic leading-relaxed text-[#E8C766] sm:text-xl">
+          <p className="mt-5 max-w-2xl font-serif text-lg italic leading-relaxed text-guld-hero sm:text-xl">
             Bygg institutionella rapporter på AKM1 · AK1TS · Konfluens — metodiken som
             rättighetsstyrd modul.
           </p>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#EDE6D6]/80">
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-beige-hero/80">
             Alla plattformar säljer data och redskap. PRO säljer metodiken: ett hierarkiskt,
             deterministiskt analysramverk som ryggrad i varje rapport — reproducerbar, granskningsbar,
             svensk. Importera en portfölj och se den genom AK1A:s glasögon inom två minuter.
@@ -161,14 +161,14 @@ export default function ProPage() {
             <a
               href="mailto:info@ak1nvestor.com?subject=Boka%20demo%20%E2%80%94%20AK1A%20PRO"
               className="btn-marin min-h-[44px] px-6 py-3 text-sm"
-              style={{ background: "transparent", color: "#E8C766" }}
+              style={{ background: "transparent", color: "var(--guld-hero)" }}
             >
               Boka demo
             </a>
           </div>
 
           <div className="hjarlinje mt-10" />
-          <div className="mt-5 flex flex-wrap gap-x-8 gap-y-2 text-[11px] uppercase tracking-wider text-[#EDE6D6]/60">
+          <div className="mt-5 flex flex-wrap gap-x-8 gap-y-2 text-[11px] uppercase tracking-wider text-beige-hero/60">
             <span>CSV-import på 2 minuter</span>
             <span>Tre låsta AK1A-mallar</span>
             <span>White-label redo</span>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { pageMetadata, websiteJsonLd } from "@/lib/seo";
 import { StrukturData } from "@/components/seo/StrukturData";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { SocialProof } from "@/components/ak1a/social-proof";
 
 // KF3: Fas 2-landningssidan (/fas2 var 404). Ren presentationsyta — inga
 // priser, inga live-tal — därför force-static utan revalidate (inget att
@@ -45,7 +46,7 @@ const INDIKATORER: Array<{
   { nr: "V02", namn: "ARR-tillväxt", kat: "Tillväxt", ikon: "📆",
     text: "Tillväxten i återkommande intäkter — tecknet på en förutsägbar, prenumerationsliknande affär." },
   { nr: "V03", namn: "Intäktsdiversifiering", kat: "Tillväxt", ikon: "🧺",
-    text: "Spridningen över kunder, produkter och marknader — ett brett golv som bär när en del vacklar." },
+    text: "Spridningen över kundgrupper, produkter och marknader — ett brett golv som bär när en del vacklar." },
   { nr: "V04", namn: "P/S", kat: "Värdering", ikon: "🏷️",
     text: "Priset per intäktskrona — vad marknaden betalar för varje krona försäljning." },
   { nr: "V05", namn: "P/B", kat: "Värdering", ikon: "📕",
@@ -115,26 +116,26 @@ export default function Fas2Page() {
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.04]">
           <span className="font-serif text-[150px] font-black tracking-tight">FAS 2</span>
         </div>
-        <div className="pointer-events-none absolute inset-2 rounded-2xl border border-[#E8C766]/30" aria-hidden />
+        <div className="pointer-events-none absolute inset-2 rounded-2xl border border-guld-hero/30" aria-hidden />
         <div className="relative max-w-3xl">
-          <p className="text-[10px] uppercase tracking-[0.35em] text-[#E8C766]">
+          <p className="text-[10px] uppercase tracking-[0.35em] text-guld-hero">
             Den snabba fundamentala vägen · Fas 2
           </p>
-          <h1 className="mt-3 font-serif text-3xl font-bold leading-tight text-[#EDE6D6] sm:text-5xl">
+          <h1 className="mt-3 font-serif text-3xl font-bold leading-tight text-beige-hero sm:text-5xl">
             Fas 2 — Fördjupning inom aktieanalys
           </h1>
-          <p className="mt-4 font-serif text-lg italic leading-relaxed text-[#E8C766] sm:text-xl">
+          <p className="mt-4 font-serif text-lg italic leading-relaxed text-guld-hero sm:text-xl">
             Från att förstå delarna — till att väga bolaget i handen.
           </p>
-          <p className="mt-4 text-sm leading-relaxed text-[#EDE6D6]/85 sm:text-base">
+          <p className="mt-4 text-sm leading-relaxed text-beige-hero/85 sm:text-base">
             I Fas 1 lär du dig delarna: variabel för variabel, bok för bok. I
             Fas 2 fördjupas hantverket — du analyserar{" "}
-            <strong className="text-[#EDE6D6]">de 20 fundamentala
+            <strong className="text-beige-hero">de 20 fundamentala
             indikatorerna</strong> på riktiga årsredovisningar, lär dig tolka
             dem kritiskt och sammanväga dem till ett omdöme som är ditt eget.
             Allt fundamentalt — ingen teknisk analys; det dynamiska
             ekosystemet är{" "}
-            <Link href="/fas3" className="underline hover:text-[#EDE6D6]">
+            <Link href="/fas3" className="underline hover:text-beige-hero">
               Fas 3
             </Link>
             .
@@ -142,13 +143,13 @@ export default function Fas2Page() {
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <a
               href="#indikatorer"
-              className="rounded-md bg-gold px-5 py-3 text-center text-sm font-bold text-primary-foreground shadow-lg transition-opacity hover:opacity-90"
+              className="btn-guld-signatur inline-flex min-h-[52px] items-center justify-center px-5 py-3 text-center text-sm"
             >
               Se de 20 indikatorerna ↓
             </a>
             <Link
               href="#forbered"
-              className="rounded-md border border-[#E8C766]/50 px-5 py-3 text-center text-sm font-semibold text-[#E8C766] transition-colors hover:bg-[#E8C766]/10"
+              className="rounded-md border border-guld-hero/50 px-5 py-3 text-center text-sm font-semibold text-guld-hero transition-colors hover:bg-guld-hero/10"
             >
               Förbered dig till Fas 2
             </Link>
@@ -227,13 +228,13 @@ export default function Fas2Page() {
       {/* ── FÖRBEREDELSEN — CTA under byggnation ─────────────────────────── */}
       <section id="forbered" className="mt-10 scroll-mt-24">
         <div className="marin-panel rounded-3xl border-2 border-gold/60 p-7 text-center shadow-2xl sm:p-10">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-[#E8C766]">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-guld-hero">
             Fas 2 · Under byggnation
           </p>
-          <h2 className="mt-3 font-serif text-2xl font-bold text-[#EDE6D6] sm:text-3xl">
+          <h2 className="mt-3 font-serif text-2xl font-bold text-beige-hero sm:text-3xl">
             Förbered dig till Fas 2
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-[#EDE6D6]/85 sm:text-base">
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-beige-hero/85 sm:text-base">
             Fas 2 växer fram just nu — indikator för indikator, bokslut för
             bokslut. Under tiden byggs grunden bäst i Fas 1: hela
             grundbiblioteket med kurser och verktyg, kostnadsfritt och för
@@ -242,18 +243,18 @@ export default function Fas2Page() {
           <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/fas2-ansok"
-              className="rounded-md bg-gold px-6 py-3 text-sm font-bold text-primary-foreground shadow-lg transition-opacity hover:opacity-90"
+              className="btn-guld-signatur inline-flex min-h-[52px] items-center justify-center px-6 py-3 text-sm"
             >
               Förbered dig till Fas 2 — ansök
             </Link>
             <Link
               href="/kurser"
-              className="rounded-md border border-[#E8C766]/50 px-6 py-3 text-sm font-semibold text-[#E8C766] transition-colors hover:bg-[#E8C766]/10"
+              className="rounded-md border border-guld-hero/50 px-6 py-3 text-sm font-semibold text-guld-hero transition-colors hover:bg-guld-hero/10"
             >
               Bygg grunden i Fas 1 — kostnadsfritt
             </Link>
           </div>
-          <p className="mt-4 text-xs leading-relaxed text-[#E8C766]/80">
+          <p className="mt-4 text-xs leading-relaxed text-guld-hero/80">
             Vi lovar inte färdiga datum — vi lovar riktningen.
           </p>
         </div>
@@ -269,6 +270,10 @@ export default function Fas2Page() {
         </Link>
         .
       </p>
+
+      {/* v160 (Φ) P1#5: social proof enligt BRANDING-AUDIT — siffrorna ur
+          SocialProof/SIFFROR (guldkällan), aldrig påhittade tal. */}
+      <SocialProof className="mt-12" />
     </SeoPageShell>
   );
 }

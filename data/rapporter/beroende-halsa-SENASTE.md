@@ -1,6 +1,6 @@
-# Beroendehälsa — 2026-09-20T16:10:40.765Z
+# Beroendehälsa — 2026-09-24T13:28:55.609Z
 
-**7 sårbarheter (critical 0 · high 1 · moderate 6 · low 0) · 4 uppdateringar inom deklarerat intervall · 11 major-steg.**
+**7 sårbarheter (critical 0 · high 1 · moderate 6 · low 0) · 7 uppdateringar inom deklarerat intervall · 11 major-steg.**
 
 Vakten mäter — installation ägs av prod-synken under deploy-låset.
 
@@ -22,20 +22,23 @@ Vakten mäter — installation ägs av prod-synken under deploy-låset.
 
 ## Uppdateringar inom deklarerat intervall (låg risk)
 
-- @reactuses/core: 6.5.5 → 6.5.9 (patch) — latest 6.5.9
-- bun-types: 1.4.0 → 1.4.2 (patch) — latest 1.4.2
-- puppeteer-core: 25.10.0 → 25.11.0 (minor) — latest 25.11.0
-- tailwind-merge: 3.6.0 → 3.7.0 (minor) — latest 3.7.0
+- @supabase/supabase-js: 2.116.0 → 2.117.1 (minor) — latest 2.117.1
+- @tanstack/react-query: 5.103.1 → 5.103.2 (patch) — latest 5.103.2
+- eslint-config-next: 16.3.5 → 16.3.6 (patch) — latest 16.3.6
+- next: 16.3.5 → 16.3.6 (patch) — latest 16.3.6
+- next-intl: 4.14.5 → 4.14.7 (patch) — latest 4.14.7
+- puppeteer-core: 25.11.0 → 25.12.0 (minor) — latest 25.12.0
+- satori: 0.33.4 → 0.33.5 (patch) — latest 0.33.5
 
 ## Major-steg (köas, kräver beslut/test)
 
 - @mdxeditor/editor: 3.55.0 → latest 4.2.5 (major)
 - @tanstack/react-table: 8.21.3 → latest 9.2.4 (major)
 - eslint: 9.39.5 → latest 10.11.0 (major)
-- framer-motion: 12.43.0 → latest 13.4.0 (major)
-- lucide-react: 0.563.0 → latest 1.47.0 (major)
+- framer-motion: 12.43.0 → latest 13.4.3 (major)
+- lucide-react: 0.563.0 → latest 1.48.0 (major)
 - react-day-picker: 9.14.0 → latest 10.0.1 (major)
-- react-resizable-panels: 3.0.6 → latest 4.12.4 (major)
+- react-resizable-panels: 3.0.6 → latest 4.13.3 (major)
 - react-syntax-highlighter: 15.6.6 → latest 16.1.1 (major)
 - recharts: 2.15.4 → latest 3.10.1 (major)
 - typescript: 5.9.3 → latest 7.0.2 (major)

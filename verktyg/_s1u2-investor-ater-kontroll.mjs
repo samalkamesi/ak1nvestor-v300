@@ -3,7 +3,7 @@
 // granskning 2026-09-22 förlorad i branch-reset — se worklog).
 // Read-only: läser utkast + källor, skriver ENDAST stdout-rapport.
 import { readFileSync } from 'node:fs';
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 
 const UT = 'data/blogg-utkast/kvartal/2026-q3/sa-laser-du-investor-ab-q3-2026.json';
 // Källprioritet = textens EGNA källrad: "omräknade 20 september 2026 ur
@@ -18,7 +18,7 @@ const warn = (namn, detalj) => { VARN++; r.push(`VARN ${namn} — ${detalj}`); }
 const naer = (a, b, tol = 0.0005) => Math.abs(a - b) <= tol;
 
 const u = JSON.parse(readFileSync(UT, 'utf8'));
-const uni = JSON.parse(execSync(`git show ${UNI_LAS}:data/portfolj-system/bolagsunivers.json`, { maxBuffer: 64e6, encoding: 'utf8' }));
+const uni = JSON.parse(execFileSync('git', ['show', `${UNI_LAS}:data/portfolj-system/bolagsunivers.json`], { maxBuffer: 64e6, encoding: 'utf8' }));
 const uniIdag = JSON.parse(readFileSync('data/portfolj-system/bolagsunivers.json', 'utf8'));
 r.push(`INFO källa: låst byggvinda ${UNI_LAS.slice(0, 8)} poster=${uni.length}; dagens fil poster=${uniIdag.length} (median-drift: finans ${uniIdag.filter(x => x.bransch === 'finans').length} bolag)`);
 const inv = uni.find(x => x.ticker === 'INVE-B.ST');

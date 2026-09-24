@@ -146,10 +146,64 @@ PASS fibonacci-applications blocktyper — text,utmaning,tabell,insikt
 PASS fibonacci-applications utmaning-block — finns
 PASS fibonacci-applications varumärkesgrind — 26 fraser rena
 PASS fibonacci-applications lagrum — 2007:528
-PASS fibonacci-applications talöverföring — 17/17 kärntal = 100 % (krav ≥70)
-PASS fibonacci-applications num-sekvens — 1..15 ✓
-NOTIS d13 — två sessioner levererade oberoende (prod-session + studio rond 177); prod:s version behållen vid merge (neutral granskning GRÖN 14/14 i verktyg/_v166d13-val.mjs: kärntal 17/17, varumärkesgrind 0/26, quiz ratt 2,3,0, lagrum ×3); studio-versionen (KVD GRÖN 23/23, _f13-v166d13-kvd.mjs) bevarad i historiken af742a0c. Läxa: granskningsköns "väntar"-lista uppdateras vid LEVERANS, inte först vid granskning — annars dubbelarbetar parallella sessioner (intermarket-stod som väntande trots klar d10 när rond 177 startade).
+PASS fibonacci-applications talöverföring — 38/39 = 97 % (krav ≥70)
+PASS fibonacci-applications num-sekvens — 1..n ✓
+PASS come-into-my-trading-room position+num — ix=16/16 num=16
+PASS come-into-my-trading-room chapterCount — 16 == 16
+PASS come-into-my-trading-room totalMinutes=Σ — 183 == 183
+PASS come-into-my-trading-room quiz=3 — 3
+PASS come-into-my-trading-room quiz-struktur — q/alt4/ratt/tips ✓
+PASS come-into-my-trading-room blocktyper — text,utmaning,tabell,insikt
+PASS come-into-my-trading-room utmaning-block — finns
+PASS come-into-my-trading-room varumärkesgrind — 26 fraser rena
+PASS come-into-my-trading-room lagrum — 2007:528
+PASS come-into-my-trading-room talöverföring — 25/26 = 96 % (krav ≥70)
+PASS come-into-my-trading-room num-sekvens — 1..n ✓
+PASS teknisk-analys-med-johnny-torssell position+num — ix=16/16 num=16
+PASS teknisk-analys-med-johnny-torssell chapterCount — 16 == 16
+PASS teknisk-analys-med-johnny-torssell totalMinutes=Σ — 208 == 208
+PASS teknisk-analys-med-johnny-torssell quiz=3 — 3
+PASS teknisk-analys-med-johnny-torssell quiz-struktur — q/alt4/ratt/tips ✓
+PASS teknisk-analys-med-johnny-torssell blocktyper — text,utmaning,tabell,insikt
+PASS teknisk-analys-med-johnny-torssell utmaning-block — finns
+PASS teknisk-analys-med-johnny-torssell varumärkesgrind — 26 fraser rena
+PASS teknisk-analys-med-johnny-torssell lagrum — 2007:528
+PASS teknisk-analys-med-johnny-torssell talöverföring — 23/26 = 88 % (krav ≥70)
+PASS teknisk-analys-med-johnny-torssell num-sekvens — 1..n ✓
+PASS bollinger-on-bollinger-bands position+num — ix=15/15 num=15
+PASS bollinger-on-bollinger-bands chapterCount — 15 == 15
+PASS bollinger-on-bollinger-bands totalMinutes=Σ — 183 == 183
+PASS bollinger-on-bollinger-bands quiz=3 — 3
+PASS bollinger-on-bollinger-bands quiz-struktur — q/alt4/ratt/tips ✓
+PASS bollinger-on-bollinger-bands blocktyper — text,utmaning,tabell,insikt
+PASS bollinger-on-bollinger-bands utmaning-block — finns
+PASS bollinger-on-bollinger-bands varumärkesgrind — 26 fraser rena
+PASS bollinger-on-bollinger-bands lagrum — 2007:528
+PASS bollinger-on-bollinger-bands talöverföring — 57/58 = 98 % (krav ≥70)
+PASS bollinger-on-bollinger-bands num-sekvens — 1..n ✓
+PASS the-new-science-of-technical-analysis position+num — ix=15/15 num=15
+PASS the-new-science-of-technical-analysis chapterCount — 15 == 15
+PASS the-new-science-of-technical-analysis totalMinutes=Σ — 181 == 181
+PASS the-new-science-of-technical-analysis quiz=3 — 3
+PASS the-new-science-of-technical-analysis quiz-struktur — q/alt4/ratt/tips ✓
+PASS the-new-science-of-technical-analysis blocktyper — text,utmaning,tabell,insikt
+PASS the-new-science-of-technical-analysis utmaning-block — finns
+PASS the-new-science-of-technical-analysis varumärkesgrind — 26 fraser rena
+PASS the-new-science-of-technical-analysis lagrum — 2007:528
+PASS the-new-science-of-technical-analysis talöverföring — 34/39 = 87 % (krav ≥70)
+PASS the-new-science-of-technical-analysis num-sekvens — 1..n ✓
+PASS way-of-the-turtle position+num — ix=15/15 num=15
+PASS way-of-the-turtle chapterCount — 15 == 15
+PASS way-of-the-turtle totalMinutes=Σ — 181 == 181
+PASS way-of-the-turtle quiz=3 — 3
+PASS way-of-the-turtle quiz-struktur — q/alt4/ratt/tips ✓
+PASS way-of-the-turtle blocktyper — text,utmaning,tabell,insikt
+PASS way-of-the-turtle utmaning-block — finns
+PASS way-of-the-turtle varumärkesgrind — 26 fraser rena
+PASS way-of-the-turtle lagrum — 2007:528
+PASS way-of-the-turtle talöverföring — 46/47 = 98 % (krav ≥70)
+PASS way-of-the-turtle num-sekvens — 1..n ✓
 
-## LÄGE: 13 granskade · 11 väntar: come-into-my-trading-room, teknisk-analys-med-johnny-torssell, bollinger-on-bollinger-bands, the-new-science-of-technical-analysis, way-of-the-turtle, the-complete-turtletrader, the-trend-following-bible, trading-in-the-zone, the-hour-between-dog-and-wolf, market-mind-games, your-money-and-your-brain
+## LÄGE: 18 granskade · 6 väntar: the-complete-turtletrader, the-trend-following-bible, trading-in-the-zone, the-hour-between-dog-and-wolf, market-mind-games, your-money-and-your-brain
 
-## SAMMANFATTNING: 143 PASS · 0 FEL
+## SAMMANFATTNING: 198 PASS · 0 FEL

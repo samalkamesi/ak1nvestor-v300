@@ -237,7 +237,18 @@ PASS trading-in-the-zone varumärkesgrind — 26 fraser rena
 PASS trading-in-the-zone lagrum — 2007:528
 PASS trading-in-the-zone talöverföring — 26/26 = 100 % (krav ≥70)
 PASS trading-in-the-zone num-sekvens — 1..15 ✓
+PASS the-hour-between-dog-and-wolf position+num — ix=15/15 num=15
+PASS the-hour-between-dog-and-wolf chapterCount — 15 == 15
+PASS the-hour-between-dog-and-wolf totalMinutes=Σ — 181 == 181
+PASS the-hour-between-dog-and-wolf quiz=3 — 3
+PASS the-hour-between-dog-and-wolf quiz-struktur — q/alt4/ratt/tips ✓
+PASS the-hour-between-dog-and-wolf blocktyper — text,utmaning,tabell,insikt
+PASS the-hour-between-dog-and-wolf utmaning-block — finns
+PASS the-hour-between-dog-and-wolf varumärkesgrind — 26 fraser rena
+PASS the-hour-between-dog-and-wolf lagrum — 2007:528
+PASS the-hour-between-dog-and-wolf talöverföring — 36/36 = 100 % (krav ≥70)
+PASS the-hour-between-dog-and-wolf num-sekvens — 1..15 ✓
 
-## LÄGE: 21 granskade · 3 väntar: the-hour-between-dog-and-wolf, market-mind-games, your-money-and-your-brain
+## LÄGE: 22 granskade · 2 väntar: market-mind-games, your-money-and-your-brain
 
-## SAMMANFATTNING: 231 PASS · 0 FEL
+## SAMMANFATTNING: 242 PASS · 0 FEL

@@ -1357,6 +1357,27 @@ html[lang="ar"] .cv-bloggkort {
   }
 }
 
+/* ── PRESTANDA (o159): BOLAGSREGISTRETS BRANSCHTABELLER — /bolag
+   hydratiserar 2 166 element (13 sektioner varav 10 tabeller à 17–38
+   rader, 256 bolagslänkar) med Style & Layout 2 710 ms i longtasks
+   (747/726/672 ms) = TBT 4 324 ms — 3× syskonen i samma lastfönster
+   (nyckeltalsguide 1 424 · eqnr-ol 1 231; baslinje o159-fore: P42
+   LCP 6 105 · CLS 0). Kur enligt o139-precedensen: content-visibility
+   på tabellsektionerna ⇒ offscreen-tabellernas layout skjuts upp till
+   scroll. Reservationen sätts per sektion i BolagIndexVy via --cv-h ur
+   radantalet (kalibrerad mot geometri-o159-bolag-mobil-desktop.json,
+   mobil 390: höjd ≈ 68,6·rader − 300 px; 87rem = median-fallback).
+   Enbart mobil ≤640 px (o123:s avgränsning) — textsektionerna
+   (läsguide/disclaimer/CTA) är små och förs utan cv. Grindar: CLS 0
+   (o100-nivån) + LCP ±15 % + skroll-CLS i EFTER-mätningen; H1/headern
+   ligger ovanför sektionerna och berörs ej. */
+@media (max-width: 640px) {
+  .cv-bolagsektion {
+    content-visibility: auto;
+    contain-intrinsic-size: auto var(--cv-h, 87rem);
+  }
+}
+
 /* ── PRESTANDA (o89): SPEGELKURSSIDORNA — /en/kurser + /ar/kurser fick
    o78:s sektions-cv SENA: deras KurstipsKort saknade wrapper (o78 §6:s
    läxa — komponentroten delas med min-sida/laroplan, därför vävs

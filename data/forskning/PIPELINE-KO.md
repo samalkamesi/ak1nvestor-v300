@@ -362,8 +362,8 @@ byggstenar för saknade kurser.
 
 | Våg | Innehåll | Status |
 |---|---|---|
-| V165 | PUSH-KEDJAN: ws→prod (mimosa-härden a42933df + v164-stängning + rund 173) + färsk prod-vakt GRÖN (mål 13/13) — push-dirigent äger (_r173-pushdirigent, deadline-regler; gamla poll-instansen död 13:20Z) | PÅGÅR — väntar rent prod-fönster (s8-omgången) |
-| V166 | FAS 3-DJUPINTEGRERING: bind underlagen f01-f24 in i kurserna (förslag: ett avslutande djupkapitel "Från bok till egen analys" per kurs, blocks/quiz enligt kontrakt; design GRANSKAS FÖRST av nästa rond — manifest skrivs då; sekvensregel: push FÖRE fabriksmanifest) | BOKAD — design granskas rond 174 |
+| V165 | PUSH-KEDJAN: ws→prod + prod-vakt GRÖN | ✓ STÄNGD rond 174: PUSH-GRÖN 0107095f + PROD-VAKT 0 fel GRÖN + HTTPS 200 (bevis /tmp/r174-dirigent2.log) |
+| V166 | FAS 3-DJUPINTEGRERING: 24 djupkapitel (design FASTSTÄLLD rond 174: DESIGN-v166-djupintegrering.md) | SLÄPPT — manifest i prod-ko, fabriken plockar vid nästa rop |
 | V167 | FAS 2-DJUPINTEGRERING: v159:s 20 indikatorunderlag (indikatorer-01-10/11-20) binds till variabelkurserna V01-V20 (samma designmönster som v166) | BOKAD — efter v166 |
 
 R2 orörd: kursinnehåll = utbildning (2007:528); inga pris-/publicerings-

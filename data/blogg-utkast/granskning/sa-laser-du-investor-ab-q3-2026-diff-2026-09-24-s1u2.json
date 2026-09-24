@@ -1,0 +1,26 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-investor-ab-q3-2026.json",
+  "granskadAv": "agentfabrik auto-s1-1790235302376 s1-u2 (2026-09-24) — ÅTERLEVERANS: första granskningen 2026-09-22 (02e73dd5) förlorades i branch-reset (reflog 09-24 09:45), denna dom är en fristående ommätning",
+  "rapport": "sa-laser-du-investor-ab-q3-2026-KONTROLL-2026-09-24-s1u2.md",
+  "bedomning": "FLYTTKLAR efter två kirurgiska rättningar: 67 maskinella kontroller 0 FEL (källparitet 11/11 mot LÅST byggvinda 29763fe5 = 231-postfilen md5 cfa7a9f1 — textens egen källrad; dagens 256-postfil är drift och används ej som domslut), 10 medianer/kvartiler + 2 rang exakta, 30 aritmetikposter exakta inkl NAV-trappan/gap/premier/premievändning, juridik 2007:528 ren (26 mönster 0 fel, ett lagrum, disclaimer sist), 911-referenser 0, ord 2941 rm 5",
+  "paket": "kvartal/2026-q3, rappdag 2026-10-16 (bolagets egen kalender + Inderes), finansgrenens 7:e paket, seriens 65:e, grenens första investmentbolag",
+  "anvandning": "Paketägaren verkställer de två bytena nedan i utkast-JSON:en (båda strängar unik-verifierade ×1 i bodyn); därefter är paketet flyttklart — publicering till data/blogg/ är kundens beslut (R2). C2 från förlorat pass (0,013→0,014) är AVVISAD av nya mätningen: exakt avvikelse 0,0134 % gör textens 0,013 korrekt — inget byte.",
+  "poster": [
+    {
+      "id": "C1",
+      "klass": "C (kirurgisk)",
+      "fil": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-investor-ab-q3-2026.json",
+      "sok": "(2,1 vid årsskiftet)",
+      "ersattMed": "(2,2 vid årsskiftet)",
+      "motivering": "Belåningen vid årsskiftet: 23 387/1 087 082 = 2,151 % — texten trunkerar till 2,1, källans (Q2-rapportens) avrundning är 2,2. Bekräffar förlorat passes dom oberoende."
+    },
+    {
+      "id": "C3",
+      "klass": "C (kirurgisk)",
+      "fil": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-investor-ab-q3-2026.json",
+      "sok": "med marginalen alltså en tiondel",
+      "ersattMed": "med marginalen alltså nära tre tiondelar",
+      "motivering": "Datatäckning 62,9 % mot golvet 0,60 = marginal 2,9 procentenheter = nära tre tiondelar, inte en. Bekräffar förlorat passes dom oberoende."
+    }
+  ]
+}

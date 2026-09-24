@@ -127,3 +127,14 @@ november 2026 — INPEX har lämnat de japanska marsbolagens oktober-november-ka
 `_s2u1o30-inpex-rad.mjs` (radens enda källa) · `_s2u1o30-grind.mjs` ·
 `_s2u1o30-append.mjs` · `_s2u1o30-medianer.mjs` · `_s2u1o30-llms-regen.mjs` ·
 `_s2u1o30-lackagevakt.mjs`
+
+## 9. Efternot (git-attribution)
+
+Huvudagentens emottag-merge a59272bb (byggloopens good-HEAD-reset + emottag
+prod, 2026-09-24) bar denna leverans in i git under mitt KVD-fönster —
+sett med race 19: mina rader/protokoll/verktyg/worklog-rad committades där
+(ride-along-precedensen; mitt append var på disk FÖRE mergen). Denna
+kvitto-commit dokumenterar attributionen. Diskens slutläge efter hela
+omgång 30: 262 bolag (u1 INPEX + u2 ENI/TRN + u3 Bharti Airtel/Sun
+Pharma/L&T), llms konvergent på 262 (idempotent omkörning av denna agents
+regen verifierad — K2: fil == regen(disk)).

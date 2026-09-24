@@ -11,7 +11,7 @@ const byten = [
   ["new RegExp(`ska ge P\\/E\\\\. ${MM}?(\\\\d+,\\\\d+) \\/`)",
    "new RegExp(`ska ge P\\/E: ${MM}?(\\\\d+,\\\\d+) \\/`)"],
   // negativa tal: U+2212-minusklass
-  ["['fy25-netto', /GAAP-nettot blev (-?\\d+) miljoner/", 1, Q.fy25.netto",
+  ["['fy25-netto', /GAAP-nettot blev (-?\\d+) miljoner/', 1, Q.fy25.netto",
    "['fy25-netto', new RegExp(`GAAP-nettot blev (${MM}?\\\\d+) miljoner`), 1, Q.fy25.netto"],
   ["['netto2025', /GAAP-nettot blev (-?\\d+) miljoner/, 1, mz.serier.resultat[3] / 1e6",
    "['netto2025', new RegExp(`GAAP-nettot blev (${MM}?\\\\d+) miljoner`), 1, mz.serier.resultat[3] / 1e6"],
@@ -54,8 +54,8 @@ const ttmSpec = ankare + `
   const mt = B.match(/\\| Intäktstillväxt TTM \\| [^|]+ \\| [^|]+ \\| (\\d+):e högst av (\\d+) \\|/);
   if (!mt) fejl('rang/ttm', 'rad hittas inte');
   else {
-    num(mt[1]) === fall && num(mt[2]) === vals.length ? pass++ : fejl('rang/ttm', `väntade ${fall} av ${vals.length}, fann ${mt[1]} av ${mt[2]}`);
-    num(mt[2]) === vals.length ? pass++ : fejl('rang/ttm-n', `n=${vals.length}`);
+    num(mt[1]) === fall && num(mt[2]) === vals.length ? pass++ : fejl('rang/ttm', \`väntade \${fall} av \${vals.length}, fann \${mt[1]} av \${mt[2]}\`);
+    num(mt[2]) === vals.length ? pass++ : fejl('rang/ttm-n', \`väntade n=\${vals.length}, fann \${mt[2]}\`);
   }
 }`;
 if (!s.includes(ankare)) { console.log('SAKNAS ankare'); } else { s = s.replace(ankare, ttmSpec); n++; }

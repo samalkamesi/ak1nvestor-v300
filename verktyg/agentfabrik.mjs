@@ -179,6 +179,24 @@ function gitTopp() {
 }
 
 /**
+ * ROND 175: global processläsare — rond 170:s dubbelalstringsskydd anropade
+ * lasProcesser() som endast fanns som LOKAL läsPs() i städaFöräldralösaZcode
+ * ⇒ ReferenceError vid varje manifestplock (v166 14:05Z). En källa, två konsumenter.
+ */
+function lasProcesser() {
+  try {
+    return execFileSync("ps", ["-eo", "pid=,ppid=,etimes=,args="], { timeout: 10_000 })
+      .toString()
+      .split("\n")
+      .map((r) => r.trim().match(/^(\d+)\s+(\d+)\s+(\d+)\s+(.+)$/))
+      .filter(Boolean)
+      .map((m) => ({ pid: Number(m[1]), ppid: Number(m[2]), ålder: Number(m[3]), args: m[4] }));
+  } catch {
+    return [];
+  }
+}
+
+/**
  * ROND 72 (F3/F6, Lag 6): städa föräldralösa zcode-processer varje rop.
  * Rot 2026-09-18 23:50Z: övergivna/timeout-dödade barn lämnade zcode-cli +
  * node-repl-mcp kvar med PPID=1 (349 MB) som pressade MemAvailable till
@@ -187,18 +205,7 @@ function gitTopp() {
  * /chat-terminal); ALDRIG tyst — varje städning loggas och auditeras.
  */
 function städaFöräldralösaZcode() {
-  const läsPs = () => {
-    try {
-      return execFileSync("ps", ["-eo", "pid=,ppid=,etimes=,args="], { timeout: 10_000 })
-        .toString()
-        .split("\n")
-        .map((r) => r.trim().match(/^(\d+)\s+(\d+)\s+(\d+)\s+(.+)$/))
-        .filter(Boolean)
-        .map((m) => ({ pid: Number(m[1]), ppid: Number(m[2]), ålder: Number(m[3]), args: m[4] }));
-    } catch {
-      return [];
-    }
-  };
+  const läsPs = lasProcesser;
   const ärLäcktZcode = (p) =>
     p.ppid === 1 && p.pid !== process.pid && !/ttyd|tmux/.test(p.args) && /zcode/i.test(p.args) && p.ålder >= 300;
   const dödade = [];

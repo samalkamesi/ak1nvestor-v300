@@ -17408,3 +17408,43 @@ Fabriksagent s8-u1 (vakt). VAL med duplikatkontroll (worklog+OPTIMERING+lage: mi
 Fabriksagent s8-u3 (vakt). VAL (anspråk disk-först 15:2x + poolen atomärt o164; duplikatkontroll: grep "beroende-vakt-cron" worklog+OPTIMERING = 0 — vakten skapades 09-15 ur next-CRITICAL-lärdomen "ingen kör npm audit i rutin" men driftsattes ALDRIG: ingen cron-rad, endast manuella agentkörningar 09-18/19/20 ×5, sedan TYST DÖD i 4 dygn = o50-klassen på instrumentet som självt föddes ur den lärdomen; meta-rot samma glidningsklass som o148: kunskap i huvuden i stället för i maskinen). KUR ×3: (1) data/infra/contabo/beroende-vakt-cron.sh (o85-doktrinen — klass ur verktygets EGEN utdata: GRÖN/FYND/VAKTFEL/OVÄNTAD-exit-utan-kontrakt/SKIPPAD-deploylås via flock -n -c true; larmbrygga med skyddad nyckel; FYND-prompten bär o46-kontraktet: patch-köpost, ALDRIG npm install) + crontab "37 5 * * *" idempotent installerad (fritt fönster, efter dödlänkarna före rop-hälsan); (2) idempotent SENASTE-skriv i verktyget — rubriktiden hade smutsat committad git-yta VARJE morgon (prod-synk-larm); kroppen jämförs, oförändrad ⇒ ingen skrivning (SENASTE=oforandrad, mätningstid i gitignorade json:n), wrappern committar ENDAST vid SENASTE=ny; (3) svit verktyg/testa-beroende-vakt-cron.mjs — ÄKTA verktyget mot mockad npm (PATH-injektion + nya BERODEVAKT_RAPPORTKATALOG/VAKTKATALOG-överridningar) + wrapperns alla klasser mot mockar; konstruktörsfånget (o69) fällde svitens egna mockbuggar (chmod-x: Node fortsätter PATH-sökning vid EACCES ⇒ skarp npm rök; stringify-dödade radankrar). FRISKT LÄGE (fritt fönster): 7 sårbarheter (0 critical · 1 high js-yaml via @mdxeditor-major = känd öppen kodvåg, ingen köpost · 6 moderate) IDENTISKT med 09-20; rapportdiffen REELL (o124:s 4 patchar installerade+borta, 7 nya inom-intervall t.ex. next 16.3.6 patch — prod-synkens fönster); exit 1 opipat; andra körningen skrev EJ om rapporten = idempotensen SKARPT bevisad. BEVIS: svit 16 PASS / 0 FAIL · node --check + bash -n grönt · tsc projektbinär exit 0 · cron-rad verifierad i crontab · INGET bygge (src/ orörd). KVD: R2 orörd · data/blogg orörd · syskonytor orörda (u1:s granssnittsvakt-yta lämnad ospårad; poolfilen commit:as hel — varje post en atomiskt låst reservation) · commit -F + explicit pathspec · grinden bärs. Kö: js-yaml-major = framtida @mdxeditor-kodvåg (styrelse) · 7 inom-intervall till prod-synkens patchfönster · 05:37 morgon-pulsens loggrad = första driftbeviset · larmkedjan skarpt obevisad (OBS-klass o157 §kö). Protokoll: data/forskning/OPTIMERING/o164-beroendevakt-driftkanal-s8.md [fabrik]
 
 ## SPÅR 7 s7-u2 o165 (omdispatch) — 2026-09-24 ~16:0x lokal: o159 §9:S EFTER-VAKARÖVERTAG BYGGT SOM STÅENDE INSTRUMENT — deployen av cv-kuren (21e67000, .cv-bolagsektion) är RAM-blockerad (bygg OOM-dödat 12:24Z + 13:41Z; synken kräver ~3 GB, fabriksbarn håller minnet; kuren ÄR anfader till HEAD c6cbccd3 men ej till deployade a2c9d663 — bevisat med merge-base), så EFTER-kvitteringen "mät före/efter, deploy, prod 200, mätning bokförd" är nu en autonom organism: verktyg/_s7u2o165-eftervakt.mjs (setsid nohup, 6 h tak, single-instans-O_EXCL) pollar DEPLOYAD med anfaderkontroll → prod 200 ×3 loopback → KANALBEVIS (serverad /bolag-HTML bär klassen + --cv-h, deployad CSS-chunk bär regeln; brott = RÖD) → RAM ≥ 1 500 före varje Chrome-fas → kanoniska prestanda-lighthouse.mjs o159-efter ×3 (/data/nyckeltalsguide /bolag /bolag/eqnr-ol, oförändrat instrument) → skroll-CLS-sond (förra rundans OCOMMITTADE _s7u2o159-skrollcls.mjs tas om hand och committas) → dom i lighthouse/o165-eftervakt-dom.json: struktur dom-bar alltid (kanal + CLS 0 ×3 heligt + skrollsumma < 0,01), /bolag TBT < 3 000 = GRÖN, ≥ 3 000 dagtid = GUL laststämplad referens (metrologiregeln o143 §3 — natt-cronen 03:27 äger TBT-slutdomen, o158 §6). Verifierat: node --check GRÖNT + två kortbudgetskörningar (falsk anfadersida bevisad mot a2c9d663; O_EXCL-låsläckan funnen av första testet och kurerad med exit-handler — omtest rent). KVD: src orörd = inget bygge · R2 orörd · data/blogg/ orörd · syskonytor orörda (s9:s SYSTEMKARTAN.md-läge lämnat; explicit pathspec) · poolen commit:as hel. Nästa steg: när vakten domar → boka + committa mätfilerna; tidsgräns ⇒ omstart; o160 §7:s strukturkvitto av kommande deploy förblir öppet skilt objekt. Protokoll: data/forskning/OPTIMERING/o165-prestanda-o159efter-vakarotag-s7.md [fabrik]
+
+## SPÅR 9 s9-u3 3/3 (manifest auto-s9-1790257516357) — 2026-09-24 ~16:1x lokal: SYSTEMKARTAN-dokvåg C16 + A4 + B14 + E29-PIVOT — tre system egenmätta mot verkligheten, snitt 7,4 orörd
+
+Fabriksagent s9-u3 3/3 (byggare, manifest auto-s9-1790257516357). LEVERANS:
+SYSTEMKARTAN-uppdatering C16+A4+B14 + diff mot verkligheten — C16 (LEVER 8
+orörd): UTTAGSFLASKHALSEN ÖPPNAD — 55 → 94 publicerat LIVE (94 unika slugar
+på /blogg, 200 på 72–88 ms, mätt) via v164-serien + dagens kf1-kris-kur
+(sajten levererade 0 artiklar: pm2-kraschloop + oskyddad JSON.parse; kf1
+06:02 gav per-fils felhantering + HEL formkontroll i src/lib/content.ts =
+C15-kö); kön 235 → 407 filer (+34/dygn acceleration: granskning 203 var 107
+· kvartal 94 · m9-ko 7 frusen sedan 09-15); sammanställningen 350 297 B
+förynad 10:04; m9-fabriken kodstilla (bf9e06af) = ekosystemtesen bekräftad;
+M9-GRANSKNING-guiden 4 dagar stilla (spårets levande-hållning-kö). A4 (LEVER
+7 orörd): determinismen FJÄRDE varvet med exakt prod-match samma dag — FNV-1a
+(salt 1) ombereknad ur route.ts:s ÄKTA ROTATION ger 09-24 → NDA-SE.ST =
+API-svaret EXAKT (Nordea 200,5 SEK, 52v-pos 0,966); första tredagarskedjan
+offline (09-22 ERIC-B · 09-23 AZN); nyckelfiler 0 commits sedan 09-16;
+svitgap lever; quiz-frusenheten HARMONISERAD med u2:s rotsvar = generatorn
+ÄKTA, 161 nya kurser bär 0 quiz = strategi — andelen quiz-bärande kurser
+67,5 % sjunkande (strategisk klass). B14 (LEVER 5 orörd): viloläget DAG 6 —
+/etc/crontab rad 25 intakt, /api/cron/nyheter fortfarande 404 (egen sond),
+/api/nyheter identiskt tomt, tom-cachen omskriven 15:54, /nyheter 200 tomt;
+MEN svitbilden FLYTTAD — 09-20-dokvågen missade kontraktssviten
+testa-motor-nyhets-motor.mjs (bc522def 09-20 05:41, 46/46 PASS: parsRssXml ·
+SSRF · påverkansräkning · juridikgrind) + NYHETS-MOTOR 44 PASS i o114:s para
+⇒ svitgapet halverat; kö: kur av rad 25 (ompekning till /api/nyheter/scan
+ELLER gallring) = R1-ärendet. E29-PIVOT ärligt bokförd: u1 + jag valde BÅDA
+E29 disk-först (klara=[] race utan anspråksfil); deras sektion landade under
+mina Edits ⇒ avstående som systemval, mina överlappande värden (crontab 9
+rader · beslutsminne 217/rond 98 · protokoll 44 i drift · fabrik 374/376 ·
+evighetsmotor 1 438 · CRON_SECRET 0) redovisas i kartan ENDAST som
+korsvalidering = oberoende samsyn; E29-blocket lämnat orört. KVD: data-only —
+src/ orörd = INGET bygge · R2 orörd (priser/tier/publicering ENDAST lästa,
+publiceringen 55→94 är andras faktum) · data/blogg/ orörd · crontab
+LÄST/ALDRIG skriven · syskonytor: u1:s E29 + u2:s A1/C18 orörda (min pivot).
+RIDALONG-NOTIS (o18/natt-precedensen): mina fyra kartytor (C16-blocket +
+A4-blocket + B14-blocket + u3-sektionen) bars i u2:s filcommit f1f4b007
+15:57:57 — de låg i det delade trädet när deras commit verkställde;
+innehållet identitetsverifierat i HEAD (grep 1/3/3), trädläge korrekt;
+DENNA commit bär worklog-kvittot. [fabrik]

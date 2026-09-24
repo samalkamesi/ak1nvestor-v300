@@ -2722,7 +2722,7 @@ i sviten själv (en --hoppa-over-rad) så CLI-kanon blir mindre avgörande.
 | E28 | Styrelsemotorn (AI-styrelsen) | Styrning | **FLAGGA** | 7 | 09-21: FLAGGA 6→**7**, HARMONISERAD dom u2+u3 (samma omgång): "R2-verkställningen får inget att verkställa" MOTBEVISAD (u2: kundorder-mötet 21:52 med 10 åtgärder + R2-stängsel per rad i skarp drift, 6a36717e/v214-sviten; u3: verkställningsleden når LAGRUMMED KOD — f5a9ac2f 6 filer/748 r: GDPR art 5/13/17/25 + ÄL 22§ + ångerrätt i hårda grindar, i TRÄD väntar deploy) + beslutsminnet 97 poster + KANONISKT verktyg beslutsminne.mjs med LAGGRUNDEN-NEKA-grind (eldprov 4/4 + första verkliga fångstet; --las EGEN) + ROND 128 kunddelegation "alla rättsliga beslut grundas i lagar" (återkallelig, R2 kvarstår); men FLAGGAN KVAR: gap 1 (JSON-syntesfallback) lever i SAMMA kundorder-möte + ordförande 66 s/juridik 90 s ute (E33-precedensen kräver roten borta); ronder punktliga 14:43/17:43/20:43; protokoll 200 · mote 400 (tom POST = lever); sviten tsx-låst i fönstret |
 | E29 | Autonoma organet + cron-pipeline | Styrning | LEVER | 8 | 09-20 (s9-u2): fabrik **220 klara/221** (+33/21 h; manifestets barn levande i ps) · 706 utdataloggar · beslutsminne **91** (rond 66, +14/dygn) · evighetsmotorn 882 kontroller · pumpor 1 d 16 h; **DÖDA-LÄNKAR-CRONEN driftsatt** (användar-crontab 04:17, 5 rader totalt): första organiska körningen 09-20 04:17 DRIFTFÖNSTER-klassad RÄTT (202/2 503 = 8,1 % > tak 5 %, rapport kasserad, inget falskt larm; testet 09-19 GRÖNT); **o117 reservationsmekanik** (verktyg 323 r + svit 24 PASS under flock, rotorsaka 5×) = protokollnumrets race-kur byggd men fabriken anropar ännu ej (grep 0) — gap 0 halvstängt; CRON_SECRET 0 env kvar · kunduppdragsfiler frånvarande · svitgapet för fabrik/evighet/uppdrag kvar (reservationssviten finns) |
 | E30 | B2B / AK1A PRO | Styrning | INAKTIV | 6 | Väntar jurist (R2); ÅTERDIFFAD 09-19: /pro 500 LÄKT (byggklass; 200 + noindex + ISR-serverad som tier-ytorna), stängningsdoktrinen HEL (flagga AV ×3 · robots /pro/admin 16 block · sitemap 0 äkta /pro-URL · grindar 401/405/200-avsiktligt), sviter grön/grön/16-1 (G1 kvarstår), 3 API-rutter (talrättning), arProYta lever; G1-fix = teknisk köpost före aktivering |
-| E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | 09-20 (s9-u3): o110-lang-bindningen LEVER — html lang="en"/"ar" serverfastställd på 26 spegel-listsidor + dataset-byggarna (4/4 sonder live, 200); NYTT KONTRAKTSTEST footer-/brodkrumna-etiketter ×3 språk 46/0 GRÖN EGEN (båda bindningarna samma källa); ordlista 2 745→2 790 r; kön 320 låst + termbank 0 poster oförändrade (v211 = s3/s4-innehåll, disjunkt); tier-portföljspeglar saknas fortfarande; I1-audit opåbörjad (= läget); MÖS grönt fjärde gången 107/0/0 (09-19) |
+| E31 | Flerspråkighet (MÖS + termbank + speglar) | Styrning | PÅGÅR (I1) | 7 | 09-24 (s9-u1): SPRÅKKONTRAKTET (o157:testa-sprakkontrakt.mjs) första dokvågs-omkörningen GRÖN EGEN — 0 fel · 0 OBS · 0/126 oprovade · exit 0 · rutter 63/18/18 · 15 speglade ytor 200×3 · 39 sv-only-ytar med EXAKT 404 · 0 asymmetrier (kontraktet självgodkännande ur FILSTRUKTUR — ny spegel träder automatiskt in, ingen manuell registrering); nyckeltalsguide-domen MASKINLÄSBAR i rapportens dom-fält (AVSIKT enbart-sv, o152 §restpost 2) + prod egenmätt sv 200/en 404/ar 404; lang-bindningen återmätt (`<html lang="en"` / `lang="ar" dir="rtl"`); ordlista 2 790→**2 803** r (o156:s dataset.guideLank ×3 rad 1836, en/ar bär ärlig in-Swedish-varning); DEPLOY-KLYFTA MÄTT: .next 09-22 06:04 ÄLDRE än o156 02:16/o157 02:21 (09-24) ⇒ guidens sitemap-post (sitemap.ts:134) + 33 dataset-inlänkar + guideLank-text i TRÄD, EJ live (live-sitemap 0 nyckeltalsguide-URL, egen räkning); kärnan exakt kodstilla (820/890/346/342/540 r) · speglar 18/språk · kön 320 + termbank 0 poster oförändrade; tier-portföljspeglar saknas (R2-väntat; kontraktet dömer 404 korrekt tills speglar byggs); I1-KVALITETS-audit fortfarande opåbörjad — VÄGKONTRAKT ≠ språkvalitets-audit, läget I1 kvar (= läget) |
 | E32 | Guldkällorna (variabler + siffror) | Grund | LEVER | 8 | 09-21 (s9-u3): 489 kurser (+57/2 dygn, commit 15:31) = deep-courses 489 EGEN men STARTSIDAN levererar 476 = 13 bakom (gap 2 SKÄRPT till mätt live-divergens — ISR-fönster/räknarklyfta; vakten har sitt första exemplar); quiz/XP frusna dag 6; priser.json orörd 14 d (fbfb135f); koden stilla |
 | E33 | Supabase-persistenslagret (system_events-mönstret) | Grund | LEVER | 7 | 09-21 (s9-u2): kedjan **6 konsekutiva nattexporter** (09-15→09-20 02:40 lokal; 168 696 r, antal==totaltFranApi, 0 dublett-id; äkthet +2 629/dygn; id-diff 09-19→09-20 = 0 försvunna — 09-21:natten körs 02:40 lokal EFTER mätningen, ej gap) men OIDENTIFIERAD DAGLIG RADERAREN lever vidare: vagscan/signal/organ = 0 rader i 09-20-arkivet (topp oversattning 146 190 = 86,7 % · trafik 21 361 · sakerhet 1 031); ALTER V1 kvar (rad 31 type-kolumnen); inventory 29 d; översättningskön ej återmättbar i fönstret (batch-status >60 s + admin-rutt 401) |
 | E34 | Drift, backup & DR (Contabo) | Grund | LEVER | 9 | 09-22 (s9-u3): läke-kedjan BEVISAD i skarpt läge ÅTER — nattens omdriftförsök (npm ci 00:09Z "864 packages" → byggkörning **OOM-dödad 00:12:16Z**, FÖRE fabrikens barnspawn 00:15:20Z = omgången oskyldig) återställde .next ur läkan: live BUILD_ID == .next-laeke/BUILD_ID == mz0CMudlCyiak0-OM2SZN, pm2 ak1a ostörd sedan 09-21 22:28:47Z, canaries /dataset /kurser /blogg /studio **200 ×4 EGENA** = kontinuitet genom dödat försök (läke-klassens tredje skarpa bevis) men deploy-svälten består (inget grönt omdrift sedan 09-21 kväll — trädet väntar); ISR-värmaren **44/44 TREDJE natten** (09-19 23:08 + 09-20 + 09-21 03:10:59; radens "11/44 glider nedåt" var inaktuell, rättad); nattkedjan grön genom 09-21 (dump 32,0 MB/1 387 527 r · markörvakt 1/1 · app-dump GRÖN 88,3 MB retention körd · moln 11 filer 26,68 MB, system-events-full 170 979 KOMPLETT); .next-laeke kvar på disk (städning gäller EFTER LYCKAD deploy — ingen inträffat, korrekt läge); rot-gapet artefaktverifiering STÄNGT (omg 9) + patch-kön slutlevererad 09-18 består; kvar: hybrid-sync, Storage-restore, MIGRERING-NY-DATOR.md, REST idempotensgrind åt prod-synkägaren |
@@ -5835,7 +5835,38 @@ INAKTIV — aktivering väntar jurist (K-B2B) + kund (R2).*
   demoklient-G1 röd — demodatot saknar fullständigt AKM2Resultat; fixa
   fixture eller testkontrakt innan B2B-aktiveringspaketet hämtas fram.
 
-## E31. Flerspråkighet: MÖS + termbank + speglar — PÅGÅR (I1) — 7/10 *(uppdaterad 2026-09-20)*
+## E31. Flerspråkighet: MÖS + termbank + speglar — PÅGÅR (I1) — 7/10 *(uppdaterad 2026-09-24)*
+
+*Uppdatering 2026-09-24 (dokvåg s9-u1, manifest auto-s9-1790210106768):
+o157:s SPRÅKKONTRAKT första dokvågs-omkörning — GRÖN EGEN (`node
+verktyg/testa-sprakkontrakt.mjs` mot loopback): **0 fel · 0 OBS · 0/126
+oprovade · exit 0** · rutter 63/18/18 (sv/en/ar) · 15 speglade ytor 200×3 ·
+39 sv-only-ytor med exakt 404 · 0 asymmetrier · 3 rötter 200. Kontraktet
+härleds ur FILSTRUKTUREN (huvud/(en)/(ar)) = SJÄLVUNDERHÅLLANDE — ingen
+manuell registrering att glömma: R1 speglat ⇒ 200×3 krävs · R2 sv-only ⇒
+en/ar 404 är det KORREKTA svaret (domen som grönt kontraktsvärde) · R3
+asymmetri ⇒ OBS; 429/5xx omprov ×1, ALDRIG falsgrönt, >10 % oprovade ⇒
+exit 2 (o147-precedensen). DOMEN MASKINLÄSBAR: nyckeltalsguidens en/ar-404
+= AVSIKT (o152 §restpost 2, slutstängd av o157) bokförd i rapportens
+dom-fält — kunskapen herledd ur källa i stället för prosa i huvuden
+(o148-glidningsklassens kur applicerad på E31:s värld). LANG-BINDNINGEN
+återmätt live: /en/kurser `<html lang="en"` · /ar/kurser
+`lang="ar" dir="rtl"` (serverfastställt). ORDLISTA 2 790 → **2 803 r**
+(+13): o156:s dataset.guideLank ×3 (rad 1836) — en/ar bär ärlig
+"(in Swedish)/(بالسويدية)"-varning = nyckel speglad utan att lova spegel.
+DEPLOY-KLYFTAN MÄTT: .next/BUILD_ID (09-22 06:04) ÄLDRE än o156 (02:16)
+och o157 (02:21) 09-24 ⇒ guidens sitemap-inbjudan (src/app/sitemap.ts:134,
+daily/0.8) + 33 dataset-inlänkar + guideLank-text finns i TRÄD, EJ live —
+live-sitemapen bär 0 nyckeltalsguide-URL (egen räkning); prod svarar ändå
+kontraktsrätt (sv 200 / en 404 / ar 404, egna HTTPS-sonder); grönt bygge =
+prod-synkens ägo (dokvågen bygger ALDRIG). OFÖRÄNDADE: kärnan exakt
+kodstilla (motor 820 · lager 890 · kalla 346 · kontroller 342 · termbank
+540 r, wc) · speglar 18 page.tsx/språk · kön 320 poster ·
+termbank-tillagg 0 poster (09-07) · tier-portföljspeglar saknas (R2-väntat;
+kontraktet dömer deras 404 korrekta tills speglar byggs). DOM: PÅGÅR (I1)
+7 kvar — ett VÄGKONTRAKT (struktur 200/404) är inte I1:s KVALITETS-audit
+(stickprov sv↔en↔ar, 0 artefakter fortfarande); E33/B14-precedensen. Snitt
+7,4 (303/41) oförändrat.*
 
 *Uppdatering 2026-09-20 (dokvåg s9-u3, manifest auto-s9-1789898701601):
 o110-lang-bindningen bokförd (landade 09-20, dagen efter förra diffen).
@@ -6965,3 +6996,37 @@ Snitt **7,4/10 oförändrat** (303/41 — inga poängrörelser vid denna dokvåg
 Sidofynd till nästa dokvåg: E33 — molnarkivets system-events-full 170 979
 (09-21, +2 283/dygn, 7:e nattexporten pågår efter mätningen); E35 —
 synk-build.loggens "middleware-to-proxy"-rad (Next-migreringsnotis).
+
+## UPPDATERING 2026-09-24 (dokvåg s9-u1, manifest auto-s9-1790210106768 — E31 Flerspråkighet diffad mot verkligheten; o157:s språkkontrakt första egenomkörningen + deploy-klyftan mätt)
+
+Ett system (uppdrag 1/3), varje rad MÄTT i arbetsytan 2026-09-24 under
+dokvågen — inte läst ur worklog. Anspråk disk-först (data/vakten/
+_s9u1-0924-ansprak.txt, gitignorerad) FÖRE mätning; inga syskon klara i
+manifestet vid anspråkstillfället (status.klara = []).
+
+**E31 — vad som hänt sedan 09-20-passningen (två vågor i E31:s domän):**
+
+| Mått | Kartan 09-20 | Verkligheten 2026-09-24 (mätning) |
+|---|---|---|
+| Språkkontraktssvit | fanns ej | `testa-sprakkontrakt.mjs` (o157 02:21) GRÖN **EGEN KÖRNING**: 0 fel · 0 OBS · 0/126 oprovade · exit 0 · rutter 63/18/18 · **15 speglade ytor 200×3** · **39 sv-only med exakt 404** · 0 asymmetrier · 3 rötter 200; kontraktet självgodkännande ur filstruktur (ny spegel träder automatiskt in) |
+| Nyckeltalsguide-domen | o152-restpost "vill utredas" | MASKINLÄSBAR i rapportens dom-fält (AVSIKT enbart-sv) + prod egenmätt: sv **200** / en **404** / ar **404** — kontraktets R2-svar i skarp drift |
+| Ordlista | 2 790 r | **2 803 r** (+13): dataset.guideLank ×3 (rad 1836), en/ar med ärlig "(in Swedish)/(بالسويدية)"-varning |
+| Deploy-status för o156/o157 | (fanns ej) | **KLYFTA MÄTT**: .next/BUILD_ID 09-22 06:04 < o156 02:16 < o157 02:21 ⇒ guidens sitemap-post (src/app/sitemap.ts:134) + 33 dataset-inlänkar + guideLank-text i TRÄD, **EJ live** (live-sitemap 0 nyckeltalsguide-URL, egen räkning); grönt bygge = prod-synkens ägo |
+| Lang-bindning | 26 spegel-listsidor + dataset-byggarna | ÅTERMÄTT levande: /en/kurser `<html lang="en"` · /ar/kurser `lang="ar" dir="rtl"` |
+| Kärna + speglar + kön + termbank | 820/890/346/342/540 r · 18/språk · 320 · 0 poster | EXAKT oförändrat (wc + find + JSON-läsning; kärnan kodstilla sedan 09-19) |
+| Tier-portföljspeglar | saknas | saknas fortfarande (R2-väntat; kontraktet dömer 404 korrekt tills speglar byggs) |
+
+DOM: **E31 PÅGÅR (I1) 7 ORÖRD** — språkkontraktet + den maskinläsbara
+domen är verklig tillväxt (E31:s första självgodkännande kontraktstyta),
+men I1-läget definieras av KVALITETS-audit (stickprov sv↔en↔ar: ordlängd,
+okända tecken, falska vänner — 0 artefakter kvar) och ett VÄGKONTRAKT
+(struktur 200/404) stänger inte den luckan; E33/B14-precedensen (kunskap
+utan gapstängning ⇒ score orörd). Snitt 7,4 (303/41) oförändrat.
+
+KVD: data-only — src/ orörd = **INGET bygge** · sviten KÖRD endast
+(read-only GET-sonder + rapport till gitignorerad data/vakten/) · R2 orörd
+(priser/tier/publicering ej rörda; tier-speglar nämnda read-only) ·
+data/blogg/ orörd · syskonytor orörda. Kö till prod-synkägaren: grönt
+bygge gör guidens sitemap-inbjudan + 33 dataset-inlänkar + guideLank live
+(E31:tider EFTER-mätning vid nästa gröna deploy — språkkontraktssviten
+kommer då att kräva 200×3 osvagt, guiden förblir sv-only ⇒ 404 korrekt).

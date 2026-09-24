@@ -2,10 +2,14 @@
 // Lägen:  node _v182-emottag.mjs status     — kontrollera fragment på disk, uppdatera V167-GRANSKNING.md (VID LEVERANS)
 //         node _v182-emottag.mjs integrera  — 20/20 GRÖNA krävs: append + formatvakt + KVD + rapport (commit gör huvudagenten)
 // Kontrakt: data/forskning/KURS-FAS2/DESIGN-v167-ovningskapitel.md
-import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
+// v170-kurer (KVD-läxorna rond 180/182): KURSBLOCK byggs om per körning (senaste mätningen
+// gäller — gamla block ERSÄTTS, appendades förr vilket lämnade RÖDA pre-kurka-block kvar) ·
+// levererad-tidsstämpel ur fragmentets mtime (väntar-listans dubbelarbetes-synlighet) ·
+// STÄNGDVAKT: status/integrera vägrar röra en stängd vågs granskningsfil (bevisbevarande).
+import { readFileSync, writeFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { execSync } from 'node:child_process';
 
-const ROT = '/home/ak1a/agent/ak1';
+const ROT = process.env.EMOTTAG_ROT || '/home/ak1a/agent/ak1'; // sandbox-overrid för självtest
 const FRAGDIR = ROT + '/data/forskning/KURS-FAS2/v167-fragment';
 const DC = ROT + '/public/deep-courses.json';
 const GRANSK = ROT + '/data/forskning/KURS-FAS2/V167-GRANSKNING.md';
@@ -80,6 +84,7 @@ function kontrolleraFragment(slug, fil, rubrik, kapNum) {
   const ok = (namn) => P.push(namn);
   const fel = (namn) => F.push(namn);
   if (!existsSync(p)) return { slug, saknas: true, P, F };
+  const levereradTs = new Date(statSync(p).mtime).toISOString().slice(0, 16).replace('T', ' ');
   let f;
   try { f = JSON.parse(readFileSync(p, 'utf8')); } catch (e) { fel('JSON-parse: ' + e.message.slice(0, 60)); return { slug, P, F }; }
   if (f.slug !== slug) fel('slug-match (' + f.slug + ')');
@@ -127,7 +132,7 @@ function kontrolleraFragment(slug, fil, rubrik, kapNum) {
   const träff = källaTal.filter(t => mål.includes(t));
   const andel = källaTal.length ? träff.length / källaTal.length : 0;
   andel >= 0.8 ? ok('talmarkörer ' + träff.length + '/' + källaTal.length + ' = ' + Math.round(andel * 100) + '%') : fel('talmarkörer ' + träff.length + '/' + källaTal.length + ' = ' + Math.round(andel * 100) + '%');
-  return { slug, P, F, k, andel, källaTal: källaTal.length };
+  return { slug, P, F, k, andel, källaTal: källaTal.length, levereradTs };
 }
 
 function uppdateraGranskningsfil(resultat) {
@@ -140,21 +145,33 @@ function uppdateraGranskningsfil(resultat) {
   const pass = levererade.reduce((s, r) => s + r.P.length, 0);
   const feltot = levererade.reduce((s, r) => s + r.F.length, 0);
   g = g.replace(/^## SAMMANFATTNING:.*$/m, '## SAMMANFATTNING: ' + pass + ' PASS · ' + feltot + ' FEL' + (levererade.length === 0 ? ' (vågen inleds)' : ''));
-  if (!g.includes('## KURSBLOCK')) g += '\n## KURSBLOCK\n';
-  for (const r of levererade) {
-    const marker = '### ' + r.slug;
-    if (g.includes(marker)) continue; // idempotent
+  // v170-kuren: KURSBLOCK byggs om från grunden varje körning — senaste mätningen gäller.
+  // (Förra logiken hoppade över kurser som redan hade block ("idempotent") — exakt så låg
+  // block från mätningar FÖRE mätkurkorna kvar och skilde sig från slutläget.)
+  const block = levererade.map(r => {
     const status = r.F.length === 0 ? 'GRÖN' : 'RÖD';
-    g += '\n### ' + r.slug + ' — ' + status + ' (' + r.P.length + ' PASS · ' + r.F.length + ' FEL)\n';
-    g += (r.P.map(x => '✓ ' + x).join('\n') || '(inga)') + '\n';
-    if (r.F.length) g += r.F.map(x => '✗ ' + x).join('\n') + '\n';
-  }
+    const rader = ['### ' + r.slug + ' — ' + status + ' (' + r.P.length + ' PASS · ' + r.F.length + ' FEL)' + (r.levereradTs ? ' · levererad ' + r.levereradTs : '')];
+    r.P.forEach(x => rader.push('✓ ' + x));
+    r.F.forEach(x => rader.push('✗ ' + x));
+    return rader.join('\n');
+  }).join('\n\n');
+  const sektion = '## KURSBLOCK\n\n' + block + '\n';
+  g = g.includes('## KURSBLOCK')
+    ? g.replace(/## KURSBLOCK[\s\S]*$/, sektion) // KURSBLOCK är filens sista sektion (v167-arkitekturen)
+    : g + '\n' + sektion;
   writeFileSync(GRANSK, g);
   return { levererade: levererade.length, gröna: gröna.length, pass, feltot };
 }
 
+// ---------- STÄNGDVAKT (v170): en stängd vågs granskningsfil är arkiverat bevis ----------
+function vagStangd() {
+  const g = readFileSync(GRANSK, 'utf8');
+  return /^## SAMMANFATTNING:.*STÄNGD/m.test(g);
+}
+
 // ---------- STATUS ----------
 if (process.argv[2] === 'status') {
+  if (vagStangd()) { console.log('VÅG STÄNGD — emottaget arkiverat: granskningsfilen lämnas orörd (bevisbevarande, v170-kur)'); process.exit(0); }
   const resultat = KURSER.map(([slug, fil, rubrik, kapNum]) => kontrolleraFragment(slug, fil, rubrik, kapNum));
   const läget = uppdateraGranskningsfil(resultat);
   console.log('v167-LÄGE: ' + läget.levererade + '/20 levererade · ' + läget.gröna + ' GRÖNA · SAMMANFATTNING ' + läget.pass + ' PASS · ' + läget.feltot + ' FEL');
@@ -164,6 +181,7 @@ if (process.argv[2] === 'status') {
 
 // ---------- INTEGRERA ----------
 if (process.argv[2] === 'integrera') {
+  if (vagStangd()) { console.log('VÅG STÄNGD — integrera vägrar: kapitlen är redan appendade (dubbelappend-skydd, v170-kur)'); process.exit(1); }
   const resultat = KURSER.map(([slug, fil, rubrik, kapNum]) => kontrolleraFragment(slug, fil, rubrik, kapNum));
   const saknade = resultat.filter(r => r.saknas);
   const röda = resultat.filter(r => !r.saknas && r.F.length);

@@ -11,9 +11,9 @@ ALDRIG nya kurser i massproduktion.
 
 | Våg | Spår | Innehåll | Kanal | Status |
 |---|---|---|---|---|
-| v169 | kunduppdrag (högst) | RAPPORTAKADEMIN-verkställan: sondera DoD-gap (vertikalt snitt, citat-validator, karantänsintag, fel-ledger, GDPR-konfig i src) → implementera återstående av LAGBESLUT STYRELSE-MUADCVYF-CG1JM2:s tio åtgärder → stäng kunduppdraget (uppdrag-klart.json + UPPDRAG KLART) | session (kod = bygg under lås) | bokad — NÄSTA VÅG |
-| v170 | kvalitet/verktyg | KVD-läxor från v166/v167: granskningsköns väntar-lista uppdateras VID LEVERANS (dubbelarbetets rot: d13/d19/d22) + emottagets idempotenssvaghet (block från mätningar före mätkurkar låg kvar) | session | bokad |
-| v171 | SEO (spår 3) | Nästa branschomgång SEO-guider enligt SEO-GUIDER-2026-09.md (rotation: senaste spår = kurser) | agentfabrik när kvoten reset:ats 2026-09-28 01:22:30, annars session | bokad |
+| v171 | SEO (spår 3) | Nästa branschomgång SEO-guider enligt SEO-GUIDER-2026-09.md (rotation: senaste spår = kurser) | agentfabrik när kvoten reset:ats 2026-09-28 01:22:30, annars session | bokad — NÄSTA VÅG |
+| v172 | kvartalsrapporter (spår 4) | Q3 2026 slutar 09-30: förbered analysramverket (vilka bolag i universet rapporterar v 40–44, tidtabell, mallar ur AKM2) så rapportvågen kan starta direkt vid publiceringarna | session | bokad |
+| v173 | dataset-djup (spår 2) | Fortsätt djupet i bolagsuniverset enligt spårets etablerade mönster (rotation efter två icke-2-spår) | agentfabrik efter kvot-reset, annars session | bokad |
 
 ## VILOR / VÄNTAR KUND (R2)
 
@@ -31,3 +31,7 @@ ALDRIG nya kurser i massproduktion.
   registerharmonisering) — kön rotad om till verkligt läge: kunduppdraget
   RAPPORTAKADEMIN främst (vilat sedan 09-21, aldrig stängt), därefter
   kvalitetsläxor, därefter SEO-rotation. Fabrikens kvot reset 2026-09-28.
+- 2026-09-24 r184–185 (Φ): v169 RAPPORTAKADEMIN STÄNGT (DoD bevisad,
+  uppdrag-klart.json, d4d8fc8e) → v170 KVD-läxor LEVERERADE (emottagets
+  v170-kurer + EMOTTAG-MÖNSTER-dokumentet) → kö: v171 SEO, v172 kvartals-
+  rapporter (Q3 slutar 09-30), v173 dataset-djup.

@@ -1,0 +1,56 @@
+{
+  "ts": "2026-09-24T12:13:40.199Z",
+  "ramMB": 3946,
+  "sida": "/bolag",
+  "throttle": {
+    "cpu": 4,
+    "netMs": 150
+  },
+  "kurCss": "@media (max-width: 640px) { section:has(> div.overflow-x-auto) { content-visibility: auto; contain-intrinsic-size: auto 87rem; } }",
+  "runs": [
+    {
+      "namn": "a3",
+      "lag": "A(ref)",
+      "fcp": 848,
+      "langtasks": 9,
+      "langtasksDurTotal": 1106,
+      "fonsterTbt": 526,
+      "kurLandsatte": false,
+      "cvAutoAntal": 0,
+      "platshallare1392": 1
+    },
+    {
+      "namn": "b3",
+      "lag": "B(kur)",
+      "fcp": 840,
+      "langtasks": 9,
+      "langtasksDurTotal": 997,
+      "fonsterTbt": 277,
+      "kurLandsatte": true,
+      "cvAutoAntal": 10,
+      "platshallare1392": 8
+    },
+    {
+      "namn": "a4",
+      "lag": "A(ref)",
+      "fcp": 468,
+      "langtasks": 12,
+      "langtasksDurTotal": 1529,
+      "fonsterTbt": 693,
+      "kurLandsatte": false,
+      "cvAutoAntal": 0,
+      "platshallare1392": 1
+    },
+    {
+      "namn": "b4",
+      "lag": "B(kur)",
+      "fcp": 456,
+      "langtasks": 8,
+      "langtasksDurTotal": 716,
+      "fonsterTbt": 133,
+      "kurLandsatte": true,
+      "cvAutoAntal": 10,
+      "platshallare1392": 8
+    }
+  ]
+}

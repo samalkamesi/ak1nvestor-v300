@@ -1,0 +1,801 @@
+{
+  "datum": "2026-09-24T11:56:02.378Z",
+  "bas": "http://localhost:3000",
+  "throttle": true,
+  "sparMs": 12000,
+  "injeceradCss": "ja",
+  "sidor": [
+    {
+      "sokvag": "/bolag",
+      "fcpTs": 1358243954,
+      "traceEventAntal": 28942,
+      "antalLangtasks": 24,
+      "tbtFonsterFCP5s": 2099,
+      "totaltCpuArbeteFCP5s": 6615,
+      "layoutTotalTrace": 819,
+      "layoutShiftsTrace": [],
+      "langtasks": [
+        {
+          "start": 1358242956,
+          "dur": 174,
+          "blocking": 124,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "EventDispatch",
+              "url": "",
+              "urlFil": "(dokumentet)",
+              "funktion": "",
+              "dur": 174
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "",
+              "urlFil": "(dokumentet)",
+              "funktion": "",
+              "dur": 173
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358243178,
+          "dur": 137,
+          "blocking": 87,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "chrome://resources/mojo/mojo/public/js/bindings.js",
+              "urlFil": "bindings.js",
+              "funktion": "read_",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "chrome://resources/mojo/mojo/public/js/bindings.js",
+              "urlFil": "bindings.js",
+              "funktion": "read_",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358243522,
+          "dur": 60,
+          "blocking": 10,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358243823,
+          "dur": 110,
+          "blocking": 60,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "",
+              "urlFil": "(dokumentet)",
+              "funktion": "",
+              "dur": 82
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "",
+              "urlFil": "(dokumentet)",
+              "funktion": "",
+              "dur": 6
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358244020,
+          "dur": 300,
+          "blocking": 250,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "EvaluateScript",
+              "url": "http://localhost:3000/_next/static/chunks/0el5nt6-nk2y3.js",
+              "urlFil": "0el5nt6-nk2y3.js",
+              "funktion": "",
+              "dur": 300
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358244431,
+          "dur": 112,
+          "blocking": 62,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "ParseHTML",
+              "url": "",
+              "urlFil": "(dokumentet)",
+              "funktion": "",
+              "dur": 111
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "http://localhost:3000/bolag",
+              "urlFil": "bolag",
+              "funktion": "",
+              "dur": 106
+            },
+            {
+              "namn": "v8.compile",
+              "url": "http://localhost:3000/bolag",
+              "urlFil": "bolag",
+              "funktion": "",
+              "dur": 11
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+              "urlFil": "2feezv-iveko5.js",
+              "funktion": "",
+              "dur": 10
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358244543,
+          "dur": 896,
+          "blocking": 846,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "",
+              "urlFil": "(dokumentet)",
+              "funktion": "",
+              "dur": 530
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "",
+              "urlFil": "(dokumentet)",
+              "funktion": "",
+              "dur": 89
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358245573,
+          "dur": 218,
+          "blocking": 168,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "",
+              "urlFil": "(dokumentet)",
+              "funktion": "",
+              "dur": 101
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "",
+              "urlFil": "(dokumentet)",
+              "funktion": "",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358246024,
+          "dur": 173,
+          "blocking": 123,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+              "urlFil": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 247
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+              "urlFil": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 69
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+              "urlFil": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 25
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+              "urlFil": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 18
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+              "urlFil": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 10
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+              "urlFil": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 7
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+              "urlFil": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 6
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+              "urlFil": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 5
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358246029,
+          "dur": 71,
+          "blocking": 21,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+              "urlFil": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 69
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+              "urlFil": "2feezv-iveko5.js",
+              "funktion": "",
+              "dur": 0
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358246182,
+          "dur": 249,
+          "blocking": 199,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+              "urlFil": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 247
+            },
+            {
+              "namn": "EvaluateScript",
+              "url": "http://localhost:3000/sw.js",
+              "urlFil": "sw.js",
+              "funktion": "",
+              "dur": 3
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/sw.js",
+              "urlFil": "sw.js",
+              "funktion": "",
+              "dur": 1
+            },
+            {
+              "namn": "v8.compile",
+              "url": "http://localhost:3000/sw.js",
+              "urlFil": "sw.js",
+              "funktion": "",
+              "dur": 0
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358246438,
+          "dur": 264,
+          "blocking": 214,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "",
+              "urlFil": "(dokumentet)",
+              "funktion": "",
+              "dur": 194
+            },
+            {
+              "namn": "Layout",
+              "url": "",
+              "urlFil": "(dokumentet)",
+              "funktion": "",
+              "dur": 57
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358247033,
+          "dur": 59,
+          "blocking": 9,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+              "urlFil": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 58
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358247043,
+          "dur": 51,
+          "blocking": 1,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+              "urlFil": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 19
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358247161,
+          "dur": 182,
+          "blocking": 132,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+              "urlFil": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 182
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358247792,
+          "dur": 59,
+          "blocking": 9,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/095w8h_fgc5q_.js",
+              "urlFil": "095w8h_fgc5q_.js",
+              "funktion": "M",
+              "dur": 1
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/095w8h_fgc5q_.js",
+              "urlFil": "095w8h_fgc5q_.js",
+              "funktion": "M",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358247911,
+          "dur": 68,
+          "blocking": 18,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/095w8h_fgc5q_.js",
+              "urlFil": "095w8h_fgc5q_.js",
+              "funktion": "M",
+              "dur": 14
+            },
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/095w8h_fgc5q_.js",
+              "urlFil": "095w8h_fgc5q_.js",
+              "funktion": "M",
+              "dur": 1
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358248095,
+          "dur": 97,
+          "blocking": 47,
+          "iFonstretFCP5s": true,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+              "urlFil": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 95
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358254004,
+          "dur": 55,
+          "blocking": 5,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358254091,
+          "dur": 68,
+          "blocking": 18,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358254738,
+          "dur": 63,
+          "blocking": 13,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "FunctionCall",
+              "url": "http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+              "urlFil": "2feezv-iveko5.js",
+              "funktion": "O",
+              "dur": 62
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358254800,
+          "dur": 102,
+          "blocking": 52,
+          "iFonstretFCP5s": false,
+          "attr": [
+            {
+              "namn": "Layout",
+              "url": "",
+              "urlFil": "(dokumentet)",
+              "funktion": "",
+              "dur": 38
+            },
+            {
+              "namn": "UpdateLayoutTree",
+              "url": "",
+              "urlFil": "(dokumentet)",
+              "funktion": "",
+              "dur": 12
+            }
+          ],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358255189,
+          "dur": 79,
+          "blocking": 29,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        },
+        {
+          "start": 1358255206,
+          "dur": 63,
+          "blocking": 13,
+          "iFonstretFCP5s": false,
+          "attr": [],
+          "toppFunktioner": []
+        }
+      ],
+      "aggregerat": [
+        {
+          "kalla": "FunctionCall:http://localhost:3000/_next/static/chunks/2feezv-iveko5.js",
+          "ms": 1067
+        },
+        {
+          "kalla": "Layout:?",
+          "ms": 688
+        },
+        {
+          "kalla": "EvaluateScript:http://localhost:3000/_next/static/chunks/0el5nt6-nk2y3.js",
+          "ms": 300
+        },
+        {
+          "kalla": "UpdateLayoutTree:?",
+          "ms": 284
+        },
+        {
+          "kalla": "ParseHTML:?",
+          "ms": 111
+        },
+        {
+          "kalla": "EvaluateScript:http://localhost:3000/bolag",
+          "ms": 106
+        },
+        {
+          "kalla": "FunctionCall:http://localhost:3000/_next/static/chunks/095w8h_fgc5q_.js",
+          "ms": 17
+        },
+        {
+          "kalla": "v8.compile:http://localhost:3000/bolag",
+          "ms": 11
+        },
+        {
+          "kalla": "EvaluateScript:http://localhost:3000/sw.js",
+          "ms": 3
+        },
+        {
+          "kalla": "FunctionCall:http://localhost:3000/sw.js",
+          "ms": 1
+        },
+        {
+          "kalla": "v8.compile:http://localhost:3000/sw.js",
+          "ms": 0
+        }
+      ],
+      "aggregeratFunktioner": [],
+      "shifts": [],
+      "res": [
+        {
+          "n": "1y8-o7vbgoakh.css",
+          "start": 261,
+          "klar": 442,
+          "typ": "link",
+          "storlek": 1991
+        },
+        {
+          "n": "68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+          "start": 256,
+          "klar": 567,
+          "typ": "link",
+          "storlek": 51224
+        },
+        {
+          "n": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "start": 257,
+          "klar": 566,
+          "typ": "link",
+          "storlek": 48732
+        },
+        {
+          "n": "ea3421846039b7f3-s.p.23jyvdx2mwxjn.woff2",
+          "start": 258,
+          "klar": 573,
+          "typ": "link",
+          "storlek": 51832
+        },
+        {
+          "n": "2i19jhnlgvpnf.css",
+          "start": 258,
+          "klar": 541,
+          "typ": "link",
+          "storlek": 38962
+        },
+        {
+          "n": "0el5nt6-nk2y3.js",
+          "start": 262,
+          "klar": 701,
+          "typ": "link",
+          "storlek": 3912
+        },
+        {
+          "n": "11jq0c2_zavac.js",
+          "start": 262,
+          "klar": 721,
+          "typ": "script",
+          "storlek": 8804
+        },
+        {
+          "n": "turbopack-3or-2iatmqpb2.js",
+          "start": 262,
+          "klar": 741,
+          "typ": "script",
+          "storlek": 4149
+        },
+        {
+          "n": "3fntmmi971322.js",
+          "start": 263,
+          "klar": 761,
+          "typ": "script",
+          "storlek": 3961
+        },
+        {
+          "n": "2feezv-iveko5.js",
+          "start": 262,
+          "klar": 827,
+          "typ": "script",
+          "storlek": 71870
+        },
+        {
+          "n": "095w8h_fgc5q_.js",
+          "start": 262,
+          "klar": 801,
+          "typ": "script",
+          "storlek": 43035
+        },
+        {
+          "n": "2nmoorvuwokzu.js",
+          "start": 263,
+          "klar": 878,
+          "typ": "script",
+          "storlek": 916
+        },
+        {
+          "n": "2vv1bt98c6u0g.js",
+          "start": 263,
+          "klar": 910,
+          "typ": "script",
+          "storlek": 9533
+        },
+        {
+          "n": "2qnjvou52dgsk.js",
+          "start": 274,
+          "klar": 911,
+          "typ": "script",
+          "storlek": 9121
+        },
+        {
+          "n": "40tp2b4ex93k1.js",
+          "start": 274,
+          "klar": 938,
+          "typ": "script",
+          "storlek": 8987
+        },
+        {
+          "n": "3pst6ss7vt93a.js",
+          "start": 274,
+          "klar": 997,
+          "typ": "script",
+          "storlek": 12484
+        },
+        {
+          "n": "1uuq3ae405nad.js",
+          "start": 283,
+          "klar": 1101,
+          "typ": "script",
+          "storlek": 48790
+        },
+        {
+          "n": "264uyfejpsomd.js",
+          "start": 285,
+          "klar": 1060,
+          "typ": "script",
+          "storlek": 8455
+        },
+        {
+          "n": "1bx7ykuch4pyf.js",
+          "start": 287,
+          "klar": 1064,
+          "typ": "script",
+          "storlek": 515
+        },
+        {
+          "n": "1qib5z97om6dz.js",
+          "start": 288,
+          "klar": 1110,
+          "typ": "script",
+          "storlek": 17477
+        },
+        {
+          "n": "208qlhbwv45x6.js",
+          "start": 289,
+          "klar": 1106,
+          "typ": "script",
+          "storlek": 7667
+        },
+        {
+          "n": "70bc3e132a0a741e-s.3t6q91iet4nsy.woff2",
+          "start": 1659,
+          "klar": 1909,
+          "typ": "css",
+          "storlek": 40780
+        },
+        {
+          "n": "ikon-192.png",
+          "start": 3135,
+          "klar": 3310,
+          "typ": "other",
+          "storlek": 6765
+        },
+        {
+          "n": "3c20dmqsqgcwk.js",
+          "start": 4436,
+          "klar": 4719,
+          "typ": "script",
+          "storlek": 1264
+        },
+        {
+          "n": "1c75ijqr3co2i.js",
+          "start": 4930,
+          "klar": 5110,
+          "typ": "script",
+          "storlek": 1669
+        },
+        {
+          "n": "08e8d92f-ngar.js",
+          "start": 11322,
+          "klar": 11498,
+          "typ": "script",
+          "storlek": 4174
+        },
+        {
+          "n": "1vzidlm-45ju_.js",
+          "start": 11323,
+          "klar": 11511,
+          "typ": "script",
+          "storlek": 14251
+        },
+        {
+          "n": "26cy_8m3039nw.js",
+          "start": 11380,
+          "klar": 11593,
+          "typ": "script",
+          "storlek": 14711
+        },
+        {
+          "n": "01qkxwa_1g9lc.js",
+          "start": 11438,
+          "klar": 11636,
+          "typ": "script",
+          "storlek": 4264
+        },
+        {
+          "n": "2ckgowj_mt_om.js",
+          "start": 11443,
+          "klar": 11637,
+          "typ": "script",
+          "storlek": 10632
+        },
+        {
+          "n": "1r-7pos3d050-.js",
+          "start": 11459,
+          "klar": 11710,
+          "typ": "script",
+          "storlek": 8676
+        },
+        {
+          "n": "1silwisr-tvyx.js",
+          "start": 11323,
+          "klar": 12741,
+          "typ": "script",
+          "storlek": 383753
+        }
+      ],
+      "fontsKlara": 14978
+    }
+  ]
+}

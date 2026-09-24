@@ -1,0 +1,139 @@
+{
+  "datum": "2026-09-24T11:44:34.761Z",
+  "bas": "http://localhost:3000",
+  "namn": "o159-fore",
+  "sidor": [
+    {
+      "sokvag": "/data/nyckeltalsguide",
+      "poang": {
+        "prestanda": 0.56,
+        "tillganglighet": 1,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1769,
+        "LCP": 4434,
+        "TBT": 1424,
+        "CLS": 0,
+        "TTI": 5445,
+        "SI": 4203
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 46 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 46 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 478 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 478 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "2.0 s",
+          "rad": "Reduce JavaScript execution time — 2.0 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "4.6 s",
+          "rad": "Minimize main-thread work — 4.6 s"
+        }
+      }
+    },
+    {
+      "sokvag": "/bolag",
+      "poang": {
+        "prestanda": 0.42,
+        "tillganglighet": 1,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1707,
+        "LCP": 6105,
+        "TBT": 4324,
+        "CLS": 0,
+        "TTI": 7980,
+        "SI": 6154
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 22 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 22 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 596 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 596 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "5.1 s",
+          "rad": "Reduce JavaScript execution time — 5.1 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "10.7 s",
+          "rad": "Minimize main-thread work — 10.7 s"
+        }
+      }
+    },
+    {
+      "sokvag": "/bolag/eqnr-ol",
+      "poang": {
+        "prestanda": 0.55,
+        "tillganglighet": 1,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1955,
+        "LCP": 4691,
+        "TBT": 1231,
+        "CLS": 0,
+        "TTI": 5443,
+        "SI": 4199
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 46 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 46 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 478 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 478 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "2.1 s",
+          "rad": "Reduce JavaScript execution time — 2.1 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "4.8 s",
+          "rad": "Minimize main-thread work — 4.8 s"
+        }
+      }
+    }
+  ]
+}

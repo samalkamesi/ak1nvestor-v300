@@ -484,6 +484,21 @@ const kedjekomponenter = [
     "svaraLokaltStalsektor(q, KURSREGISTER)",
     "svaraLokaltCasepraktik(q, KURSREGISTER)",
     "svaraLokaltBeteendefallor(q, KURSREGISTER)",
+    // Omgång 32–35 (fönstrens gemensamma slutläge, harmoniserat av s6-u3
+    // fönster 35 enligt SVITFAMILJEN LÄKT-precedensen): kategoristangning
+    // + banksektorn + notläsning + nykull + nyfodda + skuldordning +
+    // valideringsfonster + enhetsekonomi + natverkseffekter + slutstenarna
+    // — samtliga FÖRE marknadsrytm (SIST sina deklarationer troget).
+    "svaraLokaltKategoristangning(q, KURSREGISTER)",
+    "svaraLokaltBanksektorn(q, KURSREGISTER)",
+    "svaraLokaltNotlasning(q, KURSREGISTER)",
+    "svaraLokaltNykull(q, KURSREGISTER)",
+    "svaraLokaltNyfodda(q, KURSREGISTER)",
+    "svaraLokaltSkuldordning(q, KURSREGISTER)",
+    "svaraLokaltValideringsfonster(q, KURSREGISTER)",
+    "svaraLokaltEnhetsekonomi(q, KURSREGISTER)",
+    "svaraLokaltNatverkseffekter(q, KURSREGISTER)",
+    "svaraLokaltSlutstenarna(q, KURSREGISTER)",
     "svaraLokaltMarknadsrytm(q, KURSREGISTER)",
 ];
 const kedjeread = widget.match(/const lokalt = ([^;]+);/);
@@ -528,7 +543,7 @@ if (!importAgande) { lFel++; console.log("      import av ägande-lagret saknas"
 const importHistoria = widget.includes('from "@/lib/ai-mentor-historia-fragor"');
 if (!importHistoria) { lFel++; console.log("      import av historia-lagret saknas"); }
 kontroll(
-  "L: widget-bevis — kedjeraden bär 76 lager i ordning + 7 importer",
+  "L: widget-bevis — kedjeraden bär 86 lager i ordning + 7 importer",
   lFel === 0,
   lFel === 0 ? "chat-widget.tsx wired: sektor + case + praktik + portfoljgrund + ägande + redovisningsdjup + djup + historia + lonsamhetsdjup live i klientkedjan" : lFel + " fel",
 );

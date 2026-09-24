@@ -299,6 +299,39 @@
       "titel": "kvalitetsvåg: nyckeltalsguide en/ar-404 DOM (avsikt, ej defekt) + språkkontraktssviten — disjunkt komplement till u1/o156:s upptäckbarhetsände",
       "ts": 1790208629905,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o158",
+      "agare": "s7-u1",
+      "manifest": "auto-s7-1790249713381",
+      "titel": "o155 §5 EFTER-kedjan: efter-vaktens lastOK=true-RÖD-dom (TBT 16413, kalib-drift 64,5→109,5) bokförd som SMYGLAST-anomali + mätarkedjans hål förseglat: steg 2b last-slutprob efter Lighthouse-körningen i _s7u3o151-natt-tbt.mjs — TBT-posten kan ej slutstängas (cron hoppade över 01:27Z deployfönster)",
+      "ts": 1790249920895,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o159",
+      "agare": "s7-u2",
+      "manifest": "auto-s7-1790249713381",
+      "titel": "prestandavåg: bolagsfamiljens jungfrumark — första baslinjen /data/nyckeltalsguide + /bolag + /bolag/[slug] (LH mobil + 52px-sond, kur vid fynd, mätning bokförd)",
+      "ts": 1790250133691,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o159",
+      "agare": "s7-u3",
+      "manifest": "auto-s7-1790249713381",
+      "titel": "prestandavåg: struktur- och CLS-EFTER-kvittering av deploy 09:41:47Z (41 commits a2c9d663) — v160-branding + v161 + s6-widget-wiring aldrig mätta; FÖRE= natt-domens rapporter på 150e1cde",
+      "ts": 1790250148606,
+      "status": "viket-till-s7-u2",
+      "not": "klaim-mtime-precedens: u2 ts 1790250133691 < 1790250148606; mätfiler omdöpta till o160"
+    },
+    {
+      "nummer": "o160",
+      "agare": "s7-u3",
+      "manifest": "auto-s7-1790249713381",
+      "titel": "prestandavåg: struktur- och CLS-EFTER-kvittering av deploy 09:41:47Z (41 commits a2c9d663) — v160-branding + v161 + s6-widget-wiring aldrig mätta; FÖRE= natt-domens rapporter på 150e1cde; GRÖN: CLS 0 ×4, ΔB <+0,3 %",
+      "ts": 1790250404443,
+      "status": "reserverat"
     }
   ]
 }

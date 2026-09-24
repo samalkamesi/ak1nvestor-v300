@@ -501,7 +501,7 @@ const GAMLA = [
     "svaraLokaltTvangsmekanik", "svaraLokaltHandelsemotor", "svaraLokaltLonsamhetsgrund", "svaraLokaltKemisektor",
     "svaraLokaltStalsektor", "svaraLokaltCasepraktik", "svaraLokaltBeteendefallor", "svaraLokaltKategoristangning",
     "svaraLokaltBanksektorn", "svaraLokaltNotlasning", "svaraLokaltNykull", "svaraLokaltNyfodda",
-    "svaraLokaltSkuldordning", "svaraLokaltValideringsfonster", "svaraLokaltMarknadsrytm",
+    "svaraLokaltSkuldordning", "svaraLokaltValideringsfonster", "svaraLokaltEnhetsekonomi", "svaraLokaltNatverkseffekter", "svaraLokaltSlutstenarna", "svaraLokaltMarknadsrytm",
   ];
   // Syskon-pågående lager (u2:s riskdjup, wirad SIST i widgeten under detta
   // fönster): KÄND men krävs ej — deras commit äger modulen. Vakten underkänner

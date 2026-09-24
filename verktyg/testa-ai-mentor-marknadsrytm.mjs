@@ -412,7 +412,7 @@ OMATCHADE.forEach((f, i) => {
             // FÖRE detta lager (marknadsrytm förblir SIST). Dokumentationsplikten.
             "svaraLokaltPengarstid",
             "svaraLokaltVolatilitetsmekanik",
-            "svaraLokaltCoinvest", "svaraLokaltTvangsmekanik", "svaraLokaltHandelsemotor", "svaraLokaltLonsamhetsgrund", "svaraLokaltKemisektor", "svaraLokaltMarknadsrytm",
+            "svaraLokaltCoinvest", "svaraLokaltTvangsmekanik", "svaraLokaltHandelsemotor", "svaraLokaltLonsamhetsgrund", "svaraLokaltKemisektor", "svaraLokaltStalsektor", "svaraLokaltCasepraktik", "svaraLokaltBeteendefallor", "svaraLokaltKategoristangning", "svaraLokaltBanksektorn", "svaraLokaltNotlasning", "svaraLokaltNykull", "svaraLokaltNyfodda", "svaraLokaltSkuldordning", "svaraLokaltValideringsfonster", "svaraLokaltEnhetsekonomi", "svaraLokaltNatverkseffekter", "svaraLokaltSlutstenarna", "svaraLokaltMarknadsrytm",
             // Fönster 29 (s6-u1, _s6u1o29-): kemisektor — 73:e motorn, FÖRE detta lager (SIST). Dokumentationsplikten.
 
   ]);

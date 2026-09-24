@@ -589,7 +589,7 @@ const GAMLA = [
   // fönster (KVD-fyndet att hårdkodade register-lägen åldras med varje
   // spår-5-rebake; basotestet E01 förblir äkthetsgrinden).
   kontroll(
-    "K03 register-läge — 470 kurser (spår 5:s omgång-23-rebake 2026-09-20: +6 kurser am-09/rp-06/pe-07/kt-08/vr-09/ek-07; basotestet E01 grönt)",
+    "K03 register-läge — 495 kurser (spår 5:s kullar t.o.m. 2026-09-24: omgång-23-rebake +6 [am-09/rp-06/pe-07/kt-08/vr-09/ek-07] + senare fönsters kurser; harmoniserat av s6-u3 fönster 35 — rebaken får ALDRIG glömma mentorsregistret; basotestet E01 är grinden)",
 
       // Fönster 29 (s6-u2, _s6u2o29-): K03 470→476 — spår 5:s omgång-24-rebake (2026-09-20:
 
@@ -602,7 +602,11 @@ const GAMLA = [
     // Fönster 31 (s6-u3, _s6u3o31-): 476→483 — spår 5:s omgång 25 (2026-09-21:
     // bf-17/od-09/kt-09 479→482 + se-23 stålsektorn 482→483) växte registret;
     // E01-grunden (registrets äkthet) oförändrad — konstanten följer registret.
-    KURSREGISTER.length === 483,
+    // Fönster 35 (s6-u3, _s6u3o35-): 483→495 — spår 5:s kullar 2026-09-21→24
+    // växte registret (489→495: se-22 + ma-09/rp-07/ln-06/st-08/ks-08/ks-09/
+    // roic-06/tx-06/tx-07/pf-07/v15 m.fl.); E01-grunden (registrets äkthet)
+    // oförändrad — konstanten följer registret.
+    KURSREGISTER.length === 495,
     "fick " + KURSREGISTER.length + " (spår 5:s rebake får ALDRIG glömma mentorsregistret — basotestet E01 är grinden)",
   );
 }
@@ -667,7 +671,7 @@ const GAMLA = [
     "svaraLokaltTvangsmekanik", "svaraLokaltHandelsemotor", "svaraLokaltLonsamhetsgrund", "svaraLokaltKemisektor",
     "svaraLokaltStalsektor", "svaraLokaltCasepraktik", "svaraLokaltBeteendefallor", "svaraLokaltKategoristangning",
     "svaraLokaltBanksektorn", "svaraLokaltNotlasning", "svaraLokaltNykull", "svaraLokaltNyfodda",
-    "svaraLokaltSkuldordning", "svaraLokaltValideringsfonster", "svaraLokaltMarknadsrytm",
+    "svaraLokaltSkuldordning", "svaraLokaltValideringsfonster", "svaraLokaltEnhetsekonomi", "svaraLokaltNatverkseffekter", "svaraLokaltSlutstenarna", "svaraLokaltMarknadsrytm",
   ];
   const kedjerader = widget.split("\n").filter((rad) => rad.includes("svaraLokaltMakro(q, KURSREGISTER)"));
   const FEL = [];

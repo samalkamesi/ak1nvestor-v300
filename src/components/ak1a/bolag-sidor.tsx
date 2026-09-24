@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 
 import { branschNamn } from "@/lib/dataset-medianer";
 import type { DatasetMedianRad } from "@/lib/dataset-medianer";
@@ -23,6 +24,18 @@ import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
  */
 
 // ── Formaterare (svenska tal: decimalkomma) ─────────────────────────────────
+
+/** o159: platshållarhöjd (rem) för .cv-bolagsektion — kalibrerad mot
+ *  geometri-o159-bolag-mobil-desktop.json (mobil 390): sektionshöjd ≈
+ *  68,6·rader − 300 px (median 1 392 px ⇒ 87rem). Residualer ±250 px
+ *  från namn-wrapning täcks av 'auto'-ledet i contain-intrinsic-size,
+ *  som låser verklig höjd vid första renderingen (o78/o92-disciplinen
+ *  "reservation ≈ mätt höjd ⇒ inga stavhopp"). */
+function cvReservationRem(rader: number): string {
+  const px = Math.max(320, 68.6 * rader - 300);
+  return `${Math.round((px / 16) * 4) / 4}rem`; // 0,25rem-rutnät
+}
+
 
 function tal(x: number | null | undefined, dec = 1): string {
   if (x === null || x === undefined || !Number.isFinite(x)) return "—";
@@ -224,7 +237,11 @@ export function BolagIndexVy({
       {branscher.map((b) => {
         const bolag = sidor.filter((s) => s.bransch === b);
         return (
-          <section key={b} className="mt-10">
+          <section
+            key={b}
+            className="mt-10 cv-bolagsektion"
+            style={{ "--cv-h": cvReservationRem(bolag.length) } as CSSProperties}
+          >
             <div className="flex items-baseline justify-between gap-4">
               <h2 className="font-serif text-2xl font-bold">
                 {branschNamn("sv", b)}

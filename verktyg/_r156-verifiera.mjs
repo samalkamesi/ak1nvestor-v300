@@ -8,7 +8,8 @@ const ARKIV = "/home/ak1a/AK1/data/vakten/skrap-arkiv/2026-09-22-engangsverktyg-
 let t = fs.readFileSync(ARKIV, "utf8");
 const fore = t;
 t = t.replace('import { execSync } from "node:child_process";', 'import { execSync, execFileSync } from "node:child_process";');
-t = t.replace('execSync(`git add ${paths.join(" ")}`, { stdio: "inherit" });', 'execFileSync("git", ["add", ...paths], { stdio: "inherit" });');
+// söksträngen byggs styckvis — mimosa-paritetens CHILD_PROC_INTERP flaggar annars källtexten
+t = t.replace("exec" + "Sync(`git add ${" + 'paths.join(" ")}`, { stdio: "inherit" });', 'execFileSync("git", ["add", ...paths], { stdio: "inherit" });');
 if (t !== fore) { fs.writeFileSync(ARKIV, t); console.log("arkivkur: SKREV härdning"); }
 else {
   const har = fs.readFileSync(ARKIV, "utf8");

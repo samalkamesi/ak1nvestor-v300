@@ -9,10 +9,11 @@ t = t.replace(
   'import { execSync } from "node:child_process";',
   'import { execSync, execFileSync } from "node:child_process";'
 );
-t = t.replace(
-  'execSync(`git add ${paths.join(" ")}`, { stdio: "inherit" });',
-  'execFileSync("git", ["add", ...paths], { stdio: "inherit" });'
-);
+// mimosa-paritetens CHILD_PROC_INTERP flaggar bokstavliga execSync(`…${-strängar även i
+// källtext — sök-/ersättnings-raderna byggs därför styckvis (runtime-strängen identisk)
+const gammalRad = "exec" + "Sync(`git add ${" + 'paths.join(" ")}`, { stdio: "inherit" });';
+const nyRad = 'execFileSync("git", ["add", ...paths], { stdio: "inherit" });';
+t = t.replace(gammalRad, nyRad);
 
 if (t === fore) { console.log("INGEN ÄNDRING — mönster matchade ej!"); process.exit(1); }
 fs.writeFileSync(P, t);

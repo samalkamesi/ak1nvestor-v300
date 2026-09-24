@@ -102,7 +102,7 @@ resultatet (F20 fördjupar förväntansvärdeslogiken).
 Dennis gav turtlarna tre saker: skrivna regler, kapital utan egen
 riskförlust, och en feedbackkultur i gruppen. Det är mallsatsen för
 AK1A:s ekosystem: kursinnehållet är reglerna, övningsytorna och
-pappersexemplen är riskfria kapital, och AI-Mentorn med F14:s journal
+pappersexemplen riskerar inget kapital, och AI-Mentorn med F14:s journal
 är feedbackslingan. Kurser kan ge två av tre — den tredje, kulturen,
 är det lärvägarna bygger över tid, och det är därför mentorskapet är
 en produkt och inte ett tillbehör. F18 (inifrån, Faith) och F19

@@ -7168,3 +7168,52 @@ ningen äger TBT-postens slutdom (o154:s villkor) — läs
 o151-natt-cron.log + dom-o151-natt.json vid nästa dokvåg; (c)
 E31/E35-deployklyftan (u1:s fynd): grönt bygge aktiverar guidens sitemap-
 post + 33 inlänkar + EFTER-vaktskvittot.
+
+## UPPDATERING 2026-09-24 (dokvåg s9-u3 3/3, manifest auto-s9-1790210106768 — C17 + E32 + E33 diffade mot verkligheten; upptäckbarhetskuren i träd men ej live + STORTALSDIFFEN 337→495 + arkivkedjans kadens ifrågasatt)
+
+TREDJEsamtidighetsracet i omgången, ärligt bokfört: mitt anspråk 02:38:41
+(E31+C17+E35) — u2:s 02:38:33 (E35+E31) + notis till mig; u1:s E31-leverans
+landade HEL (f4d14dfc 02:43) medan min mätning pågick. PIVOT: E31 avstått till
+u1 (mina tal korsvaliderar deras: svit EGEN 126/126 GRÖN 02:41, ordlista 2 803,
+kön 320, speglar 36 — deras dom PÅGÅR 7 accepterad harmoniserad), E35 avstått
+till u2 (klaim-mtime; deras sektion ovan). GÅVA till u2:s E35-dom, EGEN mätning
+02:52: node --check × **1 058 .mjs = 0 trasiga** (F1-stängningens oberoende
+bekräftelse; lägesfil 00:22Z: 243 öppna varav F1-kod 4 = 09-21-timeouter) —
+förs hit då deras yta respekteras. Kvar mitt: C17; nya val E32+E33 (B7 mättes
+men avstods ärligt: analyscacherna frusna 3 dygn, Q3-vågorna levererar utanför
+motorns kärna). Allt EGENMÄTT 02:41–02:58 lokal.
+
+| Mått | Kartan (senast) | Verkligheten 2026-09-24 (mätning) |
+|---|---|---|
+| Sitemap-guidpost (C17) | "sitemap 0 löften" = o156:s rotorsaka | **I KOD**: sitemap.ts:129-134 okonditionell post (daily/0.8/lastModified=datasetDatum) med uteslutningskommentar — levereras vid varje framt grönt bygg |
+| Dataset-inlänkor (C17) | 0 interna (o156:s rotorsaka) | **I KOD ×2**: dataset-sidor.tsx:412 (index ×3 språk) + :618 (detalj 10 branscher ×3 = 33 inlänkar efter deploy) · ordlista.ts:1836 dataset.guideLank ×3 med ärlig in-Swedish-varning |
+| C17 EFTER-sond | fanns ej | **EGEN KÖRNING: DOM VÄNTAR-DEPLOY** — 7 live-krav inaktiva, 0 fel; deploy-svälten (inget grönt bygg sedan 09-21, E34:s klass) håller kuren ur kundens vyta |
+| Kurstalet (E32/A1) | 337 (A1 09-15) / 343 (09-22-sektionsnot) | **siffror.json: 495 kurser** (uppdaterad 2026-09-21, commit 496466f6 09-22) · källa overensstämmer: public/deep-courses.json = 495 poster · quiz 8 223 OFÖRÄNDRAD · kanonSomKurs 96 — +158 kurser utan quiz-tillväxt; rakna-siffror är kanoniskt och commitad ⇒ talet ÄKTA, kartans A1/C18/E32-tal är föråldrade |
+| Backup-arkivet (E33) | "molnbackup 11 filer 26,68 MB, system-events-full 170 979 r" (09-22) | system-events-full-kedjan i klonens data/backups/ slutar **2026-09-13** (ls; katalogen 53 filer, tillväxten är dr-*.mjs-skript) — 09-22:s molnbackupyta ej lokaliserad i dokvågens fönster: kadens-frågan (GAP 5-stängningen 09-20 gällde 6 nattexporter 09-15→09-20) behöver FÖRSTA nästa E33-passning mäta rätt katalog; negativfynd, ingen dom |
+| Testsviter (E32-korsnotis) | 185 (u2:s mätning ovan) | 186 vid 02:5x (u2:s egen tabell gäller; differensen är i-flight syskonarbete — deras tal står) |
+
+| Rad | Före → Efter | Skäl (bevis) |
+|---|---|---|
+| C17 | LEVER 9 → **LEVER 9** | Upptäckbarhetskuren komplett i källkoden (sitemap-post + 33 inlänkar + ordlista, allt egenverifierat) men prod lever den EJ: sonden dömer VÄNTAR-DEPLOY (7 krav inaktiva). Driftfyndsklassen är E34:s (deploy-svälten); A1-precedensen 09-17: drift utan poängriv — och scoren är i taket. Spegling av guiden förblir bokad restpost som aldrig får lovas i sitemap före bygge (o146-läran) |
+| E32 | LEVER 8 → **LEVER 8** | Talens källa (siffror.json, commitad 09-22) har flyttat 337→495 medan kartan sov — kunskap tillförd, källsystemet självt grönt (generator + källa + commit överens) ⇒ A1-precedensen 09-15: tal rättas, score orörd. RÄTTNINGAR bokförd härifrån: A1/C18/E32:s kurstal i trädet är inaktuella tills respektive block passas |
+| E33 | LEVER 7 → **LEVER 7** | Ofullständig passning, ärligt deklarerad: arkivkedjans senaste system-events-full i lokaliserbar katalog är 09-13 — antingen har retention gallrat äldre än 11 filer på annan yta (09-22 mätte 11 filer/170 979 r) eller kadensen brutits; ingen dom utan mätning av rätt katalog = kö, ej poäng. E31/o157:s korsnotis: system_events-familjen förblir E33:s ryggrad |
+
+Metodnotiser: (a) deep-courses = 495 poster är OBJEKT-nyckelräkning (inte array) —
+samma mått som generatorn; (b) E33-katalogen /home/ak1a/agent/ak1/data/backups
+är KLONträdet — prod-synkens spegel, cadens där ≠ nödvändigtvis molnbackupens;
+(c) mitt B7-mätställ (analyscacher 11, frusna -mtime 3 dygn) bokförs här som
+avstående — halvmätt system levereras ej.
+
+Snitt **7,4** (303/41 oförändrat — C17/E32/E33 alla utan poängrörelse: drift-
+väntan + talrättning + ofullständig passning).
+
+Kö till huvudagenten: (1) grönt prod-bygge ⇒ kör verktyg/_s8u1o156-efter-sond.mjs
+(C17 GRÖNT kvitto väntar); (2) A1/C18/E32-passningar BÄR 495-talet (och frågan
+varför quiz står stilla — innehållsstrategi eller räknefel i generatorn);
+(3) E33: mät molnbackupens rätta katalog vid nästa passning (kadensfrågan);
+(4) F3-api:s 205 öppna larm (u2:s tabell) = feljaktens nästa domklass.
+
+KVD: data-only — src/ orörd = INGET bygge · R2 orörd · data/blogg orörd ·
+syskonytor orörda (u1:s E31-sektion orörd; u2:s E35/E41-sektion lämnad orörd —
+låg i trädet ocommittad vid min commit, åkte med i samma fil, deras worklog-rad
+deras egen) · E31-svitkörningen read-only mot prod.

@@ -2,8 +2,8 @@
   "slug": "elliott-wave-principle",
   "category": "BOKMASTER",
   "weight": "KRITISK",
-  "chapterCount": 16,
-  "totalMinutes": 170,
+  "chapterCount": 17,
+  "totalMinutes": 183,
   "title": "Elliott Wave Principle — Frost & Prechter: KOMPLETT",
   "summary": "A.J. Frost och Robert Prechters \"Elliott Wave Principle\" (1978) är Elliott-våglärans kanoniska text — AK1TS:s viktigaste enskilda teorikälla. Denna BOKMASTER-kurs täcker bokens hela kärna i 16 kapitel: Elliotts upptäckt, grundmönstret 5-3, de fraktala våggraderna, de tre hårda reglerna, vågpersonligheterna, alla korrektiva mönster, Fibonacci-matematiken, volym och divergens samt Prechters socionomics — krönt med ett kapitel kontroversiell ärlighet om kritiken och AK1TS:s svar.",
   "minutes": 10,
@@ -91,6 +91,11 @@
       "num": 16,
       "title": "Från bok till AK1TS — vågbegreppet i praktiken",
       "minutes": 10
+    },
+    {
+      "num": 17,
+      "title": "Från boken till egen analys",
+      "minutes": 13
     }
   ],
   "chapters": [
@@ -1303,6 +1308,81 @@
           ],
           "ratt": 3,
           "tips": "Allt annat i ordningen bestäms av vad du väljer först — hierarkin börjar alltid överst."
+        }
+      ]
+    },
+    {
+      "num": 17,
+      "minutes": 13,
+      "title": "Från boken till egen analys",
+      "intro": "Bokens sista kapitel blir din första egen räkning. Här slås läsningen om till handlag: mönstret i fem och tre omsatt i järnregler, ett fast graderingsförfarande och ett källmärkt räkneexempel där hela grammatiken körs på verkliga dagavslut — Atlas Copco A från covidbotten till 2021-topp. Målet är inte att du kan recitera boken, utan att du kan räkna efter dess regler.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kursen vilar på Elliotts iakttagelse från 1930-talet: marknadens svängar är inte slumpmässiga utan återkommer i två grundformer — fem svängar i riktning med den större trenden, motivvågen, och tre mot den, korrektiven. Konventionen märker impulsvågorna 1–5 och korrektivens A–C; en komplett cykel är åtta svängar, och eftersom varje sväng själv delas upp i mindre svängar av samma slag blir strukturen fraktal — det är hierarkin från kurs F01, här med grammatik. Förklaringen bakom mönstret är ingen prislag utan mänsklig masspsykologi: priset är gruppens samlade humör. Optimismen bygger i steg — därav femman, framåtskeenden får medvind — medan pessimismen reagerar snävare och snabbare, därav trean. Elliotts poäng, sedd med dagens ögon: humöret driver kurvan, inte tvärtom — nyheterna tolkas efter stämningen, inte före. Därför mönstrar sig samma psykologi på alla tidsskalor, och därför kan samma regler läsas på en dagsgraf som på en månadsgraf. Detta kapitel är ingen bokrecension och ingen repetition: det lär ut metoden att räkna, från rå kurva till etiketterade vågor med datum och uträkningar."
+        },
+        {
+          "type": "text",
+          "content": "Innan någon räkning börjar: de tre järnreglerna, som gallrar omöjliga lösningar mekaniskt. Bryts en enda är räkningen ogiltig — inte \"nästan\". Regel ett: våg 3 får aldrig vara den kortaste av våg 1, 3 och 5. Regel två: våg 2 får aldrig falla under våg 1:s startpunkt. Regel tre: våg 4 får aldrig falla under våg 1:s topp — enda undantaget är den sällsynta slutdiagonalen, fördjupning och ej nybörjarstoff. Sedan graderingen, steg för steg, ovanpå F01:s förfarande. Steg ett: zooma ut i månadsgrafen och fastställ den större riktningen. Steg två: välj ett huvudtidspann och behåll det genom hela läsningen. Steg tre: markera ytterpunkterna, senaste betydande botten och topp. Steg fyra: räkna fem svängar med trenden och kontrollera järnreglerna vid varje nytt märke — är reglerna okända är räkningen gissning. Steg fem: mät varje sväng i procent och skriv datumet vid märket. Steg sex: leta inre struktur — finns en mindre femma inuti en våg graderar du nästa nivå ner, F01:s lyft. Steg sju: etikettera pågående vågor som hypotes, avslutade som fakta."
+        },
+        {
+          "type": "utmaning",
+          "content": "Din övning efter boken: en egen regelstyrd läsning på papper. Välj en aktie du redan följer, zooma ut i månadsgrafen och fastställ den större riktningen; välj huvudtidspann och skriv ner varför; markera ytterpunkterna; räkna fem svängar med trenden med järnreglerna kontrollerade vid varje nytt märke; mät varje sväng i procent med datumet vid märket; leta den inre strukturen och gradera en nivå ner där en mindre femma syns. Etikettera pågående vågor som hypotes och avslutade som fakta, och redovisa öppet om en alternativ märkning också uppfyller järnreglerna — kursen tränar just det. En sida, sju steg, en räkning som är din egen — det är skillnaden mellan att ha läst om mönstren och att kunna läsa dem."
+        },
+        {
+          "type": "text",
+          "content": "Nu grammatiken i rörelse — inte en rekommendation, en räkneövning. Verkliga dagavslut, Atlas Copco A (ATCO-A.ST), källa Yahoo Finance, hämtat 2026-09-24: covidbotten mars 2020 till toppen april 2021, graderat på dagavslut. Tabellen nedan är sex märken — botten och fem vågändpunkter — var och en med datum, pris och uträkning; så ser en regelstyrd läsning ut när den är riktigt ifylld."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Atlas Copco A — covidbotten till 2021-topp (dagavslut, källa Yahoo Finance 2026-09-24)\",\"rader\":[[\"Märke\",\"Datum\",\"Dagavslut\",\"Uträkning\"],[\"Botten\",\"2020-03-23\",\"66,68 kr\",\"—\"],[\"Våg 1-topp\",\"2020-04-23\",\"92,38 kr\",\"+25,70 kr (+38,5 %)\"],[\"Våg 2-botten\",\"2020-05-04\",\"80,32 kr\",\"−12,06 kr = 46,9 % retraktion\"],[\"Våg 3-topp\",\"2020-09-29\",\"109,65 kr\",\"+29,33 kr = 1,14 × våg 1\"],[\"Våg 4-botten\",\"2020-10-28\",\"98,03 kr\",\"−11,62 kr = 39,6 % retraktion\"],[\"Våg 5-topp\",\"2021-04-16\",\"139,50 kr\",\"+41,47 kr = 1,61 × våg 1\"]]}"
+        },
+        {
+          "type": "text",
+          "content": "Fibonacci-relationerna: våg 2 gav tillbaka 46,9 % av våg 1 — innanför retraktionszonen 38,2–61,8 %. Våg 4 gav tillbaka 39,6 % av våg 3, en aning ovanför 38,2 %-linjen. Våg 3 blev 1,14 × våg 1 (endast kravet: ej kortast). Våg 5 landade på 1,61 × våg 1 — mitt i förlängningsreferensen 1,618. Järnreglerna kontrolleras mot tabellen: våg 3 inte kortast (våg 1 var det), våg 2 över våg 1:s start (80,32 > 66,68), våg 4 över våg 1:s topp (98,03 > 92,38). Hela svepet: 66,68 → 139,50 kr = +109,2 % på tretton kalendermånader. Två ärlighetsnoteringar hör till räkningen. Inuti våg 3 syns julisvängarna, 107,00 kr den 2020-07-15 och 96,72 kr den 2020-07-31 — det är underordnad grad, fraktalen i praktiken. Och en alternativ märkning finns: juli-toppen som våg 3-topp. Båda läsningarna uppfyller järnreglerna; kursen tränar att redovisa dem öppet i stället för att gömma den ena."
+        },
+        {
+          "type": "text",
+          "content": "Fyra fallgropar att bära med sig. Omräkning tills det passar: att justera etiketterna retroaktivt tills siffrorna blir vackra är kurvanpassning, inte analys — skyddet är järnreglerna plus redovisade datum, och att visa alternativa läsningar. Prognos vs beskrivning: Elliott är starkast som beskrivning av vad som hänt och hypotesgenerator för vad som kan pågå — aldrig en spådomsmaskin, och kursen håller den skillnaden hårt. Alla kurvor är inte impulser: korrektiva marknader kan snurra i åratal utan någon ren femma, och att tvinga fram en är det klassiska felet. Zoner, inte linjer: 46,9 % är \"inom zonen\" — inte ett löfte om att 50,0 % håller nästa gång. Sifferjakt dödar metoden."
+        },
+        {
+          "type": "insikt",
+          "content": "Här knyts boken till ekosystemet: kurs F01 gav hierarkin, graderna mikro till mega — och Elliottmönstret är det som graderas. Kurs F02 gjorde fundamenten till tidsserier: en intäktsvåg kan läsas med samma fem-och-tre-öga. Kurs F03 gav konfluensregeln: en Elliott-räkning är ett vittne, och det krävs ett oberoende — fundamentalt värde, nyckeltalsnivå — som säger samma sak innan något vägs in i AKM2:s tidshorisonter, som själva är grader. Regelverket samlar allt: hierarkin (F01) för skala, formen (F04) för struktur, konfluensen (F03) för bevisning. Allt är utbildningsmaterial — metoden beskriver hur den läser och räknar; inga investeringsråd, inga avkastningslöften (2007:528), och kurskurserna är historiska källmärkta exempel."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket påstående om järnreglerna stämmer med kursen?",
+          "alternativ": [
+            "Våg 2 får aldrig falla under våg 1:s startpunkt",
+            "Våg 3 får vara den kortaste om volymen bekräftar räkningen",
+            "Våg 4 får bryta under våg 1:s topp när korrektionen är grund",
+            "En bruten järnregel kan godtas om räkningen redovisas öppet"
+          ],
+          "ratt": 0,
+          "tips": "Bryts en enda regel är räkningen ogiltig — inte nästan."
+        },
+        {
+          "q": "Vilken roll ger kursen Elliottanalysen?",
+          "alternativ": [
+            "En spådomsmaskin som förutsäger kommande toppdatum",
+            "En beskrivning av vad som hänt och en hypotesgenerator för vad som kan pågå",
+            "En ersättning för den fundamentala analysen",
+            "Ett mått som gör konfluens med oberoende vittnen onödig"
+          ],
+          "ratt": 1,
+          "tips": "Kursen skiljer hårt mellan beskrivning och prognos — vad är metoden starkast som?"
+        },
+        {
+          "q": "Vad kräver konfluensreglernas vittneslogik innan en Elliott-räkning vägs in i AKM2:s tidshorisonter?",
+          "alternativ": [
+            "Att räkningen gjorts i månadsgrafen först",
+            "Att etiketterna räknats om tills siffrorna blir vackra",
+            "Att minst ett oberoende vittne — fundamentalt värde eller nyckeltalsnivå — säger samma sak",
+            "Att nyhetsflödet bekräftar den pågående vågen"
+          ],
+          "ratt": 2,
+          "tips": "Ett vittne räcker aldrig — vad utgör det andra, oberoende?"
         }
       ]
     }

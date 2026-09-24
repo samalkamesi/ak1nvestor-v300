@@ -1,0 +1,1 @@
+studio: [organ:Φ] v167-prov fil-skrivande variant (_v182-prov2.mjs): roten till stdout-hänget var tre sekventiella fetchar à 20 s-tak som kan spränga skalens 30 s-fönster — resultaten till /tmp/v167-prod.txt och pollas med Read. PROD BEVISAD LIVE: API v01 200 kap 12 (8 min quiz 3) · v19 200 kap 14 · sajten 200.

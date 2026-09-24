@@ -142,12 +142,13 @@ PASS fibonacci-applications chapterCount — 15 == 15
 PASS fibonacci-applications totalMinutes=Σ — 173 == 173
 PASS fibonacci-applications quiz=3 — 3
 PASS fibonacci-applications quiz-struktur — q/alt4/ratt/tips ✓
-PASS fibonacci-applications blocktyper — text,utmaning,insikt
+PASS fibonacci-applications blocktyper — text,utmaning,tabell,insikt
 PASS fibonacci-applications utmaning-block — finns
 PASS fibonacci-applications varumärkesgrind — 26 fraser rena
 PASS fibonacci-applications lagrum — 2007:528
-PASS fibonacci-applications talöverföring — 34/34 = 100 % (krav ≥70)
+PASS fibonacci-applications talöverföring — 17/17 kärntal = 100 % (krav ≥70)
 PASS fibonacci-applications num-sekvens — 1..15 ✓
+NOTIS d13 — två sessioner levererade oberoende (prod-session + studio rond 177); prod:s version behållen vid merge (neutral granskning GRÖN 14/14 i verktyg/_v166d13-val.mjs: kärntal 17/17, varumärkesgrind 0/26, quiz ratt 2,3,0, lagrum ×3); studio-versionen (KVD GRÖN 23/23, _f13-v166d13-kvd.mjs) bevarad i historiken af742a0c. Läxa: granskningsköns "väntar"-lista uppdateras vid LEVERANS, inte först vid granskning — annars dubbelarbetar parallella sessioner (intermarket-stod som väntande trots klar d10 när rond 177 startade).
 
 ## LÄGE: 13 granskade · 11 väntar: come-into-my-trading-room, teknisk-analys-med-johnny-torssell, bollinger-on-bollinger-bands, the-new-science-of-technical-analysis, way-of-the-turtle, the-complete-turtletrader, the-trend-following-bible, trading-in-the-zone, the-hour-between-dog-and-wolf, market-mind-games, your-money-and-your-brain
 

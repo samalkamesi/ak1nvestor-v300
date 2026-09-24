@@ -39,9 +39,15 @@ logga(`STEG 0 deploy: ${senaste.trim()} — e27ef394 förfader: ${forefar ? "JA"
 if (!forefar) { writeFileSync(join(LH_KAT, "dom-s7u2o139efter.json"), JSON.stringify({ ...RAPPORT, abort: "deploy utan kur-förfader" }, null, 2)); process.exit(3); }
 
 // ── Steg 1: prod 200 ×2 ────────────────────────────────────────────────────
+const PROD_BAS = "https://lab.ak1nvestor.com";
+const prodUrl = (sokvag) => {
+  const u = new URL(sokvag, PROD_BAS);
+  if (u.origin !== PROD_BAS) throw new Error("SSRF-vakten: ogiltigt ursprung " + u.origin);
+  return u;
+};
 const prodStatus = {};
 for (const sida of ["/superanalys", "/kalkylator"]) {
-  const svar = await fetch(`https://lab.ak1nvestor.com${sida}`, { redirect: "manual" });
+  const svar = await fetch(prodUrl(sida), { redirect: "manual" });
   prodStatus[sida] = svar.status;
 }
 logga(`STEG 1 prod 200 ×2: /superanalys=${prodStatus["/superanalys"]} /kalkylator=${prodStatus["/kalkylator"]}`);

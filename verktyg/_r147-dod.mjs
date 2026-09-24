@@ -1,10 +1,10 @@
 // rond 147: DoD-sond — snittets status, sajthälsa, fabrikens v145, RAM, deploylås
 import fs from 'node:fs';
-import { execSync } from 'node:child_process';
+import { execSync, execFileSync } from 'node:child_process';
 
 const kod = (url) => {
   try {
-    return execSync(`curl -s -o /dev/null -w '%{http_code}' --max-time 15 '${url}'`, { encoding: 'utf8' }).trim();
+    return execFileSync('curl', ['-s', '-o', '/dev/null', '-w', '%{http_code}', '--max-time', '15', url], { encoding: 'utf8' }).trim();
   } catch (e) { return 'FEL:' + e.message.slice(0, 60); }
 };
 

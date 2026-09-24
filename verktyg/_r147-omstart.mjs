@@ -1,6 +1,6 @@
 // rond 147: kontrollerad omstart av pm2 'ak1a' (4,3 GB-läckan) enligt våg 216-samordning
 import fs from 'node:fs';
-import { execSync } from 'node:child_process';
+import { execSync, execFileSync } from 'node:child_process';
 
 const JURNAL = '/tmp/ak1a-omstart-journal.json';
 const LAS = '/tmp/ak1a-deploy.lock';
@@ -20,7 +20,7 @@ try {
 
 // flock på själva deploylåsfilen: -n misslyckas om någon håller den
 try {
-  execSync(`flock -n ${LAS} -c true`, { timeout: 5000 });
+  execFileSync('flock', ['-n', LAS, '-c', 'true'], { timeout: 5000 });
 } catch (e) {
   deployLas = 'UPPTAGET (bygg pågår?)';
 }
@@ -50,7 +50,7 @@ execSync('pm2 save', { encoding: 'utf8', timeout: 30000 });
 await new Promise(r => setTimeout(r, 9000));
 for (const url of ['http://localhost:3000/', 'https://lab.ak1nvestor.com/', 'http://localhost:3000/rapportakademin']) {
   try {
-    const kod = execSync(`curl -s -o /dev/null -w '%{http_code}' --max-time 20 '${url}'`, { encoding: 'utf8' });
+    const kod = execFileSync('curl', ['-s', '-o', '/dev/null', '-w', '%{http_code}', '--max-time', '20', url], { encoding: 'utf8' });
     console.log(url, '→', kod);
   } catch (e) { console.log(url, 'FEL: ' + e.message.slice(0, 100)); }
 }

@@ -3,7 +3,7 @@
 // Fabriksagent s1-u2 (auto-s1-1790012730031), 2026-09-21. LÄSER ENDAST — skriver inget.
 // Klass: syskonens paketkontroller (sandvik/handelsbanken-mönstret).
 import { readFileSync, existsSync } from "node:fs";
-import { execSync } from "node:child_process";
+import { execSync, execFileSync } from "node:child_process";
 import crypto from "node:crypto";
 
 const R = "/home/ak1a/AK1";
@@ -39,14 +39,14 @@ const kal = JSON.parse(readFileSync(KAL, "utf8"));
 const yta = `${utkast.title}\n${utkast.description}\n${utkast.body}`;
 
 // Byggvintage: utkastets egen commit 79d8f765 (09-20 21:24)
-const vintage = JSON.parse(execSync(`git -C ${R} show 79d8f765:data/portfolj-system/bolagsunivers.json`, { encoding: "utf8", maxBuffer: 64e6 }));
+const vintage = JSON.parse(execFileSync("git", ["-C", R, "show", "79d8f765:data/portfolj-system/bolagsunivers.json"], { encoding: "utf8", maxBuffer: 64e6 }));
 
 console.log("=== S1U2 WIHLBORGS Q3-KONTROLL — " + new Date().toISOString() + " ===");
 console.log(`md5 utkast=${md5(readFileSync(UTKAST, "utf8"))} univ(idag)=${md5(readFileSync(UNIV, "utf8"))} univ(vintage 79d8f765)=${md5(JSON.stringify(vintage))} kalender=${md5(readFileSync(KAL, "utf8"))}`);
 
 // A. Källor & orördhet
-ok("A1", execSync(`git -C ${R} diff --name-only 79d8f765..HEAD -- data/blogg-utkast/kvartal/2026-q3/sa-laser-du-wihlborgs-q3-2026.json`, { encoding: "utf8" }).trim() === "", "utkastet orört sedan bygget (diff 79d8f765..HEAD tom)");
-ok("A2", execSync(`git -C ${R} status --porcelain -- data/blogg-utkast/kvartal/2026-q3/sa-laser-du-wihlborgs-q3-2026.json data/portfolj-system/bolagsunivers.json data/blogg-utkast/kvartal/2026-q3/kalender-fastighet.json`, { encoding: "utf8" }).trim() === "", "arbetsytan ren för alla tre källfiler");
+ok("A1", execFileSync("git", ["-C", R, "diff", "--name-only", "79d8f765..HEAD", "--", "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-wihlborgs-q3-2026.json"], { encoding: "utf8" }).trim() === "", "utkastet orört sedan bygget (diff 79d8f765..HEAD tom)");
+ok("A2", execFileSync("git", ["-C", R, "status", "--porcelain", "--", "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-wihlborgs-q3-2026.json", "data/portfolj-system/bolagsunivers.json", "data/blogg-utkast/kvartal/2026-q3/kalender-fastighet.json"], { encoding: "utf8" }).trim() === "", "arbetsytan ren för alla tre källfiler");
 const wihl = univIdag.find((p) => p.ticker === "WIHL.ST");
 const wihlV = vintage.find((p) => p.ticker === "WIHL.ST");
 ok("A3", !!wihl && !!wihlV, "WIHL-post i både dagens (249) och byggvintagens universumfil");
@@ -61,7 +61,7 @@ ok("A5", kalStr.includes("WIHL.ST") && kalStr.includes("divergerar mellan 20 och
 const vag = readFileSync(VAGMASTER, "utf8");
 ok("A6", !/WIHL|Wihlborgs/i.test(vag), "WIHL finns inte i vågvalidering-SENASTE.md (utkastet redovisar ingen vågklassificering)");
 let analysWihl = false;
-try { analysWihl = execSync(`grep -ril wihl ${R}/data/analyses 2>/dev/null || true`, { encoding: "utf8" }).trim() !== ""; } catch { /* tom */ }
+try { analysWihl = execFileSync("grep", ["-ril", "wihl", R + "/data/analyses"], { encoding: "utf8" }).trim() !== ""; } catch { /* grep exit 1 = inga träffar */ }
 ok("A7", !analysWihl, "ingen WIHL-analysfil i data/analyses");
 
 // ============ B. FÄLTKONTROLLER mot universumposten (dagens fil; A4 visar vintage-identisk) ============

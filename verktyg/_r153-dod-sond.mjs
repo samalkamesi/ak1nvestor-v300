@@ -1,6 +1,6 @@
 // Rond 153 — DoD-sond för kunduppdrag RAPPORTAKADEMIN (Lag 1: bevis före dom)
 import fs from 'node:fs';
-import { execSync } from 'node:child_process';
+import { execSync, execFileSync } from 'node:child_process';
 
 const PROD = '/home/ak1a/AK1';
 const u = {};
@@ -43,7 +43,7 @@ try {
 // 5. Laggrundade kur-commits anfäder i prod-HEAD?
 for (const [namn, hash] of Object.entries({ citatValidator: '8abf541e', passGetKur: '141c7e77', navEntre: '443e6a2b' })) {
   try {
-    execSync(`git -C ${PROD} merge-base --is-ancestor ${hash} HEAD`, { stdio: 'pipe' });
+    execFileSync('git', ['-C', PROD, 'merge-base', '--is-ancestor', hash, 'HEAD'], { stdio: 'pipe' });
     u['anfad.' + namn] = `${hash} ✓`;
   } catch { u['anfad.' + namn] = `${hash} SAKNAS`; }
 }

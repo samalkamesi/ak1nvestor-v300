@@ -248,3 +248,37 @@ tier-sidor (R2).
 
 *Kartan satt 2026-09-24 av fabrikens branding-audit-agent (v159-u3). Underlag för
 våg 2: kodändringar enligt åtgärdslistan.*
+
+---
+
+## 5. IMPLEMENTERINGSSTATUS + DOKUMENTERADE UNDANTAG (v160, tillagt 2026-09-24)
+
+**Levererat:** P1 (#1 guld-knapp ×5 fb3f125a · #2 52px · #3 kanoniska CTA-texter ·
+#5 social proof ×3) · P2 (#6 H1-jämställning ×9 + pro ×4 0b458614 · #7 medlemskap
+eyebrow+mikrostrip · #8 eyebrows ×4 · #9 logga-in-mikrostrip) · P2.5 (#4 SektionsCta
+delad + 8 monteringar 36e16593) · P3.1 (#11 hero-tokens 90 byten d447087e) · P3.2
+(#12 ghost-konvention dokumenterad i globals.css · #13 Öppna labbet → btn-guld-signatur
++ 52px · #14 DelRad 44px/52px mobil). Baseline-målen: 1 primärknappsvariant ✓ ·
+8/8 konverteringssidor med CTA ✓ · SocialProof på konverterings_sidorna ✓ ·
+raw-hex i auditens sju filer 0 ✓ (övriga filer fortsättningsvis).
+
+**Medvetna undantag (ALDRIG "drift" — beslutade avvikelser från referensstandarden):**
+
+1. **Marin-hero-familjens h1 3xl→5xl** (start, fas2, fas3, pro) — medvetet
+   säljmönster; jämställs ALDRIG ned till 4xl-standarden.
+2. **/dagens-pass h1 4xl→5xl** — energisk sida, medvetet förhöjd.
+3. **/logga-in centrerad h1** — login-konvention; övriga sidor vänsterställer.
+4. **Pro-B2B-gruppens egen palett** (font-mono-eyebrow `text-guld-djup`,
+   `btn-marin`, 44px på /pro/priser) — B2B-uttryck skiljer sig medvetet från
+   konsument-ytorna; dokumenterat i kartan §2.6.
+5. **Fas-ansök-CTA:er** ("Ansök om Fas 2" etc.) — affärslogisk text, ALDRIG
+   "Börja gratis" (kanon gäller endast Fas 1-konvertering).
+6. **DelRad:s delningspiller** (blogg/[slug], forskningsbiblioteket/[ticker]) —
+   m8 §3b-kontraktet "ikonrad, inte banner": diskreta 44px-piller (52px endast
+   mobil), ALDRIG signatur-guld — delning är sekundär, aldrig huvud-CTA.
+7. **Dataset-eyebrow** — parkerad: dataset-sidorna är t()-flerspråkiga och en
+   eyebrow kräver nya ordlistenycklar sv/en/ar (kirurgigränsen för P2; eget
+   mikropass när ordlistan öppnas nästa gång).
+8. **Hero-familjens tokens är temastabila** (P3.1): de flippar INTE i dark och
+   ingår INTE i .marin-scope-guld-flippen — de skall bete sig exakt som de
+   raw-hex de ersatte. Förväxla dem aldrig med --gold/--djup-marin (som flippar).

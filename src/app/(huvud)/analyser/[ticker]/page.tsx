@@ -226,7 +226,7 @@ export default async function AnalysisPage({
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
             href="/"
-            className="rounded-md bg-gold px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90"
+            className="btn-guld-signatur inline-flex min-h-[52px] items-center justify-center px-6 py-3 text-sm"
           >
             Öppna labbet
           </Link>

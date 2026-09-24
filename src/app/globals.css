@@ -42,7 +42,12 @@
   --color-gold-soft: var(--gold-soft);
   /* v160 P3 (audit #11): hero-familjens tokens — TEMASTABILA (ingen .dark-
      override, inget marin-scope-flipp) = raw-hex-ersättning med noll
-     visuell förändring; se :root-kommentaren. */
+     visuell förändring; se :root-kommentaren.
+     GHOST-KONVENTION (v160 P3, audit #12): fylld ghost
+     (border-gold/50 bg-gold/10 text-gold) = sidsluts-CTA (SektionsCta);
+     outline-ghost (border-gold/50 text-gold, hover:bg-gold/10) = in-kropp-
+     länk och sekundära val. DelRad:s pill (border-gold/30 rounded-full)
+     = m8:s ikonrad-kontrakt — diskret, ALDRIG banner. */
   --color-guld-hero: var(--guld-hero);
   --color-beige-hero: var(--beige-hero);
   --color-marin-morkast-hero: var(--marin-morkast-hero);

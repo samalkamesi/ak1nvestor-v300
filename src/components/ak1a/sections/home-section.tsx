@@ -8,6 +8,9 @@ import {
   LibraryBig,
   Calculator,
   Award,
+  TrendingUp,
+  PieChart,
+  Brain,
 } from "lucide-react";
 import { Eyebrow, HonestyTag } from "../primitives";
 import { NyhetsChips } from "../kunskaps-flode";
@@ -38,6 +41,10 @@ const ANTAL_KURSER = SIFFROR.kurser;
 const ANTAL_QUIZ = SIFFROR.quiz;
 const ANTAL_BOKER = SIFFROR.bokmaster;
 const ANTAL_VERKTYG = 8;
+// kf2 (CTA-spåret 2026-09-24): mätta publicerade blogg-artiklar —
+// räknade i data/blogg/*.json (94 st denna dag). Uppdateras vid
+// ny artikeldrop; kurser/quiz följer som alltid SIFFROR (guldkällan).
+const ANTAL_ARTIKLAR = 94;
 
 /* ---------- Sifferbandets mätta tal — varje stat är klickbar ---------- */
 
@@ -178,6 +185,38 @@ const VERKTYGSLANKAR: { nyckel: OrdlistaNyckel; href: string }[] = [
   { nyckel: "nav.konfluensradarn", href: "/konfluens" },
 ];
 
+/* ---------- kf2 · FÖDELSEKORT — vad kunden får (3 färdigheter) ---------- */
+
+const FARDER: {
+  ikon: typeof BookOpen;
+  rubrikNyckel: OrdlistaNyckel;
+  textNyckel: OrdlistaNyckel;
+  lankNyckel: OrdlistaNyckel;
+  href: string;
+}[] = [
+  {
+    ikon: TrendingUp,
+    rubrikNyckel: "home.fard1Rubrik",
+    textNyckel: "home.fard1Text",
+    lankNyckel: "home.fard1Lank",
+    href: "/kurser",
+  },
+  {
+    ikon: PieChart,
+    rubrikNyckel: "home.fard2Rubrik",
+    textNyckel: "home.fard2Text",
+    lankNyckel: "home.fard2Lank",
+    href: "/portfoljbyggare",
+  },
+  {
+    ikon: Brain,
+    rubrikNyckel: "home.fard3Rubrik",
+    textNyckel: "home.fard3Text",
+    lankNyckel: "home.fard3Lank",
+    href: "/rapportakademin",
+  },
+];
+
 /* ---------- Stigen: Fas 1 från konto till certifikat ---------- */
 
 const STIG: {
@@ -282,6 +321,41 @@ function AnimeraTal({ mal, suffix }: { mal: number; suffix?: string }) {
   );
 }
 
+/* ---------- kf2 · SEKTIONS-CTA — "Börja gratis" efter varje sektion ----------
+   Enkel igenkomstkälla: samma korta rad (knapp + två invändningsnycklar,
+   båda återanvända ur herons mikrostrip) i varje sektions fot. 52 px
+   tryckyta på mobil; sjalvstandig = egen sektion-container (efter
+   NyhetsChips, som äger sin egen section-wrapper). */
+function SektionsCta({ sjalvstandig = false }: { sjalvstandig?: boolean }) {
+  const { t } = useSprak();
+  const knapp = (
+    <Link
+      href="/logga-in"
+      prefetch={false}
+      className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-lg border border-gold/50 bg-gold/10 px-6 py-3 text-sm font-bold text-gold transition-colors hover:bg-gold/20 sm:w-auto"
+    >
+      {t("home.borjaGratis")} <span aria-hidden="true">→</span>
+    </Link>
+  );
+  const mikro = (
+    <p className="text-xs tracking-wide text-muted-foreground">
+      {t("home.heroMikro1")} · {t("home.heroMikro3")}
+    </p>
+  );
+  const strip = (
+    <div className="mt-10 flex flex-col items-center gap-3 border-t border-border pt-6 sm:flex-row sm:justify-center">
+      {knapp}
+      {mikro}
+    </div>
+  );
+  if (!sjalvstandig) return strip;
+  return (
+    <div className="border-b border-border">
+      <div className="mx-auto max-w-7xl px-4 pb-8 sm:px-6">{strip}</div>
+    </div>
+  );
+}
+
 export function HomeSection() {
   const { t } = useSprak();
 
@@ -307,14 +381,20 @@ export function HomeSection() {
                 {t("home.heroRubrik")}
               </h1>
 
+              {/* kf2: värdeerbjudandet — max 15 ord (ordlistan), därefter
+                  social proof-raden med mätta tal före knapparna. */}
               <p className="mt-5 max-w-2xl font-serif text-lg italic leading-relaxed text-[#E8C766] sm:text-xl">
-                {t("home.heroUnderrubrik", {
-                  kurser: ANTAL_KURSER,
-                  quiz: ANTAL_QUIZ.toLocaleString("sv-SE"),
+                {t("home.heroUnderrubrik")}
+              </p>
+
+              <p className="mt-4 font-serif text-sm font-semibold tracking-wide text-[#EDE6D6]/85 sm:text-base">
+                {t("home.socialProof", {
+                  kurser: ANTAL_KURSER.toLocaleString("sv-SE"),
+                  artiklar: ANTAL_ARTIKLAR.toLocaleString("sv-SE"),
                 })}
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link
                   href="/logga-in"
                   prefetch={false}
@@ -322,20 +402,20 @@ export function HomeSection() {
                   // sitter i viewport på sajtens entré ⇒ varje kall besökare
                   // prefetchar /logga-in ×2 omgångar innan något klickats. Se
                   // data/forskning/OPTIMERING/o56 (spårets prefetch-familj).
-                  className="btn-guld-signatur inline-flex items-center gap-2 px-8 py-4 text-base font-bold sm:text-lg"
+                  className="btn-guld-signatur inline-flex w-full items-center justify-center gap-2 px-8 py-4 text-base font-bold sm:w-auto sm:px-10 sm:py-5 sm:text-lg"
                 >
-                  {t("home.bliMedlemGratis")} <span aria-hidden="true">→</span>
+                  {t("home.borjaGratis")} <span aria-hidden="true">→</span>
                 </Link>
                 <Link
                   href="/kurser"
                   prefetch={false}
                   // Samma kur som grannknappen: /kurser-flighten är ~35 KiB i
                   // tre omgångar (multiomgångs-prefetch på EN länk, o50 §2) —
-                  // tyngsta enskilla spillposten på startsidan. Hover-prefetch
+                  // tyngsta enskilda spillposten på startsidan. Hover-prefetch
                   // lever; klickkostnad ~100–300 ms (ISR-sida).
-                  className="inline-flex items-center gap-2 rounded-lg border border-[#E8C766]/50 px-6 py-4 text-base font-semibold text-[#E8C766] transition-colors hover:bg-[#E8C766]/10"
+                  className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-lg border border-[#E8C766]/50 px-6 py-4 text-base font-semibold text-[#E8C766] transition-colors hover:bg-[#E8C766]/10 sm:w-auto sm:py-5"
                 >
-                  {t("home.utforskaKurserna")}
+                  {t("home.seKurserna")}
                 </Link>
               </div>
 
@@ -390,6 +470,41 @@ export function HomeSection() {
                 </p>
                 <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-gold opacity-0 transition-opacity group-hover:opacity-100">
                   {t("notis.gatDit")} <ArrowRight className="h-3 w-3" />
+                </span>
+              </Link>
+            ))}
+          </div>
+          <SektionsCta />
+        </div>
+      </section>
+
+      {/* ───────────── 2b · VAD DU FÅR — kf2: tre fördelskort (aktieanalys,
+           portfölj, kritiskt tänkande), hela kortet klickbart ───────────── */}
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
+          <Eyebrow>{t("home.fardEyebrow")}</Eyebrow>
+          <h2 className="mt-3 max-w-2xl font-serif text-3xl font-bold text-balance">
+            {t("home.fardRubrik")}
+          </h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {FARDER.map((f) => (
+              <Link
+                key={f.rubrikNyckel}
+                href={f.href}
+                prefetch={false}
+                className="group flex min-h-[52px] flex-col rounded-xl border border-border bg-card p-6 transition-all hover:border-gold/50 hover:shadow-lg"
+              >
+                <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-gold/30 bg-gold/10 text-gold">
+                  <f.ikon className="h-5 w-5" />
+                </span>
+                <h3 className="mt-4 font-serif text-xl font-bold leading-snug">
+                  {t(f.rubrikNyckel)}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {t(f.textNyckel)}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-1 pt-2 text-xs font-semibold uppercase tracking-wider text-gold transition-transform group-hover:translate-x-0.5">
+                  {t(f.lankNyckel)} <ArrowRight className="h-3 w-3" />
                 </span>
               </Link>
             ))}
@@ -450,6 +565,7 @@ export function HomeSection() {
               </Link>
             </span>
           </div>
+          <SektionsCta />
         </div>
       </section>
 
@@ -459,6 +575,7 @@ export function HomeSection() {
            /nyheter (respektive /kurser) — nyheterna når besökaren före
            medlemskapet. ───────────── */}
       <NyhetsChips />
+      <SektionsCta sjalvstandig />
 
       {/* ───────────── 4 · STIGEN — Fas 1 från konto till certifikat ───────────── */}
       <section className="border-b border-border bg-muted/30">
@@ -504,6 +621,7 @@ export function HomeSection() {
               </li>
             ))}
           </ol>
+          <SektionsCta />
         </div>
       </section>
 

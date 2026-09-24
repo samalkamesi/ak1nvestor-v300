@@ -766,6 +766,12 @@ export const ORDLISTA = {
     ar: "إعدادات الكوكيز",
   },
   "footer.tillToppen": { sv: "Till toppen", en: "To the top", ar: "إلى الأعلى" },
+  "footer.ctaRubrik": {
+    // kf2: footerns konverteringsbanner — Princip-rad, aldrig pris.
+    sv: "Lär dig aktieanalys — gratis, på riktigt.",
+    en: "Learn stock analysis — free, for real.",
+    ar: "تعلَّم تحليل الأسهم — مجانًا وعلى نحو حقيقي.",
+  },
 
   // ── Startsidan (sections/home-section.tsx) ────────────────────────────────
   "home.heroRubrik": {
@@ -774,9 +780,11 @@ export const ORDLISTA = {
     ar: "كن المحلل الذي يرى ما يفوّته الآخرون.",
   },
   "home.heroUnderrubrik": {
-    sv: "Lär dig läsa bolag som en analytiker — från första årsredovisningen till certifikatet. {kurser} kurser, {quiz} quiz-frågor och verktygen som hör till, från dag ett.",
-    en: "Learn to read companies like an analyst — from your first annual report to the certificate. {kurser} courses, {quiz} quiz questions and the tools that go with them, from day one.",
-    ar: "تعلَّم قراءة الشركات كمُحلِّل — من أول تقرير سنوي حتى الشهادة. {kurser} دورة و{quiz} سؤال اختبار والأدوات المرافقة، من اليوم الأول.",
+    // kf2 (CTA-spåret 2026-09-24): värdeerbjudandet på max 15 ord —
+    // siffrorna bärs i stället av social proof-raden + sifferbandet.
+    sv: "Gratis utbildning i aktieanalys — från första årsredovisningen till certifikatet.",
+    en: "A free education in stock analysis — from your first annual report to your certificate.",
+    ar: "تعليم مجاني في تحليل الأسهم — من أول تقرير سنوي حتى الشهادة.",
   },
   "home.bliMedlemGratis": {
     sv: "Bli medlem — gratis",
@@ -802,6 +810,78 @@ export const ORDLISTA = {
     sv: "Inget kort krävs",
     en: "No card required",
     ar: "لا حاجة إلى بطاقة",
+  },
+  "home.borjaGratis": {
+    sv: "Börja gratis",
+    en: "Start free",
+    ar: "ابدأ مجانًا",
+  },
+  "home.seKurserna": {
+    sv: "Se kurserna",
+    en: "See the courses",
+    ar: "شاهد الدورات",
+  },
+  "home.socialProof": {
+    // kf2: social proof-raden — talen interpoleras (guldkälleregeln):
+    // kurser ur SIFFROR, artiklar = publicerade data/blogg/*.json.
+    sv: "{kurser} kurser · {artiklar} artiklar · 3 språk · Nyttja varje dag",
+    en: "{kurser} courses · {artiklar} articles · 3 languages · Put it to use every day",
+    ar: "{kurser} دورة · {artiklar} مقالًا · 3 لغات · استخدمه كل يوم",
+  },
+  "home.fardEyebrow": {
+    sv: "Vad du får",
+    en: "What you get",
+    ar: "ما الذي تحصل عليه",
+  },
+  "home.fardRubrik": {
+    sv: "Tre färdigheter du bär med dig",
+    en: "Three skills you carry with you",
+    ar: "ثلاث مهارات تحملها معك",
+  },
+  "home.fard1Rubrik": {
+    sv: "Lär dig aktieanalys",
+    en: "Learn stock analysis",
+    ar: "تعلَّم تحليل الأسهم",
+  },
+  "home.fard1Text": {
+    sv: "Läs årsredovisningar, väg nyckeltal och värdera bolag med AKM1:s 20 variabler — steg för steg, på svenska.",
+    en: "Read annual reports, weigh key ratios and value companies with AKM1's 20 variables — step by step.",
+    ar: "اقرأ التقارير السنوية، وزِن النسب المالية، وقيّم الشركات بمتغيرات AKM1 العشرين — خطوة بخطوة.",
+  },
+  "home.fard1Lank": {
+    sv: "Börja med kurserna",
+    en: "Start with the courses",
+    ar: "ابدأ بالدورات",
+  },
+  "home.fard2Rubrik": {
+    sv: "Bygg en egen portfölj",
+    en: "Build your own portfolio",
+    ar: "ابنِ محفظتك الخاصة",
+  },
+  "home.fard2Text": {
+    sv: "Öva i portföljbyggaren — allokering, spridning och risk, med bolag du själv kan motivera.",
+    en: "Practise in the portfolio builder — allocation, diversification and risk, with companies you can justify yourself.",
+    ar: "تدرّب في أداة بناء المحفظة — التوزيع والتنويع والمخاطر، مع شركات تستطيع تبريرها بنفسك.",
+  },
+  "home.fard2Lank": {
+    sv: "Öppna portföljbyggaren",
+    en: "Open the portfolio builder",
+    ar: "افتح أداة بناء المحفظة",
+  },
+  "home.fard3Rubrik": {
+    sv: "Tänk kritiskt",
+    en: "Think critically",
+    ar: "فكِّر تفكيرًا نقديًا",
+  },
+  "home.fard3Text": {
+    sv: "Källkritik och psykologiska fällor — frågorna du ställer innan du litar på en analys, även vår egen.",
+    en: "Source criticism and psychological traps — the questions you ask before trusting an analysis, including ours.",
+    ar: "النقد المصدر والفخاخ النفسية — الأسئلة التي تطرحها قبل الوثوق بأي تحليل، حتى تحليلنا.",
+  },
+  "home.fard3Lank": {
+    sv: "Träna i Rapportakademin",
+    en: "Train in the Report Academy",
+    ar: "تدرّب في أكاديمية التقارير",
   },
   "home.siffrorEyebrow": {
     sv: "AK1A i siffror",

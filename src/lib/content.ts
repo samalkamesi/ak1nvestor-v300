@@ -188,10 +188,51 @@ export function getCaseStudy(id: string): CaseStudy | null {
 export function getBlogPosts(): BlogPost[] {
   const dir = join(ROOT, "data", "blogg");
   if (!existsSync(dir)) return [];
-  return readdirSync(dir)
-    .filter((f) => f.endsWith(".json"))
-    .map((f) => JSON.parse(readFileSync(join(dir, f), "utf8")) as BlogPost)
-    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+  // Per-fils felhantering (kf1): ett halvskrivet/trasigt JSON-filer eller en
+  // främmande fil i data/blogg/ får ALDRIG kasta hela bloggen i 500/0-läge —
+  // getAnalyses-mönstret, men med formkontroll: fälten listan + detaljsidorna
+  // renderar (slug/title/description/pillar/author/publishedAt/
+  // readingMinutes/tags/body) måste finnas, annars hoppar filen över med
+  // larm i pm2-loggen. Ingen cache: ISR (revalidate 3600) ska läsa disken
+  // färskt vid varje omrendering — nya inlägg syns inom en timme utan bygge.
+  const poster: BlogPost[] = [];
+  const sesattaSlugs = new Set<string>();
+  for (const f of readdirSync(dir)) {
+    if (!f.endsWith(".json")) continue;
+    try {
+      const rå = JSON.parse(readFileSync(join(dir, f), "utf8")) as unknown;
+      const giltig =
+        typeof rå === "object" &&
+        rå !== null &&
+        typeof (rå as BlogPost).slug === "string" &&
+        typeof (rå as BlogPost).title === "string" &&
+        typeof (rå as BlogPost).description === "string" &&
+        typeof (rå as BlogPost).pillar === "string" &&
+        typeof (rå as BlogPost).author === "string" &&
+        typeof (rå as BlogPost).publishedAt === "string" &&
+        typeof (rå as BlogPost).readingMinutes === "number" &&
+        Array.isArray((rå as BlogPost).tags) &&
+        typeof (rå as BlogPost).body === "string";
+      if (!giltig) {
+        console.warn(`[blogg] hoppar över ${f}: inte en giltig BlogPost (kf1)`);
+        continue;
+      }
+      const post = rå as BlogPost;
+      // Dublettslug: sorteringen nedan är deterministisk, men React-nycklar
+      // och generateStaticParams kräver unika slug:ar — första förekomsten vinner.
+      if (sesattaSlugs.has(post.slug)) {
+        console.warn(`[blogg] hoppar över ${f}: dublettslug "${post.slug}" (kf1)`);
+        continue;
+      }
+      sesattaSlugs.add(post.slug);
+      poster.push(post);
+    } catch (e) {
+      console.warn(
+        `[blogg] hoppar över ${f}: ogiltig JSON (${e instanceof Error ? e.message : String(e)}) (kf1)`,
+      );
+    }
+  }
+  return poster.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 }
 
 export function getBlogPost(slug: string): BlogPost | null {

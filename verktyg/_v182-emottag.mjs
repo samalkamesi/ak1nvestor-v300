@@ -52,23 +52,21 @@ function stycke(txt, fran, till) {
   return b < 0 ? txt.slice(a) : txt.slice(a, b);
 }
 function talMarkorer(text) {
-  // normaliserade tal: "1 952,21" → "1952,21" ; "44 %" → "44"
+  // normaliserade tal: "1 952,21" → "1952.21" ; "44 %" → "44" ; listnummer/meningspunkt "1."/"1 350." rensas
   const rå = text.match(/\d[\d\s\u00a0]*[.,]?\d*/g) || [];
-  return [...new Set(rå.map(t => t.replace(/[\s\u00a0]/g, '').replace(',', '.')).filter(t => t.length))];
+  return [...new Set(rå.map(t => t.replace(/[\s\u00a0]/g, '').replace(',', '.').replace(/\.$/, '')).filter(t => t.length))];
 }
-function varumarkeLista() {
+function forbjudnaMonster() {
+  // v166:s bevisade varumärkesgrind (rond 175, 24 kurser GRÖNA): forbjudnaFraser[].fran som regex.
+  // Undantag: \bkunder\b (allvar VARNING, motiv A8) är en YTA-regel för elev-/marknadstexter —
+  // i kursinnehåll om bolags kundbas är "kunder" legitim domänterminologi (samma logik som
+  // pro-ytornas B2B-undantag i vakten). Övriga 25 innehållsregler gäller fullt ut.
   try {
     const v = JSON.parse(readFileSync(ROT + '/data/varumarke.json', 'utf8'));
-    const ut = [];
-    (function samla(x) {
-      if (typeof x === 'string') { if (x.length > 1 && !/^\d+$/.test(x)) ut.push(x); }
-      else if (Array.isArray(x)) x.forEach(samla);
-      else if (x && typeof x === 'object') Object.values(x).forEach(samla);
-    })(v);
-    return [...new Set(ut)];
+    return (v.forbjudnaFraser || []).map(f => f.fran).filter(m => m && m !== '\\bkunder\\b');
   } catch { return []; }
 }
-const VM = varumarkeLista();
+const VM = forbjudnaMonster();
 
 function kontrolleraFragment(slug, fil, rubrik, kapNum) {
   const p = FRAGDIR + '/' + slug + '.json';
@@ -101,17 +99,17 @@ function kontrolleraFragment(slug, fil, rubrik, kapNum) {
     const r = q.map(x => x.ratt);
     new Set(r).size === 3 ? ok('unika ratt ' + r.join(',')) : fel('ratt ej unika: ' + r.join(','));
   }
-  // deklarationer + juridik
-  const allt = [k.intro, ...(k.blocks || []).map(b => b.content)].join('\n');
+  // deklarationer + juridik (allt = hela kapiteltexten inkl quiz — grindarna testar allt eleven ser)
+  const allt = [k.intro, ...(k.blocks || []).map(b => b.content), ...((k.quiz || []).map(q => [q.q, ...(q.alternativ || []), q.tips].join(' ')))].join('\n');
   allt.includes(JURIDIK) ? ok('juridikdeklaration ordagrant') : fel('juridikdeklaration saknas/avviker');
   allt.includes('NorrTeknik AB är ett konstruerat bolag') ? ok('bolag-deklaration') : fel('bolag-deklaration saknas');
   const lg = FORBJUDNA_LAGRUM.filter(l => allt.includes(l));
   lg.length === 0 ? ok('lagrum endast 2007:528') : fel('förbjudna lagrum: ' + lg.join(','));
   const rf = RADFRASER.filter(x => allt.toLowerCase().includes(x));
   rf.length === 0 ? ok('rådgivningsfraser 0') : fel('rådgivningsfraser: ' + rf.join(','));
-  // varumärkesgrind
-  const vmTräff = VM.filter(m => m !== 'NorrTeknik' && allt.includes(m));
-  vmTräff.length === 0 ? ok('varumärkesgrind 0') : fel('varumärke: ' + vmTräff.slice(0, 3).join(','));
+  // varumärkesgrind — v166:s mönster (negerings-lookbehind mot "inte/ej/aldrig..."-formuleringar)
+  const vmTräff = VM.filter(m => { try { return new RegExp('(?<!inte |ej |aldrig |ingen |inga |utan |varken |icke )' + m, 'giu').test(allt); } catch { return false; } });
+  vmTräff.length === 0 ? ok('varumärkesgrind 0 (' + VM.length + ' mönster)') : fel('varumärke: ' + vmTräff.slice(0, 3).join(','));
   // talmarkörer d+f ≥ 80 %
   const sek = underlagsSektion(fil, rubrik);
   const dSek = stycke(sek, '### d)', '### e)');

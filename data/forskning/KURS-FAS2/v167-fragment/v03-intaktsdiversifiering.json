@@ -1,0 +1,66 @@
+{
+  "slug": "v03-intaktsdiversifiering",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "Diversifiering är tillväxtkategorins försäkring — och nu väger du själv NorrTekniks tre axlar (kunder, produkter, geografier) mot varandra med låtsas-siffrorna från segment- och geografinoterna.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "NorrTeknik AB är ett konstruerat bolag — låtsas-årsredovisningens tal är påhittade för övningens skull.\n\nProduktaxeln: Maskiner 610 ÷ 1 200 = 50,8 % · Service 340 ÷ 1 200 = 28,3 % · Reservdelar 250 ÷ 1 200 = 20,8 %. Största segment bär hälften — måttlig produktkoncentration.\n\nGeografiaxeln: Sverige 40 %, övriga Norden 20 %, övriga Europa 25 %, Asien 10 %, Amerika 5 % — ingen enskild marknad dominerar; två tredjedelar av intäkterna kommer från tre regioner.\n\nKundaxeln: \"Ingen kund överstiger 10 %\"; största kunden 8 % — bred.\n\nSammanvägt: bred på kund- och geografiaxlarna, måttligt koncentrerad på produktaxeln ⇒ enligt riktlinjetabellen (\"bred på en axel, måttlig på en till\" ⇒ 4) landar NorrTeknik på 4 poäng. Men observera fallgropen nedan: alla tre affärsområden säljer till samma slutmarknad.\n\nSå gör du bedömningen själv: räkna varje segments andel av nettoomsättningen (segment ÷ summa), räkna hemmamarknadens andel ur geografinoten, leta storkundsuppgiften (största kunds andel, eller notisen om att ingen överstiger tröskeln) och bedöm axlarna var för sig — sedan tillsammans.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: Hur stor andel av intäkterna bär största affärsområdet?\n\nÖvningsfråga 2 — Tänk: Sverige står för 40 %. Är NorrTeknik geografiskt diversifierat?\n\nÖvningsfråga 3 — Tänk: En konkurrent saknar helt storkundsuppgift i sin årsredovisning. Vad kan det betyda — och vad gör du?"
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: 610 ÷ 1 200 = 50,8 %.\n\nFacit 2: Delvis. Ingen enskild marknad dominerar majoriteten och 60 % kommer utomlands — men 65 % av intäkterna ligger i Norden, så en nordisk nedgång skulle träffa hårt. \"Bredd\" är gradskala, inte ja/nej.\n\nFacit 3: Antingen att koncentrationen ligger under tröskeln (bolag behöver ofta bara redovisa över 10 %) eller att redovisningen är tunn. Du letar i noterna/geografin/segmenten efter indirekt bevis och dokumenterar osäkerheten i stället för att gissa — spårbarhet slår antagande."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): korrelerade segment låter trevägt men lever till samma slutmarknad — fråga alltid vem som betalar i slutändan, i varje segment. \"Ingen kund överstiger 10 %\" betyder inte fin fördelning, bara att koncentrationen ligger under redovisningströskeln — läs vad noten INTE säger. Diversifiering genom uppköp kan vara integrationsrisker snarare än balans, geografi efter faktureringsland kan spegla skattevägar snarare än kunder, och koncentration kan vara en medveten strategi — indikatorn mäter riskform, inte kvalitet."
+      },
+      {
+        "type": "insikt",
+        "content": "Axelbedömningen du just gjorde är samma vägning som ger AKM1:s poäng för intäktsdiversifiering, och nyckeltalsguiden visar exakt vilka noter (segment, geografi, storkund) som bär talet. AKM2:s analys vittnar om hur koncentrationen förändrar riskbilden tillsammans med tillväxt och marginaler, AI-Mentorn förhör dig på korrelerade segment och tröskeldämpade noter, och portföljmotorn bevakar axlarna över tid i din portfölj. Din dokumenterade axelbedömning blir kedjans råmaterial."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Ett bolag kan vara diversifierat på två axlar trots koncentration på den tredje.",
+        "alternativ": [
+          "Sant — axlarna (kunder, produkter, geografier) bedöms var för sig och sedan tillsammans",
+          "Falskt — koncentration på en axel gör hela bolaget koncentrerat",
+          "Sant, men bara för tjänstebolag",
+          "Falskt — axlarna får aldrig vägas mot varandra"
+        ],
+        "ratt": 0,
+        "tips": "Se kapitlets tre axlar och den sammanvägda bedömningen."
+      },
+      {
+        "q": "Notisen \"ingen kund överstiger 10 procent\" bevisar en fin kundfördelning.",
+        "alternativ": [
+          "Sant — under tröskeln är samma sak som jämnt fördelat",
+          "Falskt — notisen visar bara att koncentrationen ligger under redovisningströskeln; läs vad noten inte säger",
+          "Sant om noten upprepas tre år i rad",
+          "Falskt — notisen gäller alltid produkter, aldrig kunder"
+        ],
+        "ratt": 1,
+        "tips": "Se fallgropen om den tröskeldämpade storkundsnoten."
+      },
+      {
+        "q": "Tre affärsområden som alla säljer till samma slutmarknad är fullt diversifierade.",
+        "alternativ": [
+          "Sant — tre produktrör ger alltid tre oberoende intäktsströmmar",
+          "Sant om omsättningen är lika stor per område",
+          "Falskt — geografinoten avgör alltid ensam",
+          "Falskt — korrelerade segment sjunker synkat när slutmarknadens efterfrågan faller"
+        ],
+        "ratt": 3,
+        "tips": "Se fallgropen om korrelerade segment."
+      }
+    ]
+  }
+}

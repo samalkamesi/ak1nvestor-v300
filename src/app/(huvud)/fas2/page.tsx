@@ -3,6 +3,7 @@ import Link from "next/link";
 import { pageMetadata, websiteJsonLd } from "@/lib/seo";
 import { StrukturData } from "@/components/seo/StrukturData";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { SocialProof } from "@/components/ak1a/social-proof";
 
 // KF3: Fas 2-landningssidan (/fas2 var 404). Ren presentationsyta — inga
 // priser, inga live-tal — därför force-static utan revalidate (inget att
@@ -142,7 +143,7 @@ export default function Fas2Page() {
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <a
               href="#indikatorer"
-              className="rounded-md bg-gold px-5 py-3 text-center text-sm font-bold text-primary-foreground shadow-lg transition-opacity hover:opacity-90"
+              className="btn-guld-signatur inline-flex min-h-[52px] items-center justify-center px-5 py-3 text-center text-sm"
             >
               Se de 20 indikatorerna ↓
             </a>
@@ -242,7 +243,7 @@ export default function Fas2Page() {
           <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/fas2-ansok"
-              className="rounded-md bg-gold px-6 py-3 text-sm font-bold text-primary-foreground shadow-lg transition-opacity hover:opacity-90"
+              className="btn-guld-signatur inline-flex min-h-[52px] items-center justify-center px-6 py-3 text-sm"
             >
               Förbered dig till Fas 2 — ansök
             </Link>
@@ -269,6 +270,10 @@ export default function Fas2Page() {
         </Link>
         .
       </p>
+
+      {/* v160 (Φ) P1#5: social proof enligt BRANDING-AUDIT — siffrorna ur
+          SocialProof/SIFFROR (guldkällan), aldrig påhittade tal. */}
+      <SocialProof className="mt-12" />
     </SeoPageShell>
   );
 }

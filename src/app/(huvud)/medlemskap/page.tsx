@@ -290,7 +290,7 @@ export default async function MedlemskapPage() {
             href="/kurser"
             className="mt-6 rounded-md bg-gold px-4 py-2.5 text-center text-sm font-semibold text-primary-foreground hover:opacity-90"
           >
-            Börja lära dig nu — kostnadsfritt
+            Börja gratis
           </Link>
         </div>
 

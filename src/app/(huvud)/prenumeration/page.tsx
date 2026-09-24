@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { SocialProof } from "@/components/ak1a/social-proof";
 import { lasPriser } from "@/lib/portfolj-forskning/korstabell-data";
 import { lasPriserGallande } from "@/lib/variabler-lagring";
 import { NivaKort } from "@/components/ak1a/prenumeration/niva-kort";
@@ -268,6 +269,10 @@ export default async function PrenumerationPage() {
         </Link>{" "}
         är öppna som gratisverktyg.
       </p>
+
+      {/* v160 (Φ) P1#5: social proof enligt BRANDING-AUDIT — siffrorna ur
+          SocialProof/SIFFROR (guldkällan), aldrig påhittade tal. */}
+      <SocialProof className="mt-12" />
     </SeoPageShell>
   );
 }

@@ -61,7 +61,7 @@ Tre sätt känslan luras på samma siffror:
    (1,10 · 0,90 = 0,99). Tjugo sådana svängar: 0,99²⁰ ≈ 82 — 18 %
    borta på en resa som "bara gick upp och ner".
 2. **Referenspunkten vandrar:** i resa A blir toppen 110 hjärtats
-   nollpunkt — 99 känns som en förlust (−9,9 % från toppen) fast
+   nollpunkt — 99 känns som en förlust (−10 % från toppen) fast
    resan började på 100. I resa B blir botten 90 nollpunkten — 99
    känns som en seger (+10 %), fast portföljen ligger ned. Samma
    slutvärde, två motsatta känslor: värdet är ordningsokänsligt,

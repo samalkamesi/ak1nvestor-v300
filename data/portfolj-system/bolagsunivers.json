@@ -24406,5 +24406,95 @@
    ]
   },
   "notering": "kandidat ur S2-U1-BCE-OMG24 §10:s kö-notis (Kanada/kommunikation 1→2; P/E-bärare konfirmerad 26,54); TSX-primär CAD (BCE-precedensen); FY2022–FY2025 SAMTLIGA positiva — vågens första rad utan brottsdokumentation (rak 3-årig CAGR: oms −0,13 % · netto +5,77 %); prognosTillväxt +66,2 % = telekom-D&A-normalisering (spår-PEG 0,40); payout 163,89 % ur källan — utdelningen över TTM-vinsten, balansfinansierad (dokumenterad öppet); Altman 1,55 varningszonen öppet (Piotroski 5 bredvid); FCF-marginal 13,4 % bär fiber-/tower-transaktioner (metodnot); moat-fält null (bruttomarginalserie per FY ej i panelutdraget); EK-serie saknas — serier.egetKapital tomt; Q3-rappdag est. november (v172 v45-notis); rondens kirin-AVVISANDE + TMUS-kollisionsläxa i V173-U3-protokollet; alla repliker i paranoid (StockAnalysis TSX 2026-09-25)"
+ },
+ {
+  "ticker": "RCI-B",
+  "namn": "Rogers Communications Inc.",
+  "bransch": "kommunikation",
+  "land": "Kanada",
+  "valuta": "CAD",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/tsx/RCI-B/ (+ /statistics/ + /financials/)",
+    "paranoid": "TSX-PRIMÄRNOTING i CAD, klass B (BCE/TELUS-precedensens Toronto/CAD-rad; underlag S&P Global Market Intelligence + Fiscal.ai via StockAnalysis; intradag 2026-09-25 delayed +0,20 %; färshämtning direkt med cache-bypass): pris 49,28 CAD (52v 35,10–51,99 · beta 0,63), mcap 26,50 mdr CAD på 536,7 M aktier (replik 536,7 × 49,28 = 26,45 — 0,2 %), P/E 15,92 EXAKT replikerbar på källans EPS-bas (49,28/3,10 = 15,90; EPS-identiteten 1 838/536,7 = 3,425 gäller netto INKLUSIVE minoritetsintressen — källans EPS 3,10 bär NCI-avdrag ~174 M, Rogers Sports & Media-partnerskap; dokumenterad bas-skillnad) mot forward P/E 13,20 ⇒ prognosTillväxt +20,61 % (trailing/fwd-modellen, MUFG-konventionen; spår-PEG 15,92/20,61 = 0,77, källans PEG 1,94 på 3-års som kalibreringsnot), P/B 2,36 · EV/EBIT 8,53, P/FCF 35,45 med FCF-yield EXAKT replik (748/26 500 = 2,823 % mot 1/35,45 = 2,821 %), ROE 14,43 % · ROIC 3,91 % (under WACC 6,79 % — telekom-JV-struktur med minoritetsavdrag i kapitalbasen; dokumenterat) · brutto 55,55 % · EBIT-marginal 18,86 % · netto-marginal 9,07 % EXAKT replik (1 838/20 269 = 9,066 %) · FCF 748 M med FCF-marginal 3,7 % replik (748/20 269); balans: D/E 1,79 · räntetäckning 2,54 · Altman 1,73 (KÄLLANS VARNINGSZON — telekombalans; redovisas öppet, Piotroski 6 bredvid) · kassa 1,52 mdr · skuld 30,15 mdr · NETTOSKULD 28,63 mdr CAD · EK 11,33 mdr; utdelning 2,00 CAD/aktie (4,05 %) ⇒ senasteArMdr 1 073 (2,00 × 536,7) med källans payout 58,11 % (replik 2,00/3,10 = 64,5 % på källans EPS-bas — dokumentklass); FY-SERIEN dec-slutande (M CAD): oms [15 396 · 19 308 · 20 204 · 20 604] · netto [1 535 · 2 557 · 1 743 · 1 769] · FCF [2 088 · 2 433 · 2 446 · 748] — SHAW-BROTTET FY2023: förvärvet (april 2023, ~26 mdr CAD) ger omsättningshoppet +25,5 % i ett steg (struktur, ej organiskt) OCH FY23-nettot 2 557 bär fair value-engångsposter; därför CAGR på 2-årig KONSEKUTIV post-Shaw-bas FY2023→FY2025 (oms +3,29 % · netto −16,80 % — nettofallet mot engångspoståret är aritmetiskt, dokumenterat) medan 3-årig rak bas (oms +10,25 %) skulle misstolka Shaw-hoppet som tillväxt — AXA-brott-precedensen; FCF-KOLLAPSEN FY2025 (748 mot 2 446) = capex-/spectrumcykel (5G-expansion), syns i P/FCF 35,45; EPS-serien [2,59 · 4,32 · 2,95 · 2,99]; analytikerläge saknas i panelutdraget — ingen målkurs förs in; NÄSTA RAPPORT est. 2026-10-22 (Q3 2026) — v172-könotis; kandidatur: S2-U1-BCE-UTOKNING-OMG24 §10 kö-notis FÖRSTAKOORDINAT ('RCU Rogers + TELUS, båda P/E-bärare sannolikt') — P/E-bärarkriteriet kontrollerat FÖRE leverans enligt Sony/Honda-doktrinen: TTM-netto +1 838 M CAD > 0, P/E mätt 15,92; disk-kollisionskontroll exakt-match (rond 197:s läxa) GRÖN; Communication Services ⇒ kommunikation-cellen (25→26 bolag; Kanada 4→5 — TELUS-raden 3→4 rättningen r196:s läxa tillämpad från start denna gång)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 49.28,
+  "marknadsKapitalMdr": 26.5,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.03301618394671624,
+   "resultatCAGR5ar": -0.1682390012663072,
+   "omsattningTillvaxtTTM": 0.11,
+   "prognosTillvaxt": 0.20606060606060606
+  },
+  "lonksamhet": {
+   "roe": 0.1443,
+   "roic": 0.0391,
+   "bruttoMarginal": 0.5555,
+   "ebitMarginal": 0.1886,
+   "nettoMarginal": 0.0907,
+   "fcfMarginal": 0.03690364596181361
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 1.79,
+   "rantaTackning": 2.54,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 1.073,
+   "andelUtestande": 0.5811,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 15.92,
+   "pb": 2.36,
+   "evEbit": 8.53,
+   "peg": 0.7725882352941177,
+   "fcfYield": 0.028226415094339624,
+   "egenKapitalMultipl": 2.36
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    15396000000,
+    19308000000,
+    20204000000,
+    20604000000
+   ],
+   "resultat": [
+    1535000000,
+    2557000000,
+    1743000000,
+    1769000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    2088000000,
+    2433000000,
+    2446000000,
+    748000000
+   ]
+  },
+  "notering": "kandidat ur BCE-OMG24 §10:s kö-notis (förstakoordinat; P/E-bärare kontrollerad FÖRE leverans: TTM-netto +1 838 M > 0); TSX klass B i CAD; SHAW-BROTT FY2023 (förvärv +25,5 % omsättningshopp; FY23-netto bär fair value-engångsposter) ⇒ CAGR på 2-årig konsekutiv post-Shaw-bas (oms +3,29 % · netto −16,80 % mot engångspoståret — dokumenterat); FCF-kollaps FY2025 748 M = capex-/spectrumcykel; P/E-replik EXAKT på källans EPS-bas 3,10 (NCI-avdrag ~174 M dokumenterat); ROIC under WACC (JV-struktur); Altman 1,73 varningszonen öppet (Piotroski 6); EK-serie saknas — serier.egetKapital tomt; rappdag est. 2026-10-22 = v172-könotis; alla repliker i paranoid (StockAnalysis TSX 2026-09-25)"
  }
 ]

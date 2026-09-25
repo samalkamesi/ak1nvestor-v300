@@ -26201,5 +26201,95 @@
    ]
   },
   "notering": "cellmotiverad duo (Tyskland/material 1→2: BASF processkemi + Heidelberg Materials grus/cement/byggmaterial — MARGINALKONTRASTEN 23,6 % mot 64,3 % brutto dokumenterad i båda raderna; Tysklands sista 1-gren öppnad — landets alla elva grenar ≥2); ETR-primär EUR; FCF-SERIEN INTERN LÅST (OCF−capex exakt samtliga fem fönster — vågens renaste källdata); FCF-yield 6,77 % DUBBELT LÅS · FCF-M 7,82 % EXAKT; netto POSITIVT SAMTLIGA FYRA ÅR [1 597 · 1 929 · 1 782 · 1 941] med FY24-dipp (BASF-kontrasten: kemicykeln har brutit BASF:s serie); rak CAGR oms +0,60 % · netto +6,72 %; UTDELNINGENS RAKA TRAPPA [2,60 · 3,00 · 3,30 · 3,60] +9,09 %/år med payout 31,9 % EXAKT; P/E 12,43 källans justerade bas (GAAP-replik 12,59 · pris/EPS 12,85 dokumenterade — källans rad bär lägre prisbas); EPS×aktier EXAKT 0,7 %; EV 34,06 låst av EV/Earnings 17,09 (enkel dekomposition +1,17 = pension/leasing, noterad); ROIC 8,40 % > WACC 7,26 %; Altman 2,54 gränszon · Piotroski 6 · beta 0,91 · 52v −27,54 % — datafakta; återköp 1,22 % med fallande aktieantal; EK-serie saknas — serier.egetKapital tomt; rappdag nästa 2027-02-25 (FY2026); alla repliker i paranoid (StockAnalysis ETR 2026-09-25)"
+ },
+ {
+  "ticker": "4503.T",
+  "namn": "Astellas Pharma Inc.",
+  "bransch": "halso",
+  "land": "Japan",
+  "valuta": "JPY",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/tyo/4503/ (+ /statistics/ + /financials/ + /financials/cash-flow-statement/)",
+    "paranoid": "TYO-PRIMÄRNOTING i JPY (underlag S&P Global Market Intelligence via StockAnalysis; intradag 2026-09-25 — öppning 2 389 · föregående close 2 359 · dagsspann 2 379–2 413; källans P/E-rad låser mot close-kursen; färshämtning direkt med cache-bypass + FYRA paneler (quote/statistics/financials/cash-flow); APRIL–MARS-bokslut, serien märkt räkenskapsårets SLUTÅR): pris 2 359 JPY (beta 0,09 — lägst i vågen), mcap 4 230 mdr JPY på 1,79 mdr aktier (replik 1,79 × 2 359 = 4 222,6 — 0,2 %), OMPRÖVNINGSDOKUMENTATIONEN (rond 220, U17:s avvisning): U17 mätte TTM-netto −47 mdr JPY och avvisade på Sony/Honda-doktrinen; DAGENS FÄRSKPANEL (S&P uppdaterad 2026-09-24) bär TTM-netto +364,9 mdr JPY (+347 %) med HELA FY-serien positiv [124,1 · 98,7 · 17,0 · 50,7 · 291,5 mdr] — något negativt fönster finns ej i panelen ⇒ U17:s mätvärde bokförs som SUPERSIDERAT av källpanelens uppdatering (ärlighetsprincipen: avvisningen var korrekt mot sitt underlag; leveransen är korrekt mot sitt), P/E 11,62 källans rad EXAKT mot close-basen (2 359/203,04 = 11,62 — 0,01 %) · fwd P/E 11,37 (marknadens implied EPS +2,2 % — referens; prognosTillväxt NULL: ingen explicit prognosrad i panelutdraget, basblandning vägras) · P/B 2,18 EXAKT (4 230/1 940 — 0,02 %) · PS 1,86 EXAKT · EPS×AKTIER-IDENTITETEN 203,04 × 1,79 = 363,4 ≈ netto 364,9 (0,4 %), EV-DEKOMPOSITIONEN REN (vågens enda): 4 230 + 589,87 − 244,70 = 4 575,2 vs källans EV 4 580 — 0,1 %, inga dolda poster; EV/EBIT 9,69 (replik 4 580/472,87); FCF-SERIEN INTERN LÅST (HEI-klassen): OCF − capex = FCF EXAKT samtliga fem fönster (FY23 327,8−36,4 = 291,3 ✓ · FY24 172,5−38,1 = 134,4 ✓ · FY25 194,5−37,0 = 157,5 ✓ · FY26 560,2−57,7 = 502,5 ✓ · TTM 591,8−57,5 = 534,3 ✓); FCF-marginal 23,49 % EXAKT (534,3/2 274,4) · FCF-yield 12,63 % (534,3/4 230) · FCF/aktie 297,27 källrad; VÄNDNINGEN KONFIRMERAD (datafakta, ingen prognos): netto [98,7 · 17,0 · 50,7 · 291,5] — patentklippurdalen FY2024 (Xtandi-era) och återhämtningen till FY26-rekord; rak 3-årig CAGR FY23→FY26 oms +12,10 % · netto +43,45 %; omsättningstillväxt TTM +16,93 %; EPS-serien [54,09 · 9,47 · 28,24 · 162,22]; marginaler: brutto 80,8 % (farmacins immateriella struktur — cellens högsta) · EBIT 20,79 % · netto 16,05 % EXAKT (364,9/2 274,4) med NORMAL ordning (netto < EBIT — ingen engångspostsignatur, Kirin-U3-fallets koll gjord); CF-panelens netto-rad FY26 376,6 mot IS-panelens 291,5 = minoritetsgap 85 mdr (TTM-fönstret sammanfaller: båda 364,9) — fönsterdokumentation; ROE 21,30 % källans rad (replik 364,9/1 940 = 18,8 % — snitt-EK-bas sannolik, noterad) · ROIC 16,18 % mot WACC 4,34 % (gap +11,8 punkter — vågens bredaste; patentmoatens avtryck) · balans: D/E 0,30 EXAKT (589,87/1 940) · räntetäckning 41,87 · Debt/EBITDA 0,88 · Altman 2,73 (gränszon) · Piotroski 7; utdelning 80,00 JPY/aktie (3,35 %) ⇒ senasteArMdr 143,2 med EPS-bas-payout 39,4 % (källans rad 38,29 % annat fönster, noterad); kandidatur: OMPRÖVAD KANDIDAT enligt U17:s dokumenterade villkor — Japan/halso-cellens TREDJE modell: Takeda (4502.T, global diversifierad farmaka) · Daiichi Sankyo (4568.T, onkologi-EU-sprint) · Astellas (4503.T, specialty-vändningen); P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 364,9 mdr JPY > 0) med omprövningskedjan dokumenterad; kollisionskontroll exakt-match GRÖN; Health Care ⇒ halso-cellen (28→29 bolag), Japan 26→27 (halso-grenen 2→3)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 2359,
+  "marknadsKapitalMdr": 4230,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.121,
+   "resultatCAGR5ar": 0.4347,
+   "omsattningTillvaxtTTM": 0.1693,
+   "prognosTillvaxt": null
+  },
+  "lonksamhet": {
+   "roe": 0.213,
+   "roic": 0.1618,
+   "bruttoMarginal": 0.8082,
+   "ebitMarginal": 0.2079,
+   "nettoMarginal": 0.1605,
+   "fcfMarginal": 0.2349
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.3,
+   "rantaTackning": 41.87,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 0.143,
+   "andelUtestande": 0.394,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 11.62,
+   "pb": 2.18,
+   "evEbit": 9.69,
+   "peg": null,
+   "fcfYield": 0.1263,
+   "egenKapitalMultipl": 2.18
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "omsattning": [
+    1518619000000,
+    1603672000000,
+    1912323000000,
+    2139245000000
+   ],
+   "resultat": [
+    98714000000,
+    17045000000.000002,
+    50747000000,
+    291535000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    291326000000,
+    134419000000.00002,
+    157509000000,
+    502465000000
+   ]
+  },
+  "notering": "omprövad kandidat (rond 220): U17 avvisade pa P/E-bäraren (mätvärde −47 mdr JPY); dagens färskpanel bär TTM +364,9 mdr med HEL FY-serien positiv [124,1 · 98,7 · 17,0 · 50,7 · 291,5] — vändningen konfirmerad, mätvärdet supersederat (kedjan dokumenterad i paranoid); Japan/halso 2→3: cellens tredje modell (Takeda diversifierad · Daiichi Sankyo onkologi-sprint · Astellas specialty-VÄNDNINGEN: patentklippurdalen FY24 → FY26-rekord 291,5; rak CAGR oms +12,10 % · netto +43,45 %); TYO-primär JPY, mars-slut (serien märkt slutåret); P/E 11,62 EXAKT mot close-basen; EV-DEKOMPOSITIONEN REN (0,1 % — vågens enda utan dolda poster); FCF-serien intern låst (OCF−capex exakt fem fönster, HEI-klassen) med FCF-M 23,49 % EXAKT och yield 12,63 %; brutto-M 80,8 % cellens högsta; ROIC 16,18 % mot WACC 4,34 % (gap +11,8 p — vågens bredaste, patentmoaten); netto < EBIT (Kirin-U3-kollen gjord); minoritetsgapet CF/IS FY26 85 mdr dokumenterat; payout EPS-bas 39,4 % (källrad 38,29 % annat fönster); Altman 2,73 · Piotroski 7 · beta 0,09; prognosTillväxt NULL (fwd-implied +2,2 % endast referens); rappdag 2026-10-30 INOM v172-fönstret; EK-serie saknas — serier.egetKapital tomt; alla repliker i paranoid (StockAnalysis TYO 2026-09-25)"
  }
 ]

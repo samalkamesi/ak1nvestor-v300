@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Rond 187 — leverans av v171:s första SEO-objekt (Ö26 byggaktier-en) + bokföring
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import { appendFileSync, writeFileSync, readFileSync } from 'node:fs';
 
 const ROT = '/home/ak1a/agent/ak1';
@@ -30,11 +30,11 @@ writeFileSync('/tmp/r187-msg.txt', msg, 'utf8');
 kvitto.push('OK commitmsg skriven');
 
 // 3. git add + commit + push
-steg('git add', () => execSync(`git -C ${ROT} add data/forskning/SEO-GUIDER-2026-09.md data/blogg-utkast/byggaktier-sa-analyserar-du-byggbolag-en.json verktyg/_v171-b27-en-kvd.mjs verktyg/_r187-levera.mjs`, { encoding: 'utf8' }) || 'staged');
-const commit = execSync(`git -C ${ROT} commit -F /tmp/r187-msg.txt`, { encoding: 'utf8' });
+steg('git add', () => execFileSync("git", ["-C", ROT, "add", "data/forskning/SEO-GUIDER-2026-09.md", "data/blogg-utkast/byggaktier-sa-analyserar-du-byggbolag-en.json", "verktyg/_v171-b27-en-kvd.mjs", "verktyg/_r187-levera.mjs"], { encoding: 'utf8' }) || 'staged');
+const commit = execFileSync("git", ["-C", ROT, "commit", "-F", "/tmp/r187-msg.txt"], { encoding: 'utf8' });
 const hash = (commit.match(/\[develop ([0-9a-f]+)\]/) || [])[1] || 'okänd';
 kvitto.push(`OK commit — ${hash} genom tsc-grinden`);
-const push = execSync(`git -C ${ROT} push prod develop 2>&1`, { encoding: 'utf8' });
+const push = execFileSync("git", ["-C", ROT, "push", "prod", "develop"], { encoding: 'utf8' });
 kvitto.push(`OK push — ${push.trim().split('\n').pop()}`);
 
 // 4. Beslutsminne med verklig hash
@@ -43,7 +43,7 @@ steg('beslutsminne', () => appendFileSync(`${ROT}/data/vakten/beslutsminne.jsonl
 
 // 5. Slutverifiering: prod-trädet bär filen
 try {
-  execSync(`git -C /home/ak1a/AK1 cat-file -e HEAD:data/blogg-utkast/byggaktier-sa-analyserar-du-byggbolag-en.json`);
+  execFileSync("git", ["-C", "/home/ak1a/AK1", "cat-file", "-e", "HEAD:data/blogg-utkast/byggaktier-sa-analyserar-du-byggbolag-en.json"]);
   kvitto.push('OK prod-trädet bär Ö26-filen i HEAD');
 } catch { kvitto.push('VARNING prod-trädet saknar filen i HEAD (synken kan ligga efter)'); }
 

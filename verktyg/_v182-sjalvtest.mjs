@@ -1,6 +1,6 @@
 // _v182-sjalvtest.mjs — bevisa emottagets kontroller med ett syntetiskt v01-fragment ( byggs ur underlaget, körs, raderas, granskningsfilen återställs )
 import { readFileSync, writeFileSync, unlinkSync, existsSync } from 'node:fs';
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 const ROT = '/home/ak1a/agent/ak1';
 const FRAG = ROT + '/data/forskning/KURS-FAS2/v167-fragment/v01-forsaljningstillvaxt.json';
 
@@ -35,7 +35,7 @@ writeFileSync(FRAG, JSON.stringify(frag, null, 2));
 console.log('testfragment skrivet');
 
 // kör status
-const ut = execSync('node ' + ROT + '/verktyg/_v182-emottag.mjs status', { cwd: ROT }).toString();
+const ut = execFileSync("node", [ROT + "/verktyg/_v182-emottag.mjs", "status"], { cwd: ROT }).toString();
 console.log(ut.trim());
 const granskFöre = readFileSync(ROT + '/data/forskning/KURS-FAS2/V167-GRANSKNING.md', 'utf8');
 const v01block = granskFöre.includes('### v01-forsaljningstillvaxt — GRÖN');
@@ -55,7 +55,7 @@ if (a >= 0) {
 g = g.replace(/^## LÄGE:.*$/m, '## LÄGE: 0 levererade · 20 väntar: v01-forsaljningstillvaxt, v02-arr-tillvaxt, v03-intaktsdiversifiering, v04-ps, v05-pb, v06-ev-ebitda, v07-bruttomarginal, v08-ebitda-marginal, v09-roe, v10-skuldsattningsgrad, v11-likviditet, v12-intaktsstabilitet, v13-patent-ip, v14-varumarke, v15-natverkseffekter, v16-produktlanseringar, v17-avtal-partnerskap, v18-regulatoriska, v19-kapitalforbranning, v20-aterekop-egna-aktier');
 g = g.replace(/^## SAMMANFATTNING:.*$/m, '## SAMMANFATTNING: 0 PASS · 0 FEL (vågen inleds)');
 writeFileSync(ROT + '/data/forskning/KURS-FAS2/V167-GRANSKNING.md', g);
-const ut2 = execSync('node ' + ROT + '/verktyg/_v182-emottag.mjs status', { cwd: ROT }).toString();
+const ut2 = execFileSync("node", [ROT + "/verktyg/_v182-emottag.mjs", "status"], { cwd: ROT }).toString();
 console.log('efter städning:', ut2.trim());
 console.log('fragment borta:', !existsSync(FRAG));
 console.log(v01block ? 'SJÄLVTEST GRÖNT — kontrollerna godkänner korrekt format' : 'SJÄLVTEST RÖTT — v01 blev inte GRÖN');

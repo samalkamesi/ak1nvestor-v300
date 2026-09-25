@@ -24856,5 +24856,95 @@
    ]
   },
   "notering": "kandidat ur BCE-OMG24 §10:s kö-notis (material-cellens andranamn; P/E-bärare kontrollerad före leverans); TSX-primär med VALUTA-MIX som NTR (CAD-pris/utdelning, USD-rapportering; EPS-raden CAD-konverterad — P/E EXAKT på den basen); GULDCYKELN dokumenterad (prisdriven boom — rak CAGR med cykelnot, samtliga FY positiva); ROIC under WACC (gruvkapital); Altman 4,89 VÅGENS SUNDASTE BALANS; payout 77,55 % (replik 78,6 % ✓); FCF-yield EXAKT, FCF-marginal fältlagd rätt (källans yield-rad ej marginal); EK-serie saknas — serier.egetKapital tomt; rappdag Q3 est. slutet oktober = v172-könotis; alla repliker i paranoid (StockAnalysis TSX 2026-09-25)"
+ },
+ {
+  "ticker": "ABX",
+  "namn": "Barrick Gold Corporation",
+  "bransch": "material",
+  "land": "Kanada",
+  "valuta": "CAD",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/tsx/ABX/ (+ /statistics/ + /financials/)",
+    "paranoid": "TSX-PRIMÄRNOTING med VALUTA-MIX (NTR/AEM-precedenserna: pris/utdelning/mcap i CAD, koncernrapportering i USD; underlag S&P Global Market Intelligence + Fiscal.ai via StockAnalysis; intradag 2026-09-25 delayed +0,14 %; färshämtning direkt med cache-bypass + kompletterande FY-panelhämtning för exakt tabelläsning): pris 53,12 CAD (52v 27,55–55,04 — guldrallyts fulla spänn; beta 0,88), mcap 91,13 mdr CAD på 1 722 M aktier (replik 1 722 × 53,12 = 91,47 — 0,37 %), P/E 11,73 ur källan på bolagets justerade bas (Barrick-rapporteringskonvention; GAAP-identiteten USD-pris/TTM-EPS ger högre multiplar — bas-skillnaden dokumenterad i CNR/CPKC-klassen men med valutamixen som extra not) mot forward P/E 10,28 ⇒ prognosTillväxt +14,11 % (trailing/fwd-modellen, MUFG-konventionen; spår-PEG 11,73/14,11 = 0,83 mot källans PEG 0,28 på 3-års — olika baser, kalibreringsnot), P/B 1,66 · EV/EBIT 7,22 · P/FCF 18,87 med FCF-yield EXAKT replik (4 829/91 130 = 5,298 % = 1/18,87 = 5,300 %); ROE 11,63 % · ROIC 7,05 % ÖVER WACC 6,78 % (guldsektorns kapitaldisiplin — dokumenterad) · brutto 42,17 % · EBIT-marginal 33,06 % (gruvmarginsstruktur) · netto-marginal 24,15 % EXAKT replik (3 402/14 091 = 24,15 %) · FCF-marginal 34,3 % replik (4 829/14 091 — guldsektorns kassaflödesstyrka); balans: D/E 0,22 · räntetäckning 15,13 · Altman 4,42 (SUND zon — AEM 4,89 och ABX 4,42 gör guldduon till Kanada-blockets balansryggrad) · Piotroski 7 · kassa 4,44 mdr · skuld 5,16 mdr · NETTOSKULD 0,72 mdr; utdelning 0,60 CAD/aktie (1,13 %) ⇒ senasteArMdr 1 033 CAD (0,60 × 1 722) med payout-replik ~27 % av FY25-netto i USD (kurskonvertering ~0,72 dokumenterad); FY-SERIEN dec-slutande (M USD): oms [11 013 · 11 397 · 12 922 · 14 432] · netto [432 · 1 272 · 2 144 · 2 748] · FCF [712 · 1 467 · 3 132 · 3 362] — GULDCYKELN MED BOTTENBAS-VARNING (FCX/VALE/NTR/AEM-precedenserna): FY2022-netto 432 M = cykelbottnen (nedskrivningar + lägre guldpris); serien 432→2 748 är BOOMENS språng (6,4×) och rak CAGR från bottnen (+85 %/år) är MENINGSLÖS som tillväxtmått — CAGR-fälten bär KONSEKUTIV FY23→FY25-bas (oms +12,5 % · netto +46,9 %) med bottennoten dokumenterad; TTM rev +29,6 % = prisdrivet (guldboomen 2024–2026), ingen volymexpansion; EPS-USD-serien [0,25 · 0,72 · 1,24 · 1,58]; analytikerläge saknas i panelutdraget — ingen målkurs förs in; NÄSTA RAPPORT Q3 2026 (est. tidigt november — v172-könotis v45); kandidatur: S2-U1-BCE-UTOKNING-OMG24 §10 kö-notis 'Kanada/material (NTR/AEM/ABX)' — SISTA NAMNET, TRION KOMPLETT (NTR gödsel · AEM+ABX guld); P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 3 402 M USD > 0; Sony/Honda-doktrinen); kollisionskontroll exakt-match GRÖN; Materials ⇒ material-cellen (28→29 bolag), Kanada 9→10 — BLOCKETS TIONDE BOLAG."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 53.12,
+  "marknadsKapitalMdr": 91.13,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.12529913740107612,
+   "resultatCAGR5ar": 0.46982222002885976,
+   "omsattningTillvaxtTTM": 0.296,
+   "prognosTillvaxt": 0.1410505836575877
+  },
+  "lonksamhet": {
+   "roe": 0.1163,
+   "roic": 0.0705,
+   "bruttoMarginal": 0.4217,
+   "ebitMarginal": 0.3306,
+   "nettoMarginal": 0.2415,
+   "fcfMarginal": 0.34270101483216237
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.22,
+   "rantaTackning": 15.13,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 1.033,
+   "andelUtestande": 0.27,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 11.73,
+   "pb": 1.66,
+   "evEbit": 7.22,
+   "peg": 0.831616551724137,
+   "fcfYield": 0.05299023373203116,
+   "egenKapitalMultipl": 1.66
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    11013000000,
+    11397000000,
+    12922000000,
+    14432000000
+   ],
+   "resultat": [
+    432000000,
+    1272000000,
+    2144000000,
+    2748000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    712000000,
+    1467000000,
+    3132000000,
+    3362000000
+   ]
+  },
+  "notering": "kandidat ur BCE-OMG24 §10:s kö-notis (SISTA namnet — material-trion NTR/AEM/ABX komplett; P/E-bärare kontrollerad före leverans); TSX-primär med VALUTA-MIX (CAD-pris/utdelning, USD-rapportering); GULDCYKELN MED BOTTENBAS-VARNING: FY22-netto 432 M = cykelbotten (rak CAGR från bottnen +85 %/år är MENINGSLÖS — dokumenterad); CAGR-fält på konsekutiv FY23→FY25-bas (oms +12,5 % · netto +46,9 %); prisdriven boom (TTM rev +29,6 %); P/E 11,73 på källans justerade bas (bas-skillnad dokumenterad); ROIC 7,05 % ÖVER WACC 6,78 % (guldsektorns kapitaldisiplin); Altman 4,42 sund — guldduon AEM+ABX = Kanada-blockets balansryggrad; payout-replik ~27 % (kurskonvertering dokumenterad); EK-serie saknas — serier.egetKapital tomt; rappdag Q3 est. tidigt november = v172-könotis; alla repliker i paranoid (StockAnalysis TSX 2026-09-25)"
  }
 ]

@@ -25666,5 +25666,95 @@
    ]
   },
   "notering": "cellmotiverad duo (Japan/halso 1→2: Takeda global diversifierad + Daiichi Sankyo onkologi/ADC); KANDIDATURVÄGEN: Astellas 4503.T AVVISAD först på P/E-bärarkriteriet (TTM-netto −47 mdr ≤ 0 — Sony/Honda-doktrinen; omprövning vid TTM-vändning), Daiichi Sankyo GRÖN (+213 mdr > 0); TYO-primär JPY; mars-bokslut; STARK rev-CAGR +14,5 % (Enhertu-rampen) med FY23-nettodip (patent+R&D) dokumenterad; netto-marginal 3,55 % FARMATUNN mot Takeda — öppet redovisat (vändningsfasen); ROIC<WACC som INVESTERINGSFAS-not (ej strukturbrist); prognosTillväxt +125,9 % = vändningsprognos (fwd 27,4 mot trailing 61,9; spår-PEG 0,49); källans fönsterblandningar dokumenterade (P/E-bas 86,8 mot GAAP 75,1 · PS 2,20 mot replik 2,53 · P/FCF på FY25-FCF); payout-rad saknades — fältet bär GAAP-replik 8,1 % med not; EK-serie saknas — serier.egetKapital tomt; rappdag Q2 FY2026 est. november = v172-könotis; alla repliker i paranoid (StockAnalysis TYO 2026-09-25)"
+ },
+ {
+  "ticker": "6501.T",
+  "namn": "Hitachi, Ltd.",
+  "bransch": "industri",
+  "land": "Japan",
+  "valuta": "JPY",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/tyo/6501/ (+ /statistics/ + /financials/)",
+    "paranoid": "TYO-PRIMÄRNOTING i JPY (6301.T/4502.T-precedensens Tokyo-rad; underlag S&P Global Market Intelligence + Fiscal.ai via StockAnalysis; intradag 2026-09-25; färshämtning direkt med cache-bypass + kompletterande FY-panel; MARS-BOKSLUT, etikett = slutår): pris 4 111 JPY, mcap 19 700 mdr JPY på 4 787 M aktier (replik 4 787 × 4 111 = 19 679 — 0,1 %), P/E 22,25 ur källan på dess justerade EPS-bas 184,8 (GAAP-aktiebasrepliken 4 111/111,3 = 36,9 — Hitachis minoritetsrika konglomeratstruktur gör basgapet stort; dokumenterad, Shin-Etsu/Daiichi-klassens not) mot forward P/E 19,08 ⇒ prognosTillväxt +16,61 % (trailing/fwd-modellen, MUFG-konventionen; spår-PEG 22,25/16,61 = 1,34 mot källans PEG 1,68 — nära kalibrering), P/B 2,87 · EV/EBIT 15,3 · källans netto-M-rad 7,4 % bär annat fönster (aktiebasrepliken 539/8 707 = 6,19 % TTM · FY25 6,4 % — dokumenterad fönsterdifferens; fältet bår repliken som mest konsistent med serien), ROE 13,6 % · ROIC 7,2 % ÖVER WACC 6,4 % (värdeskapande post-omvandling — dokumenterat) · EBIT-marginal 9,5 % (konglomeratblandning: digitala system + infrastruktur) · FCF-yield EXAKT replik (513/19 700 = 2,60 % = 1/P·FCF 1/38,4 = 2,60 %); balans: D/E 0,81 · räntetäckning 17,3 · Altman 2,9 (KÄLLANS GRÄNSZON — konglomeratbalansen efter förvärvsavvecklingar; datafakta) · Piotroski 6; utdelning 77 JPY/aktie (1,87 %) ⇒ senasteArMdr 369 (77 × 4 787) med payout-rad saknad i utdraget (GAAP-replik 69 % på TTM-EPS med not — utdelningen höjd gradvis under omvandlingen); FY-SERIEN mars-slutande (mdr JPY): oms [8 364 · 8 406 · 8 567 · 8 730] · netto [67 · 173 · 350 · 559] · FCF [488 · 275 · 280 · 543] — OMVANDLINGSPROFILEN (Lumada-vändningen): netto FYRDUBBLAT på tre år (67→559; konglomeratomvandlingen: tunga divisioner sålda, digitala Lumada-system växer) medan omsättningen är PLATT (+1,42 %/år — VINSTEN är storyn, ej volymen); rak netto-CAGR +102,4 % bär LÅG BAS (vändningshörnet) och dokumenteras som VÄNDNINGS-CAGR med bas-not (Daiichi-klassen); samtliga FY positiva; EPS-GAAP-serien [13,8 · 35,7 · 72,2 · 115,3]; analytikerläge saknas i panelutdraget — ingen målkurs förs in; NÄSTA RAPPORT Q2 FY2026 est. tidigt november — v172-könotis v45; kandidatur: CELLMOTIVERAD duo enligt U13-mönstret — Japan/industri-cellens TVÅ affärsmodeller: Komatsu (6301.T, byggnadsmaskiner) + Hitachi (6501.T, digitala system/konglomerat efter omvandlingen) — cellens pedagogiska kontrast (maskintillverkare mot digital tjänsteplattform); P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 539 mdr JPY > 0; Sony/Honda-doktrinen); kollisionskontroll exakt-match GRÖN; Industrials ⇒ industri-cellen (25→26 bolag), Japan 24→25 (industri-grenen 1→2)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 4111,
+  "marknadsKapitalMdr": 19700,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.014378587656286745,
+   "resultatCAGR5ar": 1.0282072698774622,
+   "omsattningTillvaxtTTM": 0.026,
+   "prognosTillvaxt": 0.1661425576519917
+  },
+  "lonksamhet": {
+   "roe": 0.136,
+   "roic": 0.072,
+   "bruttoMarginal": null,
+   "ebitMarginal": 0.095,
+   "nettoMarginal": 0.06190421499942575,
+   "fcfMarginal": 0.05891811186401746
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.81,
+   "rantaTackning": 17.3,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 0.369,
+   "andelUtestande": 0.684,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 22.25,
+   "pb": 2.87,
+   "evEbit": 15.3,
+   "peg": 1.3392113564668762,
+   "fcfYield": 0.026040609137055838,
+   "egenKapitalMultipl": 2.87
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    8364000000000,
+    8406000000000,
+    8567000000000,
+    8730000000000
+   ],
+   "resultat": [
+    67000000000,
+    173000000000,
+    350000000000,
+    559000000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    488000000000,
+    275000000000,
+    280000000000,
+    543000000000
+   ]
+  },
+  "notering": "cellmotiverad duo (Japan/industri 1→2: Komatsu byggnadsmaskiner + Hitachi digitala system/konglomerat); TYO-primär JPY; mars-bokslut; OMVANDLINGSPROFILEN: netto fyrdubblat 67→559 (Lumada-vändningen) med PLATT omsättning (+1,4 %/år — vinsten är storyn) ⇒ netto-CAGR +102 % bär LÅG BAS och dokumenteras som VÄNDNINGS-CAGR (Daiichi-klassen); P/E 22,25 källans justerade bas (GAAP-replik 36,9 — minoritetsrikt konglomerat, basgap dokumenterat); källans netto-M-rad 7,4 % bår annat fönster (fältet bår repliken 6,19 % — seriekonsistent); FCF-yield EXAKT 2,60 %; ROIC>WACC post-omvandling; Altman 2,9 gränszon datafakta; payout-rad saknades (GAAP-replik med not); EK-serie saknas — serier.egetKapital tomt; rappdag Q2 FY2026 est. november = v172-könotis; alla repliker i paranoid (StockAnalysis TYO 2026-09-25)"
  }
 ]

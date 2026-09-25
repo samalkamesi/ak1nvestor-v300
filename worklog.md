@@ -17737,3 +17737,11 @@ UTDELNING + ÅTERKÖP = TVÅ BEN: DPS [0,205→0,252] HÖJD varje år, current 0
 UK-MILESTONE (MÄTT ur universumet, ej härlett — rond 225:s läxa): Storbritannien 17 rader, energi 2 · finans 5 · halso 2 · industri 2 · kommunikation 2 · konsument 2 · teknik 2 ⇒ INGA 1-grenar kvar — sju grenar alla ≥2.
 KVD: append 292+/0− · läs-tillbaka ×2 · llms HELREGEN 293 (kommunikation-raden n=30 P/E 16,9; totalt n 281; 10 aspektrader) · läckagevakt 0 (529) · tsc 0 · prod 200 i avslutet (adoptionsmekanik rond 227).
 Kö: rappdagar → v172 (PSON rappdag 10-12 FÖRE fönstret — notis) · Kanada (CNQ+Enbridge / RY+TD) · Spanien (Santander+BBVA / ITX+?) · spårrotation. R2: Q3-paketet väntar kund. Protokoll: V173-U31-PSON-PEARSON-UTOKNING.md. Ren dataleverans — src orörd, inget bygge.
+
+### ROND 228 KOMPLEMENT [organ:Φ] — PORTALVERIFIERING (standby-orderns 'färdigställ portalen (våg 102)') kontrollerad mot faktiskt läge: UPPFYLLT sedan våg 121 — 2026-09-25
+
+Orderns portal-del efterfrågade 'våg 102' — den vågen FINNS EJ (varken PIPELINE-KO eller worklog nämner den; referensen är föråldrad i det återkommande standby-direktivet). Verifiering mot sanningshierarkin + färskkontroll:
+(1) PIPELINE-KO 'VÅG 105 (PORTAL-SPÅRET) — UTBILDNINGSPORTFÖLJEN': STATUS-raden (2026-09-13, våg 121) — 'P1 LEVERERAD (våg 119 + korskopplingarna våg 120, deployad 09:02) och HELA PORTAL-SPÅRET SLUTLEVERERAT med KVD full (motorer 107/0/0 · vakten GRÖN · prod 200) + systemkarta 38 system. Kön härmed tom.'
+(2) FÄRSKKONTROLL (2026-09-25): fyra kärnfiler i src — src/app/api/medlem/portfolj/route.ts (6,3 kB) · src/components/ak1a/portal.tsx (4,0 kB) · src/components/ak1a/portfolj-navet.tsx (17,0 kB) · src/lib/medlem-portfolj.ts (17,8 kB) — plus /api/medlem/portfolj svarar 401 utan auth i prod (= monterad OCH auth-härdad) och https://lab.ak1nvestor.com/ = 200.
+(3) R2-LÄGET: premiumtiers (PORTFÖLJMOTORN 249/449/799 kr) = kundens vetorätt — väntar kundbeslut, aktiveras ALDRIG autonomt.
+SLUTSATS: 'färdigställ portalen' är uppfyllt (våg 121, 2026-09-13); standby-loopen behöver inget nytt portalarbete — kön fortsätter: rappdagar → v172 (PSON 10-12 före fönstret) · Kanada · Spanien · spårrotation.

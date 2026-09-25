@@ -25306,5 +25306,95 @@
    ]
   },
   "notering": "cellmotiverad kandidatur (S2-mönstret — dokumenterade listor tomma): Tyskland/finans 1→2 med Allianz direkt + Munich Re åter (TRYG/AXA-precedensens duostruktur); ETR-primär EUR; VÅGENS FJÄRDE BROTTSFRIA RAD (samtliga FY positiva, mjuk stigning — rak CAGR oms +0,97 % · netto +1,46 % = stabilitet, inte tillväxt; P/E 13,8 dokumenterat som moget bolag); P/E EXAKT på källans EPS-rad (attributable-bas med totalnotto-not); FÖRSÄKRINGSMETODNOTER: ROIC speglar reservstruktur (ej kapitalproduktivitet), Altman 2,03 varningsgräns = försäkringsbalansens affärsmodell (premier är skuld innan vinst), bruttoMarginal null (försäkring saknar meningsfull brutto — osatt); payout 51,94 % EXAKT replikerbar; rantaTackning null (räntekostnad ej bruten ut i försäkringsbalansen); EK-serie saknas — serier.egetKapital tomt; rappdag Q3 est. tidigt november = v172-könotis; alla repliker i paranoid (StockAnalysis ETR 2026-09-25)"
+ },
+ {
+  "ticker": "SHL.DE",
+  "namn": "Siemens Healthineers AG",
+  "bransch": "halso",
+  "land": "Tyskland",
+  "valuta": "EUR",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/etr/SHL/ (+ /statistics/ + /financials/)",
+    "paranoid": "ETR-PRIMÄRNOTING i EUR (SAP.DE/MUV2.DE-precedensens Frankfurt-rad; underlag S&P Global Market Intelligence + Fiscal.ai via StockAnalysis; intradag 2026-09-25 delayed +0,18 %; färshämtning direkt med cache-bypass + kompletterande FY-panelhämtning för exakt tabelläsning; SEPTEMBER-BOKSLUT — etikett = slutår, sällsynt konvention dokumenterad): pris 54,36 EUR (52v 42,02–58,60 · beta 0,91), mcap 59,84 mdr EUR på 1 102 M aktier (replik 1 102 × 54,36 = 59,91 — 0,12 %), P/E 24,19 replikerbar (54,36/2,25 = 24,16 = 0,1 %) mot forward P/E 19,50 ⇒ prognosTillväxt +24,05 % (trailing/fwd-modellen, MUFG-konventionen — medtech-växlingens bild-diagnostik-expansion; spår-PEG 24,19/24,05 = 1,01 mot källans PEG 2,98 på 3-års, kalibreringsnot), P/B 2,68 · EV/EBIT 15,78 · PS 2,55 EXAKT (59 840/23 440 = 2,553), ROE 11,26 % · ROIC 8,24 % ÖVER WACC 7,18 % (värdeskapande medtech — dokumenterat) · brutto 42,05 % (medtech-kontraktens tjänstecomponent) · EBIT-marginal 16,13 % · netto-marginal 10,55 % EXAKT (2 472/23 440 = 10,546 %) · FCF-yield EXAKT (2 956/59 840 = 4,94 % = 1/P·FCF 1/20,25 = 4,94 %); balans: D/E 0,62 · räntetäckning 9,61 · Altman 2,86 (KÄLLANS GRÄNSZON — medtech-nduvvet med FDA-godkännandekapital; datafakta) · Piotroski 7 · kassa 2,00 mdr · skuld 3,47 mdr · NETTOSKULD 1,47 mdr · EK 22,3 mdr; utdelning 1,20 EUR/aktie (2,21 %) ⇒ senasteArMdr 1,322 (1,20 × 1 102) med payout 53,24 % (replik 1,20/2,25 = 53,3 % ✓ 0,1 %); FY-SERIEN september-slutande (M EUR, etikett = slutår): oms [21 691 · 21 678 · 22 372 · 23 393] · netto [1 730 · 1 912 · 2 075 · 2 417] · FCF [2 561 · 2 733 · 2 686 · 2 962] — VÅGENS FEMTE BROTTSFRIA RAD (efter TELUS/CNR/Redeia/Munich Re): samtliga positiva med STADIGT STIGANDE netto (1 730→2 417); rak 3-årig CAGR FY22→FY25 (oms +2,54 % · netto +11,77 % — vinsttillväxten bär marginalexpansion, ej volym); EPS-serien [1,57 · 1,73 · 1,88 · 2,19]; analytikerläge saknas i panelutdraget — ingen målkurs förs in; NÄSTA RAPPORT Q4 FY2025 est. november 2026 (sep-årets slutrapport) — v172-könotis v45; kandidatur: CELLMOTIVERAD duo enligt U13-mönstret — Tyskland/halso-cellens TVÅ affärsmodeller: Fresenius (FRE.DE, vårdoperatör/Klinikbetrieb) + Siemens Healthineers (SHL.DE, medtech/bild-diagnostik) — cellens pedagogiska kontrast (tjänsteindustri mot produkttillverkare); P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 2 472 M EUR > 0; Sony/Honda-doktrinen); kollisionskontroll exakt-match GRÖN; Health Care ⇒ halso-cellen (26→27 bolag), Tyskland 17→18 (halso-grenen 1→2)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 54.36,
+  "marknadsKapitalMdr": 59.84,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.025499490240907363,
+   "resultatCAGR5ar": 0.11791860101553353,
+   "omsattningTillvaxtTTM": 0.055,
+   "prognosTillvaxt": 0.24051282051282064
+  },
+  "lonksamhet": {
+   "roe": 0.1126,
+   "roic": 0.0824,
+   "bruttoMarginal": 0.4205,
+   "ebitMarginal": 0.1613,
+   "nettoMarginal": 0.1055,
+   "fcfMarginal": 0.12610921501706485
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.62,
+   "rantaTackning": 9.61,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 1.322,
+   "andelUtestande": 0.5324,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 24.19,
+   "pb": 2.68,
+   "evEbit": 15.78,
+   "peg": 1.0057675906183363,
+   "fcfYield": 0.049398395721925135,
+   "egenKapitalMultipl": 2.68
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    21691000000,
+    21678000000,
+    22372000000,
+    23393000000
+   ],
+   "resultat": [
+    1730000000,
+    1912000000,
+    2075000000,
+    2417000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    2561000000,
+    2733000000,
+    2686000000,
+    2962000000
+   ]
+  },
+  "notering": "cellmotiverad duo enligt U13-mönstret (Tyskland/halso 1→2: Fresenius vårdoperatör + Healthineers medtech = cellens två affärsmodeller); ETR-primär EUR; SEPTEMBER-BOKSLUT (etikett = slutår — sällsynt konvention dokumenterad); VÅGENS FEMTE BROTTSFRIA RAD (samtliga positiva, stadigt stigande netto 1 730→2 417; rak CAGR oms +2,54 % · netto +11,77 % — marginalexpansion, ej volym); ROIC 8,24 % ÖVER WACC 7,18 % (värdeskapande medtech); Altman 2,86 gränszon (medtech-nduvvet) som datafakta; payout 53,24 % (replik 0,1 %); EK-serie saknas — serier.egetKapital tomt; rappdag Q4 FY2025 est. november = v172-könotis; alla repliker i paranoid (StockAnalysis ETR 2026-09-25)"
  }
 ]

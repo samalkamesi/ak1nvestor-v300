@@ -8,7 +8,7 @@ högsta) + Sage (SaaS-affärsprogramvara, kompounderaren, P/E 24,9, bruttomargin
 näst högsta) — **mjukvarumarginelens båda smaker i en cell: licensiera kisel-IP mot hyra ut
 bokföringsflöden**. **Kollisionskontroll primär+sekundär** (AZN-läxan: SGE.L/SGE/SGEYY+
 namn+URL): GRÖN. **P/E-bärarkontroll FÖRE leverans: TTM-netto 385 M GBP > 0 — GRÖN.**
-**UK:S SISTA 1-GREN ÖPPNAD** — Storbritannien 15 bolag på sju grenar, alla ≥2.
+**UK:s namngivna 1-grenar öppnade** (energi/konsument/teknik enligt U26-kön) — men kvarvarande 1-grenar: hälsa (GSK.L) och kommunikation (BT.L). [Rättelse r225: den ursprungliga formuleringen 'sista 1-grenen, sju grenar alla ≥2' var fel — grenstrukturmätningen körs numera före formuleringen.]
 
 ## KÄLLDATA (StockAnalysis LON SGE, hämtat 2026-09-25, fyra paneler, data 2026-09-25)
 

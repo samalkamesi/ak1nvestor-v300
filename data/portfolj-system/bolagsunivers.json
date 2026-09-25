@@ -26921,5 +26921,95 @@
    ]
   },
   "notering": "cellmotiverad duo (Storbritannien/kommunikation 1→2: BT nätinfrastruktur/fast+bredband+EE-mobil + Pearson kunskapsinnehåll/utbildningsförlag — kommunikationens RÖR mot dess INNEHÅLL); kollisionskontroll primär+sekundär GRÖN (PSON.L/PSON/PSO+namn+URL — AZN-läxan); VOD/WPP bägge P/E-döda på färskt TTM (VOD FY26 −397 M EUR · WPP −240 M GBP — rond 228-sonden), RELX fel cell (källan: Industrials), AAF Bharti-familjen — Pearson bär; LSE-primär, GBP-rapportvaluta + GBX-noting enl. BT.L-precedensen (ren GBP-genomgång); kalenderårsbokslut, HALVÅRSRAPPORTERING (TTM = jun '26; nästa rappdag est. 2026-10-12 FÖRE v172-fönstret); SEGMENTLÅSET I FEM DELAR: fem produktsegment = totalen EXAKT FY2024–FY2025 + TTM (FY23 diff 0,25 % dokumenterad; FY22–FY21 fragmenterade — ELS tillkom FY23); A&Q störst 1 605 (44 %); FCF-SPEGELN [304 · 495 · 594 · 627] + TTM 765 DUBBELT låst (OCF−capex + marginalrader), marginalen 7,92→21,05 % — KAPITALSNÅLA MODELLEN (capex 1,1 % av omsättningen); P/E-familjen 24,21/22,85/24,25 dokumenterad (EPS-raden bär vägd aktiebas 638 M mot utestående 601 M — återköpen); PEG NULL (basblandning); UTDELNINGEN HÖJD varje år [0,205→0,252], current 0,252 GBP (2,08 % EXAKT); återköpen tripplar utdelningen (TTM −546 M mot −158 M; aktieantal −5,85 % = buyback-yield EXAKT); D/E 0,52 EXAKT; Altman 2,42 GRÅ ZON (dokumenterad) · Piotroski 6; ROIC 7,71 % mot WACC 3,95 % gap +3,76 p; nettoskulden växer med återköpen (−892→−1 151 FY23→FY25, dokumenterad policy); bruttomarginal-medel 49,7 % spridning 5,27 pp; EK-serie saknas; alla repliker i paranoid (StockAnalysis LON 2026-09-25)"
+ },
+ {
+  "ticker": "ENB",
+  "namn": "Enbridge Inc.",
+  "bransch": "energi",
+  "land": "Kanada",
+  "valuta": "CAD",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/tsx/ENB/ (+ /statistics/ + /financials/ + /financials/cash-flow-statement/)",
+    "paranoid": "TSX-PRIMÄRNOTING (underlag S&P Global Market Intelligence via StockAnalysis; senaste handelsdag 2026-09-24, hämtat 2026-09-25 — close 66,99 CAD · −0,71 %; 52v: pris −2,40 %, spannet dokumenterat i 50/200-dagars MA 71,96/72,26 — priset UNDER båda glidande medel; RSI 34; short 2,92 %); färskhämtning med FYRA paneler (quote/statistics/financials/cash-flow); KALENDERÅRSBOKSLUT (31 dec; TTM-fönstret = jun '26 efter Q2-rapporten 2026-08 — KVARTALSVIS rapportering; NÄSTA RAPPDAG est. 2026-11-02 INOM v172-fönstret 10-20→11-04 — KALENDERNOTIS); TSX/CAD-PRECEDENSEN (BCE/NTR-klassen; RY/CNQ:s USD/NYSE-pris dokumenterad som HISTORISK AVVIKELSE i cellen — ENB bär primärbörsens CAD): pris 66,99 CAD (beta 0,77), mcap 150,38 mdr CAD på 2,23 mdr aktier (replik 2,23×66,99 = 149,39 — 0,7 %, aktieavrundning), P/E-FAMILJEN DOKUMENTERAD: källrad 26,05 · GAAP 150,38/5,673 = 26,51 · pris/EPS 66,99/2,59 = 25,87 (källradens EPS 2,59 mot beräknad netto/aktier 2,544 — aktieavrundning; fälten = källrader); fwd P/E 22,24 ⇒ implied EPS +17 % (konsensusreferens); PEG-källrad 7,67 (basblandning vägras — fältet NULL); PS 1,80 EXAKT (150,38/83,49) · P/B 2,18 EXAKT (150,38/68,85) · P/FCF 90,16 · P/OCF 12,10; EV-DEKOMPOSITION MED DOKUMENTERAD DIFFERENS: 150,38 + 112,20 − 2,10 = 260,48 mot källans 270,79 (3,8 %) — DIFFERENSEN = PREFERENSKAPITAL + MINORITETSINTRESSEN som källans EV inkluderar; preferensutdelningen −425 M CAD/år syns i cashflow-panelen (≈7,7 mdr preferens vid 5,5 %); EV/Earnings 47,73 EXAKT (270,79/5,673) · EV/Sales 3,24 EXAKT (270,79/83,49 = 3,2435) · EV/EBIT 19,74 · EV/EBITDA 13,86; NETTO-SKULD −110,10 mdr CAD (−49,40/aktie — universumets största i absoluta tal); SEGMENTLÅSET I FEM DELAR — FEM EXAKTA FÖNSTER: Liquids Pipelines [63 606 · 45 944 · 38 183 · 29 882 · 37 174] + Gas Transmission [6 834 · 6 652 · 6 199 · 5 854 · 5 426] + Gas Distribution & Storage [11 171 · 10 654 · 7 542 · 5 976 · 6 729] + Renewable Power [634 · 561 · 514 · 477 · 582] + Eliminations & Other [1 246 · 1 383 · 1 035 · 1 460 · 3 398] = totalen EXAKT SAMTLIGA TTM+FY2022–FY2025 (FY21 fragmenterat: Liquids- och E&O-raderna startar FY22 i källans standardiserade vy — dokumenterat); LIQUIDS = ryggraden 63 606 TTM (76 % — Mainline-rörens volymkraft, FY23-dipen 29 882 = prisnormalisering); GAS DISTRIBUTION fördubblad [4 980 → 10 654] på Dominion-förvärvet 2024 (amerikansk gasdistribution-konsolidering); FCF-KOLLAPSEN DOKUMENTERAD (NG.L-PRECEDENSEN rond 223): capex [−4 647 · −4 654 · −6 711 · −8 973] · TTM −10 764 — MER ÄN FÖRDOBLAT FY23→TTM = rörbyggnadsprogrammet (Mainline-utbyggnad + gasinvesteringar); FCF [6 583 · 9 547 · 5 889 · 3 297] + TTM 1 668 — identitetslåst exakt fem fönster (OCF−capex: [11 230−4 647 · 14 201−4 654 · 12 600−6 711 · 12 270−8 973 · 12 432−10 764]); OCF-STABIL [9 256 · 11 230 · 14 201 · 12 600 · 12 270] TTM 12 432 — DRIFTSIDAN BÄR, BYGGSIDAN ÄTER; FCF-yield 1,11 % EXAKT; FCF-CAGR −20,6 % (kollapsen); UTDELNINGEN = DEN REGGLERADE MODELLNS LIVSNERV: Common Dividends [−6 766 · −6 968 · −7 276 · −7 875 · −8 220] TTM −8 347 — 23 RAKA HÖJNINGSÅR (+2,94 % senaste); current 3,88 CAD/aktie (5,79 % EXAKT replik 3,88/66,99); PAYOUT-KÄLLRAD 143,17 % (bas: totalutdelning 8 347/konsoliderat netto 5 830 — dokumenterad); pris/EPS-replik 149,8 %; FCF-PAYOUT 518,46 % — utdelningen överskrider FCF 5× (skuldfinansierad reglerad modell: räntebärande tillgångar byggs med skuld medan utdelningen hålls — NG.L/Redeia-klassen dokumenterad); preferensutdelning −425 M/år utöver; STABILITET: D/E 1,63 EXAKT (112,20/68,85) · Debt/EBITDA 6,42 · räntetäckning 2,27 · current ratio 0,72 (låg — infrastruktur-kassaflödesmodellen) · NETTOSKULD-SERIEN [−76 214 · −80 283 · −76 540 · −101 137 · −105 199] nu −110 100 (Dominion-förvärvet 2024 syns i hoppet) · NYEMISSIONER FY2023 (+4 450) och FY2024 (+2 485) = Dominion-gasdistributionen betalades delvis med aktier (aktieantal +0,14 % YoY — ingen återköpsprofil: buyback-yield −0,14 %; återköpen små [−125 · −151]) · Altman 0,93 (DJUP GRÅ ZON — dokumenterad: skuldfinansierad reglerad infrastruktur med låg FCF under byggprogrammet; NG.L-klassens låga Altman är modellens natur, ej nöd — räntetäckningen 2,27 och OCF-stabiliteten bär) · Piotroski 5 · ROE 9,22 % · ROIC 5,19 % mot WACC 6,40 % (gap −1,21 p — REGGLERADE NÄTVERKETS AVKASTNINGSFORMULA: tillåten avkastning på rättdragen bas, inte marknadsmoat — E.ON/Redeia/NG.L-klassen dokumenterad) · skattesats 20,89 % · institutionsägande 50,28 % (lågt — retail-aktien); RESULTATPROFILEN: oms [53 309 · 43 649 · 53 473 · 65 194] + TTM 83 491 (CAGR +6,94 %; TTM +29,49 % = Dominion fullår + Mainline-volymer — dokumenterad engångskonsolideringseffekt i TTM-fönstret) · netto [2 589 · 5 839 · 5 053 · 7 044] + TTM 5 673 (CAGR +39,6 % MED LÅG-BAS-NOT — FY22-kollapsen −55 % var nedskrivningsburen; EPS [1,28 · 2,84 · 2,34 · 3,22] + TTM 2,59); bruttomarginal källrad TTM 32,59 %; ENGÅNGSKONTROLLEN: normal kaskad TTM (netto-M 6,8 % replik < pretax-M 9,58 < EBIT-M 13,96 — källans 7,34-rad bär minoritetsbasen, dokumenterad); kandidatur: CELLMOTIVERAD duo enligt U30-mönstret — Kanada/energi-cellens TVÅ led: CNQ (upstream: oljesand-produktion — BRUNNEN) + ENB (midstream: 30 000 km rörledningar — RÖRET): producent/transportören, samma modellkontrast som Tyskland/energi (RWE produktion + E.ON nätdistribution) och Japan/energi (INPEX + Tokyo Gas); P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 5 673 M CAD > 0; Sony/Honda-doktrinen); energi-cellen 1→2, Kanada 10→11; NÄSTA RAPPORT est. 2026-11-02 INOM v172-fönstret (KALENDERNOTIS vid v172-arbetet)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 66.99,
+  "marknadsKapitalMdr": 150.38,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.0694,
+   "resultatCAGR5ar": 0.396,
+   "omsattningTillvaxtTTM": 0.2949,
+   "prognosTillvaxt": 0.0101
+  },
+  "lonksamhet": {
+   "roe": 0.0922,
+   "roic": 0.0519,
+   "bruttoMarginal": 0.3259,
+   "ebitMarginal": 0.1396,
+   "nettoMarginal": 0.0679,
+   "fcfMarginal": 0.02
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 1.63,
+   "rantaTackning": 2.27,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 2
+  },
+  "aterkop": {
+   "senasteArMdr": 0.125,
+   "andelUtestande": 1.4317,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": 0.434,
+   "bruttoMarginalSpread5ar": 0.0817,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 26.05,
+   "pb": 2.18,
+   "evEbit": 19.74,
+   "peg": null,
+   "fcfYield": 0.0111,
+   "egenKapitalMultipl": 2.18
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    53309000000,
+    43649000000,
+    53473000000,
+    65194000000
+   ],
+   "resultat": [
+    2589000000,
+    5839000000,
+    5053000000,
+    7044000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    6583000000,
+    9547000000,
+    5889000000,
+    3297000000
+   ]
+  },
+  "notering": "cellmotiverad duo (Kanada/energi 1→2: CNQ upstream-oljesand-brunnen + ENB midstream-röret — producent/transportören, RWE+E.ON/INPEX+Tokyo Gas-mönstret); kollisionskontroll primär+sekundär GRÖN (ENB/ENB.TO+namn+URL); TSX/CAD-precedensen (BCE/NTR-klassen; RY/CNQ:s USD/NYSE = dokumenterad historisk avvikelse); LSE-fri notering — kvartalsvis rapportering (TTM = jun '26); RAPPDAG est. 2026-11-02 INOM v172-fönstret; SEGMENTLÅSET I FEM DELAR: fem segment = totalen EXAKT TTM+FY2022–FY2025 (FEM exakta fönster; FY21 fragmenterat — Liquids/E&O startar FY22); Liquids = ryggraden 76 %; Gas Distribution fördubblad på Dominion-förvärvet 2024; FCF-KOLLAPSEN dokumenterad (NG.L-precedensen): capex fördubblat 4,6→10,8 mdr = rörbyggnadsprogram, FCF 9 547→1 668, identitetslåst exakt; UTDDELNINGEN 23 raka höjningar, current 3,88 CAD (5,79 % EXAKT) men FCF-payout 518 % — skuldfinansierad reglerad modell (dokumenterad, ej nöd: OCF stabil 12,4 mdr); NETTO-SKULD −110,1 mdr (universumets största; Dominion-hoppet 2024 dokumenterat); EV-differensen 3,8 % = preferens+NCI (dokumenterad); P/E-familjen 26,05/26,51/25,87; PEG NULL (basblandning); D/E 1,63 EXAKT; Altman 0,93 DJUP GRÅ (reglerad infrastruktur — dokumenterad); ROIC 5,19 < WACC 6,40 (gap −1,21 p — reglerade nätverkets avkastningsformel, E.ON/Redeia/NG.L-klassen); nyemissioner FY23-24 (Dominion-aktier, +0,14 % aktieantal); netto-CAGR +39,6 % med låg-bas-not (FY22-nedskrivningar); TTM-oms +29,5 % = konsolideringseffekt (dokumenterad); EK-serie saknas; alla repliker i paranoid (StockAnalysis TSX 2026-09-25)"
  }
 ]

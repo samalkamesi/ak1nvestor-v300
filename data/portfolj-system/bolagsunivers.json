@@ -24946,5 +24946,95 @@
    ]
   },
   "notering": "kandidat ur BCE-OMG24 §10:s kö-notis (SISTA namnet — material-trion NTR/AEM/ABX komplett; P/E-bärare kontrollerad före leverans); TSX-primär med VALUTA-MIX (CAD-pris/utdelning, USD-rapportering); GULDCYKELN MED BOTTENBAS-VARNING: FY22-netto 432 M = cykelbotten (rak CAGR från bottnen +85 %/år är MENINGSLÖS — dokumenterad); CAGR-fält på konsekutiv FY23→FY25-bas (oms +12,5 % · netto +46,9 %); prisdriven boom (TTM rev +29,6 %); P/E 11,73 på källans justerade bas (bas-skillnad dokumenterad); ROIC 7,05 % ÖVER WACC 6,78 % (guldsektorns kapitaldisiplin); Altman 4,42 sund — guldduon AEM+ABX = Kanada-blockets balansryggrad; payout-replik ~27 % (kurskonvertering dokumenterad); EK-serie saknas — serier.egetKapital tomt; rappdag Q3 est. tidigt november = v172-könotis; alla repliker i paranoid (StockAnalysis TSX 2026-09-25)"
+ },
+ {
+  "ticker": "CLN.MC",
+  "namn": "Cellnex Telecom, S.A.",
+  "bransch": "kommunikation",
+  "land": "Spanien",
+  "valuta": "EUR",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/bme/CLN/ (+ /statistics/ + /financials/)",
+    "paranoid": "BME-PRIMÄRNOTING i EUR (första CLN.MC/ITX.MC/IBE.MC/SAN.MC-konventionens Madrid-rad med kommunikation; underlag S&P Global Market Intelligence + Fiscal.ai via StockAnalysis; intradag 2026-09-25 delayed +0,29 %; färshämtning direkt med cache-bypass + kompletterande FY-panelhämtning vid oläsbar första tabell): pris 33,50 EUR (52v 27,36–36,79 · beta 0,70), mcap 14,41 mdr EUR på 429,3 M aktier (replik 429,3 × 33,50 = 14,38 — 0,2 %), P/E 21,96 ur källan på bolagets JUSTERADE bas (Cellnex rapporterar adjusted net profit med nedskrivningar exkluderade — GAAP-repliken 33,50/1,207 = 27,75 avviker 26 %; dokumentklass med bas-not, CNR/CPKC/ABX-klassen men djupare eftersom nedskrivningarna ÄR historiken) mot forward P/E 16,68 ⇒ prognosTillväxt +31,65 % (trailing/fwd-modellen, MUFG-konventionen — VÄNDNINGENS normalisering; spår-PEG 21,96/31,65 = 0,69 mot källans PEG 1,05, kalibreringsnot), P/B 2,71 · EV/EBIT 12,91 · PS 3,55 EXAKT replik (14 410/4 055 = 3,554), ROE 12,36 % · ROIC 3,87 % långt under WACC 6,19 % (TORNBOLAGSMETODNOT: leasing-/kontraktsstrukturen gör ROIC missvisande — långa platskontrakt (8-20 år) finansierar tornen och EV-kedjan bär bilden; dokumenterat) · brutto 91,73 % (tjänstebolagsstruktur — tornhyra har ingen kostnadssida i bruttoledet) · EBIT-marginal 27,27 % · netto-marginal 12,77 % EXAKT replik (518/4 055) · FCF-yield EXAKT replik (608/14 410 = 4,22 % = 1/P·FCF 1/23,71); balans: D/E 3,69 (!) · räntetäckning 1,62 · Altman 1,01 (DJUP VARNINGSZON — tornbolagets skuldbygge är AFFÄRS MODELLEN: kontraktsbundna kassaflöden finansierar låningen; redovisas öppet som datafakta med metodnot, Piotroski 6) · kassa 1,18 mdr · skuld 12,65 mdr · NETTOSKULD 11,47 mdr · EK 5,30 mdr; utdelning 0,671 EUR/aktie (2,00 %) ⇒ senasteArMdr 288 (0,671 × 429,3) med källans payout 28,10 % på justerad bas (GAAP-replik 55,6 % — bas-not); FY-SERIEN dec-slutande (M EUR): oms [3 305 · 3 624 · 3 895 · 4 042] · netto [−855 · −956 · −1 004 · +350] · FCF [151 · 373 · 554 · 620] — VÄNDNINGSBROTTET FY2025: tre nedskrivningsår (goodwill på tornportföljen, känd Cellnex-historia) följs av första positiva året +350 med TTM +518 (momentum); P/E-BÄRARKONTROLLENS ÅTSKILLNAD: doktrinens TTM-villkor uppfyllt (netto > 0 ⇒ P/E bär) men SERIENS negativa basår FY22–FY24 gör netto-CAGR ODEFINIERBAR (Sony/Honda-aritmetiken) ⇒ resultatCAGR5ar NULL med vändningsdokumentation — fältet återtas när konsekutiv positiv bas finns; omsCAGR rak FY22→FY25 +6,90 % (organisk volymtillväxt på torn); EPS-GAAP-serien [−1,99 · −2,23 · −2,34 · +0,82]; analytikerläge saknas i panelutdraget — ingen målkurs förs in; NÄSTA RAPPORT Q3 2026 (est. slutet oktober/early november — v172-könotis); kandidatur: S2-U1-BCE-UTOKNING-OMG24 §10:s EGET Spanien-alternativ («cellerna kräver källvändning (TTM>0) ELLER P/E-bärande alternativ (Spanien: Cellnex/Redeia? UK: BT?) innan öppning») — källvändningen SKEDDE (TTM>0) och Cellnex är förstanamnet; TEF/VOD förblev P/E-döda men alternativet lever; kollisionskontroll exakt-match GRÖN; Communication Services ⇒ kommunikation-cellen (29→30 bolag), Spanien 3→4 (landets FJÄRDE gren: konsument · energi · finans · kommunikation)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 33.5,
+  "marknadsKapitalMdr": 14.41,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.06940353440146385,
+   "resultatCAGR5ar": null,
+   "omsattningTillvaxtTTM": 0.026,
+   "prognosTillvaxt": 0.3165467625899281
+  },
+  "lonksamhet": {
+   "roe": 0.1236,
+   "roic": 0.0387,
+   "bruttoMarginal": 0.9173,
+   "ebitMarginal": 0.2727,
+   "nettoMarginal": 0.1277,
+   "fcfMarginal": 0.1499383477188656
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 3.69,
+   "rantaTackning": 1.62,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 2
+  },
+  "aterkop": {
+   "senasteArMdr": 0.288,
+   "andelUtestande": 0.281,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 21.96,
+   "pb": 2.71,
+   "evEbit": 12.91,
+   "peg": 0.6937363636363636,
+   "fcfYield": 0.04219292158223456,
+   "egenKapitalMultipl": 2.71
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    3305000000,
+    3624000000,
+    3895000000,
+    4042000000
+   ],
+   "resultat": [
+    -855000000,
+    -956000000,
+    -1004000000,
+    350000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    151000000,
+    373000000,
+    554000000,
+    620000000
+   ]
+  },
+  "notering": "kandidat ur BCE-OMG24 §10:s EGNA Spanien-alternativ (källvändningen skedde: TTM>0 — TEF förblev P/E-död men alternativet lever; P/E-bärare kontrollerad före leverans); BME-primär EUR; VÄNDNINGSBROTT FY2025 (tre nedskrivningsår ⇒ första positiva; TTM-momentum +518) ⇒ resultatCAGR NULL (negativa basår — Sony/Honda-aritmetiken; fältet återtas vid konsekutiv positiv bas) medan omsCAGR rak +6,90 % organisk; P/E 21,96 på källans JUSTERADE bas (nedskrivningar ur — GAAP-replik 27,75 dokumenterad); D/E 3,69 + Altman 1,01 djup varningszon som datafakta med TORNBOLAGSMETODNOT (kontraktsbundna kassaflöden finansierar skuldbygget; ROIC missvisande för modellen); payout 28,10 % på justerad bas (GAAP-replik 55,6 % not); nyemissioner 2 senaste 5 åren (kapitalhöjningar 2020-2021-perioden); EK-serie saknas — serier.egetKapital tomt; rappdag Q3 est. slutet oktober = v172-könotis; alla repliker i paranoid (StockAnalysis BME 2026-09-25)"
  }
 ]

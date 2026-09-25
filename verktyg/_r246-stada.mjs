@@ -2,4 +2,5 @@
 /** _r246-stada.mjs — ta bort temporär commitmeddelandefil via node (rm hänger i studioskalet). */
 import { rmSync, existsSync } from "node:fs";
 rmSync(".r246-commitmsg.txt", { force: true });
-console.log(existsSync(".r246-commitmsg.txt") ? "FINNS KVAR" : "BORTTAGEN");
+rmSync(".r246-u43-commitmsg.txt", { force: true });
+console.log(existsSync(".r246-u43-commitmsg.txt") ? "FINNS KVAR" : "BORTTAGEN");

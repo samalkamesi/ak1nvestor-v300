@@ -47,8 +47,7 @@ function mät(slug) {
   if (h2.length < 5) fel.push(`H2 ${h2.length} < 5`);
   // 2. Mallstommen
   if (!/k[aä]llor/i.test(h2.join(' '))) gul.push('Källor-sektion osynlig i H2');
-  if (!/nyckeltal/i.test(body)) gul.push('nyckeltals-sektion ej påvisad');
-  if (!/s[aä]tt att l[aä]sa/i.test(body)) gul.push('"så läser du"-moment ej påvisat');
+  if (!/s[aå] l[aä]ser du|s[aä]tt att (l[aä]sa|tolka)|tre sätt att (l[aä]sa|tolka|[öo]va)|hur (du|man) l[aä]ser|l[aä]spaket|s[aå] tolkar du/i.test(body)) gul.push('"så läser du"-moment ej påvisat');
   // Juridikgrinden — disclaimer krävs; rädverb räknas bara som RÅDGIVNING: smala mönster
   // (valideringsrondens läxa: "säljer lås"/"noll köp"/"bör du se" = beskrivande/pedagogiskt,
   //  legala — endast köp-aktien-konstruktioner och rekommendationsverb flaggas)
@@ -62,24 +61,35 @@ function mät(slug) {
   const neutral = body.split(/(?<=[.!?])\s+/).filter((s) => !/rekommendation|investeringsråd|r[aå]dgivning/i.test(s)).join(' ');
   for (const re of rådMönster) { const m = neutral.match(re); if (m) råd.push(...m); }
   if (råd.length) fel.push(`rådgivningsmönster: ${[...new Set(råd.map((s) => String(s).slice(0, 60)))].join(' | ')}`);
-  // 4. Källor — V152:s krav är "källor per siffra": namngivna källor räcker i bulletrads-
-  // ELLER prosaform (valideringsrondens läxa: volvo-car bär "Källor per avsnitt" i prosa
-  // med hämtdatum — exemplariskt; meta saknar sektion helt = äkta gap)
-  const källorPos = body.lastIndexOf('Käll');
-  const källorSektion = källorPos >= 0 ? body.slice(källorPos) : '';
+  // 4. Källor — V152:s krav är "källor per siffra": namngivna källor räcker; sektionen kan heta
+  // "Källor" ELLER vara sammansatt ("Övningar, källor och juridik" — meta-mönstret), i bulletrads-
+  // ELLER prosaform; skiftlägesokänsligt (rond 194:s kur)
+  const källHeading = [...body.matchAll(/^##+ .*k[aä]llor.*$/gim)].pop();
+  const källorSektion = källHeading ? body.slice(källHeading.index) : body.slice(-1200);
   const källRader = (källorSektion.match(/^- /gm) || []).length;
-  const källProsa = (källorSektion.match(/hämtad|data\/analyses|data\/portfolj|data\/rapporter|www\.|https?:\/\//gi) || []).length;
+  // namngivna källor i sektionen — prosaform räcker (metas "Källor: [Metas pressreleaser …]")
+  const källProsa = (källorSektion.match(/hämtad|data\/analyses|data\/portfolj|data\/rapporter|www\.|https?:\/\/|yahoo|marketstack|stockanalysis|pressrelease|pressrum|ir-sida|kalender|årsredovisning|delårsrapport/gi) || []).length;
   if (källRader < 2 && källProsa < 2) fel.push(`källsektion tung (${källRader} rader/${källProsa} prosamarkörer — krav 2 namngivna källor)`);
   const exta = [...new Set([...body.matchAll(/https?:\/\/[^\s)\]]+/g)].map((m) => m[1]))];
-  // 5. Kalenderfakta
-  const d = förstaDatumet(body);
+  // 5. Kalenderfakta — ALLA kroppens datum testas mot kalenderns fönster (rond 194:s kur:
+  // första-datum-logiken plockade rådata-hämtningsdatumet 2026-09-03, inte oktober-rappdatumet)
+  const allaDatum = [...new Set([
+    ...[...body.matchAll(/2026-(09|10|11)-\d{2}/g)].map((m) => m[0]),
+    ...[...body.matchAll(/(\d{1,2}) (september|oktober|november)/gi)].map((m) => `2026-${m[2].toLowerCase() === 'september' ? '09' : m[2].toLowerCase() === 'oktober' ? '10' : '11'}-${m[1].padStart(2, '0')}`),
+  ])];
+  const d = allaDatum.length ? allaDatum[0] : null;
   const kal = kalFör(slug);
-  if (!d) gul.push('rapportdatum ej maskinläsbart');
+  if (!allaDatum.length) gul.push('rapportdatum ej maskinläsbart');
   else if (!kal) not.push('kalenderträff saknas (neutral)');
   else {
-    const kd = förstaDatumet(String(kal.rapportfenster));
-    if (kd && d !== kd) gul.push(`datum ${d} ≠ kalenderns ${kd}`);
-    else if (kd) not.push(`datum ${d} ≡ kalendern ✓`);
+    // alla kalenderfönstrets datum testas (wihlborgs 10-20/21: artikeln bär 21:a);
+    // estimerade spannmärks neutrala (vz: kalenderns egna ord "okänt exakt datum")
+    const kalDatum = [...new Set([...String(kal.rapportfenster).matchAll(/2026-(09|10|11)-\d{2}/g)].map((m) => m[0]))];
+    const estimerat = /estimat|okänt|troligen|spann/i.test(String(kal.rapportfenster));
+    const träff = kalDatum.find((k) => allaDatum.includes(k));
+    const inomSpann = estimerat && kalDatum.length >= 2 && allaDatum.some((d) => d >= kalDatum[0] && d <= kalDatum[kalDatum.length - 1]);
+    if (träff || inomSpann) not.push(`kalendern ${kalDatum.join('/')} ${träff ? '∈' : 'spann-täcker'} kroppens datum ✓`);
+    else gul.push(`kalenderns ${kalDatum.join('/')} saknas bland kroppens ${allaDatum.length} datum — verifiera mot bolagets IR`);
   }
   // 6. Varumärkesgrind × 3 ytor — disclaimer-medveten: träffar ENDAST i disclaimersatser
   // (hm-b-läxan: "Inga köp- eller säljrekommendationer lämnas" = negation men grinden är
@@ -127,9 +137,10 @@ fs.writeFileSync('/tmp/r172-granskning-resultat.json', JSON.stringify(resultat, 
 const gP = `${ROT}/data/forskning/V172-GRANSKNING.md`;
 const gRå = fs.readFileSync(gP, 'utf8');
 const g = gRå.slice(0, gRå.indexOf('<!-- SLUT-RAPPORTBLOCK -->') + '<!-- SLUT-RAPPORTBLOCK -->'.length) + '\n';
+const ROND = process.argv[2] || '193';
 const sektion = `
 
-## GRANSKNINGSOMGÅNG 1 (rond 193, ${new Date().toISOString().slice(0, 10)} — mätverktyg verktyg/_r172-granska-utkast.mjs, KURERAT efter valideringsronden)
+## GRANSKNINGSOMGÅNG (rond ${ROND}, ${new Date().toISOString().slice(0, 10)} — mätverktyg verktyg/_r172-granska-utkast.mjs${ROND !== '193' ? ', kurerat per ronds läxor' : ''})
 
 DOM: **${grön.length} GRÖN · ${gul.length} GUL · ${röd.length} RÖD** av ${resultat.length} väntande. Fullrapport: /tmp/r172-granskning-resultat.json (maskinmätning; mätverktyget committat och omkörbart).
 

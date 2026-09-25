@@ -27011,5 +27011,95 @@
    ]
   },
   "notering": "cellmotiverad duo (Kanada/energi 1→2: CNQ upstream-oljesand-brunnen + ENB midstream-röret — producent/transportören, RWE+E.ON/INPEX+Tokyo Gas-mönstret); kollisionskontroll primär+sekundär GRÖN (ENB/ENB.TO+namn+URL); TSX/CAD-precedensen (BCE/NTR-klassen; RY/CNQ:s USD/NYSE = dokumenterad historisk avvikelse); LSE-fri notering — kvartalsvis rapportering (TTM = jun '26); RAPPDAG est. 2026-11-02 INOM v172-fönstret; SEGMENTLÅSET I FEM DELAR: fem segment = totalen EXAKT TTM+FY2022–FY2025 (FEM exakta fönster; FY21 fragmenterat — Liquids/E&O startar FY22); Liquids = ryggraden 76 %; Gas Distribution fördubblad på Dominion-förvärvet 2024; FCF-KOLLAPSEN dokumenterad (NG.L-precedensen): capex fördubblat 4,6→10,8 mdr = rörbyggnadsprogram, FCF 9 547→1 668, identitetslåst exakt; UTDDELNINGEN 23 raka höjningar, current 3,88 CAD (5,79 % EXAKT) men FCF-payout 518 % — skuldfinansierad reglerad modell (dokumenterad, ej nöd: OCF stabil 12,4 mdr); NETTO-SKULD −110,1 mdr (universumets största; Dominion-hoppet 2024 dokumenterat); EV-differensen 3,8 % = preferens+NCI (dokumenterad); P/E-familjen 26,05/26,51/25,87; PEG NULL (basblandning); D/E 1,63 EXAKT; Altman 0,93 DJUP GRÅ (reglerad infrastruktur — dokumenterad); ROIC 5,19 < WACC 6,40 (gap −1,21 p — reglerade nätverkets avkastningsformel, E.ON/Redeia/NG.L-klassen); nyemissioner FY23-24 (Dominion-aktier, +0,14 % aktieantal); netto-CAGR +39,6 % med låg-bas-not (FY22-nedskrivningar); TTM-oms +29,5 % = konsolideringseffekt (dokumenterad); EK-serie saknas; alla repliker i paranoid (StockAnalysis TSX 2026-09-25)"
+ },
+ {
+  "ticker": "TD",
+  "namn": "The Toronto-Dominion Bank",
+  "bransch": "finans",
+  "land": "Kanada",
+  "valuta": "CAD",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/tsx/TD/ (+ /statistics/ + /financials/ + /financials/cash-flow-statement/)",
+    "paranoid": "TSX-PRIMÄRNOTING (underlag S&P Global Market Intelligence via StockAnalysis; senaste handelsdag 2026-09-24, hämtat 2026-09-25 — close 168,66 CAD; 50/200-dagars MA 168,67/148,31 — priset PÅ 50-MA ÖVER 200-MA; 52v +54,81 % = VÄNDNINGENS ÅR; RSI 49,8; short 2,82 %); färskhämtning med FYRA paneler; FISCALÅR NOV–OKT (31 okt; TTM-fönstret = jul '26 efter Q3-rapporten 2026-08-27 — KVARTALSVIS; nästa Q4/årsredovisning est. dec 2026, UTANFÖR v172-fönstret); TSX/CAD-PRECEDENSEN (BCE/NTR/ENB-klassen; RY:s USD/NYSE-pris 202,29 = dokumenterad historisk avvikelse i cellen): pris 168,66 CAD (beta 0,87), mcap 277,40 mdr CAD på 1,64 mdr aktier (replik 1,64×168,66 = 276,60 — 0,3 %, aktieavrundning) — RY (281 mdr USD-noterad ≈ 289 mdr CAD) + TD (277 mdr) = UNIVERSALBANKENS TVILLINGAR MED OLIKA BOTTNAR: RY wealth-tyngd (förvaltning 22,4 mdr = största segmentet) + TD retail-tyngd (Canadian P&C 21,5 + US Retail 15,5 = detaljhandelsbanken med USA-expansion); P/E-FAMILJEN DOKUMENTERAD: källrad 18,12 · GAAP 277,40/15,601 = 17,78 · pris/EPS 168,66/9,31 = 18,11 (0,06 % EXAKT); EPS-raden 9,31 mot beräknad netto/aktier 9,51 — aktieavrundningsbas; fwd P/E 15,58 ⇒ implied EPS +16 % (konsensusreferens); PEG-KÄLLRAD 1,09 MED DOKUMENTERAD BAS: fwd 15,58/konsensus 3Y EPS 14,38 % = 1,08 (avrundning) — fältet SATT (RY 1,75/SAN 0,46-precedensen); PS 4,56 EXAKT (277,40/60,82) · P/B 2,18 EXAKT (277,40/127,02) · P/TBV 2,74 (tangible-basen — bankens eget mått); BANK-NULL-PROFILEN (källans egna n/a — RY/SAN-mallen): EV n/a · EV/Earnings n/a · EV/Sales n/a · EV/EBIT n/a · D/E n/a · räntetäckning n/a · current ratio n/a · FCF-mått n/a (FCF-yield-källrad −3,30 % dokumenterad) — balansräkningens natur: KASSA 633,4 mdr · SKULD 533,4 mdr · NETTOKASSA +100,0 mdr (+60,83/aktie; insättningsverksamheten är balansen, inte nettoskuld-logik); working capital −827 mdr (bankens rörelsekapital = insättningar i rörelse); SEGMENTBILDEN (fem ben, [TTM · FY25 · FY24 · FY23 · FY22 · FY21] M CAD): Canadian P&C [21 499 · 20 686 · 19 790 · 18 317 · 16 586 · 14 917] (STÖRST — hemmamarknadens detaljbank) + Wealth & Insurance [15 557 · 14 562 · 13 535 · 11 630 · 11 005 · 10 589] + US Retail [15 488 · 12 305 · 13 713 · 14 290 · 12 280 · 10 758] (andra benet — US-expansionen) + Wholesale [9 644 · 8 392 · 7 286 · 5 818 · 4 831 · 4 700] + Corporate [2 573 · 11 832 · 2 899 · 635 · 4 330 · 1 729] — ELIMINERINGSDIFFERANSEN DOKUMENTERAD (källans segmentvy brutto mot koncern-total nett0): [TTM +3 939 · FY25 +4 506 · FY24 +3 979 · FY23 +1 291 · FY22 +1 291 · FY21 −224] — segmentLÅS EJ exakt tillämpligt (PSON-modellen tillämpas striktare: differansen redovisas, inget falskt exakthetslås); CORPORATE-SPIKEN FY25 11 832 (mot 635 FY23) = AML-uppgörelsens och Schwab-posternas hem — engångslastat år; VÄNDNINGSPROFILEN — FY23-24-KOLLAPSEN DOKUMENTERAD: netto [17 170 · 10 071 · 8 316 · 19 973] + TTM 15 601 (EPS [9,47 · 5,52 · 4,72 · 11,56] + TTM 9,31) — kollapsen −51 % FY23 (AML-programförbiseendena: 3,1 mdr USD-uppgörelsen med amerikanska myndigheter 2024 + Schwab-andelens värdeförluster) följt av FY25-VÄNDNINGEN +140 % (engångstung: Corporate-spirken + Schwab-avyttring) och TTM-NORMALISERINGEN 15 601 (det löpande läget); netto-CAGR +5,2 % FY22→25 (låg-bas-not: kollapsåren mitt i serien — redovisas med sin natur); oms [47 741 · 49 399 · 53 244 · 63 271] + TTM 60 822 (CAGR +9,84 %; TTM −4,12 % = FY25-engångsomsättningen rullar ur fönstret); FCF-SERIEN NEGATIV = BANKENS NATUR (RY-precedensen): [−68 264 · −41 659 · −17 162 · −77 685] + TTM −9 156 — IDENTITETSLÅST EXAKT FEM FÖNSTER (OCF−capex: [−66 810−1 454 · −39 815−1 844 · −14 985−2 177 · −75 540−2 145 · −6 633−2 523]) — bankens driftskassa rör låneboken, inte ägarutdelning; FY21 var POSITIVT +55 494 (bokningsmässigt); ÅTERKÖPSMASKINEN + UTDELNINGEN = TVÅ BEN: Repurchase [−10 859 · −13 047 · −12 244 · −15 206 · −19 300] TTM −22 169 (kraftigast i universumets bank-rad — 8,0 % av mcap brutto) mot aktieprogrammens Issuance [+10 889 · +11 021 · +8 060 · +11 376 · +13 293] TTM +12 979 — NETTO-MINSKNING av aktiebasen varje år: aktieantal −3,68 % YoY = buyback-yield EXAKT · shareholder yield 6,34 %; Total Dividends [−5 555 · −6 665 · −5 825 · −7 160 · −7 663] TTM −7 804 — 15 RAKA HÖJNINGSÅR (+4,76 % senaste); current 4,48 CAD (2,66 % EXAKT replik 4,48/168,66); payout-källrad 48,21 % (replik 4,48/9,31 = 48,12 % — 0,2 %); preferens-posterna dokumenterade (Utfärdade +4 855 · Inlösen −2 812 TTM); LÖNSAMHET: ROE 12,83 % (mot RY 16,21 — tvillingarnas gap: TD:s kollaps-åtstramning mot RY:s jämnare bana) · ROA 0,78 % · WACC 3,08 % (bankens långa skuldbas) · skattesats 19,64 % · institutionsägande 56,69 %; marginalkaskaden TTM: netto-M 25,65 % EXAKT (financials-TTM-raden; statistics-veget 26,62 % = annan fönsterbas, dokumenterad) < pretax-M 33,12 % < operating-M 35,14 % (normal kaskad — engångskontrollen; FY23-24 = kollapsår med AML/Schwab-poster i Corporate, dokumenterat); balansserier M CAD [FY21–FY25]: kassa [530,7 · 548,0 · 546,2 · 635,3 · 661,8] · skuld [315,4 · 386,8 · 437,6 · 492,4 · 531,6] · nettokassa [+215,3 · +161,1 · +108,6 · +142,9 · +130,1] nu +100,0; Altman n/a (bank — källan beräknar ej) · Piotroski visas ej; kandidatur: CELLMOTIVERAD duo enligt U30-mönstret — Kanada/finans-cellens TVÅ universalbanksprofiler: RY (wealth/capital-markets-tyngd, jämnast) + TD (retail-tyngd med US Retail 15,5 mdr = expansionens bottnar + vändningsåret 52v +54,8 %): duon speglar Kanadas bankoligopol från två sidor; P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 15,601 mdr CAD > 0; Sony/Honda-doktrinen); finans-cellen 1→2, Kanada 11→12; nästa rapport Q4 est. dec 2026 (UTANFÖR v172-fönstret — kalendernotis)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 168.66,
+  "marknadsKapitalMdr": 277.4,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.0984,
+   "resultatCAGR5ar": 0.0517,
+   "omsattningTillvaxtTTM": -0.0412,
+   "prognosTillvaxt": 0.0693
+  },
+  "lonksamhet": {
+   "roe": 0.1283,
+   "roic": null,
+   "bruttoMarginal": null,
+   "ebitMarginal": 0.3514,
+   "nettoMarginal": 0.2565,
+   "fcfMarginal": null
+  },
+  "stabilitet": {
+   "skuldEgenkapital": null,
+   "rantaTackning": null,
+   "fcfPositivaSenaste5": null,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 5
+  },
+  "aterkop": {
+   "senasteArMdr": 9.19,
+   "andelUtestande": 0.4821,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 18.12,
+   "pb": 2.18,
+   "evEbit": null,
+   "peg": 1.09,
+   "fcfYield": null,
+   "egenKapitalMultipl": 2.18
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    47741000000,
+    49399000000,
+    53244000000,
+    63271000000
+   ],
+   "resultat": [
+    17170000000,
+    10071000000,
+    8316000000,
+    19973000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    -68264000000,
+    -41659000000,
+    -17162000000,
+    -77685000000
+   ]
+  },
+  "notering": "cellmotiverad duo (Kanada/finans 1→2: RY wealth-tyngda universalbanken + TD retail-tyngda detaljhandelsbanken med US Retail 15,5 mdr — tvillingarna med olika bottnar, Kanadas bankoligopol från två sidor); kollisionskontroll primär+sekundär GRÖN (TD/TD.TO+namn+URL); TSX/CAD-precedensen (BCE/NTR/ENB-klassen; RY:s USD/NYSE = dokumenterad historisk avvikelse); fiscalår nov–okt, kvartalsvis (TTM = jul '26; Q4 est. dec 2026 UTANFÖR v172); VÄNDNINGSPROFILEN: netto [17 170 · 10 071 · 8 316 · 19 973] + TTM 15 601 — FY23-24-kollapsen (AML-uppgörelse 3,1 mdr USD + Schwab-förluster, i Corporate-segmentet) + FY25-vändning +140 % (engångstung) + TTM-normalisering; 52v +54,81 %; P/E-familjen 18,12/17,78/18,11; PEG 1,09 med dokumenterad bas (fwd 15,58/14,38); PS/P/B EXAKTA; BANK-NULL-PROFIL (källans n/a — RY/SAN-mallen): EV/D/E/räntetäckning/FCF-mått NULL; kassa 633/skuld 533 mdr = insättningsbalansen; SEGMENTBILDEN fem ben med DOKUMENTERAD elimineringsdifferans [+3 939 · +4 506 · +3 979 · +1 291 · +1 291 · −224] — inget falskt exakthetslås; Corporate-spirken FY25 11 832 = engångsposternas hem; FCF-serien negativ = bankens natur (identitetslåst exakt fem fönster; RY-precedensen); ÅTERKÖPSMASKINEN TTM −22,2 mdr (8,0 % av mcap brutto) mot aktieprogram +13,0 = netto −3,68 % aktiebas EXAKT · 15 raka utdelningshöjningar (4,48 CAD, 2,66 % EXAKT; payout 48,21); ROE 12,83 mot RY 16,21 (tvillinggapet); netto-M 25,65 % EXAKT mot financials-TTM (statistics-veget 26,62 = annan bas dokumenterad); EK-serie saknas; alla repliker i paranoid (StockAnalysis TSX 2026-09-25)"
  }
 ]

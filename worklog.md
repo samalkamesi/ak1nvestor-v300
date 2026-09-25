@@ -17701,3 +17701,13 @@ Läge GRÖNT (prod 200 · vakten GRÖN · motorer 107/0/0 · pm2 online · src o
 (5) ARKIV — 25 rondskript (r225-rättelse+slutkoll, r226-hela bandet, rop-halsa-bokföring) + rundens egna _r227-skript committade som leveransbevis.
 KVD: prodförkontroll exakt (1 M + 26 untracked) · cmp byte-identisk ×27 · quiz-idempotens 2× · push prod develop med retry (3 försök) · prods HEAD = lokal HEAD verifierad · prod HTTPS 200 efter push · src orörd = inget bygge (tsc-grinden opåverkad).
 Kö oförändrad från U30: rappdagar → v172 (fönstret öppnar 10-29), UK-kommunikation BT.L (sista UK-1-grenen), Kanada/Spanien, spårrotation. R2: Q3-publikationspaketet väntar fortfarande kund (71 GRÖN · 5 GUL · 0 RÖD).
+
+
+### ROND 227 KOMPLEMENT [organ:Φ] — push-mekaniken fullständigt kartlagd; prod-trädet RENT (0 rader); historikförklaring — 2026-09-25
+
+Avslutande bokföring efter att leveransen landat (commit ef5bbd44, push 9b32f5b8..ef5bbd44):
+(1) FULLSTÄNDIG UPDATEINSTEAD-MEKANIK (tre lager, alla verifierade i skarp drift): push mot prod avvisas på (a) MODIFIERAD tracked fil ("Working directory has unstaged changes") — även när commiten bär exakt arbetskatalogens innehåll; (b) UNTRACKED fil som commiten lägger till ("would be overwritten by merge") — även byte-identisk. Kuren i båda fallen: säkra innehållet i arbetsytans commit → kirurgiskt rensa prods kopia (git checkout -- fil för M; rm för untracked-dubbletter EFTER cmp) → push → updateInstead-checkouten återskapar exakt samma innehåll. Adoptionsskydd: append-only-filen kopieras ENDAST om prods kopia är längre — en rensad prod kan aldrig dra bakåt en framåtbärande commit.
+(2) PROD-TRÄDET RENT: 0 rader smuts efter push (första gången sedan artefaktplaylistan byggdes upp 09-24) — 26 eftersläppta artefakter + rapporten nu git-spårade.
+(3) HISTORIK: rond 227 sträcker sig över tre commits i grenen (0499991e-släkten via amend, 9b3b2c2b-släkten via amend, slutgiltiga ef5bbd44) — skriptet itererades skarpt mot updateInstead-lagren (v1: prodkoll-bugg på porcelen-formatet '␣M'; v2: gitignored data/vakten i add-listan; v3: M-rensning; v4: untracked-rensning). Varje commit är komplett grön (tsc 0); inga dubbletter i data (cmp-kedja).
+(4) LÄRODOM FÖR KOMMANDE ADOPTIONER: _r227-levera.mjs är nu den referensmekanik framtida ronder använder när prod-trädet bär vaktrapporter/artefakter — adoption aldrig via gissning longeran.
+Kö: oförändrad (rappdagar → v172 · UK-kommunikation BT.L · Kanada/Spanien · spårrotation).

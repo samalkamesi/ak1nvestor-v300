@@ -8,7 +8,7 @@
 //   Adoptionsskydd: prodens fil kopieras ENDAST om den är längre (append-only)
 //   — en redan rensad prod kan aldrig dra bakåt en framåtbärande commit.
 import { execFileSync } from 'node:child_process';
-import { appendFileSync, copyFileSync, existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { appendFileSync, copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
 
 const ROT = '/home/ak1a/agent/ak1';
@@ -164,14 +164,20 @@ for (let forsok = 1; forsok <= 3 && !pushad; forsok++) {
       kvitto.push(`  commit amend:ad (försök ${forsok})`);
     }
   } catch (e) { kvitto.forEach(k => console.log(k)); console.log(`FEL git commit (försök ${forsok}) — ${String(e.message).split('\n')[0]}`); process.exit(1); }
-  // Rensa prods M-rad KIRURGISKT (innehållet är säkrat i commiten ovan; pushens
-  // updateInstead-checkout skriver tillbaka exakt samma innehåll).
+  // Rensa prods M-rad + untracked-dubbletter KIRURGISKT (innehållet är säkrat i
+  // commiten ovan; pushens updateInstead-checkout återskapar exakt samma innehåll).
   try {
     const mRader = execFileSync('git', ['-C', PROD, 'status', '--porcelain'], { encoding: 'utf8' }).split('\n').filter(r => r.startsWith(' M ') || r.startsWith('M '));
     if (mRader.length === 1) {
       execFileSync('git', ['-C', PROD, 'checkout', '--', RAPPORT]);
       kvitto.push(`  prods M-rad rensad (checkout -- ${RAPPORT}; innehållet säkrat i commiten)`);
     }
+    let rensade = 0;
+    for (const f of PROD_UNTRACKED) {
+      const a = `${ROT}/${f}`, b = `${PROD}/${f}`;
+      if (existsSync(a) && existsSync(b) && readFileSync(a).equals(readFileSync(b))) { rmSync(b); rensade++; }
+    }
+    if (rensade) kvitto.push(`  prods ${rensade} untracked-dubbletter rensade (byte-identiska med commiten; återskapas av pushens checkout)`);
   } catch (e) { kvitto.push(`  VARNING prod-rensning misslyckades — ${String(e.message).split('\n')[0]}`); }
   try {
     const ut = execFileSync('git', ['-C', ROT, 'push', 'prod', 'develop'], { encoding: 'utf8' });

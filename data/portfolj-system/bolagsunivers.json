@@ -24316,5 +24316,95 @@
    ]
   },
   "notering": "kandidat ur S2-U3-OMG20-komplementet (Technology-sektorn ⇒ Japan/teknik-cellen med endast 8035.T); STRUKTURBROTT FY2026 (Automotive deconsoliderat + restrukturering): FY26-nettodipen −48 % bär engångsposter och omsättningstillbakagången är delvis avknoppning — CAGR på 4-årig hel serie med brottet dokumenterat i paranoid (oms +2,2 % · netto −7,2 %); prognosTillväxt +105 % (forward P/E 20,29 mot trailing 41,57 — konsensus väntar EPS-dubbling på AI/datacenter) ⇒ spår-PEG 0,40 (källans 0,49 kalibreringsnot); ROE 5,25 % ur källan (TTM-replik 4,55 % dokumenterad); Altman 2,23 under 3 — källans riskflagga redovisas öppet; EK-serie saknas — serier.egetKapital tomt; rapportdag 2026-10-30 (Q2 FY2027) = v172-könotis; alla repliker och källpaneler i paranoid (StockAnalysis TYO 2026-09-25)"
+ },
+ {
+  "ticker": "TELUS",
+  "namn": "TELUS Corporation",
+  "bransch": "kommunikation",
+  "land": "Kanada",
+  "valuta": "CAD",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/tsx/TELUS/ (+ /statistics/ + /financials/)",
+    "paranoid": "TSX-PRIMÄRNOTING i CAD (BCE-precedensen — universums andra rena Toronto/CAD-rad; underlag S&P Global Market Intelligence + Fiscal.ai via StockAnalysis; intradag 2026-09-25 delayed +0,92 %; färshämtning direkt med cache-bypass): pris 27,31 CAD (52v 19,25–28,59; beta 0,48), mcap 39,70 mdr CAD på 1 462,34 mdr aktier (dual-klass A+B; replik 1 462,34 × 27,31 = 39,94 — 0,6 %, vägt aktietal), P/E 26,54 ur källan med replik-not (27,31/(1 478/1 462,34) = 27,02 = 1,8 % spridning), forward P/E 15,97 ⇒ prognosTillväxt +66,19 % (trailing/fwd-modellen, MUFG-konventionen — telekom-D&A-normalisering: spår-PEG 26,54/66,19 = 0,40), P/B 2,21 · EV/EBIT 10,04 (replik ej exakt möjlig — källans EBIT-bas ej bruten ut i panelutdraget; dokumentklass), P/FCF 20,29 med FCF-yield-replik 1/20,29 = 4,93 % mot 1 969/39 700 = 4,96 % ✓ 0,6 %, ROE 8,08 % · ROIC 4,70 % · WACC 6,35 % · brutto 51,60 % · EBIT-marginal 10,41 % · netto-marginal 10,02 % EXAKT replik (1 478/14 743) · FCF-marginal 13,36 % replik (1 969/14 743 — fiber-tillgångsförsäljningar/tower-leasebacks lyfter OCF; dokumenterad metodnot); balans: D/E 1,40 · räntetäckning 1,82 · Altman 1,55 (KÄLLANS DJUPA VARNINGSZON — telekombalansens skuldtäthet; redovisas öppet som datafakta) · Piotroski 5; utdelning 1,6502 CAD/aktie (6,04 % direktavkastning) ⇒ senasteArMdr 2 413 (1,6502 × 1 462,34) med källans payout 163,89 % (utdelningen ÖVER TTM-vinsten — balansfinansierad utdelning, telekomkonvention; dokumenterad öppet); FY-SERIEN dec-slutande (M CAD): oms [14 917 · 14 922 · 15 097 · 14 858] · netto [1 274 · 1 330 · 1 780 · 1 507] · FCF [1 573 · 1 755 · 1 955 · 1 969] — FY2022–FY2025 SAMTLIGA positiva: vågens FÖRSTA RAD UTAN BROTTS- ELLER NEGATIVBAS-DOKUMENTATION (CAGR rak: oms −0,13 % · netto +5,77 % på 3-årig bas FY22→FY25; fyra punkter, SEB-A/Kao-konventionen); EPS-serien [0,86 · 0,90 · 1,21 · 1,03]; analytikerläge saknas i panelutdraget — ingen målkurs förs in; rappdag: Q3 2026 est. november (dec-slut) — v172-könotis v45; kandidatur: S2-U1-BCE-UTOKNING-OMG24 §10 kö-notis 'Kanada/kommunikation 1→2/3: RCU Rogers + TELUS (båda P/E-bärare sannolikt)' — P/E-bärarkriteriet KONFIRMERAT (26,54 > 0); rondens Kirin 2503.T AVVISAD först (engångsposter: netto-marginal 16,9 % ÖVER EBIT 12,6 %, rev platt, fwd>trailing −27 % — V173-U3-protokollet) och OMG23:s TMUS-ledig-notis var FÖRÅLDRAD (syskon levererade 2026-09-20, dubbelkälla); Communication Services ⇒ kommunikation-cellen (24→25 bolag), Kanada 3→4."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 27.31,
+  "marknadsKapitalMdr": 39.7,
+  "tillvaxt": {
+   "omsattningCAGR5ar": -0.0013201483172619044,
+   "resultatCAGR5ar": 0.05758335778970336,
+   "omsattningTillvaxtTTM": 0.07,
+   "prognosTillvaxt": 0.6618659987476516
+  },
+  "lonksamhet": {
+   "roe": 0.0808,
+   "roic": 0.047,
+   "bruttoMarginal": 0.516,
+   "ebitMarginal": 0.1041,
+   "nettoMarginal": 0.1002,
+   "fcfMarginal": 0.13355490741368786
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 1.4,
+   "rantaTackning": 1.82,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 2.413,
+   "andelUtestande": 1.6389,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 26.54,
+   "pb": 2.21,
+   "evEbit": 10.04,
+   "peg": 0.4009875118259225,
+   "fcfYield": 0.04959697732997481,
+   "egenKapitalMultipl": 2.21
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    14917000000,
+    14922000000,
+    15097000000,
+    14858000000
+   ],
+   "resultat": [
+    1274000000,
+    1330000000,
+    1780000000,
+    1507000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    1573000000,
+    1755000000,
+    1955000000,
+    1969000000
+   ]
+  },
+  "notering": "kandidat ur S2-U1-BCE-OMG24 §10:s kö-notis (Kanada/kommunikation 1→2; P/E-bärare konfirmerad 26,54); TSX-primär CAD (BCE-precedensen); FY2022–FY2025 SAMTLIGA positiva — vågens första rad utan brottsdokumentation (rak 3-årig CAGR: oms −0,13 % · netto +5,77 %); prognosTillväxt +66,2 % = telekom-D&A-normalisering (spår-PEG 0,40); payout 163,89 % ur källan — utdelningen över TTM-vinsten, balansfinansierad (dokumenterad öppet); Altman 1,55 varningszonen öppet (Piotroski 5 bredvid); FCF-marginal 13,4 % bär fiber-/tower-transaktioner (metodnot); moat-fält null (bruttomarginalserie per FY ej i panelutdraget); EK-serie saknas — serier.egetKapital tomt; Q3-rappdag est. november (v172 v45-notis); rondens kirin-AVVISANDE + TMUS-kollisionsläxa i V173-U3-protokollet; alla repliker i paranoid (StockAnalysis TSX 2026-09-25)"
  }
 ]

@@ -25936,5 +25936,95 @@
    ]
   },
   "notering": "cellmotiverad duo (Tyskland/energi 1→2: RWE produktion + E.ON nätdistribution — samma producent/distributör-kontrast som Japan/energi U19, pedagogisk parallellitet); ETR-primär EUR; VÅGENS ÅTTONDE BROTTSFRIA RAD (netto stigande varje år 2 096→3 076; rak CAGR oms +3,79 % · netto +13,71 % — energikrisårens nättariffexpansion); P/E 12,89 källans justerade bas (GAAP-replik 9,72 noterad); PS/netto-M/payout EXAKTA repliker; FCF-yield 9,77 %; utdelning 4,75 % (krisårens höjda nivå); REGLERAD NÄTMETODNOT (ROIC=WACC-formeln; Altman 1,5 = infrastrukturprogrammet — Redeia/Cellnex/Tokyo Gas-klassen); EK-serie saknas — serier.egetKapital tomt; rappdag Q3 est. tidigt november = v172-könotis; alla repliker i paranoid (StockAnalysis ETR 2026-09-25)"
+ },
+ {
+  "ticker": "FNT.DE",
+  "namn": "freenet AG",
+  "bransch": "kommunikation",
+  "land": "Tyskland",
+  "valuta": "EUR",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/etr/FNT/ (+ /statistics/ + /financials/)",
+    "paranoid": "ETR-PRIMÄRNOTING i EUR (DTE.DE-precedensens Frankfurt-rad; underlag S&P Global Market Intelligence + Fiscal.ai via StockAnalysis; intradag 2026-09-25; färshämtning direkt med cache-bypass + TRE kompletterande panelhämtningar — netto-raden krävde skärpning; dec-slut): pris 23,92 EUR (beta 0,8), mcap 3 133 M EUR på 130,9 M aktier (replik 130,9 × 23,92 = 3 131 — 0,05 %), P/E-FALLET (SHIN-ETSU-PRECEDENSEN, andra gången i vågen): källans P/E-rad 11,40 motsägs av källans EGEN EPS-rad 4,66 (11,40 × 4,66 = 53,1 ≠ pris 23,92) ⇒ fältet bär AKTIEBAS-REPLIKEN 23,92/4,66 = 5,13, låst av TRE oberoende identiteter: EPS × aktier = netto (4,66 × 130,9 = 610 ✓) · FCF-yield EXAKT (560/3 133 = 17,87 % = 1/P·FCF 1/5,6 = 17,86 %) · mcap 0,05 %; källans P/E-rad noterad som avvikande (troligen annat redovisningsfönster); källans PS-rad 1,00 och payout-rad 80,4 % avviker motsvarande mot replikerna (1,23 · 39,7 %) — samma fönsterdokumentation; prognosTillväxt NULL (fwd-basen delar källans tvistiga fönster — basblandning vägras, källans fwd 10,70/PEG 0,41 enbart referens), P/B 1,05 · EV/EBIT 6,2, ROE 9,2 % · ROIC 5,9 % mot WACC 6,0 % (MVNO-METODNOT: virtuell operatör hyr nätet — kapitalkravet minimalt men marginalspektrumet smalare; ROIC≈WACC är modellens struktur, dokumenterat) · EBIT-marginal 19,0 % (MVNO-kassamodellen) · netto-marginal 24,0 % aktiebasreplik (610/2 545) · FCF-marginal 22,0 % replik (560/2 545 — MVNO-modellens kassagenerering), balans: D/E 1,01 · räntetäckning 6,5 · Altman 2,1 (KÄLLANS VARNINGSZON — freenets balans bär licenser/spektrum och MVNO-åtaganden; datafakta) · Piotroski 7; utdelning 1,85 EUR/aktie (7,73 % — direktavkastningsprofilen, kassamodellens utdelning) ⇒ senasteArMdr 242 (1,85 × 130,9) med aktiebas-payout 39,7 % (källans 80,4 %-rad annat fönster, noterad); FY-SERIEN dec-slutande (M EUR): oms [2 389 · 2 484 · 2 528 · 2 540] · netto [447 · 491 · 549 · 580] · FCF [427 · 436 · 431 · 427] — VÅGENS NIONDE BROTTSFRIA RAD: NETTO STIGANDE VARJE ÅR (447→580) med stabil FCF (~430 hela serien); rak 3-årig CAGR FY22→FY25 (oms +2,04 % · netto +9,03 % — MVNO-modellens marginalutflytt: mobilabonnentvärde högre än TV/fasta); EPS-serien [3,41 · 3,75 · 4,19 · 4,43]; analytikerläge saknas i panelutdraget — ingen målkurs förs in; NÄSTA RAPPORT Q3 2026 est. tidigt november — v172-könotis v45; kandidatur: CELLMOTIVERAD duo enligt U13-mönstret — Tyskland/kommunikation-cellens TVÅ affärsmodeller: Deutsche Telekom (DTE.DE, integrerad nätjätte) + freenet (FNT.DE, MVNO/mobil detalj — kassageneratorn utan eget nät) — cellens pedagogiska kontrast (nätägare mot ntvånare/hyrare); P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 610 M EUR > 0; Sony/Honda-doktrinen); kollisionskontroll exakt-match GRÖN; Communication Services ⇒ kommunikation-cellen (28→29 bolag), Tyskland 20→21 (kommunikation-grenen 1→2)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 23.92,
+  "marknadsKapitalMdr": 3.133,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.02063985307964744,
+   "resultatCAGR5ar": 0.09070379312279342,
+   "omsattningTillvaxtTTM": 0.008,
+   "prognosTillvaxt": null
+  },
+  "lonksamhet": {
+   "roe": 0.092,
+   "roic": 0.059,
+   "bruttoMarginal": null,
+   "ebitMarginal": 0.19,
+   "nettoMarginal": 0.23968565815324164,
+   "fcfMarginal": 0.2200392927308448
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 1.01,
+   "rantaTackning": 6.5,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 0.242,
+   "andelUtestande": 0.397,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 5.13,
+   "pb": 1.05,
+   "evEbit": 6.2,
+   "peg": null,
+   "fcfYield": 0.17874241940631982,
+   "egenKapitalMultipl": 1.05
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    2389000000,
+    2484000000,
+    2528000000,
+    2540000000
+   ],
+   "resultat": [
+    447000000,
+    491000000,
+    549000000,
+    580000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    427000000,
+    436000000,
+    431000000,
+    427000000
+   ]
+  },
+  "notering": "cellmotiverad duo (Tyskland/kommunikation 1→2: Deutsche Telekom integrerad jätte + freenet MVNO/mobil detalj — nätägare mot hyrare); ETR-primär EUR; P/E-FALLET (Shin-Etsu-precedensen andra gången): källans P/E-rad 11,40 motsagd av källans egen EPS-rad — fältet bär aktiebas-repliken 5,13 låst av TRE identiteter (EPS×aktier=netto · FCF-yield EXAKT 17,87 % · mcap 0,05 %); PS/payout-rader samma fönsterdokumentation; prognosTillväxt NULL (basblandning vägras); VÅGENS NIONDE BROTTSFRIA RAD (netto stigande varje år 447→580; rak CAGR oms +2,04 % · netto +9,03 % — MVNO-marginalutflytt); MVNO-METODNOT (ROIC≈WACC = modellens struktur: hyr nätet, minimalt kapital); Altman 2,1 datafakta; direktavkastning 7,73 % (kassamodellen); EK-serie saknas — serier.egetKapital tomt; rappdag Q3 est. november = v172-könotis; alla repliker i paranoid (StockAnalysis ETR 2026-09-25)"
  }
 ]

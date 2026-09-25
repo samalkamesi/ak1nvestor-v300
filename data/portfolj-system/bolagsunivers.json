@@ -26651,5 +26651,95 @@
    ]
   },
   "notering": "cellmotiverad duo (Storbritannien/konsument 1→2: Unilever dagligvarubredd + Diageo spritportfölj — bred staples mot varumärkespremium); LSE-primär, USD-RAPPORTVALUTA + GBX-NOTING enl. BP.L-precedensen (serier/DPS i USD, pris/mcap i GBP/pence); räkenskapsåret JUN-SLUT, rapporterar halvårsvis; kollisionskontroll primär+sekundär (AZN-läxan) GRÖN; EARNINGS-VS-CASH-KLIVET: netto kollapsar [4 445→1 737] på nedskrivningar (källbelagda 1 666 M USD FY26 i kassaflödet) medan FCF stiger FYRA ÅR RAKT [2 219→3 195] — serien DUBBELT låst (OCF−capex exakt + källans marginalrader 10,79/12,80/13,26/16,27 % EXAKT); ENGÅNGSKONTROLLEN (Kirin-U3, inversa signaturen): EBIT-M 29,3 % mot pretax-M 13,1 % — gapet = ränta + nedskrivningar; TTM netto-M 8,84 % DEPRIMERAT, normaliseringsscenario (fwd P/E 12,97 ⇒ implied EPS +116 %, konsensus aldrig löfte); UTDELNINGEN HALVERAD: DPS [0,986 · 1,035 · 1,035 · 0,500] USD (FY26 −51,7 %), current 0,37 GBP (2,25 % EXAKT); payout tre baser dokumenterade (kontant 106,28 % · EPS 62,7 % · FCF 34,29 % EXAKT); resultatCAGR −26,89 % ÄRLIGT LAGRAD (topp→nedskrivningsår, alla fönster positiva); oms fyra fallande år (rak CAGR −1,50 %, Kina/valutor dokumenterat); EV med residual +1,56 mdr dokumenterad (användningarna låsta: EV/Earnings 0,08 % · EV/Sales 0,1 %); netto-skuld −15,39 mdr; segmentsektionen låses INTE (bruttointäkter inkl. accis ≈1,43× netto — datafakta); ROIC 13,2 % mot WACC 5,3 % (gap +7,9 p — varumärkesmoatet); D/E 1,71 EXAKT; Altman 2,21 · Piotroski 5; beta 0,32; aktieantal +0,14 % (nyemissioner 0, återköp 0); rappdag est. 2026-10-29 INOM v172-fönstret; EK-serie saknas; alla repliker i paranoid (StockAnalysis LON 2026-09-25)"
+ },
+ {
+  "ticker": "SGE.L",
+  "namn": "The Sage Group plc",
+  "bransch": "teknik",
+  "land": "Storbritannien",
+  "valuta": "GBX",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/lon/SGE/ (+ /statistics/ + /financials/ + /financials/cash-flow-statement/)",
+    "paranoid": "LSE-PRIMÄRNOTING (underlag S&P Global Market Intelligence via StockAnalysis; close 2026-09-24, hämtat 2026-09-25 — öppning 995,00 · föregående close 1 000,00 · dagsspann 989,40–1 008,00 · 52v 771,70–1 181,00 (−10,45 %); färshämtning med FYRA paneler (quote/statistics/financials/cash-flow); RÄKENSKAPSÅRET SLUTAR 30 SEPTEMBER (sep-slut — FY2025 = okt 2024→sep 2025; TTM-fönstret = mar '26 efter halvårsrapporten; rapporterar halvårsvis; källans data senast uppdaterad 2026-09-25); GBP-rapportvaluta, prisfältet i PENCE enligt BA.L/HSBA.L-konventionen, mcap i GBP mdr): pris 9,90 GBP (990,0 GBp; beta 0,33), mcap 8,89 mdr GBP på 0,89753 mdr aktier (replik 0,89753 × 9,90 = 8,886 — 0,05 % EXAKT), P/E-FAMILJEN DOKUMENTERAD (Shin-Etsu/freenet-precedensen: källans EPS-rad 0,40 mot beräknad netto/aktier 0,429 — 7 % aktivitetsavvikelse, källan bär annan aktiebas/avenårsbas): källrad 24,92 · GAAP-replik 8,89/0,385 = 23,09 · pris/EPS 9,90/0,40 = 24,75 (0,7 % mot källraden — LÅST) — FÄLTEN = KÄLLRADER med metodnot; fwd P/E 18,43 ⇒ implied EPS +35 % (referens); PEG-källrad 1,29 mot konsensus 3Y EPS 15,69 %: 24,92/15,69 = 1,59 — basblandning vägras, fältet NULL; PS 3,37 (8,89/2,634 — 0,15 %) · P/B 40,39 EXAKT (8,89/0,22 — 0,05 %; STRUKTURELLT: bokfört EK 220 M efter åratal av återköp — RR-precedensens tunn-EK-metodnot) · P/FCF 17,81 · P/OCF 16,77; EV-DEKOMPOSITION 0,02 % REN: 8,89 + 2,02 − 0,518 = 10,392 mot källans 10,39 — NETTO-SKULD −1,50 mdr (−1,68/aktie): lånefinansierade återköp, inte driftsbelastning; EV/Earnings 26,99 EXAKT (10,39/0,385) · EV/Sales 3,94 (replik 3,945 — 0,1 %) · EV/EBIT 17,43 · EV/EBITDA 16,21; GEOGRAFILÅSET (VÅGENS TREDJE LÅSTYP — efter RR:s produktsegment och NG:s segment; VÅGENS FÖRSTA PERFECTA FEMFÖNSTERLÅS): North America [1 186 · 1 138 · 1 052 · 973 · 818] + UK & Ireland [580 · 554 · 505 · 471 · 433] + Africa & APAC [186 · 175 · 165 · 156 · 153] + Europe [682 · 646 · 610 · 584 · 543] summerar EXAKT mot totalen [2 634 · 2 513 · 2 332 · 2 184 · 1 947] SAMTLIGA FEM FÖNSTER (TTM+FY25+FY24+FY23+FY22 — skriptgrunden tvingade fram kolumnrättelsen: förslag till FY23-diff var EGEN avläsningsfel, maskinen före hand); NORDAMERIKA-PROFILEN: NA-andelen 687→1 186 M (FY21→TTM) = 36,8→45,0 % — Sage är en nordamerikansk tillväxtberättelse noterad i London; FCF FYRA ÅR RAKT + TTM: [273 · 382 · 472 · 487] + TTM 499 (rak CAGR +21,3 %) — serien DUBBELT låst: OCF−capex exakt fem fönster [285−12 · 387−5 · 491−19 · 528−41 · 530−31] OCH källans marginalrader [14,02 · 17,49 · 20,24 · 19,38 · 18,95 %] reproducerar serien mot omsättningen; FCF-M 18,94 % > netto-M 14,62 % — SaaS-kassaprofilen (capex 31 M = 1,2 % av omsättningen); FCF-yield 5,62 % (källrad + replik 0,499/8,89); ENGÅNGSKONTROLLEN PER FÖNSTER (Kirin-U3): NORMAL KASKAD i TTM-fönstret (netto-M 14,62 < pretax-M 19,36 < EBIT-M 22,63 — inga engångsposter) och samtliga fem år; FY2023-DIPPET dokumenterat: netto 211 (netto-M 9,66 %, pretax-M 12,91 %) = molnomställningens omstruktursår, sedan TRE STIGANDE ÅR [211 → 323 → 369] (EPS 0,20 → 0,32 → 0,37); SERIEPROFILER: oms [1 947 · 2 184 · 2 332 · 2 513] (rak CAGR +8,88 %) · netto [260 · 211 · 323 · 369] (CAGR +12,38 % — alla fönster positiva) · EPS [0,25 · 0,20 · 0,32 · 0,37]; omsättningstillväxt TTM +4,81 % (källans TTM-rad; quote-panelens +8,8 % bär annat fönster — dokumenterad anomali) · prognosTillväxt +9,38 % (källans rev-fwd 3Y); UTDELNINGSTRAPPAN: DPS [0,177 · 0,184 · 0,193 · 0,204 · 0,218] + current 0,225 (2,27 % EXAKT replik 22,5/990) — 11 raka tillväxtår (källrad) med takter +2,49 → +7,16 %/år; payout-källrad 54,03 % (EPS-bas-repliken 0,225/0,40 = 56,3 % på den aktivitetsavrundade EPS-raden — noterad) · FCF-payout 40,38 % (0,225/0,556); ÅTERKÖPSMASKINEN: aktieantal −4,40 % YoY (QoQ −1,94 %) = buyback-yield 4,40 % EXAKT MOT KÄLLRADEN (0,39 mdr GBP/år) — återköpen FINANSIERADE med ny låneskuldsättning (skuld 814 → 2 022 M FY21→nu; netto-skuld −261 → −1 504 M) och KONSUMERAT bokfört kapital (EK 220 M): P/B 40,39 · D/E 9,19 EXAKT (2,02/0,22) · ROE 75,56 % — alla tre STRUKTURELLT betingade av det tunna EK:t (RR-precedensens metodnot); de jämförbara talen: ROIC 26,10 % mot WACC 5,39 % — gap +20,7 p (mjukvaruekonomins bredd) · ROCE 25,92 %; räntetäckning 9,03 · Debt/EBITDA 3,15 · Altman 2,61 (gränszon — tunn-EK-artefakt dokumenterad) · Piotroski 5 · skattesats 24,51 % · institutionsägande 81,81 % · insiders 0,22 %; BRUTTOMARGINAL-STABILITETEN: [92,90 · 92,91 · 92,86 · 92,80 · 92,72] % FY2021–FY2025 — medel 92,84 % med spridning 0,19 pp (universumets TIGHTASTE: mot ARM:s 2,4 pp i samma cell) — SaaS-prissättningens sticklighet; CELLDUON: ARM 97,5 % (chip-IP-licensiering, hypergrowth P/E 249) + Sage 92,6 % (affärsprogramvara, kompounderare P/E 25) = universumets TVÅ HÖGSTA bruttomarginaler i samma cell — mjukvarumarginelens båda smaker: licensiera kisel-IP mot hyra ut bokföringsflöden; kandidatur: CELLMOTIVERAD duo enligt U13-mönstret — Storbritannien/teknik-cellens TVÅ affärsmodeller: ARM (ren IP-licensiering, royalty på varje chip, global halvledarcykel, P/E 249 mot fwd 102) + Sage (prenumerations-SaaS för SMB-redovisning, Nordamerika-drivet, P/E 25 med 11-årig utdelningstrappa och återköpsmaskin): hypergrowth-multiple mot kompounder-multiple; kollisionskontroll primär+sekundär (AZN-läxan r221: SGE.L/SGE/SGEYY+namn+URL) GRÖN; P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 385 M GBP > 0; Sony/Honda-doktrinen); Software-Application ⇒ teknik-cellen (29→30 bolag), Storbritannien 14→15 (teknik-grenen 1→2 — UK:S SISTA 1-GREN ÖPPNAD); NÄSTA RAPPORT BEKRÄFTAD 2026-11-19 (strax utanför v172-fönstret 10-20→11-04 — notis vid kalenderberöring)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 990,
+  "marknadsKapitalMdr": 8.89,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.0888,
+   "resultatCAGR5ar": 0.1238,
+   "omsattningTillvaxtTTM": 0.0481,
+   "prognosTillvaxt": 0.0938
+  },
+  "lonksamhet": {
+   "roe": 0.7556,
+   "roic": 0.261,
+   "bruttoMarginal": 0.9256,
+   "ebitMarginal": 0.2263,
+   "nettoMarginal": 0.1462,
+   "fcfMarginal": 0.1894
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 9.19,
+   "rantaTackning": 9.03,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 0.39,
+   "andelUtestande": 0.5403,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": 0.9284,
+   "bruttoMarginalSpread5ar": 0.0019,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 24.92,
+   "pb": 40.39,
+   "evEbit": 17.43,
+   "peg": null,
+   "fcfYield": 0.0561,
+   "egenKapitalMultipl": 40.39
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    1947000000,
+    2184000000,
+    2332000000,
+    2513000000
+   ],
+   "resultat": [
+    260000000,
+    211000000,
+    323000000,
+    369000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    273000000,
+    382000000,
+    472000000,
+    487000000
+   ]
+  },
+  "notering": "cellmotiverad duo (Storbritannien/teknik 1→2: ARM ren chip-IP-licensiering hypergrowth + Sage SaaS-kompounderare — mjukvarumarginelens båda smaker: licensiera kisel-IP mot hyra ut bokföringsflöden; universumets två högsta bruttomarginaler 97,5+92,6 % i samma cell; UK:S SISTA 1-GREN ÖPPNAD); LSE-primär, GBP-rapportvaluta, prisfältet i PENCE; räkenskapsåret SEP-SLUT (TTM = mar '26); GEOGRAFILÅSET vågens tredje + VÅGENS FÖRSTA PERFECTA: NA+UK&I+Afrika&APAC+Europa = totalen EXAKT SAMTLIGA FEM FÖNSTER (kolumnfelet i handavläsningen rättat av skriptgrunden — maskin före hand); Nordamerika-andelen 36,8→45,0 %; FCF FYRA ÅR RAKT + TTM [273→499] rak CAGR +21,3 %, DUBBELT låst (OCF−capex exakt + källans marginalrader exakt); FCF-M 18,9 % > netto-M 14,6 % (SaaS-kassan, capex 1,2 % av oms); ENGÅNGSKONTROLLEN normal kaskad i TTM (14,6<19,4<22,6); FY2023-dippet dokumenterat (molnomställningens omstruktursår 211 M, sedan tre stigande år); P/E-FAMILJEN dokumenterad (källrad 24,92 · GAAP 23,09 · pris/EPS 24,75; källans EPS-rad 0,40 mot beräknad 0,429 — fälten = källrader enl. Shin-Etsu/freenet-precedensen); PEG NULL (basblandning); TUNN-EK-STRUKTUREN med metodnot (P/B 40,4 · D/E 9,19 · ROE 75,6 % — återköpen konsumerat bokfört EK 220 M; ROIC 26,1 % mot WACC 5,4 % gap +20,7 p är de jämförbara talen); ÅTERKÖPSMASKINEN: aktieantal −4,40 % = buyback-yield 4,40 % EXAKT, lånefinansierad (skuld 814→2 022 M); EV 10,39 med netto-skuld −1,50 mdr (0,02 % ren dekomposition); utdelningstrappa 11 raka år (DPS 0,177→0,225, takter ökande +2,5→+7,2 %/år); Altman 2,61 (tunn-EK-artefakt) · Piotroski 5 · beta 0,33; bruttomarginal-stabilitet 0,19 pp spread (universumets tightaste); rappdag BEKRÄFTAD 2026-11-19 strax utanför v172-fönstret; EK-serie saknas; alla repliker i paranoid (StockAnalysis LON 2026-09-25)"
  }
 ]

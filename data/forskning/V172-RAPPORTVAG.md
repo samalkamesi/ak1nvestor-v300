@@ -8,11 +8,13 @@
 - **10 branchkalendrar** (data/blogg-utkast/kvartal/2026-q3/kalender-*.json, byggda
   2026-09-15/16): 100 bolag med rappfönster, källor och explicit bekräftat-vs-estimat.
   Fas 2 i V152-KVARTALSKARTA är därmed LEVERERAD (av tidigare omgångar) — kortlagd här.
-- **71 läspakets-utkast** (sa-laser-du-*-q3-2026.json) — fas 3 påbörjad: mallstommen
-  bevisad i de publicerade exemplen.
-- **9 publicerade** i data/blogg/ med schemalagda oktober-datum (10-05 → 10-21):
-  industrivärden, ericsson, goldman-sachs, nordea, sandvik, skf-b, evolution, holm (+ den
-  allmänna "så läser du en kvartalsrapport" från 09-09). Publicering av ytterligare
+- **84 läspakets-utkast** (sa-laser-du-*-q3-2026.json; varav 76 VÄNTAR och 8 redan
+  publicerade) — fas 3 påbörjad: mallstommen bevisad i de publicerade exemplen.
+- **8 publicerade bolagpaket** i data/blogg/ med schemalagda oktober-datum (10-05 → 10-21):
+  industrivärden, ericsson, goldman-sachs, nordea, sandvik, skf-b, evolution, holm — plus den
+  allmänna "så läser du en kvartalsrapport" (09-09): nio live-artiklar totalt, åtta i serien.
+  (Antalsrättning rond 192: första versionen sa 71/9 — maskinmätningen i granskningsfilen
+  gäller: disk-läget är sanningen, regeln § 1.) Publicering av ytterligare
   paket = R2 (väntar kund — granskningsfilens regel 4).
 
 ## Veckokartan v40–v44 (ur kalendrarna — första datumet i fönstret; spann/estimat särskilt)

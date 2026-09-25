@@ -25576,5 +25576,95 @@
    ]
   },
   "notering": "cellmotiverad duo (Japan/material 1→2: Nippon Steel bulkstål + Shin-Etsu specialkemi/kisel = cellens två modeller); TYO-primär JPY; mars-bokslut; P/E-FALLET DOKUMENTERAT: källans statistics-rad 19,34 internt inkonsistent med källans egna EPS/netto-M/mcap/aktier — fältet bär aktiebas-repliken 13,41 låst av fyra oberoende källtal (mcap 0,01 % · PS/netto-M EXAKTA · payout ✓), källraden noterad som avvikande (troligen GAAP-jp mot IFRS); prognosTillväxt NULL (P/E-bastvisten gör trailing/fwd-blandning oärlig — källans fwd 17,42/PEG 0,81 enbart referens i paranoid); VÅGENS SJÄTTE BROTTSFRIA RAD och starkaste (ALLA fyra mått stigande varje år; rak CAGR oms +7,65 % · netto +14,01 % — halvledar-boomens kisel + silikondiversifiering); ROIC>WACC; räntetäckning 53,67 · Altman 4,11 · Piotroski 7; buyback 0,75 % aktiv; EK-serie saknas — serier.egetKapital tomt; rappdag Q2 FY2026 est. november = v172-könotis; alla repliker i paranoid (StockAnalysis TYO 2026-09-25)"
+ },
+ {
+  "ticker": "4568.T",
+  "namn": "Daiichi Sankyo Company, Limited",
+  "bransch": "halso",
+  "land": "Japan",
+  "valuta": "JPY",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/tyo/4568/ (+ /statistics/ + /financials/)",
+    "paranoid": "TYO-PRIMÄRNOTING i JPY (4502.T/4063.T-precedensens Tokyo-rad; underlag S&P Global Market Intelligence + Fiscal.ai via StockAnalysis; intradag 2026-09-25 delayed +0,5 %; färshämtning direkt med cache-bypass + kompletterande FY-panel; MARS-BOKSLUT, etikett = slutår): pris 5 374 JPY, mcap 15 240 mdr JPY på 2 836 M aktier (replik 2 836 × 5 374 = 15 240,7 — 0,00 % EXAKT), P/E 61,9 ur källan på dess EPS-bas 86,8 JPY (GAAP-aktiebasrepliken 5 374/75,1 = 71,6 — källans bär justerad bas, dokumenterad; Shin-Etsu-klassens dokumentnoter) mot forward P/E 27,4 ⇒ prognosTillväxt +125,9 % (trailing/fwd-modellen, MUFG-konventionen — Enhertu-rampens VÄNDNINGSPROGNOS: konsensus väntar nettofyrdubbling; spår-PEG 61,9/125,9 = 0,49 mot källans PEG 0,25, samma riktning), P/B 1,88 · EV/EBIT 31,2 · PS källa 2,20 med aktiebasreplik 15 240/6 023 = 2,53 — källans PS bår annat fönster (dokumenterad avvikelse), ROE 3,1 % · ROIC 2,6 % under WACC 5,7 % (INVESTERINGSFASEN — ADC-plattformens R&D-toppen äter avkastningen; dokumenterat som fas-not, inte strukturbrist) · brutto 72 % (farmaka-patentmarginal) · EBIT-marginal 4,0 % · netto-marginal 3,55 % EXAKT replik (213/6 023 = 3,536 %) — FARMATUNN mot cell-kollegan Takeda ~12-15 % (öppet redovisat: vändningen pågår), FCF-yield källans P/FCF 33,4 bygger på FY25-FCF 456 (replik 456/15 240 = 2,99 % ✓ EXAKT på den basen) medan TTM-FCF 396 ger 2,60 % — fönsterskillnaden dokumenterad, fältet bär källans FY25-bas; balans: D/E 0,52 · räntetäckning 7,5 · Altman 2,2 (KÄLLANS VARNINGSZON — investeringsfasens balans; datafakta) · Piotroski 6; utdelning 60 JPY/aktie (1,1 % — investeringsfasens låga direktavkastning) ⇒ senasteArMdr 170 (60 × 2 836) med payout-replik 8,1 % på GAAP-EPS (källans payout-rad saknades i utdraget — fältet andelUtestande bär repliken med not); FY-SERIEN mars-slutande (mdr JPY): oms [3 997 · 4 326 · 5 054 · 5 997] · netto [87 · 62 · 166 · 168] · FCF [3 · 135 · 279 · 456] — STARK OMSÄTTNINGSTILLVÄXT (rak CAGR +14,47 % — Enhertu-rampen) med FY23-nettodipen 62 (patentförlusterna + R&D-toppen) dokumenterad och därefter återhämtning; samtliga positiva = brottsfri serie men med STRUKTURVAGAN dokumenterad: netto-CAGR +24,58 % från låg bas med vinsten efter omsättningen (ADC-kostnaderna); EPS-GAAP-serien [30,2 · 21,5 · 57,7 · 58,2]; analytikerläge saknas i panelutdraget — ingen målkurs förs in; NÄSTA RAPPORT Q2 FY2026 est. tidigt november — v172-könotis v45; KANDIDATURVÄGEN DOKUMENTERAD: Astellas 4503.T sonderades FÖRST och AVVISADES på P/E-bärarkriteriet (TTM-netto −47 mdr JPY ≤ 0 — patentklippur + nedskrivningar; Sony/Honda-doktrinen, Vestas-före-Ørsted-logiken; omprövning när TTM-vändning konfirmeras); Daiichi Sankyo VALDES GRÖN (TTM-netto +213 mdr > 0) — cellmotiverad duo enligt U13-mönstret: Takeda (global diversifierad) + Daiichi Sankyo (onkologi/ADC); kollisionskontroll exakt-match GRÖN (båda kandidater); Health Care ⇒ halso-cellen (27→28 bolag), Japan 23→24 (halso-grenen 1→2)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 5374,
+  "marknadsKapitalMdr": 15240,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.1448096990449812,
+   "resultatCAGR5ar": 0.2452694766239525,
+   "omsattningTillvaxtTTM": 0.193,
+   "prognosTillvaxt": 1.2591240875912408
+  },
+  "lonksamhet": {
+   "roe": 0.031,
+   "roic": 0.026,
+   "bruttoMarginal": 0.72,
+   "ebitMarginal": 0.04,
+   "nettoMarginal": 0.0355,
+   "fcfMarginal": 0.06574796612983563
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.52,
+   "rantaTackning": 7.5,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 0.17,
+   "andelUtestande": 0.799,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 61.9,
+   "pb": 1.88,
+   "evEbit": 31.2,
+   "peg": 0.49161159420289857,
+   "fcfYield": 0.029921259842519685,
+   "egenKapitalMultipl": 1.88
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    3997000000000,
+    4326000000000,
+    5054000000000,
+    5997000000000
+   ],
+   "resultat": [
+    87000000000,
+    62000000000,
+    166000000000,
+    168000000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    3000000000,
+    135000000000,
+    279000000000,
+    456000000000
+   ]
+  },
+  "notering": "cellmotiverad duo (Japan/halso 1→2: Takeda global diversifierad + Daiichi Sankyo onkologi/ADC); KANDIDATURVÄGEN: Astellas 4503.T AVVISAD först på P/E-bärarkriteriet (TTM-netto −47 mdr ≤ 0 — Sony/Honda-doktrinen; omprövning vid TTM-vändning), Daiichi Sankyo GRÖN (+213 mdr > 0); TYO-primär JPY; mars-bokslut; STARK rev-CAGR +14,5 % (Enhertu-rampen) med FY23-nettodip (patent+R&D) dokumenterad; netto-marginal 3,55 % FARMATUNN mot Takeda — öppet redovisat (vändningsfasen); ROIC<WACC som INVESTERINGSFAS-not (ej strukturbrist); prognosTillväxt +125,9 % = vändningsprognos (fwd 27,4 mot trailing 61,9; spår-PEG 0,49); källans fönsterblandningar dokumenterade (P/E-bas 86,8 mot GAAP 75,1 · PS 2,20 mot replik 2,53 · P/FCF på FY25-FCF); payout-rad saknades — fältet bär GAAP-replik 8,1 % med not; EK-serie saknas — serier.egetKapital tomt; rappdag Q2 FY2026 est. november = v172-könotis; alla repliker i paranoid (StockAnalysis TYO 2026-09-25)"
  }
 ]

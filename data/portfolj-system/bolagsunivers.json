@@ -25126,5 +25126,95 @@
    ]
   },
   "notering": "kandidat ur BCE-OMG24 §10:s Spanien-alternativ (andraranamnet — Cellnex U10 + Redeia U11 = koordinatparen komplett; P/E-bärare kontrollerad före leverans); BME-primär EUR; STABIL BROTTSFRI REGLERAD SERIE (vågens tredje — rak CAGR oms +1,68 % · netto +5,55 %); P/E 18,07 på källans ATTRIBUTABLE-bas (minoritetsnot; totalnetto-replik 13,76 dokumenterad — Rogers-mönstret omvänt); KONCESSIONSMETODNOTER: ROIC under WACC speglar koncessionsformeln (ej konkurrenskraft), brutto 100 % = nättariffering utan kostnadssida (fältet med not), Altman 1,67 varningszon = reglerad kapitalbas, FCF-nedgång = nätinvesteringscykeln; utdelning 6,01 % reglerad med payout 83,63 %; EK-serie saknas — serier.egetKapital tomt; rappdag Q3 est. tidigt november = v172-könotis; alla repliker i paranoid (StockAnalysis BME 2026-09-25)"
+ },
+ {
+  "ticker": "BT.L",
+  "namn": "BT Group plc",
+  "bransch": "kommunikation",
+  "land": "Storbritannien",
+  "valuta": "GBP",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/lon/BT/ (+ /statistics/ + /financials/)",
+    "paranoid": "LSE-PRIMÄRNOTING i GBX (universums första BT.L-rad; underlag S&P Global Market Intelligence + Fiscal.ai via StockAnalysis; intradag 2026-09-25 delayed +0,05 %; färshämtning direkt med cache-bypass + kompletterande FY-panelhämtning vid oläslig första tabell; pris 205,30 GBX = 2,053 GBP): mcap 20,41 mdr GBP på 9 940 M aktier (replik 9 940 × 2,053 = 20,41 — 0,01 % EXAKT), P/E 15,93 EXAKT replikerbar på källans EPS-rad 12,89 GBX (205,30/12,89 = 15,93; EPS-identiteten på TOTALNETTO 1 591/9 940 = 16,01 GBX — källans EPS bär attributable-bas med minoritetsavdrag ~310 M, dokumenterad; Rogers/Redeia-klassens minoritetsnoter), mot forward P/E 10,40 ⇒ prognosTillväxt +53,17 % (trailing/fwd-modellen, MUFG-konventionen — ÅTERHÄMTNINGSPROGNOS: konsensus väntar stark EPS-vändning när fiberrullouten mognar; spår-PEG 15,93/53,17 = 0,30 mot källans PEG 1,23 på 3-års, kalibreringsnot), P/B 1,67 · EV/EBIT 7,10 · PS 0,99 EXAKT (20 410/20 634 = 0,989), ROE 10,83 % · ROIC 5,71 % under WACC 7,53 % (legacy-telekom + fiberrulloutens kapitalbas — dokumenterat) · EBIT-marginal 12,66 % · netto-marginal 7,71 % EXAKT (1 591/20 634) · FCF-yield EXAKT replik (1 638/20 410 = 8,02 % = 1/P·FCF 1/12,46 = 8,03 %); balans: D/E 1,67 · räntetäckning 2,75 · Altman 1,71 (KÄLLANS VARNINGSZON — telekombalans; UK-trions mönster, dokumenterat som datafakta) · Piotroski 5 · kassa 1,36 mdr · skuld 23,14 mdr · NETTOSKULD 21,78 mdr · EK 12,22 mdr; utdelning 8,16 GBX/aktie (3,98 %) ⇒ senasteArMdr 0,812 GBP-mdr (8,16 GBX × 9 940 M = 81,2 M GBP × 10) med payout 63,30 % EXAKT replikerbar (8,16/12,89 = 63,3 %); FY-SERIEN mars-slutande (M GBP, etikett = slutår; Japan-konventionen): oms [20 845 · 20 677 · 20 350 · 20 392] · netto [1 914 · 1 721 · 1 092 · 1 373] · FCF [1 434 · 1 331 · 1 271 · 1 585] — samtliga positiva; FY24-dipen 1 092 (fiberrulloutens avskrivningstopp/kostnadsläge) följt av återhämtning FY25 1 373 med TTM-momentum 1 591; rak 3-årig CAGR FY22→FY25 NEGATIV och redovisas ÖPPET (oms −0,73 % · netto −10,42 % — legacy-telekomns fastlandskundsutflyttning är strukturell; historien är nedåt, prognosen uppåt — båda sidorna dokumenterade, ingen döljs); EPS-GBX-serien [15,60 · 14,00 · 8,85 · 11,15]; analytikerläge saknas i panelutdraget — ingen målkurs förs in; NÄSTA RAPPORT H1 FY2026 est. slutet oktober 2026 — v172-könotis; kandidatur: S2-U1-BCE-UTOKNING-OMG24 §10:s UK-alternativ («UK: BT?» — VOD.L sonderades och var P/E-död TTM −346,65 M; BT bär med +1 591 M) — LISTANS SISTA NAMN: med U12 är BCE-OMG24:s samtliga öppna koordinater antagna, avvisade eller levererade; P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto > 0; Sony/Honda-doktrinen); kollisionskontroll exakt-match GRÖN (r206-sonden); Communication Services ⇒ kommunikation-cellen (27→28 bolag), Storbritannien 10→11 (landets elfte gren: UK/KOMMUNIKATION 0→1 öppnad)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 205.3,
+  "marknadsKapitalMdr": 20.41,
+  "tillvaxt": {
+   "omsattningCAGR5ar": -0.007297060974794767,
+   "resultatCAGR5ar": -0.10482172334345385,
+   "omsattningTillvaxtTTM": 0.03,
+   "prognosTillvaxt": 0.5317307692307691
+  },
+  "lonksamhet": {
+   "roe": 0.1083,
+   "roic": 0.0571,
+   "bruttoMarginal": null,
+   "ebitMarginal": 0.1266,
+   "nettoMarginal": 0.0771,
+   "fcfMarginal": 0.07938354172724629
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 1.67,
+   "rantaTackning": 2.75,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 0.812,
+   "andelUtestande": 0.633,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 15.93,
+   "pb": 1.67,
+   "evEbit": 7.1,
+   "peg": 0.29958770343580476,
+   "fcfYield": 0.08025477707006369,
+   "egenKapitalMultipl": 1.67
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    20845000000,
+    20677000000,
+    20350000000,
+    20392000000
+   ],
+   "resultat": [
+    1914000000,
+    1721000000,
+    1092000000,
+    1373000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    1434000000,
+    1331000000,
+    1271000000,
+    1585000000
+   ]
+  },
+  "notering": "kandidat ur BCE-OMG24 §10:s UK-alternativ (LISTANS SISTA NAMN — VOD var P/E-död, BT bär; P/E-bärare kontrollerad före leverans); LSE-primär GBX; MARS-BOKSLUT (etikett = slutår, Japan-konventionen); NEGATIV historisk CAGR REDOVISAS ÖPPET (oms −0,73 % · netto −10,42 % — legacy-utflyttning strukturell) medan prognosTillväxt +53,2 % bär fiberrulloutens förväntade EPS-återhämtning — båda sidorna dokumenterade; FY24-dip = avskrivningstopp; P/E EXAKT på attributable-EPS-basen (minoritetsnot ~310 M); Altman 1,71 varningszon som datafakta; bruttoMarginal null (leverantörens bruttobegrepp osammanhängande för telekom — fältet lämnas osatt, ärligare än felbas); EK-serie saknas — serier.egetKapital tomt; rappdag H1 FY2026 est. slutet oktober = v172-könotis; alla repliker i paranoid (StockAnalysis LSE 2026-09-25)"
  }
 ]

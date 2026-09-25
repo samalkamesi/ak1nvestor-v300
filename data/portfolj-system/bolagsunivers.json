@@ -24496,5 +24496,95 @@
    ]
   },
   "notering": "kandidat ur BCE-OMG24 §10:s kö-notis (förstakoordinat; P/E-bärare kontrollerad FÖRE leverans: TTM-netto +1 838 M > 0); TSX klass B i CAD; SHAW-BROTT FY2023 (förvärv +25,5 % omsättningshopp; FY23-netto bär fair value-engångsposter) ⇒ CAGR på 2-årig konsekutiv post-Shaw-bas (oms +3,29 % · netto −16,80 % mot engångspoståret — dokumenterat); FCF-kollaps FY2025 748 M = capex-/spectrumcykel; P/E-replik EXAKT på källans EPS-bas 3,10 (NCI-avdrag ~174 M dokumenterat); ROIC under WACC (JV-struktur); Altman 1,73 varningszonen öppet (Piotroski 6); EK-serie saknas — serier.egetKapital tomt; rappdag est. 2026-10-22 = v172-könotis; alla repliker i paranoid (StockAnalysis TSX 2026-09-25)"
+ },
+ {
+  "ticker": "NTR",
+  "namn": "Nutrien Ltd.",
+  "bransch": "material",
+  "land": "Kanada",
+  "valuta": "CAD",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/tsx/NTR/ (+ /statistics/ + /financials/)",
+    "paranoid": "TSX-PRIMÄRNOTING med VALUTA-MIX (BCE/TELUS/RCI-B-precedensens Toronto-rad; pris/utdelning/mcap i CAD, koncernrapportering i USD enligt Nutriens konventionsvaluta — serier och marginaler bär USD, avkastningar CAD; underlag S&P Global Market Intelligence + Fiscal.ai via StockAnalysis; intradag 2026-09-25 delayed +0,70 %; färshämtning direkt med cache-bypass): pris 75,20 CAD (52v 59,53–78,45 · beta 0,99), mcap 37,22 mdr CAD på 494,3 M aktier (replik 494,3 × 75,20 = 37,17 — 0,13 %), P/E 17,28 replikerbar (75,20/4,36 = 17,25 = 0,2 %; EPS-radens 4,36 bär CAD-konverterad koncernvinst — payout-konsistens 2,18/4,36 = 50,0 % mot källans 50,05 % bekräkar basen) mot forward P/E 16,98 ⇒ prognosTillväxt +1,77 % (trailing/fwd-modellen, MUFG-konventionen — platt konsensus; spår-PEG 17,28/1,77 = 9,77 meningslös på platt prognos, källans PEG 3,66 på 3-års som kalibreringsnot ⇒ fältet peg NULL-doktrinen värdebärande), P/B 1,44 · EV/EBIT 11,34 · PS 1,43 EXAKT replik (37 220/26 072 = 1,428), ROE 8,55 % · ROIC 5,76 % (under WACC 7,13 % — kapitaltät gödselindustri, dokumenterat) · brutto 26,35 % · EBIT-marginal 8,32 % · netto-marginal 8,26 % EXAKT replik (2 153/26 072 = 8,258 %) · FCF-marginal 5,99 % replik (1 562/26 072); FCF-yield 4,20 % replik mot källans P/FCF-invers 4,09 % (2,7 % — FCF-fönsterskillnad, dokumentklass); balans: D/E 0,43 · räntetäckning 8,58 · Altman 3,24 (SUND zon — Kanada-raden med starkaste balansmåttet) · Piotroski 6 · kassa 1,26 mdr · skuld 2,32 mdr · NETTOSKULD 1,06 mdr; utdelning 2,18 CAD/aktie (2,90 %) ⇒ senasteArMdr 1 078 (2,18 × 494,3) med källans payout 50,05 % (replik 50,0 % ✓); FY-SERIEN dec-slutande (M USD): oms [37 884 · 29 056 · 26 046 · 26 045] · netto [7 660 · 1 410 · 744 · 2 153] · FCF [4 438 · 2 016 · 2 468 · 1 562] — GÖDNINGSCYKELN (FCX/VALE-precedensen): FY2022 = kaliumtoppen (krigets prisboom, netto 7 660 M) · FY2024 = nedskrivningsdippen (744 M på gas-/prisnedskrivningar) · FY2025 = återhämtning (2 153 M); CAGR-fälten bär KONSEKUTIV FY23→FY25-bas (oms −5,32 % · netto +23,56 %) medan cykelbasen FY22→FY25 (oms −11,74 % · netto −34,47 %) dokumenteras här — tillväxten är PRISCYKEL, ej strukturell expansion, och läsningen sker mot cykelns läge; EPS-serien [15,10 · 2,74 · 1,48 · 4,36] bär samma cykel; analytikerläge saknas i panelutdraget — ingen målkurs förs in; NÄSTA RAPPORT est. 2026-11-04 (Q3 2026) — v172-könotis v45; kandidatur: S2-U1-BCE-UTOKNING-OMG24 §10 kö-notis 'Kanada/material (NTR/AEM/ABX) — öppna celler' — förstakoordinat NTR; P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 2 153 M > 0, P/E 17,28; Sony/Honda-doktrinen); kollisionskontroll exakt-match GRÖN; Basic Materials ⇒ material-cellen (26→27 bolag), Kanada 5→6."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 75.2,
+  "marknadsKapitalMdr": 37.22,
+  "tillvaxt": {
+   "omsattningCAGR5ar": -0.053230481042808586,
+   "resultatCAGR5ar": 0.235698326700303,
+   "omsattningTillvaxtTTM": 0.01,
+   "prognosTillvaxt": 0.017667844522968323
+  },
+  "lonksamhet": {
+   "roe": 0.0855,
+   "roic": 0.0576,
+   "bruttoMarginal": 0.2635,
+   "ebitMarginal": 0.0832,
+   "nettoMarginal": 0.0826,
+   "fcfMarginal": 0.059911015648972075
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.43,
+   "rantaTackning": 8.58,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 1.078,
+   "andelUtestande": 0.5005,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 17.28,
+   "pb": 1.44,
+   "evEbit": 11.34,
+   "peg": null,
+   "fcfYield": 0.04196668457818377,
+   "egenKapitalMultipl": 1.44
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    37884000000,
+    29056000000,
+    26046000000,
+    26045000000
+   ],
+   "resultat": [
+    7660000000,
+    1410000000,
+    744000000,
+    2153000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    4438000000,
+    2016000000,
+    2468000000,
+    1562000000
+   ]
+  },
+  "notering": "kandidat ur BCE-OMG24 §10:s kö-notis (Kanada/material-öppningen; P/E-bärare kontrollerad före leverans); TSX-primär med VALUTA-MIX: pris/utdelning CAD, koncernrapportering USD (dokumenterat i paranoid); GÖDNINGSCYKELN dokumenterad (FY22 krigstopp · FY24 nedskrivningsdipp · FY25 återhämtning) ⇒ CAGR på konsekutiv FY23→FY25 medan cykelbasen redovisas — tillväxten är priscykel (FCX/VALE-precedensen); peg NULL (platt prognos +1,8 % gör spår-PEG meningslös; källans 3,66 kalibreringsnot); ROIC under WACC (kapitaltät industri); Altman 3,24 sund zon; FCF-yield-fönsterskillnad dokumenterad; EK-serie saknas — serier.egetKapital tomt; rappdag est. 2026-11-04 = v172-könotis; alla repliker i paranoid (StockAnalysis TSX 2026-09-25)"
  }
 ]

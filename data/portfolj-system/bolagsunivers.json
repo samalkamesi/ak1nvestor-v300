@@ -27101,5 +27101,95 @@
    ]
   },
   "notering": "cellmotiverad duo (Kanada/finans 1→2: RY wealth-tyngda universalbanken + TD retail-tyngda detaljhandelsbanken med US Retail 15,5 mdr — tvillingarna med olika bottnar, Kanadas bankoligopol från två sidor); kollisionskontroll primär+sekundär GRÖN (TD/TD.TO+namn+URL); TSX/CAD-precedensen (BCE/NTR/ENB-klassen; RY:s USD/NYSE = dokumenterad historisk avvikelse); fiscalår nov–okt, kvartalsvis (TTM = jul '26; Q4 est. dec 2026 UTANFÖR v172); VÄNDNINGSPROFILEN: netto [17 170 · 10 071 · 8 316 · 19 973] + TTM 15 601 — FY23-24-kollapsen (AML-uppgörelse 3,1 mdr USD + Schwab-förluster, i Corporate-segmentet) + FY25-vändning +140 % (engångstung) + TTM-normalisering; 52v +54,81 %; P/E-familjen 18,12/17,78/18,11; PEG 1,09 med dokumenterad bas (fwd 15,58/14,38); PS/P/B EXAKTA; BANK-NULL-PROFIL (källans n/a — RY/SAN-mallen): EV/D/E/räntetäckning/FCF-mått NULL; kassa 633/skuld 533 mdr = insättningsbalansen; SEGMENTBILDEN fem ben med DOKUMENTERAD elimineringsdifferans [+3 939 · +4 506 · +3 979 · +1 291 · +1 291 · −224] — inget falskt exakthetslås; Corporate-spirken FY25 11 832 = engångsposternas hem; FCF-serien negativ = bankens natur (identitetslåst exakt fem fönster; RY-precedensen); ÅTERKÖPSMASKINEN TTM −22,2 mdr (8,0 % av mcap brutto) mot aktieprogram +13,0 = netto −3,68 % aktiebas EXAKT · 15 raka utdelningshöjningar (4,48 CAD, 2,66 % EXAKT; payout 48,21); ROE 12,83 mot RY 16,21 (tvillinggapet); netto-M 25,65 % EXAKT mot financials-TTM (statistics-veget 26,62 = annan bas dokumenterad); EK-serie saknas; alla repliker i paranoid (StockAnalysis TSX 2026-09-25)"
+ },
+ {
+  "ticker": "BBVA.MC",
+  "namn": "Banco Bilbao Vizcaya Argentaria, S.A.",
+  "bransch": "finans",
+  "land": "Spanien",
+  "valuta": "EUR",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/bme/BBVA/ (+ /statistics/ + /financials/ + /financials/cash-flow-statement/)",
+    "paranoid": "BME-PRIMÄRNOTING (underlag S&P Global Market Intelligence via StockAnalysis; senaste handelsdag 2026-09-24, hämtat 2026-09-25 — close 24,88 EUR; 50/200-dagars MA 24,47/21,07 — priset PÅ 50-MA ÖVER 200-MA; 52v +53,82 % = emerging-vändningens år; RSI 50,7; konsensus PT 23,24 = −6,6 % — priset sprungit förbi Hold-konsensusen); färskhämtning med FYRA paneler; KALENDERÅRSBOKSLUT (31 dec; TTM-fönstret = jun '26 efter H1 — HALVÅRSRAPPORTERING; NÄSTA RAPPORT 2026-10-29 BEKRÄFTAD — INOM v172-FÖNSTRET 10-20→11-04, SAMMA DAG SOM DGE); BME/EUR-PRECEDENSEN (SAN.MC-klassen — ren EUR-genomgång): pris 24,88 EUR (beta 0,89), mcap 137,01 mdr EUR på 5,51 mdr aktier (replik 5,51×24,88 = 137,09 — 0,06 %), P/E-FAMILJEN DOKUMENTERAD: källrad 13,15 · GAAP 137,01/10,718 = 12,78 · pris/EPS 24,88/1,89 = 13,16 (0,1 %); EPS-raden 1,89 mot beräknad netto/aktier 1,945 — aktieavrundningsbas; fwd P/E 11,41 ⇒ implied EPS +15 % (konsensusreferens); PEG-KÄLLRAD 0,80 MED BASBLANDNING (implied 14,3 % mot konsensus 3Y EPS 12,90; fwd-replik 11,41/12,90 = 0,88; trailing 1,02 — tre baser, ingen ren) ⇒ fältet NULL (SN.L-precedensen); PS 4,01 EXAKT (137,01/34,14) · P/B 2,15 (137,01/63,79 — 0,1 %) · P/TBV 2,45 · P/FCF 4,13; BANK-NULL-PROFILEN (källans n/a — RY/SAN/TD-mallen): EV n/a · EV/Earnings n/a · EV/Sales n/a · D/E n/a · räntetäckning n/a — men källan REDOVISAR FCF-MÅTT (olika bokningspraxis än TD/RY): FCF-M 97,16 % EXAKT (33,164/34,135) · FCF-yield 24,21 % (0,06 % mot källraden) — bank-FCF = lånebokens bokningar, INTE ägarutdelningsbar kassa (dokumenterat); balans: kassa 183,6 mdr · skuld 198,9 mdr · netto −15,4 mdr (−2,79/aktie); working capital −492 mdr (insättningarna i rörelse); GEOGRAFIBILDEN — DUONS KÄRNA (gross income per marknad [TTM · FY25 · FY24 · FY23 · FY22 · FY21] M EUR): Spain [10 136 · 10 027 · 9 443 · 7 888 · 6 112 · 5 890] + MEXICO [16 415 · 15 198 · 15 337 · 14 267 · 10 734 · 7 603] (STÖRSTA MARKNADEN sedan FY22 — 10 734 > 6 112; BBVA = i praktiken en mexikansk bank med spansk bas) + Turkey [6 176 · 5 213 · 4 212 · 2 981 · 3 172 · 3 422] (fördubblad sedan FY23 — hyperinflationsredovisning) + South America [5 968 · 5 363 · 5 405 · 4 331 · 4 265 · 3 162] + Rest of Business [2 169 · 1 807 · 1 472 · 1 103 · 790 · 776] + Corporate Center [−809 · −678 · −388 · −1 029 · −329 · +212] — BEGREPPSDIFFERANSEN DOKUMENTERAD: gross income-summan överstiger revenue-totalen med [+5 920 · +5 282 · +3 924 · +2 408 · +1 769 · +2 465] = poster utanför segment-gross-income (handelsresultat/övriga intäkter/konsolidering — SAGE-U29:s geolås gick på revenue-segment, BBVA:s källa erbjuder ej det; inget falskt exakthetslås); SEX RAKA VINSTÅR: netto [4 294 · 6 045 · 7 675 · 9 666 · 10 114] + TTM 10 718 (CAGR +18,75 % FY22→25; vartenda år högre); EPS [0,67 · 0,98 · 1,29 · 1,68 · 1,76] + TTM 1,89; omsättning [18 600 · 22 975 · 27 133 · 31 557 · 31 648] + TTM 34 135 (CAGR +11,26 % FY22→25; FY25 nearly flat +0,29 % men TTM +8,83 %); ROE 18,92 % — HÖGST I SPANSKA FINANS-CELLDUON (SAN 13,11) OCH UNIVERSUMETS BANK-ELIT; FCF-SERIEN VILD MEN IDENTITETSLÅST: [−1 638 · +21 906 · −1 850 · −19 385 · +14 141] + TTM +33 164 — OCF−capex exakt sex fönster [−1 242−396 · 23 718−1 812 · −721−1 129 · −18 190−1 195 · 14 968−827 · 34 162−998]; bankens driftskassa rör låneboken (mexikansk/Turkiet-kreditvolym) — FCF-året är bokningsår, inte utdelningsförmåga (dokumenterat); FCF-marginalrader [−8,81 · 95,35 · −6,82 · −61,43 · 44,68 · TTM 97,16] % — källans egna rader tvärverifierar; UTDELNING + ÅTERKÖP: DPS [0,31 · 0,43 · 0,55 · 0,70 · 0,92] — MER ÄN FÖRDOBLAD på fyra år (+31,4 % senaste); current 0,92 EUR (3,70 % EXAKT replik 0,92/24,88); payout-källrad 46,75 % (replik 0,92/1,89 = 48,7 % — 4,1 %, kälrbas dokumenterad okänd) · FCF-payout 12,37 %; ÅTERKÖPEN SPIKAR: [−1 022 · −2 983 · −2 166 · −1 529 · −1 995] TTM −5 191 (den största posten hittills — aktiebas −1,55 % YoY = buyback-yield EXAKT · shareholder yield 5,25 %) mot emissioner [+813 · +757 · +691 …] små; vanliga utdelningar [−926 · −2 185 · −2 808 · −3 913 · −4 196] TTM −5 196 — utdelning och återköp nu lika stora; LÖNSAMHET: ROE 18,92 % · ROA 1,35 % · WACC 3,73 % · skattesats 32,13 % (den spanska+emerging-blandningen) · institutionsägande 41,53 %; kaskaden TTM: netto-M 31,40 % EXAKT (financials-TTM-raden; statistics-veget 32,56 % = annan fönsterbas dokumenterad) < pretax-M 50,92 % < operating-M 53,91 %; balansserier M EUR [FY21–FY25]: kassa [140,9 · 130,2 · 163,0 · 135,3 · 148,5] · skuld [106,5 · 111,9 · 142,6 · 140,7 · 152,8] · netto [+34,4 · +18,3 · +20,4 · −5,4 · −4,2] — VÄNDNINGEN TILL NETTOSKULD FY2024 (emerging-tillväxten finansieras) nu −15,4; Altman n/a (bank); kandidatur: CELLMOTIVERAD duo enligt U30-mönstret — Spanien/finans-cellens TVÅ riskprofiler: Santander (global utlåning, fem kontinenter, diversifierad — den breda) + BBVA (Mexico-fokuserad emerging-bank + Turkiet/Sydamerika — den djupa): spanska bankens två sätt att möta världen; P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 10 718 M EUR > 0; Sony/Honda-doktrinen); finans-cellen 1→2, Spanien 5→6; NÄSTA RAPPORT 2026-10-29 BEKRÄFTAD INOM v172-fönstret (samma dag som Diageo)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 24.88,
+  "marknadsKapitalMdr": 137.01,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.1127,
+   "resultatCAGR5ar": 0.1872,
+   "omsattningTillvaxtTTM": 0.0883,
+   "prognosTillvaxt": 0.0874
+  },
+  "lonksamhet": {
+   "roe": 0.1892,
+   "roic": null,
+   "bruttoMarginal": null,
+   "ebitMarginal": 0.5391,
+   "nettoMarginal": 0.314,
+   "fcfMarginal": 0.9716
+  },
+  "stabilitet": {
+   "skuldEgenkapital": null,
+   "rantaTackning": null,
+   "fcfPositivaSenaste5": null,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 5
+  },
+  "aterkop": {
+   "senasteArMdr": 5.191,
+   "andelUtestande": 0.4675,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 13.15,
+   "pb": 2.15,
+   "evEbit": null,
+   "peg": null,
+   "fcfYield": 0.2421,
+   "egenKapitalMultipl": 2.15
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    22975000000,
+    27133000000,
+    31557000000,
+    31648000000
+   ],
+   "resultat": [
+    6045000000,
+    7675000000,
+    9666000000,
+    10114000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    21906000000,
+    -1850000000,
+    -19385000000,
+    14141000000
+   ]
+  },
+  "notering": "cellmotiverad duo (Spanien/finans 1→2: Santander global utlåning/fem kontinenter — den breda + BBVA Mexico-fokuserad emerging-bank/Turkiet — den djupa; spanska bankens två riskprofiler); kollisionskontroll primär+sekundär GRÖN (BBVA/BBVA.MC+namn+URL); BME/EUR-precedensen (SAN.MC-klassen); kalenderårsbokslut, halvårsrapportering (TTM = jun '26); RAPPORT 2026-10-29 BEKRÄFTAD INOM v172-fönstret (samma dag som DGE); GEOGRAFIBILDEN gross income med BEGREPPSDIFFERANS mot revenue dokumenterad [+5 920 · +5 282 · +3 924 · +2 408 · +1 769 · +2 465] — inget falskt lås; Mexico största marknad sedan FY22 (BBVA = mexikansk bank med spansk bas); SEX RAKA VINSTÅR netto 4 294→10 718 (CAGR +18,75 %); ROE 18,92 % — duons högsta; FCF-serien vild men identitetslåst exakt sex fönster (bank-FCF = lånebok, dokumenterat); FCF-M 97,16 % EXAKT · FCF-yield 24,21 %; DPS mer än fördubblad [0,31→0,92] (+31,4 % senaste; 3,70 % EXAKT); återköpsspike TTM −5,2 mdr (aktiebas −1,55 % EXAKT); P/E-familjen 13,15/12,78/13,16; PEG NULL (basblandning — tre basar, ingen ren); netto-M 31,40 % EXAKT (financials-TTM; statistics 32,56 dokumenterad annan bas); NETTOVÄNDNING till skuld FY24 (+20,4→−5,4→−15,4 — emerging-tillväxten finansieras); EK-serie saknas; alla repliker i paranoid (StockAnalysis BME 2026-09-25)"
  }
 ]

@@ -26381,5 +26381,95 @@
    ]
   },
   "notering": "cellmotiverad duo (Danmark/industri 1→2: Maersk tillgångstungt integrerat containerrederi + DSV tillgångslös fraktförmedling — ÄGARE-MOT-HYRARE, freenet/Telekom-klassen; post-Schenker världens största forwarder); AZN-kollisionen dokumenterad (UK/hälsa-duon avbröts — AstraZeneca levererad 2026-09-03 som AZN.ST/Sverige); CPH-primär DKK; KURSBASDOKUMENTATION: källans mcap/P/E-rader bär äldre prisbaser — fältet = källrader (E.ON/freenet-precedens), TIO PRISNEUTRALA LÅS bär leveransen (PS 0,97 · P/B 2,24 · EV 0,1 % REN med Schenker-lånet 95,5 mdr · netto-M 2,36 · FCF-M 3,36 · FCF-yield 3,46 % dubbelt · D/E 0,76 · EPS×aktier 0,4 % · payout · FCF-serien); FCF-serien intern låst (OCF−capex exakt fem fönster); INTEGRATIONSPROFILEN: netto fallande varje år [17 568 · 12 315 · 10 109 · 8 095] (fraktrecension+Schenker-kostnader; rak CAGR −22,8 %) mot oms +48 % FY25 (FÖRVÄRVSDRIVEN basblandning dokumenterad); fwd P/E 17,39 ⇒ implied EPS +126 % = normaliseringsscenariot (konsensus +24,85 %/3 år — aldrig löfte); ROIC 7,17 % < WACC 7,82 % = integrationsåret (datafakta); Altman 3,0 · Piotroski 8 · beta 0,96; utdelning 7,00 DKK (0,59 %) payout 24,2 %; nyemission 1 (aktieantal +3,86 %); rappdag 2026-10-21 I v172-fönstret; EK-serie saknas; alla repliker i paranoid (StockAnalysis CPH 2026-09-25)"
+ },
+ {
+  "ticker": "RR.L",
+  "namn": "Rolls-Royce Holdings plc",
+  "bransch": "industri",
+  "land": "Storbritannien",
+  "valuta": "GBX",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/lon/RR/ (+ /statistics/ + /financials/ + /financials/cash-flow-statement/)",
+    "paranoid": "LSE-PRIMÄRNOTING (underlag S&P Global Market Intelligence via StockAnalysis; intradag 2026-09-25 — öppning 1 496,40 · föregående close 1 503,20 GBp · dagsspann 1 464,40–1 499,80 · 52v 990–1 586; färshämtning direkt med cache-bypass + FYRA paneler (quote/statistics/financials/cash-flow); dec-slut; prisfältet i PENCE enligt BA.L/HSBA-cellkonventionen, mcap i GBP mdr): pris 15,032 GBP (1 503,2 GBp; beta 1,19), mcap 123,16 mdr GBP på 8,30 mdr aktier (replik 8,30 × 15,032 = 124,8 — 1,3 %), P/E 41,02 källans rad med pris/EPS-repliken 15,032/0,36 = 41,8 (1,8 %, EPS-raden 0,36 avrundad från 0,366 = 3 038/8 300) och GAAP-repliken 123,16/3,038 = 40,5 (1,2 %) — tre tal i familjedokumentation; fwd P/E 32,02 (marknadens implied EPS +28 % — referens); PS 5,32 EXAKT (123,16/23,165 — 0,06 %) · P/B 42,73 EXAKT (123,16/2,88 — 0,07 %; P/B-extremet är STRUKTURELLT: eget kapital 2,88 mdr efter pandemins nedskrivningar och hedge-volymer — metodnoten nedan) · EPS×AKTIER 0,36 × 8 300 = 2 988 ≈ netto 3 038 (1,6 %); EV-DEKOMPOSITION REN MED NETTO-KASSA: 123,16 + 4,37 − 6,48 = 121,05 mot källans 121,07 (0,02 %) — RR står i NETTO-KASSA +2,11 mdr (mot DSV:s −85 mdr i samma cell: cellens två balansmodeller); EV/EBIT 25,22 (replik) · EV/EBITDA 22,26 (källrad) · EV/Earnings 39,85 EXAKT (121,07/3,038); FY2025-ENGÅNGSPOSTEN DOKUMENTERAD (Kirin-U3-kontrollen per fönster): FY2025 netto 5 841 med netto-M 27,5 % ÖVER EBIT-M 19,8 % = finanspost/avyttring under EBIT-linjen — engångskaraktär; TTM-FÖNSTRET SOM BÄR FÄLTEN ÄR NORMALISERAT: netto-M 13,11 % < EBIT-M 20,72 % (ordning OK, kontrollen godkänd); FCF FYRA ÅR RAKT + TTM: [1 165 · 2 056 · 3 263 · 3 944] + TTM 4 461 — stigande varje år, rak CAGR +50,1 % (motorvärvningens eftermarknadsmaskin); FCF-serien intern låst (OCF−capex exakt fem fönster) · FCF-M 19,26 % EXAKT · FCF-yield 3,62 % DUBBELT EXAKT (4 461/123 160 mot källrad + 1/27,61); SEGMENTLÅSET (vågens första): Original Equipment [6 273 · 7 635 · 8 389 · 9 103] + Aftermarket Services [7 247 · 8 851 · 10 520 · 12 104] summerar EXAKT mot omsättningen samtliga fyra år — MOTORN OCH BLADET: tjänsteandelen 53,6 % → 54,2 % → 55,6 % → 57,1 % (bladen växer snabbare än raknen); SERIEPROFILER: oms [13 520 · 16 486 · 18 909 · 21 207] (rak CAGR +16,25 %) · netto [−1 269 · 2 412 · 2 521 · 5 841] — resultatCAGR NULL på negativ bas (Vonovia-precedensen: pandemiförlusten FY2022 gör CAGR meningslös; vändningen dokumenterad i stället: fyrlägg från −1 269 till +2 412 på två år) · EPS [−0,15 · 0,29 · 0,30 · 0,69]; omsättningstillväxt TTM +9,23 % · prognosTillväxt +11,07 % (källans rev-fwd 3Y — ren bas); källans PEG 1,48 med oklar bas ⇒ fältet NULL (basblandning vägras); METODNOTER: ROE 114,48 % och ROIC 470,58 % är källans rader och STRUKTURELLT SANNA men historiskt betingade — det tunna EK:t (2,88 mdr på 123 mdr mcap) gör avkastningstal oansenliga som jämförelsetal (dokumenterat; ROCE 24,79 % är det jämförbara talet) · WACC 10,56 % (hög beta-rabatt); balans: D/E 1,52 EXAKT (4,37/2,88) · räntetäckning 19,12 · Debt/EBITDA 0,81 · NETTO-KASSA +2,11 mdr · Altman 2,78 (gränszon) · Piotroski 6; utdelning 0,12 GBP/aktie (0,81 %) med payout-källrad 26,17 % (EPS-bas-repliken 33,3 % på det avrundade EPS:t, noterad) ⇒ senasteArMdr 0,996; aktieantalet −0,70 % YoY (återköp 0,70 %) ⇒ nyemissioner 0; 52-veckorsförändring +27,49 %; kandidatur: CELLMOTIVERAD duo enligt U13-mönstret — Storbritannien/industri-cellens TVÅ affärsmodeller: BAE Systems (BA.L, försvarsplattformskontraktör — orderbacklog-modellen) + Rolls-Royce (RR.L, motorer + aftermarket-tjänster — motorn-och-bladet; segmentlåset dokumenterar tjänsteflytten); kontrasten spänner intäktsmodell OCH balans (BAE kontraktsstock mot RR netto-kassa + tjänstemaskin); kollisionskontroll primär+sekundär (AZN-läxan rond 221) GRÖN; P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 3 038 M GBP > 0; Sony/Honda-doktrinen); Industrials ⇒ industri-cellen (27→28 bolag), Storbritannien 11→12 (industri-grenen 1→2); NÄSTA RAPPORT est. 2026-11-12 (strax utanför v172-fönstret 10-20→11-04 — notis vid kalenderberöring)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 1503.2,
+  "marknadsKapitalMdr": 123.16,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.1619,
+   "resultatCAGR5ar": null,
+   "omsattningTillvaxtTTM": 0.0923,
+   "prognosTillvaxt": 0.1107
+  },
+  "lonksamhet": {
+   "roe": 1.1448,
+   "roic": 4.7058,
+   "bruttoMarginal": 0.288,
+   "ebitMarginal": 0.2072,
+   "nettoMarginal": 0.1311,
+   "fcfMarginal": 0.1926
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 1.52,
+   "rantaTackning": 19.12,
+   "fcfPositivaSenaste5": 4,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 0.996,
+   "andelUtestande": 0.333,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 41.02,
+   "pb": 42.73,
+   "evEbit": 25.22,
+   "peg": null,
+   "fcfYield": 0.0362,
+   "egenKapitalMultipl": 42.73
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    13520000000,
+    16486000000,
+    18909000000,
+    21207000000
+   ],
+   "resultat": [
+    -1269000000,
+    2412000000,
+    2521000000,
+    5841000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    1165000000,
+    2056000000,
+    3263000000,
+    3944000000
+   ]
+  },
+  "notering": "cellmotiverad duo (Storbritannien/industri 1→2: BAE försvarsplattformskontraktör + Rolls-Royce motorer/aftermarket — MOTORN OCH BLADET: segmentlåset OE+Aftermarket = omsättningen EXAKT fyra år, tjänsteandelen 54→57 %); LSE-primär, prisfältet i PENCE (BA.L-konventionen), mcap GBP mdr; kollisionskontroll primär+sekundär (AZN-läxan) GRÖN; FY2025-ENGÅNGSPOSTEN dokumenterad (netto-M 27,5 % > EBIT-M 19,8 %) — TTM-fönstret som bär fälten NORMALISERAT (13,1 < 20,7, Kirin-kontrollen godkänd); netto [−1 269 · 2 412 · 2 521 · 5 841] — resultatCAGR NULL på negativ bas (Vonovia-precedens; pandemivändningen dokumenterad); FCF FYRA ÅR RAKT + TTM [1 165 → 4 461] rak CAGR +50,1 %, serien intern låst; FCF-yield 3,62 % DUBBELT EXAKT; EV REN 0,02 % MED NETTO-KASSA +2,11 mdr (mot DSV:s −85 mdr i samma cell: två balansmodeller); P/B 42,73 EXAKT men STRUKTURELLT (tunt EK 2,88 mdr — metodnot); ROE/ROIC-extremer (114/471 %) historiskt betingade, ROCE 24,8 % jämförbart; PS 5,32 EXAKT; Altman 2,78 · Piotroski 6 · beta 1,19; återköp 0,70 % (aktieantal −0,70 %); rappdag est. 2026-11-12 strax utanför v172-fönstret; EK-serie saknas; alla repliker i paranoid (StockAnalysis LON 2026-09-25)"
  }
 ]

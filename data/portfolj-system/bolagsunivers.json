@@ -25216,5 +25216,95 @@
    ]
   },
   "notering": "kandidat ur BCE-OMG24 §10:s UK-alternativ (LISTANS SISTA NAMN — VOD var P/E-död, BT bär; P/E-bärare kontrollerad före leverans); LSE-primär GBX; MARS-BOKSLUT (etikett = slutår, Japan-konventionen); NEGATIV historisk CAGR REDOVISAS ÖPPET (oms −0,73 % · netto −10,42 % — legacy-utflyttning strukturell) medan prognosTillväxt +53,2 % bär fiberrulloutens förväntade EPS-återhämtning — båda sidorna dokumenterade; FY24-dip = avskrivningstopp; P/E EXAKT på attributable-EPS-basen (minoritetsnot ~310 M); Altman 1,71 varningszon som datafakta; bruttoMarginal null (leverantörens bruttobegrepp osammanhängande för telekom — fältet lämnas osatt, ärligare än felbas); EK-serie saknas — serier.egetKapital tomt; rappdag H1 FY2026 est. slutet oktober = v172-könotis; alla repliker i paranoid (StockAnalysis LSE 2026-09-25)"
+ },
+ {
+  "ticker": "MUV2.DE",
+  "namn": "Münchener Rückversicherungs-Gesellschaft AG",
+  "bransch": "finans",
+  "land": "Tyskland",
+  "valuta": "EUR",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/etr/MUV2/ (+ /statistics/ + /financials/)",
+    "paranoid": "ETR-PRIMÄRNOTING i EUR (SAP.DE/ALV.DE/SIE.DE-precedensens Frankfurt-rad; underlag S&P Global Market Intelligence + Fiscal.ai via StockAnalysis; intradag 2026-09-25 delayed +0,10 %; färshämtning direkt med cache-bypass + kompletterande FY-panelhämtning för exakt tabelläsning): pris 532,20 EUR (52v 447,90–561,00 · beta 0,81), mcap 74,75 mdr EUR på 140,8 M aktier (replik 140,8 × 532,20 = 74,93 — 0,25 %), P/E 13,83 EXAKT replikerbar på källans EPS-rad 38,48 (532,20/38,48 = 13,83; EPS-identiteten på totalnetto 5 957/140,8 = 42,3 — källans EPS bär attributable-/vägd bas, dokumenterad; BT/Redeia-klassens minoritetsnot) mot forward P/E 13,50 ⇒ prognosTillväxt +2,44 % (trailing/fwd-modellen, MUFG-konventionen — MOGEN BRANSCH: återförsäkringens avtalscykel ger lugn konsensus; spår-PEG 13,83/2,44 = 5,67 mot källans PEG 0,94 på 3-års, kalibreringsnot — olika baser dokumenterade), P/B 1,98 · EV/EBIT 13,12 · PS 1,09 EXAKT (74 750/68 595 = 1,0897), ROE 14,55 % · ROIC 2,83 % (FÖRSÄKRINGSMETODNOT: återförsäkrarens 'kapital' är försäkringstekniska reserver — ROIC speglar ej kapitalproduktivitet utan balansstruktur; dokumenterat som ALLIANZ/SAN.MC-konventionen) · EBIT-marginal 9,20 % · netto-marginal 8,68 % EXAKT (5 957/68 595 = 8,683 %) · FCF-yield EXAKT (8 375/74 750 = 11,20 % = 1/P·FCF 1/8,93 = 11,20 %); balans: D/E 0,52 · Altman 2,03 (KÄLLANS VARNINGSGRÄNS — FÖRSÄKRINGSBALANSMETODNOT: premieinflows är skuld innan de är vinst; balansens storlek är affärsmodellen; datafakta med not, Piotroski 6) · kassa 3,99 mdr · skuld 34,29 mdr (försäkringstekniska balansen) · EK 38,40 mdr; utdelning 20,00 EUR/aktie (3,76 %) ⇒ senasteArMdr 2,816 (20,00 × 140,8 M) med payout 51,94 % EXAKT replikerbar (20,00/38,48 = 51,98 % — 0,08 %); FY-SERIEN dec-slutande (M EUR): oms [67 096 · 67 720 · 68 850 · 69 075] · netto [5 563 · 5 707 · 5 671 · 5 811] · FCF [7 733 · 7 988 · 8 341 · 8 216] — VÅGENS FJÄRDE BROTTSFRIA RAD (efter TELUS/CNR/Redeia): samtliga positiva, mjukt stigande, inga brott/cykler; rak 3-årig CAGR FY22→FY25 (oms +0,97 % · netto +1,46 %) — STABILITETENS KÄRNA, inte tillväxt (reglerad försäkringsbas; dokumenterat som sådan — P/E 13,8 på 1,5 %-tillväxt är moget bolag); EPS-serien [35,85 · 36,81 · 36,56 · 37,42]; analytikerläge saknas i panelutdraget — ingen målkurs förs in; NÄSTA RAPPORT Q3 2026 est. tidigt november — v172-könotis v45; kandidatur: CELLMOTIVERAD enligt S2-mönstret (dokumenterade listor tomma efter U12) — Tyskland/finans-cellens ANDRA affärsmodell: Allianz (direktförsäkring) + Munich Re (återförsäkring) = TRYG/AXA-precedensens duostruktur; P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 5 957 M EUR > 0; Sony/Honda-doktrinen); kollisionskontroll exakt-match GRÖN (SAP-förslaget avlivat av samma grind — SAP.DE på disk sedan tidigare); Financials ⇒ finans-cellen (37→38 bolag), Tyskland 16→17 (landets nionde gren öppnad på 1→2)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 532.2,
+  "marknadsKapitalMdr": 74.75,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.009736575376561252,
+   "resultatCAGR5ar": 0.014644576939313314,
+   "omsattningTillvaxtTTM": 0.057,
+   "prognosTillvaxt": 0.02444444444444449
+  },
+  "lonksamhet": {
+   "roe": 0.1455,
+   "roic": 0.0283,
+   "bruttoMarginal": null,
+   "ebitMarginal": 0.092,
+   "nettoMarginal": 0.0868,
+   "fcfMarginal": 0.12209344704424521
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.52,
+   "rantaTackning": null,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 2.816,
+   "andelUtestande": 0.5194,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 13.83,
+   "pb": 1.98,
+   "evEbit": 13.12,
+   "peg": 5.657727272727262,
+   "fcfYield": 0.11204013377926421,
+   "egenKapitalMultipl": 1.98
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    67096000000,
+    67720000000,
+    68850000000,
+    69075000000
+   ],
+   "resultat": [
+    5563000000,
+    5707000000,
+    5671000000,
+    5811000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    7733000000,
+    7988000000,
+    8341000000,
+    8216000000
+   ]
+  },
+  "notering": "cellmotiverad kandidatur (S2-mönstret — dokumenterade listor tomma): Tyskland/finans 1→2 med Allianz direkt + Munich Re åter (TRYG/AXA-precedensens duostruktur); ETR-primär EUR; VÅGENS FJÄRDE BROTTSFRIA RAD (samtliga FY positiva, mjuk stigning — rak CAGR oms +0,97 % · netto +1,46 % = stabilitet, inte tillväxt; P/E 13,8 dokumenterat som moget bolag); P/E EXAKT på källans EPS-rad (attributable-bas med totalnotto-not); FÖRSÄKRINGSMETODNOTER: ROIC speglar reservstruktur (ej kapitalproduktivitet), Altman 2,03 varningsgräns = försäkringsbalansens affärsmodell (premier är skuld innan vinst), bruttoMarginal null (försäkring saknar meningsfull brutto — osatt); payout 51,94 % EXAKT replikerbar; rantaTackning null (räntekostnad ej bruten ut i försäkringsbalansen); EK-serie saknas — serier.egetKapital tomt; rappdag Q3 est. tidigt november = v172-könotis; alla repliker i paranoid (StockAnalysis ETR 2026-09-25)"
  }
 ]

@@ -17857,3 +17857,16 @@ RAPPDAGSMALLEN (v172-beredelsen slutförd): verktyg/rapptidsuppdatera.mjs — ge
 ROND-PROCEDUREN FÖR V172 (slutgiltig, per bolag vid rappdag): verktyg/rapptidsuppdatera.mjs <ticker> <sa-kod> 4 → diff-bedömning → (vid ≥2 % förändring) kirurgisk fältuppdatering med omräknade tretton lås + TTM-fönster + PARANOID-uppdatering → llms HELREGEN → läckagevakt → tsc → protokoll + commit; (vid <2 %) notisrapport i worklog. Fönstrets fem bolag och koder: A3M.MC bme/A3M (10-22) · DGE.L lon/DGE (10-29) · BBVA.MC bme/BBVA (10-29) · PUIG.MC bme/PUIG (10-29) · ENB tsx/ENB (11-02).
 SPÅRROTATIONEN: evighetskatalogen läst (regler: rotera spår, aldrig samma två ronder i rad, R2-säkra poster); det strategiska skiftets finslipnings-spår tillämpades Denna rond som VERKTYGSBELTES-FINSLIPNING (mallen ovan) — nästa rotationspost (rond 240+): branding-spåret eller granskningsköns flyttklara paket, val per styrelseregelverkets rond-mönster.
 KVD denna rond: verktyget READ-ONLY mot universumet (0 rader förändrade — verifierat i commiten: endast nya/ändrade verktygsfiler) · torrkörning GRÖN · commit via rond 227:s mekanik.
+
+## ROND 240 [organ:Φ] — U38-SOND FRANKRIKE LEVERERAD: fyra duopartners till Frankrikes ensamgrenar ALLA RENA + P/E-bärare GRÖNA — SAF Safran (industri: 138,58 mdr · netto 3,88 mdr · P/E 35,90) · ENGI Engie (energi: 56,96 · 4,07 · 14,26) · SGO Saint-Gobain (material: 34,16 · 2,67 · 12,96) · EL EssilorLuxottica (hälsa: 66,50 · 2,49 · 27,04) ⇒ U38 = AIRBUS+SAFRAN (flygkroppen mot motorerna); v172-fönstret (10-20→11-04) öppnar om ~3,5 veckor —RAPDAGSMALLEN klar sedan rond 239 — 2026-09-25
+
+BAKGRUND: v172-fönstret öppnar 10-20 (idag 09-25) — rundan tar FRANKRIKE-SVEPET (rond 237:s karta: sex ensamgrenar — energi TTE.PA · fastighet URW.PA · industri AIR.PA · halso SAN.PA · kommunikation ORA.PA · material AI.PA).
+SONDEN (epa/Paris, S&P-data 2026-09-25): alla fyra prövade duopartners RENA (kollision primär+sekundär 0 träffar) OCH P/E-bärare GRÖNA:
+(1) SAF Safran — industri/Airbus-partner: 334,30 EUR · mcap 138,58 mdr · netto 3,88 mdr · P/E 35,90 · CFM56/LEAP-motorerna (flygets eftermarknads-moat).
+(2) ENGI Engie — energi/TotalEnergies-partner: 23,42 · 56,96 mdr · 4,07 mdr · 14,26 (olja mot gas/utilities — E.ON-klassen).
+(3) SGO Saint-Gobain — material/Air Liquide-partner: 69,82 · 34,16 mdr · 2,67 mdr · 12,96 (industrigaserna mot byggmaterial).
+(4) EL EssilorLuxottica — hälsa/Sanofi-partner: 144,70 · 66,50 mdr · 2,49 mdr · 27,04 (läkemedel mot optisk korrektion — konsumtionshälso-klassen).
+U38-VALET: AIRBUS+SAFRAN — flygets duo (flygkroppen mot motorerna: volymcykeln mot eftermarknadens installationbas) — storlek (138,6 mdr), tydligast cell-pedagogik, strongest konsensusbild. DUO-ORDNING därefter: EL (U39-kandidat) · ENGI · SGO — alla gröna i sonden.
+SEKTOR-VERIFIERING: kandidaternas GISC-celler kontrolleras i hämtningssteget (statistik-panelens sektor-rad) — sondens snabbvy fångde ej sektor-raderna; documented.
+NÄSTA VÅG (rond 241): U38 = SAF-hämtning (fyra paneler EPA/EUR, AIR.PA-precedensen) med tretton lås + divisionslås (Civil Aerospace/Military/Propulsion?) + kirurgisk append 299→300 — UNIVERSUMETS 300:BOLAG + FRANKRIKE industri-gren 1→2.
+KVD denna rond: sond read-only · kvitton /tmp/r240-frk/ · commit via rond 227:s mekanik.

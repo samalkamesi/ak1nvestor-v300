@@ -1,11 +1,29 @@
 {
-  "ts": "2026-09-23T01:27:02.079Z",
+  "ts": "2026-09-25T01:27:01.984Z",
   "lage": "natt",
   "steg": [
     {
       "steg": "0-ram",
-      "ramMB": 5090,
+      "ramMB": 4859,
       "tak": 1500,
+      "pass": true
+    },
+    {
+      "steg": "0b-lastvakt",
+      "busyProc": 0.6,
+      "loadavg": [
+        1.49,
+        1.18,
+        1.12
+      ],
+      "cpuKalibMs": 42.5,
+      "zcodeBarn": 5,
+      "tyst": true,
+      "kriterier": {
+        "busyUnder": 30,
+        "l1Under": 1.5
+      },
+      "vantadeMs": 0,
       "pass": true
     },
     {
@@ -17,51 +35,17 @@
       "pass": true
     },
     {
-      "steg": "2-lighthouse",
-      "exit": 0,
-      "svans": [
-        "Sammanfattning → /home/ak1a/AK1/data/forskning/OPTIMERING/lighthouse/o151-natt-sammanfattning.json",
-        "",
-        "Jämförelse mot o139-fore:",
-        "/superanalys: P 73→43 · LCP 4355→5706 (+1351 ms) · TBT 375→5669",
-        "/kalkylator: P 64→42 · LCP 4812→5423 (+611 ms) · TBT 582→8779",
-        ""
-      ]
+      "steg": "1b-last-ater",
+      "busyProc": 53,
+      "loadavg": [
+        2.58,
+        1.44,
+        1.21
+      ],
+      "cpuKalibMs": 29.8,
+      "tyst": false,
+      "pass": false
     }
   ],
-  "dom": [
-    {
-      "sida": "/superanalys",
-      "poangFore": 73,
-      "poangEfter": 43,
-      "lcpFore": 4355,
-      "lcpEfter": 5706,
-      "lcpDeltaProc": 31,
-      "tbtFore": 375,
-      "tbtEfter": 5669,
-      "clsEfter": 0,
-      "kriterier": {
-        "clsNoll": true,
-        "lcpInom15": false,
-        "poangSuperBand": false
-      }
-    },
-    {
-      "sida": "/kalkylator",
-      "poangFore": 64,
-      "poangEfter": 42,
-      "lcpFore": 4812,
-      "lcpEfter": 5423,
-      "lcpDeltaProc": 12.7,
-      "tbtFore": 582,
-      "tbtEfter": 8779,
-      "clsEfter": 0,
-      "kriterier": {
-        "clsNoll": true,
-        "lcpInom15": true,
-        "tbtKalkylator450": false
-      }
-    }
-  ],
-  "sammanfattning": "o151-natt-sammanfattning.json"
+  "dom": "avbruten-last-ater"
 }

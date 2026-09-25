@@ -19,7 +19,7 @@
    (lagen 2007:528); källor per siffra; konsensus endast som pedagogiskt begrepp.
 
 ## RAPPORTBLOCK (maskinellt genererat — byggs om per körning, reglerna § 1–2)
-LÄGE: 8 publicerade (i data/blogg/, schemalagda oktober-datum) · 76 väntar (i data/blogg-utkast/kvartal/2026-q3/) — mätning 2026-09-25T00:23Z
+LÄGE: 8 publicerade (i data/blogg/, schemalagda oktober-datum) · 76 väntar (i data/blogg-utkast/kvartal/2026-q3/) — mätning 2026-09-25 (datumPrecision: verktyget är tidsidempotent; körningstidpunkterna lever i git-historiken)
 
 ### PUBLICERADE
 ✓ sa-laser-du-ericsson-q3-2026

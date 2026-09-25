@@ -51,7 +51,7 @@ for (const s of vantar) {
   const v = vecka(datumFör(s));
   (veckoGrupp[v] = veckoGrupp[v] || []).push(s);
 }
-rader.push(`LÄGE: ${publicerade.length} publicerade (i data/blogg/, schemalagda oktober-datum) · ${vantar.length} väntar (i data/blogg-utkast/kvartal/2026-q3/) — mätning ${new Date().toISOString().slice(0, 16)}Z`);
+rader.push(`LÄGE: ${publicerade.length} publicerade (i data/blogg/, schemalagda oktober-datum) · ${vantar.length} väntar (i data/blogg-utkast/kvartal/2026-q3/) — mätning ${new Date().toISOString().slice(0, 10)} (datumPrecision: verktyget är tidsidempotent; körningstidpunkterna lever i git-historiken)`);
 rader.push('');
 rader.push('### PUBLICERADE');
 rader.push(publicerade.map((s) => `✓ ${s}`).join('\n'));

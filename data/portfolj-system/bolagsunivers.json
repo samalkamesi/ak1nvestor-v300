@@ -25396,5 +25396,95 @@
    ]
   },
   "notering": "cellmotiverad duo enligt U13-mönstret (Tyskland/halso 1→2: Fresenius vårdoperatör + Healthineers medtech = cellens två affärsmodeller); ETR-primär EUR; SEPTEMBER-BOKSLUT (etikett = slutår — sällsynt konvention dokumenterad); VÅGENS FEMTE BROTTSFRIA RAD (samtliga positiva, stadigt stigande netto 1 730→2 417; rak CAGR oms +2,54 % · netto +11,77 % — marginalexpansion, ej volym); ROIC 8,24 % ÖVER WACC 7,18 % (värdeskapande medtech); Altman 2,86 gränszon (medtech-nduvvet) som datafakta; payout 53,24 % (replik 0,1 %); EK-serie saknas — serier.egetKapital tomt; rappdag Q4 FY2025 est. november = v172-könotis; alla repliker i paranoid (StockAnalysis ETR 2026-09-25)"
+ },
+ {
+  "ticker": "DHL.DE",
+  "namn": "Deutsche Post AG",
+  "bransch": "industri",
+  "land": "Tyskland",
+  "valuta": "EUR",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/etr/DHL/ (+ /statistics/ + /financials/)",
+    "paranoid": "ETR-PRIMÄRNOTING i EUR (SAP.DE/MUV2.DE/SHL.DE-precedensens Frankfurt-rad; underlag S&P Global Market Intelligence + Fiscal.ai via StockAnalysis; intradag 2026-09-25 delayed +0,04 %; färshämtning direkt med cache-bypass + kompletterande FY-panelhämtning för exakt tabelläsning): pris 48,66 EUR (52v 38,14–51,56 · beta 1,04), mcap 57,93 mdr EUR på 1 190 M aktier (replik 1 190 × 48,66 = 57,91 — 0,04 %), P/E 12,87 ur källan på attributable-/vägd EPS-bas (48,66/3,78; totalnetto-repliken 48,66/4,11 = 11,84 avviker 8 % — minoritets-/vägningsnot dokumenterad, Rogers/BT-klassen) mot forward P/E 11,60 ⇒ prognosTillväxt +10,95 % (trailing/fwd-modellen, MUFG-konventionen; spår-PEG 12,87/10,95 = 1,18 mot källans PEG 1,29 — nära kalibrering), P/B 2,64 · EV/EBIT 9,51 · PS 0,66 (replik 57 930/87 143 = 0,665 = 0,7 %), ROE 20,10 % · ROIC 8,90 % ÖVER WACC 7,41 % (värdeskapande logistik — dokumenterat) · EBIT-marginal 7,40 % (logistikbranschens marginalstruktur: volymbransch med tunn marginal) · netto-marginal 5,61 % EXAKT replik (4 893/87 143 = 5,615 %) · FCF-yield EXAKT replik (3 246/57 930 = 5,60 % = 1/P·FCF 1/17,85 = 5,60 %); balans: D/E 1,06 · räntetäckning 8,36 · Altman 2,63 (KÄLLANS VARNINGSZON — logistikbalansens leasade flygplan/fordon och nätinvesteringar; datafakta) · Piotroski 7 · kassa 3,60 mdr · skuld 18,42 mdr · NETTOSKULD 14,82 mdr · EK 21,9 mdr; utdelning 2,15 EUR/aktie (4,42 %) ⇒ senasteArMdr 2,559 (2,15 × 1 190) med payout 52,31 % EXAKT replikerbar (2,15/4,11 = 52,31 %); FY-SERIEN dec-slutande (M EUR): oms [94 439 · 81 824 · 84 779 · 87 193] · netto [8 458 · 4 885 · 4 710 · 5 132] · FCF [4 857 · 2 960 · 3 323 · 3 040] — PANDEMIBOOMS-BROTTET FY2022: netto 8 458 = paketboomens topp (e-handelsexplosionens sista toppår) följt av normalisering till ~4,7–5,1 mdr och påbörjad återhämtning; rak CAGR FY22→FY25 (oms −2,60 % · netto −15,42 %) bär BOOMSTOPPSBAS och är vilseledande som tillväxtmått — CAGR-fälten bär KONSEKUTIV post-boom-bas FY23→FY25 (oms +3,25 % · netto +2,49 % = den normaliserade bilden; NTR/AEM-klassens spegelvända situation: där bottenbas, här boomstoppsbas — samma doktrin); EPS-totalserien [7,17 · 4,13 · 3,97 · 4,31]; analytikerläge saknas i panelutdraget — ingen målkurs förs in; NÄSTA RAPPORT Q3 2026 est. tidigt november — v172-könotis v45; kandidatur: CELLMOTIVERAD duo enligt U13/U14-mönstret — Tyskland/industri-cellens TVÅ affärsmodeller: Siemens (SIE.DE, industriautomation) + Deutsche Post/DHL (DHL.DE, logistik/express) — cellens pedagogiska kontrast (kapitalvaru-tillverkare mot tjänstenät); P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 4 893 M EUR > 0; Sony/Honda-doktrinen); kollisionskontroll exakt-match GRÖN; Industrials ⇒ industri-cellen (24→25 bolag), Tyskland 18→19 (industri-grenen 1→2)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 48.66,
+  "marknadsKapitalMdr": 57.93,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.032286997425035935,
+   "resultatCAGR5ar": 0.02496973018688986,
+   "omsattningTillvaxtTTM": 0.052,
+   "prognosTillvaxt": 0.10948275862068968
+  },
+  "lonksamhet": {
+   "roe": 0.201,
+   "roic": 0.089,
+   "bruttoMarginal": null,
+   "ebitMarginal": 0.074,
+   "nettoMarginal": 0.0561,
+   "fcfMarginal": 0.03724911926373891
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 1.06,
+   "rantaTackning": 8.36,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 2.559,
+   "andelUtestande": 0.5231,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 12.87,
+   "pb": 2.64,
+   "evEbit": 9.51,
+   "peg": 1.1755275590551177,
+   "fcfYield": 0.05603314344899016,
+   "egenKapitalMultipl": 2.64
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    94439000000,
+    81824000000,
+    84779000000,
+    87193000000
+   ],
+   "resultat": [
+    8458000000,
+    4885000000,
+    4710000000,
+    5132000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    4857000000,
+    2960000000,
+    3323000000,
+    3040000000
+   ]
+  },
+  "notering": "cellmotiverad duo enligt U13/U14-mönstret (Tyskland/industri 1→2: Siemens automation + DHL logistik = cellens två affärsmodeller); ETR-primär EUR; PANDEMIBOOMS-BROTT FY2022 (netto 8 458 = paketboomens topp) ⇒ CAGR på konsekutiv post-boom-bas FY23→FY25 (oms +3,25 % · netto +2,49 % — normaliserad bild; boomstoppsbasen −15,4 %/år dokumenterad som vilseledande; NTR/AEM-klassens spegelvända); P/E 12,87 på attributable-bas (totalnetto-replik 11,84 = 8 % dokumenterad); ROIC 8,90 % ÖVER WACC 7,41 % (värdeskapande); Altman 2,63 varningszon (leasad logistikbalans) datafakta; payout 52,31 % EXAKT; bruttoMarginal null (logistikens bruttobegrepp osammanhängande — osatt); EK-serie saknas — serier.egetKapital tomt; rappdag Q3 est. tidigt november = v172-könotis; alla repliker i paranoid (StockAnalysis ETR 2026-09-25)"
  }
 ]

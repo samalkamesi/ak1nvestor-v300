@@ -25486,5 +25486,95 @@
    ]
   },
   "notering": "cellmotiverad duo enligt U13/U14-mönstret (Tyskland/industri 1→2: Siemens automation + DHL logistik = cellens två affärsmodeller); ETR-primär EUR; PANDEMIBOOMS-BROTT FY2022 (netto 8 458 = paketboomens topp) ⇒ CAGR på konsekutiv post-boom-bas FY23→FY25 (oms +3,25 % · netto +2,49 % — normaliserad bild; boomstoppsbasen −15,4 %/år dokumenterad som vilseledande; NTR/AEM-klassens spegelvända); P/E 12,87 på attributable-bas (totalnetto-replik 11,84 = 8 % dokumenterad); ROIC 8,90 % ÖVER WACC 7,41 % (värdeskapande); Altman 2,63 varningszon (leasad logistikbalans) datafakta; payout 52,31 % EXAKT; bruttoMarginal null (logistikens bruttobegrepp osammanhängande — osatt); EK-serie saknas — serier.egetKapital tomt; rappdag Q3 est. tidigt november = v172-könotis; alla repliker i paranoid (StockAnalysis ETR 2026-09-25)"
+ },
+ {
+  "ticker": "4063.T",
+  "namn": "Shin-Etsu Chemical Co., Ltd.",
+  "bransch": "material",
+  "land": "Japan",
+  "valuta": "JPY",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/tyo/4063/ (+ /statistics/ + /financials/)",
+    "paranoid": "TYO-PRIMÄRNOTING i JPY (8035.T/5401.T/4452.T-precedensens Tokyo-rad; underlag S&P Global Market Intelligence + Fiscal.ai via StockAnalysis; intradag 2026-09-25 delayed +0,25 %; färshämtning direkt med cache-bypass + TRE kompletterande panelhämtningar: FY-tabell och grundfakta krävde skärpning — källans första översiktsläsning bar inkoherenta tal; MARS-BOKSLUT, etikett = slutår): pris 6 624 JPY, mcap 9 726 mdr JPY på 1 468,4 M aktier (replik 1 468,4 × 6 624 = 9 726 — 0,01 % EXAKT), P/E-FALLET (dokumenterat): källans statistics-rad P/E 19,34 är INTERNt inkonsistent med källans egna tal (EPS/netto-M/mcap/aktier stämmer sinsemellan men inte mot 19,34 — troligen GAAP-jp-fönster mot IFRS-serien) ⇒ fältet bär AKTIEBAS-REPLIKEN 6 624/494 = 13,41, låst av FYRA oberoende källtal (mcap 0,01 % · PS 3,34 EXAKT · netto-M 24,91 % EXAKT · payout 30,4 mot 30,10 ✓) med källraden 19,34 dokumenterad som avvikande — Panasonic-ROE-klassen omvänt: repliken bär, källraden noteras; källans fwd-P/E 17,42 och PEG 0,81 noteras som referens utan fält (prognosTillväxt osatt på grund av P/E-bastvisten — ärligare än att blanda baser), P/B 1,60 · EV/EBIT 12,82 · PS 3,34 EXAKT (9 726/2 910), ROE 8,42 % · ROIC 7,35 % ÖVER WACC 5,75 % (värdeskapande specialkemi — dokumenterat) · brutto 36,93 % (specialkemins kontraktsstruktur) · EBIT-marginal 19,18 % · netto-marginal 24,91 % EXAKT replik (725/2 910) · FCF-yield 5,88 % (källa) med replik 572/9 726 = 5,88 % ✓; balans: D/E 0,59 · räntetäckning 53,67 (!) · Altman 4,11 (SUND zon — bland vågens starkaste) · Piotroski 7 · kassa 1 307 mdr · skuld 3 590 mdr · NETTOSKULD 2 283 mdr · EK 6 081 mdr; utdelning 150 JPY/aktie (2,26 %) ⇒ senasteArMdr 220 (150 × 1 468,4) med källans payout 30,10 % (aktiebas-replik 30,4 % ✓); buyback-yield 0,75 % (aktiv återköpsprogram-not); FY-SERIEN mars-slutande (mdr JPY): oms [2 338 · 2 504 · 2 720 · 2 912] · netto [437 · 495 · 559 · 648] · FCF [617 · 779 · 880 · 1 105] — VÅGENS SJÄTTE BROTTSFRIA RAD och den STARKASTE: ALLA FYRA mått stigande VARJE ÅR (ingen enda nedgång i serien — rev +7,65 %/år · netto +14,01 %/år rak CAGR FY22→FY25; halvledar-boomens kiseltillgång + silikondiversifiering); EPS-JPY-serien [303 · 343 · 387 · 448]; analytikerläge saknas i panelutdraget — ingen målkurs förs in; NÄSTA RAPPORT Q2 FY2026 est. tidigt november — v172-könotis v45; kandidatur: CELLMOTIVERAD duo enligt U13-mönstret — Japan/material-cellens TVÅ affärsmodeller: Nippon Steel (5401.T, bulkstål/integrerat) + Shin-Etsu Chemical (4063.T, specialkemi/kisel: världens största kiseltillverkaren — halvledarwafer + silikon) — cellens pedagogiska kontrast (cykliskt bulkstål mot teknologibundet specialmaterial); P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 725 mdr JPY > 0; Sony/Honda-doktrinen); kollisionskontroll exakt-match GRÖN; Materials ⇒ material-cellen (29→30 bolag), Japan 22→23 (material-grenen 1→2)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 6624,
+  "marknadsKapitalMdr": 9726,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.07592571626520672,
+   "resultatCAGR5ar": 0.14033167957547077,
+   "omsattningTillvaxtTTM": 0.058,
+   "prognosTillvaxt": null
+  },
+  "lonksamhet": {
+   "roe": 0.0842,
+   "roic": 0.0735,
+   "bruttoMarginal": 0.3693,
+   "ebitMarginal": 0.1918,
+   "nettoMarginal": 0.2491,
+   "fcfMarginal": 0.1965635738831615
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.59,
+   "rantaTackning": 53.67,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 0.22,
+   "andelUtestande": 0.301,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 13.42,
+   "pb": 1.6,
+   "evEbit": 12.82,
+   "peg": null,
+   "fcfYield": 0.05881143327164302,
+   "egenKapitalMultipl": 1.6
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    2338000000000,
+    2504000000000,
+    2720000000000,
+    2912000000000
+   ],
+   "resultat": [
+    437000000000,
+    495000000000,
+    559000000000,
+    648000000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    617000000000,
+    779000000000,
+    880000000000,
+    1105000000000
+   ]
+  },
+  "notering": "cellmotiverad duo (Japan/material 1→2: Nippon Steel bulkstål + Shin-Etsu specialkemi/kisel = cellens två modeller); TYO-primär JPY; mars-bokslut; P/E-FALLET DOKUMENTERAT: källans statistics-rad 19,34 internt inkonsistent med källans egna EPS/netto-M/mcap/aktier — fältet bär aktiebas-repliken 13,41 låst av fyra oberoende källtal (mcap 0,01 % · PS/netto-M EXAKTA · payout ✓), källraden noterad som avvikande (troligen GAAP-jp mot IFRS); prognosTillväxt NULL (P/E-bastvisten gör trailing/fwd-blandning oärlig — källans fwd 17,42/PEG 0,81 enbart referens i paranoid); VÅGENS SJÄTTE BROTTSFRIA RAD och starkaste (ALLA fyra mått stigande varje år; rak CAGR oms +7,65 % · netto +14,01 % — halvledar-boomens kisel + silikondiversifiering); ROIC>WACC; räntetäckning 53,67 · Altman 4,11 · Piotroski 7; buyback 0,75 % aktiv; EK-serie saknas — serier.egetKapital tomt; rappdag Q2 FY2026 est. november = v172-könotis; alla repliker i paranoid (StockAnalysis TYO 2026-09-25)"
  }
 ]

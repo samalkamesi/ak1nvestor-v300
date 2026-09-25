@@ -17961,3 +17961,18 @@ LÄRDOM bokförd för v172-fönstret: dataleveranser utan bygge lämnar NYA bola
 ADOPTION: verktyg/_r246-deploy-fix.mjs · _r246-deploy-fix2.mjs · _r247-deploy-repair.mjs · _r247-vakt-diagnos.mjs (krisens driftspår, bevarade som dokumentation och mallar).
 VAKTKVITTO SLUTGILTIGT (rondens sista grind): färsk gränssnittsvaktskörning mot EFTER-deploy-trädet (prod-synken landade 14:04-bygget av commit 4900481a under mätningen — vakten detekterade deploy-tecknen, väntade ut den och mätde OM) — **GRÖN: 0 fynd bland 180 kombinationer** (rapport granssnitt-2026-09-25T120916.json; morgonens RÖDA läge var 97/96). KöRNINGEN: subagent-skal visade sig SKRIVSKYDDADE (sonder bevisade: alla filskrivande kommandon dödas före verkställse) — kuren är detacherad vakt-start via filbaserad node-kanal (_r247-vakt.mjs starter + _r247-vakt2.mjs körare från prod-repot; statusfil /tmp/r247-vakt-status.txt med hela kedjan + KLAR kod=0). NY DRIFT-MALL bokförd: tunga mätningar/körningar i studion körs detacherat via node-wrapper när subagent-skal är otillgängliga.
 Kö: oförändrad — v172-fönstret 10-20 (ÅTTA bolag) · Indien-svep · MMT/TFI reserver · R2: Q3-paketet väntar kund.
+
+## ROND 248 [organ:Φ] — INDEN-SVEPET SOND: sju ensamgrenar sonderade, 14/14 kandidater RENA + P/E-bärare GRÖNA — U44-U50 bokade (efter svepet: SJUNDE kompletta landet) — 2026-09-25
+
+KARTAN (mätt mot universumet): Indien = 7 bolag i 7 OLIKA grenar — ALLA ensamgrenar: TCS.NS (teknik) · HDFCBANK.NS (finans) · HINDUNILVR.NS (konsument) · RELIANCE.NS (energi) · BHARTIARTL.NS (kommunikation) · SUNPHARMA.NS (hälsa) · LT.NS (industri). Samtliga rapp i oktober (TCS 10-09 tidigast) — svepet hinner FÖRE v172-fönstret.
+SONDEN (NSE/INR, rond 240-mönstret; kvitton /tmp/r248-sond/ — 14 HTML+plain): 14 kandidater (primär + reserv per gren), SAMTLIGA RENA + P/E-bärare GRÖNA; 0 ticker-kollisioner; två släktskap noterade och tillåtna enligt ULVR/HUL-precedensen (NESTLEIND→NESN.SW Schweiz · SIEMENS→SIE.DE/SHL.DE Tyskland).
+VALET (primärer, netto i mdr INR + P/E från färsk quote-panel):
+- U44 teknik: TCS + INFY — IT-konsultduopolet (personalens skala mot margin-ledarskapet; 314 · 13,24) — reserv HCLTECH (181 · 19,01)
+- U45 finans: HDFC + ICICIBANK — Indiens två största privatbanker (561 · 17,25) — reserv SBIN (statlig jätte; 862 · 10,46)
+- U46 konsument: HUL + ITC — FMCG-duopolet (märkesfokus mot portföljbredd från tobaksgrunden; 198 · 16,92) — reserv NESTLEIND (38 · 68,46)
+- U47 energi: RELIANCE + ONGC — vertikalens två ändar (uppströms råolja/gas mot raffinaderi+digital/Jio; 435 · 6,91) — reserv NTPC (elkraften; 278 · 11,41)
+- U48 kommunikation: BHARTI + INDUSTOWER — operatören mot tornen, tjänsteskiktet mot nätets fysiska skikt (72 · 14,01) — reserv TATACOMM (9,5 · 50,39)
+- U49 hälsa: SUNPHARMA + APOLLOHOSP — läkemedlet mot vården, hälsans två ben (Sanofi+EL-mönstret; 21 · 61,22) — reserv CIPLA (34 · 33,55)
+- U50 industri: LT + HAL — civil infrastruktur mot försvar/aero, industriens två kundben (93 · 34,25) — reserv SIEMENS (33 · 96,56)
+EFTER U44-U50: Indien 7→14 bolag, SJU grenar alla ≥2 = SJUNDE kompletta landet (efter UK · Kanada · Spanien · Japan · Tyskland · Frankrike).
+KVD: sond read-only (universumet orört) · kollisionskontroll primär+sekundär · src orörd, inget bygge. Kö: U44 INFY-hämtning (fyra paneler NSE/INR, TCS-precedensen) → U45-U50 enligt bokad ordning → v172-fönstret 10-20.

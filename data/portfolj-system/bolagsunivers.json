@@ -27906,5 +27906,95 @@
    "fcf": []
   },
   "notering": "cellmotiverad duo (Frankrike/fastighet 1→2: URW Westfield-mixed-malls/premium-galleriorna + Klépierre kontinentala regionstäva köpcentrum — handelns fastigheter i två format); kollisionskontroll primär+sekundär GRÖN (LI/LI.PA+namn+URL); EPA/EUR + fastighetsradens fältprofil enl. URW.PA-precedensen (serier.fcf=[] — REIT-FCF dokumenterad i paranoid); kalenderårsbokslut, halvårsrapportering (TTM = jun '26); RAPPDAG est. 2026-10-23 INOM v172-fönstret (SJUNDE bolaget, dagen efter A3M); IFRS-BERGOCHDALBANAN dokumenterad (URW-mönstret): netto [544,7 · 415,2 · 192,7 · 1 098 · 1 299] + TTM 1 367 — FY23-botten = räntechockens nedskrivningar, därefter värderingsvinster (netto-CAGR +46,2 % MED VÄRDERINGSNOT; pretax-M 98,3 > EBIT-M 64,8); HYRESSIDAN = sanningen: oms [1 409 · 1 566 · 1 539 · 1 695 · 1 743] + TTM 1 749 (CAGR +3,63 %; FY23-dip = centeravyttringar; rev-fwd −6,75 % = planerade försäljningar dokumenterat); REIT-FCF [865,8 · 910,4 · 933,8 · 965 · 1 025] + TTM 1 009 STIGANDE FEM RAKA (capex 14 M — FCF-M 56,89 % EXAKT · yield 9,58 %); UTD HÖJD fem raka [1,70→1,90] (5,24 % EXAKT; payout RÄTT BAS EXAKT 536,8/1 367 = 39,27 %; FCF-payout 54,75 % = SIIC-logiken); P/E-familjen TIGHT 7,59/7,60/7,597; fwd P/E 12,67 > trailing (värderingsvinsterna värderas bort — VNA-noten); PEG NULL (basblandning); PS EXAKT · P/B 0,89 (substansrabatt 11 %) · EV-differensen 10,7 % = REIT-JV-strukturen (tolerans 12 % dokumenterad); NETTO-SKULD −7,67 mdr STABIL; D/E 0,69 EXAKT; ROIC-gap −1,49 p (REIT-kapitallogiken); skatt 11,25 % (SIIC); SEGMENTLÅS EJ TILLÄMPLIGT (källan erbjuder ingen segmentstruktur — dokumenterat); EK-serie saknas; alla repliker i paranoid (StockAnalysis EPA 2026-09-25)"
+ },
+ {
+  "ticker": "PUB.PA",
+  "namn": "Publicis Groupe S.A.",
+  "bransch": "kommunikation",
+  "land": "Frankrike",
+  "valuta": "EUR",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/epa/PUB/ (+ /statistics/ + /financials/ + /financials/cash-flow-statement/)",
+    "paranoid": "EPA-PRIMÄRNOTING (underlag S&P Global Market Intelligence via StockAnalysis; senaste handelsdag 2026-09-24, hämtat 2026-09-25 — close 97,62 EUR · 52v +21,29 %; pris ÖVER både 50-MA 97,36 och 200-MA 85,43 = radens TRENDBÄRARE; RSI 47,7; beta 0,60; konsensus PT 112,19 = +14,93 % Buy 16 analytiker); färskhämtning med FYRA paneler; KALENDERÅRSBOKSLUT (31 dec) + KVARTALSRAPPORTERING (TTM = jun '26 efter H1; NÄSTA RAPPORT 2026-10-15 — Q3/9m — PRE-FÖNSTERKLASSEN: v172-fönstret 10-20→11-04, PUB i EL 10-16/PSON 10-12-klassen; H1 '26 rapporterad 07-16 med UPPGRADERAD guidance); SEKTOR-VILLKORET dokumenterat: TEP Teleperformance AVVISAD i hämtningssteget (källans Sector-rad: Industrials — rond 245:s dokumenterade villkor); ALTERNATIV SOND: ILD Iliad 404 hos källan, ETL Eutelsat negativt netto (P/E-bärare röd); PUB vald av TRE GRÖNA kandidater (PUB 24,39 mdr/netto +1,62/P/E 15,21 · MMT M6 · TFI TF1 — alla Communication Services, alla RENA i kollisionskontrollen); pris 97,62 EUR, mcap 24,39 mdr EUR på 0,24972 mdr aktier (replik 0,24972×97,62 = 24,39 — EXAKT på fyra siffror; aktieantal −0,48 % YoY — återköp −179 M TTM, buyback-yield 0,48 %; insiders 7,44 % · institutioner 47,86 % · float 217,14 M), P/E-FAMILJEN: källrad 15,21 · pris/EPS 97,62/6,42 = 15,203 (0,05 % EXAKT) · GAAP 24,39/1,622 = 15,04 (familjen tight); fwd P/E 11,90 ⇒ implied EPS +27 % (AI-tillnäten efter LiveRamp); PEG 1,77 MED REN BAS (fwd P/E/EPS-fwd-3Y = 11,90/6,73 = 1,768 — källraden replikerad, ingen basblandning); PS 1,38 · P/B 2,32 · P/FCF 9,87 · P/OCF 9,04; EV-DEKOMPOSITION NÄSTAN EXAKT: 24,39 + 5,45 − 2,13 = 27,71 mot källans 27,69 (0,07 %); EV/Earnings 17,07 (0,06 %) · EV/Sales 1,57 (0,07 %) · EV/EBIT 10,57 · EV/EBITDA 8,53 · EV/FCF 11,20; NETTO-SKULD −3,32 mdr (−13,30/aktie) — FÖRDUBBLAD från −1,53: LIVERAMP-FÖRVÄRVET $2,2 mdr KONTANT (maj '26, största sedan 2019; kassan 4 166→2 128 HALVERAD; ny EUR 500 M-obligation prisad 09-16 — dokumenterad händelsekedja); GEO-SEX-BENSLÅSET VÅGEN BREDASTE: Europa + Nordamerika + APAC + Latinamerika + MEA + Other = totalen EXAKT (±0 %) i FEM FÖNSTER (TTM+FY25+FY24+FY23+FY22); NA störst 8 906 = 50,5 % av TTM (byråns amerikanska vikt) · Europa 3 568 = 20,2 % · APAC 7,2 % · LatAm 2,6 % · MEA 2,4 % · Other 3 026 = 17,1 % (pass-through/mellanhänder — växer 1 624→3 026, vyn erbjuder sex ben); TILLVÄXTPORTRÄTT: oms [14 196 · 14 802 · 16 030 · 17 399] + TTM 17 650 (CAGR +7,02 % FY22→25; FY22 +20,94 % efterpandemi-topp · FY25 +8,54 %; TTM +1,44 % — takten dalar men nivån rekord); NETTO svävande [1 222 · 1 312 · 1 660 · 1 653] + TTM 1 622 — NETTO FALLAR SVAGT medan EBIT stiger [2 061→2 623] (finansnetto/skatt i LiveRamp-året: skatt 592 M, effektiv 26,69 % — dokumenterat); res-CAGR +10,58 %; BRUTTOMARGINAL STIGANDE FEM RAKA: [42,73 · 43,23 · 43,31 · 45,75 · 46,67] % (moat-dokumentation: medel 44,34 % · spread 3,94 p — prissättningsmakten byggs); kaskad brutto 46,67 > EBIT 14,86 > pretax 12,57 > netto 9,18 (finansnetto nedåt — normal tjänstekaskad); FCF-IDENTITETSLÅSET SEX FÖNSTER EXAKT: OCF − capex = källans FCF-rad FY22–FY25 + TTM ([2 417−198 · 2 048−180 · 2 301−238 · 2 943−250] + [2 697−226] = [2 219 · 1 868 · 2 063 · 2 693] + 2 471); FY23-dip = working capital-reningen, därefter STIGANDE; FCF-M 14,00 % EXAKT · FCF-yield 10,13 % EXAKT (FCF/aktie 9,90); UTDELNING DPS 3,75 (3,84 % EXAKT replik 3,75/97,62; +4,17 % YoY); PAYOUT med RÄTT bas EXAKT (betald TTM 903/netto 1 622 = 55,67 % mot källraden 55,67 — TD-mönstret); utdelningsbelopp [−227 · −83,2 · −726 · −853 · −903 · −903] (FY22-kolumnens −83,2 = källans avstämningsbild, dokumenterad); shareholder yield 4,32 % (utd 3,84 + buyback 0,48); LÖNSAMHET: ROE 16,18 % · ROIC 13,92 % mot WACC 6,68 % (gap +7,24 p — bland vågens bredaste: byråns goodwill-tyngda kapital är likvid och avkastar) · ROCE 16,19 % · räntetäckning 12,73 · D/E 0,52 (5,45/10,50 — 0,2 %) · Debt/EBITDA 1,68 (skuld nedtrappad [6 561→5 695→5 450]) · current 0,94/quick 0,90 · working capital −1,45 mdr (tjänstemodellen: kunden finansierar); skatt 592 M (26,69 %); anställda 115 782 (152 442 EUR oms/anställd · 14 009 EUR netto/anställd); NARRATIV-DATAFAKTA (källans nyhetsflöde, inga köpsignaler): PepsiCo $1,7 mdr-kontot VUNNET 09-2026 (Coke-pitchen lämnad — konfliktregeln bruten i branschen); LiveRamp = data-co-creation/agentic AI; H1 '26: stark organisk tillväxt + marginalökning + UPPGRADERAD guidance; Maurice Lévys appell om europeisk AI-fond; 52v +21,29 % med pris över båda MA = radens trendbärare (mot de flesta senaste inläggens nedgångar); SEGMENTSTRUKTUR: källan erbjuder GEO (sex ben, låst) men ingen verksamhetssegment-panel (Publicis comms/media/sapient/health redovisas i bolagets EPRD-rapportering utanför panelunderlaget — dokumenterat, inget falskt lås); EK-serie saknas (nuvärde 10,50 mdr · 42,12/aktie dokumenterat här); kandidatur: CELLMOTIVERAD duo — Frankrike/kommunikation-cellens NÄTET MOT BUDSKAPET: Orange (nätet/infrastrukturen — telefonin) + Publicis (budskapet — reklambyråsidan: medieplanering, data, AI-agenter); P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 1 622 M EUR > 0 — GRÖN); kommunikation-cellen 1→2, Frankrike 26→27; NÄSTA RAPPORT 2026-10-15 (pre-fönsterklassen)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 97.62,
+  "marknadsKapitalMdr": 24.39,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.0702,
+   "resultatCAGR5ar": 0.1059,
+   "omsattningTillvaxtTTM": 0.0144,
+   "prognosTillvaxt": -0.0064
+  },
+  "lonksamhet": {
+   "roe": 0.1618,
+   "roic": 0.1392,
+   "bruttoMarginal": 0.4667,
+   "ebitMarginal": 0.1486,
+   "nettoMarginal": 0.0919,
+   "fcfMarginal": 0.14
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.52,
+   "rantaTackning": 12.73,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 0.903,
+   "andelUtestande": 0.5567,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": 0.4434,
+   "bruttoMarginalSpread5ar": 0.0394,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 15.21,
+   "pb": 2.32,
+   "evEbit": 10.57,
+   "peg": 1.77,
+   "fcfYield": 0.1013,
+   "egenKapitalMultipl": 2.32
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    14196000000,
+    14802000000,
+    16030000000,
+    17399000000
+   ],
+   "resultat": [
+    1222000000,
+    1312000000,
+    1660000000,
+    1653000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    2219000000,
+    1868000000,
+    2063000000,
+    2693000000
+   ]
+  },
+  "notering": "cellmotiverad duo (Frankrike/kommunikation 1→2: Orange nätet/infrastrukturen + Publicis budskapet/reklambyråsidan — kommunikationens två lager: nätet mot budskapet); SEKTOR-VILLKORET dokumenterat: TEP avvisad (källan: Industrials — rond 245:s villkor), ILD 404, ETL negativt netto; PUB vald av tre gröna (PUB/MMT/TFI); kollisionskontroll primär+sekundär GRÖN; EPA/EUR; kvartalsrapporterande (TTM jun '26); RAPPDAG 2026-10-15 PRE-fönsterklassen (EL/PSON-mönstret; H1 '26 med UPPGRADERAD guidance); GEO-SEX-BENSLÅSET EXAKT i FEM FÖNSTER (NA 50,5 % · Europa 20,2 % · Other/pass-through 17,1 % växande); oms [14 196·14 802·16 030·17 399]+TTM 17 650 (CAGR +7,02 %; FY22 +20,94 %); NETTO svag nedgång [1 660→1 653→1 622] medan EBIT stiger (LiveRamp-årets finansnetto/skatt 26,69 %); BRUTTOMARGINAL STIGANDE FEM RAKA [42,73→46,67] % (moat); FCF-IDENTITETSÅS sex fönster exakt [2 219·1 868·2 063·2 693]+TTM 2 471 (FCF-M 14,00 EXAKT · yield 10,13 EXAKT); DPS 3,75 (3,84 % EXAKT; payout RÄTT BAS EXAKT 903/1 622 = 55,67); NETTO-SKULD FÖRDUBBLAD −3,32 mdr = LIVERAMP $2,2 mdr kontant (kassan halverad; EUR 500 M ny obligation); ROIC-gap +7,24 p; räntetäckning 12,73; PEG 1,77 REN BAS (11,90/6,73); P/E-familjen 15,21/15,04/15,203; 52v +21,29 % över båda MA = trendbäraren (PT +14,93 %); EK-serie saknas (10,50 mdr dokumenterat); alla repliker i paranoid (StockAnalysis EPA 2026-09-25)"
  }
 ]

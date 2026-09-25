@@ -27371,5 +27371,95 @@
    ]
   },
   "notering": "cellmotiverad duo (Spanien/kommunikation 1→2 — SPANIENS SISTA 1-GREN: Cellnex telekom-tornen + A3M broadcasting-innehållet = SPANSKA BT+PEARSON-MÖNSTRET); kollisionskontroll primär+sekundär GRÖN (A3M/A3M.MC+namn; rond 235:s 404-diagnos: symbolen A3M ej ATR); BME/EUR (CLN.MC-precedensen); kalenderårsbokslut, halvårsrapportering (TTM = jun '26); RAPPDAG 2026-10-22 BEKRÄFTAD INOM v172-fönstret (fjärde bolaget; före superdagen 10-29); FY25-NETTOKOLLAPSEN dokumenterad [118,5 · 112,9 · 171,2 · 120,3 · 62,1] + TTM 54,7 (netto-CAGR −18,1 % ÖPPET); omsättningen FLATT (CAGR +1,0 %); brutto-omklassningen FY25 dokumenterad (content-kostnader; 35,7→24,6 %-raden är standardisering); FCF BÄR BÄTTRE BILD [176 · 105 · 137 · 166 · 92] + TTM 124 identitetslåst ±0,01 (FCF-M 13,76 % > netto-M 6,05 % — amorfteringar); UTDNINGEN SÄNKT −42,65 % (FY24-spike 0,68 extrautdelning → 0,39; 6,70 % EXAKT; payout-källrad n/a NULL — FCF-payout 57,24 % bärarbilden); SEGMENTLÅSET INTERNT: Audiovisual 92 % + Radio + elim = källans segmenttotal ±0,4 M sex fönster (begreppsdifferans ~110/år mot revenue dokumenterad — BBVA-modellen); P/E-familjen 24,05/23,96/24,25; PEG NULL (basblandning extrem: källa 4,14 mot fwd-replik 0,60); fwd P/E 12,43 ⇒ implied +93 % konsensusreferens; ROIC-gap +0,17 p knappt; D/E 0,25 EXAKT · NETTOKASSA +69,0 M; universumets minsta euro-bolag — tröskeln passerad enligt rond 235 (över SWP/HFG/ENEA); dagssvängen +10,44 % · RSI 76 · Planeta-kontrollen (float 43 %, institutioner 4,64 %); EK-serie saknas; alla repliker i paranoid (StockAnalysis BME 2026-09-25)"
+ },
+ {
+  "ticker": "IFX.DE",
+  "namn": "Infineon Technologies AG",
+  "bransch": "teknik",
+  "land": "Tyskland",
+  "valuta": "EUR",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/etr/IFX/ (+ /statistics/ + /financials/ + /financials/cash-flow-statement/)",
+    "paranoid": "ETR-PRIMÄRNOTING (underlag S&P Global Market Intelligence via StockAnalysis; senaste handelsdag 2026-09-24, hämtat 2026-09-25 — close 56,26 EUR · −3,94 % dagen; 50/200-dagars MA 59,03/54,92 — under 50-MA över 200-MA; 52v +66,45 % = VÄNDNINGSÅRET; beta 1,93 — HALVLEDARVOLATILITETEN dokumenterad; RSI 46,7; konsensus PT 86,59 = +53,9 % Buy 24 analytiker — STARK konsensus); färskhämtning med FYRA paneler; FISCALÅR OKT–SEP (30 sep; TTM-fönstret = jun '26 efter Q3 — KVARTALSVIS; NÄSTA RAPPORT 2026-11-10 BEKRÄFTAD = FY2026-ÅRSBOKSLUT — SEX DAGAR EFTER v172-FÖNSTRETS SLUT 11-04 (NG/SN 11-05-klassen; kalendernotis); ETR/EUR-PRECEDENSEN (SAP.DE-klassen): pris 56,26 EUR, mcap 72,94 mdr EUR på 1,30 mdr aktier (replik 1,30×56,26 = 73,14 — 0,3 %, aktieavrundning; aktieantal +0,52 % YoY — lätt utspädning, buyback-yield −0,52 %), P/E-FAMILJEN TIGHT PÅ HOGT NIVÅ: källrad 61,13 · GAAP 72,94/1,197 = 60,78 · pris/EPS 56,26/0,92 = 61,15 (0,03 % EXAKT); P/E 61 = HALVLEDARCYKLENS BOTTEN DOKUMENTERAD: netto-toppen FY23 3 108 → botten FY25 997 (−68 %) med TTM-vändning 1 197 — det höga P/E:t är deponerat lågt netto, INTE strukturell värdering (fwd P/E 22,38 ⇒ implied EPS +173 % — vändningskonsensusens storlek, referens ALDRIG löfte); PEG 0,56 MED DOKUMENTERAD BAS: fwd 22,38/konsensus 3Y EPS 40,0 % = 0,5595 ≈ 0,56 EXAKT (TD-precedensen — fältet SATT); PS 4,68 EXAKT · P/B 4,05 EXAKT (72,94/18,02) · P/FCF 44,31 · P/OCF 21,69; EV-DEKOMPOSITION EXAKT: 72,94 + 7,24 − 1,66 = 78,52 mot källans 78,53 (0,01 %); EV/Earnings 65,60 (0,24 %) · EV/Sales 5,04 EXAKT · EV/EBIT 30,64 · EV/EBITDA 18,30; NETTO-SKULD −5,59 mdr (−4,31/aktie — investeringsprogrammets år; serien [−2 994 · −2 331 · −1 524 · −2 967 · −5 114] bruten FY24→FY25 av fabriksexpansionerna); DIVISIONSBILDEN (fyra ben + Other [mar-'26-TTM · FY25 · FY24 · FY23 · FY22 · FY21] M EUR): Automotive [7 442 · 7 402 · 7 716 · 8 242 · 6 516 · 4 841] (STÖRST 49 % — bilens elektrifiering: siC-mosfet-bryggor) + Green Industrial Power [1 647 · 1 631 · 1 934 · 2 205 · 1 790 · 1 542] (sol/vind/drivteknik — korrigeringen djupast här) + Power & Sensor Systems [4 673 · 4 208 · 3 795 · 3 798 · 4 070 · 3 268] (VÄNDER FÖRST — AI-serverströmförsörjningen) + Connected Secure Systems [1 358 · 1 418 · 1 506 · 2 046 · 1 822 · 1 397] (IoT-säkerhet — lagret tömts) — DIVISIONSDIFFERANSEN DOKUMENTERAD [+17 · +17 · +8 · −18 · −20 · −12] (max 0,14 %, källans avrundning/eliminering); TVÅ TTM-FÖNSTER DOKUMENTERADE: huvudtabellen jun-'26 (oms 15 591) mot divisionstabellen mar-'26 (15 121) — källan uppdaterar divisioner trappstegsvis; CYKELPORTRÄTTET: omsättning [11 060 · 14 218 · 16 309 · 14 955 · 14 662] + TTM 15 591 (boomen +28,6/+14,7 % → korrigeringen −8,3/−2,0 % → TTM +6,5 % vändning; CAGR +1,03 % FY22→25 — CYKELNS SÅGTAND, dokumenterad) · netto [1 143 · 2 150 · 3 108 · 1 272 · 997] + TTM 1 197 (netto-CAGR −22,6 % — topp-till-botten dokumenterat) · EPS [0,88 · 1,64 · 2,38 · 0,97 · 0,77] + TTM 0,92 · bruttomarginal [38,67 · 43,19 · 47,15 · 43,50 · 41,06] % FY21–25 + TTM 41,13 (medel 42,7 %, spridning 8,48 pp — cykeln syns i bruttoledet); FCF-SPEGELN MED BOTTNEN: [1 797 · 1 927 · 1 221 · 348 · 1 417] + TTM 1 646 — identitetslåst exakt sex fönster (OCF−capex: [3 065−1 268 · 3 980−2 053 · 3 960−2 739 · 2 780−2 432 · 3 217−1 800 · 3 363−1 717]); FY24-BOTTNEN 348 = capex-toppen 2 739 (Kulim/Graz-fabrikerna) medan OCF höll 2 780; TTM-återhämtningen 1 646 på capex-nedgång 1 717; FCF-M 10,56 % · FCF-yield 2,26 % EXAKT; UTDELNINGEN FRUSEN på 0,35 EUR genom botten (current 0,35, 0,62 % EXAKT replik 0,35/56,26; payout-källrad 37,62 % mot replik 0,35/0,92 = 38,0 % — 0,8 %); utdelningsbeloppen [−286 · −351 · −417 · −456 · −456] TTM −456 växer med aktieantalet; återköpen små och oregelbundna [−39 · −39 · −272 · −44 · −226]; Net Debt Issued TTM +1 715 (lånar för programmet); LÖNSAMHET (BOTTNENS NATUR DOKUMENTERAD): ROE 7,02 % · ROIC 7,95 % mot WACC 13,81 % (gap −5,86 p — NEGATIVT under cykelbotten: kapitalvärdeskapandet är cykelberoende, ej strukturellt; fwd-implied EPS +173 % = konsensusvägen tillbak, referens) · räntetäckning 8,35 · D/E 0,40 EXAKT (7,24/18,02) · current 1,73 · skatt 26,43 % · institutionsägande 47,12 %; kaskaden TTM: netto-M 7,68 % EXAKT (financials-TTM-raden; statistics-veget 7,77 dokumenterad annan bas) < pretax-M 10,63 % < EBIT-M 16,34 %; balansserier M EUR [FY21–FY25]: kassa [3 922 · 3 717 · 3 590 · 2 201 · 2 102] nu 1 656 (KASSAGLIDNINGEN −446 M dokumenterad — fabriksåren betalar) · skuld [6 916 · 6 048 · 5 114 · 5 168 · 7 216] nu 7 241; Altman beräknas ej av källan; kandidatur: CELLMOTIVERAD duo enligt U30-mönstret — Tyskland/teknik-cellens (TYSKLANDS SISTA 1-GREN) två ben: SAP (enterprise-mjukvaran: abonnemangscykel, bruttomarginal ~70-tals%, stabilt) + Infineon (halvledare: kapitalcykel med botten och topp, bruttomarginal 39–47 % cyklande): tyska teknikens två hastigheter — Panasonic+Tokyo Electron-klassen; P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 1 197 M EUR > 0 — GRÖN trots bottnen; Sony/Honda-doktrinen); teknik-cellen 1→2, Tyskland 23→24 — TYSKLAND-KOMPLETT EFTER INLÄGGET (femte landet); NÄSTA RAPPORT 2026-11-10 (FY26-årsbokslut — sex dagar efter v172-fönstret)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 56.26,
+  "marknadsKapitalMdr": 72.94,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.0103,
+   "resultatCAGR5ar": -0.226,
+   "omsattningTillvaxtTTM": 0.0652,
+   "prognosTillvaxt": 0.1637
+  },
+  "lonksamhet": {
+   "roe": 0.0702,
+   "roic": 0.0795,
+   "bruttoMarginal": 0.4113,
+   "ebitMarginal": 0.1634,
+   "nettoMarginal": 0.0768,
+   "fcfMarginal": 0.1056
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.4,
+   "rantaTackning": 8.35,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 0.226,
+   "andelUtestande": 0.3762,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": 0.4271,
+   "bruttoMarginalSpread5ar": 0.0848,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 61.13,
+   "pb": 4.05,
+   "evEbit": 30.64,
+   "peg": 0.56,
+   "fcfYield": 0.0226,
+   "egenKapitalMultipl": 4.05
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    14218000000,
+    16309000000,
+    14955000000,
+    14662000000
+   ],
+   "resultat": [
+    2150000000,
+    3108000000,
+    1272000000,
+    997000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    1927000000,
+    1221000000,
+    348000000,
+    1417000000
+   ]
+  },
+  "notering": "cellmotiverad duo (Tyskland/teknik 1→2 — TYSKLANDS SISTA 1-GREN: SAP enterprise-mjukvarans abonnemangscykel + Infineon halvledarnas kapitalcykel — tyska teknikens två ben, Panasonic+Tokyo Electron-klassen); kollisionskontroll primär+sekundär GRÖN (IFX/IFX.DE+namn+URL); ETR/EUR (SAP.DE-precedensen); FISCALÅR OKT–SEP (TTM = jun '26; Q3); RAPPDAG 2026-11-10 BEKRÄFTAD = FY26-årsbokslut — sex dagar efter v172-fönstret (kalendernotis); P/E 61 = HALVLEDARCYKLENS BOTTEN DOKUMENTERAD (netto [1 143 · 2 150 · 3 108 · 1 272 · 997] + TTM 1 197: topp→botten −68 %, TTM-vändning; netto-CAGR −22,6 % öppet); oms-CAGR +1,03 % (sågtanden +28,6→−8,3→+6,5); bruttomarginal 38,7→47,2→41,1 % (cykeln i bruttoledet); DIVISIONSBILDEN: Automotive 49 % störst (SiC-bryggor) + Green IP (korrigeringen djupast) + PSS (vänder först — AI-strömförsörjning) + CSS (IoT-lagret tömt) — differansen [+17 · +17 · +8 · −18 · −20 · −12] max 0,14 % dokumenterad + två TTM-fönster (jun 15 591 / mar 15 121); FCF med bottnen [1 797 · 1 927 · 1 221 · 348 · 1 417] + TTM 1 646 identitetslåst exakt sex fönster (FY24-botten 348 = capex-toppen 2 739 Kulim/Graz); UTDDELNINGEN FRUSEN 0,35 EUR (0,62 % EXAKT; payout 37,62); PEG 0,56 MED DOKUMENTERAD BAS (fwd 22,38/40,0 — TD-precedensen); P/E-familjen 61,13/60,78/61,15; D/E 0,40 EXAKT · netto-skuld −5,59 mdr (fabriksåren) · kassaglidning −446 M dokumenterad; ROIC-gap −5,86 p (bottennatur, ej strukturell — fwd-implied +173 % konsensusreferens); beta 1,93 · 52v +66,45 %; EK-serie saknas; alla repliker i paranoid (StockAnalysis ETR 2026-09-25)"
  }
 ]

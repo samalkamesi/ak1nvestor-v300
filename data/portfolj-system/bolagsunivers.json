@@ -27461,5 +27461,95 @@
    ]
   },
   "notering": "cellmotiverad duo (Tyskland/teknik 1→2 — TYSKLANDS SISTA 1-GREN: SAP enterprise-mjukvarans abonnemangscykel + Infineon halvledarnas kapitalcykel — tyska teknikens två ben, Panasonic+Tokyo Electron-klassen); kollisionskontroll primär+sekundär GRÖN (IFX/IFX.DE+namn+URL); ETR/EUR (SAP.DE-precedensen); FISCALÅR OKT–SEP (TTM = jun '26; Q3); RAPPDAG 2026-11-10 BEKRÄFTAD = FY26-årsbokslut — sex dagar efter v172-fönstret (kalendernotis); P/E 61 = HALVLEDARCYKLENS BOTTEN DOKUMENTERAD (netto [1 143 · 2 150 · 3 108 · 1 272 · 997] + TTM 1 197: topp→botten −68 %, TTM-vändning; netto-CAGR −22,6 % öppet); oms-CAGR +1,03 % (sågtanden +28,6→−8,3→+6,5); bruttomarginal 38,7→47,2→41,1 % (cykeln i bruttoledet); DIVISIONSBILDEN: Automotive 49 % störst (SiC-bryggor) + Green IP (korrigeringen djupast) + PSS (vänder först — AI-strömförsörjning) + CSS (IoT-lagret tömt) — differansen [+17 · +17 · +8 · −18 · −20 · −12] max 0,14 % dokumenterad + två TTM-fönster (jun 15 591 / mar 15 121); FCF med bottnen [1 797 · 1 927 · 1 221 · 348 · 1 417] + TTM 1 646 identitetslåst exakt sex fönster (FY24-botten 348 = capex-toppen 2 739 Kulim/Graz); UTDDELNINGEN FRUSEN 0,35 EUR (0,62 % EXAKT; payout 37,62); PEG 0,56 MED DOKUMENTERAD BAS (fwd 22,38/40,0 — TD-precedensen); P/E-familjen 61,13/60,78/61,15; D/E 0,40 EXAKT · netto-skuld −5,59 mdr (fabriksåren) · kassaglidning −446 M dokumenterad; ROIC-gap −5,86 p (bottennatur, ej strukturell — fwd-implied +173 % konsensusreferens); beta 1,93 · 52v +66,45 %; EK-serie saknas; alla repliker i paranoid (StockAnalysis ETR 2026-09-25)"
+ },
+ {
+  "ticker": "SAF.PA",
+  "namn": "Safran S.A.",
+  "bransch": "industri",
+  "land": "Frankrike",
+  "valuta": "EUR",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/epa/SAF/ (+ /statistics/ + /financials/ + /financials/cash-flow-statement/)",
+    "paranoid": "EPA-PRIMÄRNOTING (underlag S&P Global Market Intelligence via StockAnalysis; senaste handelsdag 2026-09-24, hämtat 2026-09-25 — close 334,30 EUR; 50/200-dagars MA 339,39/315,94 — strax under 50-MA över 200-MA; 52v +14,64 %; beta 0,96; konsensus PT 382,86 = +14,5 % Buy 22 analytiker); färskhämtning med FYRA paneler; KALENDERÅRSBOKSLUT (31 dec; TTM = jun '26 efter H1 — HALVÅRSRAPPORTERING; NÄSTA RAPPORT 2027-02-09 BEKRÄFTAD = årsbokslut — UTANFÖR v172-fönstret); EPA/EUR-PRECEDENSEN (AIR.PA/TTE.PA-klassen) — UNIVERSUMETS 300:E BOLAG: pris 334,30 EUR, mcap 138,58 mdr EUR på 0,41454 mdr aktier (replik 0,41454×334,30 = 138,58 — EXAKT på fyra siffror), P/E-FAMILJEN: källrad 35,90 · GAAP 138,58/3,882 = 35,72 · pris/EPS 334,30/9,31 = 35,897 (0,008 % EXAKT); EPS-raden 9,31 mot beräknad netto/aktier 9,366 — aktieavrundning; fwd P/E 28,58 ⇒ implied EPS +26 % (flygets konsensus, referens); PEG-KÄLLRAD 1,34 MED BASBLANDNING (kälrbas 26,8 % mot konsensus 3Y EPS 24,84; fwd-replik 28,58/24,84 = 1,15; trailing 1,45 — ingen ren) ⇒ fältet NULL (SN.L-precedensen); PS 4,13 EXAKT · P/B 9,16 EXAKT (138,58/15,13) · P/FCF 26,49 · P/OCF 20,70; EV-DEKOMPOSITION: 138,58 + 5,107 − 6,667 = 137,02 mot källans 137,64 (0,45 % — pension/NCI-differens, dokumenterad); EV < mcap = NETTOKASSA +1,56 mdr (+3,77/aktie); EV/Earnings 35,46 (0,04 %) · EV/Sales 4,10 EXAKT · EV/EBIT 27,96 · EV/EBITDA 21,12; NETTO-SERIEN ENGÅNGSPOSTSBUREN DOKUMENTERAD: [43 · −2 459 · 3 444 · −667 · 7 177] + TTM 3 882 — FY22:s −2,5 mdr = ryska exponerings-/valutaderivatposterna; FY24:s −667 = artikeljusteringen; FY25:s 7 177 topp (ev. engångsdele); TTM 3 882 = normaliserat löpande; RESULTAT-CAGR = NULL (ej definierbar ur negativ FY22-bas — dokumenterat); marginal-raderna bär samma ([0,28 · −12,60 · 14,56 · −2,41 · 23,01] % profit-M); OMSÄTTNINGEN DÄREMOT RAK: [15 293 · 19 523 · 23 651 · 27 716 · 31 189] + TTM 33 569 (CAGR +16,90 % FY22→25; flygets återhämtningsmotor: +27,7 → +21,1 → +17,2 → +12,5 → TTM +7,6); FCF = SERIENS SANNING: [1 994 · 3 009 · 3 447 · 3 689 · 4 483] + TTM 5 232 — STIGANDE SEX RAKA ÅR, identitetslåst exakt (OCF−capex: [2 436−442 · 3 545−536 · 4 270−823 · 4 733−1 044 · 5 721−1 238 · 6 695−1 463]); FCF-M 15,59 % EXAKT > netto-M 11,56 % EXAKT — CFM/LEAP-flottans eftermarknadsservice syns i kassan, inte i bokförda engångsposter; FCF-yield 3,78 % · FCF-CAGR +14,2 %; bruttomarginal [49,4 · 47,0 · 47,4 · 48,6 · 48,0] % (medel 48,1 %, spridning 2,5 pp — motorernas moat); DIVISIONSBILDEN (tre ben [TTM · FY25 · FY24 · FY23 · FY22 · FY21] M EUR): Aerospace Propulsion [17 305 · 15 668 · 13 652 · 11 876 · 9 506 · 7 439] (52 % — motorerna) + Aircraft Equipment, Defence Aerosystems [13 625 · 12 302 · 10 618 · 8 835 · 7 535 · 6 325] (41 %) + Aircraft Interiors [3 188 · 3 349 · 3 037 · 2 477 · 1 978 · 1 475] (9,5 %) — DIVISIONSDIFFERANSEN DOKUMENTERAD [+549 · +130 · −409 · −463 · −504 · +106] (max 2,6 % — källans elimineringsvy strider mot koncerntotalen, TD/BBVA-klassen; inget falskt exakthetslås); TRE ben ALLA VÄXANDE varje år; UTDELNING + ÅTERKÖP: DPS current 3,35 EUR (1,00 % EXAKT replik 3,35/334,30; +15,52 % senaste); payout-källrad 35,81 % (replik 3,35/9,31 = 35,98 % — 0,5 %); utdelningsbelopp [−183 · −213 · −564 · −911 · −1 216] TTM −1 390 (mer än fördubblad på två år) + ÅTERKÖP [−73 · −270 · −1 535 · −1 320 · −1 358] TTM −1 564 — återköp och utdelning lika stora ben; aktieantal +0,97 % trots köpen (optionsprogram — dokumenterat); LÖNSAMHET — ELITEN: ROE 27,49 % · ROIC 23,59 % mot WACC 9,23 % (gap +14,36 p — universumets bredaste; installationsoch eftermarknads-moaten) · räntetäckning 41,77 · D/E 0,34 (0,7 %) · Debt/EBITDA 0,81 · skatt 31,55 % · institutionsägande 38,25 %; kaskaden TTM: netto-M 11,56 % EXAKT < EBIT-M 13,94 % < brutto-M 46,81 % (pretax-M 17,30 % över EBIT — ÖVRIGA INTÄKTER, ev. räntenetto på nettokassan — dokumenterad); balansserier M EUR [FY21–FY25]: kassa [5 247 · 6 687 · 6 681 · 6 519 · 6 848] nu 6 667 · skuld [7 149 · 6 975 · 6 599 · 5 078 · 5 326] nu 5 107 · netto [−1 902 · −288 · +82 · +1 441 · +1 522] nu +1 562 (nettokassa-eran sedan FY23); kandidatur: CELLMOTIVERAD duo enligt U30-mönstret — Frankrike/industri-cellens två ben: Airbus (flygkroppen: volymcykeln, orderbacklog) + Safran (motorerna: CFM/LEAP-duopol med GE, eftermarknadens installationsbas — varje leverad motor blir 20 års service): flygets vertikal i en cell; P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 3 882 M EUR > 0 — GRÖN; Sony/Honda-doktrinen); industri-cellen 1→2, Frankrike 26→27 — UNIVERSUMETS 300:E BOLAG (MILESTONE: dataset-djup-spårets jämna hundrataal); NÄSTA RAPPORT 2027-02-09 (årsbokslut — utanför v172)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 334.3,
+  "marknadsKapitalMdr": 138.58,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.169,
+   "resultatCAGR5ar": null,
+   "omsattningTillvaxtTTM": 0.0763,
+   "prognosTillvaxt": 0.1215
+  },
+  "lonksamhet": {
+   "roe": 0.2749,
+   "roic": 0.2359,
+   "bruttoMarginal": 0.4681,
+   "ebitMarginal": 0.1394,
+   "nettoMarginal": 0.1156,
+   "fcfMarginal": 0.1559
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.34,
+   "rantaTackning": 41.77,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 1.564,
+   "andelUtestande": 0.3581,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": 0.4808,
+   "bruttoMarginalSpread5ar": 0.0247,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 35.9,
+   "pb": 9.16,
+   "evEbit": 27.96,
+   "peg": null,
+   "fcfYield": 0.0378,
+   "egenKapitalMultipl": 9.16
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    19523000000,
+    23651000000,
+    27716000000,
+    31189000000
+   ],
+   "resultat": [
+    -2459000000,
+    3444000000,
+    -667000000,
+    7177000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    3009000000,
+    3447000000,
+    3689000000,
+    4483000000
+   ]
+  },
+  "notering": "cellmotiverad duo (Frankrike/industri 1→2: Airbus flygkroppens volymcykel + Safran motorernas eftermarknads-moat — CFM/LEAP-duopolet med GE; flygets vertikal i en cell); kollisionskontroll primär+sekundär GRÖN (SAF/SAF.PA+namn+URL); EPA/EUR (AIR.PA-precedensen); kalenderårsbokslut, halvårsrapportering (TTM = jun '26); RAPPDAG 2027-02-09 (årsbokslut, utanför v172); NETTO-SERIEN ENGÅNGSPOSTSBUREN DOKUMENTERAD [43 · −2 459 · 3 444 · −667 · 7 177] + TTM 3 882 (FY22 ryska/valutaposter; FY24 justering; FY25 topp; TTM normaliserat) — RESULTAT-CAGR NULL (negativ bas); OMSÄTTNINGEN RAK (CAGR +16,90 %; +27,7→+7,6); FCF = SERIENS SANNING: stigande SEX RAKA [1 994→5 232] identitetslåst exakt; FCF-M 15,59 > netto-M 11,56 (båda EXAKTA); bruttomarginal ~48 %; DIVISIONSBILDEN tre ben (Propulsion 52 · Equipment 41 · Interiors 9,5) — differansen [+549 · +130 · −409 · −463 · −504 · +106] max 2,6 % dokumenterad (TD/BBVA-klassen); P/E-familjen 35,90/35,72/35,897 (0,008 %!); PEG NULL (basblandning); PS/P/B EXAKTA · EV 0,45 % (pension/NCI dokumenterad) · NETTOKASSA +1,56 mdr; DPS 3,35 (1,00 % EXAKT; +15,5 %) + återköp −1,6 mdr TTM (lika stora ben; aktieantal +0,97 % pga optionsprogram); ROIC-gap +14,36 p — UNIVERSUMETS BREDASTE; räntetäckning 41,77; pretax-M över EBIT-M (räntenetto, dokumenterad); EK-serie saknas; alla repliker i paranoid (StockAnalysis EPA 2026-09-25)"
  }
 ]

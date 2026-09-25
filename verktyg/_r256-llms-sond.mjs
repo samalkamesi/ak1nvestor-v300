@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+const t = fs.readFileSync('public/llms.txt', 'utf8');
+const rader = t.split('\n');
+console.log('== fraser med 310 ==');
+rader.forEach((r, i) => { if (/310/.test(r)) console.log(`${i + 1}: ${r.slice(0, 160)}`); });
+console.log('\n== fraser med 260 ==');
+rader.forEach((r, i) => { if (/260/.test(r)) console.log(`${i + 1}: ${r.slice(0, 160)}`); });
+console.log('\n== industri-sektionen ==');
+const start = rader.findIndex((r) => r.includes('dataset/industri'));
+rader.slice(Math.max(0, start - 1), start + 4).forEach((r, i) => console.log(`${start + i}: ${r.slice(0, 220)}`));

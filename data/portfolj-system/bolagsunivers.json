@@ -25036,5 +25036,95 @@
    ]
   },
   "notering": "kandidat ur BCE-OMG24 §10:s EGNA Spanien-alternativ (källvändningen skedde: TTM>0 — TEF förblev P/E-död men alternativet lever; P/E-bärare kontrollerad före leverans); BME-primär EUR; VÄNDNINGSBROTT FY2025 (tre nedskrivningsår ⇒ första positiva; TTM-momentum +518) ⇒ resultatCAGR NULL (negativa basår — Sony/Honda-aritmetiken; fältet återtas vid konsekutiv positiv bas) medan omsCAGR rak +6,90 % organisk; P/E 21,96 på källans JUSTERADE bas (nedskrivningar ur — GAAP-replik 27,75 dokumenterad); D/E 3,69 + Altman 1,01 djup varningszon som datafakta med TORNBOLAGSMETODNOT (kontraktsbundna kassaflöden finansierar skuldbygget; ROIC missvisande för modellen); payout 28,10 % på justerad bas (GAAP-replik 55,6 % not); nyemissioner 2 senaste 5 åren (kapitalhöjningar 2020-2021-perioden); EK-serie saknas — serier.egetKapital tomt; rappdag Q3 est. slutet oktober = v172-könotis; alla repliker i paranoid (StockAnalysis BME 2026-09-25)"
+ },
+ {
+  "ticker": "REE.MC",
+  "namn": "Redeia Corporación, S.A.",
+  "bransch": "energi",
+  "land": "Spanien",
+  "valuta": "EUR",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/bme/REE/ (+ /statistics/ + /financials/ + /financials/?p=cashFlow)",
+    "paranoid": "BME-PRIMÄRNOTING i EUR (CLN.MC/ITX.MC/IBE.MC/SAN.MC-precedensens Madrid-rad; underlag S&P Global Market Intelligence + Fiscal.ai via StockAnalysis; intradag 2026-09-25 delayed +0,31 %; färshämtning direkt med cache-bypass + kompletterande FCF-panelhämtning vid oläsbar första tabell): pris 19,28 EUR (52v 16,17–20,00 · beta 0,51 — reglerad koncessionsprofil), mcap 13,36 mdr EUR på 694,2 M aktier (replik 694,2 × 19,28 = 13,39 — 0,2 %), P/E 18,07 ur källan på ATTRIBUTABLE-EPS-basen (Redeia bär minoritetsintressen i nätfilialer — total-nettorepliken 19,28/(973/694,2) = 13,76 dokumenterad med minoritetsnot; Rogers-mönstret omvänt: där låg källan över totalnettot, här under), mot forward P/E 16,68 ⇒ prognosTillväxt +8,33 % (trailing/fwd-modellen, MUFG-konventionen; spår-PEG 18,07/8,33 = 2,17 mot källans PEG 5,34 på 3-års, kalibreringsnot), P/B 2,29 · EV/EBIT 8,83 · PS 5,23 (replik 13 360/2 556 = 5,225 = 0,1 %), ROE 12,46 % · ROIC 4,93 % under WACC 6,18 % (KONCESSIONSMETODNOT: reglerad nättillgångsbas — avkastningen regleras mot tillgångsvärde, ROIC speglar ej konkurrensförmåga utan koncessionsformeln; dokumenterat) · brutto 100 % METODNOT (nätföretag: intäkten ÄR nättarifferingen — ingen kostnadssida i bruttoledet; fältet bärs formellt med not) · EBIT-marginal 42,16 % (nätleverantörsstrukturen) · netto-marginal 38,07 % EXAKT replik (973/2 556) · FCF-yield EXAKT replik (436/13 360 = 3,26 % = 1/P·FCF 1/30,66); balans: D/E 1,58 · räntetäckning 2,50 · Altman 1,67 (KÄLLANS VARNINGSZON — KONCESSIONSBALANSMETODNOT: reglerad kapitalbas med statlig koncessionslogik; redovisas som datafakta med not, Piotroski 5) · kassa 0,40 mdr · skuld 8,22 mdr · NETTOSKULD 7,82 mdr · EK 5,83 mdr; utdelning 1,1594 EUR/aktie (6,01 % — reglerad koncessionsutdelning) ⇒ senasteArMdr 805 (1,1594 × 694,2) med källans payout 83,63 % (totalnetto-replik 82,7 % ✓ 1,1 %); FY-SERIEN dec-slutande (M EUR): oms [2 412 · 2 272 · 2 449 · 2 536] · netto [792 · 679 · 864 · 930] · FCF [1 058 · 650 · 622 · 428] — STABIL REGLERAD PROFIL: samtliga FY positiva utan brott (TELUS/CNR-klassen — vågens tredje brottsfria rad) med rak 3-årig CAGR FY22→FY25 (oms +1,68 % · netto +5,55 % — reglerad prisbas, ingen cykel); FCF-nedgången 1 058→428 = nätinvesteringsexpansionen (koncessionskapitalökningen dokumenterad som investeringscykel i metodnoten); analytikerläge saknas i panelutdraget — ingen målkurs förs in; NÄSTA RAPPORT Q3 2026 (est. tidigt november — v172-könotis v45); kandidatur: S2-U1-BCE-UTOKNING-OMG24 §10:s Spanien-alternativets ANDRANAMN («Spanien: Cellnex/Redeia?» — Cellnex togs U10, Redeia kompletterar koordinatparen); P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 973 M EUR > 0; Sony/Honda-doktrinen); kollisionskontroll exakt-match GRÖN (r206-sonden); Utilities ⇒ energi-cellen (25→26 bolag), Spanien 4→5 (landets femte bolag: konsument · energi ×2 · finans · kommunikation)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 19.28,
+  "marknadsKapitalMdr": 13.36,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.01685098872481605,
+   "resultatCAGR5ar": 0.05500031423136997,
+   "omsattningTillvaxtTTM": 0.05,
+   "prognosTillvaxt": 0.08333333333333326
+  },
+  "lonksamhet": {
+   "roe": 0.1246,
+   "roic": 0.0493,
+   "bruttoMarginal": 1,
+   "ebitMarginal": 0.4216,
+   "nettoMarginal": 0.3807,
+   "fcfMarginal": 0.1705790297339593
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 1.58,
+   "rantaTackning": 2.5,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 0.805,
+   "andelUtestande": 0.8363,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 18.07,
+   "pb": 2.29,
+   "evEbit": 8.83,
+   "peg": 2.1684000000000023,
+   "fcfYield": 0.03263473053892216,
+   "egenKapitalMultipl": 2.29
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    2412000000,
+    2272000000,
+    2449000000,
+    2536000000
+   ],
+   "resultat": [
+    792000000,
+    679000000,
+    864000000,
+    930000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    1058000000,
+    650000000,
+    622000000,
+    428000000
+   ]
+  },
+  "notering": "kandidat ur BCE-OMG24 §10:s Spanien-alternativ (andraranamnet — Cellnex U10 + Redeia U11 = koordinatparen komplett; P/E-bärare kontrollerad före leverans); BME-primär EUR; STABIL BROTTSFRI REGLERAD SERIE (vågens tredje — rak CAGR oms +1,68 % · netto +5,55 %); P/E 18,07 på källans ATTRIBUTABLE-bas (minoritetsnot; totalnetto-replik 13,76 dokumenterad — Rogers-mönstret omvänt); KONCESSIONSMETODNOTER: ROIC under WACC speglar koncessionsformeln (ej konkurrenskraft), brutto 100 % = nättariffering utan kostnadssida (fältet med not), Altman 1,67 varningszon = reglerad kapitalbas, FCF-nedgång = nätinvesteringscykeln; utdelning 6,01 % reglerad med payout 83,63 %; EK-serie saknas — serier.egetKapital tomt; rappdag Q3 est. tidigt november = v172-könotis; alla repliker i paranoid (StockAnalysis BME 2026-09-25)"
  }
 ]

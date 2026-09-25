@@ -24222,5 +24222,99 @@
    ]
   },
   "notering": "kandidat ur S2-U3-OMG20-komplementets fält (P/E-bärande Japan/konsument); COVID-brott FY2022 (parkstängningar) ⇒ CAGR-fält på 3-årig konsekutiv bas FY2023→FY2026, de absurda 4-års-CAGR:arna dokumenterade i paranoid; prognosTillväxt NEGATIV (−1,8 %, forward P/E 36,38 > trailing 35,72) redovisas öppet ⇒ peg NULL (meningslös på negativ prognos; källans 3-års PEG 8,87 som kalibreringsnot i paranoid); ROE = dokumenterad replik netto/EK (källans ROE-rad n/a, nivåkalibrerad mot ROCE 12,21 %); EK-serie saknas (balance-sheet ej hämtad) — serier.egetKapital tomt; rapportdag 2026-10-29 (Q2 FY2027) = v172-könotis; alla repliker och källpaneler i paranoid (StockAnalysis TYO 2026-09-25)"
+ },
+ {
+  "ticker": "6752.T",
+  "namn": "Panasonic Holdings Corporation",
+  "bransch": "teknik",
+  "land": "Japan",
+  "valuta": "JPY",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/tyo/6752/ (+ /statistics/ + /financials/)",
+    "paranoid": "TYO-PRIMÄRNOTING i JPY (8035.T/8306.T/4452.T-precedensen; underlag S&P Global Market Intelligence + Financial Modeling Prep via StockAnalysis; intradag 2026-09-25 09:46 JST delayed +0,20 %; färshämtning direkt med cache-bypass): pris 4 517,00 JPY (prev close 4 508; day range 4 435–4 525; 52v 1 553–4 982 med +178,36 % på 52 veckor — AI/datacenter-rally), mcap 10,53 T JPY på 2,33 mdr aktier (replik 2,33 × 4 517 = 10 525 — 0,05 % ✓; aktiebasen +0,00 % YoY = inga nyemissioner), P/E 41,57 (aktiebasreplik 4 517/108,45 = 41,65 = 0,2 % spridning; EPS-identitet 108,45 × 2,33 = 252,7 mdr mot TTM-netto 253,2 ✓ 0,2 %) mot forward P/E 20,29 ⇒ prognosTillväxt +104,98 % (trailing/fwd-modellen, MUFG-konventionen — konsensus väntar EPS nästan dubblad framåt på AI-infrastruktur/datacenter-effekt, Q1 FY2027-transkriptet bekräftar uppwards reviderade prognoser; spår-PEG 41,57/104,98 = 0,40 mot källans PEG 0,49 på 3-års som kalibreringsnot), P/B 1,89 EXAKT replik på källans bas mcap/EK (10 530/5 570 = 1,890; BVPS-raden 2 315,33 bär vägt aktietal), EV/EBIT 19,28 (EV 11,13 T; EV-replik mcap+nettoskuld = 10,97 T — 1,5 % minority-skillnad, dokumenterad), PS 1,29 EXAKT (10 530/8 170,9), ROE 5,25 % ur källans panel (replik netto/EK(TTM) = 253,2/5 570 = 4,55 % — källan bär annat EK-underlag, sannolikt snitt-EK; dokumenterad skillnad), ROIC 6,80 % · ROCE 7,49 % · WACC 7,99 % · räntetäckning 14,77 · D/E 0,28 EXAKT replik (1 553,99/5 570 = 0,279) · beta 0,85 · Altman 2,23 (UNDER 3 — källans egen flagga för förhöjd risk; redovisas öppet som datafakta) · Piotroski 7; balans: kassa 1,12 T · skuld 1,55 T · NETTOSKULD 436,61 mdr (−186,99/aktie) · EK 5,57 T · WC 1,19 T; TTM JPY mdr: rev 8 170,9 (−0,76 %) · netto 253,2 (−31,0 %) · OCF 816,0 · capex −579,0 · FCF 237,0 med FCF-yield 2,25 % EXAKT replik (237/10 530) och P/FCF 44,4; marginaler: brutto 31,80 · EBIT 6,77 EXAKT replik (553,0/8 170,9) · netto 3,10 EXAKT replik (253,2/8 170,9) · FCF 2,90 EXAKT (237,0/8 170,9); utdelning 54,00 JPY/aktie (1,20 %) ⇒ senasteArMdr 125,8 (54 × 2,33) med källans payout 36,88 % (replik 54/108,45 = 49,8 % på TTM-EPS — källans bas annat fönster, dokumenterad) och FCF-payout 46,31 % · utdelningstillväxt −2,08 % YoY · buyback-yield −0,00 %; ex-dividendag 2026-09-29; FY-SERIEN mars-slutande (mdr JPY): oms [7 388,8 · 8 378,9 · 8 496,4 · 8 458,2 · 8 048,7] · netto [255,3 · 265,5 · 444,0 · 366,2 · 189,5] · FCF [18,7 · 231,4 · 319,4 · 23,8 · 1,3] — STRUKTURBROTT FY2026: Automotive-segmentet DEKONSOLIDERAT (segmentraden försvinner FY26; Q4-FY26-transkriptet: 'Sales and profit declined in FY 2026 due to restructuring and Automotive deconsolidation') ⇒ FY26-dipen netto 189,5 (−48,2 %) bär engångs-/strukturposter och omsättningstillbakagången är delvis avknoppning, ej organisk — CAGR-fälten bär 4-årig HEL serie med brottet dokumenterat (oms +2,16 % · netto −7,18 %); bruttomarginalserie [28,21 · 27,00 · 29,39 · 31,34 · 31,51] ⇒ moat-medel 29,49 % med spread 4,51 pp (stadigt stigande); EK-historik per år saknas i panelerna (endast current 5,57 T) ⇒ serier.egetKapital tomt; analytikerläge Buy · 16 st · medelmål 4 861,19 JPY (datafakta, ej rekommendation) · intäktsprognos 3 år +3,78 %; NÄSTA RAPPORT 2026-10-30 (Q2 FY2027) — v172-könotis (dagen efter Oriental Land 10-29); kandidatur: S2-U3-JAPAN-KONSUMENT-KOMPLEMENT-OMG20 'Panasonic 6752.T (P/E 39,53) — FALLER: sektorn Technology i källan ⇒ hade landat i Japan/teknik' — precis cellen med endast 8035.T; läget 2026-09-25 P/E 41,57 mot dokumentets 39,53 (2026-09-19) = nivåkonsekvent (veckans kursrörelse); sektorn Technology i källan ⇒ teknik-cellen (28→29 bolag i branschen, 22:a Japan-bolaget)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 4517,
+  "marknadsKapitalMdr": 10530,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.021617647271035656,
+   "resultatCAGR5ar": -0.0717797987732931,
+   "omsattningTillvaxtTTM": -0.0076,
+   "prognosTillvaxt": 1.0487925086249383
+  },
+  "lonksamhet": {
+   "roe": 0.0525,
+   "roic": 0.068,
+   "bruttoMarginal": 0.318,
+   "ebitMarginal": 0.0677,
+   "nettoMarginal": 0.031,
+   "fcfMarginal": 0.029
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.28,
+   "rantaTackning": 14.77,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 125.8,
+   "andelUtestande": 0.3688,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": 0.2949,
+   "bruttoMarginalSpread5ar": 0.045100000000000015,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 41.57,
+   "pb": 1.89,
+   "evEbit": 19.28,
+   "peg": 0.3963605733082707,
+   "fcfYield": 0.0225,
+   "egenKapitalMultipl": 1.89
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "omsattning": [
+    7388791000000,
+    8378942000000,
+    8496420000000,
+    8458185000000,
+    8048722000000
+   ],
+   "resultat": [
+    255323000000,
+    265493000000,
+    443978000000,
+    366193000000,
+    189537000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    18663000000,
+    231389000000,
+    319428000000,
+    23751000000,
+    1334000000
+   ]
+  },
+  "notering": "kandidat ur S2-U3-OMG20-komplementet (Technology-sektorn ⇒ Japan/teknik-cellen med endast 8035.T); STRUKTURBROTT FY2026 (Automotive deconsoliderat + restrukturering): FY26-nettodipen −48 % bär engångsposter och omsättningstillbakagången är delvis avknoppning — CAGR på 4-årig hel serie med brottet dokumenterat i paranoid (oms +2,2 % · netto −7,2 %); prognosTillväxt +105 % (forward P/E 20,29 mot trailing 41,57 — konsensus väntar EPS-dubbling på AI/datacenter) ⇒ spår-PEG 0,40 (källans 0,49 kalibreringsnot); ROE 5,25 % ur källan (TTM-replik 4,55 % dokumenterad); Altman 2,23 under 3 — källans riskflagga redovisas öppet; EK-serie saknas — serier.egetKapital tomt; rapportdag 2026-10-30 (Q2 FY2027) = v172-könotis; alla repliker och källpaneler i paranoid (StockAnalysis TYO 2026-09-25)"
  }
 ]

@@ -28174,5 +28174,98 @@
       "fcf": []
     },
     "notering": "INDIEN/FINANS 1→2 — PRIVATBANK-DUOPOLET FÖDS: HDFC (bolånerötterna 1977/1994 — merchant-bank-kulturen, merger-året FY24) + ICICI (project finance-roterna 1955/1994 — industrialfinansieringens arv) = Indiens två största privatbanker, femte och sjätte benet i bank-pedagogiken (ITUB Brasilien · RY Kanada · HSBA.L universal · 8306.T keiretsu · HDFC private Sydasien · ICICI tillväxt-Sydasien). SIGNATURTAL — EPS-TRAPPAN OCH UTDELNINGSFÖDSELN: EPS [35,44 · 47,84 · 61,96 · 71,14 · 74,77] + TTM 77,35 = FEM RAKA TILLVÄXTÅR (netto 251→542+561 mdr, resCAGR +21,2 %/år) samtidigt som BETALD UTDDELNING [13,9 · 34,8 · 56,0 · 70,4 · 78,5] + TTM 78,5 mdr = ×5,7 PÅ FYRA ÅR — från RBI:s lågpayout-vana (14,0 % av netto TTM; DPS 12 INR · 0,90 % · +9,09 %) växer maskinen fram: kapitalbasen först, utdelningen sen — bankens livscykel-i-en-rad. VÄRDERINGENS SPEGLAR: P/B 2,41 = mcap/EK EXAKT (9 580/3 980; BVPS-basen 2,50) mot ROE 16,07 och WACC 4,59 (ROE-gap +11,5 p) — HDFC-paret 1,79/13,8 visar prisbilden: marknaden betalar ICICIs tillväxt-ROE med 35 % P/B-premie; P/E-familjen 17,25 (källa) / 17,16 (pris/EPS) / 17,08 (mcap/netto) — tre baser inom 1,0 %; PS 4,70 EXAKT (9 580/2 040); PEG-källan 0,89 utan replikerbar bas i panelerna ⇒ NULL (basblandning dokumenterad). PROGNOS-TTE +5,05 % (fwd 16,42 mot trail 17,25). KASSAFLÖDETS BANKTECKEN: OCF −1 210,6 mdr = kundmedel (fcf-fälten NULL enligt paketkonventionen, HDFC:s spegel) · netto-skuld −1 523 mdr = kreditportföljen är tillgången (HDFC −3 281) · kassan Current 740 mdr efter FY26-1 709 (kvartalssvängningen dokumenterad). UTSPÄDNINGEN (duons kontrast): aktieantal +0,77 % YoY (banker emitterar kapital — HDFC:s buyback −0,52 % spegelbilden; buyback-yield-fältet −0,77 ärligt negativt) · institutioner 93,41 % (HDFC 82,36) · insiders 0,04 %. SEGMENT-sexBEN på riskbas (TTM-andelar av segmentsumman): Retail 31,6 % · Treasury 26,7 % · Wholesale 17,7 % · Life Insurance 12,9 % · General Insurance 5,7 % · Other Banking 1,5 % + Other 3,8 % — försäkringsbenet (Liv+försäkring 18,6 %) är ICICI:s gruppdjup mot HDFC:s renodlade bank. KURSEN: 1 327,70 INR · 52v −3,98 % (duons flackaste) · ÖVER 200MA (1 355) UNDER 50MA (1 412) · RSI 29 · beta 0,26 · panel Strong Buy PT 1 746,74 (+31,56 %). Anställda 124 029 (HDFC 212 958) · rev/person 16,4 M INR (HDFC ~13,3) · vinst/person 4,52 M (HDFC ~3,6) — ICICI:s produktivhetsparell. RAPPDAG 2026-10-17 CONFIRMED — PRE-fönsterklassen (PUB 10-15 · EL 10-16 · PSON 10-12): tre dagar före fönstrets öppning. FY april–mars slutårsetikett (TCS/HDFC-konventionen)."
+  },
+  {
+    "ticker": "ITC.NS",
+    "namn": "ITC Limited",
+    "bransch": "konsument",
+    "land": "Indien",
+    "valuta": "INR",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-25",
+        "url": "https://stockanalysis.com/quote/nse/ITC/",
+        "paranoid": "NSE-primärnotering (översikt + statistics + financials + cash-flow-statement; underlag S&P Global Market Intelligence + Financial Modeling Prep; stängningskurs 2026-09-25 15:15 IST). Källan presenterar ITC i INR — serier i M INR, ingen valutabrygga. Segmentvyn redovisas BRUTTO (fem ben summerar 1,26× netto-intäkten — andelar av segmentsumman, inte lås mot totalen). FY2025-nettots höjd 347 466 M bär engångspost (hotell-avknoppningsåret) — resCAGR redovisas med not. CF-vyns FY2022-kolumn saknas — fcf-serien FY2023–FY2026 + TTM; fem senaste mätvärdena alla positiva. Utdelningens FCF-payout 111,6 % dokumenterad (tobaksmodellen — kassabufferten 245 mdr bär)"
+      }
+    ],
+    "hamtat": "2026-09-25",
+    "pris": 268.9,
+    "marknadsKapitalMdr": 3370,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0678,
+      "resultatCAGR5ar": 0.0793,
+      "omsattningTillvaxtTTM": -0.0323,
+      "prognosTillvaxt": -0.0374
+    },
+    "lonksamhet": {
+      "roe": null,
+      "roic": 0.3559,
+      "bruttoMarginal": 0.5828,
+      "ebitMarginal": 0.3132,
+      "nettoMarginal": 0.2594,
+      "fcfMarginal": 0.2064
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.03,
+      "rantaTackning": 220.83,
+      "fcfPositivaSenaste5": 5,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": 1
+    },
+    "aterkop": {
+      "senasteArMdr": 179.676,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": 0
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.5742,
+      "bruttoMarginalSpread5ar": 0.0393,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 16.98,
+      "pb": 4.63,
+      "evEbit": 12.95,
+      "peg": null,
+      "fcfYield": 0.0483,
+      "egenKapitalMultipl": 4.63
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "omsattning": [
+        606681,
+        709369,
+        679319,
+        753233,
+        788684
+      ],
+      "resultat": [
+        152427,
+        191917,
+        204588,
+        347466,
+        206895
+      ],
+      "egetKapital": [],
+      "fcf": [
+        136339,
+        161346,
+        136163,
+        153483
+      ]
+    },
+    "notering": "INDIEN/KONSUMENT 1→2 — FMCG-DUOPOLET FÖDS: HUL (mäkesfokus — Unilever-barnets 50-plus-varumärkesportfölj, bruttomarginal 50,4 %) + ITC (portföljbredd från tobaksgrunden — cigarett-kassamaskinen som bygger FMCG/Agri/Papper): samma gren, två kapitalkulturer — dotterbolagsdisciplinen mot konglomeratets internfinansiering. SIGNATURTAL — TOBAKSMARGINALENS TYNGDLAG: bruttomarginal 58,28 % TTM (HUL 50,4 — ITC:s cig-mix bär GRENSER HÖGRE; femårsserien [55,4 · 57,9 · 59,3 · 56,7 · 57,8] spread 3,9 p) med EBIT-M 31,32 (HUL 21,1) och netto-M 25,94 — segmentbilden TTM (brutto-andelar): FMCG-Cigarettes 44,8 % · FMCG-Others 23,7 % · Agri 18,1 % · Paperboards 8,4 % · Övrigt 4,9 % — TOBAKEN BÄR 45 % AV INTÄKTEN men (marginalbilden) nästan hela vinstkärnan; cig-segmentet växer dessutom +13,1 %/år [261 583 → 406 010] med TTM-hop +17 %. UTDELNINGSMASKINEN (tobaksmodellen, BTI-klassen): DPS 14,50 INR (5,39 % EXAKT · +1,05 %) med PAYOUT RÄTT BAS betald TTM 179 676/netto 198 394 = 90,6 % (DPS/EPS 91,5 % — två baser tight) och FCF-PAYOUT 111,59 % (betalar ÖVER FCF — kassabufferten 245,1 mdr bär, nettokassa +221,1 = 17,65/aktie): avkastningsprofilen HUL inte kan matcha (2,12 %/64 % payout). FY2025-ENGÅNGSÅRET dokumenterat: netto 347 466 M (hotell-avknoppningens gain) mot FY26 206 895 — resCAGR +7,9 % med basårsnot, EPS-trappan [12,37 · 15,46 · 16,39 · 27,75 · 16,51] + TTM 15,84 visar engångsposten öppet. KASSA- OCH SKULDKULTUREN: D/E 0,03 · räntetäckning 220,83 (universumets högsta klass) · ROIC 35,59 mot WACC 3,73 = +31,86 pp · FY26:s FÖRSTA STÖRRE LÅNEUPPTAGNING (skuld 2,8→24,0 mdr — 21,2 emitterat; D/E fortfarande 0,03) · aktieemissioner årliga [2,9 · 24,8 · 14,4 · 8,0 · 4,0 mdr] dokumenterade. FCF-IDENTITETEN TTM EXAKT: OCF 184,64 − capex 21,83 = 162,81 mdr (FCF-M 20,64 · FY23-26-serien [136 339 · 161 346 · 136 163 · 153 483] — FEM RAKA MÅTT >20 % marginal). TRETTON LÅS: EV-dekomp EXAKT (3 370+24,0−245,1 = 3 148,9 mot 3,15T) · P/E 16,98 EXAKT på både mcap/netto och pris/EPS · PS 4,41 · PB 4,63 (mcap/EK; pris/BVPS 4,65) · P/FCF 20,70 EXAKT · P/OCF 18,25 EXAKT · EV/Sales 4,12 · EV/EBIT 12,95 (1,5 % källspridning) · EV/FCF 19,37 · EV/Earnings 15,89 · FCF-yield 4,83 EXAKT · divY 5,39 EXAKT · netto-M 25,94 EXAKT · skatt 24,59 EXAKT (65,83/267,66) · D/E 0,03. PEG NULL (källans 4,55 utan ren replikerbar bas — basblandning). KURSEN: 268,90 INR · 52v −32,94 % (tobaksaskatt-rädsla + FMCG-tillväxtoro) · UNDER BÅDA MA (50d 273 · 200d 307) · RSI 52 · **BETA −0,09 — universumets NEGATIVA beta** (tobakens motcykliska natur i portföljteori-termer: federationen av försäkringsliknande kassaflöden) · panel Buy PT 327 (+21,61 %). 22 493 anställda · rev/person 34,0 M INR (HUL 37,8 — dottern effektivare per huvud) · vinst/person 8,82 M · institutioner 51,03 %. RAPPDAG 2026-10-29 (samma dag som HUL · DGE · BBVA · PUIG — v172-fönstrets tätaste kluster). FY april–mars slutårsetikett (HDFC/TCS/HUL-konventionen)."
   }
 ]

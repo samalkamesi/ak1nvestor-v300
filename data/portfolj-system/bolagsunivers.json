@@ -24676,5 +24676,95 @@
    ]
   },
   "notering": "kandidat ur BCE-OMG24 §10:s kö-notis (Kanada/industri-öppningen; P/E-bärare kontrollerad före leverans); TSX-primär CAD; P/E på källans JUSTERADE EPS-bas (CNR:s primärmått; GAAP-replik 21,95 = 5,1 % dokumenterad avvikelse); STABIL brottsfri serie (vågens andra efter TELUS — rak CAGR oms +0,31 % · netto +1,63 %); ROIC 9,83 % ÖVER WACC 8,10 % (Kanada-blockets värdeskapare); Altman 3,00 exakt på zongränsen (järnvägsbalans, zonnot); spår-PEG 1,94 (källans 4,15 på 3-års kalibreringsnot); EK-serie saknas — serier.egetKapital tomt; rappdag est. 2026-10-20 = v172-könotis; alla repliker i paranoid (StockAnalysis TSX 2026-09-25)"
+ },
+ {
+  "ticker": "CP",
+  "namn": "Canadian Pacific Kansas City Limited",
+  "bransch": "industri",
+  "land": "Kanada",
+  "valuta": "CAD",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/tsx/CP/ (+ /statistics/ + /financials/)",
+    "paranoid": "TSX-PRIMÄRNOTING i CAD (BCE/TELUS/RCI-B/NTR/CNR-precedensens Toronto-rad; underlag S&P Global Market Intelligence + Fiscal.ai via StockAnalysis; intradag 2026-09-25 delayed +0,22 %; färshämtning direkt med cache-bypass): pris 107,49 CAD (52v 91,12–113,14 · beta 1,08 — Kanada-blockets enda över 1), mcap 100,27 mdr CAD på 933,0 M aktier (replik 933,0 × 107,49 = 100,29 — 0,02 % EXAKT), P/E 28,17 ur källan på bolagets CORE-JUSTERADE bas (CPKC rapporterar core adjusted EPS med KCS-purchase-accounting-avdrag; GAAP-repliken 107,49/4,12 = 26,08 avviker 7,4 % — dokumentklass med dokumenterad bas-skillnad, CNR-klassens justerade bas men djupare för att purchase accounting ligger i siffran), mot forward P/E 25,05 ⇒ prognosTillväxt +12,46 % (trailing/fwd-modellen, MUFG-konventionen; spår-PEG 28,17/12,46 = 2,26 mot källans PEG 5,41 på 3-års — kalibreringsnot), P/B 2,63 · EV/EBIT 18,85 · PS 6,87 EXAKT replik (100 270/14 596 = 6,870), ROE 9,54 % · ROIC 5,66 % UNDER WACC 7,37 % (KCS-integrationens enorma kapitalbas — dokumenterad kontrast mot CNR som ligger över; integrationssyntes pågår), brutto 46,40 % · EBIT-marginal 28,27 % (järnvägsstruktur) · netto-marginal 26,35 % EXAKT replik (3 847/14 596) · FCF-yield EXAKT replik (1 818/100 270 = 1,813 % = 1/P·FCF 1/55,16 = 1,813 %); balans: D/E 0,66 · räntetäckning 5,23 · Altman 2,69 (KÄLLANS VARNINGSZON — dokumenterad som datafakta; Piotroski 6) · kassa 0,34 mdr · skuld 21,31 mdr · NETTOSKULD 20,97 mdr · EK 37,72 mdr; utdelning 0,80 CAD/aktie (0,74 %) ⇒ senasteArMdr 746 (0,80 × 933,0) med källans payout 19,23 % (GAAP-replik 0,80/4,12 = 19,4 % ✓ 0,9 %); FY-SERIEN dec-slutande (M CAD): oms [8 814 · 12 555 · 14 546 · 14 655] · netto [3 317 · 3 861 · 3 923 · 3 801] · FCF [2 644 · 2 876 · 2 546 · 1 818] — K&A-BROTTET FY2023: Kansas City Southern-förvärvet (kontroll april 2023) ger omsättningshoppet +42 % i ett steg (struktur, ej organiskt — USA:s-Mexiko-nätet tillkommer); CAGR därför på 2-årig KONSEKUTIV post-KCS-bas FY2023→FY2025 (oms +8,05 % · netto −0,78 %) medan 3-årig rak bas (oms +18,5 %) skulle misstolka förvärvet som tillväxt — AXA/Shaw-precedenserna; nettot stabilt 3,3–3,9 miljarder över hela serien (integrationen bär engångskostnader i EBIT, inte i nettolinjen); FCF-nedgången 2 876→1 818 = integrations-capex; EPS-GAAP-serien [3,57 · 4,15 · 4,20 · 4,08]; analytikerläge saknas i panelutdraget — ingen målkurs förs in; NÄSTA RAPPORT 2026-10-28 (Q3 2026) — v172-könotis; kandidatur: S2-U1-BCE-UTOKNING-OMG24 §10 kö-notis 'Kanada/industri (CNR/CPKC) — öppna celler' — andrakandidaten; P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 3 847 M > 0; Sony/Honda-doktrinen); kollisionskontroll exakt-match GRÖN; Industrials ⇒ industri-cellen (23→24 bolag), Kanada 7→8 — blockets åttonde gren och järnvägsduon komplett (CNR+CPKC)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 107.49,
+  "marknadsKapitalMdr": 100.27,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.08039994364669423,
+   "resultatCAGR5ar": -0.007800431132937602,
+   "omsattningTillvaxtTTM": 0.05,
+   "prognosTillvaxt": 0.12455089820359277
+  },
+  "lonksamhet": {
+   "roe": 0.0954,
+   "roic": 0.0566,
+   "bruttoMarginal": 0.464,
+   "ebitMarginal": 0.2827,
+   "nettoMarginal": 0.2635,
+   "fcfMarginal": 0.12455467251301726
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.66,
+   "rantaTackning": 5.23,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 0.746,
+   "andelUtestande": 0.1923,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 28.17,
+   "pb": 2.63,
+   "evEbit": 18.85,
+   "peg": 2.2617259615384624,
+   "fcfYield": 0.01813104617532662,
+   "egenKapitalMultipl": 2.63
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    8814000000,
+    12555000000,
+    14546000000,
+    14655000000
+   ],
+   "resultat": [
+    3317000000,
+    3861000000,
+    3923000000,
+    3801000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    2644000000,
+    2876000000,
+    2546000000,
+    1818000000
+   ]
+  },
+  "notering": "kandidat ur BCE-OMG24 §10:s kö-notis (industri-cellens andrakandidat; P/E-bärare kontrollerad före leverans); TSX-primär CAD; K&A-BROTT FY2023 (Kansas City Southern +42 % omsättningshopp) ⇒ CAGR på 2-årig konsekutiv post-KCS-bas (oms +8,05 % · netto −0,78 %); P/E på källans CORE-JUSTERADE bas (KCS purchase accounting; GAAP-replik 26,08 = 7,4 % dokumenterad avvikelse); ROIC 5,66 % under WACC 7,37 % (integrationens kapitalbas — kontrast mot CNR dokumenterad); Altman 2,69 varningszonen öppet (Piotroski 6); FCF-nedgång = integrations-capex; EK-serie saknas — serier.egetKapital tomt; rappdag 2026-10-28 = v172-könotis; alla repliker i paranoid (StockAnalysis TSX 2026-09-25)"
  }
 ]

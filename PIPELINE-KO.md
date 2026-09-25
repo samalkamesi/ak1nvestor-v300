@@ -12,7 +12,7 @@ ALDRIG nya kurser i massproduktion.
 | Våg | Spår | Innehåll | Kanal | Status |
 |---|---|---|---|---|
 | v171 | SEO (spår 3) | Nästa branschomgång SEO-guider enligt SEO-GUIDER-2026-09.md (rotation: senaste spår = kurser) | agentfabrik när kvoten reset:ats 2026-09-28 01:22:30, annars session | bokad — NÄSTA VÅG |
-| v172 | kvartalsrapporter (spår 4) | Q3 2026 slutar 09-30: förbered analysramverket (vilka bolag i universet rapporterar v 40–44, tidtabell, mallar ur AKM2) så rapportvågen kan starta direkt vid publiceringarna | session | bokad |
+| v172 | kvartalsrapporter (spår 4) | Q3 2026 slutar 09-30: förbered analysramverket (vilka bolag i universet rapporterar v 40–44, tidtabell, mallar ur AKM2) så rapportvågen kan starta direkt vid publiceringarna | session | PÅBÖRJAD r192: V172-RAPPORTVAG.md + V172-GRANSKNING.md (EMOTTAG-MONSTER-mönstret: 5 PROCESREGLER, RAPPORTBLOCK-ombyggnad, stängdvakt, R2-publiceringsgrind) + _r172-rapportvag-status.mjs · läget: 10 kalendrar/100 bolag kartlagda, 71 utkast VÄNTAR, 9 publicerade (schemalagda okt-datum) · utlösare = rapportdagarna från 10-09 · nästa: granskningsomgång av utkasten + publiceringspaket till kund (R2) |
 | v173 | dataset-djup (spår 2) | Fortsätt djupet i bolagsuniverset enligt spårets etablerade mönster (rotation efter två icke-2-spår) | agentfabrik efter kvot-reset, annars session | bokad |
 
 ## VILOR / VÄNTAR KUND (R2)

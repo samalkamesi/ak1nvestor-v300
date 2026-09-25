@@ -28360,5 +28360,98 @@
       ]
     },
     "notering": "INDIEN/ENERGI 1→2 — VERTIKALENS TVÅ ÄNDAR FÖDS: RELIANCE (nedströms+digital — raffinaderierna, petkem, Jio/Retail; minoritetstrappan flyttar koncernvikt) + ONGC (uppströms — Indiens statliga råolje/gas-producent, grundad 1955): energi-cellens hela kedja i ett land, TTE+BP/XOM-klassens indiska spegel med staten som majoritetsägare (~58 %, strukturfakta — källans institutionsfält 23,01 % speglar bara free float). SIGNATURTAL — RÅVARUPLATTFORMENS ANATOMI: omsättningen PLATT [4 913 → 6 323 → 6 016 → 6 121 → 6 087] Mdr (CAGR +5,5 %; prissett av råvaran — FY22:61,7 % och FY23:28,7 % var oljeprisfenomen, sedan ±5 %-bandet) medan TTM +16,2 % (olje-CF-fönstret) och NETTOTS BERGPLOGGTAVLA [455 · 367 · 491 · 362 · 414] + TTM 435 Mdr — FY22-högt basår ger resCAGR −2,3 % (dokumenterat som plattforms-netto, ej kollaps: fem raka FCF-år [337 · 351 · 467 · 352 · 352] + TTM 587). SEGMENT (brutto-andelar FY26 med ELIMINERINGSBEN −11,7 %): Refining & Marketing 88,2 % av brutto-intäkten men VINSTEN sitter i E&P — Offshore 14,0 + Onshore 6,0 bär marginalerna (upstream-tjocken, R&M-tunnheten: EBIT-M 7,83 % mot E&P-drift); vertikal-logiken i en andelstabell. VÄRDERINGENS STATLIGA RABATT: P/B 0,73 (mcap/EK 3 010/4 100 — under 1: substansrabatt 27 %; BVPS-basen 0,80) · P/E 6,91 (replik mcap/netto 6,914 EXAKT) · fwd 5,62 (TTE-prognos +22,95 %) · P/FCF 5,12 EXAKT · P/OCF 2,67 EXAKT · EV/Earnings 10,98 EXAKT (på källans EV) · EV/FCF 8,13 EXAKT · EV/Sales 0,68 · EV/EBIT 8,10 · PS 0,43 · **FCF-YIELD 19,53 % EXAKT** (587,3/3 010 — råvarucykelns högvatten) · divY 5,63 % EXAKT (13,25/235,25) · netto-M 6,18 · skatt 24,24 EXAKT · D/E 0,43. PEG NULL (källans 1,09 utan ren replikerbar bas). EV-SPRIDNINGEN dokumenterad: 4,78T mot dekomp 4,40T (8,6 % — Engie-klassen). UTDELNINGEN OLJE-LÄNKAD: DPS 13,25 (5,63 % EXAKT) · betald serie [169,8 · 176,1 · 128,9 · 169,8 · 129,2] Mdr svänger med priset (policy-doktrinen: oljeinkomst → utdelning) · PAYOUT RÄTT BAS betald TTM 169 801/435 192 = 39,0 % · FCF-payout 28,4 % (källans fält 15,53 bär egen bas — notis). BALANSEN: kassa [121 → 354] Mdr (FY22-frånvaran kurad) · skuld-topp FY24 1 912 → nedtrappad 1 743 · nettoskuld −1 390 Mdr (−110,5/aktie) · räntetäckning 4,40 (kapitalintensiv borrare — D&A 497 Mdr/år, capex 540 Mdr). ROIC 7,61 mot WACC 5,03 = +2,58 pp (råvarumodellens smala gap — RELIANCE +0,8?: duon bär inte moat i kapitalmått utan i RESURSERNAS livslängd). KURSEN: 235,25 INR · 52v −1,37 % (FLACKAST i duon — oljeprissvag året) · under båda MA (50d 238 · 200d 257) · RSI 49 · beta 0,10 · Buy PT 294,70 (+25,27 %). 23 117 anställda · rev/person 304,6 M INR (duons högsta — borrplattformsautomation). RAPPDAG 2026-11-13 — EFTER fönstrets slut (11-04): november-FIFO med ENGI (11-05) och SN efter. FY april–mars slutårsetikett."
+  },
+  {
+    "ticker": "INDUSTOWER.NS",
+    "namn": "Indus Towers Limited",
+    "bransch": "kommunikation",
+    "land": "Indien",
+    "valuta": "INR",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-25",
+        "url": "https://stockanalysis.com/quote/nse/INDUSTOWER/",
+        "paranoid": "NSE-primärnotering (översikt + statistics + financials + cash-flow-statement; underlag S&P Global Market Intelligence + Financial Modeling Prep; stängningskurs 2026-09-25 15:15 IST). Källan presenterar Indus i INR — serier i M INR, ingen valutabrygga. KÄLLSPRIDNINGAR DOKUMENTERADE: (1) EV/EBITDA-fältet 6,41 mot dekompositionens EV/EBITDA 7,59 (källans EV/EBITDA bär egen underlagsbas ~0,96T — noterat); (2) P/E-familjen sprider 1,6 % mellan aktiebaserna (14,01 källa · 13,97 mcap/netto · 13,79 pris/EPS). Utdelningen NYFÖDD: cashflow-vyn bär endast TTM-beloppet 29 638 M (bolagets första utdelning på åratal) — års-serie ej möjlig, dokumenterat. Bharti-koncernens majoritetsägande syns ej i källans institutionsfält (insiders n/a) — förälder/barn-precedensen (ACA/AMUN · ULVR/HUL)"
+      }
+    ],
+    "hamtat": "2026-09-25",
+    "pris": 374,
+    "marknadsKapitalMdr": 1000,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0406,
+      "resultatCAGR5ar": 0.029,
+      "omsattningTillvaxtTTM": 0.0672,
+      "prognosTillvaxt": 0.086
+    },
+    "lonksamhet": {
+      "roe": 0.1891,
+      "roic": 0.1454,
+      "bruttoMarginal": 0.5594,
+      "ebitMarginal": 0.328,
+      "nettoMarginal": 0.2178,
+      "fcfMarginal": 0.2087
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.52,
+      "rantaTackning": 5.75,
+      "fcfPositivaSenaste5": 5,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": 0
+    },
+    "aterkop": {
+      "senasteArMdr": 29.638,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": 0
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.5493,
+      "bruttoMarginalSpread5ar": 0.0403,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 14.01,
+      "pb": 2.42,
+      "evEbit": 10.6,
+      "peg": null,
+      "fcfYield": 0.0685,
+      "egenKapitalMultipl": 2.42
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "omsattning": [
+        277172,
+        283818,
+        286006,
+        301228,
+        324931
+      ],
+      "resultat": [
+        63731,
+        20400,
+        60362,
+        99317,
+        71449
+      ],
+      "egetKapital": [],
+      "fcf": [
+        42822,
+        26292,
+        128610,
+        70582
+      ]
+    },
+    "notering": "INDIEN/KOMMUNIKATION 1→2 — NÄTETS TVÅ SKIKT FÖDS: BHARTI (operatören — frekvensauktioner, spektrum, abonnenter; duopolets marginmakt) + INDUS TOWERS (tornen — nätets FYSISKA infrastruktur: 3 783 anställda, 86,9 M INR per person = Indien-svepets högsta produktivitet; hyresavtalens längd = intäkternas karaktär): samma cell, två kapitallogiker — spektrumets licenstid mot stålets livslängd. OBS: Bharti är SAMTIDIGT stor ägare och största hyresgäst — förälder/barn-kopplingen i en affärsrelation (ACA/AMUN-precedensens kusin, dokumenterad). SIGNATURTAL — KONSOLIDERINGENS BERGPLOGGTAVLA: netto [63,7 · 20,4 · 60,4 · 99,3 · 71,4] + TTM 71,6 Mdr — FY24-BOTTEN (Vodafone Ideas uteblivna hyror: netto 20,4, kassa 0,6 Mdr!) → FY25-TOPPEN 99,3 (backlag/återvinning) → FY26-normalisering 71,4: TELEKOMKRIGETS EFTERMATH i fem tal — medan omsättningen växer OLIDT [277 → 324,9] (+4,1 %/år, CAGR dokumenterad) och bruttomarginalen håller ~55 %. FCF samma berg: [42,8 · 26,3 · 128,6 · 70,6] + TTM 68,6 (FY25-topp = backlag; fem senaste mätvärdena positiva). KASSANS ÅTERUPPBYGGGNAD: 0,6 → 73,6 Mdr på två år — balansens historia om krisen som kurades. UTDENINGEN NYFÖDD: DPS 14,00 INR (3,74 % EXAKT) · betald TTM 29 638 M (första utdelningen på åratal) · PAYOUT RÄTT BAS betald/netto = 41,4 % (DPS/EPS 51,6 % — två baser dokumenterade) · FCF-payout 53,8 (källans fält ✓). TRETTON LÅS: EV-dekomp EXAKT (1 000+214,3−73,6 = 1 140,8 mot 1,14T) · P/OCF 6,46 EXAKT · EV/EBIT 10,58 ✓ · FCF-yield 6,85 EXAKT · divY 3,743 EXAKT · netto-M 21,78 EXAKT · brutto-M 55,94 EXAKT · skatt 25,57 EXAKT (24,59/96,16) · D/E 0,52 ✓ + snäva P/E-familj 14,01/13,97/13,79 (1,6 % baser) · PS 3,05 · PB 2,42 (mcap/EK; pris/BVPS 2,38) · P/FCF 14,61 · EV/Sales 3,48 · EV/FCF 16,66 · EV/Earnings 15,96. PEG NULL (källans 1,83 utan ren replikerbar bas). EV/EBITDA-SPRIDNING dokumenterad (källans 6,41 mot dekompositionens 7,59 — underlagsbas ~0,96T). EBITDA-M 45,72 % = TORNENS KAPITALLOGIK (Bharti 22-ish: infrastrukturen bär marginalen operatören inte kan). ROIC 14,54 mot WACC 4,86 = +9,68 pp. KURSEN: 374,00 INR · 52v +4,44 % — DUONS ENDA POSITIVA (tornens motkonjunktur: medan operatörerna föll på AI-telefoni-oro stod infrastrukturen) · under båda MA (50d 382 · 200d 414) · RSI 45,7 · BETA 0,05 (universumets flackaste klass) · panel HOLD PT 436,46 (+16,70 %) — svepets första Hold (ärligt datafakta). RAPPDAG 2026-10-23 — klusterdagen (RELIANCE + INFY samma dag; fönstret). Grundat 2007 (Indus-fusionen). FY april–mars slutårsetikett."
   }
 ]

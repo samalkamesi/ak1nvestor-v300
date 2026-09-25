@@ -140,3 +140,15 @@ med sig (branschspecifika, AKM2-dimensionerna) · 4. Tre sätt att läsa utfalle
    rapportmaterial, aldrig prognoser.
 
 _Juridikgrinden fast för serien: utbildning i metod ("så läser du"), aldrig råd (2007:528)._
+
+
+## Kalenderutbyggnad rond 204 (2026-09-25) — v173-vågens bolag in i kalendrarna
+
+Rotationsbeslut: BCE-kö-notislistan tom (v173 U1–U9 komplett) ⇒ skifte till v172 med
+kalenderutbyggnaden: 100→110 bolag (kommunikation +3: RCI-B 10-22 est. · TMUS 10-22 est. ·
+TELUS nov est.; industri +2: CNR 10-20 est. — fönstrets första · CP 10-28 est.; material +3:
+NTR 11-04 est. · AEM sen-okt est. · ABX tidig-nov est.; konsument +1: 4661.T 10-29 Q2 FY2027;
+teknik +1: 6752.T 10-30 Q2 FY2027). Rappdagarna källbelagda ur de färska panelhämtningarna
+2026-09-25 (Est. Earnings-rader); ESTIMERADE datum märks est. — exakt dag ej påhittad där
+panelen saknade den (AEM/ABX/TELUS bär fönsterform). Utkastmönstret: nya utkast skrivs när
+rappdagarna passerar och Q3-tal finns (mall: sa-laser-du-*-q3-2026.json-serien).

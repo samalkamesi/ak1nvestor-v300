@@ -11,8 +11,16 @@
       "rapportfenster": "2026-11-12 (estimat)",
       "notera": "Räkenskapsår slutar i slutet av september: rapporten i november är Q4 FY2026 och täcker kalenderkvartalet juli–sept 2026. Q3 FY2026 redovisades 2026-08-05. Datumet 2026-11-12 är obekräftat estimat (Wall Street Horizon/MarketBeat/Public.com, sedvana före börsöppning); förra årets Q4-redovisning skedde i mitten av november. Bekräfta mot bolagets IR-sida.",
       "kallor": [
-        { "namn": "The Walt Disney Company — Investor Relations (officiell)", "url": "https://investors.thewaltdisneycompany.com/overview/default.aspx", "hamtdatum": "2026-09-15" },
-        { "namn": "Public.com — Disney earnings-kalender", "url": "https://public.com/stocks/dis/earnings", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "The Walt Disney Company — Investor Relations (officiell)",
+          "url": "https://investors.thewaltdisneycompany.com/overview/default.aspx",
+          "hamtdatum": "2026-09-15"
+        },
+        {
+          "namn": "Public.com — Disney earnings-kalender",
+          "url": "https://public.com/stocks/dis/earnings",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -22,8 +30,16 @@
       "rapportfenster": "2026-10-28 (estimat)",
       "notera": "Kvartalsvis rytm; Q3 redovisas sedvanemässigt sista onsdagen i oktober efter marknadens stängning (Q3 2025: 29/10, Q2 2026: 29/7, Q1 2026: 29/4). Datumet 2026-10-28 ännu ej bekräftat av bolaget vid hämttillfället; bekräftelse väntas på IR-sidan några veckor före rapport.",
       "kallor": [
-        { "namn": "Meta — Investor Relations (officiell)", "url": "https://investor.atmeta.com", "hamtdatum": "2026-09-15" },
-        { "namn": "Public.com — Meta earnings-kalender", "url": "https://public.com/stocks/meta/earnings", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Meta — Investor Relations (officiell)",
+          "url": "https://investor.atmeta.com",
+          "hamtdatum": "2026-09-15"
+        },
+        {
+          "namn": "Public.com — Meta earnings-kalender",
+          "url": "https://public.com/stocks/meta/earnings",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -33,8 +49,16 @@
       "rapportfenster": "2026-11-05",
       "notera": "Kvartalsvis rytm. 'Q3 & 9 Months 2026 Financial Report' är uppsatt på 5 november 2026 i bolagets officiella finansiella kalender. Historiskt har Q3 redovisats perioden slutet av oktober till mitten av november (Q3 2024: 24/10, Q3 2025: 13/11).",
       "kallor": [
-        { "namn": "MTG — Financial calendar (officiell)", "url": "https://www.mtg.com/financial-calendar/", "hamtdatum": "2026-09-15" },
-        { "namn": "MTG — Reports and presentations", "url": "https://www.mtg.com/reports-presentations/", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "MTG — Financial calendar (officiell)",
+          "url": "https://www.mtg.com/financial-calendar/",
+          "hamtdatum": "2026-09-15"
+        },
+        {
+          "namn": "MTG — Reports and presentations",
+          "url": "https://www.mtg.com/reports-presentations/",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -44,8 +68,16 @@
       "rapportfenster": "2026-10-20 (estimat, fönster 2026-10-16 – 2026-10-21)",
       "notera": "Kvartalsvis rytm; Q3 redovisas sedvanemässigt i mitten/slutet av tredje oktoberveckan efter marknadens stängning (Q2 2026: 16/7, Q1 2026: 16/4). Datumet 2026-10-20 är obekräftat estimat (Public.com/Wall Street Horizon); bekräftelse publiceras på IR-sidan några veckor före rapport.",
       "kallor": [
-        { "namn": "Netflix — Investor Relations (officiell)", "url": "https://ir.netflix.net", "hamtdatum": "2026-09-15" },
-        { "namn": "Public.com — Netflix earnings-kalender", "url": "https://public.com/stocks/nflx/earnings", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Netflix — Investor Relations (officiell)",
+          "url": "https://ir.netflix.net",
+          "hamtdatum": "2026-09-15"
+        },
+        {
+          "namn": "Public.com — Netflix earnings-kalender",
+          "url": "https://public.com/stocks/nflx/earnings",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -55,8 +87,16 @@
       "rapportfenster": "2026-10-21",
       "notera": "Kvartalsvis rytm. Officiellt bekräftat av bolaget: tredje kvartalets resultat 2026 publiceras onsdagen 21 oktober före börsöppning, med telefonkonferens samma dag. Drygt ett års historik: Q2 2026 redovisades 22/7.",
       "kallor": [
-        { "namn": "AT&T — nyhet 'AT&T to Release Third-Quarter 2026 Earnings on October 21' (officiell)", "url": "https://about.att.com/story/2026/q3-earnings-reminder.html", "hamtdatum": "2026-09-15" },
-        { "namn": "AT&T — Investor Relations, Events", "url": "https://investors.att.com/news-and-events/events-and-presentations", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "AT&T — nyhet 'AT&T to Release Third-Quarter 2026 Earnings on October 21' (officiell)",
+          "url": "https://about.att.com/story/2026/q3-earnings-reminder.html",
+          "hamtdatum": "2026-09-15"
+        },
+        {
+          "namn": "AT&T — Investor Relations, Events",
+          "url": "https://investors.att.com/news-and-events/events-and-presentations",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -66,8 +106,16 @@
       "rapportfenster": "2026-10-20 (kl 07:00 CEST)",
       "notera": "Kvartalsvis rytm. 'Tele2 Interim Report Q3 2026' är uppsatt på 20 oktober 2026 kl 07:00 CEST i bolagets officiella finansiella kalender, med webcast och presentation samma dag. Kvartalsschema 2026: Q1 i april, Q2 i juli (17/7 enligt tredjepartskalendrar).",
       "kallor": [
-        { "namn": "Tele2 — finansiella kalendern (officiell)", "url": "https://www.tele2.com/investors/calendar/", "hamtdatum": "2026-09-15" },
-        { "namn": "Tele2 — Reports and presentations", "url": "https://www.tele2.com/investors/reports-and-presentations/", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Tele2 — finansiella kalendern (officiell)",
+          "url": "https://www.tele2.com/investors/calendar/",
+          "hamtdatum": "2026-09-15"
+        },
+        {
+          "namn": "Tele2 — Reports and presentations",
+          "url": "https://www.tele2.com/investors/reports-and-presentations/",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -77,8 +125,16 @@
       "rapportfenster": "2026-10-21 (enligt officiell kalender; tredjepart har visat 2026-10-22)",
       "notera": "Kvartalsvis rytm. Telias finansiella kalender visar 'Interim report January–September 2026' på 21 oktober 2026, med presentation/webcast samma förmiddag; publicering sedvanemässigt ca kl 07:00 CET. Divergens flaggas: MarketScreener/Investing.com har visat 22 oktober, och tidigare kvartal 2026 publicerades en kalendardag senare än kalenderns huvudsiffra (Q1: kalender 23/4, faktisk 24/4; Q2: kalender 16/7, faktisk 17/7) — bekräfta mot IR-sidan nära publicering.",
       "kallor": [
-        { "namn": "Telia Company — Financial calendar (officiell)", "url": "https://www.teliacompany.com/en/articles/financial-calendar", "hamtdatum": "2026-09-15" },
-        { "namn": "Telia Company — Reports and presentations", "url": "https://www.teliacompany.com/en/reports-and-presentations", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Telia Company — Financial calendar (officiell)",
+          "url": "https://www.teliacompany.com/en/articles/financial-calendar",
+          "hamtdatum": "2026-09-15"
+        },
+        {
+          "namn": "Telia Company — Reports and presentations",
+          "url": "https://www.teliacompany.com/en/reports-and-presentations",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -88,8 +144,16 @@
       "rapportfenster": "2026-10-22",
       "notera": "Kvartalsvis rytm. Q3 2026-delårsrapporten är uppsatt på 22 oktober 2026 i bolagets finansiella kalender, bekräftad i rapportflöden via MFN/Nasdaq; konferenssamtal hållas i samband med publiceringen och tredjepart (TradeDesk) anger publicering efter marknadens stängning. Q2 2026 redovisades 17 juli 2026.",
       "kallor": [
-        { "namn": "Viaplay Group — Financial calendar (officiell)", "url": "https://www.viaplaygroup.com/en/investors/financial-calender", "hamtdatum": "2026-09-15" },
-        { "namn": "Nasdaq — Viaplay Group rapportflöde", "url": "https://view.news.eu.nasdaq.com/view?id=b536ef5f56bd9985c0e24e0d121c8ecfb&lang=en&src=micro", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Viaplay Group — Financial calendar (officiell)",
+          "url": "https://www.viaplaygroup.com/en/investors/financial-calender",
+          "hamtdatum": "2026-09-15"
+        },
+        {
+          "namn": "Nasdaq — Viaplay Group rapportflöde",
+          "url": "https://view.news.eu.nasdaq.com/view?id=b536ef5f56bd9985c0e24e0d121c8ecfb&lang=en&src=micro",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -99,8 +163,16 @@
       "rapportfenster": "okänt exakt datum — troligen 2026-10: tredje–fjärde veckan (estimat 2026-10-19 – 2026-10-28)",
       "notera": "Kvartalsvis rytm. Inget officiellt datum publicerat vid hämttillfället. Tredjepartsestimat divergerar: TipRanks 19/10, MarketBeat 20/10 (före börsöppning), MarketChameleon fönster 23–28/10; Q3 2025 redovisades 29/10 med telefonkonferens kl 08:30 ET. Bekräfta mot bolagets IR-nyhetssida som meddelar datum några veckor före rapport.",
       "kallor": [
-        { "namn": "Verizon — Earnings-nyheter (officiell)", "url": "https://www.verizon.com/about/news-subcategory/earnings", "hamtdatum": "2026-09-15" },
-        { "namn": "Verizon — Investor Relations", "url": "https://www.verizon.com/about/investors", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Verizon — Earnings-nyheter (officiell)",
+          "url": "https://www.verizon.com/about/news-subcategory/earnings",
+          "hamtdatum": "2026-09-15"
+        },
+        {
+          "namn": "Verizon — Investor Relations",
+          "url": "https://www.verizon.com/about/investors",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -110,7 +182,50 @@
       "rapportfenster": "2026-11: första veckan (estimat 2026-11-04 – 2026-11-05)",
       "notera": "Kvartalsvis rytm; Q3 redovisas sedvanemässigt tidigt i november (Q3 2025: 6/11). Datum ej formellt bekräftat vid hämttillfället: MarketBeat/Zacks pekar på 5/11, TipRanks på 4/11, MarketChameleon-fönster 5–9/11. Bekräfta mot bolagets IR-sida.",
       "kallor": [
-        { "namn": "Warner Bros. Discovery — Investor Relations (officiell)", "url": "https://ir.corporate.discovery.com/investor-relations/default.aspx", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Warner Bros. Discovery — Investor Relations (officiell)",
+          "url": "https://ir.corporate.discovery.com/investor-relations/default.aspx",
+          "hamtdatum": "2026-09-15"
+        }
+      ]
+    },
+    {
+      "ticker": "RCI-B",
+      "namn": "Rogers Communications Inc.",
+      "land": "Kanada",
+      "rapportfenster": "2026-10-22",
+      "notera": "Q3-rapport est. 22 oktober 2026 enligt leverantörens panel (est.). Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        {
+          "namn": "StockAnalysis — Est. Earnings-rad (hämtat 2026-09-25)",
+          "url": "https://stockanalysis.com/quote/tsx/RCI-B/"
+        }
+      ]
+    },
+    {
+      "ticker": "TMUS",
+      "namn": "T-Mobile US, Inc.",
+      "land": "USA",
+      "rapportfenster": "2026-10-22",
+      "notera": "Q3-rapport est. 22 oktober 2026 enligt leverantörens panel (est.). Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        {
+          "namn": "StockAnalysis — Est. Earnings-rad (hämtat 2026-09-25)",
+          "url": "https://stockanalysis.com/stocks/tmus/"
+        }
+      ]
+    },
+    {
+      "ticker": "TELUS",
+      "namn": "TELUS Corporation",
+      "land": "Kanada",
+      "rapportfenster": "2026-11 (est.)",
+      "notera": "Q3-rapport est. november 2026 (vecka 45) — exakt dag ej bekräftad i panelen. Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        {
+          "namn": "StockAnalysis — Est. Earnings-rad (hämtat 2026-09-25)",
+          "url": "https://stockanalysis.com/quote/tsx/TELUS/"
+        }
       ]
     }
   ]

@@ -10,8 +10,16 @@
       "rapportfenster": "2026-10-29 (estimerat, ej officiellt bekräftat)",
       "notera": "Räknenskapsåret slutar sista september — kalender-Q3 motsvarar Apples fjärde kvartal (fiscal Q4), som bolaget historiskt rapporterar sista veckan i oktober/början av november efter marknadens stängning. Så här läser du: officiellt datum meddelas på IR-sidan några veckor före.",
       "kallor": [
-        { "namn": "Apple Investor Relations (officiell bevakningspunkt)", "url": "https://investor.apple.com", "hamtat": "2026-09-15" },
-        { "namn": "Public.com — AAPL earnings (kalenderuppskattning 2026-10-29)", "url": "https://public.com/stocks/aapl/earnings", "hamtat": "2026-09-15" }
+        {
+          "namn": "Apple Investor Relations (officiell bevakningspunkt)",
+          "url": "https://investor.apple.com",
+          "hamtat": "2026-09-15"
+        },
+        {
+          "namn": "Public.com — AAPL earnings (kalenderuppskattning 2026-10-29)",
+          "url": "https://public.com/stocks/aapl/earnings",
+          "hamtat": "2026-09-15"
+        }
       ]
     },
     {
@@ -21,8 +29,16 @@
       "rapportfenster": "2026-10-27 (efter marknadens stängning, historiskt ca 18:00 CET)",
       "notera": "Kvartalsrytm (Q3 = juli–september). Bolagets pressrum bekräftar tidpunkt per kvartal i förväg — tidigare Q-rapporter har publicerats ca 18:00 CET.",
       "kallor": [
-        { "namn": "ASM International press releases (officiell)", "url": "https://www.asm.com/press-releases", "hamtat": "2026-09-15" },
-        { "namn": "MarketScreener — ASM International kalender (Q3 2026: 2026-10-27)", "url": "https://www.marketscreener.com/quote/stock/ASM-INTERNATIONAL-4643/calendar/", "hamtat": "2026-09-15" }
+        {
+          "namn": "ASM International press releases (officiell)",
+          "url": "https://www.asm.com/press-releases",
+          "hamtat": "2026-09-15"
+        },
+        {
+          "namn": "MarketScreener — ASM International kalender (Q3 2026: 2026-10-27)",
+          "url": "https://www.marketscreener.com/quote/stock/ASM-INTERNATIONAL-4643/calendar/",
+          "hamtat": "2026-09-15"
+        }
       ]
     },
     {
@@ -32,8 +48,16 @@
       "rapportfenster": "2026-10-15 kl 07:00 CET (officiellt bekräftat)",
       "notera": "Kvartalsrytm — delårsrapport Q3 publiceras morron Stockholm-tid, följs av telefonkonferens/webcast samma dag. Ericsson publicerar även referensdata i september inför rapporten.",
       "kallor": [
-        { "namn": "Ericsson finansiella kalender — Q3 2026 (officiell)", "url": "https://www.ericsson.com/en/investors/financial-calendar/2026/q3-2026", "hamtat": "2026-09-15" },
-        { "namn": "Ericsson Investor Relations — financial calendar", "url": "https://www.ericsson.com/en/investors/financial-calendar", "hamtat": "2026-09-15" }
+        {
+          "namn": "Ericsson finansiella kalender — Q3 2026 (officiell)",
+          "url": "https://www.ericsson.com/en/investors/financial-calendar/2026/q3-2026",
+          "hamtat": "2026-09-15"
+        },
+        {
+          "namn": "Ericsson Investor Relations — financial calendar",
+          "url": "https://www.ericsson.com/en/investors/financial-calendar",
+          "hamtat": "2026-09-15"
+        }
       ]
     },
     {
@@ -43,8 +67,16 @@
       "rapportfenster": "2026-10-28 (estimerat, ej officiellt bekräftat)",
       "notera": "Kvartalsrytm (kalenderår = räkenskapsår). Historiskt rapporterar Alphabet Q3 sent i oktober (sista veckan) efter marknadens stängning; exakt datum meddelas via IR-sidan närmare aktuell.",
       "kallor": [
-        { "namn": "Alphabet Investor Relations (officiell bevakningspunkt)", "url": "https://abc.xyz/investor", "hamtat": "2026-09-15" },
-        { "namn": "Public.com — GOOGL earnings (kalenderuppskattning 2026-10-28)", "url": "https://public.com/stocks/googl/earnings", "hamtat": "2026-09-15" }
+        {
+          "namn": "Alphabet Investor Relations (officiell bevakningspunkt)",
+          "url": "https://abc.xyz/investor",
+          "hamtat": "2026-09-15"
+        },
+        {
+          "namn": "Public.com — GOOGL earnings (kalenderuppskattning 2026-10-28)",
+          "url": "https://public.com/stocks/googl/earnings",
+          "hamtat": "2026-09-15"
+        }
       ]
     },
     {
@@ -54,8 +86,16 @@
       "rapportfenster": "2026-11-04 kl 07:45 CET (officiellt bekräftat)",
       "notera": "Kvartalsrytm — Q3-rapporten täcker juli–september och följs av presentation för analytiker, investerare och media samma förmiddag. Helårsrapporten (Q4) kommer i februari 2027.",
       "kallor": [
-        { "namn": "Kambi Investor Financial Calendar (officiell)", "url": "https://www.kambi.com/investors/financial-calendar/", "hamtat": "2026-09-15" },
-        { "namn": "Kambi Investors", "url": "https://www.kambi.com/investors/", "hamtat": "2026-09-15" }
+        {
+          "namn": "Kambi Investor Financial Calendar (officiell)",
+          "url": "https://www.kambi.com/investors/financial-calendar/",
+          "hamtat": "2026-09-15"
+        },
+        {
+          "namn": "Kambi Investors",
+          "url": "https://www.kambi.com/investors/",
+          "hamtat": "2026-09-15"
+        }
       ]
     },
     {
@@ -65,8 +105,16 @@
       "rapportfenster": "2026-10-27 (estimerat, ej officiellt bekräftat)",
       "notera": "OBS räkenskapsåret: Logitech bryter året april–mars, så kalender-Q3 2026 (juli–september) är bolagets Q2 i räkenskapsår 2027. Förra årets motsvarande rapport kom 28 oktober — sent i oktober är den normala rytmen.",
       "kallor": [
-        { "namn": "Logitech IR — Quarterly Results (officiell)", "url": "https://ir.logitech.com/financials/quarterly-results/default.aspx", "hamtat": "2026-09-15" },
-        { "namn": "Public.com/MarketBeat — nästa earnings 2026-10-27 (estimerat)", "url": "https://public.com/stocks/logn/earnings", "hamtat": "2026-09-15" }
+        {
+          "namn": "Logitech IR — Quarterly Results (officiell)",
+          "url": "https://ir.logitech.com/financials/quarterly-results/default.aspx",
+          "hamtat": "2026-09-15"
+        },
+        {
+          "namn": "Public.com/MarketBeat — nästa earnings 2026-10-27 (estimerat)",
+          "url": "https://public.com/stocks/logn/earnings",
+          "hamtat": "2026-09-15"
+        }
       ]
     },
     {
@@ -76,8 +124,16 @@
       "rapportfenster": "2026-10-27 till 2026-10-28 (estimerat, ej officiellt bekräftat)",
       "notera": "Räkenskapsåret slutar sista juni — kalender-Q3 motsvarar Microsofts första kvartal (fiscal Q1 2027), historiskt rapporterat den sista veckan i oktober efter marknadens stängning. IR-sidan meddelar att nästa datum 'offentliggörs snarast'.",
       "kallor": [
-        { "namn": "Microsoft Investor Relations (officiell)", "url": "https://www.microsoft.com/en-us/investor/default", "hamtat": "2026-09-15" },
-        { "namn": "Investing.com — MSFT earnings (uppskattning 2026-10-27)", "url": "https://www.investing.com/equities/microsoft-corp-earnings", "hamtat": "2026-09-15" }
+        {
+          "namn": "Microsoft Investor Relations (officiell)",
+          "url": "https://www.microsoft.com/en-us/investor/default",
+          "hamtat": "2026-09-15"
+        },
+        {
+          "namn": "Investing.com — MSFT earnings (uppskattning 2026-10-27)",
+          "url": "https://www.investing.com/equities/microsoft-corp-earnings",
+          "hamtat": "2026-09-15"
+        }
       ]
     },
     {
@@ -87,8 +143,16 @@
       "rapportfenster": "2026-10-22 (officiellt planerat enligt bolaget)",
       "notera": "Kvartalsrytm — delårsrapport för Q3 och januari–september 2026. Datumet är förmeddelat i Nokias egen finansiella kalender och i Q2-rapporten.",
       "kallor": [
-        { "namn": "Nokia Corporation Financial Calendar 2026 (officiell)", "url": "https://www.nokia.com/newsroom/nokia-corporations-financial-calendar-for-2026/", "hamtat": "2026-09-15" },
-        { "namn": "Nokia Q2/Half Year 2026-rapport ('plans to publish … 22 October 2026')", "url": "https://www.nokia.com/newsroom/nokia-corporation-report-for-q2-and-half-year-2026/", "hamtat": "2026-09-15" }
+        {
+          "namn": "Nokia Corporation Financial Calendar 2026 (officiell)",
+          "url": "https://www.nokia.com/newsroom/nokia-corporations-financial-calendar-for-2026/",
+          "hamtat": "2026-09-15"
+        },
+        {
+          "namn": "Nokia Q2/Half Year 2026-rapport ('plans to publish … 22 October 2026')",
+          "url": "https://www.nokia.com/newsroom/nokia-corporation-report-for-q2-and-half-year-2026/",
+          "hamtat": "2026-09-15"
+        }
       ]
     },
     {
@@ -98,7 +162,11 @@
       "rapportfenster": "2026-10-21 (publicering ca 22:05 CET, telekonferens därefter)",
       "notera": "Kvartalsrytm — Q3-siffrorna avser juli–september. SAP publicerar sent på kvällen svensk tid (efter den amerikanska marknadens stängning) med analytikertelekonferens direkt efteråt.",
       "kallor": [
-        { "namn": "SAP Investor Relations — Events (officiell)", "url": "https://www.sap.com/investors/en/financial-documents-and-events/events.html", "hamtat": "2026-09-15" }
+        {
+          "namn": "SAP Investor Relations — Events (officiell)",
+          "url": "https://www.sap.com/investors/en/financial-documents-and-events/events.html",
+          "hamtat": "2026-09-15"
+        }
       ]
     },
     {
@@ -108,8 +176,29 @@
       "rapportfenster": "2026-11-05 (kalenderkällor; officiell inbjudan återstår)",
       "notera": "Kvartalsrytm — Sinch publicerar Q3 tidigt i november (Q3 2025 kom 4 november). Rapporten läggs upp på IR-sidan på morgonen med telefonkonferens/webcast samma förmiddag enligt sedvanligt mönster.",
       "kallor": [
-        { "namn": "Sinch — Financial Calendar (officiell bevakningspunkt)", "url": "https://www.group.sinch.com/investors/financial-calendar/", "hamtat": "2026-09-15" },
-        { "namn": "MarketScreener — Sinch AB kalender (Q3 2026: 2026-11-05)", "url": "https://www.marketscreener.com/quote/stock/SINCH-AB-54785943/calendar/", "hamtat": "2026-09-15" }
+        {
+          "namn": "Sinch — Financial Calendar (officiell bevakningspunkt)",
+          "url": "https://www.group.sinch.com/investors/financial-calendar/",
+          "hamtat": "2026-09-15"
+        },
+        {
+          "namn": "MarketScreener — Sinch AB kalender (Q3 2026: 2026-11-05)",
+          "url": "https://www.marketscreener.com/quote/stock/SINCH-AB-54785943/calendar/",
+          "hamtat": "2026-09-15"
+        }
+      ]
+    },
+    {
+      "ticker": "6752.T",
+      "namn": "Panasonic Holdings Corporation",
+      "land": "Japan",
+      "rapportfenster": "2026-10-30",
+      "notera": "Q2 FY2027-rapport (mars-bokslut) 30 oktober 2026 enligt leverantörens panel. Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        {
+          "namn": "StockAnalysis — Est. Earnings-rad (hämtat 2026-09-25)",
+          "url": "https://stockanalysis.com/quote/tyo/6752/"
+        }
       ]
     }
   ]

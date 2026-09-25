@@ -11,7 +11,11 @@
       "rapportfenster": "2026-10-22 (ca kl 07:00 CEST)",
       "notera": "Kvartalsvis rytm: Q1 2026 rapporterades 2026-04-28 och Q2 2026 den 2026-07-17. Telefonkonferens med webcast samma morgon kl 08:30 CEST. Årets Q3-fönster ligger en dag tidigare än 2025 (då 2025-10-23).",
       "kallor": [
-        { "namn": "Billerud — finansiell kalender (officiell)", "url": "https://www.billerud.com/investors/financial-calendar", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Billerud — finansiell kalender (officiell)",
+          "url": "https://www.billerud.com/investors/financial-calendar",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -21,8 +25,16 @@
       "rapportfenster": "2026-10-29 (kl 07:30 CET)",
       "notera": "Kvartalsvis rytm: Q1 2026 rapporterades 2026-04-28 och Q2 2026 den 2026-07-21. Q3-roadshow i Stockholm dagen efter (2026-10-30, SEB). Q4/helår 2027-02-03 och 2027-guidance 2026-12-08 enligt IR-kalendern.",
       "kallor": [
-        { "namn": "Boliden — financial reports (officiell)", "url": "https://investors.boliden.com/en/reports-and-presentations/financial-reports", "hamtdatum": "2026-09-15" },
-        { "namn": "Boliden — finansiell kalender (officiell)", "url": "https://investors.boliden.com/en/reports-and-presentations/financial-calendar", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Boliden — financial reports (officiell)",
+          "url": "https://investors.boliden.com/en/reports-and-presentations/financial-reports",
+          "hamtdatum": "2026-09-15"
+        },
+        {
+          "namn": "Boliden — finansiell kalender (officiell)",
+          "url": "https://investors.boliden.com/en/reports-and-presentations/financial-calendar",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -32,7 +44,11 @@
       "rapportfenster": "2026-10-22 (på morgonen)",
       "notera": "Delårsrapport januari–september 2026. Rytm 2026: Q2-rapporten kom 2026-08-20. Samma dag som Billerud och ett dygn före SCA — skogsindustriens rapportvecka är oktobers sista helg.",
       "kallor": [
-        { "namn": "Holmen — kalender: Interim report January–September 2026 (officiell)", "url": "https://www.holmen.com/en/Newsroom/press/calendar/Interim-report-January-September-2026/", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Holmen — kalender: Interim report January–September 2026 (officiell)",
+          "url": "https://www.holmen.com/en/Newsroom/press/calendar/Interim-report-January-September-2026/",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -42,8 +58,16 @@
       "rapportfenster": "2026-10-22 efter börsstängning (estimat enligt finansiella kalendrar — ej officiellt bekräftat)",
       "notera": "Kvartalsvis (10-Q). Q2 2026 redovisades 2026-07-23 med telefonkonferens på kvällen (17:30 ET). USA-bolag bekräftar exakt datum via pressrelease närmare rapportdagen — bekräfta mot Newmonts IR-sida före publicering.",
       "kallor": [
-        { "namn": "Newmont — events & presentations (officiell, närmaste källa)", "url": "https://www.newmont.com/investors/events-and-presentations/default.aspx", "hamtdatum": "2026-09-15" },
-        { "namn": "Public.com — Newmont (NEM) earnings", "url": "https://public.com/stocks/nem/earnings", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Newmont — events & presentations (officiell, närmaste källa)",
+          "url": "https://www.newmont.com/investors/events-and-presentations/default.aspx",
+          "hamtdatum": "2026-09-15"
+        },
+        {
+          "namn": "Public.com — Newmont (NEM) earnings",
+          "url": "https://public.com/stocks/nem/earnings",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -53,7 +77,11 @@
       "rapportfenster": "2026-10-23 (kl 07:00 CEST)",
       "notera": "Kvartalsvis rytm: Q2 2026 redovisades 2026-07-22 kl 07:00 CEST. Q4/helår 2027-02-11 och Analyst/Investor Day 2026-11-25 enligt den finansiella kalendern; bolaget förbehåller sig rätt att ändra datumen.",
       "kallor": [
-        { "namn": "Hydro — finansiell kalender (officiell)", "url": "https://www.hydro.com/en/global/investors/financial-calendar/", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Hydro — finansiell kalender (officiell)",
+          "url": "https://www.hydro.com/en/global/investors/financial-calendar/",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -63,7 +91,11 @@
       "rapportfenster": "2026-10-23",
       "notera": "Interim rapport Q3 2026. Tyst period inleds 30 kalenderdagar före rapporten (alltså från ca 2026-09-23) — under den avstår SCA från investerarkontakter. Rytm 2026: Q1 rapporterades 2026-04-24.",
       "kallor": [
-        { "namn": "SCA — IR-kalender: Interim report Q3 2026 (officiell)", "url": "https://www.sca.com/en/investors/ir-calendar/2026/october-23---interim-report-q3-2026/", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "SCA — IR-kalender: Interim report Q3 2026 (officiell)",
+          "url": "https://www.sca.com/en/investors/ir-calendar/2026/october-23---interim-report-q3-2026/",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -73,8 +105,16 @@
       "rapportfenster": "2026-10-28 (kl 07:30 CET)",
       "notera": "Interim rapport januari–september 2026. Datum officiellt announce:at i oktober 2025 och bekräftat i Q2-rapporten; presentation för marknaden följer samma dag, sedvanemässigt kl 10:00 CEST. Q2 2026 rapporterades 2026-07-22.",
       "kallor": [
-        { "namn": "SSAB — Dates for SSAB's financial reports in 2026 (officiell)", "url": "https://www.ssab.com/en/news/2025/10/dates-for-ssabs-financial-reports-in-2026", "hamtdatum": "2026-09-15" },
-        { "namn": "SSAB — investor calendar (officiell)", "url": "https://www.ssab.com/en/company/investors/ssab-as-an-investment/investor-calendar", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "SSAB — Dates for SSAB's financial reports in 2026 (officiell)",
+          "url": "https://www.ssab.com/en/news/2025/10/dates-for-ssabs-financial-reports-in-2026",
+          "hamtdatum": "2026-09-15"
+        },
+        {
+          "namn": "SSAB — investor calendar (officiell)",
+          "url": "https://www.ssab.com/en/company/investors/ssab-as-an-investment/investor-calendar",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -84,7 +124,11 @@
       "rapportfenster": "2026-10-30 (ca kl 08:30 EET)",
       "notera": "Delårsrapport januari–september 2026. Tyst period inleds 21 dagar före rapportdagen. Q2 2026 redovisades 2026-07-23. En tredjepartskalender (MarketScreener) listar 2026-11-03 — bolagets egen kalender gäller (30 oktober), divergensen flaggas här.",
       "kallor": [
-        { "namn": "Stora Enso — kalender (officiell)", "url": "https://www.storaenso.com/en/calendar", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Stora Enso — kalender (officiell)",
+          "url": "https://www.storaenso.com/en/calendar",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -94,8 +138,16 @@
       "rapportfenster": "2026-10-28 (kl 09:30–10:00 EET)",
       "notera": "Delårsrapport januari–september (Q1–Q3) 2026, officiellt bekräftat i pressrelease december 2025. Halvårsrapporten 2026 kom 2026-07-23. Extra bolagsstämma hölls 2026-08-31 i Helsingfors.",
       "kallor": [
-        { "namn": "UPM — financial reports and AGM in 2026 (officiell pressrelease)", "url": "https://www.upm.com/news-and-stories/releases/2025/12/upms-financial-reports-and-annual-general-meeting-in-2026/", "hamtdatum": "2026-09-15" },
-        { "namn": "UPM — finansiell kalender (officiell)", "url": "https://www.upm.com/investors/contacts-and-services/calendar/", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "UPM — financial reports and AGM in 2026 (officiell pressrelease)",
+          "url": "https://www.upm.com/news-and-stories/releases/2025/12/upms-financial-reports-and-annual-general-meeting-in-2026/",
+          "hamtdatum": "2026-09-15"
+        },
+        {
+          "namn": "UPM — finansiell kalender (officiell)",
+          "url": "https://www.upm.com/investors/contacts-and-services/calendar/",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -105,8 +157,55 @@
       "rapportfenster": "2026-10-22 (kl 08:00 CEST)",
       "notera": "Kvartalspublikation; stängd period inleds 2026-09-25 fram till rapportdagen. Resultatpresentation med frågestund följer samma dag (Q2-presentationen hölls kl 13:00 CEST). Q4 2026 enligt kalender-tredjepart 2027-02-11.",
       "kallor": [
-        { "namn": "Yara — 3Q 2026 results publication (officiell)", "url": "https://www.yara.com/investor-relations/financial-calendar/3q-2026-results-publication/", "hamtdatum": "2026-09-15" },
-        { "namn": "Yara — finansiell kalender (officiell)", "url": "https://www.yara.com/investor-relations/financial-calendar/", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Yara — 3Q 2026 results publication (officiell)",
+          "url": "https://www.yara.com/investor-relations/financial-calendar/3q-2026-results-publication/",
+          "hamtdatum": "2026-09-15"
+        },
+        {
+          "namn": "Yara — finansiell kalender (officiell)",
+          "url": "https://www.yara.com/investor-relations/financial-calendar/",
+          "hamtdatum": "2026-09-15"
+        }
+      ]
+    },
+    {
+      "ticker": "NTR",
+      "namn": "Nutrien Ltd.",
+      "land": "Kanada",
+      "rapportfenster": "2026-11-04",
+      "notera": "Q3-rapport est. 4 november 2026 enligt leverantörens panel (est.). Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        {
+          "namn": "StockAnalysis — Est. Earnings-rad (hämtat 2026-09-25)",
+          "url": "https://stockanalysis.com/quote/tsx/NTR/"
+        }
+      ]
+    },
+    {
+      "ticker": "AEM",
+      "namn": "Agnico Eagle Mines Limited",
+      "land": "Kanada",
+      "rapportfenster": "sen-okt-2026 (est.)",
+      "notera": "Q3-rapport est. slutet oktober 2026 — exakt dag ej bekräftad i panelen. Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        {
+          "namn": "StockAnalysis — Est. Earnings-rad (hämtat 2026-09-25)",
+          "url": "https://stockanalysis.com/quote/tsx/AEM/"
+        }
+      ]
+    },
+    {
+      "ticker": "ABX",
+      "namn": "Barrick Gold Corporation",
+      "land": "Kanada",
+      "rapportfenster": "tidig-nov-2026 (est.)",
+      "notera": "Q3-rapport est. tidigt november 2026 — exakt dag ej bekräftad i panelen. Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        {
+          "namn": "StockAnalysis — Est. Earnings-rad (hämtat 2026-09-25)",
+          "url": "https://stockanalysis.com/quote/tsx/ABX/"
+        }
       ]
     }
   ]

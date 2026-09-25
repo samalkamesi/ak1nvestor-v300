@@ -145,6 +145,19 @@
           "url": "https://investors.volvocars.com/en/news-and-events/calendar/financial-calendar"
         }
       ]
+    },
+    {
+      "ticker": "4661.T",
+      "namn": "Oriental Land Co., Ltd.",
+      "land": "Japan",
+      "rapportfenster": "2026-10-29",
+      "notera": "Q2 FY2027-rapport (mars-bokslut) 29 oktober 2026 enligt leverantörens panel. Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        {
+          "namn": "StockAnalysis — Est. Earnings-rad (hämtat 2026-09-25)",
+          "url": "https://stockanalysis.com/quote/tyo/4661/"
+        }
+      ]
     }
   ]
 }

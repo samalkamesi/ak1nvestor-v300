@@ -26471,5 +26471,95 @@
    ]
   },
   "notering": "cellmotiverad duo (Storbritannien/industri 1→2: BAE försvarsplattformskontraktör + Rolls-Royce motorer/aftermarket — MOTORN OCH BLADET: segmentlåset OE+Aftermarket = omsättningen EXAKT fyra år, tjänsteandelen 54→57 %); LSE-primär, prisfältet i PENCE (BA.L-konventionen), mcap GBP mdr; kollisionskontroll primär+sekundär (AZN-läxan) GRÖN; FY2025-ENGÅNGSPOSTEN dokumenterad (netto-M 27,5 % > EBIT-M 19,8 %) — TTM-fönstret som bär fälten NORMALISERAT (13,1 < 20,7, Kirin-kontrollen godkänd); netto [−1 269 · 2 412 · 2 521 · 5 841] — resultatCAGR NULL på negativ bas (Vonovia-precedens; pandemivändningen dokumenterad); FCF FYRA ÅR RAKT + TTM [1 165 → 4 461] rak CAGR +50,1 %, serien intern låst; FCF-yield 3,62 % DUBBELT EXAKT; EV REN 0,02 % MED NETTO-KASSA +2,11 mdr (mot DSV:s −85 mdr i samma cell: två balansmodeller); P/B 42,73 EXAKT men STRUKTURELLT (tunt EK 2,88 mdr — metodnot); ROE/ROIC-extremer (114/471 %) historiskt betingade, ROCE 24,8 % jämförbart; PS 5,32 EXAKT; Altman 2,78 · Piotroski 6 · beta 1,19; återköp 0,70 % (aktieantal −0,70 %); rappdag est. 2026-11-12 strax utanför v172-fönstret; EK-serie saknas; alla repliker i paranoid (StockAnalysis LON 2026-09-25)"
+ },
+ {
+  "ticker": "NG.L",
+  "namn": "National Grid plc",
+  "bransch": "energi",
+  "land": "Storbritannien",
+  "valuta": "GBX",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/lon/NG/ (+ /statistics/ + /financials/ + /financials/cash-flow-statement/)",
+    "paranoid": "LSE-PRIMÄRNOTING (underlag S&P Global Market Intelligence via StockAnalysis; senaste handelsdag 2026-09-24, hämtat 2026-09-25 — öppning 1 131,50 · föregående close 1 134,50 · dagsspann 1 127,00–1 148,50 · 52v 1 041,50–1 428,50 (+9,29 %); färshämtning med FYRA paneler (quote/statistics/financials/cash-flow); RÄKENSKAPSÅRET SLUTAR 31 MARS (mar-slut — FY2026 = apr 2025→mar 2026; rapporterar halvårsvis enligt källan); prisfältet i PENCE enligt BA.L/HSBA.L/RR.L-cellkonventionen, mcap/serier i GBP mdr): pris 11,355 GBP (1 135,5 GBp; beta 0,59), mcap 56,50 mdr GBP på 4,98 mdr aktier (replik 4,98 × 11,355 = 56,55 — 0,08 %), P/E 17,42 källans rad med GAAP-repliken 56,50/3,241 = 17,43 (0,08 %) och pris/EPS-repliken 11,355/0,65 = 17,47 (0,28 %) — tre tal i familjedokumentation; fwd P/E 12,70 (marknadens implied EPS +37 % — normaliseringsscenario efter investeringstoppen, referens aldrig löfte); PEG-källrad 1,30 med oklar tillväxtbas (17,42/1,30 = 13,4 % mot konsensus 3Y EPS 10,96 %) ⇒ fältet NULL (basblandning vägras, Shin-Etsu/freenet-precedensen); PS 3,19 EXAKT (56,50/17,687 — 0,15 %) · P/B 1,44 EXAKT (56,50/39,33 — 0,25 %) · P/TBV 2,17 · P/OCF 7,22 · EPS×AKTIER 0,65 × 4,98 = 3,237 ≈ netto 3,241 (0,12 %); EV-DEKOMPOSITION REN: 56,50 + 47,705 − 2,828 = 101,38 mot källans 101,41 (0,03 %) — NETTO-SKULD −44,88 mdr (−9,02/aktie): EV = 1,79× mcap, den reglerade balansmodellen (mot RR:s netto-kassa +2,11 mdr i grann-cellen); EV/Earnings 31,29 EXAKT (101,41/3,241 — 0,009 %) · EV/EBIT 19,33 källrad med repliken 101,41/5,17 = 19,61 (1,5 %, avrundad EBIT-rad dokumenterad) · EV/EBITDA 14,02 (källrad; EBITDA-raden 7,03 bär annan bas än EV/EBITDA-implieden 7,23 — 2,9 %, familjediskrepans dokumenterad); ENGÅNGSKONTROLLEN PER FÖNSTER (Kirin-U3-doktrinen): FY2023 netto 7 797 på oms 21 659 = netto-M 36,00 % — MER ÄN DUBBLA pretax-M 16,58 % = avyttringsvinsten under linjen (UK Gas Transmission såld jan 2023; divestiterraden 7 492 i kassaflödet) — därför resultatCAGR NULL (basen 7 797 bär engångsposten; basblandning vägras) och post-disposal-CAGR dokumenterad i stället: FY2024→FY2026 (2 290→3 241) = +18,96 % konsekutiv; TTM-FÖNSTRET SOM BÄR FÄLTEN ÄR NORMALISERAT: netto-M 18,32 % < EBIT-M 29,22 % (ordning OK, kontrollen godkänd); FCF-KOLLAPSEN — cellens pedagogiska kärna: [1 174 · 573 · 35 · −1 972 · −2 160] FY2022–FY2026 (capex 5 098 → 6 325 → 6 904 → 8 780 → 9 989 ≈ DUBBLAT på fyra år — rekordkapitalprogrammet, £60 mdr+-femårsplanen som AGM 2026 bekräftade); FCF-serien intern låst (OCF−capex exakt fem fönster mot källans egna FCF-rader) · FCF-M −12,21 % EXAKT (−2 160/17 687) · FCF-yield −3,82 % (källrad + replik −2,160/56,50 EXAKT) · utdelningen 0,485 GBP (4,27 % EXAKT replik 48,5/1 135,5) betalas under negativt FCF = den reglerade finansieringsmodellen (payout-källrad 74,37 %; EPS-bas-repliken 0,485/0,65 = 74,6 %, noterad); UTDELNINGSTRAPPAN: DPS [0,510 · 0,554 · 0,585 · 0,467 · 0,485] — ombaseringen −20,16 % FY2025 efter nyemissionen maj 2024, sedan +3,79 %; SEGMENTLÅSET (vågens andra, efter RR): UK Electricity Transmission [1 943 · 2 695 · 2 484 · 2 811] + UK Electricity Distribution [2 033 · 1 790 · 2 421 · 1 937] + UK Electricity System Operator [4 659 · 3 753 · 1 012 · 0] + New England [4 427 · 3 948 · 4 306 · 4 174] + New York [6 994 · 6 094 · 6 689 · 7 618] + National Grid Ventures [1 283 · 1 332 · 1 350 · 1 057] + Other [317 · 238 · 116 · 90] summerar EXAKT mot omsättningen FY2024/FY2025/FY2026 (FY2023 diff 3 M = 0,014 % källavrundning); ESO-KOLUMNEN: Electricity System Operator nationaliserad av UK-regeringen 1 okt 2024 — FY2026 helt utan ESO-intäkt (källradens partiella kolumner förklarade); TRANSATLANTISKA PROFILEN: New England + New York = 11,79 av 17,69 mdr (66,6 %) — UK-reglering möter USA-reglering i samma bolag; SERIEPROFILER: oms [21 659 · 19 850 · 18 378 · 17 687] (rak CAGR −6,54 % — PERIMETER + VALUTOR: gasavyttringen och ESO lämnat konsolideringen, GBP-styrka mot USD; fyra fallande år dokumenterade som sådana) · netto [7 797 · 2 290 · 2 902 · 3 241] (resultatCAGR NULL, se engångskontrollen) · EPS [2,12 · 0,57 · 0,61 · 0,65] (FY2023 bär engångsposten; sedan tre stigande på utspädd aktiebas); omsättningstillväxt TTM −3,76 % · prognosTillväxt +9,43 % (källans rev-fwd 3Y — ren bas, capexplanens tillväxt); METODNOTER: ROE 8,41 % · ROIC 3,72 % (S&P-definition) mot WACC 5,20 % — gap −1,48 p: ROIC<WACC är den reglerade tillgångsbasens SIGNATUR (kapitalstocken växer snabbare än resultatet under investeringsfasen — jämför DSV-integrationsåret men strukturellt här); bruttoMarginal NULL — källans 100,00 % är en ARTEFAKT (Gross Profit = Revenue; nätbolag utan COGS-linje — BT-precedensen 'osatt hellre än felbas'); räntetäckning 3,39 · D/E 1,21 EXAKT (47,705/39,33) · Debt/EBITDA 6,66 (kapitalintensiv balans) · current ratio 0,76; Altman n/a (källan saknar — utility-konvention med reglerad balans) · Piotroski saknas i källan; skattesats 22,45 %; institutionsägande 80,36 % · insiders 0,02 %; AKTIEANTAL +5,12 % YoY (buyback-yield −5,12 % — DILUTION inte återköp): nyemissionen maj 2024 (~7 mdr GBP rights issue för kapitalprogrammet) ⇒ nyemissioner 1 · återköp 0; balansserierna: kassa [2 768 · 4 258 · 6 931 · 2 828] · skuld [44 104 · 48 198 · 48 677 · 47 705] · netto [−41 336 · −43 940 · −41 746 · −44 877] (FY2023–FY2026); kandidatur: CELLMOTIVERAD duo enligt U13-mönstret — Storbritannien/energi-cellens TVÅ affärsmodeller: BP (supermajor-producent, oljeprisets cykel, utdelning på råvaruintäkt) + National Grid (reglerad nätsoperatör, tillgångsbastillväxt, utdelning på reglerad avkastning); producent/distributör-paralleliteten dokumenterar Japan/energi (INPEX+Tokyo Gas) och Tyskland/energi (RWE+E.ON); kontrasten spänner intäktsmodell OCH balans (BP:s råvarucykel mot NG:s −45 mdr netto-skuld + negativa FCF under investeringstoppen); SHEL-KOLLISIONEN tagen av grunden FÖRE valet: Shell plc står USA-klassad i universumet (NYSE-primärnotingskonventionen, supermajor-kvintetten) — kollisionskontroll primär+sekundär (AZN-läxan r221: NG.L/NG/NGG-ADR+namn+URL) GRÖN; P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 3 241 M GBP > 0; Sony/Honda-doktrinen); Utilities-Regulated Electric ⇒ energi-cellen (28→29 bolag), Storbritannien 12→13 (energi-grenen 1→2); NÄSTA RAPPORT BEKRÄFTAD 2026-11-05 (strax utanför v172-fönstret 10-20→11-04 — EN DAG efter fönstrets slut; notis vid kalenderberöring)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 1135.5,
+  "marknadsKapitalMdr": 56.5,
+  "tillvaxt": {
+   "omsattningCAGR5ar": -0.0653,
+   "resultatCAGR5ar": null,
+   "omsattningTillvaxtTTM": -0.0376,
+   "prognosTillvaxt": 0.0943
+  },
+  "lonksamhet": {
+   "roe": 0.0841,
+   "roic": 0.0372,
+   "bruttoMarginal": null,
+   "ebitMarginal": 0.2922,
+   "nettoMarginal": 0.1832,
+   "fcfMarginal": -0.1221
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 1.21,
+   "rantaTackning": 3.39,
+   "fcfPositivaSenaste5": 3,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 1
+  },
+  "aterkop": {
+   "senasteArMdr": 0,
+   "andelUtestande": 0.7437,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 17.42,
+   "pb": 1.44,
+   "evEbit": 19.33,
+   "peg": null,
+   "fcfYield": -0.0382,
+   "egenKapitalMultipl": 1.44
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "omsattning": [
+    21659000000,
+    19850000000,
+    18378000000,
+    17687000000
+   ],
+   "resultat": [
+    7797000000,
+    2290000000,
+    2902000000,
+    3241000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    573000000,
+    35000000,
+    -1972000000,
+    -2160000000
+   ]
+  },
+  "notering": "cellmotiverad duo (Storbritannien/energi 1→2: BP supermajor-producent + National Grid reglerad nätsoperatör — ASSET-BASE-MASKINEN mot oljeprisets cykel; producent/distributör-parallelitet som Japan/energi och Tyskland/energi); LSE-primär, prisfältet i PENCE (BA.L-konventionen), mcap GBP mdr; RÄKENSKAPSÅRET MAR-SLUT (FY2026 = apr 2025→mar 2026, halvårsvis rapportering); SHEL-KOLLISIONEN avvärjd FÖRE valet (Shell står USA-klassad i universumet — AZN-läxan tillämpad på NG.L/NG/NGG+namn+URL GRÖN); SEGMENTLÅSET vågens andra: sju segment = totalen EXAKT FY24/FY25/FY26 (FY23 diff 3 M = 0,014 %); ESO nationaliserad 1 okt 2024 (FY26 utan ESO); transatlantisk profil 66,6 % USA; ENGÅNGSKONTROLLEN (Kirin-U3): FY2023 netto-M 36,00 % mer än dubbla pretax-M 16,58 % = avyttringsvinst UK Gas Transmission under linjen — resultatCAGR NULL (basblandning vägras; post-disposal-CAGR FY24→FY26 +18,96 % dokumenterad); TTM-fönstret som bär fälten normaliserat (18,32 < 29,22); FCF-KOLLAPSEN [1 174 · 573 · 35 · −1 972 · −2 160] — capex 5 098→9 989 ≈ dubblat, rekordkapitalprogram; serien OCF−capex-låst fem fönster; FCF-M −12,21 % · FCF-yield −3,82 % (källrad+replik) — utdelning 0,485 (4,27 % EXAKT) BETALAS UNDER NEGATIVT FCF = reglerad finansieringsmodell; DPS-trappan med ombasering −20,16 % FY2025; NYEMISSION 1 (maj 2024 ~7 mdr GBP; aktieantal +5,12 % YoY, återköp 0); EV 101,41 med NETTO-SKULD −44,88 mdr (0,03 % ren dekomposition — mot RR:s netto-kassa i grann-cellen); ROIC 3,72 % < WACC 5,20 % = regleringens signatur (metodnot); bruttoMarginal NULL (källans 100 % artefakt — BT-precedensen); D/E 1,21 EXAKT · räntetäckning 3,39 · Debt/EBITDA 6,66; Altman/Piotroski saknas i källan; beta 0,59; rappdag BEKRÄFTAD 2026-11-05 (en dag efter v172-fönstrets slut); EK-serie saknas; alla repliker i paranoid (StockAnalysis LON 2026-09-25)"
  }
 ]

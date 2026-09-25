@@ -24586,5 +24586,95 @@
    ]
   },
   "notering": "kandidat ur BCE-OMG24 §10:s kö-notis (Kanada/material-öppningen; P/E-bärare kontrollerad före leverans); TSX-primär med VALUTA-MIX: pris/utdelning CAD, koncernrapportering USD (dokumenterat i paranoid); GÖDNINGSCYKELN dokumenterad (FY22 krigstopp · FY24 nedskrivningsdipp · FY25 återhämtning) ⇒ CAGR på konsekutiv FY23→FY25 medan cykelbasen redovisas — tillväxten är priscykel (FCX/VALE-precedensen); peg NULL (platt prognos +1,8 % gör spår-PEG meningslös; källans 3,66 kalibreringsnot); ROIC under WACC (kapitaltät industri); Altman 3,24 sund zon; FCF-yield-fönsterskillnad dokumenterad; EK-serie saknas — serier.egetKapital tomt; rappdag est. 2026-11-04 = v172-könotis; alla repliker i paranoid (StockAnalysis TSX 2026-09-25)"
+ },
+ {
+  "ticker": "CNR",
+  "namn": "Canadian National Railway Company",
+  "bransch": "industri",
+  "land": "Kanada",
+  "valuta": "CAD",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/tsx/CNR/ (+ /statistics/ + /financials/)",
+    "paranoid": "TSX-PRIMÄRNOTING i CAD (BCE/TELUS/RCI-B/NTR-precedensens Toronto-rad; underlag S&P Global Market Intelligence + Fiscal.ai via StockAnalysis; intradag 2026-09-25 delayed +0,50 %; färshämtning direkt med cache-bypass): pris 157,94 CAD (52v 132,07–165,90 · beta 0,72), mcap 98,21 mdr CAD på 621,0 M aktier (replik 621,0 × 157,94 = 98,08 — 0,13 %), P/E 20,88 ur källan på bolagets JUSTERADE EPS-bas (CNR rapporterar adjusted EPS som primärmått; GAAP-repliken 157,94/7,20 = 21,95 avviker 5,1 % — dokumentklass med dokumenterad bas-skillnad, samma klass som Panasonins ROE) mot forward P/E 18,85 ⇒ prognosTillväxt +10,77 % (trailing/fwd-modellen, MUFG-konventionen; spår-PEG 20,88/10,77 = 1,94 mot källans PEG 4,15 på 3-års — olika baser, kalibreringsnot), P/B 5,38 · EV/EBIT 14,71 · PS 5,75 EXAKT replik (98 210/17 062 = 5,757), ROE 24,22 % · ROIC 9,83 % ÖVER WACC 8,10 % (värdeskapande — Kanada-blockets enda utöver RY-klassen; dokumenterat) · brutto 53,34 % · EBIT-marginal 32,42 % (järnvägsstruktur) · netto-marginal 26,18 % EXAKT replik (4 467/17 062 = 26,18 %) · FCF-yield EXAKT replik (2 574/98 210 = 2,621 % mot 1/P·FCF 1/38,14 = 2,622 %); balans: D/E 1,03 · räntetäckning 7,49 · Altman 3,00 (EXAKT på källans zongräns — järnvägsbalansens kapitaltäthet; redovisas som datafakta med zonnot) · Piotroski 7 · kassa 0,55 mdr · skuld 20,64 mdr · NETTOSKULD 20,09 mdr · EK 19,07 mdr; utdelning 3,40 CAD/aktie (2,15 %) ⇒ senasteArMdr 2 111 (3,40 × 621,0) med källans payout 46,90 % (GAAP-replik 3,40/7,20 = 47,2 % ✓ 0,6 %); FY-SERIEN dec-slutande (M CAD): oms [17 107 · 16 828 · 17 046 · 17 268] · netto [4 291 · 3 887 · 4 482 · 4 504] · FCF [2 458 · 2 558 · 2 272 · 2 555] — STABIL KVALITETSPROFIL: samtliga FY positiva, inga brott, ingen engångspostanalys behövs (vågens andra brottsfria rad efter TELUS); rak 3-årig CAGR FY22→FY25 (oms +0,31 % · netto +1,63 % — platt men stabil; moat-bolag utan tillväxt, klassisk järnvägsprofil med ROIC>WACC som bär värderingen); EPS-GAAP-serien ~[6,80 · 6,20 · 7,21 · 7,25]; analytikerläge saknas i panelutdraget — ingen målkurs förs in; NÄSTA RAPPORT est. 2026-10-20 (Q3 2026) — v172-könotis (v43); kandidatur: S2-U1-BCE-UTOKNING-OMG24 §10 kö-notis 'Kanada/industri (CNR/CPKC) — öppna celler' — förstakoordinat CNR; P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 4 467 M > 0; Sony/Honda-doktrinen); kollisionskontroll exakt-match GRÖN; Industrials ⇒ industri-cellen (22→23 bolag), Kanada 6→7 — blockets sjunde gren."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 157.94,
+  "marknadsKapitalMdr": 98.21,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.003127326989995849,
+   "resultatCAGR5ar": 0.01627978983666778,
+   "omsattningTillvaxtTTM": 0.035,
+   "prognosTillvaxt": 0.10769230769230753
+  },
+  "lonksamhet": {
+   "roe": 0.2422,
+   "roic": 0.0983,
+   "bruttoMarginal": 0.5334,
+   "ebitMarginal": 0.3242,
+   "nettoMarginal": 0.2618,
+   "fcfMarginal": 0.15086156370882664
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 1.03,
+   "rantaTackning": 7.49,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 2.111,
+   "andelUtestande": 0.469,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 20.88,
+   "pb": 5.38,
+   "evEbit": 14.71,
+   "peg": 1.9388571428571457,
+   "fcfYield": 0.026209143671723858,
+   "egenKapitalMultipl": 5.38
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    17107000000,
+    16828000000,
+    17046000000,
+    17268000000
+   ],
+   "resultat": [
+    4291000000,
+    3887000000,
+    4482000000,
+    4504000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    2458000000,
+    2558000000,
+    2272000000,
+    2555000000
+   ]
+  },
+  "notering": "kandidat ur BCE-OMG24 §10:s kö-notis (Kanada/industri-öppningen; P/E-bärare kontrollerad före leverans); TSX-primär CAD; P/E på källans JUSTERADE EPS-bas (CNR:s primärmått; GAAP-replik 21,95 = 5,1 % dokumenterad avvikelse); STABIL brottsfri serie (vågens andra efter TELUS — rak CAGR oms +0,31 % · netto +1,63 %); ROIC 9,83 % ÖVER WACC 8,10 % (Kanada-blockets värdeskapare); Altman 3,00 exakt på zongränsen (järnvägsbalans, zonnot); spår-PEG 1,94 (källans 4,15 på 3-års kalibreringsnot); EK-serie saknas — serier.egetKapital tomt; rappdag est. 2026-10-20 = v172-könotis; alla repliker i paranoid (StockAnalysis TSX 2026-09-25)"
  }
 ]

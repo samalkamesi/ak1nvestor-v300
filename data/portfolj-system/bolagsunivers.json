@@ -25756,5 +25756,95 @@
    ]
   },
   "notering": "cellmotiverad duo (Japan/industri 1→2: Komatsu byggnadsmaskiner + Hitachi digitala system/konglomerat); TYO-primär JPY; mars-bokslut; OMVANDLINGSPROFILEN: netto fyrdubblat 67→559 (Lumada-vändningen) med PLATT omsättning (+1,4 %/år — vinsten är storyn) ⇒ netto-CAGR +102 % bär LÅG BAS och dokumenteras som VÄNDNINGS-CAGR (Daiichi-klassen); P/E 22,25 källans justerade bas (GAAP-replik 36,9 — minoritetsrikt konglomerat, basgap dokumenterat); källans netto-M-rad 7,4 % bår annat fönster (fältet bår repliken 6,19 % — seriekonsistent); FCF-yield EXAKT 2,60 %; ROIC>WACC post-omvandling; Altman 2,9 gränszon datafakta; payout-rad saknades (GAAP-replik med not); EK-serie saknas — serier.egetKapital tomt; rappdag Q2 FY2026 est. november = v172-könotis; alla repliker i paranoid (StockAnalysis TYO 2026-09-25)"
+ },
+ {
+  "ticker": "9531.T",
+  "namn": "Tokyo Gas Co., Ltd.",
+  "bransch": "energi",
+  "land": "Japan",
+  "valuta": "JPY",
+  "kallor": [
+   {
+    "namn": "StockAnalysis",
+    "hamtat": "2026-09-25",
+    "url": "https://stockanalysis.com/quote/tyo/9531/ (+ /statistics/ + /financials/)",
+    "paranoid": "TYO-PRIMÄRNOTING i JPY (1605.T/6501.T-precedensens Tokyo-rad; underlag S&P Global Market Intelligence + Fiscal.ai via StockAnalysis; intradag 2026-09-25 delayed +0,4 %; färshämtning direkt med cache-bypass + kompletterande FY-panel; MARS-BOKSLUT, etikett = slutår): pris 3 345 JPY (beta 0,3 — vågens lugnaste), mcap 3 108 mdr JPY på 930 M aktier (replik 930 × 3 345 = 3 111 — 0,1 %), P/E 14,9 ur källan på dess justerade EPS-bas 224,5 (GAAP-aktiebasrepliken 3 345/148,4 = 22,5 — gasdistributörens förråds-/engångsjusteringar gör basgapet stort; dokumenterad, Hitachi-klassens not) mot forward P/E 13,2 ⇒ prognosTillväxt +12,88 % (trailing/fwd-modellen, MUFG-konventionen; spår-PEG 14,9/12,88 = 1,16 mot källans PEG 4,9 på 3-års, kalibreringsnot), P/B 0,89 (UNDER bokfört värde — reglerad distributörens klassiska låga multiplar; dokumenterat som profil) · EV/EBIT 10,4 · källans netto-M-rad 2,4 % bär annat fönster (aktiebasrepliken 138/3 004 = 4,59 % TTM är seriekonsistent — fältet bär repliken, Hitachi-mönstret) · källans PS-rad 0,52 avviker stort mot repliken 3 108/3 004 = 1,03 (dokumenterad källavvikelse; PS ingår ej i radens fält), ROE 6,1 % · ROIC 3,7 % under WACC 4,8 % (REGLERAD NÄTMETODNOT — distributionsnätets tillgångsbas bär avkastningsformeln, Redeia-konventionen) · EBIT-marginal 5,0 % (distributörens volymbranssmarginal) · FCF-yield EXAKT replik (253/3 108 = 8,14 % = 1/P·FCF 1/12,3 = 8,13 %); balans: D/E 0,88 · räntetäckning 5,0 · Altman 1,7 (KÄLLANS VARNINGSZON — reglerat nätverk med tung infrastrukturbas, Redeia/Cellnex-metodnot-klassen; datafakta) · Piotroski 6; utdelning 82 JPY/aktie (2,45 %) ⇒ senasteArMdr 76 (82 × 930) med payout-rad saknad i utdraget (GAAP-replik 55,3 % med not); FY-SERIEN mars-slutande (mdr JPY): oms [2 391 · 2 570 · 2 929 · 2 961] · netto [84 · 91 · 115 · 124] · FCF [171 · 168 · 216 · 261] — VÅGENS SJUNDE BROTTSFRIA RAD: samtliga positiva och NETTO/EPS STIGANDE VARJE ÅR (84→91→115→124; rak CAGR oms +7,38 % · netto +13,86 % — energiprisnormaliseringen + LNG-terminaldiversifieringen); EPS-GAAP-serien [90,0 · 97,7 · 123,5 · 132,4]; analytikerläge saknas i panelutdraget — ingen målkurs förs in; NÄSTA RAPPORT Q2 FY2026 est. tidigt november — v172-könotis v45; kandidatur: CELLMOTIVERAD duo enligt U13-mönstret — Japan/energi-cellens TVÅ affärsmodeller: INPEX (1605.T, olje/gas-PRODUCENT) + Tokyo Gas (9531.T, reglerad DISTRIBUTÖR med LNG-terminaler) — cellens pedagogiska kontrast (råvarupris-cykel mot reglerad nättariff); P/E-bärarkriteriet kontrollerat FÖRE leverans (TTM-netto 138 mdr JPY > 0; Sony/Honda-doktrinen); kollisionskontroll exakt-match GRÖN; Utilities ⇒ energi-cellen (26→27 bolag), Japan 25→26 (energi-grenen 1→2 — JAPANS ALLA FYRA ENBOLAGSCELLER ÖPPNA på 1→2: material/halso/industri/energi)."
+   }
+  ],
+  "hamtat": "2026-09-25",
+  "pris": 3345,
+  "marknadsKapitalMdr": 3108,
+  "tillvaxt": {
+   "omsattningCAGR5ar": 0.07387305081663165,
+   "resultatCAGR5ar": 0.13862522184714043,
+   "omsattningTillvaxtTTM": 0.031,
+   "prognosTillvaxt": 0.1287878787878789
+  },
+  "lonksamhet": {
+   "roe": 0.061,
+   "roic": 0.037,
+   "bruttoMarginal": null,
+   "ebitMarginal": 0.05,
+   "nettoMarginal": 0.045938748335552594,
+   "fcfMarginal": 0.08422103861517977
+  },
+  "stabilitet": {
+   "skuldEgenkapital": 0.88,
+   "rantaTackning": 5,
+   "fcfPositivaSenaste5": 5,
+   "kassaManaderBurnRate": null,
+   "nyemissionerSenaste5ar": 0
+  },
+  "aterkop": {
+   "senasteArMdr": 0.076,
+   "andelUtestande": 0.553,
+   "insiderkopSenaste6man": 0
+  },
+  "moat": {
+   "bruttoMarginalMedel5ar": null,
+   "bruttoMarginalSpread5ar": null,
+   "roeMedel5ar": null
+  },
+  "vardering": {
+   "pe": 14.9,
+   "pb": 0.89,
+   "evEbit": 10.4,
+   "peg": 1.1569411764705873,
+   "fcfYield": 0.0814028314028314,
+   "egenKapitalMultipl": 0.89
+  },
+  "golv": {
+   "typ": "osatt",
+   "vardePerAktie": null,
+   "marginal": null
+  },
+  "serier": {
+   "ar": [
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "omsattning": [
+    2391000000000,
+    2570000000000,
+    2929000000000,
+    2961000000000
+   ],
+   "resultat": [
+    84000000000,
+    91000000000,
+    115000000000,
+    124000000000
+   ],
+   "egetKapital": [],
+   "fcf": [
+    171000000000,
+    168000000000,
+    216000000000,
+    261000000000
+   ]
+  },
+  "notering": "cellmotiverad duo (Japan/energi 1→2: INPEX producent + Tokyo Gas reglerad distributör/LNG — cellens kontrast råvarucykel mot nättariff); TYO-primär JPY; mars-bokslut; VÅGENS SJUNDE BROTTSFRIA RAD (netto/EPS stigande varje år 84→124; rak CAGR oms +7,38 % · netto +13,86 %); P/E 14,9 källans justerade bas (GAAP-replik 22,5 — förrådsjusteringarnas basgap dokumenterat); P/B 0,89 UNDER bokfört (reglerad profil); netto-M fält=replik 4,59 % (källans 2,4 %-rad annat fönster, noterad); FCF-yield EXAKT 8,14 %; REGLERAD NÄTMETODNOT (ROIC speglar avkastningsformeln — Redeia-konventionen); Altman 1,7 varningszon datafakta (Cellnex/Redeia-klassen); payout-rad saknades (GAAP-replik med not); EK-serie saknas — serier.egetKapital tomt; rappdag Q2 FY2026 est. november = v172-könotis; alla repliker i paranoid (StockAnalysis TYO 2026-09-25)"
  }
 ]

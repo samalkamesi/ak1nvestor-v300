@@ -18127,3 +18127,13 @@ KVD: ren dataleverans (utkast publiceras ej — granskningskön äger data/blogg
 - Pipeline: v176 STÄNGD LEVERERAD. Ärlighetsnotis: postmallens "+<n> kurser (333 → nästa tröskel)" infriades inte bokstavligen — leveransen blev en PROFIL över befintliga kurser (kategorin RISKHANTERING täcktes av ingen profil) i stället för nya kurser; kvalitet > kvantitet-doktrinen (kunddirektiv 2026-09-24: ALDRIG nya kurser i massproduktion) styrde valet. Lärvägssynk GRÖN (register 495 = karta 495, 29 kurser/0 fantomer), tsc 0.
 - Kön efter r267: v175 DR-prov Q3 (NÄSTA AKTIVA — Q3 slutar 09-30) · v172 rappdagar 10-20→11-04 · v173 viloläger — tre vågor börsda, evighetsmotorn nöjd.
 - Trädhygien: sju _r267*-verktyg städade (receptet aldrig kört); främmande _r260-isr.mjs lämnad orörd (etablerad konvention).
+
+
+## ROND 268 [organ:Φ] — v175 DR-prov Q3 LEVERERAT GRÖNT (rötter: krisdagens läxa) — 2026-09-26
+
+- v175 DR-prov Q3 (spår 10, v98-mönstret via det mekaniserade verktyget dr-ovning.mjs --fil prod/dump): DUMPKONTROLL 1/1 GRÖN (db-2026-09-26.sql.gz, 34,2 MB, 1 487 070 rader, CREATE TABLE 99 + COPY 101 — markörkontraktet hållet) · RESTORE RTO 14,3 s (referensbandet 11,5–27,8 s — i nivå med seriens bästa) · felrader 788/788 KÄNDA 0 okända (Supabase-GRANT-klassen, ofarliga enligt v98 F3) · MÄTNING public 60 tabeller / 1 464 567 rader (public+storage 68/1 464 703 · alla scheman 99/1 464 963) — tillväxten sedan v98 (60/1 187 291) och s10-u2 (60/1 246 728) bevisad · STÄDNING komplett (skrap-DB ak1a_dr_test raderad, PG17 stoppad i korrekt viloläge).
+- 30-DAGARS RETENTION-KOLL: äldsta dumpen i prod data/backups/supabase = 2026-09-11 (15 dagar) — understiger taget; 23 filer i bandet.
+- Protokoll: data/forskning/DR-PROV-2026-09-26-AUTO.md (verktygets egna kvitto) + DRIFTSBOK-notis med pekare.
+- Verktygsfynd: dumpkatalogen lever i PROD-trädet — --fil-flaggan (inte default-läget) är rätt anrop från molnytan; protokollet landar i egna ytan, prod smutsas aldrig.
+- Pipeline efter r268: v172 rappdagar 10-20→11-04 (oktober äger vågen) · v173 viloläger · spår 1-5 vilor (skiftet 09-18). Evighetsmotorn: börsda vågar kvar men ingen AKUT utlösare före 10-20 — ronder till dess: DRIFTSBOK-kvartalsstängning + granskningskö-påminnelser (R2) + systemkvalitet efter behov.
+- Hygien: _r267-slut.mjs (skal-vägrad rm förra ronden) borttagen denna rond.

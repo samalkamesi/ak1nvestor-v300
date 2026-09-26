@@ -6773,3 +6773,15 @@ SLUT — sektion inlagd av huvudagenten (rond 264) 2026-09-26.
 - ÅTGÄRD: SONDA FÖRE ÅTGÄRD — prod HEAD 886fde19 ✓, träd rent ✓, lås fritt ✓, RAM 5,9 GB ✓, GET /api/larvag/profil svarade redan 4 profiler: prod-synkens poll (var 10:e minut, bygger vid RAM ≥ 2200 MB) hade nybyggt .next och läkt automatiskt. r255-receptet (pm2 stop → bygg → garanterad start) skrevs men förblev OANVÄNT — ALDRIG stoppa pm2 på en grön prod.
 - UTFALL: API 4 profiler + detaljvy (7 steg, mål, varför-rader) + /api/larvag 200 + / 200; klient-renderade lärvägsytor (LarvagKort "use client" + useEffect) opåverkade av ISR/prerender.
 - FÖRSTÄRKER: §8 "Sajten 200 men ostylad" punkt 2 (vänta ut prod-synkens poll) — tredje oberoende beviset (jfr 2026-09-17, 2026-09-21).
+
+
+## KVARTALS-DR-PROV Q3 2026 (r268 [organ:Φ], 2026-09-26 — GODKÄNT)
+
+Fullständigt protokoll: data/forskning/DR-PROV-2026-09-26-AUTO.md. Kärntal:
+dumpkontroll 1/1 GRÖN (34,2 MB · 1 487 070 rader) · RTO 14,3 s · felrader 788
+kända/0 okända (Supabase-GRANT-klassen) · public 60 tabeller/1 464 567 rader
+(public+storage 68/1 464 703 · alla scheman 99/1 464 963) · retention äldsta
+dump 2026-09-11 (15 d < 30 d-taget) · skrap-DB raderad + PG17 stoppad.
+Anrop: node verktyg/dr-ovning.mjs --fil /home/ak1a/AK1/data/backups/supabase/db-<datum>.sql.gz
+(dumpkatalogen lever i prod-trädet — --fil är rätt flagga från molnytan).
+Nästa kvartalsprov: senast 2026-12-15 (Q4).

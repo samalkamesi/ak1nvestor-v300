@@ -15,7 +15,7 @@
  *   2. Kör den med: npx --yes tsx .tmp/tmp_motor_koll.ts  (under en hård
  *      Promise.race-tidsbudget på 90 sekunder — robusthetskrav E).
  *   3. Läser JSON-utdata mellan två ASCII-markörer, skriver/apenderar
- *      Markdown-rapport till data/rapporter/motorervalidering-2026-09-02.md.
+ *      Markdown-rapport till data/rapporter/motorervalidering-<dagens-datum>.md (ny fil per körning).
  *   4. Städar tmp-filen (även vid fel/timeout).
  *
  * FEM FASER:
@@ -74,7 +74,10 @@ import { fileURLToPath } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const TMP_TS = path.join(REPO, ".tmp", "tmp_motor_koll.ts");
-const RAPPORT_SOK = path.join(REPO, "data", "rapporter", "motorervalidering-2026-09-02.md");
+// r264: DATERAT filnamn + writeFileSync (ej append) — append till en spårad fil gjorde
+// prod-trädet smutsigt vid varje vaktkörning och blockerade updateInstead-pushar.
+const RAPPORT_DATUM = new Date().toISOString().slice(0, 10);
+const RAPPORT_SOK = path.join(REPO, "data", "rapporter", "motorervalidering-" + RAPPORT_DATUM + ".md");
 const TIMEOUT_MS = 90_000; // krav E: 90 s totalbudget
 const MARK_START = "===MOTORKOLL_JSON_START===";
 const MARK_END = "===MOTORKOLL_JSON_END===";
@@ -4023,7 +4026,7 @@ async function main() {
     const totalS = (Date.now() - t0) / 1000;
     const payload = parsaMarkorer(r.utdata);
     const rapport = byggRapport(payload, { totalS, timeout: r.timeout, kod: r.kod, stderr: r.felutdata });
-    appendFileSync(RAPPORT_SOK, rapport, "utf8");
+    writeFileSync(RAPPORT_SOK, rapport, "utf8"); // r264: ny daterad fil per körning — aldrig append till spårad fil
     const rader = payload && Array.isArray(payload.radrader)
       ? payload.radrader
       : [{

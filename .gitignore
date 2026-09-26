@@ -97,3 +97,10 @@ data/cache/*
 # Rond 136: rapportintagets karantän-PDF:er följer ALDRIG repot (styrelsebeslut
 # 2026-09-20: lagring utanför publik webbrot; proveniens+leveranser DÄREMOT trackas)
 data/rapportintag/karantan/
+
+# Rond 264: motorvaliderarens daterade rapporter är server-genererade och regenererbara
+# (kör verktyg/validera-motorer.mjs) — samma dagens omkörningar skriver om dagens fil;
+# tracking = ytsmuts i prod som blockerar push (updateInstead kräver rent worktree,
+# jfr kvalitetsrapport-SENASTE ovan och data/cache våg 121). Bevisningen (107/0/0)
+# bärs av worklog + DRIFTSBOKEN + commit-meddelanden.
+data/rapporter/motorervalidering-*.md

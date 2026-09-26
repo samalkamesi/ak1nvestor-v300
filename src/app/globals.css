@@ -49,6 +49,11 @@
      länk och sekundära val. DelRad:s pill (border-gold/30 rounded-full)
      = m8:s ikonrad-kontrakt — diskret, ALDRIG banner. */
   --color-guld-hero: var(--guld-hero);
+  /* V179 (r269): text-guld-djup används i 28 element i 12 PRO-filer men
+     genererades ALDRIG (samma @theme-glömmen-klass som v178:s chip) —
+     mörkguld-löptexten har renderat i ärvd färg. Mappning = klassen lever;
+     värdet är tema-skiftat via :root/--guld-djup (light #7A5E14 · dark #c9a84c). */
+  --color-guld-djup: var(--guld-djup);
   --color-beige-hero: var(--beige-hero);
   --color-marin-morkast-hero: var(--marin-morkast-hero);
   --color-marin-chip-hero: var(--marin-chip-hero);

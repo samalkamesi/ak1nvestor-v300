@@ -6746,3 +6746,22 @@ Bevis: /tmp/r255-repair-status.txt (grön kedja 18:28) + BUILD_ID 23:07 på 5902
 
 KVD: data-only (två docs-appendar), src orörd, inget bygge; tsc via grinden vid commit; prod 200.
 SLUT — sektion inlagd av huvudagenten (rond 258, dokvåg v174) 2026-09-26.
+
+
+## ISR-KRISEN 2026-09-26 (ronder 262-263) — publicerade bloggsidor serverade gamla data; rot, kur och doktrin-rättelse
+
+**SYMPTOM:** r260:s döda-länk-rättning (f235d817) verifierad i prod-trädets datafiler, men alla tre publicerade bloggsidorna (fastighetsaktier, halvledaraktier, bankaktier) serverade fortfarande de GAMLA länkarna — fyra omgångar dubbelrequest.
+
+**ROT (tre samverkande mekanismer):**
+1. Turbopacks persistenta cache: byggen utan `rm .next` återanvänder gamla prerenders — bloggdatan läses med readFileSync (osynlig för bygg-input-spårningen), så bygget ser ingen anledning att rendera om.
+2. `force-static + revalidate 3600`: sidorna anses "färska" i 1 h; varje pm2-omstart nollställer stälhets-klockan — med omstarter varannan timme pollar dubbelrequest alltid inom fönstret och sidorna läser ALDRIG om disken.
+3. `dynamicParams = false`: en RADERAD cache-post ger 404 utan on-demand-fallback — kirurgisk cache-radering + omstart (kur2, 07:31:30Z) blev därför en INCIDENT (tre sidor 404) i stället för en kur.
+
+**KUR (bevisad):** rent bygge — r255-receptet. Deploy-kedjans bygge 08:53 (BUILD_ID 2UIxVd0S_jCN7wSMF28Hb) + pm2-omstart 09:51 ⇒ alla tre sidorna 200 med NYA länkarna (nasdaq.com, investor.tsmc.com — sond r264, dubbelrequest ×2), gränssnittsvakten 0 fynd/180 kombinationer (11:26-rapporten).
+
+**DOKTRIN-RÄTTELSE (viktig):** leverera-data-regeln "datafiler behöver INGET bygge" gäller appar som läser data VID RUNTIME. PUBLICERADE BLOGGSIDOR är prerenderade vid bygge: text-/länkändringar i data/blogg/*.json kräver BYGGE i samma andetag (eller ett ISR-fönster som får löpa ut UTAN pm2-omstart). Ny bloggtext = samma regel som 404-kurien: aldrig data utan deploy.
+
+**VACCINATIONER:** (1) aldrig nästlade citat i `bash -c '…'`-strängar (awk-citat dödade repair2 tre gånger, exit 2 på 14 ms = bash-syntaxfel — hela kedjor i rena skriptfiler); (2) kirurgisk ISR-cache-radering är FARA på dynamicParams=false-sidor — använd ALDRIG som kur, bygg istället; (3) häng ≠ avbrott — repair1 byggde vidare efter skal-häng men OOM-dödades 03:29; effekten verifieras alltid i .next/pm2 INNAN omkörning.
+
+KVD: data-only, src orörd, inget nytt bygge (08:53-bygget äger kuren); tsc via grinden vid commit; prod 200 + tre sidor gröna.
+SLUT — sektion inlagd av huvudagenten (rond 264) 2026-09-26.

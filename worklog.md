@@ -18086,3 +18086,12 @@ KVD: ren dataleverans (utkast publiceras ej — granskningskön äger data/blogg
 - Innehåll: produktionssidan (malmhaltens aritmetik, C1/AISC-trappan, utbudströghet, bi-metallkrediter, reserver, minoritetspedagogik) med Boliden som svenskt djupanker och VALE/FCX/FMG/NST/S32/MT ur universumet; avgränsad mot publicerade råvarucykelguiden genom länk, inte upprepning.
 - v171-status: tre original kvar (se-18 rederi, se-21 kemi, se-23 stål).
 KVD: ren dataleverans (utkast publiceras ej — granskningskön äger data/blogg-utkast/), src orörd, tsc via grinden vid commit, inget bygge. Kö: v171 tre original → v172 rappdagar 10-20→11-04 · v175 DR-prov Q3.
+## ROND 262-263 [organ:Φ] — ISR-KRISEN KURAD: publicerade bloggsidor fast i gamla prerenders (rot: tre mekanismer; kur: rent bygge, bevisat 08:53) — 2026-09-26
+
+- Sond r262: r260:s rättade datafiler (f235d817) lever i prod-trädet men alla tre publicerade bloggsidorna (fastighetsaktier, halvledaraktier, bankaktier) serverade GAMLA döda länkar — fyra dubbelrequest-omgångar.
+- Rotkarta: Turbopacks persistenta cache (bloggdata läses med readFileSync = osynlig för bygg-input-spårningen) + force-static/revalidate 3600 där varje pm2-omstart nollställer stälhets-klockan + dynamicParams=false (saknad cache-post = 404, ingen fallback). Full dokumentation: DRIFTSBOKEN "ISR-KRISEN 2026-09-26".
+- Kur-försök: kirurgisk cache-radering ensam → värdelös (processens ISR-minnescache lever kvar); kur2 (radering + pm2-omstart 07:31:30Z) → INCIDENT: tre sidor 404; final kur = deploy-kedjans bygge 08:53 (BUILD_ID 2UIxVd0S_jCN7wSMF28Hb) + pm2-omstart 09:51.
+- Bevis r264 (sond, dubbelrequest ×2): samtliga tre sidorna 200 med NYA länkarna (nasdaq.com, investor.tsmc.com — inga gamla domäner kvar i svaren), gränssnittsvakten 0 fynd/180 (11:26-rapporten), prod och yta synka på d6b21330, lås fritt, RAM 5,1 GB.
+- Byggesrace-kartläggning under krisen: repair1 OOM-dödat 03:29; repair2 ×3 exit 2 = EGNA buggen (nästlade awk-citat i bash -c '…' — vaccination: hela kedjor i rena skriptfiler); deploy-skriptets eget bygge OOM-dödat ~04:11; flock-backing bevisat i praktiken (mitt barn backade korrekt — ingen låsduell).
+- DOKTRIN-RÄTTELSE bokförd i DRIFTSBOKEN: publicerade bloggsidor är prerenderade vid bygge — text/länkändringar i data/blogg/*.json kräver BYGGE i samma andetag ("data utan deploy"-regeln gäller runtime-läsan, inte prerender).
+- B30 rederi: två tidigare dispatcher dog tyst med trådklippningarna (bakgrunds-mönstret igen) — omstartad som FÖRGRUNDS-subagent i r264 (det bevisade mönstret).

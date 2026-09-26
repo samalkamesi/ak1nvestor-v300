@@ -322,7 +322,8 @@ export default async function KurserPage() {
               key={c.slug}
               c={c}
               chip={
-                <span className="inline-flex items-center gap-1 rounded-full bg-djup-marin px-2 py-0.5 text-[10px] font-bold text-guld-hero">
+                /* V178 (r269): bg-marin-chip-hero — bg-djup-marin saknar @theme-mappning (v160-glömmen) och renderade chipet transparent: guld 1,61:1 mot kortets #fffdf7. Chip-token är temastabil, guld #E8C766 mot marin #16263D ≈ 8,6:1. */
+                <span className="inline-flex items-center gap-1 rounded-full bg-marin-chip-hero px-2 py-0.5 text-[10px] font-bold text-guld-hero">
                   <span aria-hidden>✨</span> Ny
                 </span>
               }

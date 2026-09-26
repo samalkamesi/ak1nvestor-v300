@@ -1,23 +1,23 @@
 {
-  "datum": "2026-09-23T01:29:06.354Z",
+  "datum": "2026-09-26T01:28:17.126Z",
   "bas": "http://localhost:3000",
   "namn": "o151-natt",
   "sidor": [
     {
       "sokvag": "/superanalys",
       "poang": {
-        "prestanda": 0.43,
+        "prestanda": 0.56,
         "tillganglighet": 1,
         "bastaPraxis": 1,
         "seo": 1
       },
       "karnmattMs": {
-        "FCP": 1413,
-        "LCP": 5706,
-        "TBT": 5669,
+        "FCP": 1479,
+        "LCP": 4637,
+        "TBT": 1365,
         "CLS": 0,
-        "TTI": 8942,
-        "SI": 6461
+        "TTI": 5512,
+        "SI": 3878
       },
       "nyckelauditer": {
         "unused-javascript": {
@@ -27,8 +27,8 @@
         },
         "total-byte-weight": {
           "poang": 1,
-          "visar": "Total size was 482 KiB",
-          "rad": "Avoids enormous network payloads — Total size was 482 KiB"
+          "visar": "Total size was 484 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 484 KiB"
         },
         "unused-css-rules": {
           "poang": 1,
@@ -37,42 +37,42 @@
         },
         "bootup-time": {
           "poang": 0,
-          "visar": "5.1 s",
-          "rad": "Reduce JavaScript execution time — 5.1 s"
+          "visar": "2.2 s",
+          "rad": "Reduce JavaScript execution time — 2.2 s"
         },
         "mainthread-work-breakdown": {
           "poang": 0,
-          "visar": "11.5 s",
-          "rad": "Minimize main-thread work — 11.5 s"
+          "visar": "4.6 s",
+          "rad": "Minimize main-thread work — 4.6 s"
         }
       }
     },
     {
       "sokvag": "/kalkylator",
       "poang": {
-        "prestanda": 0.42,
+        "prestanda": 0.57,
         "tillganglighet": 0.99,
         "bastaPraxis": 1,
         "seo": 1
       },
       "karnmattMs": {
-        "FCP": 1538,
-        "LCP": 5423,
-        "TBT": 8779,
+        "FCP": 1439,
+        "LCP": 5283,
+        "TBT": 1070,
         "CLS": 0,
-        "TTI": 12056,
-        "SI": 7237
+        "TTI": 5432,
+        "SI": 2866
       },
       "nyckelauditer": {
         "unused-javascript": {
           "poang": 0,
-          "visar": "Est savings of 45 KiB",
-          "rad": "Reduce unused JavaScript — Est savings of 45 KiB"
+          "visar": "Est savings of 46 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 46 KiB"
         },
         "total-byte-weight": {
           "poang": 1,
-          "visar": "Total size was 567 KiB",
-          "rad": "Avoids enormous network payloads — Total size was 567 KiB"
+          "visar": "Total size was 569 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 569 KiB"
         },
         "unused-css-rules": {
           "poang": 1,
@@ -81,13 +81,13 @@
         },
         "bootup-time": {
           "poang": 0,
-          "visar": "4.7 s",
-          "rad": "Reduce JavaScript execution time — 4.7 s"
+          "visar": "1.6 s",
+          "rad": "Reduce JavaScript execution time — 1.6 s"
         },
         "mainthread-work-breakdown": {
           "poang": 0,
-          "visar": "16.3 s",
-          "rad": "Minimize main-thread work — 16.3 s"
+          "visar": "4.5 s",
+          "rad": "Minimize main-thread work — 4.5 s"
         }
       }
     }

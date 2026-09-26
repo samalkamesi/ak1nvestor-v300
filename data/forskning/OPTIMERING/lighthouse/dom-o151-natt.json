@@ -1,10 +1,10 @@
 {
-  "ts": "2026-09-25T01:27:01.984Z",
+  "ts": "2026-09-26T01:27:01.905Z",
   "lage": "natt",
   "steg": [
     {
       "steg": "0-ram",
-      "ramMB": 4859,
+      "ramMB": 5173,
       "tak": 1500,
       "pass": true
     },
@@ -12,11 +12,11 @@
       "steg": "0b-lastvakt",
       "busyProc": 0.6,
       "loadavg": [
-        1.49,
-        1.18,
-        1.12
+        0.01,
+        0.16,
+        1.09
       ],
-      "cpuKalibMs": 42.5,
+      "cpuKalibMs": 53.7,
       "zcodeBarn": 5,
       "tyst": true,
       "kriterier": {
@@ -36,16 +36,49 @@
     },
     {
       "steg": "1b-last-ater",
-      "busyProc": 53,
+      "busyProc": 0.4,
       "loadavg": [
-        2.58,
-        1.44,
-        1.21
+        0.01,
+        0.15,
+        1.08
       ],
-      "cpuKalibMs": 29.8,
+      "cpuKalibMs": 33.2,
+      "tyst": true,
+      "pass": true
+    },
+    {
+      "steg": "2-lighthouse",
+      "exit": 0,
+      "svans": [
+        "Sammanfattning → /home/ak1a/AK1/data/forskning/OPTIMERING/lighthouse/o151-natt-sammanfattning.json",
+        "",
+        "Jämförelse mot o139-fore:",
+        "/superanalys: P 73→56 · LCP 4355→4637 (+282 ms) · TBT 375→1365",
+        "/kalkylator: P 64→57 · LCP 4812→5283 (+471 ms) · TBT 582→1070",
+        ""
+      ]
+    },
+    {
+      "steg": "2b-last-slut",
+      "busyProc": 25.3,
+      "loadavg": [
+        2.07,
+        0.73,
+        1.22
+      ],
+      "cpuKalibMs": 30.9,
+      "kalibStart": 53.7,
+      "kalibKvot": 0.58,
+      "zcodeBarn": 5,
       "tyst": false,
+      "kalibDrift": true,
+      "kriterier": {
+        "busyUnder": 30,
+        "l1Under": 1.5,
+        "kalibKvotUnder": 1.5
+      },
       "pass": false
     }
   ],
-  "dom": "avbruten-last-ater"
+  "dom": "avbruten-last-efter"
 }

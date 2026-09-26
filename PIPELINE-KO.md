@@ -19,7 +19,7 @@ ALDRIG nya kurser i massproduktion.
 
 | v175 | dataintegritet (spår 10) | DR-prov Q3 2026 enligt v98-mönstret: återställ skrap-postgres, mät tid/rader, dump-slutmarkörer + 30-dagars retention-koll, protokoll i DRIFTSBOKEN, städa lokal PG | session | bokad r259 (rotation: r258 spår 9 ⇒ v175 ej spår 9; krisdagens läxa — återställningsförmågan bevisas) |
 
-| v176 | lärvägar (spår 5) | Utöka lärvägssystemet enligt evighetskatalogens postmall: +<n> kurser med varför-rader i kursrek-registret (333 → nästa tröskel), lärvägsdjup per profil, kursregister-synk, front B, tsc 0 | session | bokad r265 (rotation: v175 spår 10 ⇒ v176 ej 10; spår 5 orört i rotationen och kundvärdekärnan — säkrar ≥3 kommande vågar när v171 stängs efter B31/B32) |
+| v176 | lärvägar (spår 5) | Utöka lärvägssystemet enligt evighetskatalogens postmall: +<n> kurser med varför-rader i kursrek-registret (333 → nästa tröskel), lärvägsdjup per profil, kursregister-synk, front B, tsc 0 | session | LEVERERAD r267 — FJÄRDE profilen Riskvägen LIVE i prod (886fde19 + prod-synkens läkbygge): sju steg RISKHANTERING i nivåstegning 1→3 + the-most-important-thing som mål, åtta kurser med handskrivna varför-rader; API 4 profiler + detalj + /api/larvag 200 verifierade; lärvägssynk 495/495 0 fantomer, tsc 0. NOTIS: postmallens "+n kurser" infriades som PROFIL över befintliga kurser (kvalitet > kvantitet 2026-09-24) — spår 5 vilar nu (skiftet: inga nya bokningar spår 1-5) |
 
 ## VILOR / VÄNTAR KUND (R2)
 
@@ -55,3 +55,5 @@ ALDRIG nya kurser i massproduktion.
   därefter fyra original se-18/20/21/23. Tre vågor börsda: v171 PÅGÅR,
   v172 utlösare 10-20, v175 bokad.
 - 2026-09-26 r261 (Φ): v171 B29 gruv/metall LEVERERAD (1 397 ord, KVD 41/41 ×2). Tre original kvar (se-18 rederi, se-21 kemi, se-23 stål); v172 rappdagar 10-20→11-04; v175 DR-prov Q3 bokad. Tre vågor börsda.
+
+- 2026-09-26 r267 (Φ): v176 Riskvägen LEVERERAD LIVE i prod (OOM-bygget läkt av prod-synkens poll — §8-mönstret tredje beviset; r255-receptet oanvänt) ⇒ kön: v175 DR-prov Q3 NÄSTA AKTIVA (Q3 slutar 09-30) · v172 rappdagar oktober · v173 viloläger. Spår 5 vilor (skiftet 09-18).

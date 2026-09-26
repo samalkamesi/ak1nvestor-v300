@@ -6765,3 +6765,11 @@ SLUT — sektion inlagd av huvudagenten (rond 258, dokvåg v174) 2026-09-26.
 
 KVD: data-only, src orörd, inget nytt bygge (08:53-bygget äger kuren); tsc via grinden vid commit; prod 200 + tre sidor gröna.
 SLUT — sektion inlagd av huvudagenten (rond 264) 2026-09-26.
+
+
+## DRIFTNOT 2026-09-26 r267 [organ:Φ] — v176-bygget OOM-dödat, prod-synken läkte själv (tredje beviset)
+
+- SYMPTOM: kod-commit 886fde19 (fjärde lärvägsprofilen) pushad; produktionsbygget med pm2 igång OOM-dödat ("Killed"); sajten 200 men serverade 3 profiler (gamla byggvetoret).
+- ÅTGÄRD: SONDA FÖRE ÅTGÄRD — prod HEAD 886fde19 ✓, träd rent ✓, lås fritt ✓, RAM 5,9 GB ✓, GET /api/larvag/profil svarade redan 4 profiler: prod-synkens poll (var 10:e minut, bygger vid RAM ≥ 2200 MB) hade nybyggt .next och läkt automatiskt. r255-receptet (pm2 stop → bygg → garanterad start) skrevs men förblev OANVÄNT — ALDRIG stoppa pm2 på en grön prod.
+- UTFALL: API 4 profiler + detaljvy (7 steg, mål, varför-rader) + /api/larvag 200 + / 200; klient-renderade lärvägsytor (LarvagKort "use client" + useEffect) opåverkade av ISR/prerender.
+- FÖRSTÄRKER: §8 "Sajten 200 men ostylad" punkt 2 (vänta ut prod-synkens poll) — tredje oberoende beviset (jfr 2026-09-17, 2026-09-21).

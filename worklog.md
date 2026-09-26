@@ -18071,3 +18071,10 @@ KVD: data-only (två docs-appendar), src orörd, inget bygge; tsc via grinden vi
 - MILEPÅLE: med AR30 är branschguidefamiljen FULLSTÄNDIG i tre språk — 30 original (B1–B28 + energi + material) × sv/en/ar (30+30+30). Översättningsspåret SLUT; v171 kvarstår fyra nya svenska original (se-18 rederi, se-20 gruv/metall, se-21 kemi, se-23 stål — kursankare i data/kurser-tillagg/, universumbärning sonderad: gruv VALE/FCX/FMG/NST/S32 · stål NUE/MT/3382.T · kemi SHW/4063.T · rederi MAERSK-B/DSV).
 - PIPELINE-KO: v174 bokförd LEVERERAD (ff2d4d76), v175 spår 10 DR-prov Q3 BOKAD (rotation 9→10 — krisdagens läxa); tre vågor börsda: v171 PÅGÅR · v172 utlösare 10-20 · v175 bokad.
 KVD: ren dataleverans (utkast publiceras ej — granskningskön äger data/blogg-utkast/), src orörd, tsc via grinden vid commit, inget bygge. Kö: v171 fyra original (dispatch i omgångar) → v172 rappdagar 10-20→11-04 · v175 DR-prov Q3.
+## ROND 260 [organ:Φ] — döda-länkar-larm 04:17 RÄTTAT I KÄLLORNA (efterhandsbokförd i r261) — 2026-09-26
+(Efterhandsbokföring: trådpunkten klipptes efter push men före worklog/beslutsminne — bevis: commit 6eac2052, sondskript _r260-*.mjs, utkastens mtime 02:39Z.)
+- LARM 04:17 lokal (02:17Z): döda/ouppnåeliga externa länkar i data-ytorna. Rättat i KÄLLORNA: tsmc.com/english/investor-relations (404) → investor.tsmc.com/english; nasdaqomxnordic.com (timeout, instabil) → nasdaq.com/european-market-activity (hit domänen själv redirectar — r260-validerad med _r260-lanksond.mjs).
+- Omfattning: 12 filer (2 publicerade bloggar + 9 utkast sv/en/ar + 1), 20 ersättningar, JSON-valid efter skrivning, granskningsarkivet i övrigt orört (_r260-righta.mjs).
+- DR-sonderna (_r260-dr-sond.mjs, _r260-dr-sond2.mjs): v175 DR-prov Q3 kartlagt (DRIFTSBOKENs detaljer, dumpläge, PG-status) men PROVET EJ KÖRT — kvar bokat i kön.
+- B29 gruv/metall-dispatchen från förra trådpunkten dog tyst med klippningen (agents-katalogen utan spår) — omstart i r261 som förgrunds-subagent.
+- KVD: data-only (ersättningar i data-ytor), tsc via grinden (committen passerade), prod 200.

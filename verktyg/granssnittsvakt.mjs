@@ -62,9 +62,22 @@ function lasArg(namn, standard) {
 }
 const SNABB = process.argv.includes("--snabb");
 const TEMA = lasArg("tema", "bada"); // dark | light | bada
+// V177 (r269): default = loopback. FJÄRRBAS är en mätfälla: nginx sätter
+// x-forwarded-for till anslutningens käll-IP, och när serverns egna
+// verktyg hämtar det PUBLIKA namnet blir det serverns egna publika IP —
+// frekvensvaktens bot-tak (30 req/10 s) trottlar då hela svepet (bevis
+// 2026-09-26T17:05–17:11Z: 91/96 kombinationer 429; loopback via
+// localhost:3000 passerar whitelistad, sondbekvisat 100/100 grönt).
+// Cron sänder alltid explicit localhost; defaulten skyddar manuella
+// --snabb-körningar som glömmer --bas.
 const BAS =
-  lasArg("bas", process.env.AK1A_BAS_URL || "https://lab.ak1nvestor.com")
+  lasArg("bas", process.env.AK1A_BAS_URL || "http://localhost:3000")
     .replace(/\/+$/, "");
+if (!/^http:\/\/(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$/.test(BAS)) {
+  console.error(
+    `⚠ V177: basen '${BAS}' är inte loopback — mätningen kan 429-trottlas av frekvensvakten (egen publik IP som XFF). Krävs extern mätning: sätt --bas explicit; annars kör --bas=http://localhost:3000.`,
+  );
+}
 const SKARMVAGGAR = lasArg("skarmvagnar", "390x844,1280x800")
   .split(",")
   .map((s) => {
@@ -456,6 +469,8 @@ const rapport = {
   fel: 0,
 };
 let avbruten = false;
+// V177 (r269): engångs-root-rad vid första 429 — mätblindhet ska förklaras.
+let flod429Loggad = false;
 
 // Deploy-medvetenhet A: mät ALDRIG inuti ett deploy-fönster — vänta ut det.
 // o86: "ej frisk" omfattar nu även tillgångssjuka baser (deploylås fritt +
@@ -559,9 +574,22 @@ try {
           }
           const contentType = (svar && svar.headers()["content-type"]) || "";
           if (contentType.includes("application/json")) {
-            status = httpKod === 429 ? "icke-sida (429 egen throttle)" : `icke-sida (json ${httpKod})`;
-            if (httpKod >= 500) rapport.fel += 1;
-            rapport.kombinationer.push({ tema, skarm: skarm.namn, sida, status, felAntal: httpKod >= 500 ? 1 : 0, konsolFel: [], matning: null });
+            // V177 (r269): 429 = MÄTBLINDHET som larmar. Före kur räknades
+            // flödtrottle som "ok" (bevis 2026-09-26T171158Z: status ok +
+            // fel 0 medan 91/96 kombinationer var omätta) — ett blint svep
+            // loggades GRÖNT av cron. Nu: fel + exit 1 ⇒ FYND-larm med
+            // roten (fjärrbas) i status-texten. Infra-klassen (o86-drift-
+            // taket) matchar aldrig 429 — mätblindhet är inte tillgångsdrift.
+            const flod429 = httpKod === 429;
+            status = flod429
+              ? "icke-sida (429 egen throttle — mätblindhet; kör --bas=http://localhost:3000)"
+              : `icke-sida (json ${httpKod})`;
+            if (httpKod >= 500 || flod429) rapport.fel += 1;
+            if (flod429 && !flod429Loggad) {
+              flod429Loggad = true;
+              console.error("⚠ V177: 429-flödtrottling i mätkanalen — basen ser ut som extern trafik för frekvensvakten. Kör om med --bas=http://localhost:3000.");
+            }
+            rapport.kombinationer.push({ tema, skarm: skarm.namn, sida, status, felAntal: httpKod >= 500 || flod429 ? 1 : 0, konsolFel: [], matning: null });
             console.log(`· [${tema}/${skarm.namn}] ${sida} — ${status}`);
             await new Promise((r) => setTimeout(r, 350));
             continue;

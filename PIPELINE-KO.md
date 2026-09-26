@@ -19,6 +19,8 @@ ALDRIG nya kurser i massproduktion.
 
 | v175 | dataintegritet (spår 10) | DR-prov Q3 2026 enligt v98-mönstret: återställ skrap-postgres, mät tid/rader, dump-slutmarkörer + 30-dagars retention-koll, protokoll i DRIFTSBOKEN, städa lokal PG | session | bokad r259 (rotation: r258 spår 9 ⇒ v175 ej spår 9; krisdagens läxa — återställningsförmågan bevisas) |
 
+| v176 | lärvägar (spår 5) | Utöka lärvägssystemet enligt evighetskatalogens postmall: +<n> kurser med varför-rader i kursrek-registret (333 → nästa tröskel), lärvägsdjup per profil, kursregister-synk, front B, tsc 0 | session | bokad r265 (rotation: v175 spår 10 ⇒ v176 ej 10; spår 5 orört i rotationen och kundvärdekärnan — säkrar ≥3 kommande vågar när v171 stängs efter B31/B32) |
+
 ## VILOR / VÄNTAR KUND (R2)
 
 - Granskningskön: FLYTTKLAR-paketen — publicering väntar KUNDBESLUT

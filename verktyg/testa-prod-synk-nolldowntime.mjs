@@ -136,8 +136,12 @@ kontroll(
   kalla.includes('verifieraArtefakt({ nextKatalog: path.join(ROT, ".next-ny") })'),
 );
 kontroll(
-  "15. atomärt byte under deploylåset: mv .next .next-forra && mv .next-ny .next && pm2 restart",
-  kalla.includes('"mv .next .next-forra && mv .next-ny .next && pm2 restart ak1a"'),
+  // v187 (r276): bytet bär hash-vakten först — flyttade trädet under bygget
+  // ⇒ swap-barnet exitar icke-noll och bytes-felgrenen tar över (buntslags-
+  // racet 2026-09-27: grön deploy serverade steril edge-bunt). Kontraktet
+  // är OFÖRÄNDRAT i kärnan: mv-kedjan + pm2 restart under deploylåset.
+  "15. atomiskt byte under deploylåset: hash-vakt (v187) + mv .next .next-forra && mv .next-ny .next && pm2 restart",
+  kalla.includes('test "$(git rev-parse HEAD)" = "${byggTradStart}" && mv .next .next-forra && mv .next-ny .next && pm2 restart ak1a'),
 );
 kontroll(
   "16. tillbakarullning vid rött HTTPS: mv tillbaka + restart",

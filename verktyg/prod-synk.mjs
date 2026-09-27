@@ -942,6 +942,33 @@ export function byggNolldowntimeKommando({ npmCi }) {
 }
 
 // ---------------------------------------------------------------------------
+// V187 (r276 — BUNTSLAGSRACE-VAKTEN): pushar levererar trädet DIREKT till
+// servern (updateInstead) och kan landa MITT i ett löpande byggfönster.
+// DEPLOYAD-radens hash är SLUTTRÄDET — inte byggträdet. Bevisat 2026-09-27:
+// speglar-kuren 03ea5918 landade 15:00:40Z mitt i 14:57-fönstret, deployen
+// loggades GRÖN (bb1fe548) men edge-buntslen serverade ändå den gamla
+// 55-slug-listan (speglar-slugar.json buntas in i middleware vid BYGGTID) =
+// 78 döda spegelsidor i prod trots grön deploy. Kuren: byggträdets hash
+// låses vid start (BYGGER FRÅN-rad) och vaktas vid bytet — flyttade trädet
+// under bygget avbryts BYTET (artefakten kan vara inbyggt inkonsekvent),
+// DEPLOYAD-markören orörd ⇒ ombygg mot nya HEAD nästa poll.
+// Kontraktstest: verktyg/testa-prod-synk-buntslagsrace.mjs
+// ---------------------------------------------------------------------------
+export function buntslagsraceDom({ byggTradStart, byggTradSlut }) {
+  if (!byggTradStart || !byggTradSlut) {
+    return {
+      race: true,
+      meddelande: `byggträd-hash omätbar (start ${byggTradStart ? "ok" : "saknas"} · slut ${byggTradSlut ? "ok" : "saknas"}) — bevisbördan ligger på provenansen`,
+    };
+  }
+  if (byggTradStart === byggTradSlut) return { race: false, meddelande: "" };
+  return {
+    race: true,
+    meddelande: `trädet flyttade under bygget (${byggTradStart.slice(0, 8)} → ${byggTradSlut.slice(0, 8)})`,
+  };
+}
+
+// ---------------------------------------------------------------------------
 // V184 (r274 — F6-RAM-doppens bevisning): BYGG-RAM-PROFILERN. Roten (r273+r274):
 // VÄNTAR-RAM-grinden mäter FÖRE byggstart (2200 MB) men ALDRIG under fönstret —
 // byggtoppen ~2,2 GB ovanpå pm2+zcode-barn trycker MemAvailable under 300 MB
@@ -1313,6 +1340,12 @@ async function korSynk() {
       }
     }
   };
+  // V187: BYGGER FRÅN — byggträdets hash låses vid start (provenansraden;
+  // vaktas av buntslagsrace-domaren före bytet och av hash-vakten i själva
+  // byte-kommandot). Fail-closed vid omätbar hash: git() kastar ⇒ korSynk:s
+  // överliggande felhantering, bygg sker ej halvbevisat.
+  const byggTradStart = git(["rev-parse", "HEAD"]);
+  logga(`BYGGER FRÅN: ${byggTradStart.slice(0, 8)}`);
   let ok = false;
   try { fs.writeFileSync("/tmp/synk-npmci.log", ""); } catch { /* */ }
   try { fs.writeFileSync("/tmp/synk-build.log", ""); } catch { /* */ }
@@ -1501,6 +1534,18 @@ async function korSynk() {
     // poll ser NY KOD igen, RAM-vakten gäller och ombygget sker när
     // minnet tillåter (dagens manuella läkningsväg, nu mekanisk).
     // V182: mätningen görs mot .next-ny — prod .next är orörd av bygget.
+    // V187: BUNTSLAGSRACE-VAKT — r276-läxan: flyttade trädet under bygget är
+    // artefakten byggd mot ett blandat träd (edge-bunt och sidor kan komma
+    // från olika tidpunkter). Bytet avbryts, DEPLOYAD-markören orörd ⇒ ombygg
+    // mot nya HEAD nästa poll. Fail-closed: omätbar slut-hash = race.
+    let byggTradSlut = null;
+    try { byggTradSlut = git(["rev-parse", "HEAD"]); } catch { /* null ⇒ race-dom */ }
+    const race = buntslagsraceDom({ byggTradStart, byggTradSlut });
+    if (race.race) {
+      logga(`BUNTSLAGSRACE: ${race.meddelande} — byte avbryts, buntslen kan vara inbyggt inkonsekvent; ombygg nästa poll`);
+      skrivAudit("prod-synk", "deploy_stoppad_buntslagsrace", `${String(byggTradStart).slice(0, 8)}->${String(byggTradSlut).slice(0, 8)}`, race.meddelande);
+      return;
+    }
     const artefakt = await verifieraArtefakt({ nextKatalog: path.join(ROT, ".next-ny") });
     if (artefakt.status !== "gron") {
       logga(
@@ -1521,7 +1566,11 @@ async function korSynk() {
         fs.rmSync(path.join(ROT, ".next-ny", "cache"), { recursive: true, force: true });
         fs.renameSync(path.join(ROT, ".next", "cache"), path.join(ROT, ".next-ny", "cache"));
       } catch { /* cache är optimering — bytet kör utan */ }
-      const swap = "mv .next .next-forra && mv .next-ny .next && pm2 restart ak1a";
+      // V187: hash-vakt i själva byte-kommandot — minimerar fönstret mellan
+      // JS-domaren och mv:arna; flyttade trädet även där exitar swap-barnet
+      // icke-noll och den befintliga bytes-felgrenen (prod orörd, ombygg
+      // nästa poll) tar över utan ny kodväg.
+      const swap = `test "$(git rev-parse HEAD)" = "${byggTradStart}" && mv .next .next-forra && mv .next-ny .next && pm2 restart ak1a`;
       const swapOk = await new Promise((lyckas) => {
         const barn = spawn("bash", ["-c", `exec flock -n /tmp/ak1a-deploy.lock bash -c ${JSON.stringify(swap)}`], { cwd: ROT, stdio: "ignore", detached: false });
         barn.on("exit", (kod) => lyckas(kod === 0));

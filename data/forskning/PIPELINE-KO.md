@@ -445,7 +445,32 @@ DEPLOYAD-radens hash är SLUTTRÄDET, inte byggträdet.
 
 | Våg | Innehåll | Status |
 |---|---|---|
-| v187 | BYGGER FRÅN-PROVENANS (spår 8): prod-synken loggar exakt byggträd-hash vid byggstart + vägrar/omstartar om byggträd ≠ senaste push (buntslagsracet bevisat av v186-resten r276) | BOKAD — nästa aktiva |
+| v187 | BYGGER FRÅN-PROVENANS (spår 8): prod-synken loggar exakt byggträd-hash vid byggstart + vägrar/omstartar om byggträd ≠ senaste push (buntslagsracet bevisat av v186-resten r276) | ✓ LEVERERAD r277 (e90a2478) — debutbevis: nästa byggfönsters BYGGER FRÅN-rad |
+
+## ROND 277 (2026-09-27) — v187 STÄNGD (BUNTSLAGSRACE-VAKTEN) + v186:S ÄKTA DEBUT BEVISAD
+
+v187 LEVERERAD (e90a2478): prod-synken låser+loggar byggträdets hash FÖRE
+byggstart (BYGGER FRÅN-raden), exporterade buntslagsraceDom() stoppar BYTET
+om trädet flyttat under bygget (updateInstead-pushar levererar trädet mitt
+i fönstret — DEPLOYAD-hashen är slutträdet, bevisat av v186-resten) och
+hash-vakten vaktar själva byte-kommandots ms-fönster; ombygg nästa poll i
+stället för att servera steril bunt. KVD: ny svit 13/13 + nolldowntime-
+svitens test 15 reviderad med provenans (25/25) + 11 regressionssviter + tsc 0.
+
+V186:S ÄKTA DEBUT KVITTERAD (a1d00f81:s ombygge, deploy 18:03:26Z, prod 200):
+spegel-200 ×7 (utdelningar-101 + pe-talet + holm-q3 + hur-fungerar-aktier,
+en+ar, + /en/blogg) + varmartorrkörning 46/46 vägar (mot 40/46 natten före)
+— de 78 döda spegelsidorna lever. v185-trenden läser 3 fönster:
+min 235→193→470 MB, TREND STIGER; fönster 3 GRÖN som ensamt fönster —
+doppen i fönster 1-2 delas med huvudagentens egna KVD-sviter (byggfönster
+under KVD = GUL, ensamma = GRÖN — trendläsningen måste väga samtidig
+agentlast, inte bara bygglast).
+
+| Våg | Innehåll | Status |
+|---|---|---|
+| v188 | MIDDLEWARE→PROXY-MIGRATIONEN (bygg-hälsa): Next 16.3.6:s deprecationsnotis — src/middleware.ts → proxy.ts (codemod middleware-to-proxy), speglar-slugar-importen följer med; kvitto: deprecationsraden borta ur byggloggen + speglar fortfarande 200 | BOKAD — nästa aktiva |
+| v180 | HYGIEN-BIBLIOTEKET: 806 trackade _r*-wrappers i verktyg/ — audit + härdning/radering i omgångar (Mimosa-paritet = röda-trigg i kvalitetsrapporten) | STÅR (väljs när bygg-hälsan vilat) |
+| v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd — oktober äger) |
 | v180 | HYGIEN-BIBLIOTEKET: 806 trackade _r*-wrappers i verktyg/ — audit + härdning/radering i omgångar (Mimosa-paritet = röda-trigg i kvalitetsrapporten) | STÅR (väljs när spår 8 vilat) |
 | v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd) |
 | v185 | BYGG-RAM-TRENDVERKTYGET | ✓ LEVERERAD r276 (76bc0613) |

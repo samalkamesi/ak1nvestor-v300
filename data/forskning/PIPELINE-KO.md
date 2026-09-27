@@ -398,4 +398,25 @@ Se worklog ROND 274. Pipelinen efter stängningen:
 | v185 | BYGG-RAM-TRENDVERKTYG (spår 8): läs bygg-ram-profil.jsonl, trend per fönster (min/varv/debut), larm vid degradering eller trend under 250 MB — kräver ≥3 fönster profildata (v184 mäter varje deploy); under tiden: pm2 max_memory_restart-bedömning ur de första fönstren | BOKAD — nästa aktiva (kan preliminärkartas tidigt) |
 | v180 | HYGIEN-BIBLIOTEKET: 806 trackade _r*-wrappers i verktyg/ — audit + härdning/radering i omgångar (Mimosa-paritet = röda-trigg i kvalitetsrapporten) | STÅR (väljs när spår 8 vilat) |
 | v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd) |
-| v186 | ISR-VARMARENS SÖKVÄGSLISTA (spår 7): DRIFTSBOKENs dokumenterade rest 12/44 ok — finslipa listan mot verklig trafik (kall förstagångssvett 0,5–3,6 s per väg), kvitto per utökad väg | BOKAD (spårrotation 7) |
+| v186 | ISR-VARMARENS SÖKVÄGSLISTA (spår 7): DRIFTSBOKENs dokumenterade rest 12/44 ok — finslipa listan mot verklig trafik (kall förstagångssvett 0,5–3,6 s per väg), kvitto per utökad väg | ✓ LEVERERAD r275 (03ea5918): roten var SPEGLAR-404-listans drift, inte varmarens — 39 glappade slugar = 78 döda spegelsidor; mekanisk driftvakt i pre-commit (se worklog ROND 275) |
+
+## ROND 275 (2026-09-27) — v184 DEBUTBEVISAT + v186 LEVERERAD (SPEGLAR-SLUGAR-KUREN)
+
+Två leveranser samma rond (a80b2049 bokföring + 03ea5918 v186):
+v184-sondens DEBUT bevisad live (584657fa-deployens fönster 12:47:26→12:53:20,
+min 235 MB, BYGG-RAM-VARNING skördad i synkloggen — doppen är strukturella,
+pulsvakten orörd). v186: ISR-varmarens 38/44 reste på middlewarens
+destillerade slug-lista (public/speglar-slugar.json, frusen 2026-09-21 med
+55 blogg-slugar mot 94 i data/blogg) — 39 glappade slugar = 78 /en|/ar-
+spegelsidor svarade ÄKTA 404 FÖRE routern trots sitemap-löfte. KUR:
+regenerering (495 kurser + 94 blogg, 16 kB) + kor-speglar-slugar.mjs
+--kontroll (jämför utan att skriva) + driftvakt i pre-commit-grinden
+(data/blogg-/sok-index-kommits blockeras utan aktuell lista) + varmarens
+/en/blogg + /ar/blogg. Verifiering: tidigare-404-vägar 200 ×4 + varmar-
+torrkörning 46/46 väntat (se worklog ROND 275 för bevisen).
+
+| Våg | Innehåll | Status |
+|---|---|---|
+| v185 | BYGG-RAM-TRENDVERKTYG (spår 8): trend per fönster ur bygg-ram-profil.jsonl, larm vid degradering/trend under 250 MB — kräver ≥3 fönster (r275:s tre deploys ger fönster 2-4 efter debutfönstret); pm2 max_memory_restart-bedömning ingår | BOKAD — nästa aktiva |
+| v180 | HYGIEN-BIBLIOTEKET: 806 trackade _r*-wrappers i verktyg/ — audit + härdning/radering i omgångar (Mimosa-paritet = röda-trigg i kvalitetsrapporten) | STÅR (väljs när spår 8 vilat) |
+| v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd) |

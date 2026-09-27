@@ -350,6 +350,17 @@ EnvironmentFile med chmod 600).
   torrkörning 2026-09-19 23:08 lokal = 44/44 (även /en + /ar utan trailing
   slash — svarade 308 förr); nytt försök per väg vid timeout; missade vägar
   loggas namngivet.
+- v186/r275 (2026-09-27) — VARMARENS 38/44 ROTAD I SPEGLAR-404-LISTAN, KURAD
+  + VAKTAD: nattens 6 missade vägar var alla /en|/ar-blogg-spegelsidor som
+  middlewarens destillerade slug-lista (public/speglar-slugar.json, våg 83 B)
+  inte kände — listan frusen 2026-09-21 (55 blogg-slugar) medan data/blogg
+  vuxit till 94: 39 glapp = 78 spegelsidor svarade äkta 404 FÖRE routern fast
+  sitemapen lovade dem. KUR: regenerering (495+94, 16 kB) + driftvakt i
+  pre-commit-grinden (kor-speglar-slugar.mjs --kontroll — data/blogg-kommits
+  blockeras utan aktuell lista) + /en/blogg + /ar/blogg i varmarens statiska
+  lista (46 vägar). REGEL FÖR FRAMTIDEN: public/speglar-slugar.json är det
+  ENDA data-fönstret som kräver bygge (edge-bunt) — nya bloggposter syns inte
+  på /en|/ar förrän deploy; vakten gör glipan mekaniskt omöjlig.
 
 ## S10-U2 — KVARTALS-DR-ÖVNING (2026-09-15, GODKÄNT)
 
@@ -3657,6 +3668,17 @@ EnvironmentFile med chmod 600).
   torrkörning 2026-09-19 23:08 lokal = 44/44 (även /en + /ar utan trailing
   slash — svarade 308 förr); nytt försök per väg vid timeout; missade vägar
   loggas namngivet.
+- v186/r275 (2026-09-27) — VARMARENS 38/44 ROTAD I SPEGLAR-404-LISTAN, KURAD
+  + VAKTAD: nattens 6 missade vägar var alla /en|/ar-blogg-spegelsidor som
+  middlewarens destillerade slug-lista (public/speglar-slugar.json, våg 83 B)
+  inte kände — listan frusen 2026-09-21 (55 blogg-slugar) medan data/blogg
+  vuxit till 94: 39 glapp = 78 spegelsidor svarade äkta 404 FÖRE routern fast
+  sitemapen lovade dem. KUR: regenerering (495+94, 16 kB) + driftvakt i
+  pre-commit-grinden (kor-speglar-slugar.mjs --kontroll — data/blogg-kommits
+  blockeras utan aktuell lista) + /en/blogg + /ar/blogg i varmarens statiska
+  lista (46 vägar). REGEL FÖR FRAMTIDEN: public/speglar-slugar.json är det
+  ENDA data-fönstret som kräver bygge (edge-bunt) — nya bloggposter syns inte
+  på /en|/ar förrän deploy; vakten gör glipan mekaniskt omöjlig.
 
 ## S10-U2 — KVARTALS-DR-ÖVNING (2026-09-15, GODKÄNT)
 

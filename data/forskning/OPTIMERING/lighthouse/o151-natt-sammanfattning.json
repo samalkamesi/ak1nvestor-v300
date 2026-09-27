@@ -1,23 +1,23 @@
 {
-  "datum": "2026-09-26T01:28:17.126Z",
+  "datum": "2026-09-27T01:28:04.755Z",
   "bas": "http://localhost:3000",
   "namn": "o151-natt",
   "sidor": [
     {
       "sokvag": "/superanalys",
       "poang": {
-        "prestanda": 0.56,
+        "prestanda": 0.74,
         "tillganglighet": 1,
         "bastaPraxis": 1,
         "seo": 1
       },
       "karnmattMs": {
-        "FCP": 1479,
-        "LCP": 4637,
-        "TBT": 1365,
+        "FCP": 1895,
+        "LCP": 4440,
+        "TBT": 320,
         "CLS": 0,
-        "TTI": 5512,
-        "SI": 3878
+        "TTI": 4552,
+        "SI": 4160
       },
       "nyckelauditer": {
         "unused-javascript": {
@@ -36,32 +36,32 @@
           "rad": null
         },
         "bootup-time": {
-          "poang": 0,
-          "visar": "2.2 s",
-          "rad": "Reduce JavaScript execution time — 2.2 s"
+          "poang": 1,
+          "visar": "1.1 s",
+          "rad": "JavaScript execution time — 1.1 s"
         },
         "mainthread-work-breakdown": {
           "poang": 0,
-          "visar": "4.6 s",
-          "rad": "Minimize main-thread work — 4.6 s"
+          "visar": "2.8 s",
+          "rad": "Minimize main-thread work — 2.8 s"
         }
       }
     },
     {
       "sokvag": "/kalkylator",
       "poang": {
-        "prestanda": 0.57,
+        "prestanda": 0.65,
         "tillganglighet": 0.99,
         "bastaPraxis": 1,
         "seo": 1
       },
       "karnmattMs": {
-        "FCP": 1439,
-        "LCP": 5283,
-        "TBT": 1070,
+        "FCP": 1393,
+        "LCP": 4876,
+        "TBT": 682,
         "CLS": 0,
-        "TTI": 5432,
-        "SI": 2866
+        "TTI": 5645,
+        "SI": 1787
       },
       "nyckelauditer": {
         "unused-javascript": {
@@ -86,8 +86,8 @@
         },
         "mainthread-work-breakdown": {
           "poang": 0,
-          "visar": "4.5 s",
-          "rad": "Minimize main-thread work — 4.5 s"
+          "visar": "3.5 s",
+          "rad": "Minimize main-thread work — 3.5 s"
         }
       }
     }

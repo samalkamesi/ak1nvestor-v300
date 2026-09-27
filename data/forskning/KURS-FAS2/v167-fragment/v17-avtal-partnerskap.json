@@ -1,0 +1,66 @@
+{
+  "slug": "v17-avtal-partnerskap",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "Ett undertecknat avtal är en förpliktelse från motparten — skilt från lanseringens chans. Nu räknar du book-to-bill, backlog-täckning och ramavtalets hårt bundna del på ett låtsas-infrabolags orderbok.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "InfraMät AB är ett påhittat bolag — låtsas-redovisningens tal är konstruerade för övningens skull.\n\nFakturerad omsättning 640; orderintagning 690; orderstock 480. Ett ramavtal med max 300 över tre år och tre månaders uppsägningstid. Upparbetade intäkter växte från 22 till 41. Största kunden svarar för 28 % av intäkterna.\n\nBeräkning:\n\n- Book-to-bill = 690 ÷ 640 = 1,08 — orderstocken växer.\n- Backlog-täckning = 480 ÷ 640 = 0,75 år ≈ 9 månader säkrad fakturering.\n- Ramavtalet: tak 100 per år = 15,6 % av omsättningen — men med tre månaders uppsägning är det garanterade ≈ 25 (ett kvartal).\n- Upparbetade intäkter +19 — kunderna betalar i förskott: intäkten ligger i framkant, kassan redan här (V11-länken).\n- Koncentrationsläsning: största kund 28 % — katalysator och V03-risk är samma händelse.\n\nTolkning: orderboken är stark (book-to-bill över 1, nio månader täckning), men ramavtalets \"300 över tre år\" är ett tak som motparten kan lämna med 90 dagars varsel — den hårt bundna intäkten är ett kvartal, inte tre år.\n\nSå räknar du själv: book-to-bill = orderintagning ÷ fakturerad omsättning (1,0 = jämvikt; över 1 växer orderstocken); backlog-täckning = orderstock ÷ årsomsättning; avtalsvärde per år = ramavtalets tak ÷ löptiden, jämfört med omsättningen; upparbetade intäkters förändring = nytt förskott; och justera för uppsägningstid — det garanterade beloppet ≈ en period av termineringsrätten. Poängen (kvalitativ): 0 = inga namngivna avtal · 3 = avtal av betydelse med oklar bindning · 5 = undertecknade fleråriga avtal i kärnsegmentet med belopp eller volym synlig i redovisningen.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: Orderintagning 540, fakturerad omsättning 600. Book-to-bill — och vad betyder det?\n\nÖvningsfråga 2 — Räkna: Orderstock 300, årsomsättning 400. Täckning?\n\nÖvningsfråga 3 — Tänk: Ramavtal: tre år à 100 mkr per år, uppsägningstid 3 månader. Hur mycket är hårt bundet?"
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: 540 ÷ 600 = 0,90 — under 1: orderstocken krymper.\n\nFacit 2: 300 ÷ 400 = 0,75 år ≈ 9 månader.\n\nFacit 3: cirka ett kvartal ≈ 25 mkr — resten är ett tak, inte ett golv."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): pressmeddelandets mot redovisningens språk — \"strategiskt partnerskap\" kan vara en avsiktsförklaring utan ekonomiskt innehåll; redovisningen är sanningsägaren. Orderstock är inte intäkt — order kan ställas in eller omförhandlas. Termineringsrätter och prisrevisioner gör långa avtal korta i praktiken — läs villkoren i noterna, inte löptiden i rubriken. Relaterade parter och interna avtal i koncerner blåser upp \"viktiga avtal\" utan marknadsvärde. Kundkoncentration: poängsätt aldrig V17 högt utan att läsa V03. Och index- och prisklausyler kan tömma avtalets värde vid inflation."
+      },
+      {
+        "type": "insikt",
+        "content": "Orderboksläsningen du just gjorde — book-to-bill, täckning, uppsägningsjusterat värde — är V17:s underlag i AKM1:s kvalitativa poängsättning, och nyckeltalsguiden visar avtalsrubrikerna, intäktsnotens upparbetade intäkter och orderstocken. AKM2:s analys vittnar om gränsen mot V16 (förpliktelse mot chans) och kopplingen till V03 (koncentration) och V11 (förskottslänken), AI-Mentorn förhör dig på ramavtalets tak-mot-golv, och portföljmotorn följer orderstock och avtalskalender över tid. En journal med hårt bundna belopp — inte rubrikvolymer — är kedjans avtalsunderlag."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Book-to-bill över 1,0 betyder att orderstocken växer.",
+        "alternativ": [
+          "Sant — orderintagningen överstiger den fakturerade omsättningen",
+          "Falskt — över 1,0 betyder krympande orderstock",
+          "Sant, men bara för byggbolag",
+          "Falskt — book-to-bill mäter alltid vinsten"
+        ],
+        "ratt": 0,
+        "tips": "Se beräkningen i räkneexemplet."
+      },
+      {
+        "q": "Ett ramavtal på tre år är en garanterad intäktsväg i tre år.",
+        "alternativ": [
+          "Sant — ramavtal är alltid bindande till full löptid",
+          "Falskt — ett ramavtal är ett tak, inte ett golv; med tre månaders uppsägning är det garanterade cirka ett kvartal",
+          "Sant om avtalet är skriftligt",
+          "Falskt — ramavtal gäller alltid exakt ett år"
+        ],
+        "ratt": 1,
+        "tips": "Se ramavtalsberäkningen och facit på övningsfråga 3."
+      },
+      {
+        "q": "Växande upparbetade intäkter tyder på att kunder betalat i förskott.",
+        "alternativ": [
+          "Falskt — upparbetade intäkter är alltid en risk",
+          "Sant, men bara för banker",
+          "Sant — intäkten ligger i framkant och kassan har redan kommit (V11-länken)",
+          "Falskt — posten rör endast leverantörsskulder"
+        ],
+        "ratt": 2,
+        "tips": "Se beräkningen av upparbetade intäkter i räkneexemplet."
+      }
+    ]
+  }
+}

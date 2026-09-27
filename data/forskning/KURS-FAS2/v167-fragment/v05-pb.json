@@ -1,0 +1,66 @@
+{
+  "slug": "v05-pb",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "P/B — pris per bokförd krona eget kapital — kräver att du förstår VAD det egna kapitalet består av. Nu räknar du på NorrTeknik och ser hur goodwill och återköp vrider talet.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "NorrTeknik AB är ett konstruerat bolag — låtsas-årsredovisningens tal är påhittade för övningens skull.\n\n- Börsvärde 1 800 Mkr; eget kapital 340 Mkr.\n- P/B = 1 800 ÷ 340 = 5,29.\n- Trappan (< 1 ⇒ 5 · < 2 ⇒ 4 · < 3 ⇒ 3 · < 5 ⇒ 2 · ≥ 5 ⇒ 1) ger 1 poäng — marknaden betalar över fem kronor per bokförd krona.\n- Före tolkningen: goodwill 90 ÷ 340 = 26,5 % av det egna kapitalet. Resten är \"reella\" poster — maskiner, lager, fordningar, kassa i bokförda värden. P/B 5,29 för ett industriföretag med ROE 34,9 % (se V09) säger att marknaden prisar avkastningen, inte substansen — metoden löser det genom att alltid para V05 med V09: P/B ska förstås mot vad kapitalet avkastar, aldrig ensam.\n\nSå räknar du själv: läs \"Summa eget kapital\" i koncernbalansräkningen, räkna ut börsvärdet (aktier × kurs, samma datum), dividera — och kontrollera goodwill-andelen (goodwill ÷ eget kapital) och förändringsanalysen i noten till eget kapital innan du tolkar. Jämför inom bransch: teknik mot teknik, banker mot banker — aldrig blandat.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: NorrTekniks P/B och poäng?\n\nÖvningsfråga 2 — Räkna vidare: Hur stor andel av det egna kapitalet utgörs av goodwill — och varför spelar det roll?\n\nÖvningsfråga 3 — Tänk: Bolaget köper tillbaka aktier för 100 Mkr; börsvärdet är oförändrat 1 800 och nytt EK blir 240. Ny P/B? Vad har hänt med affären?"
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: 1 800 ÷ 340 = 5,29 ⇒ 1 poäng (≥ 5).\n\nFacit 2: 90 ÷ 340 = 26,5 %. Goodwill är ett antagande om framtida vinster från förvärv, inte en tillgång att sälja; ju större andel, desto mer av \"substansen\" är ett tankeexperiment som kan komma att skrivas ned.\n\nFacit 3: 1 800 ÷ 240 = 7,5. Ingenting har hänt med affären — nämnaren krympte av återköpet. Multipeln steg mekaniskt; det är därför noten om förändringar i eget kapital är obligatorisk läsning före tolkning."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): återköp krymper det egna kapitalet så P/B (och ROE) stiger mekaniskt utan att affären förändrats — hög P/B på en återköpsmaskin är inte automatiskt dyr. Goodwill sväller kapitalet med köpeskillingar som aldrig testats mot verkligheten. Negativt eget kapital gör P/B oläsligt (inte \"gratis\") — då byter man till P/E eller EV-mått. Banker är specialfallet där balansräkningen Är affären och P/B är huvudmått — tolkat mot substansvärde och bankens egna ROE-mål. Omvärderingsreserver gör EK känsligt för värderingsantaganden; notens fotnoter bär sanningen."
+      },
+      {
+        "type": "insikt",
+        "content": "P/B-uträkningen du just gjorde matar AKM1:s P/B-trappa, och nyckeltalsguiden visar var summa eget kapital, goodwill-noten och förändringsanalysen finns. AKM2:s analys vittnar om kopplingen till ROE — multipel mot avkastning, aldrig ensam — och AI-Mentorn förhör dig på återköps- och goodwillfällorna. Portföljmotorn följer kapitalstrukturens förändringar över tid. Din dokumenterade P/B-journal med goodwill-kontroll blir kedjans underlag."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "P/B beräknas som börsvärde dividerat med koncernens summa eget kapital.",
+        "alternativ": [
+          "Sant — och med minoritetsintressen om de redovisas, inte moderbolagets kapital",
+          "Falskt — aktiekursen divideras med utdelningen",
+          "Sant, men bara för banker",
+          "Falskt — börsvärdet divideras med goodwill"
+        ],
+        "ratt": 0,
+        "tips": "Se beräkningssteget i räkneexemplet."
+      },
+      {
+        "q": "Ett återköp av egna aktier kan höja P/B utan att affären förändras.",
+        "alternativ": [
+          "Falskt — återköp påverkar aldrig multipeln",
+          "Sant — nämnaren (eget kapital) krymper så multipeln stiger mekaniskt",
+          "Sant, men bara vid nyemissioner",
+          "Falskt — återköp sänker alltid P/B"
+        ],
+        "ratt": 1,
+        "tips": "Se facit på övningsfråga 3."
+      },
+      {
+        "q": "En hög andel goodwill av det egna kapitalet gör P/B mer pålitlig.",
+        "alternativ": [
+          "Sant — goodwill är en reell tillgång att sälja",
+          "Sant om goodwill kommer från svenska förvärv",
+          "Falskt — goodwill är ett antagande om framtida vinster som kan komma att skrivas ned",
+          "Falskt — goodwill ingår aldrig i eget kapital"
+        ],
+        "ratt": 2,
+        "tips": "Se facit på övningsfråga 2."
+      }
+    ]
+  }
+}

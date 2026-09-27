@@ -1,0 +1,12 @@
+
+## UPPDATERING 2026-09-26 (dokvåg v174 — dataset- och deployläget ikapp verkligheten efter krisdagen; huvudagenten rond 258)
+
+**E-datasetet (bolagsuniversumet):** 292 (09-24:s sanning) → **311** (09-25): U31–U50 levererade i v173:s slutspurt; INDien-SVEPET U44–U50 avslutat (teknik TCS+INFY · finans HDFC+ICICI · konsument HUL+ITC · energi RELIANCE+ONGC · hälsa SUNPHARMA+APOLLOHOSP · industri LT+HAL = sex av sju grenar dubblade, 13 indiska bolag; U48 INDUSTOWER externt reverterad — kommunikation 1, återleverans endast på kundens/styrelsens tecken). llms.txt HELREGEN 311 (total-median P/E 20,1; CAGR-median 6,1). TCS+INFY mcap-skalfel (1000×, sedan 09-18-bygget) kirurgiskt reparerat i U45-ronden. Senaste leverans: d92de005 + 668b35c8 (r257).
+
+**E-deployläget:** 404-krisen (09-25: 84 fynd, 21 /bolag/-slugar i 404 efter dataleveranser utan bygge) ROT-diagnostiserad och KURERAD med bevis: senaste prodbygget 23:07 på 5902867f = 311 slugs; apollohosp-ns/hal-ns + samtliga 21 kris-slugar = 200; gränssnittsvakten 0 fynd/180 (23:26-rapporten). DOKTRIN från och med nu: dataleverans av NYA universumbolag kräver deploy i samma andetag (rond 247-lärdomen, två gånger bevisad). r255-RECEPTET (pm2 stop → rent .next → flock-bygge → garanterad återstart) finns nu som procedur i DRIFTSBOKEN (sektionen 2026-09-26) — krisdagens OOM-dödade byggen är dess födelsebevis.
+
+**Motorerna i skarpt läge:** pulsvakten (11 fel i rad → "omstart uppskjuten, deploy-kedjan äger pm2-omstarten" → återställning) BELAGD i prod 21:07-21:08 — första live-beviset på våg 122-klassens samspel med deploy-låset. Prod-synken bevisad draga in externa prod-ändringar i agentytan (två externa git-ingrepp 09-25 dokumenterade i DRIFTSBOKEN + rondnotiser rond 254/256): reflog + universumfilens mtime = bevismetoder.
+
+**Spårläget (PIPELINE-KO rot-filen = sanningen; data/forskning/PIPELINE-KO.md är en äldre dispatchlista, lämnad orörd):** v171 SEO i slutspurt (B28-en levererad r257 ⇒ -en-omgången komplett 30/30; kvar: B28-ar + fyra nya original se-18/20/21/23) · v172 kvartalsrapporter vilar på rappdagarna 10-20→11-04 (110 kalendrar kartlagda) · v174 denna dokvåg · därefter rotation enligt evighetskatalogen. Granskningskön växer (~85 SEO-utkast i tre språk + FLYTTKLAR-paketen) — R2, väntar kundbeslut; påminns i sessioner.
+
+KVD: data-only (docs-appendar), src orörd, inget bygge; tsc via grinden vid commit; prod 200 efter push.

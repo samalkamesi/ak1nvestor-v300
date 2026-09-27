@@ -1,0 +1,132 @@
+{
+  "ts": "2026-09-24T15:37:14.900Z",
+  "ramMB": 4945,
+  "sida": "/bolag",
+  "lage": "mobil-390x844",
+  "omgangar": [
+    {
+      "omgang": 1,
+      "hojdForePx": 19050,
+      "hojdEfterPx": 19019,
+      "hojdDeltaPx": -31,
+      "rullningssteg": 64,
+      "skiftAntal": 0,
+      "skrollClsSumma": 0,
+      "toppSkift": [],
+      "cvSektioner": [
+        {
+          "cv": "auto",
+          "intrinsic": "auto 1416px",
+          "verkligHojdPx": 1595
+        },
+        {
+          "cv": "auto",
+          "intrinsic": "auto 868px",
+          "verkligHojdPx": 771
+        },
+        {
+          "cv": "auto",
+          "intrinsic": "auto 2240px",
+          "verkligHojdPx": 2247
+        },
+        {
+          "cv": "auto",
+          "intrinsic": "auto 1484px",
+          "verkligHojdPx": 1236
+        },
+        {
+          "cv": "auto",
+          "intrinsic": "auto 1208px",
+          "verkligHojdPx": 1392
+        },
+        {
+          "cv": "auto",
+          "intrinsic": "auto 1348px",
+          "verkligHojdPx": 1414
+        },
+        {
+          "cv": "auto",
+          "intrinsic": "auto 2308px",
+          "verkligHojdPx": 2320
+        },
+        {
+          "cv": "auto",
+          "intrinsic": "auto 1484px",
+          "verkligHojdPx": 1636
+        },
+        {
+          "cv": "auto",
+          "intrinsic": "auto 1620px",
+          "verkligHojdPx": 1422
+        },
+        {
+          "cv": "auto",
+          "intrinsic": "auto 1004px",
+          "verkligHojdPx": 953
+        }
+      ]
+    },
+    {
+      "omgang": 2,
+      "hojdForePx": 19019,
+      "hojdEfterPx": 19019,
+      "hojdDeltaPx": 0,
+      "rullningssteg": 64,
+      "skiftAntal": 0,
+      "skrollClsSumma": 0,
+      "toppSkift": [],
+      "cvSektioner": [
+        {
+          "cv": "auto",
+          "intrinsic": "auto 1416px",
+          "verkligHojdPx": 1595
+        },
+        {
+          "cv": "auto",
+          "intrinsic": "auto 868px",
+          "verkligHojdPx": 771
+        },
+        {
+          "cv": "auto",
+          "intrinsic": "auto 2240px",
+          "verkligHojdPx": 2247
+        },
+        {
+          "cv": "auto",
+          "intrinsic": "auto 1484px",
+          "verkligHojdPx": 1236
+        },
+        {
+          "cv": "auto",
+          "intrinsic": "auto 1208px",
+          "verkligHojdPx": 1392
+        },
+        {
+          "cv": "auto",
+          "intrinsic": "auto 1348px",
+          "verkligHojdPx": 1414
+        },
+        {
+          "cv": "auto",
+          "intrinsic": "auto 2308px",
+          "verkligHojdPx": 2320
+        },
+        {
+          "cv": "auto",
+          "intrinsic": "auto 1484px",
+          "verkligHojdPx": 1636
+        },
+        {
+          "cv": "auto",
+          "intrinsic": "auto 1620px",
+          "verkligHojdPx": 1422
+        },
+        {
+          "cv": "auto",
+          "intrinsic": "auto 1004px",
+          "verkligHojdPx": 953
+        }
+      ]
+    }
+  ]
+}

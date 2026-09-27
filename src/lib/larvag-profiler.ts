@@ -14,6 +14,12 @@
  * INTE tidigare fanns i någon tipsstruktur (varken V-spåret, FLAGGSKEPP
  * eller FORBEREDELSE) och nu får personliga, dynamiska varför-rader.
  *
+ * RISKVÄGEN (r267, v176 spår 5): FJÄRDE profilen — sju steg i nivåstegning
+ * 1→3 genom RISKHANTERING & PORTFÖLJTEORI (rs-01 + km-013/014/034/016/032/
+ * 017 — kategorin som ingen profil tidigare täckte) + the-most-important-
+ * thing som PROFILMÅL: åtta kurser med varför-rader, hantverkets ordning
+ * från svängningens väsen till satsningens storlek.
+ *
  * REN KÄRNA: deps = larvag-karta.ts ENDAST — inget nät, ingen fs, ingen
  * localStorage. SSR-/test-säker, deterministisk (samma indata ⇒ samma svar).
  * Okänd/trasig steg-slug hoppas TYST över i raknaProfil (defensivt) — men
@@ -201,6 +207,47 @@ export const LARVAG_PROFILER: readonly LarvagProfilRå[] = [
       slug: "konfluens-varde-moter-vagor",
       varför: (klaraSteg) =>
         `Verktygslådan är full med ${String(klaraSteg)} steg i ryggen — Konfluens är mötet där fundamental värdering och våglära talar samma språk: den sammansatta metoden i fullt djup. Välkommen vidare (öppnas i Fas 3).`,
+    },
+  },
+  {
+    id: "riskvagen",
+    titel: "Riskvägen — mät, sprid och pröva risken",
+    kort: "Sju steg från svängningarnas väsen till stressade portföljer — riskhantering som hantverk, steg för steg.",
+    ikon: "🛡️",
+    steg: [
+      {
+        slug: "rs-01-volatilitet-och-risk",
+        varför: "Välkommen till riskvägen — här börjar allt med en skiljelinje: en svängning är inte en förlust. Kursen ger dig grunden på 24 minuter.",
+      },
+      {
+        slug: "km-013-volatilitet-standardavvikelse",
+        varför: "Nu sätter du mått på svängningarna — standardavvikelsen är riskens linjal, och kursen visar hur den räknas och läses.",
+      },
+      {
+        slug: "km-014-korrelation-diversifiering",
+        varför: "Med måtten i handen kommer spridningen — korrelationen avgör hur mycket diversifiering som faktiskt skyddar, och var den bara är en illusion.",
+      },
+      {
+        slug: "km-034-drawdownanalys",
+        varför: "Historien visar djupet — drawdown-analysen mäter hur långt fallen gått och hur långa återvägarna varit, väg för väg.",
+      },
+      {
+        slug: "km-016-sharpe-kvot",
+        varför: "Nu kan du väga avkastning mot risk — Sharpe-kvoten sätter pris på varje enhet svängning och gör vägarna jämförbara.",
+      },
+      {
+        slug: "km-032-stresstesting-portfoljen",
+        varför: "Din egen portfölj får stå provet — stresstestet utsätter vikterna för historiska chocker och visar hur de håller.",
+      },
+      {
+        slug: "km-017-position-sizing-kelly-kriteriet",
+        varför: "Sista hantverket är storleken — position sizing och Kelly-kriteriet besvarar hur stor varje satsning kan vara utan att en enda förlust tar huvudrollen.",
+      },
+    ],
+    mal: {
+      slug: "the-most-important-thing",
+      varför: (klaraSteg) =>
+        `${String(klaraSteg)} steg i ryggen — hantverket bär. The Most Important Thing är Howard Marks essäer om just detta: risken är investerandets kärna, och den förstås aldrig en gång för alla. Välkommen till fördjupningen.`,
     },
   },
 ];

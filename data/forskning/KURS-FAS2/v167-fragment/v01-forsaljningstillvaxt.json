@@ -1,0 +1,66 @@
+{
+  "slug": "v01-forsaljningstillvaxt",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "Du har läst teorin om försäljningstillväxt — nu räknar du själv, steg för steg, på NorrTekniks låtsas-siffror. Kapitlet avslutar kursen med räkneexempel, tre övningsfrågor med facit och en påminnelse om fallgroparna.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "NorrTeknik AB är ett konstruerat bolag — låtsas-årsredovisningens tal är påhittade för övningens skull.\n\nUr resultaträkningen: nettoomsättning 2025 = 1 200, 2024 = 1 050.\n\n- Förändring: 1 200 − 1 050 = +150 Mkr.\n- Tillväxt: 150 ÷ 1 050 = 0,143 → +14,3 %.\n- I modellens trappa (10–20 % ⇒ 3 poäng) ger det 3 poäng — sund, medelgod tillväxt. Kurvan är medvetet en guldkant: under 0 % ger den knapert med poäng, över 45 % rabatteras poängen (hållbarhetsrabatt) och 30–45 % ger toppoäng endast om bruttomarginalen samtidigt är minst 30 % — tillväxten ska vara av det slag som en lönsam affär bär.\n\nSå gör du omräkningen själv: läs årets nettoomsättning (RÅ) och förra årets (RF) ur koncernens resultaträkning, räkna ut förändringen RÅ − RF, dividera med absolutbeloppet |RF| och multiplicera med 100. Dokumentera alltid vilket fönster du mätt — räkenskapsåret eller de senaste tolv månaderna (rullande år) — svaret kan skilja sig när tillväxten svänger under året.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är skrivet för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: Vad blev NorrTekniks försäljningstillväxt 2025, och vilken poäng ger modellens trappa?\n\nÖvningsfråga 2 — Räkna vidare: Om 2026 års nettoomsättning landar på 1 350 Mkr, vad blir tillväxten — och poängen?\n\nÖvningsfråga 3 — Tänk: NorrTeknik köper i januari 2026 konkurrenten SöderVerk med 90 Mkr i årsomsättning. Totalkoncernen landar på 1 350. Vad är den organiska tillväxten och varför skiljer den sig?"
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: (1 200 − 1 050) ÷ 1 050 = +14,3 % ⇒ 3 poäng (intervallet 10–20 %).\n\nFacit 2: (1 350 − 1 200) ÷ 1 200 = +12,5 % ⇒ fortfarande 3 poäng.\n\nFacit 3: Organiskt ≈ 1 350 − 90 = 1 260 ⇒ (1 260 − 1 200) ÷ 1 200 = +5 % — hälften så hög som siffran. Den återstående tillväxten är köpt, inte skapad; förvärvet kan ändå vara bra, men det är en annan fråga än om affären växer."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): förvärvstillväxt är inte organisk tillväxt — fråga alltid hur mycket delarna som fanns förra året också växte. Samma +10 % kan vara volym (efterfrågan) eller pris (inflation, prismakt) med mycket olika hållbarhet, och exportintäkter i euro eller dollar svänger med valutakurserna — en svagare krona kan ta äran för en svensk exportörs \"tillväxt\". Cykeltoppar och engångsintäkter (sålda tillgångar, engångsprojekt — kontrollera noten övriga intäkter) kan svälla intäktsraden en enda gång. En enskild siffra fäller aldrig domen: läs V01 alltid tillsammans med marginalerna och diversifieringen."
+      },
+      {
+        "type": "insikt",
+        "content": "Övningen du just gjorde är exakt hur ekosystemets verktyg drivs på riktigt material: AKM1:s tröskelpoäng (här 3 poäng i tillväxttrappan) matas av din egen uträkning, nyckeltalsguiden visar var i årsredovisningen talet hämtas, AKM2:s analys vittnar om hur tillväxten samspelar med marginaler och diversifiering, AI-Mentorn förhör dig på just de här räknestegen, och portföljmotorn följer trappan över tid i din bevakning. Ju noggrannare din journal, desto vassare hela kedjan."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Försäljningstillväxten dividerar förändringen med absolutbeloppet av förra årets nettoomsättning.",
+        "alternativ": [
+          "Sant — absolutbeloppet gör formeln användbar även om förra året var negativt",
+          "Falskt — divisionen sker alltid med årets belopp",
+          "Sant, men endast i koncernredovisningen",
+          "Falskt — förändringen multipliceras med förra årets belopp"
+        ],
+        "ratt": 0,
+        "tips": "Se beräkningssteget i kapitlets räkneexempel."
+      },
+      {
+        "q": "I modellens poängtrappa ger tillväxt över 45 procent automatiskt toppoäng.",
+        "alternativ": [
+          "Sant — högre tillväxt är alltid bättre",
+          "Falskt — över 45 procent rabatteras poängen (hållbarhetsrabatt)",
+          "Sant, men bara om bruttomarginalen överstiger 30 procent",
+          "Falskt — över 45 procent ger alltid noll poäng"
+        ],
+        "ratt": 1,
+        "tips": "Se vad trappan säger om mycket hög tillväxt i räkneexemplet."
+      },
+      {
+        "q": "Ett förvärv bidrar till koncernens rapporterade tillväxt men inte till den organiska tillväxten.",
+        "alternativ": [
+          "Falskt — all tillväxt är organisk så snart den finns i koncernen",
+          "Falskt — förvärv räknas som organiskt efter tolv månader",
+          "Sant bara om förvärvet skett i januari",
+          "Sant — organisk tillväxt mäter de delar som fanns förra året också"
+        ],
+        "ratt": 3,
+        "tips": "Se facit på övningsfråga 3."
+      }
+    ]
+  }
+}

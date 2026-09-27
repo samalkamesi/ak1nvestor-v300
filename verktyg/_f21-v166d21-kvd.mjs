@@ -2,7 +2,7 @@
 // v166-d21 KVD — mekanisk efterkontroll av djupkapitel 15 i
 // data/bokmaster/trading-in-the-zone.json enligt DESIGN-v166.
 import fs from 'node:fs';
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 
 const FIL = 'data/bokmaster/trading-in-the-zone.json';
 let pass = 0;
@@ -91,7 +91,7 @@ const andel = Math.round(((markorer.length - saknade.length) / markorer.length) 
 k(`talmarkörer ≥ 80 % (${markorer.length - saknade.length}/${markorer.length} = ${andel} %)`, andel >= 80 && saknade.length === 0, saknade.length ? 'saknade: ' + saknade.join(', ') : 'alla närvarande');
 
 // 7. Append-only: kapitel 1–14 + chapters_list 1–14 + övriga toppfält bit-identiska mot HEAD
-const gamlaRaw = execSync(`git show HEAD:${FIL}`, { encoding: 'utf8' });
+const gamlaRaw = execFileSync("git", ["show", `HEAD:${FIL}`], { encoding: 'utf8' });
 const g = JSON.parse(gamlaRaw);
 const kapOk = g.chapters.slice(0, 14).every((c, i) => JSON.stringify(c) === JSON.stringify(j.chapters[i]));
 k('kapitel 1–14 bit-identiska', kapOk && j.chapters.length === 15);

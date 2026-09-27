@@ -1,0 +1,66 @@
+{
+  "slug": "v10-skuldsattningsgrad",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "Skuldsättningsgraden mäter balansen mellan lånade och ägarpengar — cykelns förstärkare i båda riktningarna. Nu räknar du NorrTekniks grad och dess komplement, räntetäckningen.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "NorrTeknik AB är ett konstruerat bolag — låtsas-årsredovisningens tal är påhittade för övningens skull.\n\n- Summa skulder 2025: 515 (varav räntebärande bara 200 — resten är leverantörsskulder 160 och övrigt 155).\n- Eget kapital: 340.\n- Skuldsättningsgrad = 515 ÷ 340 = 1,51× — banken och ägarna finansierar ungefär 60/40.\n- Modellens trappa (1–2× ⇒ 3 poäng) ger 3 poäng — medelriskig struktur.\n- Nyansen: räntetäckningen är 150 ÷ 12 = 12,5× — rörelseresultatet täcker finanskostnaderna tolv gånger om. Grad 1,51 med storslagen täckning är ett annat riskläge än grad 1,51 med täckning 2×. Två mått, en bild — så ska de läsas.\n\nSå räknar du själv: läs \"Summa skulder och övriga förpliktelser\" (korta + långa) ur balansräkningen, läs \"Summa eget kapital\" — kontrollera TECKNET före division: är EK negativt är graden meningslös och lämnas osatt. Skuldsättningsgrad = summa skulder ÷ summa eget kapital. Komplettera med räntetäckningsgraden (rörelseresultat ÷ finansiella kostnader) ur noten om finansiella poster.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: NorrTekniks skuldsättningsgrad och poäng?\n\nÖvningsfråga 2 — Räkna vidare: Vad är räntetäckningsgraden, och vad tillför den?\n\nÖvningsfråga 3 — Tänk: Ett bolag har drivit EK under noll genom återköp. Vad gör modellen med V10 — och varför inte 0 poäng?"
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: 515 ÷ 340 = 1,51× ⇒ 3 poäng (1–2×).\n\nFacit 2: 150 ÷ 12 = 12,5×. Graden måttar strukturen (hur mycket lån), täckningen bärigheten (hur lätt de bärs) — tillsammans skiljer de ett lugnt 1,51× från ett stressat.\n\nFacit 3: Osatt. En negativ nämnare ger ingen meningsfull kvot (graden kan se \"låg\" ut med stora negativa tal) — att sätta 0 vore att låtsas att ett oläsligt mått säger något. Osatt + förklaring är den ärliga redovisningen av vad data bär; metoden dokumenterar i stället för att gissa. (Och notera sammanhanget: samma återköp som kan blåsa upp V09 och trycka ner V05 gör V10 oläsligt — kapitalstrukturens mått hänger ihop.)"
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): negativt eget kapital ⇒ osatt — kontrollera tecknet före division. Banker och finansbolag: balansräkningen är skulder per definition (inlåning); grader på 8–15× är struktur, inte misskötsel — jämför med kapitaltäckningsmått. IFRS 16 flyttade leasingåtaganden in i skulderna 2019 — jämför inte över övergången utan not. Ränta och löptid avgör bärigheten: 3× skuldsättning till 2 % ränta kan vara lugnare än 1,5× till 8 %. Skuldfrihet är ingen gratis dygd — ett starkt lönsamt bolag som vägrar låna lämnar avkastning på bordet. Och icke-räntebärande skulder kan svälla graden \"harmless\" — växande leverantörsskulder kan vara betalningsproblem lika gärna som effektiv finansiering; noterna avgör."
+      },
+      {
+        "type": "insikt",
+        "content": "Grad- och täckningsuträkningen du just gjorde är AKM1:s hävstångskontroll — V10 beräknas FÖRE V09 av just detta skäl, och nyckeltalsguiden visar var skuldposterna och de finansiella noterna finns. AKM2:s analys vittnar om parningen grad + räntetäckning + refinansieringskalender, AI-Mentorn förhör dig på teckenkontrollen och bankernas specialfall, och portföljmotorn följer skuldstrukturen över tid. Två mått, en bild — det är hur hela kedjen läser stabilitet."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Skuldsättningsgraden beräknas på summa skulder och övriga förpliktelser — inte bara de räntebärande.",
+        "alternativ": [
+          "Sant — graden mäter balansstrukturen; de räntebärande hör till EV-räkningarna",
+          "Falskt — endast räntebärande skulder räknas",
+          "Sant, men leverantörsskulder dras av först",
+          "Falskt — graden är skulder dividerat med omsättning"
+        ],
+        "ratt": 0,
+        "tips": "Se beräkningssteget och noten om olika frågor, olika delar av skulderna."
+      },
+      {
+        "q": "Med negativt eget kapital ska skuldsättningsgraden ges 0 poäng.",
+        "alternativ": [
+          "Sant — 0 poäng är alltid rätt vid negativa tal",
+          "Falskt — graden lämnas OSATT: en negativ nämnare ger ingen meningsfull kvot",
+          "Sant, men bara för banker",
+          "Falskt — negativ EK gör graden automatiskt toppoäng"
+        ],
+        "ratt": 1,
+        "tips": "Se facit på övningsfråga 3."
+      },
+      {
+        "q": "Räntetäckningsgraden kompletterar skuldsättningsgraden genom att mäta hur lätt skulderna bärs.",
+        "alternativ": [
+          "Falskt — de två måtten mäter samma sak",
+          "Sant, men bara vid negativ EK",
+          "Sant — rörelseresultatet ÷ finansiella kostnader visar bärigheten vid sidan av strukturen",
+          "Falskt — räntetäckningen ersätter skuldsättningsgraden helt"
+        ],
+        "ratt": 2,
+        "tips": "Se nyansen i räkneexemplet — två mått, en bild."
+      }
+    ]
+  }
+}

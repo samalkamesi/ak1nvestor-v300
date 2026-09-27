@@ -1,0 +1,56 @@
+studio: auto s9-u3 SYSTEMKARTAN-dokvåg: C16 + A4 + B14 diffade mot verkligheten — uttagsflaskhalsen öppnad samma dag som noll-krisen + determinismen fjärde varvet + B14:s svitfynd (manifest auto-s9-1790257516357, byggare 3/3)
+
+Tre system EGENMÄTTA 15:30-16:10, inget läst ur worklog. C16 (LEVER 8
+orörd): publiceringen 55 → 94 LEVERANDE LIVE (94 unika slugar på /blogg,
+200 på 72-88 ms) via v164-serien + kf1-krisens kur — sajten levererade 0
+artiklar (pm2-kraschloop, saknad BUILD_ID, oskyddad JSON.parse) tills kf1
+09-24 06:02 gav per-fils felhantering + HEL formkontroll +
+dublettslugsskydd i src/lib/content.ts (C15-kö); utkastkön 235 → 407
+filer (+34/dygn, acceleration; granskning 203 var 107, kvartal 94, m9-ko
+7 frusen sedan 09-15); GRANSKNINGSKO-SAMMANSTALLNINGEN 350 297 B förynad
+10:04; m9-fabrik.mjs kodstilla sedan bf9e06af = ekosystemtesen bekräftad;
+M9-GRANSKNING-guiden 4 dagar stilla (levande-hållning-kö). A4 (LEVER 7
+orörd): determinismen FJÄRDE varvet, exakt prod-match samma dag — FNV-1a
+(salt 1) ombereknad ur route.ts:s äkta ROTATION ger 09-24 → NDA-SE.ST =
+API-svaret exakt (Nordea, 200,5 SEK, 52v-pos 0,966, ATR14 2,96); första
+tredagarskedjan offline (09-22 ERIC-B, 09-23 AZN); nyckelfilerna 0
+commits sedan 09-16; svitgapet lever (0 träffar); quiz-frusenheten
+harmoniserad med u2:s rotsvar: generatorn äkta (8 223 exakt), 161 nya
+kurser bär 0 quiz = innehållsstrategi — andelen quiz-bärande kurser
+67,5 % och sjunkande (strategisk klass, ej A4-fel). B14 (LEVER 5 orörd):
+viloläget DAG 6 — /etc/crontab rad 25 intakt, /api/cron/nyheter svarar
+fortfarande 404 (egen sond med radens Host-header), /api/nyheter
+identiskt tomt (ok/[]/franCache:falskt), tom-cachen cirkulerar (93 B
+omskriven 15:54), /nyheter 200 kundsynligt tomt; MEN svitbilden flyttad:
+09-20-dokvågen missade kontraktssviten testa-motor-nyhets-motor.mjs
+(bc522def 09-20 05:41 — 46/46 PASS: parsRssXml, SSRF-validering,
+påverkansräkning, AK1A-not+juridikgrind, ämneskanaler, nätverksfritt
+hämtkontrakt) + NYHETS-MOTOR 44 PASS i o114:s svit-para = svitgapet
+HALVERAT (motor-kontrakt testade, fallback-/driftvägarna ej) — sviten är
+kunskap inte poäng (B13/E33-precedensen), 09-18:s sänkning vilade på
+driftförsämringen som består; kö: kur av rad 25 (ompekning till
+/api/nyheter/scan eller gallring) eller bevisad Vercel-drift = R1-ärendet.
+
+E29-PIVOT ärligt bokförd: u1 + jag valde BÅDA E29 disk-först (klara=[]
+race utan anspråksfil); u1:s sektion + E29-block landade i trädet under
+mina påbörjade Edits ⇒ mina E29-mätningar avstås som systemval, de
+överlappande värdena (crontab 9 rader, beslutsminnet 217/rond 98,
+protokollnumret 44 i drift, fabriken 374/376, evighetsmotorn 1 438,
+CRON_SECRET 0, kunduppdragsfilerna frånvarande) redovisas i kartan ENDAST
+som korsvalidering = oberoende samsyn; E29-blocket lämnat orört.
+Ersättare: B14. Snitt 7,4 orörd — ingen poängrörelse, alla diffar är
+tillväxt-/drift-/kunskapsbevis.
+
+RIDALONG-NOTIS (o18/natt-precedensen): mina fyra kartytor (C16-blocket,
+A4-blocket, B14-blocket + u3-sektionen) bars i u2:s filcommit f1f4b007
+15:57:57 — de låg i det delade arbetsträdet när deras commit verkställde;
+innehållet identitetsverifierat i HEAD (grep 1 sektion + 3 blockrubriker),
+trädläge korrekt. DENNA commit bär worklog-kvittot (fabriksmönstret:
+append-fil + node-append + commit med pathspec).
+
+KVD: data-only — src/ orörd = INGET bygge · R2 orörd (priser/tier/
+publicering ENDAST lästa; publiceringen 55→94 är andras levererade
+faktum) · data/blogg/ (live) orörd · /etc/crontab + användar-crontab
+LÄSTA, aldrig skrivna · syskonytor: u1:s E29-block/-sektion + u2:s
+A1/C18-sektion orörda · pre-commit-grinden bärs, commit -F + explicit
+pathspec (worklog.md). [fabrik]

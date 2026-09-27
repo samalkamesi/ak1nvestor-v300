@@ -1,0 +1,66 @@
+{
+  "slug": "v13-patent-ip",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "En vallgrav byggd av tid: patent och IP håller konkurrenterna borta en period. Nu räknar du skyddad-IP-andel, FoU-intensitet och vägd löptid på ett läkemedelsbolags låtsas-noter — och ser varför goodwill aldrig är ett skydd.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "MedSens AB är ett påhittat bolag — låtsas-redovisningens tal är konstruerade för övningens skull.\n\nNoten immateriella anläggningstillgångar: Patent 45 · Utvecklingskostnader i programvara 25 · Varumärken (förvärvade) 12 · Goodwill 300 — Summa 382. Resultaträkningen: nettoomsättning 700, FoU-kostnad 85, varav licens-/royaltyintäkter 40 (intäktsnoten). Bruttomarginalen (V07) är 54 % och stabil fem år.\n\nBeräkning:\n\n- Skyddad-IP-andel = (45 + 25) ÷ 382 = 70 ÷ 382 = 18,3 % — goodwill svarar för 300 ÷ 382 = 78,5 %: vallgraven är till övervägande del köpt, inte byggd.\n- FoU-intensitet = 85 ÷ 700 = 12,1 % — kraftig input.\n- IP som intäkt = 40 ÷ 700 = 5,7 % — portföljen börjar bära sig själv.\n- Löptid: huvudpatent A (60 % av portföljvärdet) löper 10 år till, patent B (40 %) 3 år till ⇒ vägd kvarvarande löptid = 0,6 × 10 + 0,4 × 3 = 7,2 år.\n\nTolkning: marginalbeviset avgör om 12 % FoU producerar vallgrav eller bara kostnad — MedSens 54-procents bruttomarginal, stabil i fem år, håller måttet. Poängresonemanget: med B-patentet löper ut om tre år och en goodwill-tyngd balansräkning hålls poängen medel-hög trots fin input — kvaliteten ligger i A-patentets årtionde och royaltyraden, inte i summorna.\n\nSå räknar du själv: plocka ur noten skydds-IP (patent + licenser + programvaruutveckling) och håll goodwill åtskilt; andel skyddad IP = skydds-IP ÷ summa immateriella tillgångar; FoU-intensitet = FoU-kostnad ÷ nettoomsättning; IP-självbärande = royalty-/licensintäkter ÷ nettoomsättning; och väga portföljens kvarvarande löptid (patent löper grovt 20 år från ansökan). Poäng efter mekanismens hållbarhet: licensierat (IP som intäktsrad) > evig rättighet/teknikportfölj > utlöpningstyrt — aldrig efter IP-summans storlek. V13 är kvalitativ i modellen (osatt i datakontraktet, poängsatt manuellt) — läsningen har aritmetik.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: Noten visar: patent 30, programvara 20, varumärken 10, goodwill 240. Andel skyddad IP — och vad säger den?\n\nÖvningsfråga 2 — Tänk: FoU-kostnaden är 60 på en omsättning 500. Är det en moat?\n\nÖvningsfråga 3 — Räkna: Portföljen: 70 % av värdet med 8 år kvar, 30 % med 2 år kvar. Vägd löptid?"
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: (30+20) ÷ 300 = 16,7 %; goodwill 80 %. Vallgraven är till största delen köpt — kvitto på förvärv, inte bevis på skydd.\n\nFacit 2: FoU-intensiteten 12 % är input, inte bevis. Kräv marginalen (V07), löptid och patentfamilj innan poäng sätts.\n\nFacit 3: 0,7 × 8 + 0,3 × 2 = 6,2 år — om sex år är huvudskyddet borta om pipelinen inte förnyar det."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): patentantal är inte skydd — kvalitet, patentfamiljens storlek och jurisdiktioner avgör. Patent utlöper (grovt 20 år från ansökan) — räkna kvarvarande tid, inte bestånd. Goodwill liknar IP i noten men är inget skydd: det är köpepriset på förvärvade bolag — en goodwill-tyngd balansräkning säger att moaten köpts, inte att den finns. FoU-kostnad är input; marginalen är output (koppla V07). \"Patent pending\" är noll skydd förrän beviljat, och kapitaliserad FoU kan glatta resultatet — läs notens policy. OBS också IFRS-regeln: internt skapade patent och varumärken får INTE bokföras som tillgång — den organiska IP-ytan är osynlig i balansräkningen och måste läsas i berättelsen."
+      },
+      {
+        "type": "insikt",
+        "content": "IP-läsningen du just gjorde är grunden för V13:s manuella poängsättning i AKM1, och nyckeltalsguiden visar notens poster, FoU-raden och royaltyintäkterna. AKM2:s analys vittnar om parningen med V07:s marginal (input mot output) och V05:s goodwill-kontroll, AI-Mentorn förhör dig på löptidsvikningen och goodwill-fällan, och portföljmotorn följer patentutlöpningar över tid. En journal med andelar, löptid och marginalbevis — inte IP-summor — är kedjans moat-underlag."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Goodwill i noten immateriella tillgångar är ett bevis på en stark vallgrav.",
+        "alternativ": [
+          "Sant — goodwill är immateriell och skyddar därför",
+          "Falskt — goodwill är bokfört köpepris på förvärvade bolag; den säger att moaten köpts, inte att den finns",
+          "Sant om goodwill överstiger hälften av tillgångarna",
+          "Falskt — goodwill bokförs aldrig bland immateriella tillgångar"
+        ],
+        "ratt": 1,
+        "tips": "Se fallgropen om goodwill."
+      },
+      {
+        "q": "En hög FoU-kostnad andel av omsättningen är i sig ett bevis på moat.",
+        "alternativ": [
+          "Falskt — FoU är input; marginalen (V07), löptid och patentfamilj är bevisen",
+          "Sant — ju mer FoU desto starkare moat",
+          "Sant, men bara inom läkemedel",
+          "Falskt — FoU-kostnader får inte redovisas"
+        ],
+        "ratt": 0,
+        "tips": "Se facit på övningsfråga 2."
+      },
+      {
+        "q": "Vägd kvarvarande löptid räknas per patents andel av portföljvärdet.",
+        "alternativ": [
+          "Falskt — alla patent löper exakt lika länge",
+          "Sant, men bara för läkemedelsbolag",
+          "Sant — exempelvis 0,6 × 10 + 0,4 × 3 = 7,2 år i räkneexemplet",
+          "Falskt — löptiden vägs per anställd"
+        ],
+        "ratt": 2,
+        "tips": "Se löptidsberäkningen i räkneexemplet."
+      }
+    ]
+  }
+}

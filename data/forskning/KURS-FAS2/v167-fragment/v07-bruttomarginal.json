@@ -1,0 +1,66 @@
+{
+  "slug": "v07-bruttomarginal",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "Bruttomarginalen är det som blir kvar av varje hundralapp när varan är levererad — taket på all lönsamhet. Nu räknar du NorrTekniks marginal, jämför mot förra året och ser vad en trappa säger mot en trend.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "NorrTeknik AB är ett konstruerat bolag — låtsas-årsredovisningens tal är påhittade för övningens skull.\n\n- 2025: nettoomsättning 1 200, KSVT −720 → bruttoresultat 480.\n- Bruttomarginal = 480 ÷ 1 200 = 40,0 % — av varje hundralapp i försäljning blir 40 kronor kvar när varan är levererad.\n- 2024: 402 ÷ 1 050 = 38,3 % → marginalen förbättrades med 1,7 procentenheter.\n- Modellens kurva (35–50 % ⇒ 3 poäng) ger 3 poäng. Det är en solid premiumindustriell nivå: ingen mjukvarumarginal, men tydlig prutmån — och notera att förbättringen kom samtidigt som serviceandelen växte (V02): mjukare intäkter, hårdare marginal. Så kopplar metoden indikatorerna till en berättelse.\n\nSå räknar du själv: läs nettoomsättningen och kostnad sålda varor och tjänster (KSVT) ur samma periods resultaträkning, bruttoresultat = nettoomsättning − KSVT, bruttomarginal = bruttoresultat ÷ nettoomsättning × 100 %. Kontrollera i noten hur personalkostnader klassificerats — en post som flyttat flyttar marginalen — och jämför mot bolagets egen historia och branschens struktur, aldrig mellan olikt strukturerade branscher.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: NorrTekniks bruttomarginal 2025 och poäng?\n\nÖvningsfråga 2 — Räkna vidare: Hur mycket ändrades marginalen från 2024, i procentenheter?\n\nÖvningsfråga 3 — Tänk: 2026 stiger KSVT med 30 Mkr vid oförändrad omsättning. Ny marginal, ny poäng — och vad är lärdomen om trappor mot trender?"
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: (1 200 − 720) ÷ 1 200 = 40,0 % ⇒ 3 poäng (35–50 %).\n\nFacit 2: 40,0 % − 38,3 % = +1,7 enheter — driven av prissättning eller mix; nästa steg är noterna för att se vilken.\n\nFacit 3: (1 200 − 750) ÷ 1 200 = 37,5 % ⇒ fortfarande 3 poäng. Poängen rörde sig inte — men trenden vände. En trappa säger \"vilket hyllplan\", trenden säger \"vilken riktning\"; metoden läser båda, och det ska du också göra."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): jämför aldrig bruttomarginal mellan branscher som vore det en ranking — en handelskedja på 25 % kan vara magnifik och ett mjukvarubolag på 85 % medioker. Banker och förvaltningsbolag har ingen KSVT-struktur: deras \"0 %\" i databaser är saknad data, inte dålig affär. Ett år bevisar ingenting — kurvans topp kräver att femårssnittet håller. Klassificeringsval (var personal och övriga rörelsekostnader sitter) kan flytta marginalen flera enheter, och mix-effekter kan dölja att högmarginalkärnan krymper — leta segmentuppdelningen."
+      },
+      {
+        "type": "insikt",
+        "content": "Marginaluträkningen du just gjorde ger AKM1:s bruttomarginalpoäng, och nyckeltalsguiden pekar ut resultaträkningens rader och noten till rörelsekostnaderna. AKM2:s analys vittnar om samspelet med V02:s intäktsmix och V08:s organisationsgap, AI-Mentorn förhör dig på trappa mot trend, och portföljmotorn följer marginalutvecklingen över tid. Journaltanken från facit 3 — hyllplan OCH riktning — är precis hur hela kedjan läser tal."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Bruttomarginalen beräknas före personal, marknadsföring och finansiella poster.",
+        "alternativ": [
+          "Sant — det som blir kvar när varan eller tjänsten är levererad",
+          "Falskt — den beräknas efter alla kostnader",
+          "Sant, men leasingräntan ska dras av",
+          "Falskt — den är vinsten dividerad med eget kapital"
+        ],
+        "ratt": 0,
+        "tips": "Se definitionen i kapitlets inledning."
+      },
+      {
+        "q": "En banks bruttomarginal på 0 procent i en databas betyder att banken är dålig på sin affär.",
+        "alternativ": [
+          "Sant — 0 % är alltid värst",
+          "Falskt — banker saknar KSVT-struktur; 0 % betyder saknad data, inte dålig affär",
+          "Sant, men bara utomlands",
+          "Falskt — banker har alltid högst bruttomarginal"
+        ],
+        "ratt": 1,
+        "tips": "Se fallgropen om banker och förvaltningsbolag."
+      },
+      {
+        "q": "Marginalen sjunker från 40,0 till 37,5 procent men poängen i trappan är oförändrad — då har inget hänt.",
+        "alternativ": [
+          "Sant — poängen är det enda som räknas",
+          "Sant om marginalen fortfarande är över 30 procent",
+          "Falskt — trappan säger hyllplan, trenden säger riktning; en vändning är information även när poängen står still",
+          "Falskt — trappan ska alltid räknas om"
+        ],
+        "ratt": 2,
+        "tips": "Se facit på övningsfråga 3."
+      }
+    ]
+  }
+}

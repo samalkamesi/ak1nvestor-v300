@@ -239,7 +239,7 @@ const BYGGYTA_PREFIX = [
   "src", "public", "app", "styles",
   "package.json", "package-lock.json",
   "next.config.", "next-env.d.ts",
-  "tsconfig.", "tailwind.", "postcss.", "middleware.",
+  "tsconfig.", "tailwind.", "postcss.", "middleware.", "proxy.",
 ];
 export function headRorByggyta(filer) {
   if (!Array.isArray(filer)) return true;
@@ -865,6 +865,11 @@ export function skapaPm2Vakt(pm2Kora = standardPm2, logg = logga) {
   let stoppad = false;
   return {
     arStoppad: () => stoppad,
+    // V182: nollställ flaggan utan pm2-anrop — efter ett atomärt byte som
+    // självt restartat pm2 (annars gör finally:n en andra, onödig omstart)
+    markeraLevande() {
+      stoppad = false;
+    },
     stoppa() {
       if (stoppad) return true;
       try {
@@ -907,6 +912,160 @@ function standardPm2(args) {
 
 const pm2Vakt = skapaPm2Vakt();
 
+// ---------------------------------------------------------------------------
+// V182 (r272 — F6-ROTENS VACCIN): BYGG UTAN KUNDAVBROTT. Roten (r271:s
+// F6-utredning): varje prod-bygge mörkar sajten medan det pågår — next build
+// tömmer .next progressivt medan pm2 serverar filerna från disk (statiska
+// chunks 500, pulsvakten 2026-09-27 05:40Z) och npm ci raderar node_modules
+// under den gående appen (lazy-require dör → next-not-found-kraschloop,
+// våg 153: ~7 min, 1 309 omstarter). Kuren i tre delar:
+//   · bygget skriver .next-ny (NEXT_DIST_DIR, next.config.ts) — prod .next
+//     orörd av hela fönstret; fallna/OOM-dödade byggen lämnar prod HELT
+//     oberörd (läkebackupen behövs endast i npm ci-läget)
+//   · npm ci ENDAST när kedjan ändrat package*.json ELLER node_modules är
+//     trasig — i det (sällsynta) läget stoppas pm2 (o48-mönstret) och
+//     fönstret är dokumenterat mörkt ~byggtid; dokumenterad gräns för v183
+//   · atomärt byte vid GRÖN artefakt: mv .next .next-forra && mv .next-ny
+//     .next && pm2 restart (ms-fönster, deploylåset hålls); rött HTTPS ⇒
+//     tillbakarullning på sekunder — HEAD orörd, nytt försök nästa poll
+// Kontraktstest: verktyg/testa-prod-synk-nolldowntime.mjs
+// ---------------------------------------------------------------------------
+export function beslutaNpmCi({ diffFiler, nodeModulesIntakt = true }) {
+  if (!nodeModulesIntakt) return true;
+  if (!Array.isArray(diffFiler)) return true; // obestämbar ⇒ konservativt npm ci
+  return diffFiler.some((f) => f === "package.json" || f === "package-lock.json");
+}
+
+export function byggNolldowntimeKommando({ npmCi }) {
+  const ci = npmCi ? "npm ci --no-audit --no-fund >> /tmp/synk-npmci.log 2>&1 && " : "";
+  return ci + "NEXT_DIST_DIR=.next-ny npm run build >> /tmp/synk-build.log 2>&1";
+}
+
+// ---------------------------------------------------------------------------
+// V187 (r276 — BUNTSLAGSRACE-VAKTEN): pushar levererar trädet DIREKT till
+// servern (updateInstead) och kan landa MITT i ett löpande byggfönster.
+// DEPLOYAD-radens hash är SLUTTRÄDET — inte byggträdet. Bevisat 2026-09-27:
+// speglar-kuren 03ea5918 landade 15:00:40Z mitt i 14:57-fönstret, deployen
+// loggades GRÖN (bb1fe548) men edge-buntslen serverade ändå den gamla
+// 55-slug-listan (speglar-slugar.json buntas in i proxy-modulen — f.d.
+// middleware, v188 — vid BYGGTID) =
+// 78 döda spegelsidor i prod trots grön deploy. Kuren: byggträdets hash
+// låses vid start (BYGGER FRÅN-rad) och vaktas vid bytet — flyttade trädet
+// under bygget avbryts BYTET (artefakten kan vara inbyggt inkonsekvent),
+// DEPLOYAD-markören orörd ⇒ ombygg mot nya HEAD nästa poll.
+// Kontraktstest: verktyg/testa-prod-synk-buntslagsrace.mjs
+// ---------------------------------------------------------------------------
+export function buntslagsraceDom({ byggTradStart, byggTradSlut }) {
+  if (!byggTradStart || !byggTradSlut) {
+    return {
+      race: true,
+      meddelande: `byggträd-hash omätbar (start ${byggTradStart ? "ok" : "saknas"} · slut ${byggTradSlut ? "ok" : "saknas"}) — bevisbördan ligger på provenansen`,
+    };
+  }
+  if (byggTradStart === byggTradSlut) return { race: false, meddelande: "" };
+  return {
+    race: true,
+    meddelande: `trädet flyttade under bygget (${byggTradStart.slice(0, 8)} → ${byggTradSlut.slice(0, 8)})`,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// V184 (r274 — F6-RAM-doppens bevisning): BYGG-RAM-PROFILERN. Roten (r273+r274):
+// VÄNTAR-RAM-grinden mäter FÖRE byggstart (2200 MB) men ALDRIG under fönstret —
+// byggtoppen ~2,2 GB ovanpå pm2+zcode-barn trycker MemAvailable under 300 MB
+// mitt i fönstret (HÖG-fynd 2026-09-27T12:00:13Z: 176 MB, deploy grön men
+// avståndet till OOM-svepets tysta mord är tunt — r273 bevisade mekanismen)
+// utan att någon mekanism attribuerar lasten; F6-domaren (f6-ram-stang.mjs)
+// saknar källa för fönstret och lämnar HÖG-rader öppna (4 st 09-24→09-27).
+// Kur: sond var 60 s under VARJE byggförsök (även ombyggen) skriver tidsserie
+// till data/vakten/bygg-ram-profil.jsonl (runtime, gitignorerad) med start/
+// slut-inramning — domarens källa 5 (klass P) stänger framtida fynd mekaniskt
+// och doppen blir trenderbara över tid. Sonden får ALDRIG påverka
+// byggutfallet: alla fel sväljs, timern unref:as, stopp() körs i finally.
+// Kontraktstest: verktyg/testa-prod-synk-byggram.mjs
+// ---------------------------------------------------------------------------
+const BYGG_RAM_PROFIL_FIL = path.join(VAKT, "bygg-ram-profil.jsonl");
+const BYGG_RAM_VARNING_MB = 300;
+
+export function startaByggRamSond({ fil = BYGG_RAM_PROFIL_FIL, intervallMs = 60_000, lasRam = ramTillgangligtMB } = {}) {
+  try {
+    const rader = fs.readFileSync(fil, "utf8").split("\n").filter(Boolean);
+    if (rader.length > 4000) fs.writeFileSync(fil, rader.slice(-2000).join("\n") + "\n");
+  } catch { /* första körningen — filen skapas av sonden nedan */ }
+  const skriv = (obj) => {
+    try { fs.appendFileSync(fil, JSON.stringify(obj) + "\n"); } catch { /* sonden äger aldrig byggutfallet */ }
+  };
+  skriv({ ts: new Date().toISOString(), fas: "start", pid: process.pid });
+  let varv = 0;
+  let minMB = null;
+  const timer = setInterval(() => {
+    varv += 1;
+    const mb = lasRam();
+    if (typeof mb === "number") {
+      if (minMB === null || mb < minMB) minMB = mb;
+      skriv({ ts: new Date().toISOString(), fas: "bygg", tillgangligtMB: mb, minut: varv });
+    }
+  }, intervallMs);
+  timer.unref?.();
+  return {
+    stopp() {
+      clearInterval(timer);
+      skriv({ ts: new Date().toISOString(), fas: "slut", varv, minTillgangligtMB: minMB });
+      return { varv, minMB, varning: typeof minMB === "number" && minMB < BYGG_RAM_VARNING_MB };
+    },
+  };
+}
+
+// ---------------------------------------------------------------------------
+// V183 (r273 — den tysta OOM-dödens kur): instanslåset blev PID-baserat.
+// Bevis 2026-09-27 05:57→06:17Z: OOM-svepet mördade prod-synk-processen
+// (loggspringa utan ENDA felrad — SIGKILL loggar aldrig; byggfönster på 26
+// min är bevisat normalt sedan v182, så det blinda 12-min-taket kan inte
+// skilja "lever och bygger" från "död sedan minuter") + pm2-appen dog i
+// samma svep (pulsvaktens 60-s-dik). Det kvarlämnade instanslåset blockerade
+// 06:07-pollen tyst = 10 min förlorad deploy-återhämtning. Kur: låset bär
+// en pid-fil, och varje kollision dömer ur /proc — död pid (eller pid
+// återanvänd av icke-synk) rivs DIRECT; levande prod-synk lämnas över hur
+// länge bygget än tar. Äldre lås utan pid-fil behåller 12-min-regeln som
+// reserv (fail-safe som före V183). Testas av verktyg/testa-prod-synk-instanslas.mjs.
+// ---------------------------------------------------------------------------
+export function tolkaLasPid(text) {
+  const m = String(text ?? "").trim().match(/^\d+$/);
+  return m ? Number(m[0]) : null;
+}
+
+/** Samla låsets observerbara status — pidText/alderMs null = omätbart. */
+export function lasInstansStatus(lasSokvag) {
+  const ute = { pidText: null, alderMs: null, procFinns: false, procArSynk: false };
+  try { ute.pidText = fs.readFileSync(path.join(lasSokvag, "pid"), "utf8"); } catch { /* äldre lås utan pid-fil */ }
+  try { ute.alderMs = Date.now() - fs.statSync(lasSokvag).mtimeMs; } catch { /* */ }
+  const pid = tolkaLasPid(ute.pidText);
+  if (pid !== null) {
+    ute.procFinns = fs.existsSync(`/proc/${pid}`);
+    if (ute.procFinns) {
+      // Full modulväg — "prod-synk" ensamt matchar också testsviternas
+      // filnamn (testa-prod-synk-*.mjs, bevisat av svitens test 14)
+      try { ute.procArSynk = fs.readFileSync(`/proc/${pid}/cmdline`, "utf8").includes("verktyg/prod-synk.mjs"); } catch { /* läsofel = inte bevisat synk */ }
+    }
+  }
+  return ute;
+}
+
+export function bedomInstansLas({ pidText, alderMs, procFinns, procArSynk }) {
+  const pid = tolkaLasPid(pidText);
+  if (pid !== null) {
+    if (procFinns && procArSynk) return { vanta: true, anledning: `annan synkinstans lever (pid ${pid}, /proc bevisar prod-synk) — lämnar över` };
+    return {
+      vanta: false,
+      anledning: `låset rivet: pid ${pid} ${procFinns ? "återanvänd av annan process (cmdline ≠ prod-synk)" : "är död (inget /proc)"} (V183 — OOM-svepets tysta död ska inte svälta deployer)`,
+    };
+  }
+  // äldre lås utan pid-fil: oförändrad 12-min-regel (fail-safe som före V183)
+  if (alderMs === null || alderMs === undefined) return { vanta: true, anledning: "annan synkinstans troligen lever (låsålder omätbar) — lämnar över" };
+  if (alderMs <= 12 * 60_000) return { vanta: true, anledning: "annan synkinstans lever — lämnar över" };
+  return { vanta: false, anledning: `låset rivet: ${Math.floor(alderMs / 60_000)} min gammalt utan pid-fil (12-min-tak) — övergivet` };
+}
+
 async function main() {
   // VÅG 153 — INSTANSLÅS: manuella triggar (arbetsstationen/fabriken) kan
   // racea pumpens :x7-rop — två npm ci i följd raderar node_modules mitt i
@@ -915,18 +1074,23 @@ async function main() {
   // processlås (mkdir, atomärt) ser till att ENDAST EN synkinstans lever;
   // kvarlämnade lås (>12 min) städas som övergivna.
   const lasSokvag = path.join(VAKT, ".synk-instans.lock");
+  const skrivPidFil = () => {
+    try { fs.writeFileSync(path.join(lasSokvag, "pid"), `${process.pid}\n`); } catch { /* reserv: 12-min-regeln gäller */ }
+  };
   try {
     fs.mkdirSync(lasSokvag, { recursive: false });
+    skrivPidFil();
   } catch {
     try {
-      const statistik = fs.statSync(lasSokvag);
-      if (Date.now() - statistik.mtimeMs > 12 * 60_000) {
-        fs.rmSync(lasSokvag, { recursive: true, force: true });
-        fs.mkdirSync(lasSokvag, { recursive: false });
-      } else {
-        console.log("annan synkinstans lever — lämnar över");
+      const dom = bedomInstansLas(lasInstansStatus(lasSokvag));
+      if (dom.vanta) {
+        console.log(dom.anledning);
         return;
       }
+      fs.rmSync(lasSokvag, { recursive: true, force: true });
+      fs.mkdirSync(lasSokvag, { recursive: false });
+      skrivPidFil();
+      logga(`INSTANSLÅS: ${dom.anledning} — nästa poll tar över deployen`);
     } catch {
       return;
     }
@@ -1134,7 +1298,20 @@ async function korSynk() {
   // 5-6) bygg under flock — VÅG 123d: UTAN node-timeout (execSync-tak dödade
   // byggprocessen med SIGTERM; deploylåset serialiserar ändå, daemonen
   // övervakar). Logg till eigen fil för efteranalys.
-  const bygg = "npm ci --no-audit --no-fund >> /tmp/synk-npmci.log 2>&1 && npm run build >> /tmp/synk-build.log 2>&1";
+  // V182 (r272): NOLLDOWNTIME — npm ci endast vid lock-ändring/trasigt
+  // node_modules (patchInstallerad ⇒ installationen redan gjord), bygget
+  // skriver .next-ny så prod .next är orörd hela fönstret.
+  let diffFiler = null;
+  try {
+    diffFiler = git(["diff", "--name-only", `${goodHead}..HEAD`]).split("\n").map((s) => s.trim()).filter(Boolean);
+  } catch { /* obestämbar ⇒ beslutaNpmCi kör konservativt */ }
+  const nodeModulesIntakt = fs.existsSync(path.join(ROT, "node_modules", ".package-lock.json"));
+  const npmCiBehov = patchInstallerad ? false : beslutaNpmCi({ diffFiler, nodeModulesIntakt });
+  const bygg = byggNolldowntimeKommando({ npmCi: npmCiBehov });
+  logga(
+    `NOLLDOWNTIME v182: npm ci ${npmCiBehov ? "KÖRS (lock ändrad/trasigt node_modules — pm2 stoppas enligt o48, fönstret mörkt ~byggtid)" : "HOPPAS ÖVER (node_modules aktuell)"} · bygget skriver .next-ny · prod .next orörd hela fönstret`,
+  );
+  if (npmCiBehov) pm2Vakt.stoppa();
   const { spawn } = await import("node:child_process");
   const korBygg = () =>
     new Promise((lyckas) => {
@@ -1146,6 +1323,30 @@ async function korSynk() {
       barn.on("exit", (kod) => lyckas(kod === 0));
       barn.on("error", () => lyckas(false));
     });
+  // V184: varje byggförsök profilerns RAM — huvudbygget OCH alla ombyggen
+  // (god-lock · orörd HEAD · revert · good-HEAD). Varningsrad + audit skrivs
+  // vid fönstrets slut; sonden själv kan aldrig påverka byggutfallet.
+  const korByggMedSond = async () => {
+    const sond = startaByggRamSond();
+    try {
+      // ropar korBygg — ALDRIG korByggMedSond (rekursion: r274-läxan, två
+      // kraschade poller 12:27+12:37Z innan upptäckt; strukturellt skydd i
+      // testa-prod-synk-byggram.mjs test 17)
+      return await korBygg();
+    } finally {
+      const samman = sond.stopp();
+      if (samman.varning) {
+        logga(`BYGG-RAM-VARNING: fönstrets lägsta MemAvailable ${samman.minMB} MB (< ${BYGG_RAM_VARNING_MB}) — designad byggtopplast på den delade servern, mätt av V184-profilern; tidsserie: data/vakten/bygg-ram-profil.jsonl`);
+        skrivAudit("prod-synk", "bygg_ram_dopp", `${samman.minMB}mb`, "byggfönstrets MemAvailable dop under 300 MB — mätt bevisning från V184-profilern (data/vakten/bygg-ram-profil.jsonl)");
+      }
+    }
+  };
+  // V187: BYGGER FRÅN — byggträdets hash låses vid start (provenansraden;
+  // vaktas av buntslagsrace-domaren före bytet och av hash-vakten i själva
+  // byte-kommandot). Fail-closed vid omätbar hash: git() kastar ⇒ korSynk:s
+  // överliggande felhantering, bygg sker ej halvbevisat.
+  const byggTradStart = git(["rev-parse", "HEAD"]);
+  logga(`BYGGER FRÅN: ${byggTradStart.slice(0, 8)}`);
   let ok = false;
   try { fs.writeFileSync("/tmp/synk-npmci.log", ""); } catch { /* */ }
   try { fs.writeFileSync("/tmp/synk-build.log", ""); } catch { /* */ }
@@ -1165,13 +1366,17 @@ async function korSynk() {
     }
     return lak;
   };
-  {
+  if (npmCiBehov) {
     const backup = skapaNextLaekebackup({ nextKatalog, laekeKatalog });
     if (backup === "skapad") logga("NEXT-LÄKEBACKUP skapad (.next → .next-laeke, ISR-cache exkluderad) — senast gröna läget säkrat före bygget");
     else if (backup.startsWith("fel:") || backup === "icke-gron") logga(`VARNING: NEXT-LÄKEBACKUP ej tagen (${backup}) — felutfall lämnas som före o97-kuren`);
     // finns-sedan / saknas-next är tysta normalfall (fönsterföljd / första deployen)
+  } else {
+    logga("NOLLDOWNTIME v182: läkebackup ej behövs — bygget skriver .next-ny, prod .next lämnas orörd");
   }
-  const korResultat = await korBygg();
+  // V182: rent .next-ny inför varje försök — fallna försöks skrap städas här
+  try { fs.rmSync(path.join(ROT, ".next-ny"), { recursive: true, force: true }); } catch { /* */ }
+  const korResultat = await korByggMedSond();
   const feltyp = korResultat ? null : bedomByggMisslyckande(slasLogg("/tmp/synk-npmci.log"), slasLogg("/tmp/synk-build.log"));
   if (korResultat) {
     ok = true;
@@ -1236,7 +1441,7 @@ async function korSynk() {
       // den rivna locken eller skriver ok-kvitton för den.
       logga("PATCH-KÖ: bygg misslyckades utan ny kod — patchen misstänkt, lock återställd; OMBYGG på god lock (det fallna bygget rivit .next)");
       patchInstallerad = false;
-      if (await korBygg()) {
+      if (await korByggMedSond()) {
         ok = true;
         logga("ombygge på god lock OK — prod åter tjänstduglig, patchen tillbakadragen (HEAD orörd)");
       } else {
@@ -1268,14 +1473,14 @@ async function korSynk() {
       );
       try {
         if (!rorByggyta) {
-          if (await korBygg()) {
+          if (await korByggMedSond()) {
             ok = true;
             logga("ombygg på orörd HEAD OK — oskyldig leverans skyddad, .next återställd");
             skrivAudit("prod-synk", "deploy_ombygg_utan_revert", `prod@${git(["rev-parse", "HEAD"]).slice(0, 8)}`, "byggfel men HEAD rör ej byggyta: revert avstådd (o72), ombygg på orörd HEAD OK");
           } else throw new Error("ombygg-utan-revert failade");
         } else {
           git(["revert", "HEAD", "--no-edit"]);
-          if (await korBygg()) {
+          if (await korByggMedSond()) {
             ok = true;
             logga("revert+ombygge OK — prod bygger på föregående commit");
             skrivAudit("prod-synk", "deploy_revert", `prod@${git(["rev-parse", "HEAD"]).slice(0, 8)}`, "felbygge revertades — prod bygger på föregående commit");
@@ -1304,7 +1509,7 @@ async function korSynk() {
         logga("ombygge efter revert MISSLYCKADES — återställer känd-good HEAD");
         try {
           git(["reset", "--hard", goodHead]);
-          if (await korBygg()) {
+          if (await korByggMedSond()) {
             ok = true;
             logga("good-HEAD återställd + ombyggd");
           } else throw new Error("good-HEAD-bygget failade");
@@ -1329,20 +1534,56 @@ async function korSynk() {
     // INGEN DEPLOYAD-markör — senaste-deployad lämnas orörd så nästa
     // poll ser NY KOD igen, RAM-vakten gäller och ombygget sker när
     // minnet tillåter (dagens manuella läkningsväg, nu mekanisk).
-    const artefakt = await verifieraArtefakt();
+    // V182: mätningen görs mot .next-ny — prod .next är orörd av bygget.
+    // V187: BUNTSLAGSRACE-VAKT — r276-läxan: flyttade trädet under bygget är
+    // artefakten byggd mot ett blandat träd (edge-bunt och sidor kan komma
+    // från olika tidpunkter). Bytet avbryts, DEPLOYAD-markören orörd ⇒ ombygg
+    // mot nya HEAD nästa poll. Fail-closed: omätbar slut-hash = race.
+    let byggTradSlut = null;
+    try { byggTradSlut = git(["rev-parse", "HEAD"]); } catch { /* null ⇒ race-dom */ }
+    const race = buntslagsraceDom({ byggTradStart, byggTradSlut });
+    if (race.race) {
+      logga(`BUNTSLAGSRACE: ${race.meddelande} — byte avbryts, buntslen kan vara inbyggt inkonsekvent; ombygg nästa poll`);
+      skrivAudit("prod-synk", "deploy_stoppad_buntslagsrace", `${String(byggTradStart).slice(0, 8)}->${String(byggTradSlut).slice(0, 8)}`, race.meddelande);
+      return;
+    }
+    const artefakt = await verifieraArtefakt({ nextKatalog: path.join(ROT, ".next-ny") });
     if (artefakt.status !== "gron") {
       logga(
-        `ARTEFAKT ${artefakt.status.toUpperCase()} efter bygg — ${artefakt.meddelande} · pm2 EJ omstartad, DEPLOYAD-markör EJ skriven; ombygge nästa poll (RAM-vakten gäller)`,
+        `ARTEFAKT ${artefakt.status.toUpperCase()} efter bygg — ${artefakt.meddelande} · pm2 EJ omstartad, DEPLOYAD-markör EJ skriven (v182: prod .next orörd — skrapen i .next-ny städas vid nästa försök); ombygge nästa poll (RAM-vakten gäller)`,
       );
       skrivAudit("prod-synk", "deploy_stoppad_artefakt", `artefakt-${artefakt.status}`, artefakt.meddelande);
-      // O97: bygget LYCKADES exit 0 men artefakten är internt inkonsistent —
-      // pm2 (ej omstartad) läser gamla chunk-referenser som nya .next saknar
-      // (E34-klassen: ostylat). Återställ gröna läget; ombygget nästa poll
-      // bygger ut det nya ändå (DEPLOYAD-markören orörd).
       lakaNext("artefakt-stopp");
       return;
     }
-    try { execFileSync("pm2", ["restart", "ak1a"], { timeout: 60_000, stdio: "ignore" }); } catch { /* pm2 pw */ }
+    // V182: ATOMÄRT BYTE (.next-ny → .next) + restart under deploylåset —
+    // ms-fönstret mellan mv:arna är hela kundavbrottet. ISR-cachen (~1 GB)
+    // flyttas in i nya läget FÖRE bytet: nya appen startar varm, gamla
+    // appen tappar den endast sekunder före sin restart (annars regenereras
+    // vid träff — cache är optimering, aldrig grind).
+    const forraKatalog = path.join(ROT, ".next-forra");
+    try {
+      try {
+        fs.rmSync(path.join(ROT, ".next-ny", "cache"), { recursive: true, force: true });
+        fs.renameSync(path.join(ROT, ".next", "cache"), path.join(ROT, ".next-ny", "cache"));
+      } catch { /* cache är optimering — bytet kör utan */ }
+      // V187: hash-vakt i själva byte-kommandot — minimerar fönstret mellan
+      // JS-domaren och mv:arna; flyttade trädet även där exitar swap-barnet
+      // icke-noll och den befintliga bytes-felgrenen (prod orörd, ombygg
+      // nästa poll) tar över utan ny kodväg.
+      const swap = `test "$(git rev-parse HEAD)" = "${byggTradStart}" && mv .next .next-forra && mv .next-ny .next && pm2 restart ak1a`;
+      const swapOk = await new Promise((lyckas) => {
+        const barn = spawn("bash", ["-c", `exec flock -n /tmp/ak1a-deploy.lock bash -c ${JSON.stringify(swap)}`], { cwd: ROT, stdio: "ignore", detached: false });
+        barn.on("exit", (kod) => lyckas(kod === 0));
+        barn.on("error", () => lyckas(false));
+      });
+      if (!swapOk) throw new Error("swap-barnet misslyckades (lås upptaget eller mv/pm2-fel)");
+      pm2Vakt.markeraLevande(); // bytet restartade pm2 — finally:n ska inte göra om det
+    } catch (e) {
+      logga(`VARNING: NOLLDOWNTIME-byte föll (${String(e && e.message ? e.message : e).slice(0, 120)}) — .next-ny ligger klar, pm2 EJ omstartad; nytt försök nästa poll`);
+      skrivAudit("prod-synk", "deploy_stoppad_byte", "nolldowntime", "atomärt byte .next-ny→.next misslyckades — prod orörd, ombygge nästa poll");
+      return;
+    }
     await new Promise((s) => setTimeout(s, 6000));
     if (await httpsOk()) {
       // PATCH-KÖNS BOKFÖRING (o46): committa den patchade locken FÖRE
@@ -1381,6 +1622,8 @@ async function korSynk() {
       // läkebackupen är inaktuell och städas (nästa byggstart tar färsk
       // ur det nya .next; LAEKE speglar alltid senaste LYCKADE deploy).
       try { fs.rmSync(laekeKatalog, { recursive: true, force: true }); } catch { /* får ligga — städas nästa gröna deploy */ }
+      // V182: förra läget (bytets förlorare) städas — diskhygien.
+      try { fs.rmSync(path.join(ROT, ".next-forra"), { recursive: true, force: true }); } catch { /* får ligga — städas nästa gröna deploy */ }
 
       // VÅG 152 — MÅLET FÖDS OM EFTER DEPLOY: pm2-restarten raderar mål-state
       // ur processminnet (bevisat mönster: målet dött efter VARJE deploy tills
@@ -1440,7 +1683,28 @@ async function korSynk() {
         logga("AGENTARBETSYTA-SYNK MISSLYCKADES (" + forklaraGitFel(e) + ") — åtgärda nästa rond");
       }
     } else {
-      logga("VARNING: deployad men HTTPS ej verifierad — kontrollera manuellt");
+      // V182: rött HTTPS efter bytet ⇒ TILLBAKARULLNING PÅ SEKUNDER —
+      // gamla (bevisat gröna) läget åter på plats + restart; HEAD orörd
+      // och DEPLOYAD-markören oskriven ⇒ nytt försök nästa poll.
+      const rollback = "mv .next .next-ny-kass && mv .next-forra .next && pm2 restart ak1a";
+      const rollbackOk = await new Promise((lyckas) => {
+        const barn = spawn("bash", ["-c", `exec flock -n /tmp/ak1a-deploy.lock bash -c ${JSON.stringify(rollback)}`], { cwd: ROT, stdio: "ignore", detached: false });
+        barn.on("exit", (kod) => lyckas(kod === 0));
+        barn.on("error", () => lyckas(false));
+      });
+      try { fs.rmSync(path.join(ROT, ".next-ny-kass"), { recursive: true, force: true }); } catch { /* städas nästa poll */ }
+      pm2Vakt.markeraLevande(); // rollback-barnet restartade pm2 (eller läget kräver manuell granskning — audit bär det)
+      logga(
+        `HTTPS RÖD efter byte — TILLBAKARULLNING ${rollbackOk ? "KLAR: gamla gröna .next åter på plats + pm2 omstartad" : "FÖLL — manuell granskning krävs"} — HEAD orörd, nytt försök nästa poll`,
+      );
+      skrivAudit(
+        "prod-synk",
+        rollbackOk ? "deploy_rullad_tillbaka" : "deploy_aterstallning_fel",
+        "nolldowntime",
+        rollbackOk
+          ? "rött HTTPS efter atomärt byte: gamla gröna läget återställt på sekunder, ombygge nästa poll"
+          : "tillbakarullning efter rött HTTPS föll — manuell granskning krävs",
+      );
     }
   }
 }

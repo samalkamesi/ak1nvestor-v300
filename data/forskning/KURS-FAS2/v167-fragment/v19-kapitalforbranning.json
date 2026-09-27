@@ -1,0 +1,66 @@
+{
+  "slug": "v19-kapitalforbranning",
+  "kapitel": {
+    "num": 14,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "Kassatäckningen svarar på en enda brutal fråga: hur länge räcker pengarna? Det är AKM1:s enda kritiska riskindikator — med en hård port under tolv månader. Nu räknar du rå och strukturjusterad täckning på ett cellterapibolags låtsas-siffror.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "FusionCell AB är ett påhittat bolag — låtsas-redovisningens tal är konstruerade för övningens skull.\n\nBalansräkningen: kassa och bank 84 + kortfristiga placeringar 26 = 110. Kassaflödesanalysen: löpande verksamheten −78 för året, varav −18 är en engångspost (juridisk process). Outnyttjad kassakredit: 40.\n\nBeräkning:\n\n- Rå täckning = 110 ÷ (78 ÷ 12) = 110 ÷ 6,5 = 16,9 månader ⇒ 1 poäng — över porten, men nära.\n- Strukturjusterad: (78 − 18) ÷ 12 = 5,0 per månad ⇒ 110 ÷ 5,0 = 22 månader ⇒ 2 poäng. Båda läsningarna rapporteras — skillnaden är engångsposten.\n- Porträkning: vore kassan 60 i stället ⇒ 60 ÷ 6,5 = 9,2 månader ⇒ 0 poäng och kompositen kapas till 45/100 — inga moats, marginaler eller tillväxt räddar den då.\n- Krediten separat: (110 + 40) ÷ 6,5 = 23 månader breddad täckning — men de 40 är skuld som måste betalas tillbaka, inte överlevnad.\n\nSå räknar du själv: kassa = kassa och bank + kortfristiga placeringar ur balansräkningen; månadsförbrukning = (−) kassaflöde från löpande verksamheten ÷ 12; kassatäckning = kassa ÷ månadsförbrukning i månader; stryk engångsposter ur förbrukningen (modellen bokför månader, analysen förklarar dem); och räkna outnyttjade krediter separat, aldrig in i kvoten. Poängtrappan: positivt kassaflöde 5 av 5 år ⇒ 5 (själfinanzierande) · > 48 månader ⇒ 4 · 30–48 ⇒ 3 · 18–30 ⇒ 2 · 12–18 ⇒ 1 · under 12 månader ⇒ 0 — OCH hård port: kompositen takas till 45/100.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: Kassa 90 + placeringar 30; löpande kassaflöde −72 för året. Täckning och poäng?\n\nÖvningsfråga 2 — Räkna: Kassa 45, förbrukning −6 per månad. Poäng?\n\nÖvningsfråga 3 — Tänk: Kassa 80; årets förbrukning −60, varav −12 engång. Två läsningar?"
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: 72 ÷ 12 = 6,0 per månad; 120 ÷ 6,0 = 20 månader ⇒ 2 poäng (18–30).\n\nFacit 2: 45 ÷ 6 = 7,5 månader ⇒ 0 — och hård port: kompositen takas till 45/100.\n\nFacit 3: rå: 80 ÷ 5,0 = 16 månader; strukturjusterad: (60−12) ÷ 12 = 4,0 ⇒ 80 ÷ 4,0 = 20 månader — skillnaden är engångsposten."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitlet om riskerna): ögonblicksbilden — brinntakten i dag säger inget om nästa beslut; ett bolag kan halvera burn på ett styrelsemöte och fördubbla den med ett anställningsbeslut. Kassakredit är inte kassa: den förlänger överlevnaden men tillför skuld — räkna den som separat rad. \"Positivt kassaflöde runt hörnet\" är värt noll i kassaräkningen — porten lyssnar på bokförda månader, inte prognoser. Holdingbolagsartikeln: förbrukning på administrationsnivå med kassa från realiseringar ger sanna men meningslösa tal — läs alltid vad som brinner. Porten är port: under tolv månader hjälper inga andra starka egenskaper. Och ränta och valuta på placeringarna kan äta kassan."
+      },
+      {
+        "type": "insikt",
+        "content": "Kassatäckningsräkningen du just gjorde — rå och strukturjusterad — är V19:s underlag i AKM1, och den enda variabeln med hård port: under tolv månader takas hela kompositpoängen till 45/100, för överlevnad är förutsättningen för att allt annat ska få räknas. Nyckeltalsguiden visar balansraderna och kassaflödesanalysens löpande verksamhet, AKM2:s analys vittnar om samspelet med V10 (skuldbild) och V20 (vad överskottet förvaltas till — de lönsamma bolagens fråga), AI-Mentorn förhör dig på porträkningen och engångsjusteringen, och portföljmotorn följer kassatäckningen månadsvis. En journal med båda läsningarna och deras skillnad är kedjans överlevnadsbevis."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Kassatäckning beräknas som kassa dividerad med månadsförbrukningen ur det löpande kassaflödet.",
+        "alternativ": [
+          "Sant — (kassa och bank + kortfristiga placeringar) ÷ (årets löpande förbrukning ÷ 12)",
+          "Falskt — kassan divideras med årsomsättningen",
+          "Sant, men kassakrediten ska räknas in i kassan",
+          "Falskt — täckningen mäts i år, inte månader"
+        ],
+        "ratt": 0,
+        "tips": "Se beräkningsstegen i räkneexemplet."
+      },
+      {
+        "q": "Under tolv månaders kassatäckning kan starka moats och marginaler ändå rädda kompositpoängen.",
+        "alternativ": [
+          "Sant — moats väger alltid tyngst",
+          "Falskt — porten är port: kompositen takas till 45/100 oavsett andra styrkor",
+          "Sant om bruttovinsten är hög",
+          "Falskt — under tolv månader höjs poängen istället"
+        ],
+        "ratt": 1,
+        "tips": "Se porträkningen i räkneexemplet."
+      },
+      {
+        "q": "Outnyttjad kassakredit ska räknas in i kassatäckningskvoten.",
+        "alternativ": [
+          "Sant — kredit är samma sak som kassa",
+          "Falskt — krediten är andras pengar: den förlänger täckningen men tillför skuld; räkna den som separat rad",
+          "Sant, men bara för banker",
+          "Falskt — krediter får aldrig nämnas i analysen"
+        ],
+        "ratt": 2,
+        "tips": "Se kredit-radens varning i räkneexemplet."
+      }
+    ]
+  }
+}

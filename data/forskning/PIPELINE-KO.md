@@ -366,5 +366,112 @@ byggstenar för saknade kurser.
 | V166 | FAS 3-DJUPINTEGRERING: 24 djupkapitel (design FASTSTÄLLD rond 174: DESIGN-v166-djupintegrering.md) | SLÄPPT — manifest i prod-ko, fabriken plockar vid nästa rop |
 | V167 | FAS 2-DJUPINTEGRERING: v159:s 20 indikatorunderlag (indikatorer-01-10/11-20) binds till variabelkurserna V01-V20 (samma designmönster som v166) | BOKAD — efter v166 |
 
+## ROND 269 (2026-09-26) — v177+v178+v179 LEVERERADE: VAKTKEDJAN HELA VÄGEN NER
+
+Kedjan enligt worklog ROND 269: v177 vaktens mätblindhet (default-bas
+https→localhost, 429 larmar som mätfel) · v178 Ny-chipet på /kurser synligt
+(@theme-glömmen bg-djup-marin, WCAG 1,61:1 kurerad) · v179 deploy-grindens
+rot (4 Mimosa-anmärkta gamla wrappers rensade + @theme --color-guld-djup för
+28 PRO-texter). Byggväg: prod-synkens poll (§8, r267-mönstret) — subagents
+skal låst denna rond. NÄSTA AKTIVA: v180 HYGIEN-BIBLIOTEKET (806 trackade
+_r*-wrappers i verktyg/ — audit + härdning/radering i omgångar, Mimosa-
+paritet = kvalitetsrapportens röda-trigg) · v172 rappdagar 10-20→11-04 ·
+kontrollpunkt 01:17-gränssnittscron (cron.log tyst sedan 13:17).
+
 R2 orörd: kursinnehåll = utbildning (2007:528); inga pris-/publicerings-
 ändringar. Fas 3-kurserna förbler låsta enligt kurs-access (under byggnation).
+
+## ROND 274 (2026-09-27) — v184 STÄNGD (BYGG-RAM-PROFILERN), v185+v186 BOKADE
+
+v184 LEVERERAD O STÄNGD (5ca2beab): F6-HÖG-doppet (RAM 176 MB kl
+12:00:13Z, mitt i 9be1b873-bygget) utrett enligt Lag 1+2+6 — ingen död
+(pulsvakt 0 fel, deploy grön, RAM återställt), men VÄNTAR-RAM-grinden
+mäter aldrig UNDER fönstret och F6-domaren lämnade HÖG-rader öppna (4 st,
+klass B enda träffen). KUR: sond var 60 s under VARJE byggförsök →
+bygg-ram-profil.jsonl + varningsrad/audit vid min < 300 MB; domarens
+KÄLLA 5 KLASS P stänger framtida HÖG-domar mekaniskt (B+P). Dagens fynd
+manuellt domstängt med två oberoende bevis (synkloggen + pulsvakten).
+Se worklog ROND 274. Pipelinen efter stängningen:
+
+| Våg | Innehåll | Status |
+|---|---|---|
+| v185 | BYGG-RAM-TRENDVERKTYG (spår 8): läs bygg-ram-profil.jsonl, trend per fönster (min/varv/debut), larm vid degradering eller trend under 250 MB — kräver ≥3 fönster profildata (v184 mäter varje deploy); under tiden: pm2 max_memory_restart-bedömning ur de första fönstren | BOKAD — nästa aktiva (kan preliminärkartas tidigt) |
+| v180 | HYGIEN-BIBLIOTEKET: 806 trackade _r*-wrappers i verktyg/ — audit + härdning/radering i omgångar (Mimosa-paritet = röda-trigg i kvalitetsrapporten) | STÅR (väljs när spår 8 vilat) |
+| v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd) |
+| v186 | ISR-VARMARENS SÖKVÄGSLISTA (spår 7): DRIFTSBOKENs dokumenterade rest 12/44 ok — finslipa listan mot verklig trafik (kall förstagångssvett 0,5–3,6 s per väg), kvitto per utökad väg | ✓ LEVERERAD r275 (03ea5918): roten var SPEGLAR-404-listans drift, inte varmarens — 39 glappade slugar = 78 döda spegelsidor; mekanisk driftvakt i pre-commit (se worklog ROND 275) |
+
+## ROND 275 (2026-09-27) — v184 DEBUTBEVISAT + v186 LEVERERAD (SPEGLAR-SLUGAR-KUREN)
+
+Två leveranser samma rond (a80b2049 bokföring + 03ea5918 v186):
+v184-sondens DEBUT bevisad live (584657fa-deployens fönster 12:47:26→12:53:20,
+min 235 MB, BYGG-RAM-VARNING skördad i synkloggen — doppen är strukturella,
+pulsvakten orörd). v186: ISR-varmarens 38/44 reste på middlewarens
+destillerade slug-lista (public/speglar-slugar.json, frusen 2026-09-21 med
+55 blogg-slugar mot 94 i data/blogg) — 39 glappade slugar = 78 /en|/ar-
+spegelsidor svarade ÄKTA 404 FÖRE routern trots sitemap-löfte. KUR:
+regenerering (495 kurser + 94 blogg, 16 kB) + kor-speglar-slugar.mjs
+--kontroll (jämför utan att skriva) + driftvakt i pre-commit-grinden
+(data/blogg-/sok-index-kommits blockeras utan aktuell lista) + varmarens
+/en/blogg + /ar/blogg. Verifiering: tidigare-404-vägar 200 ×4 + varmar-
+torrkörning 46/46 väntat (se worklog ROND 275 för bevisen).
+
+| Våg | Innehåll | Status |
+|---|---|---|
+| v185 | BYGG-RAM-TRENDVERKTYG (spår 8): trend per fönster ur bygg-ram-profil.jsonl, larm vid degradering/trend under 250 MB — kräver ≥3 fönster (r275:s tre deploys ger fönster 2-4 efter debutfönstret); pm2 max_memory_restart-bedömning ingår | BOKAD — nästa aktiva |
+| v180 | HYGIEN-BIBLIOTEKET: 806 trackade _r*-wrappers i verktyg/ — audit + härdning/radering i omgångar (Mimosa-paritet = röda-trigg i kvalitetsrapporten) | STÅR (väljs när spår 8 vilat) |
+| v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd) |
+
+## ROND 276 (2026-09-27) — v185 STÄNGD (BYGG-RAM-TREND), v187 BOKAD (BYGGER FRÅN-PROVENANS)
+
+v185 LEVERERAD (76bc0613): verktyg/bygg-ram-trend.mjs — den läsande änden av
+v184-sonden. Klass GRÖN/GUL/RÖD per fönster (≥300 / 150–299 / <150 MB;
+RÖT = OOM-riskzonen, r273-roten), TREND SÄNKS/STIGER/JÄMN mellan fönster,
+VÄRSTA FÖNSTER, avbrutna fönster (start utan slut — rekursionsolyckans
+klass) synliga ej dolda, PÅGÅENDE live-läge, --json för vakt-cron, exit 2
+vid saknad/tom profil. 29-testsvit + live-rök mot prod-profilen (2 fönster:
+min 235→193 MB, båda GUL, TREND SÄNKS Δ-42 MB). Larmgrunder (RÖT-klass,
+degradering över ≥3 fönster) och pm2 max_memory_restart-bedömning mossnar
+med varje deploy-fönster.
+
+SAMMA ROND ROTAD: v186:s BUNTSLAGSREST — speglarna svarade fortfarande 404
+trots grön deploy (bb1fe548): speglar-slugar.json IMPORTERAS av
+src/middleware.ts (bunten i edge-modulen vid BYGGTID) och kuren 03ea5918
+committades 15:00:40Z mitt i det pågående 14:57-byggfönstret = sterilt
+buntslag (trädet fräscht, driftvakten grön 495+94, men buntslen serverade
+gamla 55-listan). Rundans push triggar ombygget — v186:s äkta debut
+(spegel-200 ×4 + varmartorrkörning) kvitteras i r276-slutverifieraren.
+LÄXA: en push under pågående byggfönster deployas "grönt" med steril bunt —
+DEPLOYAD-radens hash är SLUTTRÄDET, inte byggträdet.
+
+| Våg | Innehåll | Status |
+|---|---|---|
+| v187 | BYGGER FRÅN-PROVENANS (spår 8): prod-synken loggar exakt byggträd-hash vid byggstart + vägrar/omstartar om byggträd ≠ senaste push (buntslagsracet bevisat av v186-resten r276) | ✓ LEVERERAD r277 (e90a2478) — debutbevis: nästa byggfönsters BYGGER FRÅN-rad |
+
+## ROND 277 (2026-09-27) — v187 STÄNGD (BUNTSLAGSRACE-VAKTEN) + v186:S ÄKTA DEBUT BEVISAD
+
+v187 LEVERERAD (e90a2478): prod-synken låser+loggar byggträdets hash FÖRE
+byggstart (BYGGER FRÅN-raden), exporterade buntslagsraceDom() stoppar BYTET
+om trädet flyttat under bygget (updateInstead-pushar levererar trädet mitt
+i fönstret — DEPLOYAD-hashen är slutträdet, bevisat av v186-resten) och
+hash-vakten vaktar själva byte-kommandots ms-fönster; ombygg nästa poll i
+stället för att servera steril bunt. KVD: ny svit 13/13 + nolldowntime-
+svitens test 15 reviderad med provenans (25/25) + 11 regressionssviter + tsc 0.
+
+V186:S ÄKTA DEBUT KVITTERAD (a1d00f81:s ombygge, deploy 18:03:26Z, prod 200):
+spegel-200 ×7 (utdelningar-101 + pe-talet + holm-q3 + hur-fungerar-aktier,
+en+ar, + /en/blogg) + varmartorrkörning 46/46 vägar (mot 40/46 natten före)
+— de 78 döda spegelsidorna lever. v185-trenden läser 3 fönster:
+min 235→193→470 MB, TREND STIGER; fönster 3 GRÖN som ensamt fönster —
+doppen i fönster 1-2 delas med huvudagentens egna KVD-sviter (byggfönster
+under KVD = GUL, ensamma = GRÖN — trendläsningen måste väga samtidig
+agentlast, inte bara bygglast).
+
+| Våg | Innehåll | Status |
+|---|---|---|
+| v188 | MIDDLEWARE→PROXY-MIGRATIONEN (bygg-hälsa): Next 16.3.6:s deprecationsnotis — src/middleware.ts → proxy.ts (codemod middleware-to-proxy), speglar-slugar-importen följer med; kvitto: deprecationsraden borta ur byggloggen + speglar fortfarande 200 | BOKAD — nästa aktiva |
+| v180 | HYGIEN-BIBLIOTEKET: 806 trackade _r*-wrappers i verktyg/ — audit + härdning/radering i omgångar (Mimosa-paritet = röda-trigg i kvalitetsrapporten) | STÅR (väljs när bygg-hälsan vilat) |
+| v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd — oktober äger) |
+| v180 | HYGIEN-BIBLIOTEKET: 806 trackade _r*-wrappers i verktyg/ — audit + härdning/radering i omgångar (Mimosa-paritet = röda-trigg i kvalitetsrapporten) | STÅR (väljs när spår 8 vilat) |
+| v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd) |
+| v185 | BYGG-RAM-TRENDVERKTYGET | ✓ LEVERERAD r276 (76bc0613) |
+| v186 | SPEGLAR-SLUGAR-KUREN | ✓ LEVERERAD r275 (03ea5918) — äkta debut via r276:s ombygge |

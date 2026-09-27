@@ -1,0 +1,66 @@
+{
+  "slug": "v04-ps",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "P/S är värderingsfamiljens robustaste mått när vinsten sviker — men en intäktskrona är inte värd lika mycket överallt. Nu räknar du själv på NorrTeknik och lär dig läsa multipeln mot marginalerna.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "NorrTeknik AB är ett konstruerat bolag — låtsas-årsredovisningens tal är påhittade för övningens skull.\n\n- Aktier: 40,0 miljoner × kurs 45 kr = börsvärde 1 800 Mkr.\n- Nettoomsättning 2025: 1 200 Mkr.\n- P/S = 1 800 ÷ 1 200 = 1,50.\n- Modellens trappa (< 1 ⇒ 5 · < 2 ⇒ 4 · < 3 ⇒ 3 · < 5 ⇒ 2 · ≥ 5 ⇒ 1) ger 4 poäng. Men läs det som metoden gör: NorrTekniks bruttomarginal är 40 % och EBIT-marginalen 12,5 % — en intäktskrona som faktiskt bär vinst. En distributör med P/S 1,5 och bruttomarginal 12 % är inte samma historia, trots identisk multipel. Multipeln speglar marginalstrukturen; poängen tolkas i samspelet.\n\nSå räknar du själv: läs antal aktier ur aktieägar-/ekvitetsnoten, multiplicera med aktiekursen till börsvärde, läs nettoomsättningen (TTM om möjligt, annars räkenskapsåret — skriv vilket) och dividera: P/S = börsvärde ÷ nettoomsättning. Ställ talet mot marginalerna (V07/V08) och tillväxten (V01) innan du tolkar det som högt eller lågt.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: Vad är NorrTekniks P/S och vilken poäng ger trappan?\n\nÖvningsfråga 2 — Räkna vidare: Aktiekursen stiger till 70 kr. Ny P/S och ny poäng?\n\nÖvningsfråga 3 — Tänk: Två bolag, båda P/S 1,5. Ett har bruttomarginal 40 %, det andra 12 %. Vad måste du fråga innan du ens tänker ordet \"värdering\"?"
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: (40,0 M × 45) ÷ 1 200 = 1 800 ÷ 1 200 = 1,50 ⇒ 4 poäng.\n\nFacit 2: 40,0 M × 70 = 2 800 ÷ 1 200 = 2,33 ⇒ 3 poäng. Aktien blev 50 % dyrare på papperet — multipeln flyttade ett trappsteg; inget i affären förändrades.\n\nFacit 3: Vilken bransch och vilken marginalstruktur — vad blir kvar av intäktskronan? Utan den frågan är samma tal två olika sakernas etiketter; med den börjar jämförelsen bli meningsfull. Metoden parar därför alltid V04 med V07/V08."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): låg P/S på lågmarginalverksamhet är sällan en fyndkarta — handels- och distributionsbolag handlas strukturellt kring 0,1–0,5 eftersom intäktskronan bär så lite vinst. Vid en cykeltopp är intäkterna rekordhöga och P/S ser låg ut precis när marginalerna står inför fall. Förvärvsuppblåst nämnare gör multipeln lägre per uppköpt krona, engångsintäkter sväller intäktsraden en enda gång — normalisera före jämförelse. Och P/S ser inte skulderna: två bolag med P/S 2 där det ena är nettokassa och det andra högt belånat är inte samma affär — det är EV-måttens uppgift (V06)."
+      },
+      {
+        "type": "insikt",
+        "content": "Multipeluträkningen du just gjorde är samma räkning som ger AKM1:s poäng i P/S-trappan, och nyckeltalsguiden visar var aktieantalet och intäktsraden hämtas. AKM2:s analys vittnar om hur multipeln ska läsas mot marginaler och tillväxt tillsammans, AI-Mentorn förhör dig på trappstegen och marginalfällan, och portföljmotorn följer multipelutvecklingen i din bevakning. En journal med egna P/S-beräkningar — inklusive vilket fönster du mätt — gör kedjan vassare."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "P/S beräknas som börsvärde dividerat med nettoomsättningen.",
+        "alternativ": [
+          "Sant — aktiekurs × antal aktier, delat med intäktsraden",
+          "Falskt — aktiekursen divideras med vinsten per aktie",
+          "Sant, men bara för bolag med positiv vinst",
+          "Falskt — nettoomsättningen divideras med börsvärdet"
+        ],
+        "ratt": 0,
+        "tips": "Se beräkningssteget i kapitlets räkneexempel."
+      },
+      {
+        "q": "En låg P/S är alltid ett tecken på en billig aktie.",
+        "alternativ": [
+          "Sant — låg multipel betyder lågt pris",
+          "Sant om omsättningen växer",
+          "Falskt — på lågmarginalverksamhet handlas bolag strukturellt lågt; multipeln speglar marginalstrukturen",
+          "Falskt — P/S gäller bara banker"
+        ],
+        "ratt": 2,
+        "tips": "Se fallgropen om låg P/S på lågmarginalverksamhet."
+      },
+      {
+        "q": "När aktiekursen stiger 50 procent utan att affären förändras flyttar P/S ett trappsteg.",
+        "alternativ": [
+          "Falskt — multipeln är oberoende av kursen",
+          "Falskt — trappan mäter bara marginaler",
+          "Sant, men endast vid förvärv",
+          "Sant — nämnaren är oförändrad så multipeln steg mekaniskt, som i övningsfråga 2"
+        ],
+        "ratt": 3,
+        "tips": "Se facit på övningsfråga 2."
+      }
+    ]
+  }
+}

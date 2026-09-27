@@ -350,6 +350,17 @@ EnvironmentFile med chmod 600).
   torrkörning 2026-09-19 23:08 lokal = 44/44 (även /en + /ar utan trailing
   slash — svarade 308 förr); nytt försök per väg vid timeout; missade vägar
   loggas namngivet.
+- v186/r275 (2026-09-27) — VARMARENS 38/44 ROTAD I SPEGLAR-404-LISTAN, KURAD
+  + VAKTAD: nattens 6 missade vägar var alla /en|/ar-blogg-spegelsidor som
+  middlewarens destillerade slug-lista (public/speglar-slugar.json, våg 83 B)
+  inte kände — listan frusen 2026-09-21 (55 blogg-slugar) medan data/blogg
+  vuxit till 94: 39 glapp = 78 spegelsidor svarade äkta 404 FÖRE routern fast
+  sitemapen lovade dem. KUR: regenerering (495+94, 16 kB) + driftvakt i
+  pre-commit-grinden (kor-speglar-slugar.mjs --kontroll — data/blogg-kommits
+  blockeras utan aktuell lista) + /en/blogg + /ar/blogg i varmarens statiska
+  lista (46 vägar). REGEL FÖR FRAMTIDEN: public/speglar-slugar.json är det
+  ENDA data-fönstret som kräver bygge (edge-bunt) — nya bloggposter syns inte
+  på /en|/ar förrän deploy; vakten gör glipan mekaniskt omöjlig.
 
 ## S10-U2 — KVARTALS-DR-ÖVNING (2026-09-15, GODKÄNT)
 
@@ -3657,6 +3668,17 @@ EnvironmentFile med chmod 600).
   torrkörning 2026-09-19 23:08 lokal = 44/44 (även /en + /ar utan trailing
   slash — svarade 308 förr); nytt försök per väg vid timeout; missade vägar
   loggas namngivet.
+- v186/r275 (2026-09-27) — VARMARENS 38/44 ROTAD I SPEGLAR-404-LISTAN, KURAD
+  + VAKTAD: nattens 6 missade vägar var alla /en|/ar-blogg-spegelsidor som
+  middlewarens destillerade slug-lista (public/speglar-slugar.json, våg 83 B)
+  inte kände — listan frusen 2026-09-21 (55 blogg-slugar) medan data/blogg
+  vuxit till 94: 39 glapp = 78 spegelsidor svarade äkta 404 FÖRE routern fast
+  sitemapen lovade dem. KUR: regenerering (495+94, 16 kB) + driftvakt i
+  pre-commit-grinden (kor-speglar-slugar.mjs --kontroll — data/blogg-kommits
+  blockeras utan aktuell lista) + /en/blogg + /ar/blogg i varmarens statiska
+  lista (46 vägar). REGEL FÖR FRAMTIDEN: public/speglar-slugar.json är det
+  ENDA data-fönstret som kräver bygge (edge-bunt) — nya bloggposter syns inte
+  på /en|/ar förrän deploy; vakten gör glipan mekaniskt omöjlig.
 
 ## S10-U2 — KVARTALS-DR-ÖVNING (2026-09-15, GODKÄNT)
 
@@ -6725,3 +6747,150 @@ SLUT — sektion inlagd av huvudagenten (rond 149) 2026-09-21.
   DR-flocken 05:33:30Z = ~90 s efter mitt fönster — deras städansvar.
 
 SLUT — sektion inlagd av s10-u2 (manifest auto-s10-1790225128873) 2026-09-24.
+
+## KRISDAGEN 2026-09-25 → 26 — OOM-DEPLOYKRIS, r255-RECEPTET, 404-KURIEN, EXTERNA GIT-INGREPP (huvudagenten, ronder 254-257)
+
+**Tidslinje (alla tider lokal +02):** U48-leverans 14:58 → EXTERN revert direkt i prod-trädet 15:03:12 (aktör ej leverans-sessionen, ingen dokumentation) → U49 pushad 15:26 men Apollo-sida 404 (bygget 15:08 bar 309 slugs) → deploy-försök via subagent DÖR i modellström-stall 36 min → ombygge detacherat barn DÖDAS AV OOM 19:49 ("Killed" i loggen; .next RADERAT — BUILD_ID borta, /dataset 500) → r255-reparation grön 18:22-18:28 MEN prod-trädet då återställt till reverten av ännu ett externt ingrepp 14:48 (universumfilens mtime = beviset) → beslut Φ: U49+U50 återlevereras i SAMMA push (5902867f 22:56 — U50 HAL + U49 Apollo) → deploy 23:07 GRÖN: 311 slugs, apollohosp-ns/hal-ns + samtliga 21 kris-slugar 200, vakten 0/180 (23:26-rapporten).
+
+**R255-RECEPTET — deploy vid minnespress (kraschvakt-vaccin 2:s PROAKTIVA syskon):** normalvägen (deploya-contabo.sh / flock-bygge) dör när RAM tryter — Next-bygget vill ha ~2 GB heap. Receptet vid OOM-risk eller efter avbrutet bygge:
+1. `pm2 stop ak1a` (frigör serverminne; sajt nere ~7 min — rätt trade mot 500-läge)
+2. `rm -rf .next` (HYGIEN: ett avbrutet bygge lämnar halvskrivet träd — kraschvaktens regel "ALDRIG pm2-start mot ofullständigt .next" gäller)
+3. `flock /tmp/ak1a-deploy.lock npm run build` (låst, heap-cirka vid behov; ALDRIG olåst — våg 100-incidenten)
+4. `pm2 start ak1a` + statusfil-kedja (R255-PM2-STOPPAD → -NEXT-RENSAT → -BYGG-KLART → -PM2-OMSTARTAD → -REPAIR-KLAR) — FELVÄGEN garanterar återstart (try/catch: om bygget misslyckas startas pm2 ändå på gammal .next-backup eller rent läge — sajten ALDRIG lämnas död)
+5. Detacherat barn via node-wrapper (överlever studio-skal-häng; häng ≠ avbrott — verifiera EFFEKT, aldrig omköra)
+Bevis: /tmp/r255-repair-status.txt (grön kedja 18:28) + BUILD_ID 23:07 på 5902867f.
+
+**404-FELSPÅRNING (felsökningssektion 8-tillägg):** SYMPTOM: gränssnittsvakten larmar konsol-404 på /bolag/<slug> i alla 4 tema/skärm-kombinationer. ROT: dataleverans av nya universumbolag UTAN efterföljande bygge — bolagssidorna är SSG med dynamicParams=false: okända slugar 404:a tills .next byggts om (rond 247-lärdomen; krisen 09-25 med 21 slugar = 84 fynd bevisade mekanismen). ÅTGÄRD: ALDRIG dataleverera nya bolag utan deploy i samma andetag; kur = bygg (r255-receptet vid tryck) + verifiera slugs 200 + kör vakten. Sevärdhet: gamla sidor lever vid SSG trots ingen deploy (serverminnet) — bara NYA slugar avslöjar gapet.
+
+**EXTERNA GIT-INGREPP I PROD-TRÄDET (två fall 2026-09-25, aktör okänd — möjligen kund via SSH eller datoragent):** (1) U48-revert 15:03:12 två minuter efter push; (2) prod-återställning till reverten ~14:48 raderade U49 ur prod UTAN git-historik-spår (mtime-bevis). PROTOKOLL: dokumentera i rondnotis (worklog), ALDRIG duellera med en aktiv extern aktör; bevisat gröna leveranser med entydigt kundmål återlevereras i nästa push (U49-fallet); oklara lägen (U48) väntar kundens/styrelsens tecken. Prod-synken drar in prod-trädets läge i agentytan — reflog + universumfilens mtime är bevismetoderna.
+
+**VAKTENS NÄSTA VACCIN-KANDIDAT:** pulsvaktens "deploybygg pågår — omstart uppskjuten, deploy-kedjan äger pm2-omstarten" fungerade i skarpt läge (21:07-21:08: 11 fel i rad → app svarar igen → nollställning) — belagt, inget gap. Öppna resten från o67 (diagnos FÖRE npm ci) förblir öppen.
+
+KVD: data-only (två docs-appendar), src orörd, inget bygge; tsc via grinden vid commit; prod 200.
+SLUT — sektion inlagd av huvudagenten (rond 258, dokvåg v174) 2026-09-26.
+
+
+## ISR-KRISEN 2026-09-26 (ronder 262-263) — publicerade bloggsidor serverade gamla data; rot, kur och doktrin-rättelse
+
+**SYMPTOM:** r260:s döda-länk-rättning (f235d817) verifierad i prod-trädets datafiler, men alla tre publicerade bloggsidorna (fastighetsaktier, halvledaraktier, bankaktier) serverade fortfarande de GAMLA länkarna — fyra omgångar dubbelrequest.
+
+**ROT (tre samverkande mekanismer):**
+1. Turbopacks persistenta cache: byggen utan `rm .next` återanvänder gamla prerenders — bloggdatan läses med readFileSync (osynlig för bygg-input-spårningen), så bygget ser ingen anledning att rendera om.
+2. `force-static + revalidate 3600`: sidorna anses "färska" i 1 h; varje pm2-omstart nollställer stälhets-klockan — med omstarter varannan timme pollar dubbelrequest alltid inom fönstret och sidorna läser ALDRIG om disken.
+3. `dynamicParams = false`: en RADERAD cache-post ger 404 utan on-demand-fallback — kirurgisk cache-radering + omstart (kur2, 07:31:30Z) blev därför en INCIDENT (tre sidor 404) i stället för en kur.
+
+**KUR (bevisad):** rent bygge — r255-receptet. Deploy-kedjans bygge 08:53 (BUILD_ID 2UIxVd0S_jCN7wSMF28Hb) + pm2-omstart 09:51 ⇒ alla tre sidorna 200 med NYA länkarna (nasdaq.com, investor.tsmc.com — sond r264, dubbelrequest ×2), gränssnittsvakten 0 fynd/180 kombinationer (11:26-rapporten).
+
+**DOKTRIN-RÄTTELSE (viktig):** leverera-data-regeln "datafiler behöver INGET bygge" gäller appar som läser data VID RUNTIME. PUBLICERADE BLOGGSIDOR är prerenderade vid bygge: text-/länkändringar i data/blogg/*.json kräver BYGGE i samma andetag (eller ett ISR-fönster som får löpa ut UTAN pm2-omstart). Ny bloggtext = samma regel som 404-kurien: aldrig data utan deploy.
+
+**VACCINATIONER:** (1) aldrig nästlade citat i `bash -c '…'`-strängar (awk-citat dödade repair2 tre gånger, exit 2 på 14 ms = bash-syntaxfel — hela kedjor i rena skriptfiler); (2) kirurgisk ISR-cache-radering är FARA på dynamicParams=false-sidor — använd ALDRIG som kur, bygg istället; (3) häng ≠ avbrott — repair1 byggde vidare efter skal-häng men OOM-dödades 03:29; effekten verifieras alltid i .next/pm2 INNAN omkörning.
+
+KVD: data-only, src orörd, inget nytt bygge (08:53-bygget äger kuren); tsc via grinden vid commit; prod 200 + tre sidor gröna.
+SLUT — sektion inlagd av huvudagenten (rond 264) 2026-09-26.
+
+
+## DRIFTNOT 2026-09-26 r267 [organ:Φ] — v176-bygget OOM-dödat, prod-synken läkte själv (tredje beviset)
+
+- SYMPTOM: kod-commit 886fde19 (fjärde lärvägsprofilen) pushad; produktionsbygget med pm2 igång OOM-dödat ("Killed"); sajten 200 men serverade 3 profiler (gamla byggvetoret).
+- ÅTGÄRD: SONDA FÖRE ÅTGÄRD — prod HEAD 886fde19 ✓, träd rent ✓, lås fritt ✓, RAM 5,9 GB ✓, GET /api/larvag/profil svarade redan 4 profiler: prod-synkens poll (var 10:e minut, bygger vid RAM ≥ 2200 MB) hade nybyggt .next och läkt automatiskt. r255-receptet (pm2 stop → bygg → garanterad start) skrevs men förblev OANVÄNT — ALDRIG stoppa pm2 på en grön prod.
+- UTFALL: API 4 profiler + detaljvy (7 steg, mål, varför-rader) + /api/larvag 200 + / 200; klient-renderade lärvägsytor (LarvagKort "use client" + useEffect) opåverkade av ISR/prerender.
+- FÖRSTÄRKER: §8 "Sajten 200 men ostylad" punkt 2 (vänta ut prod-synkens poll) — tredje oberoende beviset (jfr 2026-09-17, 2026-09-21).
+
+
+## KVARTALS-DR-PROV Q3 2026 (r268 [organ:Φ], 2026-09-26 — GODKÄNT)
+
+Fullständigt protokoll: data/forskning/DR-PROV-2026-09-26-AUTO.md. Kärntal:
+dumpkontroll 1/1 GRÖN (34,2 MB · 1 487 070 rader) · RTO 14,3 s · felrader 788
+kända/0 okända (Supabase-GRANT-klassen) · public 60 tabeller/1 464 567 rader
+(public+storage 68/1 464 703 · alla scheman 99/1 464 963) · retention äldsta
+dump 2026-09-11 (15 d < 30 d-taget) · skrap-DB raderad + PG17 stoppad.
+Anrop: node verktyg/dr-ovning.mjs --fil /home/ak1a/AK1/data/backups/supabase/db-<datum>.sql.gz
+(dumpkatalogen lever i prod-trädet — --fil är rätt flagga från molnytan).
+Nästa kvartalsprov: senast 2026-12-15 (Q4).
+
+## DRIFTNOT 2026-09-26 r269 [organ:Φ] — mätblind vakt, transparent chip, blockerad deploy-grind (tre rotlager, en kedja)
+
+- FYND 1 — VAKTENS 429-MÄTBLINDHET: manuella snabbsvep mot det PUBLIKA
+  namnet trottlas av frekvensvakten (nginx sätter x-forwarded-for till
+  serverns EGENA publika IP när servern hämtar sig själv via det publika
+  namnet — inte 127.0.0.1; loopback-whitelisten gäller därför bara
+  localhost-bas). Vakten RÄKNADE dessutom 429 som "ok" → cron loggade
+  GRÖNT på svep där 91/96 kombinationer var omätta. KUR (v177, d9592d4d):
+  default-bas → http://localhost:3000 + varning vid fjärrbas + 429 =
+  MÄTBLINDHET-fel som larmar (exit 1). DOKTRIN: interna mätverktyg kör
+  ALLTID mot localhost — aldrig mot det publika namnet.
+- FYND 2 — DEPLOY-GRINDENS STOPP (21:37 lokal): prod-synken vägrade
+  bygga två pushade kur-commitar ("kvalitetsrapporten RÖD 15 fel — E35").
+  ROT: Mimosa CHILD_PROC_INTERP i fyra GAMLA engångswrappers (r226/r256/r258
+  — rester i trädet). KUR (v179, 3052edfa): wrappers git-raderade; synkens
+  ommätningstrigg ger GRÖNT mot rensat träd och bygget löper via §8-pollen
+  (samma mönster som r267). LÄXA: engångswrappers committas ALDRIG —
+  hygienvåg v180 bokad (806 trackade _r*-filer i verktyg/).
+- FYND 3 — SUBAGENT-SKALET LÅST: byggdispatchad agent kunde inte verkställa
+  NÅGRA skrivkommandon (touch/Write/printf alla döda, läsning OK) —
+  bygget återfördes till prod-synkens poll; leveranskedja via
+  node-wrapper (_r269j-mönstret: git rm+add+commit+push i ett).
+- PÅGÅR VID NOTIS-SKRIVANDE: v178-chipets bygg + riktat verifieringssvep
+  /kurser GRÖN + fjärrbas-larmtest (exit 1) — resultat bokförs i worklog
+  ROND 269; om synken dröjer står prod grönt på föregående bygget (felet
+  är kosmetiskt: chip-färg, ingen kundrisk).
+- KONTROLLPUNKT: 19:17-gränssnittscronens tysta frånvaro (cron.log slutar
+  13:17 GRÖN — ingen RAM-grind-rad ens; syslog adm-låst) → 01:17-fönstret
+  avgör engångsfock vs kroniskt; kroniskt = ny driftsvåg.
+
+## DRIFTNOT 2026-09-27 r271 [organ:Φ] — F6 "prod osvarar": deploy-
+fönstrets mörker (transient, rot känd)
+
+- SYMPTOM: FELJÄGAREN F6-larm "prod osvarar" på morgonen efter
+  v181-deployen; hjärtatslaget loggade fetch failed 05:01:28Z och
+  05:11:28Z.
+- LÄGE VID SONDNING (05:2xZ, ~10 min senare): prod 200 (/ + /kurser +
+  /blogg), pm2 ak1a online (omstart 05:12:46Z), larm-eskalering 0 aktiva
+  episoder, kvalitetsrapport 0,3 h gammal OK — incidenten självläkt.
+- ROT (Lag 2 — bevis, inte gissning): larmet är INTE en levande krasch
+  utan det STRUKTURELLA deploy-fönstret. Under varje npm ci + next
+  build i prod-trädet flyttas .next till .next-laeke (läkebackupen)
+  och — vid beroendeändring — node_modules raderas, MEDAN gamla appen
+  fortfarande serverar: processens lazy-require dör → kraschloop →
+  anslutningar dör tills bygget är grönt och pm2 startas om
+  ("DEPLOYAD … prod 200"). Bevis: hjärtatslagens FEL-rader klustrar
+  exakt i byggfönstren (23:21–00:31 OOM-natten, 03:11 d44dcbea-
+  fönstret, 04:51–05:11 v181:s npm ci-fönster) och kraschvaktens
+  episoder (kraschloop-misstanke, raddningsbygg-misslyckades) bär
+  samma tidsstämplar.
+- ÅTGÄRD: ingen akut — organismen självläker per design; F6 gjorde
+  sitt jobb.
+- VACCIN (Lag 6): v182 BOKAT i PIPELINE — bygg utan kundavbrott:
+  next build mot separat distDir + atomiskt byte + pm2 restart FÖRST
+  efter grönt bygge; den serverande .next:r rörs ALDRIG av ett
+  pågående bygge. Tills v182 levererar: deploy-fönster = väntad
+  mörkerperiod (vanligt bygg ~5 min, npm ci-fönster ~25 min) —
+  F6-larm i dessa fönster är förväntade: sondera (200?) men
+  eskalera ej.
+- UPPFÖLJNING r269:s KONTROLLPUNKT (19:17-cronen): fortfarande öppen
+  — ägs av kommande rond; kvalitetscronen 07:00 lever (rapport 07:03
+  lokal).
+
+## DRIFTNOT 2026-09-27 r272 [organ:Φ] — v182 LIVE: nolldowntime-
+byggprotokollet (nya regler för byggfönster + F6-tolkning)
+
+- NYTT PROTOKOLL SEDAN e55c0e94 (deployad 06:23:18Z): prod-synken
+  bygger mot .next-ny (next.config.ts distDir) medan prod:s .next är
+  ORÖRD — npm ci HOPPAS ÖVER när package.json/package-lock är oändrade;
+  atomärt byte (.next → .next-forra, .next-ny → .next) + pm2 restart
+  FÖRST när bygget är grönt; rött HTTPS → tillbakarullning från
+  .next-forra. Lägebyten (.next-laeke) skapas INTE längre i normalfallet.
+- DEBUTBEVIS: v182:s eget byggfönster 05:57:28→06:23:18Z (~26 min) =
+  1 felrad i pulsvakten (60 s) mot v181:s 24 fel i rad föregående natt
+  — F6-larm under byggfönster är därmed NÄSTAN tysta.
+- KÄNT KVARVARANDE DIK (v183-arena): ECONNREFUSED 06:00:25Z, 60 s,
+  mitt i byggfönstret — pm2-fellogg TYST (talar för SIGKILL/minnesdöd
+  under byggtryck, ej app-krasch; dmesg spärrat) och pulsvaktens
+  pm2-restart 12 s senare kan ha FÖRLÄNGT diket (avbröt ev. pm2:s egen
+  auto-restart). TOLKNINGSREGL: ENSTAKT kort (≤1 felrad) avbrott under
+  byggfönster = känt + självläkande, eskalera ej; >2 felrad i rad =
+  sondera enligt Lag 1.
+- NPM CI-FÖNSTRET (beroendeändringar) är fortfarande ÄKTA mörker (pm2
+  stoppad tills klart, ~25 min) — väntat beteende tills v183 kurar.
+- Diskhygien efter deploy: endast .next ska finnas; .next-ny/
+  .next-forra städas automatiskt av synken (bevisat 06:23).

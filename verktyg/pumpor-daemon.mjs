@@ -84,6 +84,7 @@ function tick() {
   if (min === 23 && tim % 6 === 4) korEnGang("minnesberedare", "node", ["verktyg/minnesberedare.mjs"]);
   if (min === 52 && tim % 6 === 2) korEnGang("backup-offsite", "node", ["verktyg/backup-offsite.mjs"]);
   if (tim === 3 && min === 10) korEnGang("ISR-värmare", "bash", ["data/infra/contabo/ak1a-varm.sh"]);
+  if (tim === 4 && min === 41) korEnGang("ra-gallring", "curl", ["-s", "-m", "120", "-H", "Host: lab.ak1nvestor.com", "http://127.0.0.1/api/cron/rapportakademin-gallring"]); // v169: GDPR art 5.1 e — BESLUT 1.2:s automatiska gallring får sin motor (dagligen; idempotent)
   if (tim === 4 && min === 44) korEnGang("scenariotest", "node", ["verktyg/testa-studio-scenarion.mjs"]);
   if (min % 15 === 12) korEnGang("feljagaren", "node", ["verktyg/feljagaren.mjs"]);
   if (dag === 0 && tim === 3 && min === 33) korEnGang("data-hygien", "node", ["verktyg/data-hygien.mjs"]);
@@ -96,6 +97,6 @@ function tick() {
 }
 
 logga("TICK-MÄTNING aktiv (o140) — trösklar: drift 2000 ms · event-loop 1000 ms · rad: TICK-SVÄLT {json} (till pm2-loggen)");
-logga("PUMPOR-DAEMONEN v2 (klockstyrd) startar — scheman: hjärta :x1 · kraschvakt :x4 · agentfabrik :x5 · synk :x7 · evighetsmotor :x8 · konfigintegritet :x9 · larm-eskalering :x0 · juridikgrind :37 · rond xx:43/3h · vakt xx:17/6h · integritetsvakt xx:47/6h (offset) · minnesberedare xx:23/6h · värmare 03:10 · scenariotest 04:44 · skalfri-vakt 05:06 · kvalitetsvakt 07:02 · hygien sö 03:33");
+logga("PUMPOR-DAEMONEN v2 (klockstyrd) startar — scheman: hjärta :x1 · kraschvakt :x4 · agentfabrik :x5 · synk :x7 · evighetsmotor :x8 · konfigintegritet :x9 · larm-eskalering :x0 · juridikgrind :37 · rond xx:43/3h · vakt xx:17/6h · integritetsvakt xx:47/6h (offset) · minnesberedare xx:23/6h · värmare 03:10 · ra-gallring 04:41 · scenariotest 04:44 · skalfri-vakt 05:06 · kvalitetsvakt 07:02 · hygien sö 03:33");
 setInterval(tick, 30_000);
 tick(); // första kontrollen direkt

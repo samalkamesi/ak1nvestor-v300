@@ -11,7 +11,11 @@
       "rapportfenster": "2026-10-20",
       "notera": "Rapporterar kvartalsvis. Q3 2026-redovisningen ligger utsatt i bolagets officiella finansiella kalender; Q4/helår redovisas i slutet av januari 2027.",
       "kallor": [
-        { "namn": "ABB Group — finansiell kalender (officiell)", "url": "https://global.abb/group/en/investors/financial-calendar", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "ABB Group — finansiell kalender (officiell)",
+          "url": "https://global.abb/group/en/investors/financial-calendar",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -21,8 +25,16 @@
       "rapportfenster": "2026-10-27",
       "notera": "Kvartalsrytm: Q1 2026 rapporterades 2026-04-22 och Q2 2026 den 2026-07-21. Delårsrapport Q4 tidigt februari 2027; Investor Day 2026-11-18.",
       "kallor": [
-        { "namn": "Alfa Laval delårsrapport Q1 2026 (finansiell kalender i rapporten, Cision-PDF)", "url": "https://mb.cision.com/Main/905/4338489/4051867.pdf", "hamtdatum": "2026-09-15" },
-        { "namn": "Inderes — finansiell kalender Alfa Laval", "url": "https://www.inderes.dk/en/companies/Alfa-Laval", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Alfa Laval delårsrapport Q1 2026 (finansiell kalender i rapporten, Cision-PDF)",
+          "url": "https://mb.cision.com/Main/905/4338489/4051867.pdf",
+          "hamtdatum": "2026-09-15"
+        },
+        {
+          "namn": "Inderes — finansiell kalender Alfa Laval",
+          "url": "https://www.inderes.dk/en/companies/Alfa-Laval",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -32,7 +44,11 @@
       "rapportfenster": "2026-10-27 (kl 08:00 UTC+1)",
       "notera": "Delårsrapport januari–september 2026 står som nästa kalenderpost på bolagets IR-sida. Kvartalsvis rytm; bolagsstämma hölls 2026-09-11.",
       "kallor": [
-        { "namn": "ASSA ABLOY — investor relations/kalender (officiell)", "url": "https://www.assaabloy.com/group/en/investors", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "ASSA ABLOY — investor relations/kalender (officiell)",
+          "url": "https://www.assaabloy.com/group/en/investors",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -42,7 +58,11 @@
       "rapportfenster": "2026-10-22 (ca kl 12:00 CEST, telefonkonferens 14:00)",
       "notera": "Kvartalsvis. Tyst period inleds 2026-09-22 enligt IR-kalendern. Halvårsutdelning och rapport hamnar samma dag i kalendern.",
       "kallor": [
-        { "namn": "Atlas Copco Group — kalender och event (officiell)", "url": "https://www.atlascopcogroup.com/en/investors/calendar-and-events", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Atlas Copco Group — kalender och event (officiell)",
+          "url": "https://www.atlascopcogroup.com/en/investors/calendar-and-events",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -52,7 +72,11 @@
       "rapportfenster": "2026-11-03 (estimat enligt finansiella kalendrar — ej officiellt bekräftat)",
       "notera": "Kvartalsvis (10-Q). Q2 2026 redovisades 2026-07-31. USA-bolag bekräftar exakt rapportdatum via pressrelease närmare rapportdagen — bekräfta mot Eatons IR-sida före publicering.",
       "kallor": [
-        { "namn": "Eaton — investor relations (officiell, närmaste källa)", "url": "https://www.eaton.com/us/en-us/company/investor-relations.html", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Eaton — investor relations (officiell, närmaste källa)",
+          "url": "https://www.eaton.com/us/en-us/company/investor-relations.html",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -62,7 +86,11 @@
       "rapportfenster": "2026-10-20 före börsöppning (estimat enligt finansiella kalendrar — ej officiellt bekräftat)",
       "notera": "Kvartalsvis. Q1 2026 redovisades 2026-04-21 och Q2 2026 den 2026-07-16. Exakt Q3-datum bekräftas av bolaget via pressrelease närmare rapportdagen.",
       "kallor": [
-        { "namn": "GE Aerospace — events & reports (officiell, närmaste källa)", "url": "https://www.geaerospace.com/investor-relations/events-reports", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "GE Aerospace — events & reports (officiell, närmaste källa)",
+          "url": "https://www.geaerospace.com/investor-relations/events-reports",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -72,8 +100,16 @@
       "rapportfenster": "2026-10-23",
       "notera": "Kvartalsvis; Q3 2025 rapporterades fredagen 2025-10-24 — samma veckoslutsrytm. Årsredovisning 2026 enligt kalender 2027-01-27. Datum ännu ej synligt på bolagets egen IR-sida vid hämttillfället.",
       "kallor": [
-        { "namn": "MarketScreener — Hexagon AB kalender", "url": "https://www.marketscreener.com/quote/stock/HEXAGON-AB-6491358/calendar/", "hamtdatum": "2026-09-15" },
-        { "namn": "Hexagon — investor relations (officiell)", "url": "https://investors.hexagon.com/", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "MarketScreener — Hexagon AB kalender",
+          "url": "https://www.marketscreener.com/quote/stock/HEXAGON-AB-6491358/calendar/",
+          "hamtdatum": "2026-09-15"
+        },
+        {
+          "namn": "Hexagon — investor relations (officiell)",
+          "url": "https://investors.hexagon.com/",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -83,8 +119,16 @@
       "rapportfenster": "2026-10-07",
       "notera": "Investeringsbolag med kvartalsvis NAV-redovisning och ovanligt snabb rytm 2026: Q1 rapporterades 2026-04-10 och Q2 den 2026-07-08. Finansiell kalender enligt årsredovisningen 2025.",
       "kallor": [
-        { "namn": "Industrivärden årsredovisning 2025 — finansiell kalender 2026 (MFN-PDF)", "url": "https://storage.mfn.se/cc3c6c9d-c40f-4466-9a81-ddc0a429739a/ab-industrivarden-annual-report-2025.pdf", "hamtdatum": "2026-09-15" },
-        { "namn": "Industrivärden — pressrum (officiell)", "url": "https://www.industrivarden.se/en-gb/media/press-releases/", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Industrivärden årsredovisning 2025 — finansiell kalender 2026 (MFN-PDF)",
+          "url": "https://storage.mfn.se/cc3c6c9d-c40f-4466-9a81-ddc0a429739a/ab-industrivarden-annual-report-2025.pdf",
+          "hamtdatum": "2026-09-15"
+        },
+        {
+          "namn": "Industrivärden — pressrum (officiell)",
+          "url": "https://www.industrivarden.se/en-gb/media/press-releases/",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -94,7 +138,11 @@
       "rapportfenster": "2026-10-22",
       "notera": "Kvartalsvis; bolaget publicerar vanligen ca 07:30 CEST med webcast/telefonkonferens 13:00 samma dag. Q2 2026 rapporterades 2026-07-17; bolagsstämma hölls 2026-04-28.",
       "kallor": [
-        { "namn": "Sandvik — interim reports / IR (officiell)", "url": "https://www.home.sandvik/en/investors/reports-presentations/interim-reports/", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "Sandvik — interim reports / IR (officiell)",
+          "url": "https://www.home.sandvik/en/investors/reports-presentations/interim-reports/",
+          "hamtdatum": "2026-09-15"
+        }
       ]
     },
     {
@@ -104,7 +152,37 @@
       "rapportfenster": "2026-10-21",
       "notera": "Kvartalsvis. IR-sidan listar Quarterly Report Q3 2026 den 21 oktober, med preliminär avstämningsdag för utdelning dagen före. Q4 2026 väntas i slutet av januari 2027.",
       "kallor": [
-        { "namn": "SKF — investor relations (officiell)", "url": "https://www.skf.com/group/investors", "hamtdatum": "2026-09-15" }
+        {
+          "namn": "SKF — investor relations (officiell)",
+          "url": "https://www.skf.com/group/investors",
+          "hamtdatum": "2026-09-15"
+        }
+      ]
+    },
+    {
+      "ticker": "CNR",
+      "namn": "Canadian National Railway Company",
+      "land": "Kanada",
+      "rapportfenster": "2026-10-20",
+      "notera": "Q3-rapport est. 20 oktober 2026 enligt leverantörens panel (est.) — fönstrets första av vågens bolag. Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        {
+          "namn": "StockAnalysis — Est. Earnings-rad (hämtat 2026-09-25)",
+          "url": "https://stockanalysis.com/quote/tsx/CNR/"
+        }
+      ]
+    },
+    {
+      "ticker": "CP",
+      "namn": "Canadian Pacific Kansas City Limited",
+      "land": "Kanada",
+      "rapportfenster": "2026-10-28",
+      "notera": "Q3-rapport est. 28 oktober 2026 enligt leverantörens panel (est.). Endast kalenderfakta — inga siffror, inga råd.",
+      "kallor": [
+        {
+          "namn": "StockAnalysis — Est. Earnings-rad (hämtat 2026-09-25)",
+          "url": "https://stockanalysis.com/quote/tsx/CP/"
+        }
       ]
     }
   ]

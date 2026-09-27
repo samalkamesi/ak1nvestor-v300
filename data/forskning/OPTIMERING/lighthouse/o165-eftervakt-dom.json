@@ -1,0 +1,78 @@
+{
+  "ts": "2026-09-24T15:38:06.699Z",
+  "fas": "klar",
+  "protokoll": "o165",
+  "uppdrag": "o159 §9 EFTER-vakarövertag (mät före/efter, deploy, prod 200, mätning bokförd)",
+  "deployad": "f949dc0a",
+  "kurCommit": "21e67000",
+  "kanalbevis": {
+    "htmlKlass": true,
+    "htmlCvh": true,
+    "cssRegel": true,
+    "cssKollade": [
+      "20d4hxlju1h5l.css",
+      "1y8-o7vbgoakh.css"
+    ]
+  },
+  "struktur": {
+    "clsNoll": true,
+    "skrollOK": true,
+    "prod200": true
+  },
+  "laststal": {
+    "dagtid": true,
+    "perSida": [
+      {
+        "sokvag": "/data/nyckeltalsguide",
+        "poang": 71,
+        "LCP": 4219,
+        "TBT": 489,
+        "CLS": 0,
+        "forePoang": 56,
+        "foreLCP": 4434,
+        "foreTBT": 1424
+      },
+      {
+        "sokvag": "/bolag",
+        "poang": 73,
+        "LCP": 4423,
+        "TBT": 366,
+        "CLS": 0,
+        "forePoang": 42,
+        "foreLCP": 6105,
+        "foreTBT": 4324
+      },
+      {
+        "sokvag": "/bolag/eqnr-ol",
+        "poang": 70,
+        "LCP": 4375,
+        "TBT": 585,
+        "CLS": 0,
+        "forePoang": 55,
+        "foreLCP": 4691,
+        "foreTBT": 1231
+      }
+    ],
+    "skrollOmgangar": [
+      {
+        "skrollClsSumma": 0,
+        "hojdForePx": 19050,
+        "hojdDeltaPx": -31,
+        "cvSektioner": 10
+      },
+      {
+        "skrollClsSumma": 0,
+        "hojdForePx": 19019,
+        "hojdDeltaPx": 0,
+        "cvSektioner": 10
+      }
+    ]
+  },
+  "dom": "GRÖN",
+  "motivering": [
+    "kanalbevis HEL (htmlKlass+htmlCvh+cssRegel) · CLS 0 ×3 · skroll-CLS 0/0 < 0.01",
+    "/bolag TBT 366 ms — väsentligt under FÖRE 4324 (A/B-span −47…−81 % hållet, o159 §9.3)",
+    "OBS: /bolag LCP 4423 ms avviker 28 % från FÖRE 6105 (utanför ±15 % — laststämplad observation dagtid)"
+  ],
+  "vidare": "Bokför i o165-protokollet + worklog; committa mätfilerna (o159-efter-*.json + skrollcls-*.json). TBT-slutdom ägs av natt-cronen (o158 §6)."
+}

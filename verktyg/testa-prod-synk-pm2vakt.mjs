@@ -145,12 +145,27 @@ console.log("== strukturella kontrakt i prod-synk.mjs (ordagranna) ==");
   const kalla = readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), "prod-synk.mjs"), "utf8");
   const rader = kalla.split("\n");
   const stoppaRader = rader.map((r, i) => [r, i]).filter(([r]) => r.includes("pm2Vakt.stoppa()"));
-  kolla("pm2Vakt.stoppa() ropas exakt 1 gång i källan", stoppaRader.length === 1);
-  if (stoppaRader.length === 1) {
-    const [, i] = stoppaRader[0];
-    const kontext = rader.slice(Math.max(0, i - 14), i).join("\n");
-    kolla("stoppa() ligger i patch-install-OK-grenen (efter 'PATCH-KÖ installerad')", kontext.includes("PATCH-KÖ installerad"));
-    kolla("stoppa() ligger FÖRE korBygg-anropet i källordning", kalla.indexOf("pm2Vakt.stoppa()") < kalla.indexOf("const korResultat = await korBygg()"));
+  // V182 (r272): exakt 2 definierade stopp-lägen — (1) patch-install-OK-grenen
+  // (o48) och (2) npm ci-läget (lock-ändrad/trasigt node_modules utan patch).
+  // Båda är FARLIGA fönster där npm ci raderar node_modules under gående app;
+  // kontraktet förblir: inga andra stopp, och ALLA stopp FÖRE korBygg.
+  kolla("pm2Vakt.stoppa() ropas exakt 2 gånger i källan (o48-patch + v182-npmCi)", stoppaRader.length === 2);
+  if (stoppaRader.length === 2) {
+    const kontexter = stoppaRader.map(([, i]) => rader.slice(Math.max(0, i - 14), i + 1).join("\n"));
+    kolla(
+      "stopp #1 ligger i patch-install-OK-grenen (efter 'PATCH-KÖ installerad')",
+      kontexter[0].includes("PATCH-KÖ installerad"),
+    );
+    kolla(
+      "stopp #2 ligger i v182 npmCi-grenen (if (npmCiBehov))",
+      kontexter[1].includes("if (npmCiBehov)"),
+    );
+    kolla(
+      "båda stoppen ligger FÖRE korBygg-anropet i källordning",
+      // V184 (r274): huvudbygget ropas via korByggMedSond (RAM-profilern
+      // svänger runt samma korBygg) — kontraktet oförändrat: stopp FÖRE bygg.
+      kalla.lastIndexOf("pm2Vakt.stoppa()") < kalla.indexOf("const korResultat = await korByggMedSond()"),
+    );
   }
   kolla("main():s finally ropar aterstarta() — garantin", kalla.includes("pm2Vakt.aterstarta()"));
   const finallyPos = kalla.indexOf("pm2Vakt.aterstarta()");

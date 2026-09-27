@@ -1,0 +1,66 @@
+{
+  "slug": "v11-likviditet",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "Likviditet är luftgapet mellan vad bolaget har inom räckhåll och vad det måste betala inom tolv månader. Nu räknar du kassa- och kvickkvoten själv på ett byggvaruhus låtsas-balansräkning — och ser hur trenden avslöjar mer än nivån.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Byggvaruhuset Norr AB är ett påhittat bolag — låtsas-balansräkningens tal är konstruerade för övningens skull.\n\nUtdrag ur balansräkningen (miljoner kronor), i år mot förra året: Kassa och bank 15 mot 22 · Kortfristiga placeringar 10 mot 8 · Kundfordringar 45 mot 52 · Varulager 60 mot 58 — omsättningstillgångar sammanlagt 130 mot 140. Mot det: Leverantörsskulder 55 mot 44 · Kortfristig del av lån 20 mot 20 · Skatt och övriga förpliktelser 15 mot 16 — kortfristiga skulder sammanlagt 90 mot 80.\n\nBeräkning i år: kassakvot = 130 ÷ 90 = 1,44. Kvickkvot = (130 − 60) ÷ 90 = 70 ÷ 90 = 0,78. Förra året: kassakvot = 140 ÷ 80 = 1,75; kvickkvot = (140 − 58) ÷ 80 = 1,03.\n\nTolkning: bufferten har smalnat på ett år — kvickkvoten föll från 1,03 till 0,78 och ligger nu under 1,0. Skillnaden mellan kvoterna är lagret: 60 av 130 (46 %) av omsättningstillgångarna kan inte tas till vara snabbt. En kontroll i noten visar att 6 av de 90 i skulden är kortfristig leasing (IFRS 16) — utan den hade kvickkvoten varit 70 ÷ 84 = 0,83, fortfarande under 1,0. Är det nöd? Kanske inte — ett byggvaruhus med snabb lageromsättning och goda leverantörskrediter kan driva tungt medvetet — men trenden (fallande kassa, svällande leverantörsskuld) är precis den tidiga signal kvoten finns för.\n\nSå räknar du själv: summera omsättningstillgångarna, summera de kortfristiga skulderna, kassakvot = omsättningstillgångar ÷ kortfristiga skulder, kvickkvot = (omsättningstillgångar − varulager) ÷ kortfristiga skulder — och upprepa för föregående år, riktningen är ofta viktigare än nivån. Slå upp äldresaldona i fordringsnoten och stryk mentalt osäkra fordringar: den justerade kvickkvoten är sanningen. Modellen lämnar V11 formellt osatt (datakontraktet saknar balansräkningsdetaljer) — poängen sätts manuellt efter läsningen, med den pedagogiska trappan kvick ≥ 2,0 ⇒ 5 poäng · 1,5–2,0 ⇒ 4 · 1,0–1,5 ⇒ 3 · 0,5–1,0 ⇒ 2 · under 0,5 ⇒ 1, alltid justerad för branschens arbetskapitalstruktur.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: Ett bolag har omsättningstillgångar 210 mkr, varav varulager 90, och kortfristiga skulder 140 mkr. Räkna kassakvot och kvickkvot.\n\nÖvningsfråga 2 — Tänk: Ett stabilt dagligvarubolag redovisar kvickkvot 0,6 — varför kan det ändå vara en styrka?\n\nÖvningsfråga 3 — Tänk: Kvickkvoten är 1,2 men fordringsnoten visar att 40 % av kundfordringarna är äldre än 120 dagar. Vad gör du med poängen?"
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: kassakvot 210 ÷ 140 = 1,50; kvickkvot (210 − 90) ÷ 140 = 120 ÷ 140 = 0,86. Kvotgapet är lagret — 43 % av omsättningstillgångarna.\n\nFacit 2: kunderna betalar i kassan direkt medan leverantörskrediten löper 30–60 dagar. Negativt rörelsekapital betyder att tillväxten frigör kassa i stället för att binda den.\n\nFacit 3: justera ned — gamla fordringar är inte kvicka pengar. Stryker du dem mentalt blir den \"sanna\" kvickkvoten betydligt lägre; äldresaldon, inte balansraden, är sanningen."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): kvick under 1,0 är inte automatisk nöd — dagligvaruhandel och förskottsaffärer driver medvetet lågt; fråga alltid varför gapet ser ut som det gör. Kvick över 1,0 är inte automatisk hälsa — svällande gamla kundfordringar räknas med i täljaren; notens äldstanalys avgör om fordringarna är pengar eller önsketänkande. Balansdagen är ett ögonblick (kassatopp efter julhelgen, botten före en milstolpe). Banker och finansbolag: kvoten är meningslös för in- och utlåning. IFRS 16 ligger bland de kortfristiga skulderna, och bunden kassa (valutarestriktioner, pantsatt kassa) syns i noterna — inte på balansraden."
+      },
+      {
+        "type": "insikt",
+        "content": "Kvotberäkningen du just gjorde är grunden för V11:s manuella poängsättning i AKM1 (indikatorn lämnas formellt osatt i datakontraktet — din läsning ÄR poängen), och nyckeltalsguiden visar exakt vilka balansrader och noter som bygger täljare och nämnare. AKM2:s analys vittnar om hur likviditeten läses tillsammans med V10:s skuldstruktur och V19:s kassatäckning, AI-Mentorn förhör dig på kvotgapet och äldresaldona, och portföljmotorn följer kvikutvecklingen över tid. En journal med båda kvoterna — och trenden — är kedjans likviditetsunderlag."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Kvickkvoten räknar bort varulagret från omsättningstillgångarna.",
+        "alternativ": [
+          "Sant — i en kris säljs lager långsamt och med rabatt, medan kassa och fordringar är kvickt nära pengar",
+          "Falskt — kvickkvoten inkluderar alltid lagret",
+          "Sant, men bara för tillverkare",
+          "Falskt — kvickkvoten mäter bara kassan"
+        ],
+        "ratt": 0,
+        "tips": "Se definitionen av de två kvoterna i kapitlet."
+      },
+      {
+        "q": "En kvickkvot under 1,0 är alltid ett tecken på akut betalningskris.",
+        "alternativ": [
+          "Sant — under 1,0 betyder alltid nöd",
+          "Falskt — dagligvaruhandel och förskottsaffärer driver medvetet lågt; fråga alltid varför gapet ser ut som det gör",
+          "Sant om kassakvoten också är under 1,0",
+          "Falskt — kvickkvoten under 1,0 är alltid en styrka"
+        ],
+        "ratt": 1,
+        "tips": "Se fallgropen om medvetet lågt driv och facit på övningsfråga 2."
+      },
+      {
+        "q": "Gamla kundfordringar kan blåsa upp kvickkvoten utan att vara kvicka pengar.",
+        "alternativ": [
+          "Falskt — alla fordringar är lika kvicka",
+          "Sant, men bara utomlands",
+          "Sant — fordringsnotens äldstanalys avgör; stryk osäkra fordringar mentalt för den sanna kvoten",
+          "Falskt — fordringar räknas aldrig i täljaren"
+        ],
+        "ratt": 2,
+        "tips": "Se facit på övningsfråga 3."
+      }
+    ]
+  }
+}

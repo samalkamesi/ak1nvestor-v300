@@ -31,6 +31,10 @@
  * Avslutskod: 0 om filen är aktuell (skriven eller redan rätt),
  * 1 om källor saknas/är ogiltiga eller innehåller ogiltiga slugar.
  *
+ * v186 (r275): flaggan --kontroll = JäMFÖR ENBART (skriver aldrig) för
+ * pre-commit-grindens speglar-driftvakt — se verktyg/hooks/pre-commit.
+ * Drift där = 404 på spegelsidor som ska finnas (bevisat 2026-09-27).
+ *
  * Pedagogisk forskning — ALDRIG investeringsråd.
  */
 import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
@@ -41,6 +45,9 @@ const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const KALLA_SOK = path.join(REPO, "public", "sok-index.json");
 const KALLA_BLOGG = path.join(REPO, "data", "blogg");
 const MAL = path.join(REPO, "public", "speglar-slugar.json");
+
+/** KONTROLL-läge (v186, r275): pre-commit-grindens driftvakt — jämför ENBART, skriver ALDRIG. */
+const KONTROLL = process.argv.includes("--kontroll");
 
 /** Minnets regel — exakt samma regex som middlewarens block använder. */
 const SLUG_MONSTER = /^[a-z0-9-]+$/;
@@ -92,30 +99,67 @@ const utdata = {
   blogg: [...new Set(blogg)].sort(),
 };
 
-// Idempotens: hoppa över skrivningen om listorna är oförändrade (utom
-// genererat-datumet, som aldrig ensam ska smutsa ner git-diffen).
-if (existsSync(MAL)) {
+/** Jämför mot en befintlig MAL — true om slug-listorna är identiska (datum oräknat). */
+function listaArSamma() {
+  if (!existsSync(MAL)) return false;
   try {
     const befintlig = JSON.parse(readFileSync(MAL, "utf8"));
-    const samma =
+    return (
       befintlig.version === utdata.version &&
       Array.isArray(befintlig.kurser) &&
       Array.isArray(befintlig.blogg) &&
       befintlig.kurser.length === utdata.kurser.length &&
       befintlig.blogg.length === utdata.blogg.length &&
       JSON.stringify(befintlig.kurser) === JSON.stringify(utdata.kurser) &&
-      JSON.stringify(befintlig.blogg) === JSON.stringify(utdata.blogg);
-    if (samma) {
-      console.log(
-        `speglar-slugar.json är aktuell: ${utdata.kurser.length} kurser + ${utdata.blogg.length} blogg · ${Math.round(
-          readFileSync(MAL, "utf8").length / 1024,
-        )} kB — ingen ändring, filen orörd.`,
-      );
-      process.exit(0);
-    }
+      JSON.stringify(befintlig.blogg) === JSON.stringify(utdata.blogg)
+    );
   } catch {
-    // Ogiltig befintlig fil → skrivs om nedan.
+    return false; // Ogiltig befintlig fil ⇒ räknas som drift.
   }
+}
+
+// KONTROLL-läge (v186, r275): drift betyder att data/blogg eller sok-index
+// ändrats utan att listan regenererats ⇒ speglarna (/en|/ar/(kurser|blogg)/
+// <slug>) svarar ÄKTA 404 på sidor som SKA finnas — bevisat 2026-09-27:
+// 39 glappade bloggslugar = 78 döda spegelsidor i prod (listan frusen
+// 2026-09-21; sitemapen lovade vägarna hela tiden).
+if (KONTROLL) {
+  if (listaArSamma()) {
+    console.log(
+      `speglar-slugar.json i sync: ${utdata.kurser.length} kurser + ${utdata.blogg.length} blogg — ingen drift.`,
+    );
+    process.exit(0);
+  }
+  let befintligBlogg = [];
+  let befintligKurser = [];
+  try {
+    const b = JSON.parse(readFileSync(MAL, "utf8"));
+    befintligBlogg = Array.isArray(b.blogg) ? b.blogg : [];
+    befintligKurser = Array.isArray(b.kurser) ? b.kurser : [];
+  } catch {
+    // Ogiltig/ponerad fil ⇒ tomma listor ⇒ maximal driftredovisning nedan.
+  }
+  const saknadeBlogg = utdata.blogg.filter((s) => !befintligBlogg.includes(s));
+  const saknadeKurser = utdata.kurser.filter((s) => !befintligKurser.includes(s));
+  const exempel = [...saknadeBlogg, ...saknadeKurser].slice(0, 3).join(", ");
+  console.error(
+    `SPEGLAR-DRIFT: public/speglar-slugar.json är inaktuell — ${saknadeBlogg.length} blogg- + ${saknadeKurser.length} kurs-slugar saknas (${exempel}${saknadeBlogg.length + saknadeKurser.length > 3 ? ", …" : ""}).`,
+  );
+  console.error(
+    "KUR: node verktyg/kor-speglar-slugar.mjs — committa public/speglar-slugar.json i SAMMA commit som data-ändringen, annars svarar speglarna 404 på sidor som ska finnas.",
+  );
+  process.exit(1);
+}
+
+// Idempotens: hoppa över skrivningen om listorna är oförändrade (utom
+// genererat-datumet, som aldrig ensam ska smutsa ner git-diffen).
+if (listaArSamma()) {
+  console.log(
+    `speglar-slugar.json är aktuell: ${utdata.kurser.length} kurser + ${utdata.blogg.length} blogg · ${Math.round(
+      readFileSync(MAL, "utf8").length / 1024,
+    )} kB — ingen ändring, filen orörd.`,
+  );
+  process.exit(0);
 }
 
 const ut = JSON.stringify(utdata);

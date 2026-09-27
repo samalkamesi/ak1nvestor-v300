@@ -237,7 +237,41 @@ PASS trading-in-the-zone varumärkesgrind — 26 fraser rena
 PASS trading-in-the-zone lagrum — 2007:528
 PASS trading-in-the-zone talöverföring — 26/26 = 100 % (krav ≥70)
 PASS trading-in-the-zone num-sekvens — 1..15 ✓
+PASS the-hour-between-dog-and-wolf position+num — ix=15/15 num=15
+PASS the-hour-between-dog-and-wolf chapterCount — 15 == 15
+PASS the-hour-between-dog-and-wolf totalMinutes=Σ — 181 == 181
+PASS the-hour-between-dog-and-wolf quiz=3 — 3
+PASS the-hour-between-dog-and-wolf quiz-struktur — q/alt4/ratt/tips ✓
+PASS the-hour-between-dog-and-wolf blocktyper — text,utmaning,tabell,insikt
+PASS the-hour-between-dog-and-wolf utmaning-block — finns
+PASS the-hour-between-dog-and-wolf varumärkesgrind — 26 fraser rena
+PASS the-hour-between-dog-and-wolf lagrum — 2007:528
+PASS the-hour-between-dog-and-wolf talöverföring — 22/22 kärntal = 100 % (krav ≥70)
+PASS the-hour-between-dog-and-wolf num-sekvens — 1..15 ✓
+NOTIS d22 — tredje dubbelarbetet (d13, d19, d22); prod:s version vald (neutral GRÖN 11/11 i verktyg/_v166d22-val.mjs: kärntal 22/22, quiz ratt 2,0,1, Σ181); studio-versionen (KVD GRÖN 15/15) bevarad i f669c10e. ARBETSFÖRDELNING BESLUTAD:rond 179 — leverans-pipelinen (d-kapitel) ägs hädanefter ENBART av prod-sessionen (levererar ~1 d/minut); studions roll = emottag, oberoende granskning, granskningsfilens slutenhet och vågstängning. Dubbelarbetsroten (väntar-listan uppdateras ej vid leverans) kvarstår att kura vid nästa gemensamma vågplan.
+PASS market-mind-games position+num — ix=15/15 num=15
+PASS market-mind-games chapterCount — 15 == 15
+PASS market-mind-games totalMinutes=Σ — 172 == 172
+PASS market-mind-games quiz=3 — 3
+PASS market-mind-games quiz-struktur — q/alt4/ratt/tips ✓
+PASS market-mind-games blocktyper — text,utmaning,tabell,insikt
+PASS market-mind-games utmaning-block — finns
+PASS market-mind-games varumärkesgrind — 26 fraser rena
+PASS market-mind-games lagrum — 2007:528
+PASS market-mind-games talöverföring — 44/44 = 100 % (krav ≥70)
+PASS market-mind-games num-sekvens — 1..15 ✓
+PASS your-money-and-your-brain position+num — ix=15/15 num=15
+PASS your-money-and-your-brain chapterCount — 15 == 15
+PASS your-money-and-your-brain totalMinutes=Σ — 180 == 180
+PASS your-money-and-your-brain quiz=3 — 3
+PASS your-money-and-your-brain quiz-struktur — q/alt4/ratt/tips ✓
+PASS your-money-and-your-brain blocktyper — text,utmaning,tabell,insikt
+PASS your-money-and-your-brain utmaning-block — finns
+PASS your-money-and-your-brain varumärkesgrind — 26 fraser rena
+PASS your-money-and-your-brain lagrum — 2007:528
+PASS your-money-and-your-brain talöverföring — 20/20 = 100 % (krav ≥70)
+PASS your-money-and-your-brain num-sekvens — 1..15 ✓
 
-## LÄGE: 21 granskade · 3 väntar: the-hour-between-dog-and-wolf, market-mind-games, your-money-and-your-brain
+## LÄGE: 24/24 GRANSKADE · 0 väntar — VÅG 166 STÄNGD (2026-09-24 rond 179-180 [organ:Φ])
 
-## SAMMANFATTNING: 231 PASS · 0 FEL
+## SAMMANFATTNING: 264 PASS · 0 FEL

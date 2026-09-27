@@ -1,0 +1,66 @@
+{
+  "slug": "v12-intaktsstabilitet",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "Intäktsstabilitet mäts med variationskoefficienten (CV) — standardavvikelsen dividerad med medelvärdet. Nu räknar du CV själv, steg för steg, och möter måttet största blindness: det ser svängning, aldrig riktning.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Nordkust Fritid AB är ett påhittat bolag — låtsas-redovisningens tal är konstruerade för övningens skull.\n\nNettoomsättning 2021–2025 (miljoner kronor): 100 · 110 · 105 · 115 · 120.\n\nSteg för steg: medelvärdet = 550 ÷ 5 = 110. Avvikelser: −10, 0, −5, +5, +10. Kvadrater: 100 + 0 + 25 + 25 + 100 = 250. Variens = 250 ÷ 5 = 50. Standardavvikelse = √50 ≈ 7,07. CV = 7,07 ÷ 110 = 6,4 % ⇒ 4 poäng (trappan: ≤ 10 %).\n\nKontrasten — låtsasbolaget Stadigt Sjunkande AB med serien 100 · 96 · 92 · 88 · 84: medelvärde 92, avvikelser ±8 och ±4, standardavvikelse 5,66, CV = 5,66 ÷ 92 = 6,2 % ⇒ också 4 poäng — trots att omsättningen fallit fyra år i rad. Det är läran: V12 ser svängning, aldrig riktning. Nordkusts kurva pekar dessutom uppåt med en tillväxttakt på (120 ÷ 100)^(1/4) − 1 ≈ 4,7 % per år — läsningen blir hel först tillsammans med V01.\n\nSå räknar du själv: skriv ner nettoomsättningen per år, medelvärdet = summan ÷ antalet år, avvikelsen per år = årets tal − medelvärdet, kvadrera avvikelserna och summera, dela med antalet år (populationens standardavvikelse — i kalkylblad STDAV.P), ta kvadratroten, och CV = standardavvikelsen ÷ medelvärdet i procent. Poängtrappan: CV ≤ 5 % ⇒ 5 · ≤ 10 % ⇒ 4 · ≤ 20 % ⇒ 3 · ≤ 35 % ⇒ 2 · > 35 % ⇒ 1. Saknas serier, eller är medelvärdet noll/negativt, lämnas indikatorn osatt.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: CV för serien 100 · 104 · 102 · 106 · 108.\n\nÖvningsfråga 2 — Tänk: Serien 100 · 96 · 92 · 88 · 84 ger CV 6,2 % och poäng 4 — vad saknar talet?\n\nÖvningsfråga 3 — Tänk: Varför STDAV.P och inte STDAV.S i kalkylbladet?"
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: medel 104; avvikelser −4, 0, −2, +2, +4; kvadrater 16+0+4+4+16 = 40; variens 8; standardavvikelse 2,83; CV = 2,7 % ⇒ 5 poäng.\n\nFacit 2: riktningen. CV är blind för att kurvan sjunker monotont; läs V01 innan någon slutsats dras.\n\nFacit 3: modellen räknar populationens standardavvikelse (delar med n). STDAV.S delar med n−1 och blåser upp CV på korta serier — risken är en orättfärdigt låg poäng."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): CV är blind för riktning — läs alltid med V01. Små absoluta tal ger extrem CV (serien 0/1/0/0 mkr är holdingbokföring, inte volatilitet). Förvärv böjer serien — organisk 60 + köpt 40 ser ut som tillväxtsvängning; noten om förvärv avgör. Valuta rör kurvan utan att affären gjort det, koncern-CV kan dölja att ett segment pendlar vilt, och räkenskapsårslutbyten bryter femårsöversiktens jämförbarhet."
+      },
+      {
+        "type": "insikt",
+        "content": "CV-uträkningen du just gjorde ger AKM1:s stabilitetspoäng, och nyckeltalsguiden visar var femårsöversikten och segmentnoten hämtas. AKM2:s analys vittnar om parningen med V01 — svängning mot riktning — och om hur förvärvs- och valutanoter rensar serien, AI-Mentorn förhör dig på STDAV.P-motivet och riktningblindheten, och portföljmotorn följer CV över tid i din bevakning. En journal med både CV och kurvans riktning är kedjans stabilitetsunderlag."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "CV beräknas som standardavvikelsen dividerad med medelvärdet av nettoomsättningen.",
+        "alternativ": [
+          "Sant — och måttet är skalfri, jämförbart mellan bolag av olika storlek",
+          "Falskt — medelvärdet divideras med standardavvikelsen",
+          "Sant, men bara för banker",
+          "Falskt — CV är medianen dividerad med maximum"
+        ],
+        "ratt": 0,
+        "tips": "Se definitionen och räkneexemplet."
+      },
+      {
+        "q": "En jämnt sjunkande omsättningsserie kan få samma CV-poäng som en jämnt stigande.",
+        "alternativ": [
+          "Falskt — CV straffar alltid nedgång",
+          "Sant, men bara över tio år",
+          "Falskt — CV mäter bara uppgångar",
+          "Sant — CV ser svängning, aldrig riktning; läs därför alltid med V01"
+        ],
+        "ratt": 3,
+        "tips": "Se kontrasten Stadigt Sjunkande AB i räkneexemplet."
+      },
+      {
+        "q": "I kalkylbladet ska populationens standardavvikelse (STDAV.P) användas för CV.",
+        "alternativ": [
+          "Falskt — STDAV.S är alltid rätt",
+          "Sant — modellen delar med n; STDAV.S delar med n−1 och blåser upp CV på korta serier",
+          "Sant, men bara för serier över tjugo år",
+          "Falskt — båda ger identiskt CV"
+        ],
+        "ratt": 1,
+        "tips": "Se facit på övningsfråga 3."
+      }
+    ]
+  }
+}

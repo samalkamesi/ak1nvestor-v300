@@ -39,6 +39,20 @@ fi
 # (|| echo) — tsc förblir den hårda grinden.
 node verktyg/tmp-stad.mjs || echo "KVALITETSGRINDEN: tmp-städningen kunde inte köras — fortsätter (tsc avgör)" >&2
 
+# v186 (2026-09-27, r275): SPEGLAR-DRIFT-VAKTEN — en commit som röra data/blogg
+# eller sok-index MÅSTE bära en aktuell public/speglar-slugar.json. Bevisat
+# behov: 39 bloggslugar glappade (listan frusen 2026-09-21; pipelinen som
+# skriver data/blogg uppdaterar den aldrig) = 78 spegelsidor /en|/ar svarade
+# äkta 404 på sidor som fanns OCH lovades i sitemapen. Kontroll-läget skriver
+# ALDRIG — drift blockerar med kur-text.
+if git diff --cached --name-only | grep -qE '^data/blogg/|^public/sok-index\.json$'; then
+  if ! node verktyg/kor-speglar-slugar.mjs --kontroll; then
+    echo "" >&2
+    echo "KVALITETSGRINDEN: speglar-drift ovan — kör node verktyg/kor-speglar-slugar.mjs och committa public/speglar-slugar.json i SAMMA commit." >&2
+    exit 1
+  fi
+fi
+
 # s8-determinism (2026-09-15): projektets EGEN tsc-binär, ALDRIG npx — mitt i
 # en deploy (npm ci river node_modules) kan npx lösa "tsc" till cachens
 # dummy-paket tsc@2.0.4 (bevisat 2026-09-15 04:57, deployfönster). Saknad

@@ -1,11 +1,29 @@
 {
-  "ts": "2026-09-23T01:27:02.079Z",
+  "ts": "2026-09-27T01:27:01.896Z",
   "lage": "natt",
   "steg": [
     {
       "steg": "0-ram",
-      "ramMB": 5090,
+      "ramMB": 5266,
       "tak": 1500,
+      "pass": true
+    },
+    {
+      "steg": "0b-lastvakt",
+      "busyProc": 27.8,
+      "loadavg": [
+        0,
+        0.15,
+        0.33
+      ],
+      "cpuKalibMs": 28.8,
+      "zcodeBarn": 5,
+      "tyst": true,
+      "kriterier": {
+        "busyUnder": 30,
+        "l1Under": 1.5
+      },
+      "vantadeMs": 0,
       "pass": true
     },
     {
@@ -17,44 +35,77 @@
       "pass": true
     },
     {
+      "steg": "1b-last-ater",
+      "busyProc": 27.5,
+      "loadavg": [
+        0.28,
+        0.2,
+        0.35
+      ],
+      "cpuKalibMs": 36.6,
+      "tyst": true,
+      "pass": true
+    },
+    {
       "steg": "2-lighthouse",
       "exit": 0,
       "svans": [
         "Sammanfattning → /home/ak1a/AK1/data/forskning/OPTIMERING/lighthouse/o151-natt-sammanfattning.json",
         "",
         "Jämförelse mot o139-fore:",
-        "/superanalys: P 73→43 · LCP 4355→5706 (+1351 ms) · TBT 375→5669",
-        "/kalkylator: P 64→42 · LCP 4812→5423 (+611 ms) · TBT 582→8779",
+        "/superanalys: P 73→74 · LCP 4355→4440 (+85 ms) · TBT 375→320",
+        "/kalkylator: P 64→65 · LCP 4812→4876 (+64 ms) · TBT 582→682",
         ""
       ]
+    },
+    {
+      "steg": "2b-last-slut",
+      "busyProc": 0.2,
+      "loadavg": [
+        1.15,
+        0.47,
+        0.43
+      ],
+      "cpuKalibMs": 27.9,
+      "kalibStart": 28.8,
+      "kalibKvot": 0.97,
+      "zcodeBarn": 5,
+      "tyst": true,
+      "kalibDrift": false,
+      "kriterier": {
+        "busyUnder": 30,
+        "l1Under": 1.5,
+        "kalibKvotUnder": 1.5
+      },
+      "pass": true
     }
   ],
   "dom": [
     {
       "sida": "/superanalys",
       "poangFore": 73,
-      "poangEfter": 43,
+      "poangEfter": 74,
       "lcpFore": 4355,
-      "lcpEfter": 5706,
-      "lcpDeltaProc": 31,
+      "lcpEfter": 4440,
+      "lcpDeltaProc": 2,
       "tbtFore": 375,
-      "tbtEfter": 5669,
+      "tbtEfter": 320,
       "clsEfter": 0,
       "kriterier": {
         "clsNoll": true,
-        "lcpInom15": false,
-        "poangSuperBand": false
+        "lcpInom15": true,
+        "poangSuperBand": true
       }
     },
     {
       "sida": "/kalkylator",
       "poangFore": 64,
-      "poangEfter": 42,
+      "poangEfter": 65,
       "lcpFore": 4812,
-      "lcpEfter": 5423,
-      "lcpDeltaProc": 12.7,
+      "lcpEfter": 4876,
+      "lcpDeltaProc": 1.3,
       "tbtFore": 582,
-      "tbtEfter": 8779,
+      "tbtEfter": 682,
       "clsEfter": 0,
       "kriterier": {
         "clsNoll": true,
@@ -63,5 +114,6 @@
       }
     }
   ],
+  "lastOK": true,
   "sammanfattning": "o151-natt-sammanfattning.json"
 }

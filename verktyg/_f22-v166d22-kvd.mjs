@@ -2,7 +2,7 @@
 // v166-d22 KVD — mekanisk efterkontroll av djupkapitel 15 i
 // data/bokmaster/the-hour-between-dog-and-wolf.json enligt DESIGN-v166.
 import fs from 'node:fs';
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 
 const FIL = 'data/bokmaster/the-hour-between-dog-and-wolf.json';
 const UNDERLAG = 'data/forskning/KURS-FAS3/underlag-f22-dog-and-wolf.md';
@@ -122,7 +122,7 @@ const pahittade = siffror.filter((s) => !underlagNorm.includes(s));
 k('inga påhittade tal (siffer-token ⊆ underlaget)', pahittade.length === 0, pahittade.length ? 'okända: ' + pahittade.join(' | ') : `${siffror.length} unika token alla kända`);
 
 // 7. Append-only: kapitel 1–14 + chapters_list 1–14 + övriga toppfält bit-identiska mot HEAD
-const gamlaRaw = execSync(`git show HEAD:${FIL}`, { encoding: 'utf8' });
+const gamlaRaw = execFileSync("git", ["show", `HEAD:${FIL}`], { encoding: 'utf8' });
 const g = JSON.parse(gamlaRaw);
 const kapOk = g.chapters.slice(0, 14).every((c, i) => JSON.stringify(c) === JSON.stringify(j.chapters[i]));
 k('kapitel 1–14 bit-identiska', kapOk && j.chapters.length === 15);
@@ -140,7 +140,7 @@ k('övriga toppfält orörda', toppOk);
 let tscOk = false;
 let tscUt = '';
 try {
-  execSync('node node_modules/typescript/bin/tsc --noEmit', { cwd: '/home/ak1a/AK1', stdio: 'pipe', timeout: 240000 });
+  execFileSync("node", ["node_modules/typescript/bin/tsc", "--noEmit"], { cwd: '/home/ak1a/AK1', stdio: 'pipe', timeout: 240000 });
   tscOk = true;
 } catch (e) {
   tscUt = (e.stdout || '') + (e.stderr || '');

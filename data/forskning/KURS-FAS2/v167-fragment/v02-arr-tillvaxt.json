@@ -1,0 +1,66 @@
+{
+  "slug": "v02-arr-tillvaxt",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "Nu räknar du själv på ARR — den kontrakterade, återkommande intäkten — med NorrTekniks låtsas-siffror. Tre övningsfrågor med facit avslutar kursen, precis som i V01.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "NorrTeknik AB är ett konstruerat bolag — låtsas-årsredovisningens tal är påhittade för övningens skull.\n\nFörvaltningsberättelsen: \"Tecknade serviceavtal med löptid minst 12 månader uppgick per balansdagen till ARR 320 (föregående år: 265).\"\n\n- ARR-tillväxt: (320 − 265) ÷ 265 = 55 ÷ 265 = 0,208 → +20,8 %.\n- ARR-andel av omsättningen: 320 ÷ 1 200 = 26,7 % — ungefär var fjärde intäktskrona är kontrakterad att återkomma.\n- I utbildningens riktlinjetabell (15–30 % tillväxt med tydlig andel ⇒ 4 poäng) landar NorrTeknik på 4 poäng — serviceaffären växer snabbare än maskinförsäljningen (+20,8 % mot +14,3 %), vilket är ett mönster värdefullt att lägga på minnet: den återkommande andelen växer sig större i bolaget.\n\nSå räknar du själv: hitta årets ARR och förra årets ARR i samma källa och med samma definition båda åren, beräkna (ARR i år − ARR förra året) ÷ ARR förra året × 100 %, och räkna gärna också ARR-andelen ARR ÷ nettoomsättning. Notera \"net new ARR\" (förändringen i kronor) om bolaget redovisar den — skillnaden mellan tillkommande och avgångna avtal.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: Hur stor var NorrTekniks ARR-tillväxt 2025?\n\nÖvningsfråga 2 — Räkna vidare: Hur stor andel av nettoomsättningen utgjorde ARR?\n\nÖvningsfråga 3 — Tänk: Servicechefen säger: \"Våra kunder kommer tillbaka varje år — i praktiken är hela serviceaffären recurring.\" Varför är det ändå inte ARR enligt definitionen?"
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: (320 − 265) ÷ 265 = +20,8 %.\n\nFacit 2: 320 ÷ 1 200 = 26,7 %.\n\nFacit 3: ARR kräver kontrakterad återkomst (löptid, uppsägningsskydd, bindning). \"Kommer tillbaka\" är beteende, inte avtal — om kunden kan försvinna utan att bryta något avtal är intäkten inte återkommande i ARR-mening, hur lojal den än är. Noten/definitionen avgör, inte berättelsen."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): annualisera inte fel — ARR är redan årsvis, multiplicera aldrig en månatlig siffra med 12 om den redan är annualiserad. Upprepad är inte kontrakterad: konsultintäkter som upprepas varje år är inte ARR, gränsen går vid bindningstid och uppsägningsskydd. ARR som växer genom uppköp är inte samma kvalitet som tillväxt i befintliga kunder — de bästa rapportörerna mäter net revenue retention. Jämför alltid samma definition år mot år (många redovisar \"constant currency\"), blanda inte backlog med ARR, och var vaksam på användningsbaserade intäkter som ser återkommande ut men svänger med kundernas volym."
+      },
+      {
+        "type": "insikt",
+        "content": "ARR-uträkningen du just gjorde är samma räkning som fyller AKM1:s poäng för återkommande tillväxt, och nyckeltalsguiden visar var i förvaltningsberättelsen och intäktsnoten talet hämtas. AKM2:s analys vittnar om hur den återkommande andelen förändrar ett bolags förutsägbarhet, AI-Mentorn förhör dig på gränsen mellan beteende och avtal, och portföljmotorn följer ARR-andelen över tid i din bevakning. En journal med egna ARR-beräkningar gör hela kedjan skarpare."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "ARR-tillväxten beräknas som förändringen i ARR dividerad med förra årets ARR.",
+        "alternativ": [
+          "Sant — samma bråkform som försäljningstillväxten, med ARR i täljare och nämnare",
+          "Falskt — ARR divideras alltid med nettoomsättningen",
+          "Sant, men bara för bolag utan förvärv",
+          "Falskt — ARR multipliceras med tolv innan divisionen"
+        ],
+        "ratt": 0,
+        "tips": "Se beräkningssteget i kapitlets räkneexempel."
+      },
+      {
+        "q": "En kund som kommit tillbaka i tio år i rad räknas som ARR.",
+        "alternativ": [
+          "Sant — lojalitet är samma sak som kontrakt",
+          "Sant om kunden köpt minst tre gånger",
+          "Falskt — ARR kräver kontrakterad återkomst (löptid, bindning), inte upprepat beteende",
+          "Falskt — endast offentliga kunder kan ingå i ARR"
+        ],
+        "ratt": 2,
+        "tips": "Se facit på övningsfråga 3."
+      },
+      {
+        "q": "ARR-andelen räknas som ARR dividerat med nettoomsättningen.",
+        "alternativ": [
+          "Falskt — ARR divideras med antalet kunder",
+          "Falskt — ARR divideras med EBITDA",
+          "Sant, men endast för servicebolag",
+          "Sant — andelen visar hur stor del av affären som är kontrakterad att återkomma"
+        ],
+        "ratt": 3,
+        "tips": "Se räkneexemplets andra rad."
+      }
+    ]
+  }
+}

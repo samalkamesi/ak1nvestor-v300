@@ -1,0 +1,66 @@
+{
+  "slug": "v06-ev-ebitda",
+  "kapitel": {
+    "num": 12,
+    "minutes": 8,
+    "title": "Från teorin till egen räkning",
+    "intro": "EV/EBITDA prissätter hela maskinen — inte bara rattet. Nu bygger du själv Enterprise Value från NorrTekniks balansräkning och ser varför kapitalstrukturen syns i priset.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "NorrTeknik AB är ett konstruerat bolag — låtsas-årsredovisningens tal är påhittade för övningens skull.\n\n- Börsvärde: 1 800.\n- Räntebärande skulder: långfristiga 180 + kortfristiga 20 = 200.\n- Kassa: kassa och bank 60 + kortfristiga placeringar 20 = 80.\n- EV = 1 800 + 200 − 80 = 1 920 Mkr.\n- EBITDA = rörelseresultat 150 + avskrivningar 55 = 205 Mkr.\n- EV/EBITDA = 1 920 ÷ 205 = 9,4× — hela maskinen kostar knappt tio års driftkassa.\n- Modellens kurva (6–10× ⇒ 4 poäng) ger 4 poäng. Notera kurvans viktigaste läxa: under 4× ges 5 poäng ENDAST om kassatäckningen (V19) är minst 3 — ett bolag som ser billigt ut kan vara billigt av ett skäl (skrumpande affär, föråldrad maskinpark). Billighet utan kvalitet är en fälla, och modellen bygger in den kontrollen.\n\nSå räknar du själv: börsvärde = aktier × kurs; räntebärande nettoskuld = räntebärande skulder − kassa och kortfristiga placeringar; EV = börsvärde + nettoskuld; EBITDA = rörelseresultat + avskrivningar ur kassaflödesanalysen; EV/EBITDA = EV ÷ EBITDA. Kontrollera summan mot bolagets egen presentation av \"netto skuldsättning\" när den finns.\n\nUtbildningsmaterial — beskriver hur metoden läser och räknar; inga investeringsråd (2007:528)."
+      },
+      {
+        "type": "utmaning",
+        "content": "Stopp — svara skriftligen i din analysjournal FÖRE du läser facit i nästa stycke. Facit är till för att rätta dina egna svar, inte att läsas först.\n\nÖvningsfråga 1 — Räkna: Vad är NorrTekniks EV?\n\nÖvningsfråga 2 — Räkna vidare: EV/EBITDA och poäng?\n\nÖvningsfråga 3 — Tänk: NorrTeknik omlägger finansieringen: de räntebärande skulderna blir 280 och kassan 0 (betalning av overdraft och utdelning), affären oförändrad. Ny multipel — och vad lär det?"
+      },
+      {
+        "type": "text",
+        "content": "Facit med motiveringar:\n\nFacit 1: 1 800 + (180 + 20) − (60 + 20) = 1 800 + 200 − 80 = 1 920 Mkr.\n\nFacit 2: (150 + 55) = 205; 1 920 ÷ 205 = 9,4× ⇒ 4 poäng (6–10×).\n\nFacit 3: EV = 1 800 + 280 − 0 = 2 080; 2 080 ÷ 205 = 10,1× ⇒ 3 poäng. Affären är identisk, men köpare av hela bolaget betalar mer eftersom skulderna är större — aktiekursens P/E hade inte visat skillnaden fullt ut. Det är EV-måttets hela poäng: kapitalstrukturen syns i priset på maskinen."
+      },
+      {
+        "type": "text",
+        "content": "Kort om fallgroparna (de fulla fallen står i kapitel 10): EBITDA är inte kassaflöde — den ignorerar att maskiner slits och måste ersättas; kapitalintensiva bolag ser billiga ut just för att ersättningsinvesteringarna är borträknade. Negativ EBITDA gör multipeln meningslös (0 poäng). Kontrollera skulddefinitionen — IFRS 16 flyttade leasingåtaganden in i skulderna och kan förstöra jämförbarheten. Multipeln är känslig för teckenfel i kassa eller skuld — verifiera mot bolagets egen netto-skuldsättningsredovisning. Och när datakontraktet saknar EBITDA-fält lämnar modellen V06 osatt hellre än att lägga EBIT på EBITDA-trösklar — dataheder är en designläxa värd lika mycket som multipeln."
+      },
+      {
+        "type": "insikt",
+        "content": "EV-bygget du just gjorde är samma kedja som ger AKM1:s poäng i EV/EBITDA-kurvan — inklusive kontrollen mot kassatäckning (V19) vid låga multiplar. Nyckeltalsguiden visar var räntebärande skulder, kassa och avskrivningar hämtas, AKM2:s analys vittnar om hur finansieringsstrukturen förändrar bilden, AI-Mentorn förhör dig på komponenterna, och portföljmotorn följer multipeln och skuldbilden över tid. En journal med hela EV-uträkningen — inte bara sluttalet — är kedjans bevis."
+      }
+    ],
+    "quiz": [
+      {
+        "q": "EV beräknas som börsvärde plus räntebärande skulder minus kassa.",
+        "alternativ": [
+          "Sant — du betalar för alla aktier och tar över lånen, men kassan får du behålla",
+          "Falskt — EV är samma sak som börsvärdet",
+          "Sant, men leverantörsskulder ska också adderas",
+          "Falskt — kassan adderas till EV"
+        ],
+        "ratt": 0,
+        "tips": "Se EV-steget i räkneexemplet."
+      },
+      {
+        "q": "Leverantörsskulder räknas in i de räntebärande skulderna i EV-beräkningen.",
+        "alternativ": [
+          "Sant — alla skulder är finansiering",
+          "Sant om de är över ett år gamla",
+          "Falskt — leverantörsskulder är verksamhet, inte finansiering",
+          "Falskt — de ska dras av från EV"
+        ],
+        "ratt": 2,
+        "tips": "Se kapitlets genomgång av skulddefinitionen."
+      },
+      {
+        "q": "Två bolag med identisk affär men olika skuldnivå får samma EV/EBITDA.",
+        "alternativ": [
+          "Sant — multipeln är oberoende av kapitalstruktur",
+          "Falskt — EBITDA-marginalen avgör ensam",
+          "Sant, men bara vid nettokassa",
+          "Falskt — EV växer med skulderna, så köpare av hela bolaget betalar mer; det är EV-måttets poäng"
+        ],
+        "ratt": 3,
+        "tips": "Se facit på övningsfråga 3."
+      }
+    ]
+  }
+}

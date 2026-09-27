@@ -941,6 +941,56 @@ export function byggNolldowntimeKommando({ npmCi }) {
   return ci + "NEXT_DIST_DIR=.next-ny npm run build >> /tmp/synk-build.log 2>&1";
 }
 
+// ---------------------------------------------------------------------------
+// V183 (r273 — den tysta OOM-dödens kur): instanslåset blev PID-baserat.
+// Bevis 2026-09-27 05:57→06:17Z: OOM-svepet mördade prod-synk-processen
+// (loggspringa utan ENDA felrad — SIGKILL loggar aldrig; byggfönster på 26
+// min är bevisat normalt sedan v182, så det blinda 12-min-taket kan inte
+// skilja "lever och bygger" från "död sedan minuter") + pm2-appen dog i
+// samma svep (pulsvaktens 60-s-dik). Det kvarlämnade instanslåset blockerade
+// 06:07-pollen tyst = 10 min förlorad deploy-återhämtning. Kur: låset bär
+// en pid-fil, och varje kollision dömer ur /proc — död pid (eller pid
+// återanvänd av icke-synk) rivs DIRECT; levande prod-synk lämnas över hur
+// länge bygget än tar. Äldre lås utan pid-fil behåller 12-min-regeln som
+// reserv (fail-safe som före V183). Testas av verktyg/testa-prod-synk-instanslas.mjs.
+// ---------------------------------------------------------------------------
+export function tolkaLasPid(text) {
+  const m = String(text ?? "").trim().match(/^\d+$/);
+  return m ? Number(m[0]) : null;
+}
+
+/** Samla låsets observerbara status — pidText/alderMs null = omätbart. */
+export function lasInstansStatus(lasSokvag) {
+  const ute = { pidText: null, alderMs: null, procFinns: false, procArSynk: false };
+  try { ute.pidText = fs.readFileSync(path.join(lasSokvag, "pid"), "utf8"); } catch { /* äldre lås utan pid-fil */ }
+  try { ute.alderMs = Date.now() - fs.statSync(lasSokvag).mtimeMs; } catch { /* */ }
+  const pid = tolkaLasPid(ute.pidText);
+  if (pid !== null) {
+    ute.procFinns = fs.existsSync(`/proc/${pid}`);
+    if (ute.procFinns) {
+      // Full modulväg — "prod-synk" ensamt matchar också testsviternas
+      // filnamn (testa-prod-synk-*.mjs, bevisat av svitens test 14)
+      try { ute.procArSynk = fs.readFileSync(`/proc/${pid}/cmdline`, "utf8").includes("verktyg/prod-synk.mjs"); } catch { /* läsofel = inte bevisat synk */ }
+    }
+  }
+  return ute;
+}
+
+export function bedomInstansLas({ pidText, alderMs, procFinns, procArSynk }) {
+  const pid = tolkaLasPid(pidText);
+  if (pid !== null) {
+    if (procFinns && procArSynk) return { vanta: true, anledning: `annan synkinstans lever (pid ${pid}, /proc bevisar prod-synk) — lämnar över` };
+    return {
+      vanta: false,
+      anledning: `låset rivet: pid ${pid} ${procFinns ? "återanvänd av annan process (cmdline ≠ prod-synk)" : "är död (inget /proc)"} (V183 — OOM-svepets tysta död ska inte svälta deployer)`,
+    };
+  }
+  // äldre lås utan pid-fil: oförändrad 12-min-regel (fail-safe som före V183)
+  if (alderMs === null || alderMs === undefined) return { vanta: true, anledning: "annan synkinstans troligen lever (låsålder omätbar) — lämnar över" };
+  if (alderMs <= 12 * 60_000) return { vanta: true, anledning: "annan synkinstans lever — lämnar över" };
+  return { vanta: false, anledning: `låset rivet: ${Math.floor(alderMs / 60_000)} min gammalt utan pid-fil (12-min-tak) — övergivet` };
+}
+
 async function main() {
   // VÅG 153 — INSTANSLÅS: manuella triggar (arbetsstationen/fabriken) kan
   // racea pumpens :x7-rop — två npm ci i följd raderar node_modules mitt i
@@ -949,18 +999,23 @@ async function main() {
   // processlås (mkdir, atomärt) ser till att ENDAST EN synkinstans lever;
   // kvarlämnade lås (>12 min) städas som övergivna.
   const lasSokvag = path.join(VAKT, ".synk-instans.lock");
+  const skrivPidFil = () => {
+    try { fs.writeFileSync(path.join(lasSokvag, "pid"), `${process.pid}\n`); } catch { /* reserv: 12-min-regeln gäller */ }
+  };
   try {
     fs.mkdirSync(lasSokvag, { recursive: false });
+    skrivPidFil();
   } catch {
     try {
-      const statistik = fs.statSync(lasSokvag);
-      if (Date.now() - statistik.mtimeMs > 12 * 60_000) {
-        fs.rmSync(lasSokvag, { recursive: true, force: true });
-        fs.mkdirSync(lasSokvag, { recursive: false });
-      } else {
-        console.log("annan synkinstans lever — lämnar över");
+      const dom = bedomInstansLas(lasInstansStatus(lasSokvag));
+      if (dom.vanta) {
+        console.log(dom.anledning);
         return;
       }
+      fs.rmSync(lasSokvag, { recursive: true, force: true });
+      fs.mkdirSync(lasSokvag, { recursive: false });
+      skrivPidFil();
+      logga(`INSTANSLÅS: ${dom.anledning} — nästa poll tar över deployen`);
     } catch {
       return;
     }

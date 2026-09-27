@@ -420,3 +420,33 @@ torrkörning 46/46 väntat (se worklog ROND 275 för bevisen).
 | v185 | BYGG-RAM-TRENDVERKTYG (spår 8): trend per fönster ur bygg-ram-profil.jsonl, larm vid degradering/trend under 250 MB — kräver ≥3 fönster (r275:s tre deploys ger fönster 2-4 efter debutfönstret); pm2 max_memory_restart-bedömning ingår | BOKAD — nästa aktiva |
 | v180 | HYGIEN-BIBLIOTEKET: 806 trackade _r*-wrappers i verktyg/ — audit + härdning/radering i omgångar (Mimosa-paritet = röda-trigg i kvalitetsrapporten) | STÅR (väljs när spår 8 vilat) |
 | v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd) |
+
+## ROND 276 (2026-09-27) — v185 STÄNGD (BYGG-RAM-TREND), v187 BOKAD (BYGGER FRÅN-PROVENANS)
+
+v185 LEVERERAD (76bc0613): verktyg/bygg-ram-trend.mjs — den läsande änden av
+v184-sonden. Klass GRÖN/GUL/RÖD per fönster (≥300 / 150–299 / <150 MB;
+RÖT = OOM-riskzonen, r273-roten), TREND SÄNKS/STIGER/JÄMN mellan fönster,
+VÄRSTA FÖNSTER, avbrutna fönster (start utan slut — rekursionsolyckans
+klass) synliga ej dolda, PÅGÅENDE live-läge, --json för vakt-cron, exit 2
+vid saknad/tom profil. 29-testsvit + live-rök mot prod-profilen (2 fönster:
+min 235→193 MB, båda GUL, TREND SÄNKS Δ-42 MB). Larmgrunder (RÖT-klass,
+degradering över ≥3 fönster) och pm2 max_memory_restart-bedömning mossnar
+med varje deploy-fönster.
+
+SAMMA ROND ROTAD: v186:s BUNTSLAGSREST — speglarna svarade fortfarande 404
+trots grön deploy (bb1fe548): speglar-slugar.json IMPORTERAS av
+src/middleware.ts (bunten i edge-modulen vid BYGGTID) och kuren 03ea5918
+committades 15:00:40Z mitt i det pågående 14:57-byggfönstret = sterilt
+buntslag (trädet fräscht, driftvakten grön 495+94, men buntslen serverade
+gamla 55-listan). Rundans push triggar ombygget — v186:s äkta debut
+(spegel-200 ×4 + varmartorrkörning) kvitteras i r276-slutverifieraren.
+LÄXA: en push under pågående byggfönster deployas "grönt" med steril bunt —
+DEPLOYAD-radens hash är SLUTTRÄDET, inte byggträdet.
+
+| Våg | Innehåll | Status |
+|---|---|---|
+| v187 | BYGGER FRÅN-PROVENANS (spår 8): prod-synken loggar exakt byggträd-hash vid byggstart + vägrar/omstartar om byggträd ≠ senaste push (buntslagsracet bevisat av v186-resten r276) | BOKAD — nästa aktiva |
+| v180 | HYGIEN-BIBLIOTEKET: 806 trackade _r*-wrappers i verktyg/ — audit + härdning/radering i omgångar (Mimosa-paritet = röda-trigg i kvalitetsrapporten) | STÅR (väljs när spår 8 vilat) |
+| v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd) |
+| v185 | BYGG-RAM-TRENDVERKTYGET | ✓ LEVERERAD r276 (76bc0613) |
+| v186 | SPEGLAR-SLUGAR-KUREN | ✓ LEVERERAD r275 (03ea5918) — äkta debut via r276:s ombygge |

@@ -366,5 +366,17 @@ byggstenar för saknade kurser.
 | V166 | FAS 3-DJUPINTEGRERING: 24 djupkapitel (design FASTSTÄLLD rond 174: DESIGN-v166-djupintegrering.md) | SLÄPPT — manifest i prod-ko, fabriken plockar vid nästa rop |
 | V167 | FAS 2-DJUPINTEGRERING: v159:s 20 indikatorunderlag (indikatorer-01-10/11-20) binds till variabelkurserna V01-V20 (samma designmönster som v166) | BOKAD — efter v166 |
 
+## ROND 269 (2026-09-26) — v177+v178+v179 LEVERERADE: VAKTKEDJAN HELA VÄGEN NER
+
+Kedjan enligt worklog ROND 269: v177 vaktens mätblindhet (default-bas
+https→localhost, 429 larmar som mätfel) · v178 Ny-chipet på /kurser synligt
+(@theme-glömmen bg-djup-marin, WCAG 1,61:1 kurerad) · v179 deploy-grindens
+rot (4 Mimosa-anmärkta gamla wrappers rensade + @theme --color-guld-djup för
+28 PRO-texter). Byggväg: prod-synkens poll (§8, r267-mönstret) — subagents
+skal låst denna rond. NÄSTA AKTIVA: v180 HYGIEN-BIBLIOTEKET (806 trackade
+_r*-wrappers i verktyg/ — audit + härdning/radering i omgångar, Mimosa-
+paritet = kvalitetsrapportens röda-trigg) · v172 rappdagar 10-20→11-04 ·
+kontrollpunkt 01:17-gränssnittscron (cron.log tyst sedan 13:17).
+
 R2 orörd: kursinnehåll = utbildning (2007:528); inga pris-/publicerings-
 ändringar. Fas 3-kurserna förbler låsta enligt kurs-access (under byggnation).

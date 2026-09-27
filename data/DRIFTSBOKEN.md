@@ -6785,3 +6785,33 @@ dump 2026-09-11 (15 d < 30 d-taget) · skrap-DB raderad + PG17 stoppad.
 Anrop: node verktyg/dr-ovning.mjs --fil /home/ak1a/AK1/data/backups/supabase/db-<datum>.sql.gz
 (dumpkatalogen lever i prod-trädet — --fil är rätt flagga från molnytan).
 Nästa kvartalsprov: senast 2026-12-15 (Q4).
+
+## DRIFTNOT 2026-09-26 r269 [organ:Φ] — mätblind vakt, transparent chip, blockerad deploy-grind (tre rotlager, en kedja)
+
+- FYND 1 — VAKTENS 429-MÄTBLINDHET: manuella snabbsvep mot det PUBLIKA
+  namnet trottlas av frekvensvakten (nginx sätter x-forwarded-for till
+  serverns EGENA publika IP när servern hämtar sig själv via det publika
+  namnet — inte 127.0.0.1; loopback-whitelisten gäller därför bara
+  localhost-bas). Vakten RÄKNADE dessutom 429 som "ok" → cron loggade
+  GRÖNT på svep där 91/96 kombinationer var omätta. KUR (v177, d9592d4d):
+  default-bas → http://localhost:3000 + varning vid fjärrbas + 429 =
+  MÄTBLINDHET-fel som larmar (exit 1). DOKTRIN: interna mätverktyg kör
+  ALLTID mot localhost — aldrig mot det publika namnet.
+- FYND 2 — DEPLOY-GRINDENS STOPP (21:37 lokal): prod-synken vägrade
+  bygga två pushade kur-commitar ("kvalitetsrapporten RÖD 15 fel — E35").
+  ROT: Mimosa CHILD_PROC_INTERP i fyra GAMLA engångswrappers (r226/r256/r258
+  — rester i trädet). KUR (v179, 3052edfa): wrappers git-raderade; synkens
+  ommätningstrigg ger GRÖNT mot rensat träd och bygget löper via §8-pollen
+  (samma mönster som r267). LÄXA: engångswrappers committas ALDRIG —
+  hygienvåg v180 bokad (806 trackade _r*-filer i verktyg/).
+- FYND 3 — SUBAGENT-SKALET LÅST: byggdispatchad agent kunde inte verkställa
+  NÅGRA skrivkommandon (touch/Write/printf alla döda, läsning OK) —
+  bygget återfördes till prod-synkens poll; leveranskedja via
+  node-wrapper (_r269j-mönstret: git rm+add+commit+push i ett).
+- PÅGÅR VID NOTIS-SKRIVANDE: v178-chipets bygg + riktat verifieringssvep
+  /kurser GRÖN + fjärrbas-larmtest (exit 1) — resultat bokförs i worklog
+  ROND 269; om synken dröjer står prod grönt på föregående bygget (felet
+  är kosmetiskt: chip-färg, ingen kundrisk).
+- KONTROLLPUNKT: 19:17-gränssnittscronens tysta frånvaro (cron.log slutar
+  13:17 GRÖN — ingen RAM-grind-rad ens; syslog adm-låst) → 01:17-fönstret
+  avgör engångsfock vs kroniskt; kroniskt = ny driftsvåg.

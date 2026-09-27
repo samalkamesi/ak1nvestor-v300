@@ -21,6 +21,11 @@ function supabaseProjektRef(): string {
 
 const nextConfig: NextConfig = {
   /* Vercel handles output automatically — no standalone needed */
+  // V182 (r272, F6-vaccinet): prod-synken bygger till .next-ny via denna
+  // env ochbyteratomärt (.next-forra-mönstret) — prod .next lämnas orörd
+  // av HELE byggfönstret (deploy-mörkret: statiska 500 + lazy-require-
+  // kraschloopar dör vid roten). Utan env = default .next, exakt som före.
+  distDir: process.env.NEXT_DIST_DIR || ".next",
   // O108 (vakt-s8, 2026-09-20): typkontrollen i BYGGET är PÅ — baslinjen
   // (tsc 0 sedan våg 133) är next builds eget villkor, inte bara pre-commit-
   // och patch-köns (o106). Tidigare ignoreBuildErrors=true

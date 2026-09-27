@@ -865,6 +865,11 @@ export function skapaPm2Vakt(pm2Kora = standardPm2, logg = logga) {
   let stoppad = false;
   return {
     arStoppad: () => stoppad,
+    // V182: nollställ flaggan utan pm2-anrop — efter ett atomärt byte som
+    // självt restartat pm2 (annars gör finally:n en andra, onödig omstart)
+    markeraLevande() {
+      stoppad = false;
+    },
     stoppa() {
       if (stoppad) return true;
       try {
@@ -906,6 +911,35 @@ function standardPm2(args) {
 }
 
 const pm2Vakt = skapaPm2Vakt();
+
+// ---------------------------------------------------------------------------
+// V182 (r272 — F6-ROTENS VACCIN): BYGG UTAN KUNDAVBROTT. Roten (r271:s
+// F6-utredning): varje prod-bygge mörkar sajten medan det pågår — next build
+// tömmer .next progressivt medan pm2 serverar filerna från disk (statiska
+// chunks 500, pulsvakten 2026-09-27 05:40Z) och npm ci raderar node_modules
+// under den gående appen (lazy-require dör → next-not-found-kraschloop,
+// våg 153: ~7 min, 1 309 omstarter). Kuren i tre delar:
+//   · bygget skriver .next-ny (NEXT_DIST_DIR, next.config.ts) — prod .next
+//     orörd av hela fönstret; fallna/OOM-dödade byggen lämnar prod HELT
+//     oberörd (läkebackupen behövs endast i npm ci-läget)
+//   · npm ci ENDAST när kedjan ändrat package*.json ELLER node_modules är
+//     trasig — i det (sällsynta) läget stoppas pm2 (o48-mönstret) och
+//     fönstret är dokumenterat mörkt ~byggtid; dokumenterad gräns för v183
+//   · atomärt byte vid GRÖN artefakt: mv .next .next-forra && mv .next-ny
+//     .next && pm2 restart (ms-fönster, deploylåset hålls); rött HTTPS ⇒
+//     tillbakarullning på sekunder — HEAD orörd, nytt försök nästa poll
+// Kontraktstest: verktyg/testa-prod-synk-nolldowntime.mjs
+// ---------------------------------------------------------------------------
+export function beslutaNpmCi({ diffFiler, nodeModulesIntakt = true }) {
+  if (!nodeModulesIntakt) return true;
+  if (!Array.isArray(diffFiler)) return true; // obestämbar ⇒ konservativt npm ci
+  return diffFiler.some((f) => f === "package.json" || f === "package-lock.json");
+}
+
+export function byggNolldowntimeKommando({ npmCi }) {
+  const ci = npmCi ? "npm ci --no-audit --no-fund >> /tmp/synk-npmci.log 2>&1 && " : "";
+  return ci + "NEXT_DIST_DIR=.next-ny npm run build >> /tmp/synk-build.log 2>&1";
+}
 
 async function main() {
   // VÅG 153 — INSTANSLÅS: manuella triggar (arbetsstationen/fabriken) kan
@@ -1134,7 +1168,20 @@ async function korSynk() {
   // 5-6) bygg under flock — VÅG 123d: UTAN node-timeout (execSync-tak dödade
   // byggprocessen med SIGTERM; deploylåset serialiserar ändå, daemonen
   // övervakar). Logg till eigen fil för efteranalys.
-  const bygg = "npm ci --no-audit --no-fund >> /tmp/synk-npmci.log 2>&1 && npm run build >> /tmp/synk-build.log 2>&1";
+  // V182 (r272): NOLLDOWNTIME — npm ci endast vid lock-ändring/trasigt
+  // node_modules (patchInstallerad ⇒ installationen redan gjord), bygget
+  // skriver .next-ny så prod .next är orörd hela fönstret.
+  let diffFiler = null;
+  try {
+    diffFiler = git(["diff", "--name-only", `${goodHead}..HEAD`]).split("\n").map((s) => s.trim()).filter(Boolean);
+  } catch { /* obestämbar ⇒ beslutaNpmCi kör konservativt */ }
+  const nodeModulesIntakt = fs.existsSync(path.join(ROT, "node_modules", ".package-lock.json"));
+  const npmCiBehov = patchInstallerad ? false : beslutaNpmCi({ diffFiler, nodeModulesIntakt });
+  const bygg = byggNolldowntimeKommando({ npmCi: npmCiBehov });
+  logga(
+    `NOLLDOWNTIME v182: npm ci ${npmCiBehov ? "KÖRS (lock ändrad/trasigt node_modules — pm2 stoppas enligt o48, fönstret mörkt ~byggtid)" : "HOPPAS ÖVER (node_modules aktuell)"} · bygget skriver .next-ny · prod .next orörd hela fönstret`,
+  );
+  if (npmCiBehov) pm2Vakt.stoppa();
   const { spawn } = await import("node:child_process");
   const korBygg = () =>
     new Promise((lyckas) => {
@@ -1165,12 +1212,16 @@ async function korSynk() {
     }
     return lak;
   };
-  {
+  if (npmCiBehov) {
     const backup = skapaNextLaekebackup({ nextKatalog, laekeKatalog });
     if (backup === "skapad") logga("NEXT-LÄKEBACKUP skapad (.next → .next-laeke, ISR-cache exkluderad) — senast gröna läget säkrat före bygget");
     else if (backup.startsWith("fel:") || backup === "icke-gron") logga(`VARNING: NEXT-LÄKEBACKUP ej tagen (${backup}) — felutfall lämnas som före o97-kuren`);
     // finns-sedan / saknas-next är tysta normalfall (fönsterföljd / första deployen)
+  } else {
+    logga("NOLLDOWNTIME v182: läkebackup ej behövs — bygget skriver .next-ny, prod .next lämnas orörd");
   }
+  // V182: rent .next-ny inför varje försök — fallna försöks skrap städas här
+  try { fs.rmSync(path.join(ROT, ".next-ny"), { recursive: true, force: true }); } catch { /* */ }
   const korResultat = await korBygg();
   const feltyp = korResultat ? null : bedomByggMisslyckande(slasLogg("/tmp/synk-npmci.log"), slasLogg("/tmp/synk-build.log"));
   if (korResultat) {
@@ -1329,20 +1380,40 @@ async function korSynk() {
     // INGEN DEPLOYAD-markör — senaste-deployad lämnas orörd så nästa
     // poll ser NY KOD igen, RAM-vakten gäller och ombygget sker när
     // minnet tillåter (dagens manuella läkningsväg, nu mekanisk).
-    const artefakt = await verifieraArtefakt();
+    // V182: mätningen görs mot .next-ny — prod .next är orörd av bygget.
+    const artefakt = await verifieraArtefakt({ nextKatalog: path.join(ROT, ".next-ny") });
     if (artefakt.status !== "gron") {
       logga(
-        `ARTEFAKT ${artefakt.status.toUpperCase()} efter bygg — ${artefakt.meddelande} · pm2 EJ omstartad, DEPLOYAD-markör EJ skriven; ombygge nästa poll (RAM-vakten gäller)`,
+        `ARTEFAKT ${artefakt.status.toUpperCase()} efter bygg — ${artefakt.meddelande} · pm2 EJ omstartad, DEPLOYAD-markör EJ skriven (v182: prod .next orörd — skrapen i .next-ny städas vid nästa försök); ombygge nästa poll (RAM-vakten gäller)`,
       );
       skrivAudit("prod-synk", "deploy_stoppad_artefakt", `artefakt-${artefakt.status}`, artefakt.meddelande);
-      // O97: bygget LYCKADES exit 0 men artefakten är internt inkonsistent —
-      // pm2 (ej omstartad) läser gamla chunk-referenser som nya .next saknar
-      // (E34-klassen: ostylat). Återställ gröna läget; ombygget nästa poll
-      // bygger ut det nya ändå (DEPLOYAD-markören orörd).
       lakaNext("artefakt-stopp");
       return;
     }
-    try { execFileSync("pm2", ["restart", "ak1a"], { timeout: 60_000, stdio: "ignore" }); } catch { /* pm2 pw */ }
+    // V182: ATOMÄRT BYTE (.next-ny → .next) + restart under deploylåset —
+    // ms-fönstret mellan mv:arna är hela kundavbrottet. ISR-cachen (~1 GB)
+    // flyttas in i nya läget FÖRE bytet: nya appen startar varm, gamla
+    // appen tappar den endast sekunder före sin restart (annars regenereras
+    // vid träff — cache är optimering, aldrig grind).
+    const forraKatalog = path.join(ROT, ".next-forra");
+    try {
+      try {
+        fs.rmSync(path.join(ROT, ".next-ny", "cache"), { recursive: true, force: true });
+        fs.renameSync(path.join(ROT, ".next", "cache"), path.join(ROT, ".next-ny", "cache"));
+      } catch { /* cache är optimering — bytet kör utan */ }
+      const swap = "mv .next .next-forra && mv .next-ny .next && pm2 restart ak1a";
+      const swapOk = await new Promise((lyckas) => {
+        const barn = spawn("bash", ["-c", `exec flock -n /tmp/ak1a-deploy.lock bash -c ${JSON.stringify(swap)}`], { cwd: ROT, stdio: "ignore", detached: false });
+        barn.on("exit", (kod) => lyckas(kod === 0));
+        barn.on("error", () => lyckas(false));
+      });
+      if (!swapOk) throw new Error("swap-barnet misslyckades (lås upptaget eller mv/pm2-fel)");
+      pm2Vakt.markeraLevande(); // bytet restartade pm2 — finally:n ska inte göra om det
+    } catch (e) {
+      logga(`VARNING: NOLLDOWNTIME-byte föll (${String(e && e.message ? e.message : e).slice(0, 120)}) — .next-ny ligger klar, pm2 EJ omstartad; nytt försök nästa poll`);
+      skrivAudit("prod-synk", "deploy_stoppad_byte", "nolldowntime", "atomärt byte .next-ny→.next misslyckades — prod orörd, ombygge nästa poll");
+      return;
+    }
     await new Promise((s) => setTimeout(s, 6000));
     if (await httpsOk()) {
       // PATCH-KÖNS BOKFÖRING (o46): committa den patchade locken FÖRE
@@ -1381,6 +1452,8 @@ async function korSynk() {
       // läkebackupen är inaktuell och städas (nästa byggstart tar färsk
       // ur det nya .next; LAEKE speglar alltid senaste LYCKADE deploy).
       try { fs.rmSync(laekeKatalog, { recursive: true, force: true }); } catch { /* får ligga — städas nästa gröna deploy */ }
+      // V182: förra läget (bytets förlorare) städas — diskhygien.
+      try { fs.rmSync(path.join(ROT, ".next-forra"), { recursive: true, force: true }); } catch { /* får ligga — städas nästa gröna deploy */ }
 
       // VÅG 152 — MÅLET FÖDS OM EFTER DEPLOY: pm2-restarten raderar mål-state
       // ur processminnet (bevisat mönster: målet dött efter VARJE deploy tills
@@ -1440,7 +1513,28 @@ async function korSynk() {
         logga("AGENTARBETSYTA-SYNK MISSLYCKADES (" + forklaraGitFel(e) + ") — åtgärda nästa rond");
       }
     } else {
-      logga("VARNING: deployad men HTTPS ej verifierad — kontrollera manuellt");
+      // V182: rött HTTPS efter bytet ⇒ TILLBAKARULLNING PÅ SEKUNDER —
+      // gamla (bevisat gröna) läget åter på plats + restart; HEAD orörd
+      // och DEPLOYAD-markören oskriven ⇒ nytt försök nästa poll.
+      const rollback = "mv .next .next-ny-kass && mv .next-forra .next && pm2 restart ak1a";
+      const rollbackOk = await new Promise((lyckas) => {
+        const barn = spawn("bash", ["-c", `exec flock -n /tmp/ak1a-deploy.lock bash -c ${JSON.stringify(rollback)}`], { cwd: ROT, stdio: "ignore", detached: false });
+        barn.on("exit", (kod) => lyckas(kod === 0));
+        barn.on("error", () => lyckas(false));
+      });
+      try { fs.rmSync(path.join(ROT, ".next-ny-kass"), { recursive: true, force: true }); } catch { /* städas nästa poll */ }
+      pm2Vakt.markeraLevande(); // rollback-barnet restartade pm2 (eller läget kräver manuell granskning — audit bär det)
+      logga(
+        `HTTPS RÖD efter byte — TILLBAKARULLNING ${rollbackOk ? "KLAR: gamla gröna .next åter på plats + pm2 omstartad" : "FÖLL — manuell granskning krävs"} — HEAD orörd, nytt försök nästa poll`,
+      );
+      skrivAudit(
+        "prod-synk",
+        rollbackOk ? "deploy_rullad_tillbaka" : "deploy_aterstallning_fel",
+        "nolldowntime",
+        rollbackOk
+          ? "rött HTTPS efter atomärt byte: gamla gröna läget återställt på sekunder, ombygge nästa poll"
+          : "tillbakarullning efter rött HTTPS föll — manuell granskning krävs",
+      );
     }
   }
 }

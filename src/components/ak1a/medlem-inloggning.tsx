@@ -39,7 +39,7 @@ import { sparaMedlem } from "@/lib/member-local";
  */
 
 /** Läges-växeln: befintligt konto vs nytt konto vs glömt lösenord. */
-type Lage = "loggain" | "skapa" | "glomt";
+type Lage = "loggain" | "skapa" | "glomt" | "nyttlosenord";
 
 /** Tolerant JSON-läsning av /api/medlem-svar (form: {ok?, epost?, fel?, kod?, retrySek?, ...}). */
 async function lasSvar(res: Response): Promise<Record<string, unknown> | null> {
@@ -94,6 +94,33 @@ export function MedlemInloggning() {
   const [inloggadEpost, setInloggadEpost] = useState<string | null>(null);
   /** LIVE-RÄKNAREN: sekunder kvar tills nästa försök tillåts (429-rate). */
   const [retrySek, setRetrySek] = useState(0);
+  /** ÅTERSTÄLLNING (2026-09-27): mejlets länk landar med #access_token=…
+   *  &refresh_token=…&type=recovery — token hålls ENDAST i state (aldrig
+   *  storage), hashen rensas ur adressfältet direkt vid fångsten. */
+  const [aterstall, setAterstall] = useState<{ access: string; refresh?: string } | null>(null);
+
+  // ÅTERSTÄLLNINGS-LANDNING: fånga recovery-hashen EN gång vid mount —
+  // därefter visas "välj nytt lösenord" (lage nyttlosenord). Kommer hashen
+  // från något annat (vanlig inloggningssession) rörs den ej.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const hash = window.location.hash;
+    if (!hash.includes("type=recovery") || !hash.includes("access_token=")) return;
+    const lasUrHash = (namn: string): string | null => {
+      const m = hash.match(new RegExp("[#&]" + namn + "=([^&]+)"));
+      return m ? decodeURIComponent(m[1]) : null;
+    };
+    const access = lasUrHash("access_token");
+    const refresh = lasUrHash("refresh_token");
+    if (access) {
+      setAterstall({ access, refresh: refresh ?? undefined });
+      setLage("nyttlosenord");
+      setStatus("");
+      setArFel(false);
+    }
+    // Token lämnar ALDRIG adressfältet till historiken.
+    window.history.replaceState(null, "", window.location.pathname + window.location.search);
+  }, []);
 
   // Redan inloggad från ett tidigare besök (httpOnly-kakorna)? EN kontroll
   // vid mount — ingen polling. Tyst vid fel: SSR-vyn (formuläret) står kvar.
@@ -135,18 +162,26 @@ export function MedlemInloggning() {
     );
   };
 
-  /** Skicka formuläret: signin/signup/glomt mot /api/medlem. */
+  /** Skicka formuläret: signin/signup/glomt/nyttLosenord mot /api/medlem. */
   const skicka = async () => {
-    if (!epost.trim() || busy || retrySek > 0) return;
-    if (lage !== "glomt" && !losenord) return;
+    if (busy || retrySek > 0) return;
+    if (lage === "nyttlosenord") {
+      if (!aterstall || !losenord) return;
+    } else {
+      if (!epost.trim()) return;
+      if (lage !== "glomt" && !losenord) return;
+    }
     setBusy(true);
     setStatus("");
-    const action = lage === "skapa" ? "signup" : lage === "glomt" ? "glomt" : "signin";
+    const action =
+      lage === "skapa" ? "signup" : lage === "glomt" ? "glomt" : lage === "nyttlosenord" ? "nyttLosenord" : "signin";
     try {
       const { res, data } = await medlemApi(
         action === "glomt"
           ? { action, epost: epost.trim() }
-          : { action, epost: epost.trim(), losenord },
+          : action === "nyttLosenord"
+            ? { action, access: aterstall?.access, refresh: aterstall?.refresh, losenord }
+            : { action, epost: epost.trim(), losenord },
       );
 
       if (!res.ok || !data || data.ok !== true) {
@@ -164,6 +199,18 @@ export function MedlemInloggning() {
         // FAS-SYNK (gapet v171): nivån (member_type) in i ak1a-member NU —
         // annars förblir fasgrindarna stängda trots lyckad inloggning.
         void synkaMedlemTillFaser(inloggad);
+        return;
+      }
+
+      if (action === "nyttLosenord") {
+        // Lösenordet sparat server-side + kakor satta (om refresh fanns) —
+        // token och lösenord lämnar state:n, eleven landar inloggad.
+        const inloggad = typeof data.epost === "string" && data.epost ? data.epost : epost.trim().toLowerCase();
+        setAterstall(null);
+        setLosenord("");
+        setLage("loggain");
+        setInloggadEpost(inloggad || "inloggad");
+        if (inloggad) void synkaMedlemTillFaser(inloggad);
         return;
       }
 
@@ -234,60 +281,78 @@ export function MedlemInloggning() {
     );
   }
 
-  // ── Formulär: tre lägen på samma kort ───────────────────────────────────────
+  // ── Formulär: fyra lägen på samma kort ───────────────────────────────────────
   const skaparKonto = lage === "skapa";
   const glomtLage = lage === "glomt";
+  const nyttLosenordLage = lage === "nyttlosenord";
   return (
     <div className="mx-auto max-w-md">
       <div className="rounded-2xl border-2 border-gold bg-card p-8">
         <h2 className="font-serif text-2xl font-bold">
-          {skaparKonto ? "Skapa konto" : glomtLage ? "Glömt lösenord" : "Logga in"}
+          {nyttLosenordLage
+            ? "Välj nytt lösenord"
+            : skaparKonto
+              ? "Skapa konto"
+              : glomtLage
+                ? "Glömt lösenord"
+                : "Logga in"}
         </h2>
         <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-          {skaparKonto
+          {nyttLosenordLage
+            ? "Du kom via återställningslänken — välj ett nytt lösenord (minst 10 tecken) så loggas du in direkt."
+            : skaparKonto
             ? "E-post och lösenord — det är allt som krävs. Alla kurser är gratis, och du kan logga in på valfri enhet."
             : glomtLage
               ? "Skriv din e-post — om kontot finns skickar vi en återställningslänk."
               : "E-post och lösenord. Saknar du konto kan du skapa ett gratis på en minut."}
         </p>
         <div className="mt-5 space-y-3">
-          <Input
-            type="email"
-            value={epost}
-            onChange={(e) => setEpost(e.target.value)}
-            placeholder="din@epost.se"
-            autoComplete="email"
-            onKeyDown={(e) => e.key === "Enter" && skicka()}
-          />
-          {!glomtLage && (
+          {!nyttLosenordLage && (
+            <Input
+              type="email"
+              value={epost}
+              onChange={(e) => setEpost(e.target.value)}
+              placeholder="din@epost.se"
+              autoComplete="email"
+              onKeyDown={(e) => e.key === "Enter" && skicka()}
+            />
+          )}
+          {(!glomtLage || nyttLosenordLage) && (
             <Input
               type="password"
               value={losenord}
               onChange={(e) => setLosenord(e.target.value)}
-              placeholder="Ditt lösenord"
+              placeholder={nyttLosenordLage ? "Nytt lösenord" : "Ditt lösenord"}
               /* W3C-standardtokens för autoComplete (våg 106: inga hemligheter —
                  scamskydd för lösenordshanterare; Mimosa-falskträff kringgås). */
-              autoComplete={(skaparKonto ? "new" : "current") + "-" + "password"}
+              autoComplete={(skaparKonto || nyttLosenordLage ? "new" : "current") + "-" + "password"}
               onKeyDown={(e) => e.key === "Enter" && skicka()}
             />
           )}
-          {skaparKonto && (
+          {(skaparKonto || nyttLosenordLage) && (
             <p className="text-xs text-muted-foreground">Minst 10 tecken.</p>
           )}
           <Button
             className="w-full bg-gold text-background hover:bg-gold/90"
             onClick={skicka}
-            disabled={busy || !epost.trim() || retrySek > 0 || (!glomtLage && !losenord)}
+            disabled={
+              busy ||
+              retrySek > 0 ||
+              !losenord ||
+              (!nyttLosenordLage && !epost.trim())
+            }
           >
             {busy
               ? "Ett ögonblick…"
               : retrySek > 0
                 ? `Försök igen om ${retrySek} s`
-                : glomtLage
-                  ? "Skicka återställningslänk"
-                  : skaparKonto
-                    ? "Skapa konto"
-                    : "Logga in"}
+                : nyttLosenordLage
+                  ? "Spara nytt lösenord"
+                  : glomtLage
+                    ? "Skicka återställningslänk"
+                    : skaparKonto
+                      ? "Skapa konto"
+                      : "Logga in"}
           </Button>
         </div>
         {status && (
@@ -298,32 +363,34 @@ export function MedlemInloggning() {
             {status}
           </p>
         )}
-        <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
-          <button
-            type="button"
-            onClick={() => {
-              setLage(skaparKonto || glomtLage ? "loggain" : "skapa");
-              setStatus("");
-              setRetrySek(0);
-            }}
-            className="text-sm underline hover:text-gold"
-          >
-            {skaparKonto || glomtLage ? "Redan medlem? Logga in i stället" : "Ny här? Skapa ett gratis konto"}
-          </button>
-          {!glomtLage && (
+        {!nyttLosenordLage && (
+          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
             <button
               type="button"
               onClick={() => {
-                setLage("glomt");
+                setLage(skaparKonto || glomtLage ? "loggain" : "skapa");
                 setStatus("");
                 setRetrySek(0);
               }}
-              className="text-xs text-muted-foreground underline hover:text-gold"
+              className="text-sm underline hover:text-gold"
             >
-              Glömt lösenord?
+              {skaparKonto || glomtLage ? "Redan medlem? Logga in i stället" : "Ny här? Skapa ett gratis konto"}
             </button>
-          )}
-        </div>
+            {!glomtLage && (
+              <button
+                type="button"
+                onClick={() => {
+                  setLage("glomt");
+                  setStatus("");
+                  setRetrySek(0);
+                }}
+                className="text-xs text-muted-foreground underline hover:text-gold"
+              >
+                Glömt lösenord?
+              </button>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

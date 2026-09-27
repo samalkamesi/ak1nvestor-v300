@@ -942,6 +942,53 @@ export function byggNolldowntimeKommando({ npmCi }) {
 }
 
 // ---------------------------------------------------------------------------
+// V184 (r274 — F6-RAM-doppens bevisning): BYGG-RAM-PROFILERN. Roten (r273+r274):
+// VÄNTAR-RAM-grinden mäter FÖRE byggstart (2200 MB) men ALDRIG under fönstret —
+// byggtoppen ~2,2 GB ovanpå pm2+zcode-barn trycker MemAvailable under 300 MB
+// mitt i fönstret (HÖG-fynd 2026-09-27T12:00:13Z: 176 MB, deploy grön men
+// avståndet till OOM-svepets tysta mord är tunt — r273 bevisade mekanismen)
+// utan att någon mekanism attribuerar lasten; F6-domaren (f6-ram-stang.mjs)
+// saknar källa för fönstret och lämnar HÖG-rader öppna (4 st 09-24→09-27).
+// Kur: sond var 60 s under VARJE byggförsök (även ombyggen) skriver tidsserie
+// till data/vakten/bygg-ram-profil.jsonl (runtime, gitignorerad) med start/
+// slut-inramning — domarens källa 5 (klass P) stänger framtida fynd mekaniskt
+// och doppen blir trenderbara över tid. Sonden får ALDRIG påverka
+// byggutfallet: alla fel sväljs, timern unref:as, stopp() körs i finally.
+// Kontraktstest: verktyg/testa-prod-synk-byggram.mjs
+// ---------------------------------------------------------------------------
+const BYGG_RAM_PROFIL_FIL = path.join(VAKT, "bygg-ram-profil.jsonl");
+const BYGG_RAM_VARNING_MB = 300;
+
+export function startaByggRamSond({ fil = BYGG_RAM_PROFIL_FIL, intervallMs = 60_000, lasRam = ramTillgangligtMB } = {}) {
+  try {
+    const rader = fs.readFileSync(fil, "utf8").split("\n").filter(Boolean);
+    if (rader.length > 4000) fs.writeFileSync(fil, rader.slice(-2000).join("\n") + "\n");
+  } catch { /* första körningen — filen skapas av sonden nedan */ }
+  const skriv = (obj) => {
+    try { fs.appendFileSync(fil, JSON.stringify(obj) + "\n"); } catch { /* sonden äger aldrig byggutfallet */ }
+  };
+  skriv({ ts: new Date().toISOString(), fas: "start", pid: process.pid });
+  let varv = 0;
+  let minMB = null;
+  const timer = setInterval(() => {
+    varv += 1;
+    const mb = lasRam();
+    if (typeof mb === "number") {
+      if (minMB === null || mb < minMB) minMB = mb;
+      skriv({ ts: new Date().toISOString(), fas: "bygg", tillgangligtMB: mb, minut: varv });
+    }
+  }, intervallMs);
+  timer.unref?.();
+  return {
+    stopp() {
+      clearInterval(timer);
+      skriv({ ts: new Date().toISOString(), fas: "slut", varv, minTillgangligtMB: minMB });
+      return { varv, minMB, varning: typeof minMB === "number" && minMB < BYGG_RAM_VARNING_MB };
+    },
+  };
+}
+
+// ---------------------------------------------------------------------------
 // V183 (r273 — den tysta OOM-dödens kur): instanslåset blev PID-baserat.
 // Bevis 2026-09-27 05:57→06:17Z: OOM-svepet mördade prod-synk-processen
 // (loggspringa utan ENDA felrad — SIGKILL loggar aldrig; byggfönster på 26
@@ -1248,6 +1295,21 @@ async function korSynk() {
       barn.on("exit", (kod) => lyckas(kod === 0));
       barn.on("error", () => lyckas(false));
     });
+  // V184: varje byggförsök profilerns RAM — huvudbygget OCH alla ombyggen
+  // (god-lock · orörd HEAD · revert · good-HEAD). Varningsrad + audit skrivs
+  // vid fönstrets slut; sonden själv kan aldrig påverka byggutfallet.
+  const korByggMedSond = async () => {
+    const sond = startaByggRamSond();
+    try {
+      return await korByggMedSond();
+    } finally {
+      const samman = sond.stopp();
+      if (samman.varning) {
+        logga(`BYGG-RAM-VARNING: fönstrets lägsta MemAvailable ${samman.minMB} MB (< ${BYGG_RAM_VARNING_MB}) — designad byggtopplast på den delade servern, mätt av V184-profilern; tidsserie: data/vakten/bygg-ram-profil.jsonl`);
+        skrivAudit("prod-synk", "bygg_ram_dopp", `${samman.minMB}mb`, "byggfönstrets MemAvailable dop under 300 MB — mätt bevisning från V184-profilern (data/vakten/bygg-ram-profil.jsonl)");
+      }
+    }
+  };
   let ok = false;
   try { fs.writeFileSync("/tmp/synk-npmci.log", ""); } catch { /* */ }
   try { fs.writeFileSync("/tmp/synk-build.log", ""); } catch { /* */ }
@@ -1277,7 +1339,7 @@ async function korSynk() {
   }
   // V182: rent .next-ny inför varje försök — fallna försöks skrap städas här
   try { fs.rmSync(path.join(ROT, ".next-ny"), { recursive: true, force: true }); } catch { /* */ }
-  const korResultat = await korBygg();
+  const korResultat = await korByggMedSond();
   const feltyp = korResultat ? null : bedomByggMisslyckande(slasLogg("/tmp/synk-npmci.log"), slasLogg("/tmp/synk-build.log"));
   if (korResultat) {
     ok = true;
@@ -1342,7 +1404,7 @@ async function korSynk() {
       // den rivna locken eller skriver ok-kvitton för den.
       logga("PATCH-KÖ: bygg misslyckades utan ny kod — patchen misstänkt, lock återställd; OMBYGG på god lock (det fallna bygget rivit .next)");
       patchInstallerad = false;
-      if (await korBygg()) {
+      if (await korByggMedSond()) {
         ok = true;
         logga("ombygge på god lock OK — prod åter tjänstduglig, patchen tillbakadragen (HEAD orörd)");
       } else {
@@ -1374,14 +1436,14 @@ async function korSynk() {
       );
       try {
         if (!rorByggyta) {
-          if (await korBygg()) {
+          if (await korByggMedSond()) {
             ok = true;
             logga("ombygg på orörd HEAD OK — oskyldig leverans skyddad, .next återställd");
             skrivAudit("prod-synk", "deploy_ombygg_utan_revert", `prod@${git(["rev-parse", "HEAD"]).slice(0, 8)}`, "byggfel men HEAD rör ej byggyta: revert avstådd (o72), ombygg på orörd HEAD OK");
           } else throw new Error("ombygg-utan-revert failade");
         } else {
           git(["revert", "HEAD", "--no-edit"]);
-          if (await korBygg()) {
+          if (await korByggMedSond()) {
             ok = true;
             logga("revert+ombygge OK — prod bygger på föregående commit");
             skrivAudit("prod-synk", "deploy_revert", `prod@${git(["rev-parse", "HEAD"]).slice(0, 8)}`, "felbygge revertades — prod bygger på föregående commit");
@@ -1410,7 +1472,7 @@ async function korSynk() {
         logga("ombygge efter revert MISSLYCKADES — återställer känd-good HEAD");
         try {
           git(["reset", "--hard", goodHead]);
-          if (await korBygg()) {
+          if (await korByggMedSond()) {
             ok = true;
             logga("good-HEAD återställd + ombyggd");
           } else throw new Error("good-HEAD-bygget failade");

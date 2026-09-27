@@ -3,7 +3,7 @@
  * F6-RAM-STÄNGNING (rond 127, [organ:Φ]) — minnesspårets EGEN evidensregel
  * (invars i f6-stang-klasser.mjs rond 126: "RAM-raderna kräver sin egen
  * evidensregel, rond 127"). Bedömning av F6-drift:s "RAM <n> MB"-familjen
- * med bevis per rad ur FYRA oberoende källor:
+ * med bevis per rad ur FEM oberoende källor:
  *
  *   KLASS V — VÄNTAR-RAM-träff: prod-synkens egen RAM-grind mätte och
  *   ATTRIBUERADE lasten ('chrome-cron levande (+1024) + N zcode-barn
@@ -23,6 +23,12 @@
  *   manifest, eller [uppgift-klar t−sekunder → t]). v146: max 3 barn/
  *   omgång + RAM-vakt 1500 MB = det bevisade skyddet.
  *
+ *   KLASS P (V184, r274) — bygg-RAM-profilern: fyndet träffar ett
+ *   sondmätt byggfönster ur bygg-ram-profil.jsonl (prod-synkens sond
+ *   var 60 s under varje byggförsök; bär fönstrets MINSTA MemAvailable)
+ *   — byggets dopp är MÄTT, inte gissat. Stänger rotens fyra B-endast
+ *   lämnade HÖG-rader (09-24→09-27) mekaniskt framöver.
+ *
  *   ALLVAR-REGEL (precedent s8-u2/o65): MEDEL stängs vid ≥1 källträff;
  *   HÖG (MemAvailable < 300 MB) kräver ≥2 OBEROENDE träffar — annars
  *   lämnas raden öppen (under-300 är allvarligt, bevis eller tystnad).
@@ -33,6 +39,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const PROD = "/home/ak1a/AK1";
 const YTA = "/home/ak1a/agent/ak1";
@@ -51,6 +58,41 @@ const lasJsonl = (p) => {
     return fs.readFileSync(p, "utf8").split("\n").filter(Boolean).map((r) => { try { return JSON.parse(r); } catch { return null; } }).filter(Boolean);
   } catch { return []; }
 };
+
+// ── Källa 5 (V184, r274): BYGG-RAM-PROFILERN — sondens fönster ur
+// data/vakten/bygg-ram-profil.jsonl (skriven av prod-synkens sond var 60 s
+// under varje byggförsök). Kontrakt: "start" öppnar, "bygg"-rader räcker på
+// tidsserien (minsta tillgängliga MB), "slut" stänger med sammanfattet
+// min/varv; ett fönster utan "slut" gäller ändå (pågående eller OOM-mördad
+// sond — r273:s mekanism: raderna som HANN skrivas är just beviset).
+// Ogiltiga tidsstämplar hoppas. Testas av verktyg/testa-prod-synk-byggram.mjs.
+export function tolkaByggRamFonster(rader) {
+  const fonster = [];
+  let oppen = null;
+  for (const r of Array.isArray(rader) ? rader : []) {
+    const t = Date.parse(r.ts);
+    if (!Number.isFinite(t)) continue;
+    if (r.fas === "start") { oppen = { start: t, slut: t, varv: 0, minTillgangligtMB: null }; continue; }
+    if (!oppen) continue;
+    if (r.fas === "bygg") {
+      oppen.slut = t;
+      if (typeof r.tillgangligtMB === "number") {
+        oppen.minTillgangligtMB = oppen.minTillgangligtMB === null ? r.tillgangligtMB : Math.min(oppen.minTillgangligtMB, r.tillgangligtMB);
+      }
+    } else if (r.fas === "slut") {
+      oppen.slut = t;
+      if (typeof r.minTillgangligtMB === "number") {
+        oppen.minTillgangligtMB = oppen.minTillgangligtMB === null ? r.minTillgangligtMB : Math.min(oppen.minTillgangligtMB, r.minTillgangligtMB);
+      }
+      if (typeof r.varv === "number") oppen.varv = r.varv;
+      fonster.push(oppen);
+      oppen = null;
+    }
+  }
+  if (oppen) fonster.push(oppen);
+  return fonster;
+}
+const profilFonster = tolkaByggRamFonster(lasJsonl(`${VAKTDIR}/bygg-ram-profil.jsonl`));
 
 // ── Källa 1+2: synkloggen → VÄNTAR-RAM-punkter + byggfönster ──────────
 const varTräffar = [];        // {ts, text}
@@ -117,6 +159,7 @@ const fabrikFonster = [];
 }
 
 // ── Bedömningarna ──────────────────────────────────────────────────────
+function main() {
 const fynd = lasJsonl(FYND);
 const bedomda = new Set(lasJsonl(LEDGER).map((b) => `${b.ts}|${b["spår"] ?? b.spar ?? ""}|${b.fynd ?? ""}`));
 const nya = [];
@@ -149,6 +192,11 @@ for (const f of fynd) {
   const fb = fabrikFonster.find((w) => tsMs >= w.start && tsMs <= w.slut);
   if (fb) traffar.push({ klass: "F", bevis: `fabriksfönster ${manifestInfo(fb)} ${iso(fb.start)} → ${iso(fb.slut)}` });
 
+  // P — V184-profilerns byggfönster (MÄTT MemAvailable under fönstret —
+  // den enda källan som bevisar doppets djup med egen tidsserie)
+  const p = profilFonster.find((w) => tsMs >= w.start && tsMs <= w.slut);
+  if (p) traffar.push({ klass: "P", bevis: `bygg-ram-profilen ${iso(p.start)} → ${iso(p.slut)}: sond mätte byggfönstret (min ${p.minTillgangligtMB ?? "?"} MB över ${p.varv} varv)` });
+
   const minst = hog ? 2 : 1;
   if (traffar.length < minst) {
     r.lamnade++;
@@ -163,6 +211,7 @@ for (const f of fynd) {
     traffar.some((t) => t.klass === "F") ? "fabrikens zcode-barn (max 3/omgång, ~0,3–0,9 GB/st)" : null,
     traffar.some((t) => t.klass === "B") ? "pågående synkbygg (~2,2 GB)" : null,
     traffar.some((t) => t.klass === "V") ? "synkens RAM-grind attribuerade lasten och höll bygget" : null,
+    traffar.some((t) => t.klass === "P") ? `V184-byggprofilerns mätta tidsserie (fönstrets min ${profilFonster.find((w) => tsMs >= w.start && tsMs <= w.slut)?.minTillgangligtMB ?? "?"} MB)` : null,
   ].filter(Boolean).join(" + ");
   detalj.push(`STÄNGS ${f.ts} ${f.allvar} ${f.fynd} — klass ${klasser}`);
 
@@ -172,10 +221,10 @@ for (const f of fynd) {
     rotorsaka: hog
       ? `Dopp under 300 MB vid designad topplast på den delade 8 GB-servern: ${lastBeskrivning}. Ingen OOM, inga 500-or, deploy grön strax efter — skyddet (VÄNTAR-RAM-grinden) verkade och höll bygget; raden är topplasten själv, ej haveri.`
       : `Informativ RAM-tröskel (MemAvailable < 800 MB) under designat belastningsfönster: ${lastBeskrivning} på den gemensamma 8 GB-servern; prod-synkens VÄNTAR-RAM-grind (2200 MB) och fabrikens RAM-vakt (1500 MB, v146) håller minnet under kontroll — raden är vakten som arbetar, ej haveri.`,
-    kur: "v146-arkitekturen (max 3 barn/omgång + fabrikens RAM-vakt 1500 MB) + prod-synkens VÄNTAR-RAM-grind (2200 bygg + reserv per tung klass) — lever och bevisat verkande i fönstret.",
+    kur: "v146-arkitekturen (max 3 barn/omgång + fabrikens RAM-vakt 1500 MB) + prod-synkens VÄNTAR-RAM-grind (2200 bygg + reserv per tung klass) + V184-byggprofilern (sond var 60 s under fönstret — mätt bevisning per rad) — lever och bevisat verkande i fönstret.",
     bevis: traffar.map((t) => `[${t.klass}] ${t.bevis}`).join(" ;; "),
     lag: "1 (tidsbevis ur synklogg/vaktrapport/fabrikslogg per rad) · 2 (rot: designad last på delad server) · 6 (dom med giltig klass)",
-    protokoll: `rond 127 [organ:Φ] + o65-stormtriage-precedenten (s8-u2) + AGENTS.md v146 + prod-synk.mjs VÄNTAR-RAM-grind${hog ? " + HÖG-regeln: dubbel oberoende källträff" : ""}`,
+    protokoll: `rond 127 [organ:Φ] + o65-stormtriage-precedenten (s8-u2) + AGENTS.md v146 + prod-synk.mjs VÄNTAR-RAM-grind + rond 274 V184 klass P (bygg-RAM-profilern)${hog ? " + HÖG-regeln: dubbel oberoende källträff" : ""}`,
     domdAv: "huvudagenten (rond 127)",
   });
 }
@@ -187,3 +236,15 @@ for (const d of detalj) console.log(`  ${d}`);
 if (torr || nya.length === 0) process.exit(0);
 fs.appendFileSync(LEDGER, nya.map((b) => JSON.stringify(b)).join("\n") + "\n");
 console.log(`${nya.length} bedömningar appendade — commit + push + prod-lage-verifiering återstår.`);
+}
+
+// Import-vakt (o43-mönstret, V184): sviten importerar tolkaByggRamFonster —
+// bedömningskedjan (appendar ledgern!) får ENDAST köras som direkt program.
+const arDirektProgram = (() => {
+  try {
+    return Boolean(process.argv[1]) && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+  } catch {
+    return false;
+  }
+})();
+if (arDirektProgram) main();

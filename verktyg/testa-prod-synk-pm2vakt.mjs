@@ -162,7 +162,9 @@ console.log("== strukturella kontrakt i prod-synk.mjs (ordagranna) ==");
     );
     kolla(
       "båda stoppen ligger FÖRE korBygg-anropet i källordning",
-      kalla.lastIndexOf("pm2Vakt.stoppa()") < kalla.indexOf("const korResultat = await korBygg()"),
+      // V184 (r274): huvudbygget ropas via korByggMedSond (RAM-profilern
+      // svänger runt samma korBygg) — kontraktet oförändrat: stopp FÖRE bygg.
+      kalla.lastIndexOf("pm2Vakt.stoppa()") < kalla.indexOf("const korResultat = await korByggMedSond()"),
     );
   }
   kolla("main():s finally ropar aterstarta() — garantin", kalla.includes("pm2Vakt.aterstarta()"));

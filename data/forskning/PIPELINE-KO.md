@@ -381,18 +381,21 @@ kontrollpunkt 01:17-gränssnittscron (cron.log tyst sedan 13:17).
 R2 orörd: kursinnehåll = utbildning (2007:528); inga pris-/publicerings-
 ändringar. Fas 3-kurserna förbler låsta enligt kurs-access (under byggnation).
 
-## ROND 273 (2026-09-27) — v183 STÄNGD (INSTANSLÅS-PIDDOM), v184 BOKAT
+## ROND 274 (2026-09-27) — v184 STÄNGD (BYGG-RAM-PROFILERN), v185+v186 BOKADE
 
-v183 LEVERERAD O STÄNGD (e4ec58a4): 60-s-dikets rot utredd — flock-
-hypotesen FÖLL (tyst OOM-mord på hela prod-synk-processen 05:57Z, logg-
-springa utan felrad; pulsvaktens pm2-restart var RÄTT och läkte). Äkta
-gapet: instanslåsets blinda 12-min-tak svälte 06:07-pollen 10 min. KUR:
-pid-fil i låset + /proc-cmdline-dom (död pid = rivas direkt; levande
-synk = lämnas över; 12-min-regeln reserv för äldre lås). Se worklog
-ROND 273. Pipelinen efter stängningen:
+v184 LEVERERAD O STÄNGD (5ca2beab): F6-HÖG-doppet (RAM 176 MB kl
+12:00:13Z, mitt i 9be1b873-bygget) utrett enligt Lag 1+2+6 — ingen död
+(pulsvakt 0 fel, deploy grön, RAM återställt), men VÄNTAR-RAM-grinden
+mäter aldrig UNDER fönstret och F6-domaren lämnade HÖG-rader öppna (4 st,
+klass B enda träffen). KUR: sond var 60 s under VARJE byggförsök →
+bygg-ram-profil.jsonl + varningsrad/audit vid min < 300 MB; domarens
+KÄLLA 5 KLASS P stänger framtida HÖG-domar mekaniskt (B+P). Dagens fynd
+manuellt domstängt med två oberoende bevis (synkloggen + pulsvakten).
+Se worklog ROND 274. Pipelinen efter stängningen:
 
 | Våg | Innehåll | Status |
 |---|---|---|
-| v184 | BYGGRAM-PROFILERN (spår 8): MemAvailable-sond var 60 s under byggfönstret (data/vakten/bygg-ram-profil.log) — nästa OOM-svep får bevisning, inte gissning; ev. pm2 max_memory_restart-bedömning | BOKAD — nästa aktiva |
+| v185 | BYGG-RAM-TRENDVERKTYG (spår 8): läs bygg-ram-profil.jsonl, trend per fönster (min/varv/debut), larm vid degradering eller trend under 250 MB — kräver ≥3 fönster profildata (v184 mäter varje deploy); under tiden: pm2 max_memory_restart-bedömning ur de första fönstren | BOKAD — nästa aktiva (kan preliminärkartas tidigt) |
 | v180 | HYGIEN-BIBLIOTEKET: 806 trackade _r*-wrappers i verktyg/ — audit + härdning/radering i omgångar (Mimosa-paritet = röda-trigg i kvalitetsrapporten) | STÅR (väljs när spår 8 vilat) |
 | v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd) |
+| v186 | ISR-VARMARENS SÖKVÄGSLISTA (spår 7): DRIFTSBOKENs dokumenterade rest 12/44 ok — finslipa listan mot verklig trafik (kall förstagångssvett 0,5–3,6 s per väg), kvitto per utökad väg | BOKAD (spårrotation 7) |

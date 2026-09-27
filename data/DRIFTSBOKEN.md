@@ -6815,3 +6815,36 @@ Nästa kvartalsprov: senast 2026-12-15 (Q4).
 - KONTROLLPUNKT: 19:17-gränssnittscronens tysta frånvaro (cron.log slutar
   13:17 GRÖN — ingen RAM-grind-rad ens; syslog adm-låst) → 01:17-fönstret
   avgör engångsfock vs kroniskt; kroniskt = ny driftsvåg.
+
+## DRIFTNOT 2026-09-27 r271 [organ:Φ] — F6 "prod osvarar": deploy-
+fönstrets mörker (transient, rot känd)
+
+- SYMPTOM: FELJÄGAREN F6-larm "prod osvarar" på morgonen efter
+  v181-deployen; hjärtatslaget loggade fetch failed 05:01:28Z och
+  05:11:28Z.
+- LÄGE VID SONDNING (05:2xZ, ~10 min senare): prod 200 (/ + /kurser +
+  /blogg), pm2 ak1a online (omstart 05:12:46Z), larm-eskalering 0 aktiva
+  episoder, kvalitetsrapport 0,3 h gammal OK — incidenten självläkt.
+- ROT (Lag 2 — bevis, inte gissning): larmet är INTE en levande krasch
+  utan det STRUKTURELLA deploy-fönstret. Under varje npm ci + next
+  build i prod-trädet flyttas .next till .next-laeke (läkebackupen)
+  och — vid beroendeändring — node_modules raderas, MEDAN gamla appen
+  fortfarande serverar: processens lazy-require dör → kraschloop →
+  anslutningar dör tills bygget är grönt och pm2 startas om
+  ("DEPLOYAD … prod 200"). Bevis: hjärtatslagens FEL-rader klustrar
+  exakt i byggfönstren (23:21–00:31 OOM-natten, 03:11 d44dcbea-
+  fönstret, 04:51–05:11 v181:s npm ci-fönster) och kraschvaktens
+  episoder (kraschloop-misstanke, raddningsbygg-misslyckades) bär
+  samma tidsstämplar.
+- ÅTGÄRD: ingen akut — organismen självläker per design; F6 gjorde
+  sitt jobb.
+- VACCIN (Lag 6): v182 BOKAT i PIPELINE — bygg utan kundavbrott:
+  next build mot separat distDir + atomiskt byte + pm2 restart FÖRST
+  efter grönt bygge; den serverande .next:r rörs ALDRIG av ett
+  pågående bygge. Tills v182 levererar: deploy-fönster = väntad
+  mörkerperiod (vanligt bygg ~5 min, npm ci-fönster ~25 min) —
+  F6-larm i dessa fönster är förväntade: sondera (200?) men
+  eskalera ej.
+- UPPFÖLJNING r269:s KONTROLLPUNKT (19:17-cronen): fortfarande öppen
+  — ägs av kommande rond; kvalitetscronen 07:00 lever (rapport 07:03
+  lokal).

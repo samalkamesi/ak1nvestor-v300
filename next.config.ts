@@ -50,6 +50,10 @@ const nextConfig: NextConfig = {
   // mot installerad Next 16.3.2 (config-schema.js + config-shared.d.ts).
   experimental: {
     globalNotFound: true,
+    // 8 GB-boxen: EN prerender-arbetare — efter v173-expansionen behöver
+    // bygget >7,5 GB med flera arbetare (OOM-bevis 26-27/9 dmesg; 32 GB-box
+    // hos SSD Nodes avlägsnar begränsningen)
+    cpus: 1,
   },
   images: {
     // VÅG 81 A5: mediebibliotekets publika bucket — EXAKT en post, exakt

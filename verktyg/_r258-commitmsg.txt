@@ -1,7 +1,0 @@
-studio: [organ:Φ] r258 v174 DOKVÅG — DRIFTSBOKEN + SYSTEMKARTAN ikapp krisdagen: r255-receptet som femstegsprocedur, 404-doktrinen, externa-git-ingreppens protokoll, datasetläget 292→311
-
-DRIFTSBOKEN (df74a530 →): sektionen "KRISDAGEN 2026-09-25 → 26" — full tidslinje (OOM-dödade byggen → r255-reparation grön → externa ingrepp → 23:07-deployen grön på 5902867f, 311 slugs) · R255-RECEPTET som procedur (pm2 stop → rent .next → flock-bygge → statusfil-kedja → GARANTERAD återstart i felvägen; kraschvakt-vaccin 2:s proaktiva syskon) · 404-FELSPÅRNING symptom→rot→åtgärd (ALDRIG dataleverans av nya bolag utan deploy — r247-lärdomen två gånger bevisad) · externa-git-ingreppens protokoll (dokumentera, aldrig duellera; mtime+reflog = bevismetoder) · pulsvaktens deploy-lås-samspel BELAGT i skarpt läge.
-
-SYSTEMKARTAN (f1f4b007 →): sektionen "UPPDATERING 2026-09-26" — datasetlädet 292→311 (Indien-svepets slutbild, U48:s revert-läge, TCS/INFY-skalreparationen, llms HELREGEN 311) · deployläget med bevisad 404-kur (21+2 slugar 200, vakten 0/180) · PIPELINE-klargörande (rot-filen = sanningen, data/forskning-kopian = äldre dispatchlista orörd) · spårläget + R2-granskningskön.
-
-Data-only, src orörd, inget bygge. Kö: v171 B28-ar → v172 rappdagar 10-20→11-04.

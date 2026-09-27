@@ -6894,3 +6894,32 @@ byggprotokollet (nya regler för byggfönster + F6-tolkning)
   stoppad tills klart, ~25 min) — väntat beteende tills v183 kurar.
 - Diskhygien efter deploy: endast .next ska finnas; .next-ny/
   .next-forra städas automatiskt av synken (bevisat 06:23).
+
+## DRIFTNOT 2026-09-28 r279 [organ:Φ] — v180 VERKTYGSFULLSTÄDNING: städningsregeln för engångswrappers
+
+- STÄDNINGSREGLN (permanent, r279): engångswrappers i verktyg/ är
+  RONDENS EGNA ANSVAR — varje rond städar sina _r<NNN>-verktyg i sitt
+  leveranssteg (mönstret sedan r267, bevisat: r267+ lämnar 0 efter sig).
+  Ackumulerat historiskt skräp röjs i hygienvågor (v180 var den första):
+  referensskanningen är sanningen — ett _r-verktyg LEVER om det nämns
+  av AKTIV YTA (produktionsverktyg, data/infra, data/vakten, src,
+  package.json/next.config, serverns crontab), och DÖR om det endast
+  nämns i historik (worklog, PIPELINE-rotationlogg, protokoll i
+  data/forskning, .txt-fragment). Git-historien bevarar allt — radering
+  är reversibel via checkout av gamla commitshar.
+- v180-UTFÖRANDET (2026-09-28): 800 → 52 _r-filer (748 git-raderade).
+  Referensskanning: node-skript över alla icke-_r-filer utom ren
+  dokumentation (worklog/PIPELINE/data/forskning) + serverns crontab
+  (4 produktionsverktyg: arkivera-server, backup-fran-molnet,
+  dumpa-app-db, kolla-dump-markorer — inga _r). KVAR: 52 refererade
+  _r-verktyg (bland dem _r101-kvd-kassaflode, _r103-sond — nämnda av
+  aktiv yta, deras historik finns i respektive kommittar).
+- ÄRLIGHETSNOTIS: 6 danglande omnämnanden kvar efter raderingen —
+  4 i döda .txt-fragment (_s7u3o130-worklog.txt, _s8u3o108-commitmsg/
+  worklog-append), 1 i rapport (motorregister-2026-09-19.md), 1 i död
+  kod (_v226-commit.mjs → _r113-slut.mjs; _v226-kedjan är själv en
+  orefensrerad våg-226-engångsklass, verifierad död: 0 cron-, 0
+  infra-referenser). INGA trasiga referenser i körbar yta.
+- UPPFÖLJNING (våg-kandidat, ej v180): engångsklasserna utanför _r*
+  (_v<NNN>-, _s<N>u<N>-, _f<NN>-, _o<NN>-prefix från gamla vågor)
+  följer SAMMA regel — nästa hygienvåg skannar dem med samma metod.

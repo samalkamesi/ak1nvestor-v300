@@ -8,6 +8,7 @@ import {
   lasKakaVarde,
   lasMedlemSession,
   medlemGlomtLosenord,
+  medlemSattLosenord,
   medlemSignIn,
   medlemSignOut,
   medlemSignup,
@@ -153,6 +154,26 @@ export async function POST(req: NextRequest) {
       ok: true,
       meddelande: "Om kontot finns har en återställningslänk skickats till din e-post — kolla inkorgen (och skräpposten).",
     });
+  }
+
+  // ── nyttLosenord: återställningsflödet (mejlets token + nytt lösenord) ──────
+  // Buggrapport 2026-09-27: tidigare dog återställningslänken på fel domän
+  // och had ingen landning — nu: redirect_to vår /logga-in + detta läge.
+  // Bearer-token från mejlets hash är porten (inte kontot) — inget läckage.
+  if (action === "nyttLosenord") {
+    const resultat = await medlemSattLosenord(body.access, body.losenord);
+    if (!resultat.ok) {
+      const svar: Record<string, unknown> = { fel: resultat.fel };
+      if (resultat.kod) svar.kod = resultat.kod;
+      return NextResponse.json(svar, { status: 401 });
+    }
+    const res = NextResponse.json({ ok: true, epost: resultat.epost || null });
+    // Har klienten refresh-token från hashen sätts kakorna direkt — eleven
+    // landar INLOGGAD efter sparandet (annars: logga in med det nya ordet).
+    if (typeof body.access === "string" && typeof body.refresh === "string" && body.refresh.length > 5) {
+      sattMedlemKakor(res, body.access, body.refresh);
+    }
+    return res;
   }
 
   // ── signout: best-effort revoke + kakor bort ────────────────────────────────

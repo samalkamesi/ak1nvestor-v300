@@ -47,6 +47,7 @@
 import { createHash } from "node:crypto";
 
 import { getSupabaseRest } from "./supabase-rest";
+import { SPEGEL_SITE_URL } from "./spegel-metadata";
 
 // ── Minimala req/res-lika-typer (strukturerade — NextRequest/NextResponse ────)
 // uppfyller dem; testerna kör rena stubbar utan next-import utöver bron).
@@ -393,10 +394,18 @@ export async function medlemGlomtLosenord(epost: unknown): Promise<MedlemGlomtRe
   if (!auth) return { ok: false, fel: MEDLEM_SIGNUP_FEL, kod: "tjanst" };
 
   try {
-    const res = await fetch(auth.origin + "/auth/v1/recover", {
-      method: "POST",
-      headers: { ...auth.headers, "Content-Type": "application/json" },
-      body: JSON.stringify({ email: normaliseradEpost }),
+    // ÅTERSTÄLLNINGS-VIDAREBESÖK (buggrapport 2026-09-27): recover-mejlets
+    // länk måste landa på VÅR domän — annars hamnar eleven på Supabase-
+    // projektets Site URL (ak1nvestor.space-z.ai). redirect_to respekteras
+    // när URL:en finns i projektets Redirect URLs (dashboard-steg); utan
+    // allow-listning faller GoTrue tillbaka på Site URL som före —
+    // aggiande, aldrig sämre.
+    const res = await fetch(
+      auth.origin + "/auth/v1/recover?redirect_to=" + encodeURIComponent(SPEGEL_SITE_URL + "/logga-in"),
+      {
+        method: "POST",
+        headers: { ...auth.headers, "Content-Type": "application/json" },
+        body: JSON.stringify({ email: normaliseradEpost }),
       signal: AbortSignal.timeout(10_000),
       cache: "no-store",
     });
@@ -406,6 +415,46 @@ export async function medlemGlomtLosenord(epost: unknown): Promise<MedlemGlomtRe
       return { ok: false, fel: "Begäran kunde inte skickas — försök igen om en stund.", kod: "tjanst" };
     }
     return { ok: true }; // neutralt — GoTrue-mejlet (om kontot finns) är på väg
+  } catch {
+    return { ok: false, fel: MEDLEM_NATVERK_FEL, kod: "natverk" };
+  }
+}
+
+/**
+ * medlemSattLosenord — PATCH {origin}/auth/v1/user med Bearer access-token
+ * (återställningsflödet, buggrapport 2026-09-27: mejlets länk bär en giltig
+ * sessionstoken i hashen). Sätter det nya lösenordet OCH svarar med
+ * användarens e-post (klientens fas-synk behöver den). Lösenordet skickas EN
+ * gång i kroppen och glöms omedelbart (P6) — ALDRIG i loggar eller fel.
+ */
+export async function medlemSattLosenord(
+  access: unknown,
+  losenord: unknown,
+): Promise<{ ok: true; epost: string } | { ok: false; fel: string; kod: MedlemFelKod }> {
+  if (typeof access !== "string" || access.length < 20) {
+    return { ok: false, fel: "Återställningslänken är ogiltig eller utgången — begär en ny.", kod: "tjanst" };
+  }
+  if (valideraLosenord(losenord) === null) {
+    return { ok: false, fel: "Lösenordet måste vara minst 10 tecken.", kod: "tjanst" };
+  }
+  if (arByggFas()) return { ok: false, fel: MEDLEM_SIGNUP_FEL, kod: "tjanst" };
+  const auth = getSupabaseAuth();
+  if (!auth) return { ok: false, fel: MEDLEM_SIGNUP_FEL, kod: "tjanst" };
+  try {
+    const res = await fetch(auth.origin + "/auth/v1/user", {
+      method: "PATCH",
+      headers: { ...auth.headers, Authorization: "Bearer " + access, "Content-Type": "application/json" },
+      body: JSON.stringify({ password: losenord }),
+      signal: AbortSignal.timeout(10_000),
+      cache: "no-store",
+    });
+    if (!res.ok) {
+      // Ogiltig/utgången token eller svag lösenords-policy — samma neutrala
+      // text: länkens existens avslöjar inget extra.
+      return { ok: false, fel: "Återställningslänken är ogiltig eller utgången — begär en ny.", kod: "tjanst" };
+    }
+    const kropp = (await res.json().catch(() => ({}))) as { email?: unknown };
+    return { ok: true, epost: typeof kropp.email === "string" ? kropp.email : "" };
   } catch {
     return { ok: false, fel: MEDLEM_NATVERK_FEL, kod: "natverk" };
   }

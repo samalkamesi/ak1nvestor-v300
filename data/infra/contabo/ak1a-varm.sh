@@ -9,9 +9,12 @@
 # (2) /en/ + /ar/ svarade 308 (trailing slash) ⇒ värms som /en + /ar (200);
 # (3) ett nytt försök per väg — dipparna 12→11 var transienta timeout i
 # nattbackupens fönster; (4) missade vägar loggas namngivet för diagnos.
+# v186 (r275 2026-09-27): + /en/blogg + /ar/blogg (listningssidorna värms nu
+# också — 03:10-loggens 38/44 reste på speglar-slugar-listans drift, kuras
+# i repo samma rond; se verktyg/kor-speglar-slugar.mjs --kontroll).
 SOKVAGAR=(
   / /kurser /dataset /blogg
-  /en /en/kurser /en/dataset /ar /ar/kurser /ar/dataset
+  /en /en/kurser /en/dataset /en/blogg /ar /ar/kurser /ar/dataset /ar/blogg
   /data/nyckeltalsguide /om-oss /prenumeration /logga-in
 )
 # Topp-blogg (senaste 10 ur sitemap) × 3 språk — $slug bär själv /blogg/-prefixet

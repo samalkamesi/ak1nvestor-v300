@@ -21,6 +21,8 @@ ALDRIG nya kurser i massproduktion.
 
 | v176 | lärvägar (spår 5) | Utöka lärvägssystemet enligt evighetskatalogens postmall: +<n> kurser med varför-rader i kursrek-registret (333 → nästa tröskel), lärvägsdjup per profil, kursregister-synk, front B, tsc 0 | session | LEVERERAD r267 — FJÄRDE profilen Riskvägen LIVE i prod (886fde19 + prod-synkens läkbygge): sju steg RISKHANTERING i nivåstegning 1→3 + the-most-important-thing som mål, åtta kurser med handskrivna varför-rader; API 4 profiler + detalj + /api/larvag 200 verifierade; lärvägssynk 495/495 0 fantomer, tsc 0. NOTIS: postmallens "+n kurser" infriades som PROFIL över befintliga kurser (kvalitet > kvantitet 2026-09-24) — spår 5 vilar nu (skiftet: inga nya bokningar spår 1-5) |
 
+| v180 | dokumentation (spår 9) | Verktygsfullstädning (r269:s utlovade hygienvåg): inventera + git-radera avslutade engångswrappers i verktyg/ (806 trackade _r*-filer; Mimosa-klassen fyra st redan borta r269) — behåll produktionsverktyg, aktiva cron-skript och aktiv-fabriks-manifest; dokumentera städregeln i DRIFTSBOKEN | session | BOKAD r270 |
+
 ## VILOR / VÄNTAR KUND (R2)
 
 - Granskningskön: FLYTTKLAR-paketen — publicering väntar KUNDBESLUT
@@ -59,3 +61,5 @@ ALDRIG nya kurser i massproduktion.
 - 2026-09-26 r267 (Φ): v176 Riskvägen LEVERERAD LIVE i prod (OOM-bygget läkt av prod-synkens poll — §8-mönstret tredje beviset; r255-receptet oanvänt) ⇒ kön: v175 DR-prov Q3 NÄSTA AKTIVA (Q3 slutar 09-30) · v172 rappdagar oktober · v173 viloläger. Spår 5 vilor (skiftet 09-18).
 
 - 2026-09-26 r268 (Φ): v175 DR-prov Q3 LEVERERAT GRÖNT (RTO 14,3 s, 60 tabeller/1 464 567 rader, retention 15 d < 30 d) — krisdagens läxa återställningsförmåga bevisad för Q3. Kön: v172 rappdagar 10-20 (oktober), v173 viloläger, spår 1-5 vilor; kvartalsstängning bokas vid månadsskiftet.
+
+- 2026-09-27 r270 (Φ): v270 döda-länkar rightat LEVERERAD (nasdaq→Avanza 8 filer, 4e041af4: Akamai-botfilter = maskinellt ouppnåbar + felriktad; eur-lex bevisad transient, orörd) + r269:s beviskedja STÄNGD (autodeploy 00:42 på 103a0fc6 · serverad CSS bär v178+v179 · riktat svep /kurser 0/4, kvitto 024938) ⇒ v180 BOKAD spår 9 (verktygsfullstädning 806 wrappers). Tre vågor börsda: v172 · v173 · v180.

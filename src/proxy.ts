@@ -16,7 +16,9 @@ import {
 import speglarSlugar from "../public/speglar-slugar.json";
 
 /**
- * MIDDLEWARE — trafikvakten i kanten (edge, snabbt, ALDRIG försenande).
+ * PROXY (v188, f.d. middleware) — trafikvakten per request (ALDRIG försenande).
+ * Next 16:s konvention: filen proxy.ts + named export `proxy`; körs sedan
+ * namnbytet på Node-runtime (ej längre edge) — kodens API:er är gemensamma.
  *
  * Tre jobb, alla med hårda budgetar:
  *   1. DNA-BLOCKERING: kända scanner-sökvägar (.env, wp-admin, phpmyadmin,
@@ -32,7 +34,7 @@ import speglarSlugar from "../public/speglar-slugar.json";
  *      kan läsa serverns UA-klass efter hydrering).
  *
  * TRAFIK-MÄTNING AV BOTAR: bot-UA:er kör sällan JS, så klientvägen ser dem
- * aldrig — middleware loggar istället bot-sidvisningar (GET, ej /api) till
+ * aldrig — proxyn loggar istället bot-sidvisningar (GET, ej /api) till
  * system_events (type=trafik) med 10-minuters dedupe per (klass+path),
  * minnesbunden 300 nycklar. Mänsklig trafik loggas av TrafikRapportören
  * via POST /api/trafik (30 % stickprov + alltid unika sessioner).
@@ -113,9 +115,9 @@ function registreraFlod(ipHash: string, nu: number): number {
   return ts.length;
 }
 
-// ── Middleware ───────────────────────────────────────────────────────────────
+// ── Proxy (v188: named export = filnamnet, Next 16-kontraktet) ────────────────
 
-export async function middleware(req: NextRequest, event: NextFetchEvent) {
+export async function proxy(req: NextRequest, event: NextFetchEvent) {
   const nu = Date.now();
   stadaMinne(nu);
 

@@ -8,7 +8,8 @@
  * DEPLOYAD-radens hash är SLUTTRÄDET, inte byggträdet. Speglar-kuren
  * 03ea5918 landade 15:00:40Z mitt i 14:57-fönstret: deployen loggades GRÖN
  * (bb1fe548) men edge-buntslen serverade gamla 55-listan (speglar-slugar.json
- * buntas in i middleware vid BYGGTID) = 78 döda spegelsidor trots grön deploy.
+ * buntas in i proxy-modulen — f.d. middleware, v188 — vid BYGGTID) = 78 döda
+ * spegelsidor trots grön deploy.
  *
  * Kuren som mäts här:
  *   · buntslagsraceDom — flyttat träd ⇒ race; omätbar hash ⇒ race (fail-closed:

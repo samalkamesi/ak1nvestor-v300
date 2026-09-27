@@ -51,6 +51,7 @@ kontroll("7. package-lock.json ⇒ true", headRorByggyta(["package-lock.json"]) 
 kontroll("8. next.config.ts ⇒ true", headRorByggyta(["next.config.ts"]) === true);
 kontroll("9. tsconfig.json ⇒ true", headRorByggyta(["tsconfig.json"]) === true);
 kontroll("10. tailwind/postcss/middleware ⇒ true", headRorByggyta(["tailwind.config.ts", "postcss.config.mjs", "middleware.ts"]) === true);
+kontroll("10b. proxy.ts (rot) ⇒ true (v188: filbytet middleware→proxy får ej tömma byggytornas paritet)", headRorByggyta(["proxy.ts"]) === true);
 kontroll("11. srcx/ är INTE src/ ⇒ false", headRorByggyta(["srcx/foo.ts"]) === false);
 kontroll("12. tom commit-lista ⇒ false", headRorByggyta([]) === false);
 kontroll("13. tomma strängar ignoreras ⇒ false", headRorByggyta(["", "   "]) === false);

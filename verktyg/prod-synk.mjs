@@ -239,7 +239,7 @@ const BYGGYTA_PREFIX = [
   "src", "public", "app", "styles",
   "package.json", "package-lock.json",
   "next.config.", "next-env.d.ts",
-  "tsconfig.", "tailwind.", "postcss.", "middleware.",
+  "tsconfig.", "tailwind.", "postcss.", "middleware.", "proxy.",
 ];
 export function headRorByggyta(filer) {
   if (!Array.isArray(filer)) return true;
@@ -947,7 +947,8 @@ export function byggNolldowntimeKommando({ npmCi }) {
 // DEPLOYAD-radens hash är SLUTTRÄDET — inte byggträdet. Bevisat 2026-09-27:
 // speglar-kuren 03ea5918 landade 15:00:40Z mitt i 14:57-fönstret, deployen
 // loggades GRÖN (bb1fe548) men edge-buntslen serverade ändå den gamla
-// 55-slug-listan (speglar-slugar.json buntas in i middleware vid BYGGTID) =
+// 55-slug-listan (speglar-slugar.json buntas in i proxy-modulen — f.d.
+// middleware, v188 — vid BYGGTID) =
 // 78 döda spegelsidor i prod trots grön deploy. Kuren: byggträdets hash
 // låses vid start (BYGGER FRÅN-rad) och vaktas vid bytet — flyttade trädet
 // under bygget avbryts BYTET (artefakten kan vara inbyggt inkonsekvent),

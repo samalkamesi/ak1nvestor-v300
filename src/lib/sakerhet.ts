@@ -1,9 +1,10 @@
 /**
  * SÄKERHETSLIB (edge + node) — trafikvaktens "DNA-blockering" och sanering.
  *
- * Delas av src/middleware.ts (edge-runtime) och /api/trafik +
- * /api/sakerhet/handelser (node-runtime) — därför ENDAST webbstandard:
- * Web Crypto (crypto.subtle), fetch, URL. Inga node-API:er, inga fs.
+ * Delas av src/proxy.ts (v188: f.d. middleware, Node-runtime) och
+ * /api/trafik + /api/sakerhet/handelser (node-runtime) — därför ENDAST
+ * webbstandard: Web Crypto (crypto.subtle), fetch, URL. Inga node-API:er,
+ * inga fs.
  *
  * KUNDENS DIREKTIV: "fullständig säkerhet och dna-blockeringar och
  * intelligenta system". Detta är det deterministiska lagret:

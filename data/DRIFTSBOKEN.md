@@ -6848,3 +6848,27 @@ fönstrets mörker (transient, rot känd)
 - UPPFÖLJNING r269:s KONTROLLPUNKT (19:17-cronen): fortfarande öppen
   — ägs av kommande rond; kvalitetscronen 07:00 lever (rapport 07:03
   lokal).
+
+## DRIFTNOT 2026-09-27 r272 [organ:Φ] — v182 LIVE: nolldowntime-
+byggprotokollet (nya regler för byggfönster + F6-tolkning)
+
+- NYTT PROTOKOLL SEDAN e55c0e94 (deployad 06:23:18Z): prod-synken
+  bygger mot .next-ny (next.config.ts distDir) medan prod:s .next är
+  ORÖRD — npm ci HOPPAS ÖVER när package.json/package-lock är oändrade;
+  atomärt byte (.next → .next-forra, .next-ny → .next) + pm2 restart
+  FÖRST när bygget är grönt; rött HTTPS → tillbakarullning från
+  .next-forra. Lägebyten (.next-laeke) skapas INTE längre i normalfallet.
+- DEBUTBEVIS: v182:s eget byggfönster 05:57:28→06:23:18Z (~26 min) =
+  1 felrad i pulsvakten (60 s) mot v181:s 24 fel i rad föregående natt
+  — F6-larm under byggfönster är därmed NÄSTAN tysta.
+- KÄNT KVARVARANDE DIK (v183-arena): ECONNREFUSED 06:00:25Z, 60 s,
+  mitt i byggfönstret — pm2-fellogg TYST (talar för SIGKILL/minnesdöd
+  under byggtryck, ej app-krasch; dmesg spärrat) och pulsvaktens
+  pm2-restart 12 s senare kan ha FÖRLÄNGT diket (avbröt ev. pm2:s egen
+  auto-restart). TOLKNINGSREGL: ENSTAKT kort (≤1 felrad) avbrott under
+  byggfönster = känt + självläkande, eskalera ej; >2 felrad i rad =
+  sondera enligt Lag 1.
+- NPM CI-FÖNSTRET (beroendeändringar) är fortfarande ÄKTA mörker (pm2
+  stoppad tills klart, ~25 min) — väntat beteende tills v183 kurar.
+- Diskhygien efter deploy: endast .next ska finnas; .next-ny/
+  .next-forra städas automatiskt av synken (bevisat 06:23).

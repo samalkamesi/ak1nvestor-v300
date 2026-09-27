@@ -23,6 +23,10 @@ ALDRIG nya kurser i massproduktion.
 
 | v180 | dokumentation (spår 9) | Verktygsfullstädning (r269:s utlovade hygienvåg): inventera + git-radera avslutade engångswrappers i verktyg/ (806 trackade _r*-filer; Mimosa-klassen fyra st redan borta r269) — behåll produktionsverktyg, aktiva cron-skript och aktiv-fabriks-manifest; dokumentera städregeln i DRIFTSBOKEN | session | BOKAD r270 |
 
+| v182 | prestanda (spår 7) | Nolldowntime-deploy — F6-vaccinet mot deploy-fönstrets mörker: next.config.ts distDir (.next-ny) + prod-synk (npm ci-beslut, atomärt byte, tillbakarullning vid rött HTTPS, städning) | session | LEVERERAD r272 (e55c0e94 deployad 06:23:18Z): DEBUTBEVIS 26-min byggfönster = 1 felrad (60 s, självläkt) mot v181:s 24 fel i rad; NOLLDOWNTIME-rader ×2 + diskhygien + prod 200 ×3; kvarvarande mörker → v183 |
+
+| v183 | kvalitet (spår 8) | Deploy-mörkrets rester: (a) 60-s-diken under pågående bygge (trolig OOM-SIGKILL — minnesvakt under byggfönster + pulsvaktens restart vs pm2:s auto-restart), (b) npm ci-fönstret vid beroendeändring (parallell modul-katalog/bygg i kopia?), (c) bytes-restartens sekunder (pm2 reload?) — mät, kura, bevis | session | BOKAD r272 |
+
 ## VILOR / VÄNTAR KUND (R2)
 
 - Granskningskön: FLYTTKLAR-paketen — publicering väntar KUNDBESLUT
@@ -65,3 +69,5 @@ ALDRIG nya kurser i massproduktion.
 - 2026-09-27 r270 (Φ): v270 döda-länkar rightat LEVERERAD (nasdaq→Avanza 8 filer, 4e041af4: Akamai-botfilter = maskinellt ouppnåbar + felriktad; eur-lex bevisad transient, orörd) + r269:s beviskedja STÄNGD (autodeploy 00:42 på 103a0fc6 · serverad CSS bär v178+v179 · riktat svep /kurser 0/4, kvitto 024938) ⇒ v180 BOKAD spår 9 (verktygsfullstädning 806 wrappers). Tre vågor börsda: v172 · v173 · v180.
 
 - 2026-09-27 r271 (Φ): v181 beroendekur STÄNGD (2d0a1172 deployad 05:12Z; slutkvitto beroendevakt = 0 sårbarheter, 7→0 utan major-steg: 2 döda beroenden bort + fflate-override 0.7.5 + 8 intervall-patchar) + F6-incidenten rotad (deploy-fönstrets mörker — transient, självläkande; se DRIFTSBOK r271) ⇒ v182 BOKAT spår 7 (bygg utan kundavbrott: distDir-bygge + atomiskt byte — F6-läxans vaccin). Fyra vågor börsda: v172 rappdagar 10-20→11-04 · v173 viloläger · v180 verktygsfullstädning · v182.
+
+- 2026-09-27 r272 (Φ): v182 NOLLDOWNTIME LEVERERAD OCH DEBUTBEVISAD (e55c0e94 deployad 06:23:18Z; 26-min byggfönster = 1 felrad/60 s mot v181:s 24 fel i rad — 24→1) ⇒ v183 BOKAT spår 8 (deploy-mörkrets rester: 60-s-diket trolig OOM under bygge + npm ci-fönstret + bytes-sekunder). Tre vågor börsda: v180 verktygsfullstädning · v183 · v172 rappdagar 10-20→11-04 (v173 viloläger).

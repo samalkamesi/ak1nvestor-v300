@@ -173,6 +173,23 @@ kontroll(
   typeof tolkaByggRamFonster === "function",
 );
 
+// ── 8) Strukturellt rekursionsskydd (r274-läxan: korByggMedSond som ropar
+// SIG SJÄLV = RangeError vid varje poll + en sond per rekursionsnivå — två
+// kraschade poller 12:27+12:37Z innan upptäckt; KVD:s beteendetester såg
+// det ej eftersom wrappern aldrig kördes i test). Källkontrakt à la pm2vakt-sviten.
+{
+  const kalla = fs.readFileSync(new URL("./prod-synk.mjs", import.meta.url), "utf8");
+  kontroll(
+    "17. korByggMedSond ropar korBygg internt — ALDRIG sig självt (rekursionsskydd)",
+    /const korByggMedSond = async \(\) => \{[\s\S]*?return await korBygg\(\);[\s\S]*?\};/.test(kalla) &&
+      !/const korByggMedSond = async \(\) => \{[\s\S]*?return await korByggMedSond\(\);/.test(kalla),
+  );
+  kontroll(
+    "18. samtliga bygganrop i korSynk går via sonden (korByggMedSond) — profilen täcker varje försök",
+    (kalla.match(/await korByggMedSond\(\)/g) ?? []).length >= 5 && (kalla.match(/await korBygg\(\)/g) ?? []).length === 1,
+  );
+}
+
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 if (fail > 0) {
   console.error("FALLERANDE: " + FEL.join(", "));

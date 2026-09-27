@@ -1301,7 +1301,10 @@ async function korSynk() {
   const korByggMedSond = async () => {
     const sond = startaByggRamSond();
     try {
-      return await korByggMedSond();
+      // ropar korBygg — ALDRIG korByggMedSond (rekursion: r274-läxan, två
+      // kraschade poller 12:27+12:37Z innan upptäckt; strukturellt skydd i
+      // testa-prod-synk-byggram.mjs test 17)
+      return await korBygg();
     } finally {
       const samman = sond.stopp();
       if (samman.varning) {

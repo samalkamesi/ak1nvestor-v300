@@ -380,3 +380,19 @@ kontrollpunkt 01:17-gränssnittscron (cron.log tyst sedan 13:17).
 
 R2 orörd: kursinnehåll = utbildning (2007:528); inga pris-/publicerings-
 ändringar. Fas 3-kurserna förbler låsta enligt kurs-access (under byggnation).
+
+## ROND 273 (2026-09-27) — v183 STÄNGD (INSTANSLÅS-PIDDOM), v184 BOKAT
+
+v183 LEVERERAD O STÄNGD (e4ec58a4): 60-s-dikets rot utredd — flock-
+hypotesen FÖLL (tyst OOM-mord på hela prod-synk-processen 05:57Z, logg-
+springa utan felrad; pulsvaktens pm2-restart var RÄTT och läkte). Äkta
+gapet: instanslåsets blinda 12-min-tak svälte 06:07-pollen 10 min. KUR:
+pid-fil i låset + /proc-cmdline-dom (död pid = rivas direkt; levande
+synk = lämnas över; 12-min-regeln reserv för äldre lås). Se worklog
+ROND 273. Pipelinen efter stängningen:
+
+| Våg | Innehåll | Status |
+|---|---|---|
+| v184 | BYGGRAM-PROFILERN (spår 8): MemAvailable-sond var 60 s under byggfönstret (data/vakten/bygg-ram-profil.log) — nästa OOM-svep får bevisning, inte gissning; ev. pm2 max_memory_restart-bedömning | BOKAD — nästa aktiva |
+| v180 | HYGIEN-BIBLIOTEKET: 806 trackade _r*-wrappers i verktyg/ — audit + härdning/radering i omgångar (Mimosa-paritet = röda-trigg i kvalitetsrapporten) | STÅR (väljs när spår 8 vilat) |
+| v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd) |

@@ -206,16 +206,21 @@ function lasProcesser() {
  */
 function städaFöräldralösaZcode() {
   const läsPs = lasProcesser;
-  // ROND 303: AppImage = SKRIVBORDET (zdesk-zcode.service, systemd-adopterad
-  // ppid 1, /ZCode-…AppImage i args) — den Såg ut som ett läckt barn och
-  // mördades varje pulsvaktstur (restart-räknare 7, 2026-09-28 17:05).
-  // Fabriksbarnen känns på "node …/zcode -p" + AppImage-namnet utesluts.
+  // ROND 303 (v2): första kuren (!/AppImage/) räckte INTE — Electrons
+  // HJÄLPPROCESER kör under /tmp/.mount_ZCode-…/zcode (matchar /zcode/i,
+  // inte AppImage) och deras död får main att stänga sig själv (mord #8
+  // 17:35 trots kur). Skärpning: städaren dödar ENDAST ÄKTA fabriks-
+  // engångsbarn — de känns SÄKERT på " -p " i args (spawn:as alltid med
+  // ["-p", prompt]); skrivbordets alla processer (AppImage-main, mountade
+  // hjälpprocesser, host, scheduler) har ALDRIG det.
   const ärLäcktZcode = (p) =>
     p.ppid === 1 &&
     p.pid !== process.pid &&
     !/ttyd|tmux/.test(p.args) &&
     !/AppImage/.test(p.args) &&
+    !/\.mount_/.test(p.args) &&
     /zcode/i.test(p.args) &&
+    / -p /.test(p.args) &&
     p.ålder >= 300;
   const dödade = [];
   for (const p of läsPs().filter(ärLäcktZcode)) {

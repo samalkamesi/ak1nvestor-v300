@@ -20,7 +20,7 @@ import os from "node:os";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
-import { klassaMinne, lasFonster, sammanstallFonster, tillMarkdown } from "./bygg-ram-trend.mjs";
+import { klassaMinne, lasFonster, sammanstallFonster, tillMarkdown, valjServerfonster } from "./bygg-ram-trend.mjs";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VERKTYG = path.join(REPO, "verktyg/bygg-ram-trend.mjs");
@@ -159,6 +159,63 @@ try {
   kontroll("29. CLI: --json flaggan oberoende av filargumentets ordning", JSON.parse(cli(["--json", huvudfixture])).antalFonster === 2);
 } finally {
   fs.rmSync(TMP, { recursive: true, force: true });
+}
+
+// ── 6) ROND 284: SERVER-TAGGNING — blanda aldrig maskinvaror i en trend ───
+const BLANDAD = [
+  { fas: "start", ts: "2026-09-27T12:47:26.158Z", pid: 1044242, server: "contabo" },
+  { fas: "bygg", ts: "2026-09-27T12:48:26.484Z", tillgangligtMB: 235, minut: 2, server: "contabo" },
+  { fas: "slut", ts: "2026-09-27T12:53:20.640Z", varv: 5, minTillgangligtMB: 235, server: "contabo" },
+  { fas: "start", ts: "2026-09-28T03:47:00.000Z", pid: 4711, server: os.hostname() },
+  { fas: "bygg", ts: "2026-09-28T03:48:00.000Z", tillgangligtMB: 57000, minut: 1, server: os.hostname() },
+  { fas: "slut", ts: "2026-09-28T03:52:00.000Z", varv: 4, minTillgangligtMB: 57000, server: os.hostname() },
+];
+kontroll("30. r284 lasFonster: fönstret ärver server-taggen från start-raden", (() => {
+  const r = lasFonster(BLANDAD);
+  return r.stangda.length === 2 && r.stangda[0].server === "contabo" && r.stangda[1].server === os.hostname();
+})());
+kontroll("31. r284 lasFonster: otaggad start + taggad slut ⇒ slut-radens tagg ärvs", (() => {
+  const r = lasFonster([
+    { fas: "start", ts: "2026-09-28T03:47:00.000Z", pid: 1 },
+    { fas: "slut", ts: "2026-09-28T03:52:00.000Z", varv: 1, minTillgangligtMB: 400, server: "ssdnodes-test" },
+  ]);
+  return r.stangda[0].server === "ssdnodes-test";
+})());
+kontroll("32. r284 valjServerfonster: främmande server exkluderas + räknas ärligt", (() => {
+  const { stangda } = lasFonster(BLANDAD);
+  const v = valjServerfonster(stangda, os.hostname());
+  return v.bevarade.length === 1 && v.bevarade[0].server === os.hostname()
+    && v.exkluderadeServrar.get("contabo") === 1;
+})());
+kontroll("33. r284 valjServerfonster: otaggade fönster (äldre historia) bevaras", (() => {
+  const { stangda } = lasFonster(FIXTUR_RADER); // fixturen är otaggad
+  return valjServerfonster(stangda, os.hostname()).bevarade.length === 2;
+})());
+try {
+  // section 5:s finally städade TMP — egen katalog för r284-fixturerna
+  const TMP2 = fs.mkdtempSync(path.join(os.tmpdir(), "ak1a-trend-r284-"));
+  const fixturFil2 = (namn, rader) => {
+    const f = path.join(TMP2, namn);
+    fs.writeFileSync(f, rader.map((r) => JSON.stringify(r)).join("\n") + "\n");
+    return f;
+  };
+  const blandadFil = fixturFil2("blandad.jsonl", BLANDAD);
+  const egen = JSON.parse(cli([blandadFil, "--json"]));
+  kontroll(
+    "34. r284 CLI: standard visar EGEN server — contabo-fönstret exkluderat med räknerad",
+    egen.antalFonster === 1 && egen.serverfilter.vald === os.hostname()
+      && JSON.stringify(egen.serverfilter.exkluderade) === JSON.stringify([["contabo", 1]]),
+  );
+  kontroll("35. r284 CLI: markdown bär SERVERFILTER-notisen", cli([blandadFil]).includes("SERVERFILTER"));
+  const alla = JSON.parse(cli([blandadFil, "--json", "--alla-servrar"]));
+  kontroll("36. r284 CLI: --alla-servrar visar allt utan filter", alla.antalFonster === 2 && alla.serverfilter.vald === null);
+  kontroll(
+    "37. r284 CLI: blandad trend LÄSER olika utan filtret — contabo 235 → ssdnodes 57000 = STIGER (falsk maskinvaru-trend, därför filtret)",
+    JSON.parse(cli([blandadFil, "--json", "--alla-servrar"])).trend.riktning === "STIGER",
+  );
+  fs.rmSync(TMP2, { recursive: true, force: true });
+} catch (e) {
+  kontroll("34-37. r284 CLI-serverfilter", false, e.message.split("\n")[0]);
 }
 
 console.log(`\n${pass}/${pass + fail} PASS${fail ? " — FAIL: " + FEL.join(", ") : ""}`);

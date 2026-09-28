@@ -15,6 +15,23 @@ set -uo pipefail
 ROT="/home/ak1a/AK1"
 cd "$ROT" || exit 2
 
+# ROND 283 (v190-följdvåg): Chrome utan root på nya servern. Minimal-Ubuntu
+# saknar /usr/bin/chromium och studions auto-policy förbjuder sudo — därför:
+# Chrome-for-Testing i ~/.cache/puppeteer (puppeteer-cli) + systembibliotek
+# (nss/alsa/gbm/drm) uppackade ur Ubuntu-debs i ~/.chrome-libs (apt-get
+# download + dpkg-deb -x, ingen root). Resolvern tar nyaste cache-binären;
+# finns ingen cache-chrome faller vakten tillbaka på sina systemvägar
+# (/usr/bin/chromium m.fl. — Contabo-läget, se granssnittsvakt.mjs).
+CHROME_CACHE="${HOME}/.cache/puppeteer/chrome"
+if [ -z "${AK1A_CHROME:-}" ] && [ -d "$CHROME_CACHE" ]; then
+  AK1A_CHROME="$(ls -1d "$CHROME_CACHE"/linux-*/chrome-linux64/chrome 2>/dev/null | sort -V | tail -1)"
+fi
+[ -n "${AK1A_CHROME:-}" ] && export AK1A_CHROME
+CHROME_LIBS="${HOME}/.chrome-libs/usr/lib/x86_64-linux-gnu"
+if [ -d "$CHROME_LIBS" ]; then
+  export LD_LIBRARY_PATH="${CHROME_LIBS}${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+fi
+
 STAMP="$(date +%Y-%m-%dT%H%M)"
 # GRANSSNITT_KATALOG: test-överridning av rapportkatalogen (sviten kör mot
 # tmp-katalog — skarp cron använder default data/vakten).

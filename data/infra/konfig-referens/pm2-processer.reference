@@ -1,6 +1,7 @@
 # ============================================================================
-# PM2-PROCESSREFERENS — ak1a@contabo
-# (fullmaktssammanträdet 2026-09-15 — styrelsens beslut punkt 6)
+# PM2-PROCESSREFERENS — ak1a@ssdnodes (208.87.129.108)
+# (fullmaktssammanträdet 2026-09-15 — styrelsens beslut punkt 6;
+# serverbyte v190 r282 2026-09-28: Contabo → SSD Nodes)
 # ============================================================================
 # De pm2-processer som SKA finnas ONLINE på servern. Verktyg/
 # konfigintegritet-vakt.mjs kontrollerar varje namn mot `pm2 jlist` var
@@ -15,6 +16,9 @@
 #   node verktyg/konfigintegritet-vakt.mjs
 #
 ak1a          prod-webben (Next.js) — lab.ak1nvestor.com
-ak1a-test     test-miljön
 ak1a-pumpor   pumpor-daemonen — schemaläggaren (verktyg/pumpor-daemon.mjs)
 pulsvakt      pulsvakten — mätetal till sessionen (verktyg/pulsvakt.mjs)
+# ROND 284 (2026-09-28): ak1a-test bort ur normen — test-kopian lever på
+# CONTABO (varm reserv, viloläge) och är på SSD Nodes en BOKAD våg
+# (r282:s följdelista); när kopian byggs här igen återställs raden.
+# Contabos ak1a-test lyder under Contabos egen (pausade) vaktpaket.

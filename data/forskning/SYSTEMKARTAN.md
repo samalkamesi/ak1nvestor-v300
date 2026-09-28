@@ -2687,13 +2687,13 @@ steg; (b) aggregatorn förtjänar en egen kontraktssvit (klassregex + kvitto-
 parsning + återupptagning); (c) mimosa-direktanropets fixture-fynd kan härdas
 i sviten själv (en --hoppa-over-rad) så CLI-kanon blir mindre avgörande.
 
-## ÖVERSIKT — 41 system
+## ÖVERSIKT — 42 system
 
 | # | System | Grupp | Läge | Score | Topp-gap |
 |---|--------|-------|------|-------|----------|
 | A1 | Kursplattformen (495 kurser, quiz, XP, case) | Utbildning | LEVER | 8 | 09-24 (s9-u2): 495 EGENMÄTT i fem led (siffror · deep-courses · sok-index · **larvag-synk GRÖN 495=495=495**) medan registerglidningen PAUSAD (495 stabilt 3 dygn, sista s5 496466f6 09-22); quiz-frågan ROTBESVARAD: chapters[].quiz EGEN = 8 223 EXAKT (generatorn korrekt), 161 kurser quizlösa = samtliga s5-tillop — strategi, ej fel; ytkod = v160-finslip enbart (SektionsCta/kurser-chip), kärnan orörd; gap 1 återmätt 0 sviter; /kurser · /laroplan · /labb 200; bokmaster 105 disk/103 räknade |
 | A2 | Lärvägen + läroplanen | Utbildning | LEVER | 7 | 09-20 (s9-u3): registret 458 (+38 på 2 dygn från 420; s5-vågorna kontinuerliga, rebas-commit 8f8ca693 efter prod-synkens trädrensning); synk EGEN GRÖN 458=458=458 · 21 profiler · 0 fantomer; kärnan larvag.ts 458 r orörd sedan v99 (wc -l exakt; metodnotis: split-räkning ger +1 utan avslutande nyrad); karta 497 r; /laroplan + /en/laroplan + /api/larvag 200; regressionssvit + E2E-inloggning saknas fortfarande |
-| A3 | AI-Mentorn (73 deterministiska svarsmotorer + modellager) | Utbildning | LEVER | 9 | 09-21 (s9-u3): kedjan 298 PASS/0 FAIL EGEN (195 monsters/73 motorer, +16 motorer på 2 dygn; marknadsrytm sista ofyllda familjen); E01 GRÖN 476/476 EGEN (bas 26/0; rebaken höll genom 398→408→452→476); 78 sviter · 72 lagerfiler (ls); 7 kategoriclosures under 09-20 (PE/Risk/Lönsamhet/Katalysator/Sektoranalys 32/32/A-M/Pengarnas tid; svitfamiljen 43 röda→0); dataset-medianer okopplade; E2E mot levande medlems-API återstår |
+| A3 | AI-Mentorn (89 deterministiska svarsmotorer + modellager) | Utbildning | LEVER | 9 | 09-28 (s9-u3): kedjan 314 PASS/0 FAIL EGEN (kontroll H: **89 motorer/229 monsters**, disjunkta id ×89; +16 motorer på 7 dygn sedan 09-21 — s6-fabrikens 09-28-vågor årsreview+ägarslut+faktorfäder, kategoristängningar PORTFÖLJHANTERING 15/15 + PE/IB 17/17 delad med syskon + FAMILJIEKONTORET tredje ägarformen); E01 GRÖN **495/495 fält-för-fält EGEN** (bas 26/0; rebaken höll genom 476→495); **94 sviter** · 88 fragor-filer + basen (ls); SIDOFYND: quiz **8 283** (+60 mot 09-24:s "EXAKT 8 223" — A1/A5/E32:s frusna tal åldras); dataset-medianer okopplade; E2E mot levande medlems-API återstår |
 | A4 | Daglig träning (dagens pass, veckoplan, kunskapsflöde) | Utbildning | LEVER | 7 | 0 egna sviter (återmätt 09-19); determinismen TREDJE verifieringen: offline-hash = prod-svar exakt samma dag (09-19 SWED-A.ST); hashen kan repetera dagar (09-19+09-20 båda SWED-A.ST — dagsurval, ej rotationsgaranti); kodstilla sedan 09-16; dagens quiz betjänar frusna quiz-beståndet (8 223 sedan 09-15) |
 | A5 | Gamification (badges 29 troféer, certifikat, topplista) | Utbildning | LEVER | 7 | 0 egna sviter (mätt 09-20); gap 3 ÅTERMÄTT ÖPPEN 09-20: POST utan sessionsvakt + läcker {rank,total} till oautentiserad anropare (topplistan fortfarande tom = inget utnyttjat), GET-fönster 500 händelser; certId kollisionsbart (certifikat.tsx:57); bränslet fruset KOHORTBEVISAT 09-20: +50 kurser sedan 09-18 med 0 nya quiz — quiz 8 223/XP 82 230 oförändrade, quizlösa kurser 80→130 (19→28 %) |
 | A6 | Biblioteken (bokmaster, bokkanon, forskningsbiblioteket) | Utbildning | LEVER | 7 | 09-20 (s9-u3): rotlagren FRUSNA (bokmaster 105 på disk mot siffrors 103 = rebaken består · bokkanon 102 · analyses 11 · forskningsbiblioteket 22 — samtliga mtime 09-10); Kön-explosionen på C16:s sida (granskning/ 144 filer: 63 diff-JSON + 40 KONTROLL + Q3-kvartalsvåg 16 + KOMPLEMENT 11); underläget ordgräns-mätt bland Kön-diff-JSON: 8/63 med AKM2-ticker · 38 endast AKM1 · 17 utan båda (nedre gräns — begreppsguider kan bära annat underlag); verktygskedjan fortfarande utan lint-dörr |
@@ -2731,9 +2731,10 @@ i sviten själv (en --hoppa-over-rad) så CLI-kanon blir mindre avgörande.
 | E37 | Navigering & app-yta (palett, sökindex, PWA, menyer) | Grund | LEVER | 8 | 09-21 (s9-u3): TREDJE serien o118–o130 — SEX kurer i träd: i PROD (LDVlDGu2, egen BUILD_ID-mätning) o118+o119+o123 med EFTER-bevis (sonder 69→3/23→0 · vakten 0/154), VÄNTAR DEPLOY o126+o127 KASKADKUR (`.flex>*`-regeln i @layer base globals.css:617–625 — olagrad regel neutraliserade ALLA Tailwind min-w-utilities projektvidt, 46 användningar; o123:s pill-fix var verkningslös av konstruktion) + o128 tummar 16→52 + o129 CV-kalibrering (proxy-EFTER −84 %); deployen slogs av bygg-OOM ×3 + pm2-loop → 502 22:29 → läke-återställning 22:31Z (prod 200); äkta EFTER (o131 §4/o132 §6) = öppet vakarövertag; dessförinnan: reservationssystemet o89–o97 (desktop Σspan 98,4 % · mobil 99,3 % · LH /kurser P94); kvar: SPEGEL-POP-IN öppen i prod tills o129 deployas, o63-köposten, 2 designbeslut, 0 egna sviter, sökindex-cadans |
 | **E39** | Rapportakademin — det vertikala snittet (övningsverkstan) | Utbildning | **LEVER** | 6 | 09-22 (s9-u1): DEPLOY-SKULDEN STÄNGD — sidan **200 (69 003 B)** + GET pass **200+`kod:"inloggning"`-kropp** (rond 148-kontraktet lever: GET-skalet 200+kod för gäst/fas1 i stället för 401/403 som webbläsaren loggar som resursfel — vaktens 4 fynd döda, mutationerna behåller 401/403, skalet exponeras aldrig) + POST 401 + riktat vaktsvep **0/4 EFTER deploy** (23:48:20 lokal) + sitemap-inbjudan släppt (1 URL — byggdSidaFinns-grindens ANDRA mätning grön); GDPR-kedjan hårdkodad i intaget (minimerings-NEK 400 · art13-tvång 409 · export/radera med lagrumskvitto — unikt i kodbasen) + serverhemliga facit; GAP kvar: gallringen ODRIVEN (0 anropare ÅTERMÄTT 09-22 — BESLUT 1.2:s AUTOMATISKA raderingslöfte utan drivare, E29:s cron-pipeline = naturlig hemvist) · 0 egna sviter (fem kontrakt overifierade) · citat-validatorn vilande · registret singelton (abb-ar-2025) |
 | **E40** | Rapportbyggaren — redovisningsverkstan (/rapporter) | Utbildning | **LEVER** | 6 | NY RAD 09-21 (s9-u2-omkörning): publik redovisningsverkstad FÖDD 09-02/05 (4d5f2457 + 6fa944e6) men ALDRIG kartradad av K1 — 0 träffar i hela kartan (grep-bevis); elevens analysbank (localStorage ak1a-analysbank-v1, kap 50) → formatterad utskriftsbar rapport: marin omslagsband + nivå-badge, superanalys-nyckeltal (totalpoäng/band/kategorisnitt + AK1TS-vågor per horisont), "Metodiken bakom", MAL-LÅST disclaimer (byggDisclaimerRader — maskinellt bevisad i validera-motorer, delad med PRO) + PRINT-CSS-isolering; PRO-delning /pro/rapporter (Rapportverkstan, 3 mallar, TenantHeader, b2bAktiv-grind); loopback 200 båda · meny nav.rapporter ✓ · sitemap ✓ (0,7/0,8) · vakten ✓ (sitemap-upplösning); GAP: sparaIAnalysbank() 0 anropare (grep) — konfluens/netnet/vågfundament når ALDRIG banken (3/4 verktyper döda vägar; enda gödning = superanalys-liveimporten) · 0 poster i sok-index (osynlig i palett/sök — verktygssidor som klass) · 0 egna sviter |
-| **E41** | Longtask-sonden — prestandadiagnostikens spårkraftslinje | Grund | **LEVER** | 6 | NY RAD 09-21 (s9-u2-omkörning): CDP-instrumentet som rotförklarade /en/blogg-TBT-anomalin — 0 träffar i kartan (grep "longtask"; TBT-värdena lever i E37:s rader men instrumentet saknades); rå CDP (Node 22-WebSocket) med Lighthouse-klass emulation (412×823 · CPU 4x · Slow-4G) + v8.cpu-profiler ⇒ longtask > 50 ms med chunk-attribution + TBT-spektrum Σ(dur−50) i FCP→FCP+5 s; 15 trackade bevis-JSON (7–47 KB) i OPTIMERING/lighthouse + protokollkedja o110 (upptäckt: identisk script-last, TBT ~1 100/330/440) → o118/o120 (anomalin rotförklarad, widget-hypotesen AVFÖRD) → o139 (cv-widget-kur par-bevisad: 1 437 mot kontroll 1 708) → o144 (EFTER-kvittering; detached verkställarväntare LEVER, 4fd87589); GAP: verktyget ARKIVERAT i skrap-arkiv (engångsverktyg — återaktivering = lyft ur arkivet) · 0 egna sviter · kvittokedjan visad skör (o118-kvittot först dagen efter, 696fadb1) |
+| **E41** | Longtask-sonden — prestandadiagnostikens spårkraftslinje | Grund | **LEVER** | 7 | ÅTERDIFFAD 09-28 (s9-u3; TABELLSYNK: 09-24:s dom LEVER 6→7 nådde aldrig huvudtabellen — gap 1 stängdes då: sonden återfödd ur arkivet + cron-ägt DAGLIG drift): instrumentfamiljen i verktyg/ **12 st EGEN räknad** (prestanda-lighthouse.mjs kanonisk · natt-tbt-matare.mjs v180-omdöpt, cron-ropad · skroll-cls · cv-funktionssond · sond-sl · viewportsond m.fl.) + **r304:s CHROME_PATH-kur EGEN LÄST i roparen** data/infra/contabo/natt-tbt-cron.sh (nya servern saknar /usr/bin/google-chrome — utan kuran hade natt-TBT-cronen dött tyst; CHROME_PATH ×7 verktyg, grep); spårvågorna o556–o558 09-28 (protokoll EGEN ls i OPTIMERING/): o556 = o160 §7 struktur-EFTER-kvitto deploy 22df62aa (smutsfönster-diagnos, autonoma mätorganismen) · o557 = rapportbyggarfamiljens JUNGRUMARK /rapporter (första LH-baslinjen: LCP 9,7/8,6 s · TBT 34,5/33,2 s laststämplad · CLS 0 ×2 heligt · 52px-kur · orphan-Chrome-städning 21 träd) · o558 = /bolag-familjens kanalbevis + transportlagsgrind GRÖN; senaste natt-dom-fil 09-27 01:27Z (dom-o151-natt.json); FÖDELSEHISTORIK: rå CDP (Node 22-WebSocket) med Lighthouse-klass emulation + longtask>50 ms chunk-attribution — rotförklarade /en/blogg-anomalin (o110→o144, kur par-bevisad 1 437 mot 1 708); KVAR: 0 egna sviter · O5-fristående · crontab-kommentaren "03:27 lokal" är CEST-historia (servern kör UTC — G3-väntar) |
+| **E42** | Desk — det riktiga skrivbords-Z-Code-programmet i webbläsaren (/desk/) | Styrning | **LEVER** | 7 | NY RAD 09-28 (s9-u3; ÄKTA INVENTORY-HÅL: 0 "desk"-träffar i kartan trots att kunddirektivet "exakt ZCode-programmet online" födde systemet r288 09-28): EGEN MÄTT HELA KEDJAN — nginx landning exakt /desk/ ur /var/www/desk (**302** /desk→/desk/, **401 utan auth = bommen lever**) → basic auth → websockify (web-rot /home/ak1a/desk-web: noVNC app/core/defaults.json EGEN ls) → Xvnc :10 + openbox (maximerar allt) + Zcode-AppImage; **fyra systemd-enheter zdesk-xvnc/wm/zcode/novnc ALLA active EGEN systemctl**; INTE en Next.js-rutt (localhost:3000/desk = 404 är KORREKT — nginx äger stigen före appen); skärmkontrakt **1024x576** (r305-harmoniserat efter odokumenterad 18:58Z-/etc-ändring — läxan protokollforcerad); hälsosvit verktyg/desk-halsa.mjs 6 kontroller (landning-401 · enheter · geometri · maximering · auth-GET ×3; lösenord gissas/lagras ALDRIG); FABRIKSKEJDA **14 uppgifter klara** (manifest-JSON:er EGEN ls i agentfabrik/klara): v198 A-Ö 5u + v199 rättning 2u + v200 motstånd 1u + v201 megaforskning 3u (streamfart U5 + elektronfart U6 + loginpersistens U7; EMOTTAG-KVD 3/3 r306) + v202 klickbarhet 3u (vy-zoom-knappar 5b42742f + SVENSK HJÄLPSIDA på disk /var/www/desk/hjalp.html EGEN ls · bead3a76 + strömfart a98fe5de); KUNDEN AKTIV I SKARP DRIFT: r309 inloggad API-nyckel + full HD 1920x1080 + permanent desktopZoomLevel + r311 telefon-först 960x540; KVAR: EN session/EN AppImage = ingen parallellitet (kundens viktigaste kanal saknar redundans) · basic auth = delat lösenord (studio har individuella sessioner) · v203 paritet-manifest i ko/ väntar · 1 svit (desk-halsa) · 0 prestandamål av själva strömmen på mobil (o557 mätte rapporter, ej desk) |
 
-Snittscore: **7,4/10** (304 poäng / 41 system; B14 +1 vid dokvåg s9-u2 09-28 — v213b-kontraktssviten 46/46 kartradad och systemet rotförstått i kod: valideringsdimensionen grön trots frusna leveransen (5→6), 303→304 = exakt 7,41; E40 NY +6 + E41 NY +6 vid dokvåg s9-u2-omkörning 09-21 — Rapportbyggaren + Longtask-sonden kartradade, 291→303/39→41, exakt 7,39 ⇒ NED från 7,5: två ärliga 6:or drar snittet — att karträta KÄNDA hål är kartans uppdrag, inte en kvalitetsförsämring; E39 NY +6 vid dokvåg 09-21 — Rapportakademin kartradad, 285→291/38→39, exakt 7,46 avrundat oförändrat; E28 +1 vid dokvåg 09-21 — FLAGGA 6→7, dom HARMONISERAD u2+u3 samma omgång: "R2-verkställningen får inget att verkställa" motbevisad (kundorder-mötets 10 åtgärder + R2-stängsel per rad + verkställningsleden ända till laggrundad kod f5a9ac2f + beslutsminnet mekaniskt med NEKA-grind) men FLAGGAN KVAR: gap 1 (JSON-syntesfallbacken) lever i samma möte + 2/5 organ dör på tidsgränserna (E33-precedensen kräver roten borta); E36 −1 vid dokvåg s9-u3 09-19 — 113 kursers OG-bilder 404 live i prod (B7-precedensen); B9 −1 + E33 −1 vid dokvåg s9-u2 09-19 — B9:s historiekontrakt brutet (dagliga skans-rader raderas inom ett dygn av oidentifierad aktör; kvartalsdeduben slagen) och E33:s arkivkedja typblind + dublettblind med samma raderare verksamt i kärntabellen; B14 −1 vid dokvåg s9-u3 09-18 — Contabo-cronens mål 404 (rutten fanns aldrig) + tyst tom nyhetslista live; A3 +1 vid dokvåg s9-u2 09-18 — E01-kontraktet stängt grönt 408/408 och 38/38 sviter röda-fria; E33 +1 vid dokvåg s9-u3 3/3 09-17 — "prod-tömningen" motbevisad, FLAGGA hävs; E35 +1 vid omgång 11:s återdiff 09-17 — tmp-läckeklassen mekaniskt död i båda ändar, levande bevisad; E34 +1 vid omgång 9:s återdiff (artefaktverifieringsgrinden stänger incidentens rot-gap); E35/E29/E30/E37/A3/E34 +1 vid
+Snittscore: **7,4/10** (312 poäng / 42 system; E42 DESK NY +7 + E41-TABELLSYNK +1 (09-24:s dom LEVER 6→7 nådde aldrig huvudtabellen) vid dokvåg s9-u3 09-28 — 304→312/41→42 = exakt 7,43 ⇒ avrundat 7,4 oförändrat; B14 +1 vid dokvåg s9-u2 09-28 — v213b-kontraktssviten 46/46 kartradad och systemet rotförstått i kod: valideringsdimensionen grön trots frusna leveransen (5→6), 303→304 = exakt 7,41; E40 NY +6 + E41 NY +6 vid dokvåg s9-u2-omkörning 09-21 — Rapportbyggaren + Longtask-sonden kartradade, 291→303/39→41, exakt 7,39 ⇒ NED från 7,5: två ärliga 6:or drar snittet — att karträta KÄNDA hål är kartans uppdrag, inte en kvalitetsförsämring; E39 NY +6 vid dokvåg 09-21 — Rapportakademin kartradad, 285→291/38→39, exakt 7,46 avrundat oförändrat; E28 +1 vid dokvåg 09-21 — FLAGGA 6→7, dom HARMONISERAD u2+u3 samma omgång: "R2-verkställningen får inget att verkställa" motbevisad (kundorder-mötets 10 åtgärder + R2-stängsel per rad + verkställningsleden ända till laggrundad kod f5a9ac2f + beslutsminnet mekaniskt med NEKA-grind) men FLAGGAN KVAR: gap 1 (JSON-syntesfallbacken) lever i samma möte + 2/5 organ dör på tidsgränserna (E33-precedensen kräver roten borta); E36 −1 vid dokvåg s9-u3 09-19 — 113 kursers OG-bilder 404 live i prod (B7-precedensen); B9 −1 + E33 −1 vid dokvåg s9-u2 09-19 — B9:s historiekontrakt brutet (dagliga skans-rader raderas inom ett dygn av oidentifierad aktör; kvartalsdeduben slagen) och E33:s arkivkedja typblind + dublettblind med samma raderare verksamt i kärntabellen; B14 −1 vid dokvåg s9-u3 09-18 — Contabo-cronens mål 404 (rutten fanns aldrig) + tyst tom nyhetslista live; A3 +1 vid dokvåg s9-u2 09-18 — E01-kontraktet stängt grönt 408/408 och 38/38 sviter röda-fria; E33 +1 vid dokvåg s9-u3 3/3 09-17 — "prod-tömningen" motbevisad, FLAGGA hävs; E35 +1 vid omgång 11:s återdiff 09-17 — tmp-läckeklassen mekaniskt död i båda ändar, levande bevisad; E34 +1 vid omgång 9:s återdiff (artefaktverifieringsgrinden stänger incidentens rot-gap); E35/E29/E30/E37/A3/E34 +1 vid
 dokvågorna 2026-09-15, D20 +1 samt B7 −1 och E34 −1 vid dokvågorna 2026-09-16
 — glömt-
 lösenord-flödet mätbart stängt resp. berika-pipelinen stillastående +
@@ -7679,6 +7680,85 @@ git-loggat) · R2 orörd (publiceringsstocken endast MÄTT; data/blogg/
 orörd av denna commit — Φ-kurerna är andras levererade faktum) ·
 utkast endast räknade, aldrig flyttade · syskonytor (u2/u3:s kommande
 sektioner) orörda — append i filens slut + rubrikdatum.
+
+## UPPDATERING 2026-09-28 (dokvåg s9-u3 3/3, manifest auto-s9-1790628927958 — A3 + E41 återdiffade + E42 DESK NY RAD; tre system egenmätta mot verkligheten)
+
+**A3 AI-Mentorn (återdiff; förra passningen 09-21 — s6-fabrikens tre
+09-28-vågor hade inte nått raden):** kedjan EGEN KÖRD **314 PASS · 0
+FAIL** (298 vid förra passningen) med kontroll H:s inventarie som
+sanning: **89 motorer / 229 monsters** (73/195 förra; +16 motorer på
+7 dygn — årsreview, ägarslut i tre läsningar, faktorfäderna), disjunkta
+monster-id ×89 GRÖNA, källmärkning + kursläkthet på samtliga 229 GRÖNA.
+E01 registeräkthet GRÖN **495/495 fält-för-fält EGEN** (bas 26/0 —
+rebaken höll genom 476→495). **94 sviter** (78 förra, ls-räknat) · 88
+fragor-filer + basen. SIDOFYND: bassvitens registerrad rapporterar quiz
+**8 283** — +60 mot 09-24:s "EXAKT 8 223": quiz-beståndet HAR rört sig
+för första gången sedan 09-15; A1/A5/E32:s frusna tal åldras och orsaken
+(nya quiz i tillopp-kurser?) är ett mätuppdrag till nästa A1-passning.
+Score 9 kvar (rad-965-precedensen: kvantitativ växt utan ny
+kapabilitetsklass — kategoristängningarna är spår 6:s pågående mönster,
+ej ny klass).
+
+**E41 Longtask-sonden (återdiff + TABELLSYNK; förra 09-24):** 09-24:s
+dom "LEVER 6 → LEVER 7" (gap 1 stängt: sonden återfödd ur arkivet,
+cron-ägt DAGLIG drift) nådde ALDRIG huvudtabellens score-cell — tabellen
+bar 6 medan radens GAP-text fortfarande sade "ARKIVERAT i skrap-arkiv".
+Båda synkade nu. Nya EGEN-mätningar: instrumentfamiljen i verktyg/
+**12 filer** (prestanda-lighthouse.mjs kanonisk, natt-tbt-matare.mjs
+v180-omdöpt, skroll-cls, cv-funktionssond, sond-sl, viewportsond m.fl.);
+**r304:s CHROME_PATH-kur EGEN LÄST i roparen** natt-tbt-cron.sh — nya
+servern saknar /usr/bin/google-chrome, utan kuran (puppeteer-cachens
+Chrome-for-Testing + hoppa-över-vakter) hade natt-TBT-cronen dött tyst;
+CHROME_PATH i 7 verktyg (grep). 09-28:s tre spårvågar lever med
+protokoll på disk (EGEN ls): o556 struktur-EFTER-kvitto av deploy
+22df62aa, o557 rapportbyggarfamiljens jungfrumark /rapporter (första
+LH-baslinjen: LCP 9,7/8,6 s, TBT 34,5/33,2 s laststämplad, CLS 0 ×2
+heligt, 52px-kur), o558 /bolag-familjens kanalbevis + transportlagsgrind
+GRÖN. Senaste natt-dom-fil 09-27 01:27Z. KVAR namngivna: 0 egna sviter
+· O5-fristående · crontab-kommentaren "03:27 lokal" är CEST-historia
+(servern kör UTC — G3-väntar kund).
+
+**E42 DESK — NY RAD (äkta inventory-hål, E39/E40-precedensens klass):**
+kunddirektivet "exakt ZCode-programmet online" (r288, 09-28) födde ett
+HELT system som kartan saknade helt (0 "desk"-träffar; v197-sektionen
+dokumenterar cutovern men inte desk). EGEN MÄTT hela kedjan: nginx
+landning exakt /desk/ ur /var/www/desk (302 /desk→/desk/, **401 utan
+auth**) → basic auth → websockify (web-rot /home/ak1a/desk-web med
+noVNC-appen EGEN ls-ad) → Xvnc :10 + openbox + Zcode-AppImage; **fyra
+systemd-enheter ALLA active** (zdesk-xvnc/wm/zcode/novnc); skärmkontrakt
+1024x576; hälsosviten desk-halsa.mjs 6 kontroller; fabriksskedjan v198
+A-Ö 5u + v199 2u + v200 1u + v201 megaforskning 3u (EMOTTAG-KVD 3/3) +
+v202 klickbarhet 3u = **14 uppgifter klara** med manifests-JSON:er på
+disk; kunden aktiv i skarp drift (r309: API-nyckel + full HD + permanent
+zoom; r311: telefon-först 960x540). Score 7 (LEVER): live-bevisad E2E i
+skarp drift med äkta kund + hälsosvit + hårdnad av 6 fabriksvågor, MEN
+en session/en AppImage (ingen redundans för kundens viktigaste kanal),
+delat basic-auth-lösenord, v203 paritet i kö, 1 svit, 0
+strömningsprestandamål på mobil. Känd fälla dokumenterad i raden:
+localhost:3000/desk = 404 är KORREKT (nginx äger stigen) — nästa
+passnings felavvisare.
+
+**Syskonrapport:** s9-u1 (C15, 08735182) och s9-u2 (E27+B14, ef4c7c48)
+levererade under mitt fönster — racet hanterat med anspråksfil disk-först
++ kirurgiska Edit-ytor (inget innehåll på deras rader); ett Edit-försök
+avvisades av file-state-vakten under u2:s commit och omarmades med färsk
+Read — ingen skada.
+
+**Kö till spåret (namngivna, ej levererade här):** (1) växthuset
+(hyresgästportalen) har prosa i v197-sektionen men FORTARANDE ingen
+tabellrad — nästa dokvågs uppenbara objekt (E43?); (2) E35 återdiff för
+kvällens s8-vågor o560 (.gitignore-mönsterkur + vaccin i svit 25) +
+o561 (cron-execverbits 644→755 ×5 + regressionssvit 15/0); (3) A1:s
+quiz-tal 8 223→8 283 (+60) — orsak mätas; (4) E41:s "03:27 lokal"-
+kommentar harmoniseras när G3 (omankring av crontab till UTC) avgörs.
+
+KVD: data-only — src/ orörd = INGET bygge · R2 orörd (priser/tier/
+publicering orörda; data/blogg/ orörd) · prod-sonder läs-endast (curl
+401/302 + systemctl is-active + ls) · svitkörningar (kedja 314/0 + bas
+26/0) läsande tester · syskonens ytor orörda (desk-halsa.mjs:s
+ocommittade v3-ändring RÖRD EJ — explicit pathspec) · snittet
+304→312/41→42 = 7,43 ⇒ 7,4 oförändrat · commit via -F-fil.
+
 
 ## UPPDATERING 2026-09-28 (dokvåg s9-u2, manifest auto-s9-1790628927958 — E27 Studio + B14 Nyheter diffade mot verkligheten; post-cutover-systemdiff med fulla egna mått)
 

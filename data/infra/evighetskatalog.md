@@ -63,6 +63,20 @@ DR-prov (v98-mönstret: 20 s / 60 tabeller), dump-slutmarkörer,
 Postmall: "DR-övning <kvartal>: återställ, mät tid/rader, protokoll,
 städa lokal PG."
 
+## Spår 11 — DESK A-Ö (kundens telefonresa till ZCode-skrivbordet)
+Kunddirektiv 2026-09-28: "ta detta som uppgift att utveckla från a till
+ö, som fabrik hela tiden och där flera agenter söker efter fel rättar
+förbättrar" + 24/7 i tystnad. Kontinuerlig förbättring av hela resan:
+landningen (/var/www/desk/index.html, ak1a-agd), noVNC-kopian
+(/home/ak1a/desk-web — defaults/vnc.html; core/vendor förbjudna),
+skalningen (Xvnc 1280x720 + openbox-maximering), inloggningsresan
+(systemwebbläsaren /usr/local/bin/zdesk-browser öppnas I strömmen),
+stabiliteten (fyra zdesk-*-enheter + desk-halsa-pulsen). Källmaterial:
+fyndprotokollen data/forskning/DESK-U*.md — varje feljaktsomgång föder
+nästa rättningsvåg. /etc- och /usr-ytor = root-rond (boka, röra aldrig).
+Postmall: "Deskvåg: <område> — rätta <fynd-id> ur DESK-protokollen +
+bevis (desk-halsa.mjs grönt, curl 200/401, protokoll med före/efter)."
+
 ─
 
 Prioriteringsnyckel: kundens uttalade önskan > granskningsköns ålder >

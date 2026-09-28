@@ -7010,6 +7010,23 @@ förbättrar). Första skivan levererad:
   v198-desk-a-o-1789608200.json` (5 uppgifter: hälsosvit, mobilfeljakt,
   landnings-a11y, noVNC-defaults, stabilitet+puls). Hälsokontroll på
   kommando (när u1 levererats): `node verktyg/desk-halsa.mjs`.
+- **D4 Inloggningskuran (r302):** appens Z.ai-login är POLL-baserat
+  (chat.z.ai/api/oauth/authorize, ingen callback-URL) — användaren MÅSTE
+  se en webbläsare. Systemwebbläsare: `/usr/local/bin/zdesk-browser`
+  (Chrome-for-Testing ur puppeteer-cachen + `~/.chrome-libs` +
+  persistent profil `~/.zdesk-browser-profil` + DISPLAY :10), .desktop
+  i `~/.local/share/applications`, `xdg-settings set default-web-browser
+  zdesk-browser.desktop`. Kundens väg vid "Waiting for Z.ai
+  authentication": **Cancel → Logga in** → webbläsarfönstret öppnas
+  I noVNC-strömmen → logga in → profilen minns till nästa gång.
+- **Nyp-zoom-fällan (u2 F1, allvarlighet A):** pinch-gesten på mobil
+  zoomar APPENS text (Ctrl+scroll via core/rfb.js — kan ej rättas i
+  kopian). Återställ: meny → tangentbord → Ctrl+0. Landningen varnar;
+  Ctrl+0-KNAPP i panelen = våg v199-u1.
+- **Fabrikskuran (r301):** ALDRIG hårdkoda ZCODE_MODEL i
+  agentfabrik.mjs-barnens env — satt ZCODE_MODEL får CLI:n att kräva
+  egen provider-aut och dör med "Turn execution failed" mot kontots
+  delade Z.AI-login. Modell väljs ENDAST via FABRIK_MODEL i pm2-miljön.
 - **Kända gropar:** föräldralös websockify kan hålla :6080 efter
   manuell omstart (`ss -ltnp | grep 6080`, döda gammal pid); noVNC-enhet
   fastnar i activating-loop vid portkrock — kolla journalctl -u

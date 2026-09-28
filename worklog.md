@@ -18364,3 +18364,12 @@ Tredje zombie-fönstret (04:47 ff1663af: npm+sh levande, next-build död, 0 % CP
 - NOTIS: SSR-livssonens 1 MANUELL = mätfönster-grind (pågående next build PID 243986 — prod-synkens ombygg) ⇒ SSR ommätt denna körning; defensiv korrekt design, totalt GRÖN.
 - OMGÅNG 2 BOKAD: _f*- och _s*-klasserna (t.ex. _f3-boka.mjs, _f6-eftersond.mjs, _s8u1o145-skriv-resten.mjs) — samma audit-mönster, egen rond. Även: siffran 806 (r269) hade sjunkit till 177 genom tidigare rondstädningar — hygienen håller takten via ronder som städar efter sig.
 - KVD: src orörd · tsc 0 · vakten 0 fel GRÖN · Mimosa 2127-filsscan PASS · användardata orörd.
+
+## ROND 287 [organ:Φ] — v191 FAS 1 SKIVA 3: ÄNDRINGSLOGGEN + KUNDENS EGEN YTA + FÖRSTA RIKTIGA ORDERN — 2026-09-28
+
+- FÖREGÅENDE SKIVAS KVITTO: deployen landade (14 commits f986bde8 07:56:15Z, prod 200) — chatt-API:t LIVE och rätt skyddat (401 utan auth), agentbyggda taglinen syns på portalen publikt.
+- ÄNDRINGSLOGGEN: /api/vaxthus/[slug]/andringar (GET, requireAdmin, git log med ENBART fasta argument i ytan — Mimosa-grön) + /bygg/[slug]/andringar (version+datum+beskrivning per rad) + länk från chatten — transparensen är produkt.
+- KUNDENS EGEN HYRESGÄSTYTA: ~/tenants/mountain-jewelry skapad + seedad (namn + violett profil, GILTIG) — kundens bolag är kund nummer ett i plattformen.
+- FÖRSTA RIKTIGA ORDERN SKARPT: chatt-order "bygg om startsidan för smyckesbutik (silver/guld-hantverk, varje smycke unikt, knapp till kontakt, ingen påhittad kontaktinfo)" → agenten levererade: rubrik "Välkommen till Mountain Jewelrys butik", hantverkstexterna, unikum-sektionen, knappen, omskriven kontaktsida, ny tagline "Hantverkssmycken i silver och guld" — VALIDERAT + COMMITTAT (3 versioner i ytans historik: init → seed → ordern).
+- PARALLELL-SESSION: VPS-studion bygger VIDARE på växthuset själv (vaxthus-chatt-vakt.mjs dök upp i dess push) — organen kompletterar varandra.
+- KVD: tsc 0 · Mimosa-grön · R2 orörd · push-kedja contabo+origin+ssdnodes grön efter harmonisering (4d7be780).

@@ -522,3 +522,15 @@ Samma rond: /bygg-sitemap-exkluderingen i kvalitetsvakten körbevisad
 | G3 | Tidszonsomankring (CEST→UTC: designade fönster gluffade +2 h; natt-TBT:s tysta fönster hamnat i eftermiddagshögtryck) | VÄNTAR KUND — crontab-ytan (r290); förslag i glappkatalogen |
 | G4 | crontab-korrekt.txt = Contabo-historia (/etc/crontab-rader som ej finns på SSD Nodes) — märks HISTORISKT | ✓ STÄNGD r298: märkt HISTORISKT med ödestabell (vagscan→Vercel Cron LEVER · kvalitet→daemon 07:02 · ak1a-halsa→död, täckt av pm2-väktare · pumpar→Vercel Cron) |
 | G9 | VERCEL CRON AKTIVT: 12 dagliga jobb kör på Vercels compute mot delad Supabase (bevis: vagscan-rad 2026-09-28T05:05:22Z = 05:00-schemat) — Vercel-deploymenten kan åldras osynligt om GitHub-speglingen stannar | BOKAD — migrationsvåg: 12 rop → pumpor-daemonen (curl localhost, ra-gallring-mönstret; autonom yta); Vercel-cronens avstängning = KUNDENS beslut (R2-adjacent). Portföljuppföljningens 0 rader diskriminerar 1/10 |
+
+## ROND 301–307 (2026-09-28) — standby-sessionen: DESK-kedjan + instrumentkurerna (worklog bär fulltext)
+
+| Rond | Innehåll | Status |
+|---|---|---|
+| r301–303 | DESK D1–D4 (annan kanal, se worklog): mobil-landning + skalning + fabriks-självrättningsrätt + SYSTEMWEBBLÄSARE I STRÖMMEN (login-kuran D4) + v198 5/5 + v199/v200 klar | LEVERERADE (worklog r301–303) |
+| r304 | CHROME_PATH-KUREN: NY verktyg/chrome-sokvag.mjs (gränssnittsvaktens kontrakt: env → puppeteer-cache → system) + prestanda-mat.mjs via modulen + natt-tbt-cron.sh exporterar CHROME_PATH — natt-TBT-instrumentet lever på SSD Nodes (bevisat i AK1-trädet) | ✓ LEVERERAD 94a10c1d |
+| r305 | DESK-KONTRAKTSHARMONISERING: desk-halsa.mjs skärmkontrakt 1280x720 → 1024x576 — 18:58Z-/etc-ändringen (44 % av pixlarna, snabbhetsordern) domad motiverad, bokförd och kontraktet följt efter; RESULTAT 6/6 PASS | ✓ LEVERERAD a9479f45 |
+| r306 | v201 EMOTTAG-KVD 3/3 GODKÄNDA (U5 streamfart + U6 elektronfart + U7 loginpersistens; 3 protokoll + 3 commits + vaulten verifierade) + 18:58-aktören identifierad via U7 §3 (root-bärande huvudagentkanal — "r306"-märket i /etc är den kanalens räkning) | ✓ LEVERERAD c8128ece |
+| r307 | LOGIN-SOND BOKFÖRD: providerCount 0 + 160 oauth-poll-rader/30 min ⇒ kundens engångslogin kan pågå — U6-steg I (app-omstart) förblir villkorat tills pollen tystnar; kundflödet skyddas | ✓ LEVERERAD 7dd6b06a |
+
+Nästa i kön (händelsestyrda): nattens G2/G5-kvitton 02:30–06:27 UTC 29/9 (7 spår; instrumenten bevisat levande) · o556/o558-eftervaktsdomer vid tyst last (tak självdör ~22:32Z/01:06Z, omstartbara — fabrikens auto-s8 håller lasten uppe just nu) · U7 §5-kvittosteg när kunden loggat in · U6-steg I när oauth-pollen tystnat · v232 fullsvep när fabrikskon vilar · G9-steg 2 väntar kund (Vercel-cronens avstängning, R2-adjacent) · v172 rappdagar (kalenderstyrd, oktober äger).

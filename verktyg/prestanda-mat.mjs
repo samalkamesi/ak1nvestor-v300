@@ -21,6 +21,7 @@ import { spawn } from "node:child_process";
 import { mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { chromeSokvag } from "./chrome-sokvag.mjs";
 
 const BAS = process.argv[2] || "http://localhost:3000";
 const UTFIL = process.argv[3] || "/tmp/ak1a-prestanda.json";
@@ -165,8 +166,16 @@ async function matSida(conn, url) {
 
 async function main() {
   const profil = mkdtempSync(join(tmpdir(), "ak1a-lh-"));
+  // r304: hårdkodad /usr/bin/google-chrome dog med Contabo-servern —
+  // upptäckt via chrome-sokvag.mjs (env → puppeteer-cache → system)
+  const chromeBin = chromeSokvag();
+  if (!chromeBin) {
+    console.error("PRESTANDA-MAT: ingen Chrome hittad (AK1A_CHROME/CHROME_PATH/puppeteer-cache/system)");
+    process.exit(2);
+  }
+  console.error(`chrome-binär: ${chromeBin}`);
   const chrome = spawn(
-    "/usr/bin/google-chrome",
+    chromeBin,
     [
       "--headless=new",
       "--no-sandbox",

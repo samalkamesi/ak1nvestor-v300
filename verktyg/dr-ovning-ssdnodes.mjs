@@ -206,7 +206,7 @@ export function valDump(given) {
 
 function forkontrollDump(dump) {
   console.log("[1/7] Dumpkontroll (kolla-dump-markorer.mjs --fil) …");
-  const r = kor("node", [pathJoin(REPO_ROT, "verktyg", "kolla-dump-markorer.mjs"), "--fil", dump], { timeoutMs: 120000 });
+  const r = kor("node", [pathJoin(REPO_ROT, "verktyg", "kolla-dump-markorer.mjs"), "--fil", dump], { timeoutMs: 300000 }); // app-blad ~86 MB = 87–96 s koll; 120 s under last = falskt UNDERKÄND (s10-u2 2026-09-28)
   console.log(r.stdout.split("\n").map((l) => `      ${l}`).join("\n"));
   if (r.status !== 0) {
     console.error("DUMPEN UNDERKÄND — återställning vägras (en ofullständig dump är ingen backup).");

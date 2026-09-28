@@ -10,6 +10,7 @@
 // källan och påstår härdningsformerna. Ingen skarp körning sker någonsin —
 // verktyget pushar till GitHub (origin) vid main(), vilket ägs av pumporna.
 import { strict as assert } from "node:assert";
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -96,6 +97,55 @@ console.log("backup-offsite (o93): byggTarArgv — ren funktion (import av RIKTI
     loggStorlekFore === loggStorlekEfter,
     `loggstorlek ${loggStorlekFore} → ${loggStorlekEfter}`,
   );
+}
+
+console.log("backup-offsite (s10-u3 2026-09-28): atomiskt kontrakt — ruin-detektor + namnformer");
+{
+  const kalla = fs.readFileSync(VERKTYG, "utf8");
+  const { byggArkivFilnamn, byggPartFilnamn, arArkivLasbart } = await import(pathToFileURL(VERKTYG).href);
+
+  // Namnkontrakt: daterat arkiv behåller dubbel-suffixformen (diskens alla
+  // arkiv + kundens hämtningsflöde), part-filen är SINGULÄR-prefixär — en
+  // körning mitt i skrivning syns aldrig på det slutgiltiga namnet.
+  assert.strictEqual(byggArkivFilnamn("2026-09-28"), "ak1a-offsite-2026-09-28.tar.gz.tar.gz");
+  KOLL("arkivnamn: daterat dubbel-suffix bevarat", true);
+  assert.strictEqual(byggPartFilnamn("2026-09-28"), "ak1a-offsite-2026-09-28.part.tar.gz");
+  KOLL("partnamn: .part.tar.gz-formen", true);
+  assert.ok(!byggArkivFilnamn("2026-09-28").includes(".part"));
+  KOLL("part och slutgiltigt namn kan aldrig kollidera", true);
+
+  // Beteendettest av ruin-detektorn mot riktiga tar-filer (fixture i /tmp):
+  // giltigt arkiv → true; trunkerad kopia (hel gzip avklippt mitt i) → false.
+  const fix = fs.mkdtempSync("/tmp/s10u3-svit-");
+  try {
+    fs.writeFileSync(path.join(fix, "a.txt"), "tråden lever\n");
+    fs.writeFileSync(path.join(fix, "b.txt"), "x".repeat(4096));
+    execFileSync("tar", ["-czf", path.join(fix, "helt.tar.gz"), "a.txt", "b.txt"], { cwd: fix });
+    const helt = await arArkivLasbart(path.join(fix, "helt.tar.gz"));
+    KOLL("arArkivLasbart: helt arkiv → true", helt === true);
+
+    const ruin = path.join(fix, "ruin.tar.gz");
+    const buf = fs.readFileSync(path.join(fix, "helt.tar.gz"));
+    fs.writeFileSync(ruin, buf.subarray(0, Math.floor(buf.length * 0.7)));
+    const ruinen = await arArkivLasbart(ruin);
+    KOLL("arArkivLasbart: trunkerad ruin → false", ruinen === false);
+  } finally {
+    fs.rmSync(fix, { recursive: true, force: true });
+  }
+
+  // Källkontrakt på kuren: timeouten räcker för växtet arkiv, part→rename-
+  // flytet, snapshot via backup-API + quick_check-grind — och copyFileSync
+  // på db-källan är borta (integritetsfyllet 2026-09-28: invalid pages).
+  KOLL("timeout höjd till 600 s", kalla.includes("timeout: 600_000"), "verktyget skjuter fortfarande med 120 s");
+  KOLL("rename-flyt finns (part → slutgiltigt)", kalla.includes("fs.renameSync(partSökväg, sökväg)"), "atomär namngivning saknas");
+  KOLL("snapshot via python3 backup-API", kalla.includes("src.backup(dst)"), "konsistent snapshot saknas");
+  KOLL("quick_check grindar snapshot", kalla.includes("PRAGMA quick_check"), "integritetsgrind saknas");
+  KOLL(
+    "copyFileSync på db-källan bortagen",
+    !/^\s*fs\.copyFileSync/m.test(kalla),
+    "filkopiering av levande DB lever kvar som ANROP (dokumentationsomnämnanden i kommentarer är tillåtna)",
+  );
+  KOLL("part-rester rensas i huvudet", kalla.includes(".part.tar.gz"), "part-flödet saknas i rensningen");
 }
 
 console.log(`\nSVIT KLAR: ${pass} PASS · ${fel} FAIL`);

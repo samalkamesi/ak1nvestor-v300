@@ -128,7 +128,10 @@ const kor = (k, cwd = SL) =>
   });
 
 // sandlåde-repo: HEAD + prod-yta (node_modules/.next) + kopia (node_modules/.next-ny)
+// (lokal git-identitet — servern saknar global; utan den dör commit-steget)
 execFileSync("git", ["init", "-q", SL]);
+execFileSync("git", ["-C", SL, "config", "user.email", "v183b@test"]);
+execFileSync("git", ["-C", SL, "config", "user.name", "v183b-test"]);
 execFileSync("git", ["-C", SL, "commit", "--allow-empty", "-m", "bas"]);
 const HEAD = execFileSync("git", ["-C", SL, "rev-parse", "HEAD"]).toString().trim();
 fs.mkdirSync(path.join(SL, "node_modules"));

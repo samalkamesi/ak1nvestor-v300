@@ -77,14 +77,32 @@ stoppregel r290).** Underlag föreslår (vid kundbeslut): natt-TBT →
 `27 1 * * *` UTC (bevarar 03:27-stockholm-designen), övriga rader granskas
 vartefter. Referensens rad 8 bär varningen tills beslut finns.
 
-### G4 — MEDEL · crontab-korrekt.txt är Contabo-historia
-data/infra/contabo/crontab-korrekt.txt föreskriver /etc/crontab-rader
-(3 curl-pumpor, ak1a-halsa var 5:e, kvalitet 09:00) som INTE finns på SSD
-Nodes /etc/crontab (endast run-parts-standard + certbot + e2scrub_all i
-/etc/cron.d). Dokumentet är EGEN avvikelseyta: antingen märks det HISTORISKT
-(Contabo-epoken) eller skrivs en ny SSD Nodes-variant när behov finns.
-Pumporna schemaläggs numera av pm2 (ak1a-pumpor) — OBS 2 i referensen
-stämmer. Nästa våg äger märkningen (datafil, autonom yta).
+### G4 — STÄNGD r298 · crontab-korrekt.txt märkt HISTORISKT
+data/infra/contabo/crontab-korrekt.txt (Contabos /etc/crontab-norm, våg
+122A) är märkt HISTORISKT med fullständig ödes-tabell: vagscan→Vercel Cron
+(lever), kvalitetsvakten→daemon 07:02, ak1a-halsa→död med Contabo men
+täckt av pm2-väktarna, övriga pumpar→Vercel Cron. Filen kan aldrig
+appliceras på SSD Nodes (sudo förbjudet) — källbild behållen oförändrad.
+
+### G9 — MEDEL (NY, funnen r298) · Vercel Cron är AKTIVT — 12 dagliga jobb lever på Vercels compute
+Sond (r298, 2026-09-28 13:13Z, läsande mot system_events): SENASTE vagscan-
+rad = **2026-09-28T05:05:22Z** — exakt Vercel Crons `0 5 * * *`-schema
+(vercel.json). Slutsats: Vercel-cronlagret eldar trots "Vercel-backup
+(passiv)" i AGENTS.md — 12 jobb (autonom 00:00, seo-refresh 03:00,
+vagscan 05:00, vagvalidering 05:30, datacache 06:00, email 06:30,
+kvalitet 07:00, nyheter/scan 08:00, oversatt 10:00, expand-courses 12:00,
+portfolj-uppfoljning mån 1:a 07:00, akm3-kalibrering 2:a 05:20) kör mot
+VERCEL-deploymentens egna rutter och skriver till delad Supabase.
+Riskbilden: (a) Vercel-deploymenten åldras om GitHub-speglingen från
+kundens arbetsstation stannar (cron kör då GAMMAL kod — ingen märks yta);
+(b) beroende utanför kundens server = enkel felpunkt utan lokal vaktyta;
+(c) portfolj-uppfoljning har 0 rader totalt i system_events (typnamn?
+aldrig kört? oktober-rotenen 1/10 diskriminerar). ÅtgärdFörslag (bokas
+som egen våg, autonom yta): migrera de 12 ropen till pumpor-daemonen
+(curl mot localhost, samma mönster som ra-gallring 04:41) — då äger
+servern hela schemaläggningen och Vercel-cron kan stängas av i kundens
+Vercel-konto (R2-adjacent: Vercel-ytan är kundens — MIGRERINGEN är
+autonom, AVSTÄNGNINGEN är kundens).
 
 ### G5 — MEDEL (bevakas i natt) · Döda-länkar-spåren stannade 19–21 sep
 data/vakten/doda-lankar-externa-*.json senast 19–21 sep — ÄVEN före
@@ -122,6 +140,9 @@ under flytten). Ingen åtgärd; nattens mätning skriver färskt ts.
 
 ## NÄSTA STEG (bokas i PIPELINE-KO)
 
-- r298+: G2/G5-nattbevakning (7 spårkvitton väntas 02:30–06:27 UTC).
-- G4: crontab-korrekt.txt märks HISTORISKT ( autonom datafil-ändring).
+- r298: G4 STÄNGT (historik-märkning + ödestabell); G9 tillagt (Vercel
+  Cron aktivt — vagscan-bevis 05:05:22Z).
+- r299+: G2/G5-nattbevakning (7 spårkvitton väntas 02:30–06:27 UTC).
+- G9: migrationsvåg bokas — 12 Vercel-cron-rop → pumpor-daemonen (autonom);
+  Vercel-cronens AVSTÄNGNING i Vercel-kontot = kundens yta (R2-adjacent).
 - G3: omankrings-förslag ligger här — VÄNTAR KUND (crontab-ytan).

@@ -11,7 +11,7 @@
  * ett DI-kontrakt som aldrig landade i feljagaren (jagaDrift/jagaProcesser
  * med grön-not-semantik) och ruttade tyst — ospårad fil är osynlig för organets
  * refactorer (o153 §3 rotorsakan). Denna svit testar DET LEVANDE kontraktet:
- * F2:s deploygrind + o80-DI-ytan; F3/F6 testas av eldprovet _f3-vaccin-test.mjs
+ * F2:s deploygrind + o80-DI-ytan; F3/F6 testas av eldprovet feljakt-eldprov.mjs
  * (env-kroksdoktrinen) och lämnas dit.
  *
  * Fem fall, allt mot injicerade mockar (ingen pm2, ingen pgrep, ingen

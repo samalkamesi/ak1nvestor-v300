@@ -1,8 +1,0 @@
-studio: auto v164-f11 momentum
-
-Underlag Fas 3-kurs 'Martin Pring on Market Momentum' (slug
-martin-pring-on-market-momentum) — fem sektioner: kärnan (fart vs
-nivå), divergensläsning steg för steg, RSI-14 för hand på Atlas
-Copco B (verkliga kurser 2026-09-04–09-24, Yahoo Finance, full
-uträkning: U 1,457 / D 1,321 / RS 1,10 / RSI 52,4), fallgropar,
-ekosystemkoppling. 821 ord, utbildningsform hela vägen (2007:528).

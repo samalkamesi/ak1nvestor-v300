@@ -11,4 +11,4 @@ if [ -e /tmp/ak1a-deploy.lock ] && fuser /tmp/ak1a-deploy.lock >/dev/null 2>&1; 
   echo "$(date -u +%FT%TZ) HOPPAR ÖVER: deployfönster aktivt" >> data/forskning/OPTIMERING/lighthouse/o151-natt-cron.log
   exit 0
 fi
-/usr/bin/node verktyg/_s7u3o151-natt-tbt.mjs >> data/forskning/OPTIMERING/lighthouse/o151-natt-cron.log 2>&1
+/usr/bin/node verktyg/natt-tbt-matare.mjs >> data/forskning/OPTIMERING/lighthouse/o151-natt-cron.log 2>&1

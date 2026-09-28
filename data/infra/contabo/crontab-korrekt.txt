@@ -2,6 +2,25 @@
 # /etc/crontab — KORREKT FRAMTIDA INNEHÅLL (våg 122A, 2026-09-13)
 # ============================================================================
 #
+# ██████ HISTORISKT DOKUMENT — CONTABO-EPOKEN (avslutad 2026-09-28) ██████
+# Märkt r298 (v166-konfig, glapp G4): denna fil föreskriver /etc/crontab på
+# CONTABO-servern (sudo-yta). Serverbytet v190 till SSD Nodes medförde:
+#   · nya serverns /etc/crontab har INGA AK1A-rader (endast run-parts-
+#     standard; sudo förbjudet — filen kan aldrig appliceras där);
+#   · jobbens öden efter cutovern (bevis r298, sond 2026-09-28 13:13Z):
+#     – vagscan: LEVER via VERCEL CRON (vercel.json 05:00 UTC dagligen —
+#       bevis: system_events type=vagscan rad 2026-09-28T05:05:22Z; dvs
+#       Vercel-cronlagret är AKTIVT trots "passiv backup" i AGENTS.md —
+#       se glapp G9 i v166-konfig-glappkatalog.md);
+#     – kvalitetsvakten: LEVER via pumpor-daemonen 07:02 (kvalitetsvakt.mjs
+#       direkt — inte curl-rutten);
+#     – ak1a-halsa (*/5): DÖD med Contabo (krävde /usr/local/bin + root) —
+#       rollen täcks av pm2-väktarna (pulsvakt, pumpor-hundvakt, kraschvakt);
+#     – innehållspumparna vagscan/vagvalidering/datacache/email/oversatt/
+#       expand-courses/seo-refresh/autonom/akm3-kalibrering: VERCEL CRON.
+# Innehållet nedan behålls OFÖRÄNDRAT som sann källbild över Contabo-läget.
+# ███████████████████████████████████████████████████████████████████████
+#
 # !!! APPLICERING KRÄVER KUND-GODKÄNND SUDO — FÅR EJ GÖRAS AUTONOMT !!!
 #
 #   sudo cp data/infra/contabo/crontab-korrekt.txt /etc/crontab

@@ -49,7 +49,7 @@
  * efter deploy, rot 200, /andringar timeout ×2, frisk vid återmätning).
  * Kur: pm2 pm_uptime yngre än UPPVARMNING_MIN ⇒ MEDEL "efterdyning",
  * aldrig HÖG. Cron sätter ALDRIG AK1A_APP_ALDER_MIN — hooken finns endast
- * för eldprovet (_f3-vaccin-test.mjs) att styra åldern deterministiskt.
+ * för eldprovet (feljakt-eldprov.mjs) att styra åldern deterministiskt.
  * LAGAR: Lag 1 (bevis i varje rad), Lag 3 (bokför), Lag 6 (fel = lärdom).
  */
 import { execSync, execFileSync } from "node:child_process";

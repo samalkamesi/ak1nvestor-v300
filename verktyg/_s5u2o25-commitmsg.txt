@@ -1,9 +1,0 @@
-studio: auto s5-u2 lärvägsdjup +2 kurser — bk-08 intäktredovisningen (IFRS 15:s fem steg) + roic-05 den ekonomiska vinsten (EVA) — register 477→479, KVD 69 PASS 0 FEL, FRONT B 27 PASS 0 FEL, tsc 0 [fabrik]
-
-BOKFÖRING & ÅRSREDOVISNING:s åttonde steg: paketet 900 mot fristående 600/300/100 → 540/270/90; över tid 400/1 000 = 40 % ger 108; support 6/24 ger 22,5; årets 670,5 mot 690 fakturerat = avtalsskuld 19,5; spegeln 640 → tillgång 30,5; backlog 229,5; bonus 60 under vakt till 960 (implementeringens 330); huvudagent netto 20/100. Sondens vitaste fält: sex kärntermer 0 kursägare.
-
-LÖNSAMHET/roic-familjens femte steg: NOPAT 180 − hyra 135 (EK 1 000 × 10 % + skuld 500 × 7,0 % e.sk.) = EVA 45 = spridning 3 % × 1 500; Norrverk plus 45: 2 000 → 2 272,5 (1,33× → 1,52×); Sörverk minus 30: 1 166,7 → 985 → 712,5 — negativ spridning × tillväxt = djupare hål; 15 % × 0,8 = 6 % × 2,0 = 12 % ROIC; ekonomisk vinst 0 kursägare (endast bokträffar).
-
-Två familjer, två kategorier, noll syskonkollision: klaim disk-först; u1:s se-22 (476→477 under fönstret) orörd och kartverifierad; u3:s anspråk bf-17/od-09/se-22 med dokumenterad se-22-krock mot u1 (pivot åt dem); u3 förkastade roic-05 — konvergent.
-
-KVD 69/0: strukturparitet, 27 aritmetikkontroller, språkgrind (kyrilliska + tre-punkter + läckor) som rättade 17 fynd FÖRE leverans — däribland en ogiltig JSON-escape och ett eftersläpande komma, båda rotade. FRONT B 27/0: 90p kategori-fortsättning ×2 med nivåmatch, D1 behåller km-002, 86p omvänd riktning, vIndex −1, kraverFas 0, determinism, se-22 oskadd. Synk atomisk: register · karta · sökindex · speglar · siffror · llms 479 (6+4 st) · rebake 479 rader · larvag-synk GRÖN. tsc 0 via projektbinär; R2 orörd; data/blogg/ orörd; INGET bygge (prod-synken äger). KO 2 rader + worklog.

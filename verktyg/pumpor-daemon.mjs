@@ -87,6 +87,7 @@ function tick() {
   korMinutvis("automation-motor", "node", ["verktyg/automation-motor.mjs"]); // beslut 6: crontab + pm2 mot git-referens (data/infra/konfig-referens) — GRÖN/larm till data/vakten/konfig-larm.jsonl
   korMinutvis("vaxthus-chatt", "node", ["verktyg/vaxthus-chatt-vakt.mjs"]); // r288: hyresgästens chatt-jobb (Mimosa: requesten äger filerna, daemonen äger processerna — Turbopack spårar spawn i bundlad kod)
   korMinutvis("daemon-friskhet", "node", ["verktyg/daemon-friskhet-vakt.mjs"]); // v195 (r290-läxan): källfilens disk-mtime vs processstart — glapp > 5 min ⇒ LARM (kod på disk ≠ kod i minne)
+  korMinutvis("vercel-cron", "node", ["verktyg/vercel-cron-motor.mjs"]); // r299 (G9-steg 1): Vercel-cron-migreringen — rutter körs ENBART när aktiv=true i data/infra/vercel-cron-migrering.json (steg 2 = kund stänger Vercel-cron; kvalitet permanent inaktiv — kvalitetsvakten 07:02 äger)
   if (min === 37) korEnGang("juridikgrind", "node", ["verktyg/juridikgrind-vakt.mjs"]); // rådsförbudsscan FÖRE FLYTTKLAR (mega g2) — körs alltid före rondens :43
   if (min === 43 && tim % 3 === 1) korEnGang("styrelserond", "node", ["verktyg/styrelse-rond.mjs"]);
   if (min === 17 && tim % 6 === 1) korEnGang("gränssnittsvakt", "node", ["verktyg/vakt-cron.mjs"]);

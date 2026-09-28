@@ -7569,3 +7569,75 @@ B14-blocket + denna sektion · commit med explicit pathspec.
 **Spårläget (PIPELINE-KO rot-filen = sanningen; data/forskning/PIPELINE-KO.md är en äldre dispatchlista, lämnad orörd):** v171 SEO i slutspurt (B28-en levererad r257 ⇒ -en-omgången komplett 30/30; kvar: B28-ar + fyra nya original se-18/20/21/23) · v172 kvartalsrapporter vilar på rappdagarna 10-20→11-04 (110 kalendrar kartlagda) · v174 denna dokvåg · därefter rotation enligt evighetskatalogen. Granskningskön växer (~85 SEO-utkast i tre språk + FLYTTKLAR-paketen) — R2, väntar kundbeslut; påminns i sessioner.
 
 KVD: data-only (docs-appendar), src orörd, inget bygge; tsc via grinden vid commit; prod 200 efter push.
+
+## UPPDATERING 2026-09-28 (dokvåg v197 — CUTOVERN Contabo→SSD Nodes + veckans infraförändringar diffade mot verkligheten; huvudagenten rond 299–300)
+
+**A0 PLATTFORMSBYTET (roten till allt övrigt i denna diff):** prod körs
+sedan 2026-09-28 ~02:47Z på SSD Nodes-servern `ssdnodes-6ab9b334e519a`
+(cutover via rsync från Contabo; Contabo 5.189.162.162 = historia/reserv —
+data/infra/contabo/crontab-korrekt.txt märkt HISTORISKT r298 med
+ödestabell). Nya servern kör **UTC** (Contabo körde CEST — alla "lokala
+tider" i crontab-kommentarer är CEST-historia; omankring = G3, väntar
+kund). Två träd kvarstår som sanning: AK1 = driftträdet (byggen, crontab,
+pm2), agent/ak1 = arbetsyta; prod-synken ropar :x7 med flock-lås +
+buntslagsrace-vakt.
+
+**E35/E29-familjen (drift- och vaktsystemet) — stor rotation sedan 09-26:**
+pm2 = 4 processer (ak1a · ak1a-pumpor **CPU-cappad** taskset 0-3 sedan
+r286 — byggdödskuren · pumpor-hundvakt v192 r287 — extern pulsbevakare,
+tystnad > 3 min ⇒ omstart-eskalering · pulsvakt). NYA verktyg 09-28:
+buntslagsrace-vakten v187 (trädet flyttar under bygget ⇒ byte avbryts),
+daemon-friskhet-vakten v195 r291 (kod på disk ≠ kod i minne — git-log
+företräde före mtime), vaxthus-chatt-vakten v194 r289 (arkitekturen:
+requesten äger filerna, daemonen äger processerna — INGA spawn i bundlad
+kod sedan Turbopacks statiska spårning), vercel-cron-motorn v196 r299
+(steg 1: alla 12 rutter aktiv=false, claim-först + catch-up, kvalitet
+permanent inaktiv). Byggsjukdomen (icke-deterministisk byggdöd ~min 10)
+tämd av tre lager: CPU-cap + spawn-arkitekturkuren + nolldowntime v182
+(.next-ny, prod orörd i fönstret). crontab.reference HARMONISERAD r297
+(9 rader; G1-glappet stängt); G2-nattbevakning 7 spårkvitton 02:30–06:27
+UTC 29/9. **Vercel-cron-lagret är AKTIVT** (G9-fynd r298): 12 dagliga
+jobb (autonom, seo-refresh, vagscan, …) kör på Vercel-deploymentens
+compute mot delad Supabase — bevis vagscan-rad 05:05:22Z; migrationsvågen
+v196 flyttar dem serverägt, steg 2 = kundens Vercel-konto (R2-adjacent).
+
+**Växthuset (hyresgästportalen) — HELT NYTT SYSTEM sedan 09-27:**
+Fas 1 E2E-bevisad i skarp drift r295: chatt-API /api/vaxthus/[slug]/chatt
+(requireAdmin; Fas 1 stängd registrering) → jobbfil → daemonens
+minutvisa vakt → runern (zcode -p i hyresgästens yta ~/tenants/<slug>) →
+validerat svar + committat i hyresgästens träd + publik portal /bygg/
+[slug] + andringsloggen /bygg/[slug]/andringar. Första riktiga
+kundordern (Mountain Jewelry AB) genom hela kedjan 10:17:39Z →
+svar 10:20:17Z (commit 257cc81 i hyresgästens träd).
+
+**DR (v193 r288):** userspace-PG18 i ~/.pg-ssdnodes (sudo förbjuden —
+Chrome-deb-mönstret); DR-prov GRÖNT: dump 1 526 960 rader, restore
+RTO 83,7 s, public 60 tabeller/1 504 250 rader; protokoll
+DR-PROV-2026-09-28-SSDNODES-AUTO-6.md (+ äldre iterationer -1..-5
+ärligt kvarlämnade).
+
+**Gränssnittsvakten:** Chrome-for-Testing utan root r285 (npx
+@puppeteer/browsers + 6 deb-uppackade bibliotek i ~/.chrome-libs);
+cron-debut 07:17 GRÖN; senaste fullkörning 0 fynd/180 kombinationer
+r296 mot bunten wJTbsMJ4.
+
+**Stängda systemytor sedan 09-26:** v188 proxy-migrationen STÄNGD r292
+(middleware.ts→proxy.ts; speglar 200 ×4, 0 deprecationsrader) · v180
+hygienbiblioteket STÄNGT r294 (1 139 _-engångsfiler bort; 5 äkta
+körtidsberoenden omdöpta till äkta namn — natt-tbt-matare.mjs körs av
+cron; 0 _-filer kvar i verktyg/, prefixet = entydigt dött) · v235
+bygg×fabrik-sekvenseringen STÄNGD r296 (eldprov båda vägarna).
+
+**E-datasetet:** 311 oförändrat sedan 09-26 — v172-fönstret 10-20→11-04
+äger nästa rörelse (kalendern: A3M 10-22 · LI 10-23 · DGE+BBVA+PUIG
+10-29 · SGO+4503 10-30 · ENB 11-02).
+
+**Kanaler/skal-tolerans:** studio-skalet hänger fortfarande på
+sammansatta kommandon och node -e (r296–299 mönstret) — kurerna:
+node <skriptfil> (bevisat säker), enkla korta kommandon, subagent-dispatch
+för tunga körningar; efter varje häng verifieras EFFEKTEN (ls/git log),
+aldrig omkörning i blinda.
+
+KVD: data-only (docs-append), src orörd, inget bygge; tsc via grinden vid
+commit; crontab-ytan orörd (G1-kuren var repo-referensen endast);
+användardata orörd.

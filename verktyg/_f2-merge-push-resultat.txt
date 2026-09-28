@@ -1,8 +1,0 @@
-MERGE-PUSH START
-2026-09-20T05:09:32.063Z fetch: 
-2026-09-20T05:09:32.208Z merge:  create mode 100644 verktyg/testa-motor-shortseller-bank.mjs | 
-2026-09-20T05:09:32.409Z push-fel: Command failed: git -C /home/ak1a/agent/ak1 push prod develop
-To /home/ak1a/AK1
- ! [remote rejected]   develop -> develop (Working directory has unstaged changes)
-error: failed to push some refs to '/home/ak1a/AK1'
-

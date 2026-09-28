@@ -1,0 +1,29 @@
+{
+  "namn": "Exempelbolaget AB",
+  "tagline": "Din första sida — be agenten ändra allt det här",
+  "stilar": {
+    "primarFarg": "#2563eb",
+    "bakgrundsFarg": "#ffffff",
+    "textFarg": "#1f2937"
+  },
+  "sidor": [
+    {
+      "slug": "hem",
+      "titel": "Hem",
+      "sektioner": [
+        { "typ": "rubrik", "rubrik": "Välkommen till Exempelbolaget" },
+        { "typ": "text", "text": "Det här är din nya sida. Berätta för din agent vad företaget heter, vad ni gör och vilka ni hjälper — så bygger agenten om sidan åt dig, sektion för sektion." },
+        { "typ": "text", "text": "Du kan också be om fler sidor (t.ex. Tjänster, Om oss, Kontakt) och egna färger." },
+        { "typ": "knapp", "knappText": "Kontakta oss", "knappLank": "#kontakt" }
+      ]
+    },
+    {
+      "slug": "kontakt",
+      "titel": "Kontakt",
+      "sektioner": [
+        { "typ": "rubrik", "rubrik": "Kontakt" },
+        { "typ": "text", "text": "Här skriver agenten in era kontaktuppgifter när ni har berättat dem." }
+      ]
+    }
+  ]
+}

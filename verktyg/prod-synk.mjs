@@ -56,6 +56,7 @@
  * Logg: data/vakten/prod-synk.log · Körs: pumpor-daemonen var 10:e min.
  */
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { execFileSync, spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
@@ -1048,6 +1049,13 @@ export function buntslagsraceDom({ byggTradStart, byggTradSlut }) {
 // ---------------------------------------------------------------------------
 const BYGG_RAM_PROFIL_FIL = path.join(VAKT, "bygg-ram-profil.jsonl");
 const BYGG_RAM_VARNING_MB = 300;
+// ROND 284 (v190-serverbytet): varje sond-rad bär SERVER-taggen — v190:s
+// cutovern gjorde tidsserien till en BLANDAD historik (Contabos 8 GiB-
+// bottnar rsyncades in i nya serverns fil; 231 MB-varningen 02:45 var
+// Contabos mätning). Trenden (bygg-ram-trend.mjs) grupperar per server;
+// rader utan tagg = äldre Contabo-historik (engångsmigrering r284 taggade
+// befintliga rader; framåt är hostname sanningen).
+const BYGG_RAM_SERVER = os.hostname();
 
 export function startaByggRamSond({ fil = BYGG_RAM_PROFIL_FIL, intervallMs = 60_000, lasRam = ramTillgangligtMB } = {}) {
   try {
@@ -1057,7 +1065,7 @@ export function startaByggRamSond({ fil = BYGG_RAM_PROFIL_FIL, intervallMs = 60_
   const skriv = (obj) => {
     try { fs.appendFileSync(fil, JSON.stringify(obj) + "\n"); } catch { /* sonden äger aldrig byggutfallet */ }
   };
-  skriv({ ts: new Date().toISOString(), fas: "start", pid: process.pid });
+  skriv({ ts: new Date().toISOString(), fas: "start", pid: process.pid, server: BYGG_RAM_SERVER });
   let varv = 0;
   let minMB = null;
   const timer = setInterval(() => {
@@ -1065,14 +1073,14 @@ export function startaByggRamSond({ fil = BYGG_RAM_PROFIL_FIL, intervallMs = 60_
     const mb = lasRam();
     if (typeof mb === "number") {
       if (minMB === null || mb < minMB) minMB = mb;
-      skriv({ ts: new Date().toISOString(), fas: "bygg", tillgangligtMB: mb, minut: varv });
+      skriv({ ts: new Date().toISOString(), fas: "bygg", tillgangligtMB: mb, minut: varv, server: BYGG_RAM_SERVER });
     }
   }, intervallMs);
   timer.unref?.();
   return {
     stopp() {
       clearInterval(timer);
-      skriv({ ts: new Date().toISOString(), fas: "slut", varv, minTillgangligtMB: minMB });
+      skriv({ ts: new Date().toISOString(), fas: "slut", varv, minTillgangligtMB: minMB, server: BYGG_RAM_SERVER });
       return { varv, minMB, varning: typeof minMB === "number" && minMB < BYGG_RAM_VARNING_MB };
     },
   };

@@ -190,6 +190,24 @@ kontroll(
   );
 }
 
+// ── 9) ROND 284: sondens SERVER-taggning — v190-serverbytet gjorde tidsserien
+// till blandad historik (Contabo-rader rsyncades in); utan tagg kan trenden
+// läsa "SÄNKS" mellan två olika MASKINVAROR. Kontrakt: varje rad bär hostname.
+{
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "ak1a-byggram-"));
+  const fil = path.join(tmp, "bygg-ram-profil.jsonl");
+  const sond = startaByggRamSond({ fil, intervallMs: 5, lasRam: () => 700 });
+  await sov(15);
+  sond.stopp();
+  const rader = lasRader(fil);
+  kontroll(
+    "19. r284: samtliga sondrader bär server-fältet (= hostname)",
+    rader.length > 2 && rader.every((r) => r.server === os.hostname()),
+    `rader=${rader.length} host=${os.hostname()}`,
+  );
+  fs.rmSync(tmp, { recursive: true, force: true });
+}
+
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 if (fail > 0) {
   console.error("FALLERANDE: " + FEL.join(", "));

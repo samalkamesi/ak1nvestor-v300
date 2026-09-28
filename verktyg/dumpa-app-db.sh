@@ -28,11 +28,23 @@ set -euo pipefail
 
 REPO=/home/ak1a/AK1
 KATALOG="$REPO/data/backups/supabase"
-PG_DUMP=/usr/lib/postgresql/17/bin/pg_dump
 NODE=/usr/bin/node
 LOGG_TID() { date '+%Y-%m-%dT%H:%M:%S%z'; }
 
+# pg_dump-klienten väljs per server: 18 = SSD Nodes (sedan v190), 17 =
+# Contabo-reserven. s10-u2 2026-09-28: den hårdkodade 17-sökvägen dödade
+# skriptets första körning här (kedjan orörd — .part-raderingen fångade den).
+PG_DUMP=""
+for V in 18 17; do
+  [ -x /usr/lib/postgresql/$V/bin/pg_dump ] && PG_DUMP=/usr/lib/postgresql/$V/bin/pg_dump && break
+done
+
 cd "$REPO"
+
+if [ -z "$PG_DUMP" ]; then
+  echo "$(LOGG_TID) FEL: ingen pg_dump-klient (18/17) hittad — kedjan orörd."
+  exit 1
+fi
 
 # --- Driftskydd: aldrig två instanser (manuell + cron) på samma blad ---------
 LAS=/tmp/ak1a-appdump.lock

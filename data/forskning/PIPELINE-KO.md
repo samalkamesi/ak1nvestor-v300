@@ -496,7 +496,7 @@ Samma rond: /bygg-sitemap-exkluderingen i kvalitetsvakten körbevisad
 
 | Våg | Innehåll | Status |
 |---|---|---|
-| v195 | DAEMON-KODFRISKHETSVAKT (spår 8): jämför daemonens källfils disk-mtime mot pm2-processens starttid — disk>start ⇒ larm (r290-läxan mekaniserad; gäller pumpor-daemon + hundvakt + pulsvakt) | ✓ LEVERERAD r291 (kod + svit 11/11; skarp GRÖN med git-förgrening) — pm2-restart + ▶ live-kvitto ägs av r291-slutverifieraren |
+| v195 | DAEMON-KODFRISKHETSVAKT (spår 8): jämför daemonens källfils innehålls-ändring (git företräde, mtime fallback) mot pm2-processens starttid — glapp > 5 min ⇒ larm (r290-läxan mekaniserad; gäller pumpor-daemon + hundvakt + pulsvakt) | ✓ LEVERERAD+STÄNGD r291 (77722858, svit 11/11; live: ▶ daemon-friskhet varje minut kod=0, prod-lägesfil GRÖN med git-sanningen) |
 | v188 | MIDDLEWARE→PROXY-MIGRATIONEN (Next 16 deprecations → proxy.ts) | STÅR (byggdöden kluven i roten av v194 — migreringen fortfarande värd för bygg-hälsan) |
 | v180 | HYGIEN-BIBLIOTEKET: 806 trackade _r*-wrappers i verktyg/ — audit + härdning/radering i omgångar (Mimosa-paritet = röda-trigg i kvalitetsrapporten) | STÅR (väljs när spår 8 vilat) |
 | v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd — oktober äger) |

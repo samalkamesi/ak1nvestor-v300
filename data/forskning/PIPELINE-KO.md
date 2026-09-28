@@ -475,3 +475,29 @@ agentlast, inte bara bygglast).
 | v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd) |
 | v185 | BYGG-RAM-TRENDVERKTYGET | ✓ LEVERERAD r276 (76bc0613) |
 | v186 | SPEGLAR-SLUGAR-KUREN | ✓ LEVERERAD r275 (03ea5918) — äkta debut via r276:s ombygge |
+
+## ROND 288–289 (2026-09-28) — byggkrisens kurkedja (worklog bär fulltext)
+
+r288 runtime-tillstånd + r289 v194 ARKITEKTURKUREN (eb688e38): requesten
+äger FILERNA, daemonen äger PROCESSERNA — chatt-routen skriver jobbfil,
+nya verktyg/vaxthus-chatt-vakt.mjs ropas minutvis av pumpor-daemonen.
+Därmed är v188-tabellens bygg-hälsospår delvis föråldrat: byggdöden
+(Turbopack-spawn) är kluven i roten, inte migrerad.
+
+## ROND 290 (2026-09-28) — [organ:Φ] r289-bevakningen STÄNGD + daemonens minnesglapp kurad
+
+r289:s DEPLOYAD-kvitto inlöst (BUILD_ID 07:43 ⊇ eb688e38, chatt-jobb i
+server-chunks) — MEN rundan avslöjade en tyst död: pm2 ak1a-pumpor
+(startad 05:14, FÖRE eb688e38 07:15) hade korMinutvis-raden ENBAST på
+disk — hyresgästens chatt-jobb hade aldrig plockats. KUR: pm2 restart
+08:52:46 efter stoppregler; bevis: ▶ vaxthus-chatt varje minut kod=0.
+Samma rond: /bygg-sitemap-exkluderingen i kvalitetsvakten körbevisad
+(13/13 PASS GRÖN). Bokföringsgapet rättat — denna sektion.
+
+| Våg | Innehåll | Status |
+|---|---|---|
+| v195 | DAEMON-KODFRISKHETSVAKT (spår 8): jämför daemonens källfils disk-mtime mot pm2-processens starttid — disk>start ⇒ larm (r290-läxan mekaniserad; gäller pumpor-daemon + hundvakt + pulsvakt) | BOKAD — nästa aktiva |
+| v188 | MIDDLEWARE→PROXY-MIGRATIONEN (Next 16 deprecations → proxy.ts) | STÅR (byggdöden kluven i roten av v194 — migreringen fortfarande värd för bygg-hälsan) |
+| v180 | HYGIEN-BIBLIOTEKET: 806 trackade _r*-wrappers i verktyg/ — audit + härdning/radering i omgångar (Mimosa-paritet = röda-trigg i kvalitetsrapporten) | STÅR (väljs när spår 8 vilat) |
+| v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd — oktober äger) |
+| — | Vaxthus-chattens E2E-debut: hyresgästens första riktiga chatt-jobb genom hela kedjan (route→jobbfil→vakt→runern→logg.jsonl) | BEVAKAS (kräver hyresgästens Chatt — organen simulerar ej kunddata) |

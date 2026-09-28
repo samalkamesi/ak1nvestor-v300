@@ -65,6 +65,48 @@
 # Logg: /tmp/server-arkiv.log.
 20 3 * * 0 cd /home/ak1a/AK1 && /usr/bin/node /home/ak1a/AK1/verktyg/arkivera-server.mjs >> /tmp/server-arkiv.log 2>&1
 #
+# ── Rad 5: döda länkar externa 04:17, dagligen (o94) ────────────────────────
+# data/infra/contabo/doda-lankar-externa-cron.sh → verktyg/doda-lankar-externa.mjs
+# (~2 400 sidor, ~13 min): bevisar utgående länkar. Logg:
+# data/vakten/doda-lankar-externa-cron.log; exitkodskontrakt 0/1/2.
+# RADERAD UR BLINDHETEN r297 (v166-konfig): raden levde i crontaben sedan o94
+# men bokfördes ALDRIG här — vakten larmar endast på SAKNADE referensrader,
+# så en bortplockad rad hade varit osynlig. Se glappkatalogen
+# data/forskning/OPTIMERING/v166-konfig-glappkatalog.md (G1+G5).
+17 4 * * * /home/ak1a/AK1/data/infra/contabo/doda-lankar-externa-cron.sh
+#
+# ── Rad 6: app-DB-dump 02:50, dagligen (s10-u3) ─────────────────────────────
+# /bin/bash verktyg/dumpa-app-db.sh — dumpar APPENS Supabase-projekt (aufr;
+# rad 1 ovan täcker rkaq-projektet): PGPASSWORD ur .env-production.local
+# inne i skriptet (aldrig i crontab-raden), .part-then-rename,
+# slutmarkörkontroll före retention. Logg: /tmp/supabase-appdump.log.
+# RADERAD UR BLINDHETEN r297 (v166-konfig) — se G1 i glappkatalogen.
+50 2 * * * /bin/bash /home/ak1a/AK1/verktyg/dumpa-app-db.sh >> /tmp/supabase-appdump.log 2>&1
+#
+# ── Rad 7: daemonens rop-hälsa 06:27, dagligen (o136, spår 8) ───────────────
+# data/infra/contabo/rop-halsa-cron.sh → verktyg/rop-halsa.mjs: mäter
+# daemonens rop-kadens ur pm2-loggen. Rapport: data/vakten/rop-halsa.json.
+# RADERAD UR BLINDHETEN r297 (v166-konfig) — se G1.
+27 6 * * * /home/ak1a/AK1/data/infra/contabo/rop-halsa-cron.sh
+#
+# ── Rad 8: natt-TBT-mätaren 03:27, dagligen (o151, spår 7) ──────────────────
+# data/infra/contabo/natt-tbt-cron.sh → verktyg/natt-tbt-matare.mjs (hoppar
+# om /tmp/ak1a-deploy.lock är aktivt): tystaste lastfönstrets TBT-mätning
+# (metrologiregeln o143 §3). Logg: data/forskning/OPTIMERING/lighthouse/
+# o151-natt-cron.log; dom-fil + sammanfattning i samma katalog.
+# TIDSZON-OBS (r297, G3): "lokal tid" vid installationen = Contabo-CEST
+# (03:27 lokal = 01:27 UTC); SSD Nodes kör UTC — raden avfyras nu 03:27 UTC
+# = 05:27 stockholm. Omankring av schemat = crontab-ytan = VÄNTAR KUND.
+# RADERAD UR BLINDHETEN r297 (v166-konfig) — se G1.
+27 3 * * * /home/ak1a/AK1/data/infra/contabo/natt-tbt-cron.sh
+#
+# ── Rad 9: beroendevakten 05:37, dagligen (o164, spår 8) ────────────────────
+# data/infra/contabo/beroende-vakt-cron.sh → verktyg/beroende-vakt.mjs
+# (npm audit; GRÖN/FYND/VAKTFEL-klasser, installerar ALDRIG något).
+# Rapport: data/vakten/beroende-vakt-*.json. TIDSZON-OBS som rad 8 (G3).
+# RADERAD UR BLINDHETEN r297 (v166-konfig) — se G1.
+37 5 * * * /home/ak1a/AK1/data/infra/contabo/beroende-vakt-cron.sh
+#
 # OBS 1: /etc/crontab (system-wide, med root-användarfält) dokumenteras
 # SEPARAT i data/infra/contabo/crontab-korrekt.txt — denna fil gäller ENDAST
 # användar-crontaben (crontab -l, ingen användarkolumn).

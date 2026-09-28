@@ -509,6 +509,15 @@ Samma rond: /bygg-sitemap-exkluderingen i kvalitetsvakten körbevisad
 | — | r295:s deploy-bevakning: andrings-API:t skall svara 401 när bunt ⊇ 61e120f6 tjänar | ✓ STÄNGD r296: DEPLOYAD 11:52:29Z (22df62aa, prod 200, bunt wJTbsMJ4) → GET /api/vaxthus/mountain-jewelry/andringar = 401 {"Admin-lösenord krävs"} + publika ytan 200 |
 | v235 | BYGG×FABRIK-SEKVENSERINGENs eldprov: VÄNTAR-FABRIK-träff ELLER grön nattbyggnad | ✓ STÄNGD r296 på BÅDA vägarna: 10 VÄNTAR-FABRIK-träffar under aktiva manifest 24/9 (svältstopp självverkställt 2×) + 6 gröna nattdeployer 27–28/9 (se "NÄSTA I KÖN"-posten ovan) |
 | v166/v167-tabellen | våg 165–167-tabellens statuskolumn var omodern | ✓ RÄTTAD r296 (båda stängda sedan rond 175–183; worklog bär bevisen) |
-| v166-konfig | KONFIGINTEGRITETS-SPÅRET: r294:s fynd (crontab.reference saknar natt-TBT-raden trots levande drift — jämförelsen täcker ej hela crontabben) + r296:s fynd (mål-återarmningens ~2 % kallstarts-timeout) → FULL konfigjämförelse: crontab vs reference vs faktiska cron-spår (loggar/dom-filer), glappkatalog med allvarsklass — LÄSANDE underlag i data/forskning/, crontab-ytan orörd autonomt | BOKAD — nästa aktiva |
+| v166-konfig | KONFIGINTEGRITETS-SPÅRET: r294:s fynd (crontab.reference saknar natt-TBT-raden trots levande drift — jämförelsen täcker ej hela crontabben) + r296:s fynd (mål-återarmningens ~2 % kallstarts-timeout) → FULL konfigjämförelse: crontab vs reference vs faktiska cron-spår (loggar/dom-filer), glappkatalog med allvarsklass — LÄSANDE underlag i data/forskning/, crontab-ytan orörd autonomt | ✓ LEVERERAD r297: glappkatalog G1–G8 (data/forskning/OPTIMERING/v166-konfig-glappkatalog.md) + KUR G1 verkställd — crontab.reference harmoniserad med 5 blinda rader (9/9 GRÖN, INFO-okända borta); G2/G5 nattbevakning 29/9 (7 spårkvitton 02:30–06:27 UTC); G3 omankring VÄNTAR KUND; G4 märkning nästa våg |
 | v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd — oktober äger) |
 | — | Gränssnittsvakten efter deployen (nya bunten wJTbsMJ4) | ✓ GRÖN r296: 0 fynd bland 180 kombinationer (båda teman × 390/1280, bas localhost:3000; rapport data/vakten/granssnitt-2026-09-28T124000.json status ok; vakten dispatchad som subagent efter studio-bakgrundskanalens döda start) |
+
+## ROND 297 [organ:Φ] (2026-09-28) — v166-konfig LEVERERAD: glappkatalog + referens-harmonisering; nattbevakning bokas
+
+| Post | Innehåll | Status |
+|---|---|---|
+| v166-konfig | FULL konfigjämförelse (crontab vs reference vs spår) + glappkatalog med allvarsklass | ✓ LEVERERAD r297: G1–G8 i data/forskning/OPTIMERING/v166-konfig-glappkatalog.md; KUR G1: crontab.reference +5 rader (o94/s10-u3/o136/o151/o164) — vakt GRÖN 9/9 + 4/4, blindheten stängd; crontab-ytan orörd |
+| G2/G5 | Nattens diskriminerande test: 7 cron-spårkvitton väntas 02:30–06:27 UTC 29/9 (db-dump, moln-export, app-dump, natt-TBT, döda länkar, beroendevakt, rop-hälsa) | BOKAD — bevakas nästa rond; uteblivna spår ⇒ escalation enligt DRIFTSBOKEN |
+| G3 | Tidszonsomankring (CEST→UTC: designade fönster gluffade +2 h; natt-TBT:s tysta fönster hamnat i eftermiddagshögtryck) | VÄNTAR KUND — crontab-ytan (r290); förslag i glappkatalogen |
+| G4 | crontab-korrekt.txt = Contabo-historia (/etc/crontab-rader som ej finns på SSD Nodes) — märks HISTORISKT | BOKAD — nästa våg (autonom datafil) |

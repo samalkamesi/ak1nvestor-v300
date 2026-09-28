@@ -206,8 +206,17 @@ function lasProcesser() {
  */
 function städaFöräldralösaZcode() {
   const läsPs = lasProcesser;
+  // ROND 303: AppImage = SKRIVBORDET (zdesk-zcode.service, systemd-adopterad
+  // ppid 1, /ZCode-…AppImage i args) — den Såg ut som ett läckt barn och
+  // mördades varje pulsvaktstur (restart-räknare 7, 2026-09-28 17:05).
+  // Fabriksbarnen känns på "node …/zcode -p" + AppImage-namnet utesluts.
   const ärLäcktZcode = (p) =>
-    p.ppid === 1 && p.pid !== process.pid && !/ttyd|tmux/.test(p.args) && /zcode/i.test(p.args) && p.ålder >= 300;
+    p.ppid === 1 &&
+    p.pid !== process.pid &&
+    !/ttyd|tmux/.test(p.args) &&
+    !/AppImage/.test(p.args) &&
+    /zcode/i.test(p.args) &&
+    p.ålder >= 300;
   const dödade = [];
   for (const p of läsPs().filter(ärLäcktZcode)) {
     try {
@@ -586,12 +595,21 @@ function korUppgift(manifestId, uppgift, vidKlar) {
     // MEGA G3 — audit: varje fabriksuppgift är en autonom skrivning.
     skrivAudit(`fabriken:${manifestId}:${uppgift.id}`, "uppgift_start", uppgift.titel, `manifest: ${manifestId}`);
 
+    // ROND 301 (v198-fabrikskuran): hårdkodad ZCODE_MODEL dödade ALLA barn
+    // på SSD Nodes ("Turn execution failed" — CLI 3.11.2 växlar till egen-
+    // provider-läge när ZCODE_MODEL är satt, vilket krockar med kontots
+    // delade Z.AI-OAuth-inloggning; bevis: samma prompt OK utan env, DÖD med
+    // såväl "zai/glm-5.3-flash" som "glm-5.3-flash" 2026-09-28 15:2x).
+    // Kur: barnen äver arbetsmiljön OBEROENDE av modell; modellval styrs
+    // ENDAST explicit via FABRIK_MODEL (sätts i pm2-miljön om önskat).
+    const barnEnv = { ...process.env };
+    if (process.env.FABRIK_MODEL) barnEnv.ZCODE_MODEL = process.env.FABRIK_MODEL;
     const barn = spawn(
       ZCODE,
       ["-p", `${prefix(uppgift.titel, uppgift.roll)}\n\nUPPGIFT:\n${uppgift.prompt}`],
       // rond 72: detached → egen processgrupp så timeouten kan döda HELA
       // trädet (zcode-cli + node-repl-mcp), inte bara wrappern (Lag 6).
-      { cwd: ROT, env: { ...process.env, HOME: process.env.HOME, ZCODE_MODEL: process.env.FABRIK_MODEL || "zai/glm-5.3-flash" }, stdio: ["ignore", "pipe", "pipe"], detached: true },
+      { cwd: ROT, env: barnEnv, stdio: ["ignore", "pipe", "pipe"], detached: true },
     );
     // rond 72 (F3/F6): döda hela GRUPPEN vid timeout — SIGKILL enbart på
     // wrappern lämnade zcode-cli föräldralös medan den vidarejobbade

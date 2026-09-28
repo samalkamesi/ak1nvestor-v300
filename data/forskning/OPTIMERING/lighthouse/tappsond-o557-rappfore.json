@@ -1,0 +1,134 @@
+{
+  "datum": "2026-09-28T18:35:10.494Z",
+  "bas": "http://localhost:3000",
+  "sidor": [
+    {
+      "sokvag": "/rapporter",
+      "interaktiva": 45,
+      "tryckmalUnder52": 8,
+      "varsta": [
+        {
+          "tag": "a",
+          "text": "Integritetspolicy",
+          "w": 98,
+          "h": 14,
+          "font": 12
+        },
+        {
+          "tag": "a",
+          "text": "Villkor",
+          "w": 37,
+          "h": 14,
+          "font": 12
+        },
+        {
+          "tag": "a",
+          "text": "cookiepolicyn",
+          "w": 82,
+          "h": 14,
+          "font": 12
+        },
+        {
+          "tag": "a",
+          "text": "integritetspolicyn",
+          "w": 105,
+          "h": 14,
+          "font": 12
+        },
+        {
+          "tag": "a",
+          "text": "Transparens & GDPR",
+          "w": 123,
+          "h": 14,
+          "font": 12
+        },
+        {
+          "tag": "a",
+          "text": "Finansiell policy",
+          "w": 314,
+          "h": 30,
+          "font": 12
+        },
+        {
+          "tag": "a",
+          "text": "Till Superanalysen",
+          "w": 186,
+          "h": 44,
+          "font": 14
+        },
+        {
+          "tag": "a",
+          "text": "Till Konfluensradarn",
+          "w": 202,
+          "h": 44,
+          "font": 14
+        }
+      ],
+      "inputZoom": 0
+    },
+    {
+      "sokvag": "/rapportakademin",
+      "interaktiva": 50,
+      "tryckmalUnder52": 8,
+      "varsta": [
+        {
+          "tag": "a",
+          "text": "Integritetspolicy",
+          "w": 98,
+          "h": 14,
+          "font": 12
+        },
+        {
+          "tag": "a",
+          "text": "Villkor",
+          "w": 37,
+          "h": 14,
+          "font": 12
+        },
+        {
+          "tag": "a",
+          "text": "cookiepolicyn",
+          "w": 82,
+          "h": 14,
+          "font": 12
+        },
+        {
+          "tag": "a",
+          "text": "integritetspolicyn",
+          "w": 105,
+          "h": 14,
+          "font": 12
+        },
+        {
+          "tag": "a",
+          "text": "Transparens & GDPR",
+          "w": 123,
+          "h": 14,
+          "font": 12
+        },
+        {
+          "tag": "a",
+          "text": "Finansiell policy",
+          "w": 314,
+          "h": 30,
+          "font": 12
+        },
+        {
+          "tag": "input",
+          "text": "",
+          "w": 294,
+          "h": 36,
+          "font": 16
+        },
+        {
+          "tag": "input",
+          "text": "",
+          "w": 294,
+          "h": 36,
+          "font": 16
+        }
+      ],
+      "inputZoom": 0
+    }
+  ]
+}

@@ -475,3 +475,29 @@ agentlast, inte bara bygglast).
 | v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd) |
 | v185 | BYGG-RAM-TRENDVERKTYGET | ✓ LEVERERAD r276 (76bc0613) |
 | v186 | SPEGLAR-SLUGAR-KUREN | ✓ LEVERERAD r275 (03ea5918) — äkta debut via r276:s ombygge |
+
+## ROND 288–289 (2026-09-28) — byggkrisens kurkedja (worklog bär fulltext)
+
+r288 runtime-tillstånd + r289 v194 ARKITEKTURKUREN (eb688e38): requesten
+äger FILERNA, daemonen äger PROCESSERNA — chatt-routen skriver jobbfil,
+nya verktyg/vaxthus-chatt-vakt.mjs ropas minutvis av pumpor-daemonen.
+Därmed är v188-tabellens bygg-hälsospår delvis föråldrat: byggdöden
+(Turbopack-spawn) är kluven i roten, inte migrerad.
+
+## ROND 290 (2026-09-28) — [organ:Φ] r289-bevakningen STÄNGD + daemonens minnesglapp kurad
+
+r289:s DEPLOYAD-kvitto inlöst (BUILD_ID 07:43 ⊇ eb688e38, chatt-jobb i
+server-chunks) — MEN rundan avslöjade en tyst död: pm2 ak1a-pumpor
+(startad 05:14, FÖRE eb688e38 07:15) hade korMinutvis-raden ENBAST på
+disk — hyresgästens chatt-jobb hade aldrig plockats. KUR: pm2 restart
+08:52:46 efter stoppregler; bevis: ▶ vaxthus-chatt varje minut kod=0.
+Samma rond: /bygg-sitemap-exkluderingen i kvalitetsvakten körbevisad
+(13/13 PASS GRÖN). Bokföringsgapet rättat — denna sektion.
+
+| Våg | Innehåll | Status |
+|---|---|---|
+| v195 | DAEMON-KODFRISKHETSVAKT (spår 8): jämför daemonens källfils innehålls-ändring (git företräde, mtime fallback) mot pm2-processens starttid — glapp > 5 min ⇒ larm (r290-läxan mekaniserad; gäller pumpor-daemon + hundvakt + pulsvakt) | ✓ LEVERERAD+STÄNGD r291 (77722858, svit 11/11; live: ▶ daemon-friskhet varje minut kod=0, prod-lägesfil GRÖN med git-sanningen) |
+| v188 | MIDDLEWARE→PROXY-MIGRATIONEN (Next 16 deprecations → proxy.ts) | ✓ LEVERERAD r278 (61ba987a) + KVITTERAD+STÄNGD r292: speglar 200 ×4 + fake-slug 404 + prod 200 + 0 deprecationsrader i 128 kB full byggoutput efter migrationen (se worklog ROND 292) |
+| v180 | HYGIEN-BIBLIOTEKET: _r*-wrappers i verktyg/ — audit + härdning/radering i omgångar (Mimosa-paritet = röda-trigg) | ✓ OMGÅNG 1 LEVERERAD r293: 177/177 _r*/_v* raderade efter audit+granskning (0 körtidsberoenden), vakten 0 fel GRÖN, Mimosa-röda-triggen bevisad levande. OMGÅNG 2 BOKAD: _f*/_s*-klasserna |
+| v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd — oktober äger) |
+| — | Vaxthus-chattens E2E-debut: hyresgästens första riktiga chatt-jobb genom hela kedjan (route→jobbfil→vakt→runern→logg.jsonl) | BEVAKAS (kräver hyresgästens Chatt — organen simulerar ej kunddata) |

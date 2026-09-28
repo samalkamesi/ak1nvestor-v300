@@ -605,7 +605,10 @@ function sektionKursdata() {
 // ════════════════════════════════════════════════════════════════════════════
 // Sidor som medvetet hålls utanför sitemap (auth/admin/interna).
 // VÅG 81: /studio är admin-låst webchat — medvetet EJ i publik sitemap.
-const SITEMAP_EXKLUDERA = new Set(["/admin", "/pro", "/rapporter", "/logga-in", "/studio"]);
+// r290: /bygg = vaxthus-hyresgästportal (src/app/(vaxthus)/bygg) — om
+// hyresgästsajter ska indexeras under lab-domänen är ett ÖPPET designbeslut
+// (v191/domänfrågan); vakten ska inte tvinga fram det via GUL.
+const SITEMAP_EXKLUDERA = new Set(["/admin", "/pro", "/rapporter", "/logga-in", "/studio", "/bygg"]);
 
 function sektionSitemap() {
   const fel = [];

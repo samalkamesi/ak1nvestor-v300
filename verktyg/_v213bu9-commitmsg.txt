@@ -1,7 +1,0 @@
-studio: v213b-u9 kontraktssvit shortseller-bank — 43/43 PASS [fabrik]
-
-Svit: verktyg/testa-motor-shortseller-bank.mjs (43 kontroller, A–G, kör
-under tsx, 10 ms, exit 0) · protokoll: data/forskning/V213B-U9-SHORTSELLERBANK.md.
-Motor: src/lib/shortseller-bank.ts — inga motorfel, src/ orörd, R2 orörd.
-Filsvep-notering: u9:s filer hamnade fysiskt i u10:s commit 0ce39077
-(parallellt syskon); denna commit är u9:s bokföring + spårbarhet.

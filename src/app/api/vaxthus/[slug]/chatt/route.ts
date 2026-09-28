@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-import { spawn } from "node:child_process";
 import { NextRequest, NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/admin-auth";
 import { hyresgastFinns, vaxthusKatalog } from "@/lib/vaxthus/tenant-content";
@@ -70,19 +69,6 @@ function pagaar(slug: string): boolean {
   return false;
 }
 
-// Runerns sökväg i runtime-tillstånd (se POST-kommentaren r288): Turbopack
-// får ALDRIG en utvickbar literal i spawn-anropet — env-override först, sedan
-// cwd-join, cachat på objektet så analysatorn inte kan vika fram den.
-const runnerState = { vag: "" };
-function runnerVag(): string {
-  if (!runnerState.vag) {
-    runnerState.vag =
-      process.env.AK1A_VAXTHUS_RUNNER ??
-      path.join(process.cwd(), "verktyg", "vaxthus-agent-chatt.mjs");
-  }
-  return runnerState.vag;
-}
-
 export async function GET(req: NextRequest, ctx: { params: Promise<{ slug: string }> }) {
   const skydd = requireAdmin(req);
   if (skydd) return skydd;
@@ -110,17 +96,14 @@ export async function POST(req: NextRequest, ctx: { params: Promise<{ slug: stri
   // läser+raderar den och omvalsvaliderar slug själv
   fs.writeFileSync(path.join(vaxthusKatalog(), "chatt-jobb.txt"), slug + "\n" + meddelande + "\n");
   fs.writeFileSync(vagar.flagga, JSON.stringify({ start: Date.now(), pid: -1 }));
-  // r288: Turbopack analyserar spawn-argument statiskt och försöker resolva
-  // dem som server-relativa moduler — en direkt path.join(process.cwd(), …)
-  // i anropet dödade BYGGET (Module not found '/ROOT/verktyg/vaxthus-agent-
-  // chatt.mjs' — två fällda fönster 05:08 + 05:26). Kuren är studio-
-  // transportens bevisade mönster: sökvägen lever i RUNTIME-tillstånd som
-  // analysatorn inte kan vika ut (env-först, cachat på objektet).
-  const barn = spawn("node", [runnerVag()], {
-    cwd: vaxthusKatalog(),
-    detached: true,
-    stdio: "ignore",
-  });
-  barn.unref();
+  // r289: ARKITEKTURKUR. Requesten äger FILERNA, daemonen äger PROCESSERNA —
+  // Mimosa-kontraktet fullt ut. Turbopack (Next 16) spårar spawn-argument i
+  // bundlad kod och försöker resolva dem som moduler: tre byggfönster fälldes
+  // (05:08 '/ROOT/verktyg/…', 06:07 ('' | <dynamic>') — inte ens runtime-
+  // tillståndslösning räckte, diagnosenbygge 06:28). Här skrivs jobbfilen +
+  // flaggan; pumpor-daemonens minutvisa vaxthus-chatt-vakt
+  // (verktyg/vaxthus-chatt-vakt.mjs) hämtar jobbet och spawn:ar runern
+  // (avgrepad, ≤60 s fördröjning — runern tar minuter ändå). Runerns eget
+  // kontrakt är låset: den raderar jobbfilen direkt och avslutar tyst utan jobb.
   return NextResponse.json({ status: "pagaar" });
 }

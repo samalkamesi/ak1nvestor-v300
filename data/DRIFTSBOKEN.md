@@ -7091,6 +7091,35 @@ förbättrar). Första skivan levererad:
   + db-snapshot.sqlite 2,4 GB ≈ 11:1). Skapare `backup-offsite.mjs` via
   pumpor-daemonen; dubbelt suffix `.tar.gz.tar.gz` = MEDVETET kontrakt.
   Db-dumparnas offsite-skydd = datorns valv (arkitekturen oförändrad).
+  *(s10-u3-korrigering samma kväll: 2 075 var ruinens avklippta lista —
+  det hela arkivet har 2 087 poster; ruinläget och kuren nedan.)*
 - **Natten till 09-29 = första fulla backupdjuret här:** 02:30 db-dump ·
   02:40 moln-JSON · 02:50 app-dump (crontab installerad, o561-kuren gör
   skripten körbara) — nästa DR-pass bevisar de tre bladens restore.
+
+## 2026-09-28 (s10-u3, manifest auto-s10-1790634304502) — OFFSITE-KEDJAN: RUIN UPPTÄCKT, ROTORSKAD OCH KURAD SAMMA KVÄLL
+
+- **FYND A — enda offsite-arkivet var en ruin:** fyra ETIMEDOUT samma dag
+  (02:57–20:55, alla exakt 120 s efter snapshot = gamla timeouten) lämnade
+  halvfärdiga arkiv som skrev ÖVER dagens fungerande (00:53, 775 MB).
+  Symptomkuriosa som sparar framtida tid: `gzip -t` kan vara GRÖN på en
+  ruin (den dödade tar-processens gzip-barn skrev sin trailer) —
+  **`tar -tzf` är det enda säkra provet**; verktyget använder det nu.
+- **FYND B — db-snapshoten var en trasig kärna:** copyFileSync på zcode:s
+  LEVANDE db.sqlite ⇒ integrity_check "*** in database main ***"
+  (invalid pages). Kur: SQLite backup-API + quick_check-grind.
+- **KUR (787e1199 + 7ed20962):** atomiskt kontrakt (.part → läsverifiera
+  → rename), snapshot via backup-API + quick_check, GZIP=-1 + 1 200 s
+  (mätning: -6 är CPU-bunden ~8,4 MB/s in; källan ~2,6 GB), BACKUP-FEL ⇒
+  exit 1. Svit `testa-backup-offsite.mjs` 24/0 — ruindetektorn bevisad
+  mot riktig fixture.
+- **Nytt arkiv skapat + DR-bevisat:** 983 030 401 B läsverifierad ·
+  extraktion RTO 177 s · **integrity_check "ok" (full) på återställda
+  2,27 GiB** · part 366 609/message 88 774/session 2 514 · arkiv == live
+  exakt (1 467/425/162) · säkerhetssvep 0 · PG18 viloläge eftermätt ·
+  arkivet SHA-oförändrat (ENDAST LÄST). Protokoll:
+  `data/forskning/DR-OVNING-2026-09-28-OFFSITE-SSDNODES.md`.
+- **Doktrin-tillägg:** offsite-ledens kvartalsövning provar ALLTID
+  `tar -tzf` (ej bara gzip -t) och kör integrity_check på db-kopian.
+  Pumpornas 02:52-körning natten till 09-29 = kur v2:s första autonoma
+  pass — morgonronden läser loggen ("SKAPAD … läsverifierad" väntas).

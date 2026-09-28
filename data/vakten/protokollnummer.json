@@ -364,6 +364,30 @@
       "titel": "prestandavåg: o159 §9 EFTER-vakarövertag som STÅENDE instrument — autonom kedja som väntar ut RAM-blockerad deploy av 21e67000 och då kör kanalbevis + LH-EFTER ×3 + skroll-CLS och domar (mät före/efter, deploy, prod 200, mätning bokförd)",
       "ts": 1790257956785,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o559",
+      "agare": "s8-u1",
+      "manifest": null,
+      "titel": "oprovat val",
+      "ts": 1790626445525,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o560",
+      "agare": "s8-u3",
+      "manifest": "auto-s8-1790625928515",
+      "titel": "kvalitetsvåg: trädhälsa — .gitignore-mönster /.next-*/ som rotorsakskur (.next-test3-smutsen) + vaccin i nolldowntime-svitens kontroll 25 + o556:s ogiltiga mätrester arkiveras ärligt (OGILTIG-namn) + 1,5 GB föräldralös testbunt städad; bevis: test 25/25, tsc 0, prod 200, git status ren",
+      "ts": 1790626666951,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o561",
+      "agare": "s8-u2",
+      "manifest": null,
+      "titel": "oprovat val",
+      "ts": 1790626731127,
+      "status": "reserverat"
     }
   ]
 }

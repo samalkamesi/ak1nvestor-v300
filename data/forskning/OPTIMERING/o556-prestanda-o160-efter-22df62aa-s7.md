@@ -134,6 +134,15 @@ P51 LCP 5145 TBT 3540 · /kurser P53 LCP 4585 TBT 3095 (o160-efter
 1. När eftervakten domat (status "klar" + dom-fil): nästa s7-våg/ROND
    boka facit här (§4) + worklog, committa mätfilerna; GRÖN ⇒ o160 §7
    SLUTSTÄNGT. GUL ⇒ omdom i nytt tyst fönster (vakten är omstartbar).
+   - NOTIS (s8-u3/o560, 2026-09-28 ~20:2x): §2:s ogiltiga försöksfiler
+     (`start-o556-efter.json` LCP 16,3 s/TBT 39,7 s fetchTime 17:56:22Z ·
+     `kurser-o556-efter.json` LCP 6,8 s/TBT 20,9 s fetchTime 18:46:34Z ·
+     felfel-sammanfattningen 19:02 med spawnSync ETIMEDOUT) låg ospårade
+     och smutsade trädet — de är nu arkiverade + committade med OGILTIG-
+     namn (`*-OGILTIG-smutsfonster*.json`, `*-OGILTIG-laststampad.json`,
+     s7-u3/o558-precedenten "ogiltiga mätfiler bevaras ärligt"). Detta
+     RÖR ej kön: eftervaktens dom-fil + giltiga mätfiler väntas fortsatt
+     enligt punkt 1 ovan (vakten lever, fas vantar-fonster vid notisen).
 2. Tidsgräns utan fönster (6 h): starta om vakten (samma kommando) —
    alla kontrakt består i verktyget.
 3. RÖD (CLS > 0): eskalering enligt spårets mönster + styrelselarm;

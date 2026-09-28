@@ -57,16 +57,22 @@ som ALDRIG mätts i prod:
    chrome-linux64/chrome` (instrumentet OFÖRÄNDRAT — mätmiljöns värd,
    samma mönster som gränsnittsvaktens AK1A_CHROME-kandidat).
 2. **Andra körningen: ogiltiga tal.** Startsidan P31 / LCP 16 340 /
-   TBT 39 723 — och 4×ETIMEDOUT. Tre sammanfallande orsaker bevisade:
+   TBT 39 723 — och 4×ETIMEDOUT. TRE sammanfallande orsaker bevisade:
    (a) **prod-appen kraschade 18:11:22** (pm2 restarts 9→10; error-loggen:
    "Page changed from static to dynamic at runtime /medlemskap" — känd
    Next 16-klass, OKOPPLAD till mätningen; en ISR-värmare hann värma
    servern efter omstart: "[varm] klar"); mätningen fångade omstarten
    (kall LCP 16,3 s). (b) **Gränsnittsvaktens 18:00-svep** (cron var 6:e
    timme; 7 Chrome-huvudprocesser startade 17:58-17:59, 176 kombinationer)
-   — load 20,8→28,5. (c) en lighthouse-orm från ETIMEDOUT-fönstret
-   (verifierad död efteråt). Slutsats: P31-rapporten LASTSTÄMPLAD och
-   OMSTART-STÄMPLAD → ogiltig som strukturkvitto, kastas.
+   — load 20,8→28,5. (c) **Deploy-bygget 18:27:28Z** — prod-synken bröt
+   sin V235-fabriksväntan (39 min, vårt manifest aktivt) och byggde
+   fc545155 under webpack (loadavg1 10,7; bevisat av syskon u3:o558 §4,
+   som KONTAMINERADES av samma fönster och ärligt dömde sina TBT/LCP
+   OGILTIGA — mina Lighthouse-försök kan ingå i deras "fabrikssyskons
+   CPU-arbete"-faktor; noted som etik-fakta: eftervakten eliminerar
+   denna klass — mäter ENDA i tyst fönster). Slutsats: P31-rapporten
+   LASTSTÄMPLAD och OMSTART-STÄMPLAD → ogiltig som strukturkvitto,
+   kastas.
 
 ## §3 Mätplanens utfall — tre strå (metrologin som leveransen)
 
@@ -135,6 +141,17 @@ P51 LCP 5145 TBT 3540 · /kurser P53 LCP 4585 TBT 3095 (o160-efter
 4. CHROME_PATH-roten är permanent kunskap: nya servern (SSD Nodes) har
    ingen system-Chrome — alla framtida Chrome-instrument behöver
    puppeteer-cachens sökväg (gränsnittsvaktens AK1A_CHROME-mönster).
+   Syskon u3:o558 §5 hittade samma rot oberoende ("två nivåer") —
+   komplementär bokföring, ingen konflikt.
+5. **Kanalnotis**: fc545155 (HEAD) var INTE deployat vid vågen (synken
+   byggde det 18:27-19:0x under V235-sekvens); skillnaden mot 22df62aa =
+   endast desk-web (v199-u1/u2) ⇒ om den deployas innan eftervakten
+   mäter är kanalen prestanda-identisk — dom-filens fetchTime avgör
+   vilket träd som mättes; ingen omplanering behövs.
+6. Syskonens ytor (lästa, disjunkta, orörda): u2:o557 = jungfrumark
+   /rapporter + /rapportakademin · u3:o558 = /bolag-familjen +
+   transportlagrets curl-grind på SSD Nodes. o558 §4:s OGILTIG-fabrikslast-
+   dom validerar denna vågs fönsterdiagnos ömsesidigt.
 
 ## §7 KVD
 

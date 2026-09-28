@@ -1,313 +1,350 @@
 # DESK-U19 — RÅDSDOMEN: expert-rådets gemensamma evolutionära färdplan
 
-**Fabrikuppdrag:** v205-u4 (GRANSKARE) · **Datum:** 2026-09-28 23:40 UTC
-**Kundorder:** "samlas som experter, djup forskning, koll på varesta kod, besluta
-tillsammans" (manifest v205, rad 3).
+**Fabrikuppdrag:** v205-u4 (GRANSKARE) · **Denna version:** v2 SLUTGILTIG,
+2026-09-28 23:50 UTC · **Kundorder:** "samlas som experter, djup forskning,
+koll på varesta kod, besluta tillsammans" (manifest v205, rad 3).
 
-> **STATUS: PROVISIONELL — GRINDEN KÖR OM.** Rådets tre utsedda expertstolar
-> (U16 kärna, U17 nät/klient, U18 upplevelse+skydd) hade INTE landat sina
-> protokoll vid dom-tillfället: fabriken dispatchade alla fyra uppgifterna
-> 23:25:05 UTC (statusfilen: `pågår`, `klara: []`) och 9 minuters polling
-> (23:28–23:37, V4) gav noll filträffar. Domen förs DÄRFÖR på de tre
-> expertprotokoll som FINNS och vars lagertäckning motsvarar rådets stolar:
-> U14 (X/fokus-lagret = kärnstolen), U15 (ström/nät-kedjan = nät/klient-stolen),
-> U13V2 (paritet/upplevelse-syntesen = upplevelsestolen). Detta är exakt
-> mönstret från U13 v1 (provisionell då båda källor saknades) → v2 (kedjans
-> slutdom) — bevisat fungerande 2026-09-28. **När U16/U17/U18 landar skrivs
-> rådsdom v2 på deras fynd; v2 ersätter då detta protokoll.**
+> **Versionshistorik i korthet:** v1 skrevs provisionell 23:40 (commit
+> f4b23cd9) — kollegprotokollen saknades då (9 min poll, V4). Under
+> commit-ögonblicket landade alla tre (23:4x),lästes i fulltext, och denna v2
+> är den SLUTGILTIGA dom som uppdraget begärde. Mönstret är U13 v1→v2. v2:s
+> viktigaste korrigering av v1: **U13V2:s fynd A var INTE rättat i praktiken**
+> — rättningen landade i en kopia nginx aldrig serverar (U17 A1, se §1).
 
 ---
 
 ## 0. KVD — källläget
 
-| Källa | Läge kl. 23:28–23:37 UTC 2026-09-28 | Roll i rådet | Commit |
+| Källa | Läge | Innehåll | RESULTAT-rad |
 |---|---|---|---|
-| DESK-U14-ROBOTFOKUS.md | FINNS, läst i fulltext (256 rader) | Kärna/X-lagrets expert | 22:17-epoken (v204-u1) |
-| DESK-U15-STROMFARTSMATNING.md | FINNS, läst i fulltext (95 rader) | Nät-/klientlagrets expert | 22:14 (v204-u2) |
-| DESK-U13V2-PARITETSSYNTES.md | FINNS, läst i fulltext (293 rader) | Upplevelse-/paritets-experten | v204-u3 |
+| DESK-U16-KARNA-EXPERT.md | FINNS, läst i fulltext (411 r) | Kärnlager rad för rad | "10 fynd (A:2 B:4 C:4) + 8 evolutionära steg" |
+| DESK-U17-NAT-EXPERT.md | FINNS, läst i fulltext (308 r) | Nät/klient rad för rad | "9 fynd (A:1 B:4 C:4) + 8 steg + kopia-integritet HEL" |
+| DESK-U18-UPPLEVELSE-EXPERT.md | FINNS, läst i fulltext (445 r) | UX + säkerhet | "13 fynd (A:1 B:7 C:5) + 8 steg + säkerhetsläge GAP" |
 
-Saknade (drar provisionell-markeringen): DESK-U16-KARNA-EXPERT.md,
-DESK-U17-NAT-EXPERT.md, DESK-U18-UPPLEVELSE-EXPERT.md — kollegor i samma
-manifest, pågående vid dom-tillfället (V4). Uppdragsprompternas krav (manifest
-rad 13, 20, 27) har beaktats som INTENTION, aldrig som belagt faktum: inget
-påstående nedan vilar på det U16/U17/U18 KOMMER att säga.
+Bakgrundsdomar som rådet bygger vidare på (lästa i fulltext denna omgång):
+DESK-U13V2 (paritetssyntesens slutdom), DESK-U14 (robotfokus-roten),
+DESK-U15 (strömfartsmätningen) — citat nedan med `protokoll:rad`. Tre
+expertprotokoll citerade + tre bakgrundskällor + worklog E42: källtrippen
+håller.
 
-Kompletterande källa: worklog E42-raden (s9-u3, 2026-09-28) för systemkortets
-gaplista — sanningshierarkins plats 3.
+## 1. Rådets första handling: verifiering av de öppna kraven — och ett nyckelfynd
 
-Egna verifieringar denna omgång (V-serien, §1).
+Innan diskussionen kontrollerade rådet (ordförande-stolen) diskens läge mot
+tidigare domar (V1–V3, körd 23:39):
 
-## 1. Verifieringar — läget har RÖRT SIG sedan U13V2 (rådets första handling)
-
-Rådet öppnade med att kontrollera sina egna tidigare krav mot diskens sanning:
-
-- **U13V2 fynd A (hjälpsidans scale-pin) är RÄTTAD (V1).** U13V2:45-46 belade
-  `hjalp.html:137` med `resize=scale` och dömde "inte KLART förrän rad 137 är
-  rättad" (U13V2:65). Nu: `href="vnc.html?autoconnect=true&resize=remote&show_dot=true"`
-  (V1: grep, rad 137). Huvudingången följer nu remote-kontraktet.
-- **U13V2 fynd B (hälsans resize-blinda invariant) är LANDAD (V3).** U13V2:88-95
-  krävde jämförelse mot runtime-sanningen; commit 5515c7c1 (r313) landade exakt
-  det: `xGeometri()` jämför mot `xrandr --query` current med PASS-detaljen
-  "workarea == xrandr current … (resize-medveten invariant)" (V3: git log +
-  grep rad 192–212 i verktyg/desk-halsa.mjs). Filen är committad och ren i
-  trädet.
-- **defaults.json oförändrad (V2):** `{"resize":"remote","quality":3,
-  "show_dot":true,"reconnect":true,"compress":2}` — läget U13V2:30-34/U15:15
-  dokumenterade står kvar; quality-beslutet (färdplan steg 3) är således
-  fortsatt öppet.
-- **Kollegprotokollen (V4):** 9 min polling, inga landningar — se statusraden.
-
-**Bokföring:** av U13V2:s två korrigeringskrav är ALLTVA innefridda. Kvar av
-U13V2:s nästa-root-steg (U13V2:198-202) är endast (b): acceptanstestet vid
-kundens nästa besök.
+- **U13V2 fynd B (hälsans invariant): LANDAD** — commit 5515c7c1 (r313),
+  xGeometri jämför mot xrandr current; U18:257-262 har dessutom LIVE-beviset:
+  senaste lakarkörningen PASS "workarea == xrandr current == 960x540
+  (resize-medveten invariant)" (M4, 23:30 UTC). **Bekräftad av två stolar.**
+- **U13V2 fynd A (hjälpsidans scale-pin): RÄTTAD I FEL KOPIA.** V1 visade
+  `/var/www/desk/hjalp.html:137 = resize=remote` — men U17 A1 (rad 229) bevisar
+  med curl att **den serverade kopian** (`desk-web/hjalp.html`, via websockify
+  6080) fortfarande bär `?resize=scale`: nginx `location = /desk/` serverar
+  endast index.html från /var/www; `/desk/hjalp.html` proxys till 6080 →
+  desk-web-kopian (U17:75-80, M8). Korrigeringskravet är alltså **ÖPPET i
+  drift** — v1:s steg-1-formulering ("fynd A rättad") var fel och rättas här.
+  Roten är dubbelförvaringen (U17 B1: två kopior, en död rättad, en live orörd
+  sedan leveranshashen 1df68231…, U17 M6).
+- **defaults.json oförändrad** (V2): resize remote, quality 3, compress 2 —
+  noteras: nyckeln `compress` är DÖD (klienten läser `compression`,
+  U17:48/U16 C2) — två stolar oberoende.
 
 ## 2. RÅDSDISKUSSEN — där fynden möts och skiljer
 
-### 2.1 Enighet 1: fienden heter TID, inte DATA
+### 2.1 Kluster 1: port 6080 — rådets tyngsta beslutsyta (3 stolar, 2 grader → dom: A)
 
-Alla tre experternas slutsatser pekar samma håll:
+- U18 A1 (rad 37-79): websockify binder **0.0.0.0:6080 UTAN auth**, Xvnc
+  `-SecurityTypes None` bakom bron, och **ingen brandvägg aktiv** (M9: ufw
+  inactive trots ENABLED=yes, nftables tomma kedjor) — "en portskanner får
+  kundens AKTIVA ZCode-session … med full tangentbords-/muskontroll" (U18:60-62).
+- U17 B3 (rad 232) samma fynd men B-grad — skillnaden är beviskedjan: U17:s
+  externa sond visade porten STÄNGD utifrån (M16: timeout) men kunde ej läsa
+  brandväggsreglerna; U18 kom åt brandväggsfilerna och fann dem TOMMA.
+- U16 B1 (rad 307): dessutom kör websockify som **root** (enheten saknar
+  User=; U16:234-242, ps-bevis PID 351439).
 
-- U15:94 (RESULTAT): "flaskhals är INTE bandbredden utan latens+avkodning" —
-  tabellen U15:74-80 ger nätverkslatens "Trolig huvudfaktor för 'långsam'",
-  klientens avkodning "Trolig medfaktor"; marginalen mot 5G är 4–20×
-  (U15:70).
-- U14:31-33: robot-handens 1080-epoksrot var TIMING (klickavvikelse vid yttre
-  zoom), och U14:164-168 dokumenterar EWMH-timing i omstartsfönstret — åter
-  tidsfenomen, inte kapacitet.
-- U13V2:145-149: remote-resize låter telefonen begära sin EGEN viewport vid
-  varje anslutning — parets bort med ett helt klass av fördröjning
-  (uppskalnings-suddighet som LÄSES som "långsamt", U15:80).
+**Vägning:** U17:s "extern stängd" och U18:s "brandvägg tom" kan båda vara
+sanna endast om ett okänt filter (provider/hostnivå) blockerar — ett skydd
+ingen dokumenterar. Rådet dömer med U18: A-grad. Graderingstvisten är i sig
+ett fynd om metod: **yttre sond utan konfig-läsning undervärderar risk.**
+Tilläggsbeslut: U17:s förslag `mandatory.json {"resize":"remote"}` (rad
+246-251) — en strukturell låsning som gör ALLA scale-querys harmlösa — har en
+trade-off (rullgardinen "Resize session" låses i panelen) och döms därför
+**styrelsefråga, ej fabrik** (U17 markerar samma).
 
-**Rådets slutsats:** varje färdplanssteg som sänker upplevd tid utan att öka
-dataflödet är värt mer än ett steg som ökar rådata. Detta är U15:s dom
-"latens>bandbredd" fastställd av rådet som planprincip.
+### 2.2 Kluster 2: hjälpsidan och dokumentationen (3 stolar, A/B/C → dom: A för kedjan)
 
-### 2.2 Enighet 2: geometrin är systemets maktspak
+U17 A1 (serverad kopia bär scale — kringår remote-kontraktet) + U17 B1
+(dubbelförvaringens divergens) + U18 B1 (rad 91 "förinställd av oss" orörd i
+båda kopiorna trots U13V2 §6.2) + U18 B7/index:96 (landningen råder den
+krångliga Ctrl+0-vägen före menyns ettklicksknapp) + U18 C1-C3 (WCAG AA-brister
+3,89:1/2,48:1, saknad focus-visible/reduced-motion, "strecket högst upp" —
+panelen sitter i VÄNSTER kanten) + U17 B4 (stavfel "ZCode-skivbordet").
+U16 C3 såg samma rad 137 men värderade C ("kedjeskuld") — utan U17:s
+serveringsbevis hade rådet undervärderat. **Viktig korsreferens (U18 C4, rad
+217-224):** stavfelet är LÖMSKT KOPPLAT till `desk-halsa.mjs:74`
+TITEL_MARKE='ZCode-skivbordet' — rättas titeln ensam FAILar hälsan. Enhetlig
+dom: hela dokumentpaketet rättas I EN SAMORDNAD ändring.
 
-- U14:95-122 (belagt): 960x640-fönstret på 960x540-skärm ⇒ 100 px
-  översvämning; appens minimi-höjd 640 gör det strukturellt — maximering kan
-  inte krympa under minimi.
-- U13V2:145-156: med remote LEVERAR klientens viewport per besök; vilolägets
-  siffra är ett transient tillstånd utan tittare.
-- U15:86 (rek 3): "sänk inte viloläget utan ny breakpoint-data".
+### 2.3 Kluster 3: robot-handen — SKILJAKTIGHET avgjord (U16 mot U18)
 
-### 2.3 Konflikt: U14 Kur A (1024x768) mot U13V2/U15 (960x540 kvar)
+- U16 A1 (rad 99-140): klick-race vid mode-byte, bevisad som KLASS (fyra
+  oberoende stöd: startzoomens egna 80 s-poll + 1 s-settle, EWMH-felet
+  U14:163-166, certets saknade settle-grind, sex historiska felleveranser).
+- U18 C5 (rad 226-249): dom att kur A-missen "förklaras FULLT ut av U14
+  lager 2b (deterministisk översvämning)" — passivt lägesbevis M10: Xvnc
+  oförändrad sedan 20:58, current 960x540, fönstret 960×640 NU; OLUPT-grep:
+  strängen nådde aldrig kompositorn. "Race-/timing-hypotesen … ska inte
+  bokföras som rot förrän bevisad" (U18:241-243).
 
-U14:209-214 rekommenderar robot-kur med `xrandr --mode 1024x768` ("ALDRIG
-800x600/640x480 (<640!)") och noterar själv kostnaden: "+52 % pixlar mot
-960x540 — telefon-först-kompromiss" (U14:218-219). U13V2:151-153 dömde
-viloläget kvar 960x540; U15:86 dömde "rör INTE … storlek (960×540) än".
+**Vägning:** båda har rätt på olika nivå — U18 vinner som ROT-förklaring
+(missen krävde inget race: kompositorn låg deterministiskt under botten),
+U16 vinner som KÖRFÖRUTSÄTTNING (varje framtida kur MÅSTE ha settle-grind
+oavsett rot, ty klassen är bevisad). Rådet antar båda: cert v2 = U14 Kur A
+(geometri ≥640) + U16 B2 (`--onlyvisible --name "ZCode"` — sökningen ger två
+fönster med 10×10-hjälpfönstret FÖRST, U16:144-157) + U16 A1 (polla
+workarea-match + settle ≥300 ms) + U18 C5/E6 (förutsättning `xrandr`
+current-höjd ≥640 passivt kontrollerad FÖRE körning; bokföringskrav per
+körning) + U18 §5:316-320 (robotens gräns: ALDRIG autentiseringsytor — R2-klass).
+U18:s synergibemärkelse (rad 248-249, 376-379) antas som planprincip:
+**ett telefonporträtt-besök (390×844 via remote) uppfyller höjd-kravet av
+sig självt — robotens och kundens bästa geometri är densamma.**
 
-**Vägning (rådets dom):** ingen reell konflikt — olika TIDSFÖNSTER.
-Kur A är en PUNKTÅTGÄRD i drift (sessionen själv växlar läge, kör
-robotsekvensen, växlar tillbaka eller låter nästa klients remote-resize sätta
-geometrin), medan 960x540 är VILONSPÅRETS kontrakt. Med remote-resize
-aktiverat är vilolägets siffra dessutom mindre betydelse än när U13V2:domen
-skrevs: varje besök sätter sin egen storlek ändå (U13V2:145-149). Rådet häver
-däremot INTE U15:s villkor — permanent vilolägesbyte mot 1024x768 kräver ny
-breakpoint-data (U15:86), och Kur A-skyltning i DRIFTSBOKEN skall anges när
-kuren körs så att ronden inte läser läget som driftavvikelse.
+### 2.4 Kluster 4: appens min-hints (U16 A2) — planens nya A-post
 
-### 2.4 Skiljaktighet: kvalitetslyftet — nu eller villkorat?
+`WM_NORMAL_HINTS min 480×640` gör appen inkompatibel med telefonviewports i
+remote-eran: liggande ~844×390 ⇒ 250 px av botten (kompositorns hemvist)
+utanför; porträtt ~390×844 ⇒ 90 px klippt i höger (U16 A2 rad 306, med M6 +
+U11 F9 + U12:100-104). U13V2:125-131 hade risklistan öppen; U16 gör den till
+certainty per orientering. Rådet: **acceptansprovet (steg 4) skall mäta
+just detta** — app-min är leverantörens yta, men skadan skall beläggas i
+drift innan någon förhandlingsväg öppnas.
 
-U15:85 (rek 2) föreslår `quality 3 → 6` med motiveringen att skärpa är "den
-enda parameter som direkt påverkar läsbarhet", men avslutar: "Vänta på mätetal
-från steg 1 om kundens upplevelse handlar om 'respons' snarare än 'skärpa'".
-U13V2:80-81 noterade att 2→3 var koherent med remote (bandbredd frigjords).
+### 2.5 Kluster 5: mätning först — tre stolar, en röst
 
-**Vägning:** rådet gör U15:s egen villkorsrad till planregel: kvalitetslyftet
-(färdplan steg 3) körs FÖRST efter att instrumentet (steg 2) levererat en
-aktiv siffra. Ordningsföljden är själva riskåterställningen: med mätetal i
-hand kan 3→6 prövas och återkallas med en enda radsändring om siffran växer
-orarimiskt.
+U15 rek 1 (rad 84: instrument vid kundens nästa besök) = U16 steg 1 (rad 324:
+"instrumentera först … utan siffror är allt gissning") = U17 steg 4 (rad
+253-254). quality 3→6 villkoras likadant av alla tre (U15:85, U16 steg 5 rad
+328, U17 steg 6 rad 258-259). U16 tillför försiktighetsregeln (rad 294-297):
+aktiva mätningar skall undvika gränssnittsvaktens cron-fönster
+(puppeteer-chrome snedvrider talen). **Enigt: instrument före reglage.**
 
-### 2.5 Gap utan expertbelägg (ärlighetsrad)
+### 2.6 Kluster 6: självläkande — läget kartlagt av U18
 
-E42-systemkortet (worklog s9-u3) namnger gap rådet saknar protokollbelägg
-för: "EN session/EN AppImage utan redundans, delat basic-auth-lösenord, 0
-strömmön mobil" (score 7). Detta är kartans påstående — rådet väger det in som
-LANGSIKTIGT spår (steg 8) men noterar att U17/U18:s granskningar (manifest
-rad 20, 27: auth-ytor, portar, säkerhetsögon) är de rättägande instanserna
-som skall belägga eller nyansera varje gap. Deras dom väntas i v2.
+Kedjan har REDAN tre lager (systemd Restart=always ×4; desk-läkaren r315 —
+2 FAIL ⇒ omstart ENBART av zdesk-zcode; SKIP-arkitekturen), men fyra glapp
+står kvar (U18 §4 rad 272-285): lakaren når bara appen, eskalering saknas
+(fel den inte bär skrivs inte till rot-kön), auth-trion permanent SKIP i
+cron-läget + hjalp.html obevakad (U18 B4), och ingen mätning av kund-pulsen.
+U16 B3/B4 (rad 309-310) tillför startzoomens race och sömn-i-stället-för-poll
+i startkedjan. Dom: steg 6 samlar hela självläkningspaketet.
 
-## 3. DEN GEMENSAMMA FÄRDPLANEN — mot "exceptionell nivå", 8 steg sorterade
+### 2.7 Kluster 7: inloggningsförsäkringen (U18 B2 — unikt fynd, unik vikt)
 
-Sorteringsprincip: kundens upplevda kvalitet först (enighet 1), sedan
-autonomin (robot + självläkande), sedan instrument och ytor, reserv och
-redundans sist. Varje steg bär VAD / VARFÖR (citerat) / beviskrav /
-risk+återställning / ägare.
+Kundens AKTIVA inloggning (API-nyckel, ROND 309) har ALDRIG arkiverats:
+backup.log en enda SKIP-rad (före inloggningen), inga tar.gz, cron-raden
+aldrig installerad (U18:98-114). Vid profilförlust är "inloggad för
+alltid"-löftet oinsurance. Rådet placerar kur bland de tre första stegen —
+löften till kunden väger lika tungt som rör som läcker.
 
-### Steg 1 — Paritetsbeviset: acceptanstestet vid kundens nästa besök
+## 3. DEN GEMENSAMMA FÄRDPLANEN — 8 steg, sorterade
 
-- **VAD:** när kunden nästa gång besöker skrivbordet: läs
-  `DISPLAY=:10 xrandr --query` — current ≠ 960x540 (förväntas ≈ telefonens
-  viewport) ⇒ remote-resize BEVISAT; därefter journalavläsning (root) för att
-  skilja "inget besök" från "avbojd TigerVNC". Exakt test: U13V2:118-124.
-- **VARFÖR:** "inte 'KLART' förrän rad 137 är rättad" (U13V2:65) — den halvan
-  är nu rättad (V1) — "fortfarande 960x540 ⇒ antingen skedde inget
-  remote-besök … eller avbojd TigerVNC" (U13V2:122-124). Oförifierade risker
-  står öppna listade (U13V2:125-131: porträttgeometri, Electron-omfallning).
-- **Beviskrav:** xrandr-rad + (root) journalrad, bokfört i worklog.
-- **Risk/återställning:** passiv avläsning — ingen risk.
-- **Ägare:** root-rond (huvudsessionen; fabriksagenten är journalblockerad,
-  U13V2:106-109 / U15:17).
+Sorteringsprincip: (i) säkerhet är upplevelsens fundament (U18:62-63),
+(ii) kundlöften och kedjeintegritet, (iii) bevis och instrument, (iv)
+automation, (v) polering, (vi) arkitektur. Varje steg: VAD/VARFÖR
+(citerat)/beviskrav/risk+återställning/ägare.
 
-### Steg 2 — Ströminstrumentet: äkta siffror vid nästa besök
+### Steg 1 — STÄNG PORT 6080 (+ brandvägg + brute-force-tak)
 
-- **VAD:** litet driftscript (vakten/evighetsmotorn äger) som — med U15:s
-  metod — läser `/proc/net/dev`-rx och kontrollerar `ss -tn port 5910`: när en
-  klient ÄR uppkopplad loggas Mbit/s per 10 s-fönster till `data/vakten/`
-  (U15:84, rek 1 ordagrant).
-- **VARFÖR:** "det akuta glappet är mätinstrument vid kundens nästa besök"
-  (U15:94); aktiv nivå kunde ej mätas passivt (U15:18, 32).
-- **Beviskrav:** loggad aktiv siffra från ett verkligt kundbesök.
-- **Risk/återställning:** passiv läsning, noll paketfångst (U15:16);
-  avstängning = ta bort scriptet ur vakten.
-- **Ägare:** fabrik-yta (verktyg/ + data/vakten/ — nytt script, exklusivt
-  filägarskap).
+- **VAD:** (a) `zdesk-novnc.service`: `--heartbeat 30 127.0.0.1:6080
+  localhost:5910` + `User=ak1a` + daemon-reload + restart; (b) aktivera ufw
+  med allow 22,80,443 — **ALDRIG fjärrlåsa SSH** (U18:69-70); (c) fail2ban
+  `jail.d/nginx-auth.local` + ev. nginx `limit_req` på /desk/ (U18 B3:123-126).
+- **VARFÖR:** U18 A1 (rad 37-79 — 0.0.0.0 + ingen auth + tom brandvägg +
+  root-process); U17 B3 (rad 232 — "skyddsnet skall inte hänga på ett externt
+  filter"); U16 B1 (rad 307 — User= saknas).
+- **Beviskrav:** `ss -ltn` → `127.0.0.1:6080`; extern sond död (kundens
+  telefon på mobildata räcker, U18:72-73); https://lab.ak1nvestor.com/desk/ =
+  200 med auth; processens user = ak1a.
+- **Risk/återställning:** websockify-omstart klipper strömmen ~5 s —
+  noVNC reconnect:true (defaults, V2) fångar; fel i enheten revertas med en
+  rad. ufw-misstag kan låsa SSH — därför allow 22 FÖRST, och helst i
+  konsolfönster.
+- **Ägare:** ROOT-ROND (/etc — aldrig fabriksbarn).
 
-### Steg 3 — Kvalitetslyftet quality 3→6, VILLKORAT av steg 2
+### Steg 2 — Dokumentpaketet I EN SAMORDNAD ändring + ett filhem
 
-- **VAD:** `defaults.json` quality 3 → 6, endast efter att steg 2 levererat
-  aktivt mätetal som visar marginal (U15:85).
+- **VAD:** i **desk-web/hjalp.html** (den serverade!): rad 137 scale→remote
+  (eller stryk parametern — U17 A1:s två varianter) + rad 91 ny text enligt
+  U13V2 §6.2; i `/var/www/desk/index.html`: :96 ettklicksknappens väg (U18
+  B7), :7 stavfelet **SAMORDNAT med desk-halsa.mjs:74 TITEL_MARKE** (U18 C4),
+  :88 "vänsterkanten" (U18 C3), WCAG-färgerna #94a3b8 + focus-visible +
+  reduced-motion + theme-color (U18 C1-C2). Därutöver: ETT filhem för
+  hjalp.html (U17 B1:s båda alternativ — rådets preferens: desk-web som enda
+  hem, /var/www-kopian bort).
+- **VARFÖR:** "varje entré via 'Öppna ZCode'-knappen på hjälpen ger
+  scale-läge och kringgår … verkställandet" (U17 A1:229); "fel kant: kunden
+  letar i överkanten och finner inget" (U18 C3:216); kontrast under AA
+  (U18 C1:195-198).
+- **Beviskrav:** curl 127.0.0.1:6080/hjalp.html → remote; gränssnittsvakten
+  (eller U18 M14-beräkningen om) grön på båda sidorna; desk-halsa-körning
+  PASS efter titeländringen.
+- **Risk/återställning:** låg; desk-web utanför git — manuellt steg: spara
+  före/efter-hash (U17:s M6-mönster). Återställning = tillbakaklistrad rad.
+- **Ägare:** HUVUDSESSIONEN (D3-rätten; desk-web + /var/www). Fabriken äger
+  endast diff-förslagen som redan finns i U17/U18.
+
+### Steg 3 — Inloggningsförsäkringen: arkiv NU + cron + återställningsprov
+
+- **VAD:** (a) kör `~/desk-login-backup/spara-login.sh` (detekterar själv
+  inloggat läge; läser+packar endast); (b) installera U7 §4.2:s cron-rad;
+  (c) första återställningsprovet (endast namn, aldrig innehåll — U18:112-114).
+- **VARFÖR:** "den enda inloggning som FINNS är den enda som ALDRIG
+  arkiverats" (U18:106-108).
+- **Beviskrav:** första `zcode-login-*.tar.gz` + loggrad OK + provrad i U7:s
+  RESULTAT.
+- **Risk/återställning:** skriptet stoppar ingen process (U18:110-111);
+  arkivet 600-skyddas.
+- **Ägare:** HUVUDSESSIONEN.
+
+### Steg 4 — Acceptansprovet + ströminstrumentet vid kundens nästa besök
+
+- **VAD:** (a) U13V2 §2.4-testet: xrandr current ≠ 960x540, orientering
+  noteras, skärmdump (privat, U14 §8-reglerna) — **med A2-mätning**:
+  hur många px av kompositorn hamnar utanför per orientering (U16 A2);
+  (b) instrument-script (U15 rek 1): /proc/net/dev-rx + ss :5910-vakt,
+  Mbit/s per 10 s-fönster till data/vakten/ — undvik vaktens cron-fönster
+  (U16:294-297).
+- **VARFÖR:** "inte 'KLART' förrän …" (U13V2:118-124); "det akuta glappet
+  är mätinstrument" (U15:94); "steg 1 utan siffror är allt gissning"
+  (U16:333-334).
+- **Beviskrav:** xrandr-rad + journalrad (root) + loggad aktiv Mbit/s +
+  A2-px-tal per orientering.
+- **Risk/återställning:** passiva avläsningar — ingen risk.
+- **Ägare:** root-rond (journal, besöksfönstret) + FABRIK-YTA
+  (instrument-scriptet — ny fil i verktyg/, kan dispatchas nästa omgång).
+
+### Steg 5 — Robot-cert v2: deterministiskt, settle-grindat, bokfört
+
+- **VAD:** cert enligt §2.3:s syntes: förutsättningskontroll (xrandr
+  current-höjd ≥640 — annars avstå tills porträttsbesök/driftbyte), målning
+  `--onlyvisible --name "ZCode"`, `windowactivate --sync` + verify, geometri-
+  poll till workarea-match + settle ≥300 ms, `type … --delay 150` UTAN
+  --window, ASCII endast, `key Return`; varje körning bokförs (kommandon +
+  utfall + bevis-grep) i protokoll/worklog; robotens gräns mot
+  autentiseringsytor gäller oförändrat (U18 §5:306-320).
+- **VARFÖR:** "lager 2 … PRIMÄR ROT" (U14:182); race-klassen bevisad (U16
+  A1) även om ROT var deterministisk översvämning (U18 C5); "kör utan
+  kvitto" är exakt vad policyn skall förhindra (U18:318-320).
+- **Beviskrav:** unik ASCII-sträng grep-bar i ~/.zcode/cli/rollout + db +
+  bokförd protokollrad.
+- **Risk/återställning:** geometri-byte transients (settle-grinden tar den);
+  felträff avbryts utan sidoeffekt; nästa klients remote-resize återställer
+  geometrin av sig själv (U13V2:145-149).
+- **Ägare:** HUVUDSESSIONEN (cert + policy), med U16/U18:s diff-förslag som
+  underlag.
+
+### Steg 6 — Självläkande grad 2: eskalering, bevakningsluckor, readiness
+
+- **VAD:** (a) lakaren eskalerar oläkbart till `data/vakten/rot-kon/`
+  (U18 §4); (b) auth-trion får sin DESK_AUTH-körning (root-cron el. 600-fil
+  via lakarens sudo-steg — U18 B4) + `/desk/hjalp.html` som fjärde
+  http-auth-kontroll; (c) ev. novnc i lakarens vitlista (bär ej kundens
+  data; reconnect fångar 5 s-avbrottet — U18 §4); (d) startzoom
+  geometri-medveten + readiness-poll i stället för sömn i startkedjan
+  (U16 B3/B4).
+- **VARFÖR:** "upptäckt fel som lakaren inte kan bota är osynligt för
+  huvudsessionens rond" (U18:278-280); startzoom-racet har en gång fällt
+  enheten (U16:198-201, worklog:18523).
+- **Beviskrav:** simulerad FAIL → rot-kö-rad; auth-kontrollerna PASS i
+  loggen; startzoom tålig mot mode-byte i skrap-prov.
+- **Risk/återställning:** vitlistade omstarter endast; DESK_AUTH hanteras
+  enligt svitens kontrakt (loggas aldrig — desk-halsa.mjs:37-40).
+- **Ägare:** HUVUDSESSIONEN (lakare + svit) + ROOT (DESK_AUTH-delen).
+
+### Steg 7 — Kvalitets- och klientreglage, VILLKORAT av steg 4:s tal
+
+- **VAD:** quality 3→6 i defaults.json (U15:85); döp den döda nyckeln
+  compress→compression (U17 B2/U16 C2) vid samma rörelse; därefter i
+  prioritetsordning om mätetalen motiverar: -depth 16-försök (U16 steg 6)
+  och createImageBitmap-vägen i display.imageRect (U17 C4/steg 5).
 - **VARFÖR:** "skarpare terminaltext är den enda parameter som direkt
-  påverkar läsbarhet vid 960×540" och marginalen "4–20×" (U15:70, 85).
-- **Beviskrav:** mätetal före/efter + kundens iakttagelse vid nästa kontakt.
-- **Risk/återställning:** måttlig datamängdsökning på telefon-nät;
-  återställning = quality tillbaka till 3 (en rad, V2 visar filen).
-- **Ägare:** root-rond (desk-web är sessionens D3-yta, U13V2:198-200).
+  påverkar läsbarhet" + marginal 4-20× (U15:70, 85); base64-omvägen är
+  "det största identifierade avkodningsreglaget" (U17 C4).
+- **Beviskrav:** mätetal före/efter varje ändring + kundens iakttagelse.
+- **Risk/återställning:** varje ändring en rad, fullt reversibel.
+- **Ägare:** HUVUDSESSIONEN (defaults) — beslut i rundan på steg 4:s tal.
 
-### Steg 4 — Robot-handens Kur A: kompositorn nåbar
+### Steg 8 — Arkitektursporet: least privilege, hygien, långsiktighet
 
-- **VAD:** rotkur enligt U14 §9, EXAKT ordning: `xrandr -d :10 --output VNC-0
-  --mode 1024x768` (ALDRIG <640-höjd) → `xdotool search --class zcode`
-  (dynamiskt ID — hårdkodade ID dör vid omstart, U14:167-170) →
-  `windowactivate --sync` → verifiera fokus → `mousemove … click 1` på
-  kompositorns centrum → `type --delay 150 'robotfocus-u14-test-ascii'`
-  **UTAN --window** (Chromium släpper syntetiska event, U14:148-151) →
-  `key Return`. ASCII ENDAST (svenska tecken saknar keysyms, U14:153-155).
-- **VARFÖR:** "lager 2 … PRIMÄR ROT" (U14:182); robot-typing är sessionens
-  väg till full autonom dialog utan kundens fingrar.
-- **Beviskrav:** grep teststrängen i `~/.zcode/cli/rollout` + db (U14:237-238).
-- **Risk/återställning:** geometriavvikelse från viloläget (+52 % pixlar,
-  U14:218-219) och EWMH-timing vid omstart (U14:164-168 — retry med sleep 5);
-  återställning: `xrandr --mode 960x540` ELLER låt nästa klient-resize sätta
-  geometrin; Kur A-tillfället protokollförs i DRIFTSBOKEN (rådets regel §2.3).
-- **Ägare:** root-rond (desk-infra-yta; U14:205-207: "Kur A ändrar kundens
-  skärmgeometri … vid tvekan: konkalla rond" — rundan ÄR samlad, denna dom
-  är dess beslutsunderlag).
-
-### Steg 5 — Hälsan nivå 2: från DETEKTERA till LÄKA (design väntar U18)
-
-- **VAD:** designsteg: `desk-halsa.mjs` vid FAIL → automatisk läkeåtgärd
-  (omstart av fel enhet) — ENDAST när ingen klient är uppkopplad (ss-kontroll
-  som U15:18-mönstret). Implementering väntar U18:s granskning av verktyget
-  (manifest rad 27 ger U18 rätten att definiera vad som saknas för
-  "självläkande").
-- **VARFÖR:** r313 landade resize-medveten DETEKTERING (V3) — kända domens
-  "självläkande (hälsan)" är nästa spel; hälsan är systemets egen
-  felupptäckt.
-- **Beviskrav:** simulerad FAIL (t.ex. stoppad enhet i skrap-läge) → PASS
-  utan mänsklig handling; logg som visar läkesteget.
-- **Risk/återställning:** fel-omstart av levande session = värsta fallet —
-  därför kopplingen till uppkopplade klienter; återställning: läkegren bakom
-  flagga, av som default.
-- **Ägare:** root-rond (filen är dess); designunderlag kan delegelas till
-  fabrik som utkast, beslut i rundan.
-
-### Steg 6 — Mätbarheten i kundens vy: Connection Stats-ytan
-
-- **VAD:** koppla in noVNC:s Connection Stats-panel i D3-forken (U15:84,
-  alternativet i rek 1) — gömd bakom en avancerad-växel så grundvyn förblir
-  enkel.
-- **VARFÖR:** "kunden kan INTE se strömmens Mbit/s i UI:t idag — mätglapp,
-  inte hastighetsglapp" (U15:63); kunden är telefon-först och icke-teknisk —
-  diagnostik ska kunna visas på begäran, inte tömma vyn.
-- **Beviskrav:** panel synlig i mobilvy med levande siffra.
-- **Risk/återställning:** UI-yta — återställning = revert av paneländringen.
-- **Ägare:** root-rond (desk-web, D3-ytan).
-
-### Steg 7 — Reserv B: dubbelt skrivbord vid trigger (ORÖRD)
-
-- **VAD:** `:11` + `--user-data-dir` aktiveras ENDAST vid U12:s triggläge:
-  verkligt SAMTIDIGA dator+telefon-sessioner (U13V2:179-183 citerar
-  U12:80-88, 233-237).
-- **VARFÖR:** "RFB är en framebuffer per session — sista klienten vinner …
-  vid SAMTIDIGA dator+telefon-sessioner blir det dragkamp" (U13V2:179-183).
-- **Beviskrav:** två samtidiga sessioner med var sin geometri, belagt med
-  xrandr+journal.
-- **Risk/återställning:** RAM-kostnad mäts FÖRE aktivering (AppImage-storlek
-  i minnet är obelagt i protokollen — ärlighet: ingen siffra finns);
-  återställning = stäng :11.
-- **Ägare:** root-rond.
-
-### Steg 8 — Exceptionell-nivåns långsiktsspår: redundans + beläggning av E42:s gap
-
-- **VAD:** designpass (fabrik kan äga utkastet): redundans för EN-session-
-  risken (AppImage-vaktare/omstart), granskning av delat basic-auth-lösenord,
-  mobil strömmön — VARJE åtgärd villkoras av U17/U18:s belägg i v2 (se §2.5).
-- **VARFÖR:** E42-raden: "EN session/EN AppImage utan redundans, delat
-  basic-auth-lösenord, 0 strömmön mobil" (worklog s9-u3, 2026-09-28) —
-  "exceptionell" kräver att EN kras inte är slutet.
-- **Beviskrav:** failover-prov: dödad AppImage → automatisk återkomst,
-  tidmätt; säkerhetsåtgärderna belagda av U17/U18:s fyndlistor.
-- **Risk/återställning:** komplexitet — därför SIST i kön och villkorat av
-  v2; återställning = enskilt läge kvar tills provet är grönt.
-- **Ägare:** root-rond (beslut), fabrik (designutkast); INTE kund-veto-yta
-  (driftsäkerhet, ej priser/domän/publicering) — men kunden INFORMERAS i
-  nästa studiorapport när åtgärder ändrar hennes inloggningsupplevelse.
+- **VAD:** (a) /tmp-städ av desk-dumpar + policy (dumpar till ~/desk-dumpar
+  0700 + lakar-varning — U18 B5); (b) avklara "nova"-kontot (tredje
+  skal-kontot, odokumenterat — U18 B5 flaggar); (c) bokför B6 (profilen i
+  ak1a-rymden + --no-sandbox) som medvetet val i regelverkets riskavsnitt;
+  (d) styrelsefrågan mandatory.json-låsning (U17 steg 2); (e) långsiktigt:
+  dedikerad zdesk-användare (U18 E8), ev. binärbrygga/WebRTC om steg 4 visar
+  relay-CPU som flaskhals (U17 steg 7, U16 steg 8).
+- **VARFÖR:** "konto med skal som ingen dokumenterar är en egen riskpost"
+  (U18:157-159); E42:s gaplista (worklog s9-u3: EN AppImage utan redundans,
+  delat auth-lösenord, 0 strömmön mobil).
+- **Beviskrav:** per delpost (städad /tmp, avklarat konto, bokförd post).
+- **Risk/återställning:** (a)-(c) låg; (d)-(e) kräver egna beslut — därför
+  SIST.
+- **Ägare:** HUVUDSESSIONEN (a, c) · ROOT-ROND (b) · STYRELSE (d) ·
+  root-rond + ev. kundinformation (e).
 
 ## 4. EPOKCYKELN — när rådet samlas igen
 
-Tre trigger-ytor (någon av dem räcker):
+Tre trigger-ytor (någon räcker):
 
-1. **T1 — OMEDELBAR omkörning:** U16/U17/U18 landar ⇒ rådsdom **v2** skrivs
-   på deras fyndlistor och ersätter detta protokoll (U13 v1→v2-mönstret:
-   provisionell dom var INTE förlorad arbete — v2 kunde sluta kedjan eftersom
-   v1 redan vägt underlagen, U13V2:5-8). Root-ronden ser landningen i
-   fabriksstatusen och dispatcher v2.
-2. **T2 — A-fynd:** varje framtida expertgranskning med allvarlighetsgrad A
-   ⇒ råd inom samma rond (fyndet får inte vänta till kalendern).
-3. **T3 — Kalender:** senast **2026-12-31** (kvartalsrytm; harmonisk med
-   DR-Q4-fönstret 10-01→12-31 som worklog s10-u1 bokför) — rådet kalibrerar
-   färdplanen mot vad som hann landa.
+1. **T1 — A-fynd:** varje kommande expertgranskning med A-grad ⇒ råd inom
+   samma rond (nu gäller det steg 1-3:s verkställande: A1 är inte stängt
+   förrän ss visar 127.0.0.1:6080).
+2. **T2 — Milstolpe:** när färdplanens steg 1-3 är bokförda (säkerhetsgapet
+   stängt, kedjan + dokumentpaketet helheter, arkivet levande) ⇒ kalibrerings-
+   samling som väger in steg 4:s besöksdata om kunden hunnit besöka.
+3. **T3 — Kalender:** senast **2026-12-31** (kvartalsrytm, harmonisk med
+   DR-Q4-fönstret 10-01→12-31 i worklog s10-u1).
 
-Mellan samlingarna: färdplanens steg 1–4 är verkställbara NU av root-ronden
-(bevisen ligger i detta protokoll); steg 5–6 väntar in v2:s expertbeläge där
-så anges.
+Mellan samlingarna är steg 1-3 omedelbart verkställbara av root-rond/
+huvudsession med detta protokoll som beslutsunderlag; steg 4-7 har sina
+villkor i texten; steg 8 ligger i styrelsens/rondens takt.
 
 ## 5. Juridik
 
 Ren infrastruktursyntes: inget finansiellt innehåll, inga kundriktade texter,
-inga råd — lagen (2007:528) berörs ej. Priser/tier/publicering orörda (R2).
-GDPR/kakor: förslagen sätter inga kakor och samlar ingenting nytt —
-ströminstrumentet (steg 2) mäter BYTE på loopback, aldrig innehåll eller
-identitet, och loggar till serverägda `data/vakten/` (art 13 oberörd; U15:s
-metod har denna egenskap dokumenterad, U15:16).
+inga råd — lagen (2007:528) berörs ej. Priser/tier/publicering orörda (R2);
+noterbart: mandatory.json-låsningen (steg 8d) och robot-gränsen (U18 §5) är
+medvetet placerade hos styrelse/kund-nära beslut, ej hos fabriken. GDPR/kakor:
+förslagen sätter inga kakor och samlar ingenting nytt — instrumentet (steg 4)
+mäter byte på loopback, aldrig innehåll/identitet (U15:16-metoden); puls-
+idén (U18 E4) exponerar endast lakarens egen logg statiskt. Skärmdumpar i
+steg 4 hanteras enligt U14 §8/U18 B5: aldrig commit, aldrig kvar i /tmp.
 
 ## 6. Källförteckning (källtripp per påstående)
 
 **Källprotokoll (lästa i fulltext denna omgång):**
-- K1 = data/forskning/DESK-U13V2-PARITETSSYNTES.md — citat med :rad.
-- K2 = data/forskning/DESK-U14-ROBOTFOKUS.md — citat med :rad.
-- K3 = data/forskning/DESK-U15-STROMFARTSMATNING.md — citat med :rad.
-- K4 = worklog.md E42-rad (s9-u3, 2026-09-28) — systemkortets gaplista.
-- K5 = manifest v205-desk-expertradet-1789635000.json — uppdragsprompts
-  (intentioner, aldrig belägg).
+- K1 = DESK-U16-KARNA-EXPERT.md (v205-u1) — citat med :rad + dess M1-M21.
+- K2 = DESK-U17-NAT-EXPERT.md (v205-u2) — citat med :rad + dess M1-M20.
+- K3 = DESK-U18-UPPLEVELSE-EXPERT.md (v205-u3) — citat med :rad + dess M1-M15.
+- K4 = DESK-U13V2-PARITETSSYNTES.md · K5 = DESK-U14-ROBOTFOKUS.md ·
+  K6 = DESK-U15-STROMFARTSMATNING.md — bakgrundsdomarna.
+- K7 = worklog.md (E42-raden s9-u3; ROND 309-311; s10-u1:s Q4-fönster).
+- K8 = manifest v205-desk-expertradet-1789635000.json (uppdragsprompts).
 
-**Egna verifieringar (23:28–23:37 UTC):**
-- V1 = grep /var/www/desk/hjalp.html rad 137 → `resize=remote` (fynd A
-  rättad).
-- V2 = Read /home/ak1a/desk-web/defaults.json (resize remote, quality 3,
-  compress 2).
-- V3 = git log + grep verktyg/desk-halsa.mjs (commit 5515c7c1 r313:
-  xrandr-invarianten rad 192–212; trädet rent för filen).
-- V4 = statusfil v205 + 9 min filpoll → U16/U17/U18 saknas.
+**Egna verifieringar (23:28–23:39 UTC):**
+- V1 = grep /var/www/desk/hjalp.html:137 → resize=remote (den DÖDA kopian —
+  se §1:s korrigering mot U17 A1/M8).
+- V2 = Read /home/ak1a/desk-web/defaults.json (remote/3/compress 2).
+- V3 = git log + grep verktyg/desk-halsa.mjs (5515c7c1 r313: xrandr-
+  invarianten rad 192-212 — matches U18:257-262 live-PASS).
+- V4 = fabriksstatus + 9 min filpoll (v1:s provisionella grund).
 
-**Ärlighetsrad:** alla prognosmoment är markerade som sådana (steg 1:s
-utfall beror på kundens besök; steg 4:s kur är OTESTAD — U14:205-207
-understryker att utredaren rättigt nöjde sig med rekommendation). Påståenden
-om U16/U17/U18:s kommande innehåll förekommer INTE. Systemkortets gaplista
-(K4) är kartans påstående, vägt in endast som villkorat långsiktsspår.
+**Ärlighetsrad:** v1:s "fynd A rättad" korrigeras öppet i §1 — rådet värderar
+egen felbarhet som en del av protokollet. Påståenden om kundens framtida
+besök är prognos tills steg 4 mäter. Yttre nåbarhet av 6080 är ej sondad
+utifrån (U18 A1:s egen ärlighetsrad gäller rådets vägning). ms-tal för
+om-maximering är ej passivt mätbara (U16 §0). Inget påstående vilar på
+intentioner ur K8.
 
-RESULTAT: färdplan i 8 steg (provisionell) + nästa rådssamling <T1: U16/U17/U18 landar → grinden kör om som v2; T2: A-fynd → råd samma rond; T3: senast 2026-12-31>
+RESULTAT: färdplan i 8 steg (slutgiltig) + nästa rådssamling <T1: A-fynd ⇒ samma rond | T2: steg 1-3 bokförda ⇒ kalibrering | T3: senast 2026-12-31>

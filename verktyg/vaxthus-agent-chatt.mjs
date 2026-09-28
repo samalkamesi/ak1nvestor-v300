@@ -30,6 +30,7 @@ if (!/^[a-z0-9-]+$/.test(slug)) process.exit(2);
 const yta = path.join(TENANTER, slug);
 if (!fs.existsSync(yta) || !meddelande) process.exit(2);
 const chattKatalog = path.join(yta, "chatt");
+fs.mkdirSync(chattKatalog, { recursive: true });
 const loggFil = path.join(chattKatalog, "logg.jsonl");
 const flagga = path.join(chattKatalog, "paagar.flagga");
 

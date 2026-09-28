@@ -18514,3 +18514,10 @@ Fabriksagent s7-u1 (byggare). VAL (anspråk disk-först data/vakten/auto-s7-1790
 - r304-KUREN BEVISAD I PROD-TRÄDET: /home/ak1a/AK1/data/infra/contabo/natt-tbt-cron.sh bär CHROME_PATH-blocket (3 träffar) — prod-synken har levererat; natt-TBT-spåret 03:2x har levande instrument ikväll.
 - KVD: src orörd · R2 orörd (login = kundens handling) · crontab orörd · fabriksytorna orörda · emottaget = läsning + denna worklog (dataleverans, inget bygge).
 - NÄSTA: nattens G2/G5-kvitton (7 spår 02:30–06:27 UTC) · U7 § 5-kvittosteg när kunden loggat in · o556/o558-eftervaktsdomer när tysta fönster kommer · U6-steg I (setting-vägen) som första verkställandekandidat vid nästa desk-rond.
+
+## ROND 307 [organ:Φ] — LOGIN-SOND BOKFÖRD: kundflödet aktivt och skyddat (U6-steg I förblir villkorat) — 2026-09-28
+
+- SOND (U7 §5.1, passiv journal-läsning via node-kanal): senaste "providerCount":0 + 160 oauth-poll-rader på 30 min ⇒ appen är fortfarande UTLOGGAD men kundens inloggningsfönster POLLAR AKTIVT — engångsloginen kan pågå just nu.
+- BESLUT (kundens väg är helig): U6-steg I (Chrome hardware acceleration av + app-omstart, elektronfartskurens första steg) förblir VILLKORAT — verkställs endast när oauth-pollen tystnat i journalen OCH appen fortfarande utloggad; en omstart mitt i kundens poll skulle döda det viktigaste flödet. Villkoret mekaniserat i bokföringen: nästa desk-rond läser sonden först.
+- Eftervaktsdomerna (o556/o558) ännu ej skrivna — fabrikens omgångar håller lasten uppe; bevakas.
+- KVD: src orörd · R2 orörd · journald endast läst · inga processer påverkade (app/poll orörda) · denna worklog = rondens enda yta (dataleverans).

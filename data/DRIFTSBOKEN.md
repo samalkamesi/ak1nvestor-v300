@@ -6954,3 +6954,31 @@ byggprotokollet (nya regler för byggfönster + F6-tolkning)
   faller på ARBETSSTATIONEN även mot HEAD (Linux-konstruktioner: /proc,
   git-konfliktmarkörer) — baseline bevisad med stash; deras sanna regressions-
   dom är servern (Linux), som körs i rundans serversteg.
+
+## 2026-09-28 (r288, v193) — DR PÅ SSD NODES: USERSPACE-PG18 (ingen root)
+
+Serverbytet (v190) flyttade DR-övningens förutsättning: nya servern har
+ENBART postgresql-client-18 och studions auto-policy förbjuder sudo —
+dr-ovning.mjs (Contabo: sudo -u postgres + pg_ctlcluster PG17) kan inte köras.
+
+- **Kura:** server-paketet uppackat ur deb i `~/.pg-ssdnodes`
+  (apt-get download postgresql-18 + dpkg-deb -x — samma root-fria mönster
+  som gränsnittsvaktens ~/.chrome-libs). Datadir `~/dr-pgdata`, port 55432,
+  socket /tmp/dr-pg-socket, trust ENDAST på 127.0.0.1. Port 5432 rördes aldrig.
+- **Nytt verktyg:** `verktyg/dr-ovning-ssdnodes.mjs` — syskonkontraktet
+  helt (flock-lås /tmp/ak1a-dr-prov.lock · ram-/diskgrind · dumpkontroll
+  via kolla-dump-markorer · RTO + felkategorisering · tremätmätning ·
+  protokoll · garanterad städning) + tre ssdnodes-lärdomar inbakade:
+  (1) pg_ctl start MÅSTE ha `-l <fil>` och stdio ignore — ärvd stdout-pipe
+  hänger annars anropet (r287:s daemon-kur gäller alla långlivade barn);
+  (2) socketkatalogen skapas efter rm; (3) `pg_isready` ägs av
+  KLIENT-paketet — använd /usr/bin/pg_isready, och -X m.fl. psql-flaggor
+  är psql-exklusiva (createdb förkastar dem).
+- **Bevis (skarp körning 05:44–05:46):** dumpkontroll GRÖN (1 526 960
+  rader, pg_dump 18.6) · restore **RTO 83,7 s** · public 60 tabeller /
+  1 504 250 rader · public+storage 68/1 504 386 · alla scheman 99/1 504 646 ·
+  felrader 1 077 (0 okända) · skrap-DB raderad + PG stoppad · protokoll
+  DR-PROV-2026-09-28-SSDNODES-AUTO-6.md (försöken -1..-5 = kuriterationerna,
+  ärligt kvarlämnade). Svit: verktyg/testa-dr-ovning-ssdnodes.mjs 13/13.
+- **Kvartalskommando härifrån:** `node verktyg/dr-ovning-ssdnodes.mjs`
+  (Contabo-reserven har kvar sitt eget syskonverktyg).

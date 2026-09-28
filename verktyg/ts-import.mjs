@@ -6,7 +6,7 @@
 // lösningen följer ESM-bokstaven: "@/lib/x"-alias (tsconfig paths) och
 // extensionless relativa importer ("./datacache") som Next/bundlarna tolererar
 // går INTE att lösa. Bryggan registrerar en resolver-hook
-// (verktyg/_ts-resolve-hooks.mjs) som översätter båda mönstren och exponerar
+// (verktyg/ts-resolve-hooks.mjs) som översätter båda mönstren och exponerar
 //
 //   importeraTs("../src/lib/signal-bus.ts")  → dynamic import av modulen
 //
@@ -20,7 +20,7 @@ const HÄR = dirname(fileURLToPath(import.meta.url));
 const ROT = join(HÄR, "..");
 
 if (!globalThis.__ak1aTsResolveRegistrerad) {
-  register(pathToFileURL(join(HÄR, "_ts-resolve-hooks.mjs")).href, pathToFileURL(HÄR).href);
+  register(pathToFileURL(join(HÄR, "ts-resolve-hooks.mjs")).href, pathToFileURL(HÄR).href);
   globalThis.__ak1aTsResolveRegistrerad = true;
 }
 

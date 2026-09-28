@@ -31,7 +31,7 @@ const HÄR = dirname(fileURLToPath(import.meta.url));
 const ROT = join(HÄR, "..");
 
 // "@/…"-alias → <rot>/src/ (sprak.ts importerar "@/lib/ordlista")
-register(pathToFileURL(join(HÄR, "_s7o105-alias-hook.mjs")).href);
+register(pathToFileURL(join(HÄR, "s7-o105-alias-hook.mjs")).href);
 
 const { skapaT, oversattText } = await import(
   pathToFileURL(join(ROT, "src/lib/sprak.ts")).href

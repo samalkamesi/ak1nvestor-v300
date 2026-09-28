@@ -39,7 +39,7 @@ koll("K4", s.includes("max-md:size-[52px]") && s.includes("hidden max-md:block s
 const d = las("src/components/ak1a/dataset-sortering.tsx");
 koll("K5", d.includes("max-md:min-w-[52px]"), "o123:s pill-breddsklass orörd");
 // K6: sondens metrologi
-const sond = las("verktyg/_s7u1o127-slidersond.mjs");
+const sond = las("verktyg/o127-slidersond.mjs");
 koll("K6", sond.includes("scrollIntoView") && sond.includes("Input.dispatchMouseEvent")
   && sond.includes("setCacheDisabled"), "sondens klick+cache-metrologi");
 // K7: FÖRE-data

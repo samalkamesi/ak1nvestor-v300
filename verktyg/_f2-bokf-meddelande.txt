@@ -1,1 +1,0 @@
-studio: ROND 111 bokföring — worklog + beslutsminne (F2-rotkuren d0c13a6d, prod c621815e) + rondens F2-bevisfilerna (kur, statusprob, devort-dödning, commit-/merge-cyklar, slutverifiering) [fabrik]

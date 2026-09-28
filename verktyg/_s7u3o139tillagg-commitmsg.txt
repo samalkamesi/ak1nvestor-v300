@@ -1,1 +1,0 @@
-studio: auto s7-u3 o139 §8 TILLÄGG — 14:57Z-pollen: krav 6624 MB (ny chrome = syskonets AKTIVA sond PID 468441 ägd av zcode-cli 451104, pågående arbete, får ej städas + 4 zcode-barn) mot 1114 tillgängligt ⇒ deploy hanteras autonomt av RAM-vakten när omgången/sonderna avslutar; låset = korrekt OOM-disciplin ej fel; §8.4-kommandona oförändrat giltiga för nästa fönster [fabrik]

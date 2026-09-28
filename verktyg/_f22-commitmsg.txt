@@ -1,1 +1,0 @@
-studio: auto v164-f22 dog-and-wolf

@@ -1,1 +1,0 @@
-studio: auto s7-u2 o96 TILLÄGG — §6 vakarövertag-note: prod-synken VÄNTAR-RAM (18:37Z: 1633<2500 MB, 1 zcode-barn) — EFTER kan ej ske i vågfönstret (sonden själv håller minnet deployen väntar på); exakta verkställighetskommandon bokförda i protokollet för nästa instans/huvudagent (blocksond ×4 + LH + prod-200, FÖRE-paren bevarade i git) [fabrik]

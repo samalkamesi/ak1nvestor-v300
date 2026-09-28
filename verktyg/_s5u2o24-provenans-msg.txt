@@ -1,9 +1,0 @@
-studio: auto s5-u2 omgång 24 — commit-wrapper arkiverad; leveransen själv bärs av syskonet u1:s kedja 1e56675e enligt registret-bär-alla-presedens [fabrik]
-
-Hela u2:s omgång 24-leverans (tx-06-enhetsekonomin, ib-06-evighetskapitalet,
-register 471→473, karta/sökindex/speglar/siffror/llms/mentorrebake/larvag-
-synk, _s5u2o24-{kvd,synk,frontb,commitmsg,worklog-append}, worklog-raden)
-landade i u1:s commit 1e56675e: deras git add under mitt commitfönster tog
-de delade ytorna med mitt stagade innehåll — spårets kända kollisionsvärde
-(omgång 3-5:s mönster, nu i spegelbild). Allt innehåll verifierat i HEAD;
-denna commit arkiverar endast själva wrapper-filen för spårets spårbarhet.

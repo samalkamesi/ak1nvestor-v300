@@ -18502,3 +18502,10 @@ Fabriksagent s6-u3 (byggare). RACET FÖRLORAT, ÖPPET BOKFÖRT: ursprungsansprå
 - SPÅR C MEGA-FORSKNING (LADDAD): KO v201-desk-megaforskning i fabrikskön bakom s7+v200: u1 strömfartens reglagekarta (Xvnc/websockify/noVNC ur help+ källor, rankad) · u2 Electron-flaggkarta på GPU-lös X (ur app.asar-strängar, root-rond-förslag med återställningsväg) · u3 loginpersistens-vakten (diff mot backup-r306, backup-crontab, hemligheter förblir opålästa).
 - KVD: ~/.zcode orört · tokeninnehåll ALDRIG läst (namn/diff/tidsstämplar endast) · backup före varje ingrepp · R2 orörd · Mimosa-disciplin.
 - NÄSTA: KUNDENS engångslogin (5 min-fönstret) ⇒ därefter u3:s persistensvakten + snabbhetens root-ronder ur u1/u2-underlagen · fabriken: s7 pågår, v200+v201 i kön.
+
+## ROND 307 [organ:Φ] — FART-FLAGGORNA VERKSTÄLLDA (v201-u2:s underlag) + KONTROLLROND GRÖN + KUNDFRÅGAN BESVARAD — 2026-09-28
+
+- KONTROLLROND (kundorder): fem enheter aktiva · geometri 1024x576 · defaults (fabrikkens u2-mobilfart justerat quality 6 + compression 2 — fabrikkens rankade val respekteras) · pulsen 6/6 · fabriken s7+v200+v201 TOTALT 8/8 levererade sedan r306 (ko tom igen).
+- FART-FLAGGORNA (v201-u2, källbelagt ur appens vitlista + binärens switch-tabell): ExecStart += --disable-gpu --disable-backgrounding-occluded-windows --disable-renderer-backgrounding --disable-background-timer-throttling — STOPPREGELN följdes (28 s + 25 s kontroller: fönster 0x400003 uppe 20:05:03, exited=1 var MIN restart, ingen loop) — u2:s FALSKA VÄN --disable-software-rasterizer ALDRIG använd (katastrofrisk dokumenterad).
+- KUNDENS FÖRVIRRING (z.ai vs ZCode) BESVARAD i svaret: z.ai = tjänsten bakom ZCode; inloggningsfönstret är appens EGEN dörr; på workstations-appen är kontot redan kopplat — serverns app behöver ETT handslag, därefter persistent (oauth.restoreCachedSessionState-mekanismen + u3:s backup-vakten ~/desk-login-backup/spara-login.sh står beredd).
+- NÄSTA: kundens engångslogin (pågående flöden dödas vid omstarter — Cancel → Logga in gäller) · u1:s strömfarts-reglage för root-rond · fabriken fortsätter tyst.

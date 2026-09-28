@@ -206,8 +206,17 @@ function lasProcesser() {
  */
 function städaFöräldralösaZcode() {
   const läsPs = lasProcesser;
+  // ROND 303: AppImage = SKRIVBORDET (zdesk-zcode.service, systemd-adopterad
+  // ppid 1, /ZCode-…AppImage i args) — den Såg ut som ett läckt barn och
+  // mördades varje pulsvaktstur (restart-räknare 7, 2026-09-28 17:05).
+  // Fabriksbarnen känns på "node …/zcode -p" + AppImage-namnet utesluts.
   const ärLäcktZcode = (p) =>
-    p.ppid === 1 && p.pid !== process.pid && !/ttyd|tmux/.test(p.args) && /zcode/i.test(p.args) && p.ålder >= 300;
+    p.ppid === 1 &&
+    p.pid !== process.pid &&
+    !/ttyd|tmux/.test(p.args) &&
+    !/AppImage/.test(p.args) &&
+    /zcode/i.test(p.args) &&
+    p.ålder >= 300;
   const dödade = [];
   for (const p of läsPs().filter(ärLäcktZcode)) {
     try {

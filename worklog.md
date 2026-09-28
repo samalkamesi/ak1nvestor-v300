@@ -18515,3 +18515,11 @@ Fabriksagent s6-u3 (byggare). RACET FÖRLORAT, ÖPPET BOKFÖRT: ursprungsansprå
 - KUNDRAPPORT: skrev API-kod men kunde ej klicka vidare — tryckytor för små i den nedskalade strömmen. PAKET LEVERERAT: (1) xdotool installerad = ROBOT-HANDEN (sessionen kan nu klicka/zooma på skrivbordet åt kunden när hen fastnar); (2) appen zoomad ETT steg via robot-handen (ögonbevisad skärmdump: större knappar, inga layoutfel) + PERMANENT via desk-startzoom (systemd ExecStartPost: ctrl+0+plus vid varje start); (3) webbläsarfönstret (inloggnings-formulären) får --force-device-scale-factor=1.35 (install, nästa fönster); (4) KO v202 i fabrikskön: vy-zoom-knappar (+/− i noVNC-panelen med localStorage) · svensk hjälpsida /desk/hjalp.html · strömfarts-implementering av ak1a-delarna ur u1:s karta.
 - KVD: robot-handen används ENDAST för zoom/ Cancel-typ hjälp — ALDRIG inloggning/autentiserings-handlingar (kundens konto förblir kundens); app-omstart EJ krävd för zoom (live-verkställt); R2 orörd.
 - NÄSTA: kundens retry (Log in → större fönster) · v202-plock · root-ronder ur u1:s karta när fabriken levererat underlag.
+
+## ROND 309 [organ:Φ] — KUNDEN INLOGGAD (API-NYCKEL) + FULL HD-ARBETSYTA + ZOOMEN PERMANENT — 2026-09-28
+
+- KUNDEN LOGGADE IN via API-nyckel-vägen (efter klickbarhets-paketet): journalen visar levande model-selection.getView + enabledBuiltinAgentCliProviders glm — INLOGGAD OCH FUNKTIONELL. OAuth-vägen (Logga in) förblir reserv om kvot/nyckel sinstrar.
+- STORLEKSORDERN ("lika stor som på datorn"): Xvnc 1024x576 → 1920x1080 (full HD-arbetsyta som maximerat fönster på datorn; workarea-bevis 1920x1080; kvalitetslaget quality3+compress2 håller bandbredden) + startzoomens +1 steg NU PERMANENT I APPENS EGNA SETTINGS (desktopZoomLevel:1 — överlever omstarter utan ExecStartPost).
+- STABILITETSFIX PÅ VÄGEN: ExecStartPost-zoomen fällda enheten en gång (control process error) → feltolerant minustecken (-/bin/su...) — zoom-fel får ALDRIG falla appen; fyra enheter GRÖNA efter omstartskedjan, fönstret uppe.
+- FABRIKEN: auto-s8 nästan klar (u1+u3 godkända), v202 (vy-zoom-knappar + hjälpsida + strömfart) i kön.
+- NÄSTA: kundens första riktiga chatt i strömmen (målet: "direkt chatta som här") · v202-plock · telefonvisans vy-zoom.

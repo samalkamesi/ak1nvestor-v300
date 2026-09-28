@@ -80,7 +80,7 @@ export function Toppvaxel({
           <span aria-current="true" className={cn(aktivStil, "marin-panel text-[#E8C766]")}>
             {t("nav.privatperson")}
           </span>
-          <Link href="/pro" className={cn(lankStil, "text-muted-foreground")}>
+          <Link href="/pro" prefetch={false} className={cn(lankStil, "text-muted-foreground")}>
             {t("nav.foretag")}
           </Link>
         </>

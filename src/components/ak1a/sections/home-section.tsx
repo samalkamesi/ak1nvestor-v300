@@ -494,6 +494,10 @@ export function HomeSection() {
               <Link
                 key={s.rubrik}
                 href={s.href}
+                prefetch={false}
+                // prefetch={false} (v206/o557): kort 3 länkar /kalkylator —
+                // utan kuren prefetchar scroll-in motorruttens tunga bunt;
+                // nu laddas den först vid klick (syskonen o56/o63 kurade).
                 className="group flex flex-col rounded-xl border border-border bg-card p-6 transition-all hover:border-gold/50 hover:shadow-lg"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-gold/30 bg-gold/10 text-gold">
@@ -519,6 +523,10 @@ export function HomeSection() {
               <Link
                 key={v.href}
                 href={v.href}
+                prefetch={false}
+                // prefetch={false} (v206/o557): chipsen var startsidans sista
+                // okurerade tunga Links — /kalkylator, /vagfundament och
+                // /konfluens prefetchar annars motorbuntar vid scroll.
                 className="rounded-full border border-gold/30 bg-gold/5 px-3 py-1 text-xs font-semibold text-gold transition-colors hover:bg-gold/15 max-md:inline-flex max-md:min-h-[52px] max-md:items-center max-md:py-0"
               >
                 {t(v.nyckel)}

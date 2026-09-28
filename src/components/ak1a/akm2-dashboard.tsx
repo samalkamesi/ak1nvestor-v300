@@ -1055,7 +1055,7 @@ export function Akm2DemoStrip() {
       <p className="mt-3 border-t border-gold/15 pt-2 text-[11px] leading-relaxed text-muted-foreground">
         Det fullständiga AKM2-läget aktiveras i kalkylatorn nedan. Fullföljda
         AKM2-analyser publiceras i{" "}
-        <Link href="/forskningsbiblioteket" className="underline hover:text-foreground">
+        <Link href="/forskningsbiblioteket" prefetch={false} className="underline hover:text-foreground">
           Forskningsbiblioteket
         </Link>{" "}
         och ingår i{" "}

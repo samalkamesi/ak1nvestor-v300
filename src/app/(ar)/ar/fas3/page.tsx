@@ -662,7 +662,7 @@ export default function Fas3PageAr() {
 
         <p className="mt-8 text-xs leading-relaxed text-muted-foreground">
           مستعد لبدء البناء؟{" "}
-          <Link href="/superanalys" className="underline hover:text-foreground">
+          <Link href="/superanalys" prefetch={false} className="underline hover:text-foreground">
             افتح أداة Superanalys
           </Link>{" "}
           وابدأ محفظة تطبيقك العملي اليوم — كل تحليل تحفظه يُحتسب،

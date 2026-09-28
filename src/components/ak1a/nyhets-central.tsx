@@ -702,11 +702,11 @@ export function NyhetsCentral() {
         <div className="mt-5 border-t border-gold/10 pt-4">
           <p className="text-xs italic leading-relaxed text-[#EDE6D6]/80">
             Rangeringen och AK1A-noteringarna är studieunderlag — läs dem tillsammans med din{" "}
-            <Link href="/vagfundament" className="font-semibold text-gold-soft hover:underline">
+            <Link href="/vagfundament" prefetch={false} className="font-semibold text-gold-soft hover:underline">
               Vågkarta
             </Link>{" "}
             och{" "}
-            <Link href="/konfluens" className="font-semibold text-gold-soft hover:underline">
+            <Link href="/konfluens" prefetch={false} className="font-semibold text-gold-soft hover:underline">
               Konfluensradarn
             </Link>
             .

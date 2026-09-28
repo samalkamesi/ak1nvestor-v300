@@ -129,7 +129,7 @@ export default function ProLayout({
         <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4 sm:px-6">
           {/* Varumärket: skulptur-rutan (kundens standard) + PRO:ts egna
               guld/cream-ordmärke — läsbart mot marin oavsett tema-läge. */}
-          <Link href="/pro" className="flex items-center gap-2.5 hover:opacity-85">
+          <Link href="/pro" prefetch={false} className="flex items-center gap-2.5 hover:opacity-85">
             <VarumarkesLogo storlek="sm" medText={false} />
             <span className="font-serif text-base font-bold tracking-tight text-[#EDE6D6] sm:text-lg">
               AK1<span className="text-[#E8C766]">A</span>

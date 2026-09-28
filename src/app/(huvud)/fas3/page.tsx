@@ -651,7 +651,7 @@ export default function Fas3Page() {
 
       <p className="mt-8 text-xs leading-relaxed text-muted-foreground">
         Redo att börja bygga?{" "}
-        <Link href="/superanalys" className="underline hover:text-foreground">
+        <Link href="/superanalys" prefetch={false} className="underline hover:text-foreground">
           Öppna Superanalysen
         </Link>{" "}
         och börja din praktikportfölj idag — varje analys du sparar räknas,

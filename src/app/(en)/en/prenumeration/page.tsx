@@ -246,11 +246,11 @@ export default function PrenumerationPageEn() {
         </Link>{" "}
         first — Phase 2 and Phase 3 give {rabattProcent} % off the
         subscription, forever. Want to see the method at work?{" "}
-        <Link href="/vagfundament" className="underline hover:text-foreground">
+        <Link href="/vagfundament" prefetch={false} className="underline hover:text-foreground">
           The Wave Foundation
         </Link>{" "}
         and{" "}
-        <Link href="/konfluens" className="underline hover:text-foreground">
+        <Link href="/konfluens" prefetch={false} className="underline hover:text-foreground">
           the Confluence Radar
         </Link>{" "}
         are open as free tools.

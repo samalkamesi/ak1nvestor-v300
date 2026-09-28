@@ -606,7 +606,7 @@ export function RapportverkstanTom() {
         Mallarna renderas ur korstabellen och /api/pro/analys — utan forskningsunderlag finns
         inget att bygga på, och verkstan gissar aldrig.
       </p>
-      <Link href="/pro/klienter" className="btn-marin mt-6 inline-flex min-h-[44px] items-center px-5 text-sm">
+      <Link href="/pro/klienter" prefetch={false} className="btn-marin mt-6 inline-flex min-h-[44px] items-center px-5 text-sm">
         Till klientvyn
       </Link>
       <p className="mt-6 text-[11px] italic text-muted-foreground">

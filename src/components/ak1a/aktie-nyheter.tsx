@@ -521,7 +521,7 @@ export function AktieNyheter() {
         <div className="mt-4">
           <p className="text-xs italic leading-relaxed text-[#EDE6D6]/80">
             Nyheter förändrar vågor — läs dem tillsammans med din{" "}
-            <Link href="/vagfundament" className="font-semibold text-gold-soft hover:underline">
+            <Link href="/vagfundament" prefetch={false} className="font-semibold text-gold-soft hover:underline">
               Vågkarta
             </Link>
             .

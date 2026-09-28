@@ -172,7 +172,7 @@ export default async function VariabelSida({
           </li>
           <li>
             →{" "}
-            <Link href="/kalkylator" className="underline hover:text-gold">
+            <Link href="/kalkylator" prefetch={false} className="underline hover:text-gold">
               Testa {vnum} själv i AKM1-kalkylatorn
             </Link>
           </li>

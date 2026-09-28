@@ -104,7 +104,7 @@ export default function ProAdminSida() {
             Samma ADMIN_PASSWORD som den publika adminen — sätts i Vercel-miljövariabler.
           </p>
           <Button asChild variant="ghost" className="mt-2 w-full text-xs">
-            <Link href="/pro">← Till PRO-landningen</Link>
+            <Link href="/pro" prefetch={false}>← Till PRO-landningen</Link>
           </Button>
         </Card>
       </div>

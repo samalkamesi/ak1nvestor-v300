@@ -81,6 +81,10 @@ export function NastaSteg({ aktuellSida }: { aktuellSida?: string }) {
             <Link
               key={f.href}
               href={f.href}
+              prefetch={false}
+              // prefetch={false} (v206/o557): panelen föreslår tunga motor-
+              // rutter (/superanalys, /kalkylator) — utan kuren prefetchar
+              // scroll-in deras buntar; nu laddas de först vid klick.
               className="flex flex-1 items-center gap-3 rounded-lg border border-gold/10 px-3 py-2.5 hover:bg-gold/10"
             >
               <span className="text-xl">{f.ikon}</span>

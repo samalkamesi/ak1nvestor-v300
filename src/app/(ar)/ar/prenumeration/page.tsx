@@ -246,11 +246,11 @@ export default function PrenumerationPageAr() {
           </Link>{" "}
           أولًا — فالمرحلتان 2 و3 تمنحان خصمًا {rabattProcent} % على
           الاشتراك، للأبد. تريد رؤية المنهجية وهي تعمل؟{" "}
-          <Link href="/vagfundament" className="underline hover:text-foreground">
+          <Link href="/vagfundament" prefetch={false} className="underline hover:text-foreground">
             أساس الموجات
           </Link>{" "}
           و{" "}
-          <Link href="/konfluens" className="underline hover:text-foreground">
+          <Link href="/konfluens" prefetch={false} className="underline hover:text-foreground">
             رادار التلاقي
           </Link>{" "}
           متاحان كأداتين مجانيتين.

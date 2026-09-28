@@ -75,7 +75,7 @@ export default function ProAnalysPage() {
           på sidan.
         </p>
         <p className="mt-2 text-xs">
-          <Link href="/pro" className="text-gold hover:underline">
+          <Link href="/pro" prefetch={false} className="text-gold hover:underline">
             ← Tillbaka till morgonronden
           </Link>
         </p>

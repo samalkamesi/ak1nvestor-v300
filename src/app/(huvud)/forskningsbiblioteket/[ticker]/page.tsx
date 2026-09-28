@@ -659,7 +659,7 @@ export default async function AnalysfabrikDetaljPage({
           Ej mätt i denna version. Konfluensradarn beräknas live (max 10 tickers
           per anrop) och lagras inte — därför är den inte del av det
           reproducerbara underlaget.{" "}
-          <Link href="/konfluens" className="underline hover:text-foreground">
+          <Link href="/konfluens" prefetch={false} className="underline hover:text-foreground">
             Mät den själv i konfluensradarn
           </Link>
           .
@@ -722,12 +722,12 @@ export default async function AnalysfabrikDetaljPage({
             </li>
           ))}
           <li>
-            <Link href="/kalkylator" className="underline hover:text-foreground">
+            <Link href="/kalkylator" prefetch={false} className="underline hover:text-foreground">
               Räkna själv i AKM1-kalkylatorn (V01–V20)
             </Link>
           </li>
           <li>
-            <Link href="/vagfundament" className="underline hover:text-foreground">
+            <Link href="/vagfundament" prefetch={false} className="underline hover:text-foreground">
               Vågfundamentet — 20×5-matrisen bakom vågläget
             </Link>
           </li>

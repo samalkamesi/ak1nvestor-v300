@@ -132,6 +132,10 @@ export function Huvudmeny() {
       {fortsatt && (
         <Link
           href={fortsatt.sida}
+          prefetch={false}
+          // prefetch={false} (v206/o557): chippet länkar godtycklig senaste
+          // sida — kan vara en tung motorrutt vars bunt annars prefetchar
+          // i headern på varje vy (o56-familjen).
           className="ml-1 hidden max-w-[170px] items-center gap-1 rounded-md border border-gold/25 bg-gold/5 px-2 py-1.5 text-[11px] text-gold transition-colors hover:bg-gold/15 xl:flex"
           title={t("ui.fortsattTitel", { titel: tText(fortsatt.titel) })}
         >

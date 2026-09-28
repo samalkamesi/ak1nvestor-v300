@@ -260,11 +260,11 @@ export default async function PrenumerationPage() {
         </Link>{" "}
         först — Fas 2 och Fas 3 ger {rabattProcent} % rabatt på prenumerationen,
         för alltid. Vill du se metoden i verket?{" "}
-        <Link href="/vagfundament" className="underline hover:text-foreground">
+        <Link href="/vagfundament" prefetch={false} className="underline hover:text-foreground">
           Vågfundamentet
         </Link>{" "}
         och{" "}
-        <Link href="/konfluens" className="underline hover:text-foreground">
+        <Link href="/konfluens" prefetch={false} className="underline hover:text-foreground">
           Konfluensradarn
         </Link>{" "}
         är öppna som gratisverktyg.

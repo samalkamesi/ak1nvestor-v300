@@ -221,7 +221,7 @@ export default function NyckeltalsguidePage() {
             transparenssidan
           </Link>
           ; vill du förstå metoden bakom universumet, se{" "}
-          <Link href="/portfolj-forskning" className="underline hover:text-foreground">
+          <Link href="/portfolj-forskning" prefetch={false} className="underline hover:text-foreground">
             portföljforskningen
           </Link>
           . Maskinläsbar JSON:{" "}

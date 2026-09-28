@@ -172,7 +172,11 @@ function systemdEnheter() {
   return { status: 'PASS', detalj: `fyra enheter active (${ENHETER.join(', ')})` };
 }
 
-// --- 3. X-geometri: arbetsytan på :10 skall vara exakt 1280x720 ---
+// --- 3. X-geometri: arbetsytan skall matcha Xvnc-processens EGEN -geometry ---
+// R311-kur: upplösningen är ett STYRELSEBESLUT som ändrats per kundorden
+// (1600x900 → 1280x720 → 1024x576 → 1920x1080 → 960x540) — sviten härdkodade
+// en epoks siffra och falsklarmade nästa. RÄTT invariant: workarea ==
+// Xvnc-cmdlines -geometry (internt konsistent oavsett beslut).
 function xGeometri() {
   const ut = korKommando('xprop', ['-root', '_NET_WORKAREA'], { DISPLAY: X_DISPLAY });
   // Format: _NET_WORKAREA(CARDINAL) = 0, 0, 1280, 720, 0, 0, 1280, 720, ...
@@ -185,10 +189,27 @@ function xGeometri() {
   if (!Number.isInteger(b) || !Number.isInteger(h)) {
     return { status: 'FAIL', orsak: `kunde ej tolka dimensioner ur: "${ut.trim()}"` };
   }
-  if (b !== BREDD || h !== HOJD) {
-    return { status: 'FAIL', orsak: `arbetsytan på ${X_DISPLAY} är ${b}x${h}, förväntade ${BREDD}x${HOJD} (telefonresans skärmkontrakt)` };
+  // U13V2 fynd B-kur (r313): jämför mot RUNTIME-sanningen — xrandr current —
+  // inte mot Xvnc-cmdlinens starttillstånd. Styrelsens huvudväg resize=remote
+  // (defaults.json-kontraktet nedan) sätter klientens egna pixlar via
+  // SetDesktopSize vid varje besök: workarea FÖLJER MED, cmdline förblir
+  // viloläget — den förra invarianten falsklarmade just vid LYCKAT resize.
+  let xrUt = '';
+  try {
+    xrUt = korKommando('xrandr', ['-d', X_DISPLAY, '--query']);
+  } catch (e) {
+    return { status: 'FAIL', orsak: `xrandr-anrop misslyckades: ${String(e).slice(0, 120)}` };
   }
-  return { status: 'PASS', detalj: `_NET_WORKAREA = ${x},${y},${b},${h} => exakt ${b}x${h}` };
+  const curRad = xrUt.split('\n').find((r) => r.includes('*')) || '';
+  const xm = curRad.match(/(\d+)x(\d+)\b/);
+  if (!xm) {
+    return { status: 'FAIL', orsak: `kunde ej läsa current-läge ur xrandr: "${curRad.trim().slice(0, 120)}"` };
+  }
+  const [, xb, xh] = xm;
+  if (String(b) !== xb || String(h) !== xh) {
+    return { status: 'FAIL', orsak: `arbetsytan ${b}x${h} skiljer från skärmens aktuella läge ${xb}x${xh} (internt inkonsistent skrivbord)` };
+  }
+  return { status: 'PASS', detalj: `workarea == xrandr current == ${b}x${h} (resize-medveten invariant)` };
 }
 
 // --- 4. Fönstermaximering: ALLA fönster skall ha VERT+HORZ ---
@@ -268,7 +289,12 @@ function webrotDefaultsJson() {
   const obj = JSON.parse(raw);
   const nycklar = Object.keys(obj).length;
   const beskrivning = nycklar === 0 ? 'tomt objekt — noVNC:s inbyggda standardvärden gäller' : `${nycklar} toppnycklar`;
-  return { status: 'PASS', detalj: `${WEB_ROT}/defaults.json är giltig JSON (${beskrivning})` };
+  // U13V2-korrigeringskrav (2): hälsan var resize-blind — styrelsens
+  // huvudväg (telefonens egna pixlar via SetDesktopSize) SKALL bevakas.
+  if (obj.resize !== 'remote') {
+    return { status: 'FAIL', orsak: `defaults.json resize="${obj.resize}" — styrelsens kontrakt är "remote" (per-skärm-upplösning; U13V2-dom)` };
+  }
+  return { status: 'PASS', detalj: `defaults.json giltig (${beskrivning}) + resize=remote enligt U13V2-kontraktet` };
 }
 
 // --- Huvudflöde ---

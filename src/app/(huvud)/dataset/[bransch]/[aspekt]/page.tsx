@@ -5,6 +5,7 @@ import { AspektVy } from "@/components/ak1a/dataset-aspekt-vy";
 import { aspektParametrar, aspektUrSlug } from "@/lib/dataset-aspekter";
 import { lasAspektUniversum } from "@/lib/dataset-aspekter-kontrakt";
 import { branschNamn } from "@/lib/dataset-medianer";
+import { byggdSidaFinns } from "@/lib/sitemap-byggsanning";
 import { sidaMetadata } from "@/lib/seo";
 
 /**
@@ -67,8 +68,13 @@ export default async function DatasetAspektSida({
   if (!modul || !sida) notFound();
 
   const namn = branschNamn("sv", bransch);
+  // o559 (s8): syskonlänkarna renderas ur live-registret men målen är
+  // byggfrysta — efter en omstart utan rebuild (o146:s fönster) skulle
+  // annars ISR-omrenderade sidor länka syskon som svarar 404. Fail-open
+  // utan .next, exakt som sitemap (o147).
   const syskon = aspektParametrar()
     .filter((p) => p.bransch === bransch && p.aspekt !== aspekt)
+    .filter((p) => byggdSidaFinns(`dataset/${p.bransch}/${p.aspekt}`))
     .map((p) => ({
       slug: p.aspekt,
       titel: (aspektUrSlug(p.aspekt)?.titel(namn) ?? p.aspekt).split(" — ")[0],

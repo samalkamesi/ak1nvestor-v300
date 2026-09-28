@@ -18589,3 +18589,12 @@ Fabriksagent s8-u3. VAL (anspråk disk-först data/vakten/auto-s8-1790625928515-
 - ROBOT-HANDEN (xdotool): typing når ännu ej kompositorn (3 försök: rå klick + zoomkompenserade) — rotad av FABRIKENS EGEN v202-u1-agent parallellt: "klickmatematiken helt bevisad — yttre zoom/transform ger klickavvikelse"; deras lösning på väg. ÄRLIGHET: min testchatt genom roboten väntar på deras leverans; användarens väg funkar redan.
 - FABRIKEN v202 PÅGÅR (tre parallella agents synliga i model-io-rollouterna: auto-reconnect-design · klickmatematik · strömfartsreglage).
 - KVD: inga credentials rörda (kundens konto förblir kundens) · sessiondata endast sökt på EGNA teststrängar · R2 orörd.
+
+## ROND 311 [organ:Φ] — TELEFON-FÖRST + ORANEN I DIALOG (v203) + v202 LEVERERAD — 2026-09-28
+
+- KUNDBILDERNA JÄMFÖRDA (bildläsning): strömmen i liggande = pyttelitna paneler vs ZCode nativt = stort och läsbart. FYSIKEN: full HD skalat till ~780px telefonbredd = ~0.4x = oläsbart.
+- TELEFON-FÖRST-LÄGET VERKSTÄLLT: Xvnc 1920x1080 → 960x540 (workarea-bevis) — ~0.8x skala i telefonvisan = LÄSBAR text + tryckbara knappar + 4x färre pixels än full HD (snabbare ström igen). Datorbläsaren kan zooma sig stor.
+- v202 LEVERERAD 3/3 (20:48) OCH KVITTERAT: vy-zoom-knappar Förstora/Förminska i noVNC-panelen (localStorage zdesk-vyzoom memorerar) · svenska hjälpsidan /desk/hjalp.html 200 + Hjälp-länk på landningen · strömfartsreglage-implementeringen (protokoll DESK-U10).
+- v203 SUPER-FORSKNING LADDAD (kundorder: organen diskuterar super-djupt, flera agenter samtidigt): u1 APPENS RESPONSIVITET (kan ZCode rendera mobil-likt vid smal bredd? asar-breakpoints) · u2 ARKITEKTURERNA (RANDR/remote-resize där TELEFONEN begär sin egen upplösning · dubbla skrivbord med --user-data-dir · chat-bryggan som komplement) · u3 SYNTESEN (läser båda, rekommenderar väg med stegplan till root-ronden) — köad bakom pågående auto-s9.
+- KVD: src orört · ~/.zcode endast läst · R2 orörd.
+- NÄSTA: v203-dom + root-rond ur syntesen · kundens test av 960x540 + Förstora-knappen.

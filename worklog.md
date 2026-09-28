@@ -18373,3 +18373,12 @@ Tredje zombie-fönstret (04:47 ff1663af: npm+sh levande, next-build död, 0 % CP
 - FÖRSTA RIKTIGA ORDERN SKARPT: chatt-order "bygg om startsidan för smyckesbutik (silver/guld-hantverk, varje smycke unikt, knapp till kontakt, ingen påhittad kontaktinfo)" → agenten levererade: rubrik "Välkommen till Mountain Jewelrys butik", hantverkstexterna, unikum-sektionen, knappen, omskriven kontaktsida, ny tagline "Hantverkssmycken i silver och guld" — VALIDERAT + COMMITTAT (3 versioner i ytans historik: init → seed → ordern).
 - PARALLELL-SESSION: VPS-studion bygger VIDARE på växthuset själv (vaxthus-chatt-vakt.mjs dök upp i dess push) — organen kompletterar varandra.
 - KVD: tsc 0 · Mimosa-grön · R2 orörd · push-kedja contabo+origin+ssdnodes grön efter harmonisering (4d7be780).
+
+## ROND 288 [organ:Φ] — KUNDDIREKTIV "EXAKT ZCODE-PROGRAMMET ONLINE": DET RIKTIGA SKRIVBORDSPROGRAMMET LEVER I WEBBLÄSAREN (/desk) + VÄXTHUSET PAUSAT — 2026-09-28
+
+- KUNDORDER: "100 % samma utseende och funktion — egentligen ha programmet där, utan att bygga den, snarare ladda upp den online" + "göm växthusprojektet ett tag, fokusera lab.ak1nvestor.com".
+- VÄGEN (inget byggt, programmet självt): ZCode Desktop identifierad som Electron-app (Windows-installationen: app.asar + chromium-licenser) ⇒ officiell Linux-build finns (zcode.z.ai, 3.14.3, Beta) ⇒ AppImage 204 MB nerladdad till VPS:en · Xvnc :10 (1600×900, localhost, SecurityTypes None — säkerhetsgränsen är nginx) · openbox · ZCode --no-sandbox som ak1a · websockify→noVNC :6080→5910 · BESTÄNDIGT via FYRA systemd-enheter (zdesk-xvnc/wm/zcode/novnc, Restart=always, omstartssäker) · nginx-plats /desk/ med basic auth (ak1a + chattlösenordet — samma par som /chat).
+- BEVIS: appens fönster RITAT på virtuella skärmen (xwininfo: 0x400003 "ZCode") · noVNC 200 · publikt: /desk/vnc.html = 401 utan auth / 200 med auth, titel noVNC · alla fyra enheter active.
+- ANVÄNDNING: lab.ak1nvestor.com/desk/vnc.html → inloggning → Connect → DET RIKTIGA PROGRAMMET i webbläsaren ((GLM-konto loggas in en gång i appen; appens data lever i /home/ak1a/.config/ZCode — färska sessioner på servern, datorns sessioner följer ej med).
+- VÄXTHUSET: PAUSAT på kundorder (PIPELINE-notering; koden och hyresgästytorna lämnade orörda, /bygg-sidorna redan noindex).
+- KVD: R2 orörd (inga priser/domännamn; lösenord = befintligt chatt-par) · nya portar 6080/5910 bundna localhost · systemd-enheter dokumenterade ovan · push-kedja contabo+origin+ssdnodes.

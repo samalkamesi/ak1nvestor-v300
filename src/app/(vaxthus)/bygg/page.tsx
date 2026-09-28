@@ -29,14 +29,19 @@ export default function ByggPortal() {
           <ul className="mt-4 space-y-3">
             {hyresgaster.map((h) => (
               <li key={h.slug}>
-                <Link
-                  href={`/bygg/${h.slug}`}
-                  className="block rounded-lg border border-neutral-800 p-4 transition hover:border-neutral-500"
-                >
-                  <span className="font-semibold">{h.namn}</span>
-                  {h.tagline ? <span className="text-neutral-400"> — {h.tagline}</span> : null}
-                  <span className="mt-1 block text-xs text-neutral-500">/bygg/{h.slug}</span>
-                </Link>
+                <div className="block rounded-lg border border-neutral-800 p-4 transition hover:border-neutral-500">
+                  <Link href={`/bygg/${h.slug}`} className="block">
+                    <span className="font-semibold">{h.namn}</span>
+                    {h.tagline ? <span className="text-neutral-400"> — {h.tagline}</span> : null}
+                    <span className="mt-1 block text-xs text-neutral-500">/bygg/{h.slug}</span>
+                  </Link>
+                  <Link
+                    href={`/bygg/${h.slug}/chatt`}
+                    className="mt-3 inline-block rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500"
+                  >
+                    Bygg med agenten →
+                  </Link>
+                </div>
               </li>
             ))}
           </ul>

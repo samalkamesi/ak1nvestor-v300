@@ -93,3 +93,13 @@ export function lasSida(slug: string, sidaSlug: string | undefined): VaxthusSida
   const mall = sidaSlug && sidaSlug.length > 0 ? sidaSlug : site.sidor[0]?.slug;
   return site.sidor.find((s) => s.slug === mall) ?? site.sidor[0] ?? null;
 }
+
+/** Finns hyresgästens YTA (katalog) — oberoende av innehållets giltighet. */
+export function hyresgastFinns(slug: string): boolean {
+  if (!SLUG_RE.test(slug)) return false;
+  try {
+    return fs.statSync(path.join(vaxthusKatalog(), slug)).isDirectory();
+  } catch {
+    return false;
+  }
+}

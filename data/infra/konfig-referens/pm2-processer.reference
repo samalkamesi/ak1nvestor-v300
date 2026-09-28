@@ -17,6 +17,7 @@
 #
 ak1a          prod-webben (Next.js) — lab.ak1nvestor.com
 ak1a-pumpor   pumpor-daemonen — schemaläggaren (verktyg/pumpor-daemon.mjs)
+pumpor-hundvakt   daemonens externa pulsbevakare — tystnad > 3 min ⇒ omstart-eskalering (verktyg/pumpor-hundvakt.mjs; v192 r287)
 pulsvakt      pulsvakten — mätetal till sessionen (verktyg/pulsvakt.mjs)
 # ROND 284 (2026-09-28): ak1a-test bort ur normen — test-kopian lever på
 # CONTABO (varm reserv, viloläge) och är på SSD Nodes en BOKAD våg

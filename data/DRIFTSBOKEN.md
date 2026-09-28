@@ -7031,3 +7031,21 @@ förbättrar). Första skivan levererad:
   manuell omstart (`ss -ltnp | grep 6080`, döda gammal pid); noVNC-enhet
   fastnar i activating-loop vid portkrock — kolla journalctl -u
   zdesk-novnc.
+
+## DR-STATUS SSD NODES — 2026-09-28 kväll (s10-u1, replik)
+
+- **Determinismens sjätte par GRÖNT:** oberoende kvällsreplik av v193:s
+  restore — ALLA radkontrakt EXAKTA (markör 1 526 960 · public 60/1 504 250 ·
+  board 56 330 · snapshots 1 404 276 · fel 1 077/0 okända). Protokoll:
+  `data/forskning/DR-PROV-2026-09-28-SSDNODES-AUTO-7.md` (maskinellt) +
+  `DR-OVNING-2026-09-28-KVALLSREPLIK-S10.md` (replikdomen).
+- **RTO nya servern ~70–85 s i BÅDA faserna** (natt 83,7 · kväll 70,0 mitt
+  i drift) — Contabo-kvällsfaktorn 3–6,6× gäller ej längre (62 GB RAM).
+  F1 (tom fabrik) behålls som försiktighet; RTO-budgeten = seriens band.
+- **Offsite-länkens första räkenskap här:** 2 075 poster (vakt + forskning
+  + db-snapshot.sqlite 2,4 GB ≈ 11:1). Skapare `backup-offsite.mjs` via
+  pumpor-daemonen; dubbelt suffix `.tar.gz.tar.gz` = MEDVETET kontrakt.
+  Db-dumparnas offsite-skydd = datorns valv (arkitekturen oförändrad).
+- **Natten till 09-29 = första fulla backupdjuret här:** 02:30 db-dump ·
+  02:40 moln-JSON · 02:50 app-dump (crontab installerad, o561-kuren gör
+  skripten körbara) — nästa DR-pass bevisar de tre bladens restore.

@@ -6982,3 +6982,35 @@ dr-ovning.mjs (Contabo: sudo -u postgres + pg_ctlcluster PG17) kan inte köras.
   ärligt kvarlämnade). Svit: verktyg/testa-dr-ovning-ssdnodes.mjs 13/13.
 - **Kvartalskommando härifrån:** `node verktyg/dr-ovning-ssdnodes.mjs`
   (Contabo-reserven har kvar sitt eget syskonverktyg).
+
+## V198: DESK A-Ö — telefonresan till ZCode-skrivbordet (r301, 2026-09-28)
+
+Kundens fabriksuppdrag: telefonens hela resa ska utvecklas A-Ö,
+kontinuerligt, av agentfabriken (flera agenter söker fel, rättar,
+förbättrar). Första skivan levererad:
+
+- **D1 Landning:** exakt `https://lab.ak1nvestor.com/desk/` visar
+  `/var/www/desk/index.html` (ak1a-ägd) — svensk, mobil-först, one-tap
+  "Öppna ZCode →" till `vnc.html?autoconnect=true&resize=scale&show_dot=true`.
+  `/desk` → 302. Hela ytan bakom nginx-basic-auth (401 utan). Uppdatering
+  kräver INGEN omstart (statisk fil) — fabriksagenterna får skriva den.
+- **D2 Skalning:** Xvnc `:10` kör 1280x720 (zdesk-xvnc.service) +
+  `/home/ak1a/.config/openbox/rc.xml` maximerar/dekorerar-bort ALLA
+  fönster — xprop-bevis MAXIMIZED_VERT/HORZ på zcode-fönstret.
+  Geometribyte kräver omstartskedja `systemctl restart zdesk-xvnc &&
+  sleep 2 && systemctl restart zdesk-wm && sleep 1 && systemctl
+  restart zdesk-zcode` (sessionen i appen startar om — kunden tappar
+  tillfälligt vyn, inte filerna).
+- **D3 Fabrikens web-rot:** websockify (zdesk-novnc.service) serverar
+  ur `/home/ak1a/desk-web` — ak1a-ägd kopia av /usr/share/novnc
+  (paketet orört). Fabriksagenter äger defaults.json/mandatory.json/
+  vnc.html + /var/www/desk; NÅGOT ANNAT i /etc, /usr, systemd kräver
+  root-rond.
+- **KO:** agentfabrikens kö `data/vakten/agentfabrik/ko/
+  v198-desk-a-o-1789608200.json` (5 uppgifter: hälsosvit, mobilfeljakt,
+  landnings-a11y, noVNC-defaults, stabilitet+puls). Hälsokontroll på
+  kommando (när u1 levererats): `node verktyg/desk-halsa.mjs`.
+- **Kända gropar:** föräldralös websockify kan hålla :6080 efter
+  manuell omstart (`ss -ltnp | grep 6080`, döda gammal pid); noVNC-enhet
+  fastnar i activating-loop vid portkrock — kolla journalctl -u
+  zdesk-novnc.

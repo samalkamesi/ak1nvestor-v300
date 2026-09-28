@@ -189,10 +189,16 @@ async function main() {
     // strömmen → rename först vid grönt. En avbruten/trasig körning kan
     // aldrig mer skriva en ruin på det slutgiltiga daterade namnet och därmed
     // radera dagens fungerande arkiv (fyra ETIMEDOUT-ruiner bevisade läget).
+    // Kompression: GZIP=-1 (genomströmning framför storlek — källan växte
+    // till ~2,6 GB och default -6 är CPU-bunden ~8,4 MB/s in; mätning
+    // 2026-09-28: -1 ger ~1,7× fart för +17 % arkivstorlek; 3-2-1-målet är
+    // en återställningsbar kopia, inte en minimal fil). Miljö-varianten är
+    // den härdade vägen — argv-formen ["-czf", mål, …delar] är oförändrad.
     execFileSync("tar", byggTarArgv(delar, partSökväg), {
       cwd: ROT,
-      timeout: 600_000,
+      timeout: 1_200_000,
       stdio: "pipe",
+      env: { ...process.env, GZIP: "-1" },
     });
     const lasbar = await arArkivLasbart(partSökväg);
     if (!lasbar) {
@@ -218,6 +224,10 @@ async function main() {
     }
   } catch (e) {
     logga(`BACKUP-FEL: ${String(e).slice(0, 200)}`);
+    // Pumporna ska kunna larma på exit-koden — en misslyckad backup är
+    // ALDRIG exit 0 (s10-u3: första kur-rundan loggade BACKUP-FEL men
+    // lämnade exit 0 tyst)
+    process.exitCode = 1;
   }
 }
 

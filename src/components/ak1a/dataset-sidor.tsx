@@ -5,6 +5,7 @@ import { type OrdlistaNyckel } from "@/lib/ordlista";
 import { SITE_URL } from "@/lib/seo";
 import { skapaT, type SprakId } from "@/lib/sprak";
 import { branschNamn as branschNamnFranLib, type BranschMedianer, type DatasetMedianRad } from "@/lib/dataset-medianer";
+import { byggdSidaFinns } from "@/lib/sitemap-byggsanning";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { DatasetSorteradLista } from "@/components/ak1a/dataset-sortering";
 import { StrukturData } from "@/components/seo/StrukturData";
@@ -29,6 +30,22 @@ import { StrukturData } from "@/components/seo/StrukturData";
 /** Språkprefix för interna länkar: sv ⇒ "", en ⇒ "/en", ar ⇒ "/ar". */
 export function datasetPrefix(lang: SprakId): string {
   return lang === "sv" ? "" : "/" + lang;
+}
+
+/**
+ * o559 (s8, o146 §7:s spegelpost): bransch-länkar FÅR bara lova det det
+ * körande bygget kan leverera — [bransch]-sidorna är force-static +
+ * dynamicParams=false och finns bara där generateStaticParams såg dem vid
+ * senaste gröna bygge, medan medianerna läses ur LIVE-data. Efter en omstart
+ * utan rebuild (OOM ⇒ läkebackup-återställning, o146:s bevisade fönster)
+ * skulle tabellen annars länka branscher som tjänsten svarar 404 på —
+ * kundklickbart på tre språk. Fail-open utan .next (o147-doktrinen): i dev
+ * och ren klon reklamerar vi som förut; endast ett KONSTATERAT saknad.html
+ * håller raden tillbaka, till nästa gröna bygge släpper in den igen.
+ */
+export function byggdBranschFinns(lang: SprakId, bransch: string): boolean {
+  const grund = datasetPrefix(lang).replace(/^\//, "");
+  return byggdSidaFinns((grund ? grund + "/" : "") + "dataset/" + bransch);
 }
 
 /** "31,8" på svenska, "31.8" på en/ar; null redovisas ärligt som "—". */
@@ -337,7 +354,10 @@ export function DatasetIndexVy({
   // hydreringen kan aldrig måla ett fallback-fönster som tömmer subträdet
   // (CLS 0,2367 på långsamma laster, bevis i o143-protokollet §2);
   // innehållet renderas som förut server-side (A–Ö-fallet).
-  const sorterbara = medianer.rader.map((r) => ({
+  // o559: endast branscher bygget kan leverera (restpost se byggdBranschFinns).
+  const sorterbara = medianer.rader
+    .filter((r) => byggdBranschFinns(lang, r.bransch))
+    .map((r) => ({
     slug: r.bransch,
     namn: branschNamn(lang, r.bransch),
     pe: r.medianPe,
@@ -680,7 +700,7 @@ export function DatasetBranschVy({
         <h2 className="font-serif text-2xl font-bold">{t("dataset.detalj.andra.rubrik")}</h2>
         <ul className="mt-3 flex flex-wrap gap-2">
           {medianer.rader
-            .filter((r) => r.bransch !== rad.bransch)
+            .filter((r) => r.bransch !== rad.bransch && byggdBranschFinns(lang, r.bransch))
             .map((r) => (
               <li key={r.bransch}>
                 <Link

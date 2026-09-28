@@ -13,6 +13,7 @@ import { SIFFROR, tal } from "./siffror";
 import llmsFragorData from "../../data/llms-fragor.json";
 import { SOCIALA_URLS } from "./sociala";
 import { branschNamn, lasBranschMedianer } from "./dataset-medianer";
+import { byggdSidaFinns } from "./sitemap-byggsanning";
 
 export const SITE_URL = "https://lab.ak1nvestor.com";
 export const SITE_NAME = "AK1A Research Lab";
@@ -787,7 +788,12 @@ export function buildLlmsTxt(): string {
   L.push(
     `- [Dataset — branschmedianer](${SITE_URL}/dataset): Median P/E per bransch i AK1A:s universum (${medianer.totalt.nBolag} bolag i ${medianer.rader.length} branscher, rådata ${medianer.hamtat ?? "—"}) — totalt median P/E ${svTal(medianer.totalt.medianPe)} (n=${medianer.totalt.nMedPe} av ${medianer.totalt.nBolag} bolag med mätt P/E). Med P/B, EBIT-marginal, FCF-marginal och omsättningstillväxt per bransch.`
   );
+  // o559 (s8): llms.txt är force-dynamic och lovar ur LIVE-data, men
+  // /dataset/[bransch] är byggfryst (dynamicParams=false) — i o146:s
+  // omstart-utan-rebuild-fönster blir annars maskinläsbara löften döda
+  // (AI-läsare/crawler). Fail-open utan .next (o147-doktrinen).
   for (const r of medianer.rader) {
+    if (!byggdSidaFinns(`dataset/${r.bransch}`)) continue;
     const namn = branschNamn("sv", r.bransch);
     L.push(
       `- [Dataset ${namn} — branschmedianer](${SITE_URL}/dataset/${r.bransch}): Medianerna för ${namn} i AK1A:s universum (${r.antalBolag} bolag i branschen, rådata ${medianer.hamtat ?? "—"}): P/E ${svTal(r.medianPe)} med kvartilspridning P25–P75 ${svTal(r.p25Pe)}–${svTal(r.p75Pe)} (n=${r.nPe}) · P/B ${svTal(r.medianPb)} · EBIT-marginal ${svTal(r.medianEbitMarginal)} % · FCF-marginal ${svTal(r.medianFcfMarginal)} % · omsättningstillväxt ${svTal(r.medianTillvaxt)} %. Jämförd med universumet: median P/E ${svTal(medianer.totalt.medianPe)} för samtliga ${medianer.totalt.nBolag} bolag.`

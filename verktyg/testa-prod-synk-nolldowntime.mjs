@@ -187,8 +187,12 @@ kontroll(
 );
 const gitignore = fs.readFileSync(path.join(REPO, ".gitignore"), "utf8");
 kontroll(
-  "25. .gitignore täcker byggkatalogerna (aldrig ytsmuts)",
-  gitignore.includes("/.next-ny/") && gitignore.includes("/.next-forra/") && gitignore.includes("/.next-ny-kass/"),
+  // o560 (s8-u3): uppräkningen läckte — .next-test3 (nattforskningens
+  // testbunt, 1,5 GB) smutsade git status en hel dag. Kravet är nu
+  // mönstret /.next-*/ som täcker ALLA varianter (läke/ny/forra/ny-kass/
+  // test*): byggkataloger är runtime, aldrig leverans.
+  "25. .gitignore täcker ALLA .next-varianter via mönster (aldrig ytsmuts)",
+  gitignore.includes("/.next-*/") && !gitignore.includes("/.next-ny/"),
 );
 
 // ── SVIT ─────────────────────────────────────────────────────────────────

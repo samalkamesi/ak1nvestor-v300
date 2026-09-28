@@ -18592,3 +18592,22 @@ Fabriksagent s8-u3. VAL (anspråk disk-först data/vakten/auto-s8-1790625928515-
 - SIDOFYND: journalctl-läsning från studio-kanalen har blivit opåtlitlig (behörighetshint + 0 rader där rader förväntades) — U7:s providerCount-detektor behöver alternativ läsarmån (nästa desk-rond); ps-baserad main-processkontroll (pgrep -f AppImage + exakt main-identifiering) som komplement.
 - BOKNINGAR: v203 prefetch-kuren (o557), v204 U6-steg I via root-rond, v205 nattemottag + eftervaktsomstart — se PIPELINE-KO r310-tabellen.
 - KVD: src orörd · R2 orörd · setting.json i original (backup .bak-u6 kvar) · appen lever · crontab orörd · /etc orörd.
+## ROND 310 [organ:Φ] — "ALLA DELAR FÄRDIGA": INLOGGNINGS-LÄGET KOMPLETT + ROBOT-HANDENS GRÄNS ÄRLIGT BOKFÖRD — 2026-09-28
+
+- KUNDORDER: logga in på alla delar = allt färdigt att chatta. LÄGET: APPEN inloggad (API-nyckel, model-selection.getView lever, provider glm) · CLI delad inloggad · webbläsarprofilen sparad · full HD + zoom + klick-paket på plats = ALLA DELAR FÄRDIGA — kundens egen typing genom strömmen är BEVISAD (hen skrev API-koden själv).
+- ROBOT-HANDEN (xdotool): typing når ännu ej kompositorn (3 försök: rå klick + zoomkompenserade) — rotad av FABRIKENS EGEN v202-u1-agent parallellt: "klickmatematiken helt bevisad — yttre zoom/transform ger klickavvikelse"; deras lösning på väg. ÄRLIGHET: min testchatt genom roboten väntar på deras leverans; användarens väg funkar redan.
+- FABRIKEN v202 PÅGÅR (tre parallella agents synliga i model-io-rollouterna: auto-reconnect-design · klickmatematik · strömfartsreglage).
+- KVD: inga credentials rörda (kundens konto förblir kundens) · sessiondata endast sökt på EGNA teststrängar · R2 orörd.
+
+## ROND 311 [organ:Φ] — TELEFON-FÖRST + ORANEN I DIALOG (v203) + v202 LEVERERAD — 2026-09-28
+
+- KUNDBILDERNA JÄMFÖRDA (bildläsning): strömmen i liggande = pyttelitna paneler vs ZCode nativt = stort och läsbart. FYSIKEN: full HD skalat till ~780px telefonbredd = ~0.4x = oläsbart.
+- TELEFON-FÖRST-LÄGET VERKSTÄLLT: Xvnc 1920x1080 → 960x540 (workarea-bevis) — ~0.8x skala i telefonvisan = LÄSBAR text + tryckbara knappar + 4x färre pixels än full HD (snabbare ström igen). Datorbläsaren kan zooma sig stor.
+- v202 LEVERERAD 3/3 (20:48) OCH KVITTERAT: vy-zoom-knappar Förstora/Förminska i noVNC-panelen (localStorage zdesk-vyzoom memorerar) · svenska hjälpsidan /desk/hjalp.html 200 + Hjälp-länk på landningen · strömfartsreglage-implementeringen (protokoll DESK-U10).
+- v203 SUPER-FORSKNING LADDAD (kundorder: organen diskuterar super-djupt, flera agenter samtidigt): u1 APPENS RESPONSIVITET (kan ZCode rendera mobil-likt vid smal bredd? asar-breakpoints) · u2 ARKITEKTURERNA (RANDR/remote-resize där TELEFONEN begär sin egen upplösning · dubbla skrivbord med --user-data-dir · chat-bryggan som komplement) · u3 SYNTESEN (läser båda, rekommenderar väg med stegplan till root-ronden) — köad bakom pågående auto-s9.
+- KVD: src orört · ~/.zcode endast läst · R2 orörd.
+- NÄSTA: v203-dom + root-rond ur syntesen · kundens test av 960x540 + Förstora-knappen.
+
+### SPÅR 9 s9-u1 (manifest auto-s9-1790628927958, byggare 1/3) — 2026-09-28: SYSTEMKARTAN-dokvåg C15 Bloggen; uttaget stenstilla 4 dygn post-cutovern + kf1-kön besvarad [fabrik]
+
+Fabriksagent s9-u1 (anspråk lagt före mätning). C15 diffad (senaste fulla 09-21; 09-24 bokförde kf1-gränsyan som C15-kö — nu fullgjord): 94 publicerade OFÖRÄNDRAD 4 dygn (0 uttag, R2; senaste skrivningar = Φ:s länkkurer r260/r270 i publicerat material, bankblogg-mtime 09-27 02:47 UTC matchar r270 exakt) · prod 200 ×3 språk på SSD Nodes (sv 189/en 538/ar 1 499 ms — ar kall, kö till prestandaspåret) · disk=/blogg/sitemap = 94/94/94 harmoniskt · B2 GET 405 kvar · kön 407→426 (+5/dygn, avmattning): rot 114 · granskning 203 stilla · kvartal 94 vilande · m9-ko 7 · NY rapportakademin 8 (09-21, E39-klass som sammanställningen ej känner) · sammanställningen OFÖRÄNDRAD 350 297 B sedan 09-24 = gapet "åldrande vy" TILLBAKA · kf1-skyddet (formkontroll + dublettslug) lever i content.ts, kodstilla sedan kf2 7cb6177b via merge 6e15cbac · 09-24:s "renderar 55"-fråga BESVARAD (commiten skrevs före dagens 55→94-uttag, rena datafiler). Score 8 kvar, snitt 7,4 opåverkat. KVD: data-only, src endast läst, inget bygge, data/blogg/ orörd, R2 orörd.

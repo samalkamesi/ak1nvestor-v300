@@ -1,4 +1,4 @@
-# SYSTEMKARTAN — AK1A Research Lab (2026-09-11 · uppdaterad 2026-09-24)
+# SYSTEMKARTAN — AK1A Research Lab (2026-09-11 · uppdaterad 2026-09-28)
 
 Styrelsebeslut **I2** (SYSTEMRANKNINGEN, STYRELSE-ADMIN-MEGA.md): read-only
 inventering av ALLA system i plattformen med kvalitetscore och gap. Byggd av
@@ -7641,3 +7641,41 @@ aldrig omkörning i blinda.
 KVD: data-only (docs-append), src orörd, inget bygge; tsc via grinden vid
 commit; crontab-ytan orörd (G1-kuren var repo-referensen endast);
 användardata orörd.
+
+## UPPDATERING 2026-09-28 (dokvåg s9-u1, manifest auto-s9-1790628927958 — C15 Bloggen diffad mot verkligheten: uttaget stenstilla 4 dygn post-cutovern, kf1-kön besvarad)
+
+C15 senast fullt diffat 2026-09-21; 09-24-sektionen (C16) bokförde
+kf1-renderingsgränsyan som C15-kö med C15-blocket orört — den kön fullgörs
+nu. Varje rad MÄTT i driftsträdet/prod 2026-09-28 ~21:05Z — inte läst ur
+worklog. Anspråksfil lagd före mätning (klaim-mönstret; syskon u2/u3 hade
+klara=[] = fritt val).
+
+| Mått | Kartan 2026-09-24 | Verkligheten 2026-09-28 (mätning) |
+|---|---|---|
+| Publicerat (data/blogg) | 94 leverande live | **94 oförändrade på disk** — 0 nya publiceringar på 4 dygn (uttaget åter STENSTILLA; kundens R2). Senaste skrivningar = 2 organ-Φ-driftkurer i PUBLICERAT material: r260 f235d817 09-26 (TSMC+länkbyten, 12 filer) + r270 4e041af4 09-27 (Nasdaq→Avanza i bank/fastighetsbloggarna) — bankaktiebloggens mtime 09-27 02:47 UTC matchar r270 (04:43 CEST) exakt; källor korrigeras, stocken växer ej |
+| /blogg prod ×3 språk | speglar LIVE ×2 (09-19-not) | **200 ×3 på SSD Nodes**: sv 189 ms · en 538 ms · ar 1 499 ms — cutovern bröt inte bloggen; ar-spegeln betjänas kall (ISR-not, se kö) |
+| Artiklar live | 94 unika slugar | **94 unika /blogg/-länkar på sidan + 94 blogg-URL:er i sitemap.xml + senaste artikeln 200** — disk=lista=sitemap=live 94/94/94/94 harmoniskt: deploy/ISR bär stocken korrekt post-cutover |
+| B2-publiceringsrutten | GET 405 (metodbevakad) | **GET 405 kvar** — rutten lever, korrekt låst mot GET |
+| Kö (data/blogg-utkast) | 407 filer | **426 filer** (+19/4 dygn ≈ +5/dygn — AVMATTNING mot +34/dygn i förra diffen): rot 114 · granskning 203 (oförändrad!) · kvartal/2026-q3 94 (vilar korrekt till rappdagarna 10-20→11-04) · m9-ko 7 · **NY undermapp rapportakademin 8** (årsredovisningsläsguider, skapade 09-21 — E39-spårets producentklass, se kö) |
+| Sammanställningen | 350 297 B förynad 09-24 10:04 | **OFÖRÄNDRAD exakt: 350 297 B, mtime 09-24 08:04 UTC** — stillastående 4 dygn medan kön vuxit +19 ⇒ gapet "åldrande vy" är TILLBAKA (09-16:s självregistrering lever som mekanism men ingen bloggkopplad leverans har registrerat sig sedan 09-24) |
+| kf1-renderingsgränsyan (C15-kön från 09-24) | "per-fils felhantering + HEL formkontroll + dublettslugsskydd i src/lib/content.ts" | **SKYDDET LEVER OCH KODSTILLA**: formkontrollen (content.ts ~194–207: slug/title/description/pillar/author/publishedAt + BlogPost-typkontroll) + dubletsloggen "första förekomsten vinner" (~221–223) i trädet via merge 6e15cbac (rond 158 emottag kf1-kf3); 0 commits på filen sedan kf2 7cb6177b 09-24 06:01 |
+| 09-24:s kö-item 1 ("förklara 'renderar 55' mot 94") | öppen | **BESVARAD**: kf1-commiten 6c1ab6fb skrevs natten 09-24 när stocken var 55 (pm2-kraschloop + saknad BUILD_ID); uttaget 55→94 skedde SENARE SAMMA DAG via v164-seriens rena datafiler — inget kodberoende, inga överhoppade filer, commit-ämnet var sant vid skrivandet. Ingen ISR-mystik |
+
+Score **8 kvar** (LEVER): kundvärdeytan stabil genom cutovern (94 levererande
+×3 språk, sitemap harmonisk, skyddsgränsyan kvar), flaskhalsen är fortfarande
+uttaget (R2) och inget HELT gap öppnats/stängts — snittet 7,4 opåverkat.
+
+Kö till huvudagenten/spåret: (1) sammanställningen 4 dygn gammal medan
+kön växer — förnya (eller registrera rapportakademin-klassen i den);
+(2) rapportakademin-undermappen (8 läsguider 09-21) är en producentklass
+utkastträdet bär som sammanställningen ej känner — E39/C15-gränsyta;
+(3) ar-spegeln 1 499 ms mot sv 189 ms post-cutover — ISR-varmning av
+/ar/blogg är ett prestandaspårs-ärende (evighetskatalogens spår 7);
+(4) granskningsmappen stilla (203) medan rot växer (+11) — produktionen
+har flyttat mot rot/rapportakademin, worth en s3/s4-kik nästa dokvåg.
+
+KVD: data-only — src/ orörd = INGET bygge (content.ts ENDAST läst +
+git-loggat) · R2 orörd (publiceringsstocken endast MÄTT; data/blogg/
+orörd av denna commit — Φ-kurerna är andras levererade faktum) ·
+utkast endast räknade, aldrig flyttade · syskonytor (u2/u3:s kommande
+sektioner) orörda — append i filens slut + rubrikdatum.

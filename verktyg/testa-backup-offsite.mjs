@@ -136,7 +136,8 @@ console.log("backup-offsite (s10-u3 2026-09-28): atomiskt kontrakt — ruin-dete
   // Källkontrakt på kuren: timeouten räcker för växtet arkiv, part→rename-
   // flytet, snapshot via backup-API + quick_check-grind — och copyFileSync
   // på db-källan är borta (integritetsfyllet 2026-09-28: invalid pages).
-  KOLL("timeout höjd till 600 s", kalla.includes("timeout: 600_000"), "verktyget skjuter fortfarande med 120 s");
+  KOLL("timeout höjd till 1 200 s", kalla.includes("timeout: 1_200_000"), "verktyget skjuter fortfarande med 120 s");
+  KOLL("GZIP=-1 via ren env-option", kalla.includes('GZIP: "-1"'), "genomströmningsvalet saknas");
   KOLL("rename-flyt finns (part → slutgiltigt)", kalla.includes("fs.renameSync(partSökväg, sökväg)"), "atomär namngivning saknas");
   KOLL("snapshot via python3 backup-API", kalla.includes("src.backup(dst)"), "konsistent snapshot saknas");
   KOLL("quick_check grindar snapshot", kalla.includes("PRAGMA quick_check"), "integritetsgrind saknas");

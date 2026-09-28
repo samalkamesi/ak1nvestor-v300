@@ -37,7 +37,15 @@ function logga(rad) {
 
 /** Skript-/bash-körning: child-krasch dödar ALDRIG daemonen. */
 function kör(kommando, args, cwd = ROT) {
-  const barn = spawn(kommando, args, { cwd, stdio: "inherit" });
+  // v192 (r287 2026-09-28): stdio "ignore" — INTE "inherit". r285:s
+  // frysningar (03:22→03:27, 03:29→03:39; state S + ep_poll, inga barn)
+  // har sin mest sannolika rot i pipe-backpressure: barnen ärver daemonens
+  // stdout-pipe till pm2:s God-daemon, byggfloder (prod-synk → npm →
+  // next-build) fyller pipan under tung last och daemonens EGEN console.log
+  // blockerar då event-loopen i kernelläge. Varje verktyg loggar själv på
+  // disk — pm2-loggen behåller daemonens ▶-rader + exit-koder, exakt det
+  // som pumpor-hundvakten (verktyg/pumpor-hundvakt.mjs) bevakar som puls.
+  const barn = spawn(kommando, args, { cwd, stdio: "ignore" });
   barn.on("error", (e) => logga(`FEL vid start: ${String(e).slice(0, 100)}`));
   barn.on("exit", (kod) => logga(`${path.basename(args[0] ?? kommando)} slut kod=${kod ?? "?"}`));
 }
@@ -98,5 +106,6 @@ function tick() {
 
 logga("TICK-MÄTNING aktiv (o140) — trösklar: drift 2000 ms · event-loop 1000 ms · rad: TICK-SVÄLT {json} (till pm2-loggen)");
 logga("PUMPOR-DAEMONEN v2 (klockstyrd) startar — scheman: hjärta :x1 · kraschvakt :x4 · agentfabrik :x5 · synk :x7 · evighetsmotor :x8 · konfigintegritet :x9 · larm-eskalering :x0 · juridikgrind :37 · rond xx:43/3h · vakt xx:17/6h · integritetsvakt xx:47/6h (offset) · minnesberedare xx:23/6h · värmare 03:10 · ra-gallring 04:41 · scenariotest 04:44 · skalfri-vakt 05:06 · kvalitetsvakt 07:02 · hygien sö 03:33");
+logga("v192: barnens stdio avkopplad (pipe-backpressure-kuran, r287) — pulsen bevakas av pumpor-hundvakten (tystnad > 3 min ⇒ omstart-eskalering)");
 setInterval(tick, 30_000);
 tick(); // första kontrollen direkt

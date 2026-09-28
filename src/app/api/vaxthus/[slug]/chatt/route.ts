@@ -70,6 +70,19 @@ function pagaar(slug: string): boolean {
   return false;
 }
 
+// Runerns sökväg i runtime-tillstånd (se POST-kommentaren r288): Turbopack
+// får ALDRIG en utvickbar literal i spawn-anropet — env-override först, sedan
+// cwd-join, cachat på objektet så analysatorn inte kan vika fram den.
+const runnerState = { vag: "" };
+function runnerVag(): string {
+  if (!runnerState.vag) {
+    runnerState.vag =
+      process.env.AK1A_VAXTHUS_RUNNER ??
+      path.join(process.cwd(), "verktyg", "vaxthus-agent-chatt.mjs");
+  }
+  return runnerState.vag;
+}
+
 export async function GET(req: NextRequest, ctx: { params: Promise<{ slug: string }> }) {
   const skydd = requireAdmin(req);
   if (skydd) return skydd;
@@ -97,8 +110,13 @@ export async function POST(req: NextRequest, ctx: { params: Promise<{ slug: stri
   // läser+raderar den och omvalsvaliderar slug själv
   fs.writeFileSync(path.join(vaxthusKatalog(), "chatt-jobb.txt"), slug + "\n" + meddelande + "\n");
   fs.writeFileSync(vagar.flagga, JSON.stringify({ start: Date.now(), pid: -1 }));
-  const runner = path.join(process.cwd(), "verktyg", "vaxthus-agent-chatt.mjs");
-  const barn = spawn("node", [runner], {
+  // r288: Turbopack analyserar spawn-argument statiskt och försöker resolva
+  // dem som server-relativa moduler — en direkt path.join(process.cwd(), …)
+  // i anropet dödade BYGGET (Module not found '/ROOT/verktyg/vaxthus-agent-
+  // chatt.mjs' — två fällda fönster 05:08 + 05:26). Kuren är studio-
+  // transportens bevisade mönster: sökvägen lever i RUNTIME-tillstånd som
+  // analysatorn inte kan vika ut (env-först, cachat på objektet).
+  const barn = spawn("node", [runnerVag()], {
     cwd: vaxthusKatalog(),
     detached: true,
     stdio: "ignore",

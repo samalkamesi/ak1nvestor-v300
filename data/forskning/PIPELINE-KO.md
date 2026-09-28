@@ -534,3 +534,11 @@ Samma rond: /bygg-sitemap-exkluderingen i kvalitetsvakten körbevisad
 | r307 | LOGIN-SOND BOKFÖRD: providerCount 0 + 160 oauth-poll-rader/30 min ⇒ kundens engångslogin kan pågå — U6-steg I (app-omstart) förblir villkorat tills pollen tystnar; kundflödet skyddas | ✓ LEVERERAD 7dd6b06a |
 
 Nästa i kön (händelsestyrda): nattens G2/G5-kvitton 02:30–06:27 UTC 29/9 (7 spår; instrumenten bevisat levande) · o556/o558-eftervaktsdomer vid tyst last (tak självdör ~22:32Z/01:06Z, omstartbara — fabrikens auto-s8 håller lasten uppe just nu) · U7 §5-kvittosteg när kunden loggat in · U6-steg I när oauth-pollen tystnat · v232 fullsvep när fabrikskon vilar · G9-steg 2 väntar kund (Vercel-cronens avstängning, R2-adjacent) · v172 rappdagar (kalenderstyrd, oktober äger).
+
+## ROND 310 [organ:Φ] — evighetsronden: U6-steg I-försöket (sudo-gräns bevisad) + 3 nya bokningar — 2026-09-28
+
+| Våg | Innehåll | Status |
+|---|---|---|
+| v203 | PREFETCH-KUREN (o557:s produktnivå-bokning, spår 7): 1,35 MB-chunken med superanalys/konfluens-motorerna (monte/kelly/SAM/bayes) laddas via Link-prefetch av ALLA sidor men exekveras aldrig — kur: demand-laddning (lazy/onClick) i stället för prefetch; src-yta ⇒ tsc + bygg under flock vid fönster (V235: väntar ut fabrik) | BOKAD (huvudagenten) |
+| v204 | U6-STEG I VIA ROOT-ROND (spår 11): Chrome hardware acceleration av på GPU-lös Xvnc — FIL-proceduren är fri (setting.json i ~/.zcode, backup .bak-u6 finns) men OMSTARTEN kräver systemctl = root-kanal (r310 bevisade: studio-kanalens systemctl → Access denied; sudo-fria kill-vägen ger okontrollerad timing + feltända stoppregler). Procedur till root-ronden: sätt "desktopChromiumHardwareAccelerationEnabled": false (kirurgisk replace, exakt 1 träff) → systemctl restart zdesk-zcode → verifiera is-active + 0 gpu-process + providerCount-rad. Mätning enligt U6 §6 | BOKAD (root-rond) |
+| v205 | NATTEMOTTAGET G2/G5 + EFTERVAKTSOMSTART (spår 9+7): läs nattens 7 spårkvitton (02:30–06:27 UTC 29/9; eskalering enligt DRIFTSBOKEN vid uteblivna) + starta om o556/o558-eftervakterna (dog på tidsgränser under fabrikslast — omstartbara, nattens tysta fönster är deras) | BOKAD (morgonronden) |

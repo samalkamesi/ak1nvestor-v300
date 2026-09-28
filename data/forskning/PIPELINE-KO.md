@@ -498,6 +498,6 @@ Samma rond: /bygg-sitemap-exkluderingen i kvalitetsvakten körbevisad
 |---|---|---|
 | v195 | DAEMON-KODFRISKHETSVAKT (spår 8): jämför daemonens källfils innehålls-ändring (git företräde, mtime fallback) mot pm2-processens starttid — glapp > 5 min ⇒ larm (r290-läxan mekaniserad; gäller pumpor-daemon + hundvakt + pulsvakt) | ✓ LEVERERAD+STÄNGD r291 (77722858, svit 11/11; live: ▶ daemon-friskhet varje minut kod=0, prod-lägesfil GRÖN med git-sanningen) |
 | v188 | MIDDLEWARE→PROXY-MIGRATIONEN (Next 16 deprecations → proxy.ts) | ✓ LEVERERAD r278 (61ba987a) + KVITTERAD+STÄNGD r292: speglar 200 ×4 + fake-slug 404 + prod 200 + 0 deprecationsrader i 128 kB full byggoutput efter migrationen (se worklog ROND 292) |
-| v180 | HYGIEN-BIBLIOTEKET: 806 trackade _r*-wrappers i verktyg/ — audit + härdning/radering i omgångar (Mimosa-paritet = röda-trigg i kvalitetsrapporten) | STÅR (väljs när spår 8 vilat) |
+| v180 | HYGIEN-BIBLIOTEKET: _r*-wrappers i verktyg/ — audit + härdning/radering i omgångar (Mimosa-paritet = röda-trigg) | ✓ OMGÅNG 1 LEVERERAD r293: 177/177 _r*/_v* raderade efter audit+granskning (0 körtidsberoenden), vakten 0 fel GRÖN, Mimosa-röda-triggen bevisad levande. OMGÅNG 2 BOKAD: _f*/_s*-klasserna |
 | v172 | RAPPDAGAR 10-20 → 11-04 | STÅR (kalenderstyrd — oktober äger) |
 | — | Vaxthus-chattens E2E-debut: hyresgästens första riktiga chatt-jobb genom hela kedjan (route→jobbfil→vakt→runern→logg.jsonl) | BEVAKAS (kräver hyresgästens Chatt — organen simulerar ej kunddata) |

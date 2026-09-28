@@ -18354,3 +18354,13 @@ Tredje zombie-fönstret (04:47 ff1663af: npm+sh levande, next-build död, 0 % CP
 - BEVIS 3 — BYGGKEDJAN FRISK RUNT PROXYN: prod-synk 09:41:47 BUNTSLAGSRACE-verkande (trädet flyttade cb03bc92 → 77722858 under bygget — v187-vakten avbröt byte och bokförde ombygg, exakt design) + 09:47:10 BYGGER FRÅN 53cf1e12 (r291-bokföringsträdet).
 - STÄNGNING: PIPELINE-KO v188 STÅR → ✓ STÄNGD på kvitto. Vågen krävde ingen ny kod — ronden är en kvitto-/bokföringsrond (f986bde8-mönstret).
 - KVD: src orörd (0 diff) · samtliga kördvägar gröna · inga nya verktyg · _v188-wrappers städade efter bokföring.
+
+## ROND 293 [organ:Φ] — v180 HYGIEN-BIBLIOTEKET OMGÅNG 1: samtliga 177 _r*/_v*-wrappers i verktyg/ raderade (audit → granskning → KVD GRÖN) — 2026-09-28
+
+- AUDIT (data/forskning/OPTIMERING/v180-audit-omgang1.md): 177 git-trackade _r*/_v*-engångsfiler inventerades (ålder + storlek + korsreferens via grep -F -f mot alla levande ytor: src/, verktyg/ (ej _r/_v), package.json, data/infra/). Resultat: 166 utan träffar + 11 "refererade".
+- GRANSKNING av de 11: samtliga DOKUMENTÄRA — _r113-push.mjs nämns endast i mimosa-paritetens v1.6-historikkommentar + testfixture-kommentar (testet skapar egna fixtures, läser aldrig filen); _r119-filerna i _f3-boka.mjs:s bokföringstext; övriga i andra engångswrappers text eller FALSKA referenser (0 träffar vid omgranskning). 0 körtidsberoenden: inga daemonrop (pumpor-daemonens rop är bestämda icke-_r-verktyg), inga cron-/systemd-/nginx-referenser i data/infra, inga package.json-skript, ingen src-import.
+- RADERING: git rm på samtliga 177 (0 trackade _r*/_v* kvar i verktyg/) — reversibelt via git-historik; historiknämningarnas källor lever kvar i git log + worklog.
+- MIMOSA-RÖDA-TRIGGEN BEVISAD LEVANDE: första KVD-körningen efter raderingen FAIL (2 high CHILD_PROC_INTERP) — fynden var DENNA RONDENS EGNA två audit-wrappers med interpolerad execSync; de städades (auditen/körningarna var klara) och omkörningen gav 13/13 med Mimosa-paritet PASS 0 fel GRÖN (10:10:46Z). v180:s premiss — engångswrappers är kvalitetsrapportens röda-trigg — är ingen teori, den träffade inom samma rond.
+- NOTIS: SSR-livssonens 1 MANUELL = mätfönster-grind (pågående next build PID 243986 — prod-synkens ombygg) ⇒ SSR ommätt denna körning; defensiv korrekt design, totalt GRÖN.
+- OMGÅNG 2 BOKAD: _f*- och _s*-klasserna (t.ex. _f3-boka.mjs, _f6-eftersond.mjs, _s8u1o145-skriv-resten.mjs) — samma audit-mönster, egen rond. Även: siffran 806 (r269) hade sjunkit till 177 genom tidigare rondstädningar — hygienen håller takten via ronder som städar efter sig.
+- KVD: src orörd · tsc 0 · vakten 0 fel GRÖN · Mimosa 2127-filsscan PASS · användardata orörd.

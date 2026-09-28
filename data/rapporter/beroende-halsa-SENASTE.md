@@ -1,8 +1,12 @@
-# Beroendehälsa — 2026-09-27T05:25:15.928Z
+# Beroendehälsa — 2026-09-28T20:27:28.552Z
 
-**0 sårbarheter (critical 0 · high 0 · moderate 0 · low 0) · 0 uppdateringar inom deklarerat intervall · 9 major-steg.**
+**0 sårbarheter (critical 0 · high 0 · moderate 0 · low 0) · 1 uppdateringar inom deklarerat intervall · 9 major-steg.**
 
 Vakten mäter — installation ägs av prod-synken under deploy-låset.
+
+## Uppdateringar inom deklarerat intervall (låg risk)
+
+- sharp: 0.35.4 → 0.35.5 (patch) — latest 0.35.5
 
 ## Major-steg (köas, kräver beslut/test)
 

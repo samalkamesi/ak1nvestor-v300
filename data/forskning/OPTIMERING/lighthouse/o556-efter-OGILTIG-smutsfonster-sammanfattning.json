@@ -1,0 +1,11 @@
+{
+  "datum": "2026-09-28T19:02:31.626Z",
+  "bas": "http://localhost:3000",
+  "namn": "o556-efter",
+  "sidor": [
+    {
+      "sokvag": "/kurser",
+      "fel": "Error: spawnSync npx ETIMEDOUT"
+    }
+  ]
+}

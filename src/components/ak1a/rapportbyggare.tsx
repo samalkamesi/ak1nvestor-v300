@@ -375,13 +375,13 @@ export function Rapportbyggare({
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               href="/superanalys"
-              className="btn-guld-signatur inline-flex min-h-[44px] items-center px-5 text-sm"
+              className="btn-guld-signatur inline-flex min-h-[52px] items-center px-5 text-sm"
             >
               Till Superanalysen
             </Link>
             <Link
               href="/konfluens"
-              className="btn-marin inline-flex min-h-[44px] items-center px-5 text-sm"
+              className="btn-marin inline-flex min-h-[52px] items-center px-5 text-sm"
             >
               Till Konfluensradarn
             </Link>

@@ -1,0 +1,55 @@
+{
+  "datum": "2026-09-28T18:00:52.423Z",
+  "bas": "http://localhost:3000",
+  "namn": "o557-fore-1",
+  "sidor": [
+    {
+      "sokvag": "/rapporter",
+      "poang": {
+        "prestanda": 0.34,
+        "tillganglighet": 1,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1637,
+        "LCP": 9724,
+        "TBT": 34487,
+        "CLS": 0,
+        "TTI": 39319,
+        "SI": 24833
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 416 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 416 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 525 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 525 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "15.2 s",
+          "rad": "Reduce JavaScript execution time — 15.2 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "52.4 s",
+          "rad": "Minimize main-thread work — 52.4 s"
+        }
+      }
+    },
+    {
+      "sokvag": "/rapportakademin",
+      "fel": "Error: spawnSync npx ETIMEDOUT"
+    }
+  ]
+}

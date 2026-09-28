@@ -5,11 +5,12 @@ node_modules
 # next.js
 /.next/
 # Spår 8 (o97): prod-synkens .next-läkebackup — runtime-skydd, aldrig leverans
-/.next-laeke/
 # V182 (r272): nolldowntime-byggets kataloger — runtime, aldrig leverans
-/.next-ny/
-/.next-forra/
-/.next-ny-kass/
+# o560 (s8-u3): MÖNSTER i stället för uppräkning — varje .next-variant
+# (läke, ny, förra, ny-kass, test3 …) är bygg/runtime-avfall, aldrig
+# leverans; uppräkningen läckte .next-test3 (1,5 GB ospårad ytsmuts
+# 2026-09-28). Vaccin: testa-prod-synk-nolldowntime.mjs kontroll 25.
+/.next-*/
 /out/
 
 # production

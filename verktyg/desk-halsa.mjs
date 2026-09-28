@@ -5,17 +5,26 @@
 //   https://lab.ak1nvestor.com/desk/ — kedjan (v198/r301):
 //     nginx (landning exakt /desk/ ur /var/www/desk + proxy /desk/* ->
 //     127.0.0.1:6080, basic auth) -> websockify (web-rot /home/ak1a/desk-web)
-//     -> Xvnc :10 (1280x720) + openbox (maximerar allt) + ZCode-AppImage.
+//     -> Xvnc :10 + openbox (maximerar allt) + ZCode-AppImage.
 //   Denna svit är agentfabrikens öga: ETT kommando som söker fel i hela
 //   kedjan. Hittar den ett äkta fel => FAIL med förklaring — ALDRIG
 //   nivåsänkt; rättning är EGEN fabriksuppgift, inte svitens.
+//
+// SKÄRMKONTRAKTET (r305-harmonisering): D2 (r301) satte 1280x720; 2026-09-28
+//   18:58Z ändrades Xvnc till 1024x576 (44 % av pixlarna = snabbare ström +
+//   större skalning på telefonen; kundens snabbhetsorder). Ändringen var
+//   dokumenterad ENDAST som kommentar i zdesk-xvnc.service ("D2→r306") —
+//   detta kontrakt följde efter i r305 så sviten mäter sanningen igen
+//   (v201-u1:s STREAMFART-analys bekräftar 1024x576 som rätt dimensionerat
+//   för telefon-portrait ~390 px).
 //
 // Kontroller (en rad per kontroll, PASS/FAIL/SKIP):
 //   1. http-landning-401   GET /desk/ UTAN auth => exakt 401 (auth-bommen).
 //   2. systemd-enheter     systemctl is-active zdesk-xvnc zdesk-wm
 //                          zdesk-zcode zdesk-novnc => fyra 'active'.
 //   3. x-geometri          xprop -root _NET_WORKAREA med DISPLAY=:10 =>
-//                          arbetsytan exakt 1280x720.
+//                          arbetsytan exakt 1024x576 (r305-kontraktet:
+//                          snabbhetsorderns framebuffer, se svitens huvud).
 //   4. fonstermaximering   xprop -root _NET_CLIENT_LIST + xprop -id <id>
 //                          _NET_WM_STATE => MAXIMIZED_VERT _och_ HORZ på
 //                          ALLA listade fönster (openbox maximerar allt);
@@ -59,8 +68,8 @@ import https from 'node:https';
 const BAS_URL = 'https://lab.ak1nvestor.com';
 const ENHETER = ['zdesk-xvnc', 'zdesk-wm', 'zdesk-zcode', 'zdesk-novnc'];
 const X_DISPLAY = ':10';
-const BREDD = 1280;
-const HOJD = 720;
+const BREDD = 1024;
+const HOJD = 576;
 const WEB_ROT = '/home/ak1a/desk-web';
 const TITEL_MARKE = 'ZCode-skivbordet';
 const HTTP_TIMEOUT_MS = 6000;

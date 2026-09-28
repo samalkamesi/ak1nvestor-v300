@@ -1,0 +1,99 @@
+{
+  "datum": "2026-09-28T18:11:44.924Z",
+  "bas": "http://localhost:3000",
+  "namn": "o558-efter",
+  "sidor": [
+    {
+      "sokvag": "/bolag",
+      "fel": "Error: spawnSync npx ETIMEDOUT"
+    },
+    {
+      "sokvag": "/bolag/eqnr-ol",
+      "poang": {
+        "prestanda": 0.35,
+        "tillganglighet": 1,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1393,
+        "LCP": 10739,
+        "TBT": 34797,
+        "CLS": 0,
+        "TTI": 40593,
+        "SI": 18480
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 416 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 416 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 480 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 480 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "25.3 s",
+          "rad": "Reduce JavaScript execution time — 25.3 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "50.6 s",
+          "rad": "Minimize main-thread work — 50.6 s"
+        }
+      }
+    },
+    {
+      "sokvag": "/data/nyckeltalsguide",
+      "poang": {
+        "prestanda": 0.34,
+        "tillganglighet": 1,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1652,
+        "LCP": 9724,
+        "TBT": 26439,
+        "CLS": 0,
+        "TTI": 31981,
+        "SI": 20879
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0.5,
+          "visar": "Est savings of 416 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 416 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 480 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 480 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "13.3 s",
+          "rad": "Reduce JavaScript execution time — 13.3 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "45.7 s",
+          "rad": "Minimize main-thread work — 45.7 s"
+        }
+      }
+    }
+  ]
+}

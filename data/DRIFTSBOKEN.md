@@ -6923,3 +6923,34 @@ byggprotokollet (nya regler för byggfönster + F6-tolkning)
 - UPPFÖLJNING (våg-kandidat, ej v180): engångsklasserna utanför _r*
   (_v<NNN>-, _s<N>u<N>-, _f<NN>-, _o<NN>-prefix från gamla vågor)
   följer SAMMA regel — nästa hygienvåg skannar dem med samma metod.
+
+## DRIFTNOT 2026-09-28 r280 [organ:Φ] — v183B NPM CI-FÖNSTRET: stallningsvägen (mörkret ~25 min → bytets sekunder)
+
+- ROTEN (oförändrad från v182:s dokumentation): npm ci river prod-node_modules
+  under den gående appen (våg 153: lazy-require-död → next-not-found-
+  kraschloop, 1 309 omstarter) — därför stoppade o48-vägen pm2 under HELA
+  installationen+bygget (dokumenterat mörkt ~byggtid, beroendeändringar).
+- KUREN (V183B, r280): installation+bygg i en ARKIVKOPIA av HEAD (git
+  archive = tracked yta) med EGEN node_modules — pm2 LEVER hela fönstret.
+  Prod-ytan (node_modules/.next) rörs först vid det atomära DUBBELBYTET:
+  EN &&-kedja under deploylåset med hash-vakt (buntslagsrace-paritet):
+  node_modules → node_modules-forra · kopians node_modules → node_modules ·
+  .next → .next-forra · kopians .next-ny → .next · pm2 restart.
+- FALLTÄCKNING: fallit npm ci/build I KOPIAN lämnar prod HELT orörd (strikt
+  bättre än o48-vägen där prod-node_modules redan rivits vid fallit ci).
+  Fallback vid otillräcklig/omätbar disk (< 6 000 MB, statfs): dagens mörka
+  o48-väg körs orörd. Grönt fönster städar kopia + node_modules-forra.
+- RAM-notering (ärlig): stallningsfönstret kör med pm2 vid liv ≈ pm2:s
+  fotspår MER last än o48-vägen — V184-sonden mäter varje försök, VÄNTAR-
+  RAM-grinden gäller, och V189:s byggtopp-styrsel (studion) äger taket.
+- BEVIS: svit testa-prod-synk-npmci-stallning.mjs 24/24 PASS (strukturella
+  kontrakt + reallivssimulering: grönt dubbelbyte mot sandlåderepo med
+  stubbad pm2, hash-vaktens stopp vid flyttat träd med prod-ytan orörd,
+  git archive-extrahering) · buntslagsrace 14/14 · nolldowntime 25/25 ·
+  pm2vakt 36/36 · node --check grönt · ÄKT DEBUT väntar första riktiga
+  beroendeändringen (v186-mönstret: mekaniskt bevis först, driftbevis när
+  händelsen kommer).
+- Windows-notis: 4 sviter (arbetsytasynk/byggram/tidsstampel/instanslas-13)
+  faller på ARBETSSTATIONEN även mot HEAD (Linux-konstruktioner: /proc,
+  git-konfliktmarkörer) — baseline bevisad med stash; deras sanna regressions-
+  dom är servern (Linux), som körs i rundans serversteg.

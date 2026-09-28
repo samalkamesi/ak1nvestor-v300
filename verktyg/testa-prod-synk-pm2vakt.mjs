@@ -157,8 +157,9 @@ console.log("== strukturella kontrakt i prod-synk.mjs (ordagranna) ==");
       kontexter[0].includes("PATCH-KÖ installerad"),
     );
     kolla(
-      "stopp #2 ligger i v182 npmCi-grenen (if (npmCiBehov))",
-      kontexter[1].includes("if (npmCiBehov)"),
+      // v183B (r280): stoppet lever i o48-fallbacken — stallningsläget stoppar aldrig
+      "stopp #2 ligger i v182 npmCi-grenen (if (npmCiBehov && !stallning))",
+      kontexter[1].includes("if (npmCiBehov && !stallning)"),
     );
     kolla(
       "båda stoppen ligger FÖRE korBygg-anropet i källordning",

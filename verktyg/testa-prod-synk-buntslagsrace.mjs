@@ -76,8 +76,9 @@ const ixByggTradStart = KALLA.indexOf('const byggTradStart = git(["rev-parse", "
 const ixByggerFran = KALLA.indexOf("BYGGER FRÅN:");
 const ixForstaBygg = KALLA.indexOf("await korByggMedSond()");
 const ixRaceBlock = KALLA.indexOf("const race = buntslagsraceDom(");
-const ixArtefakt = KALLA.indexOf("verifieraArtefakt({ nextKatalog: path.join(ROT, \".next-ny\") })");
-const ixSwap = KALLA.indexOf('const swap = `test "$(git rev-parse HEAD)" = "${byggTradStart}"');
+// v183B (r280): artefakten mäts via nyaKatalog (stallningsläget: kopians .next-ny)
+const ixArtefakt = KALLA.indexOf("verifieraArtefakt({ nextKatalog: nyaKatalog })");
+const ixSwap = KALLA.indexOf("const swap = stallning");
 
 kontroll(
   "6. BYGGER FRÅN-låset finns och ligger FÖRE första byggförsöket",
@@ -89,8 +90,17 @@ kontroll(
   ixRaceBlock !== -1 && ixArtefakt !== -1 && ixRaceBlock < ixArtefakt,
 );
 kontroll(
+  // v183B (r280): bytet har TVÅ vägar — stallningens dubbelbyte (egen
+  // funktion, egen hash-vakt) och o48-fallbackens enkelbyte; BEGGE bär
+  // hash-vakten först och pm2 restart sist (kontroll 8b täcker funktionen).
   "8. byte-kommandot bär hash-vakten + mv-kedjan + pm2 restart",
-  ixSwap !== -1 && KALLA.slice(ixSwap, ixSwap + 400).includes("mv .next .next-forra && mv .next-ny .next && pm2 restart ak1a"),
+  ixSwap !== -1 && KALLA.slice(ixSwap, ixSwap + 700).includes("mv .next .next-forra && mv .next-ny .next && pm2 restart ak1a"),
+);
+kontroll(
+  "8b. v183B: stallningsbytet ropar stallningsByteKommando (dubbelbytets kedja i separat funktion)",
+  KALLA.includes("stallningsByteKommando({ byggTradStart })") &&
+    KALLA.includes('test "$(git rev-parse HEAD)" = "${byggTradStart}" && ') &&
+    KALLA.includes("mv node_modules node_modules-forra"),
 );
 kontroll(
   "9. race-grenen returnerar UTAN deploy (DEPLOYAD-markören orörd ⇒ ombygg nästa poll)",

@@ -106,6 +106,16 @@ function ramTillgangligtMB() {
   }
 }
 
+/** Fritt diskutrymme i MB på roten (statfs; null vid fel ⇒ konservativt). */
+function lasFriaMB(katalog = ROT) {
+  try {
+    const s = fs.statfsSync(katalog);
+    return Math.floor((s.bavail * s.bsize) / 1024 / 1024);
+  } catch {
+    return null;
+  }
+}
+
 // VACCIN 3 (DRIFTSBOKEN 2026-09-17 17:42–17:47Z, o53 §4): MemAvailable
 // mäter NU — byggtröskeln måste också räkna med PÅGÅENDE tunga processers
 // VÄXT under byggets ~3 minuter. 17:42-OOM:ens formel var byggheap +
@@ -942,6 +952,58 @@ export function byggNolldowntimeKommando({ npmCi }) {
 }
 
 // ---------------------------------------------------------------------------
+// V183B (r280 — NPM CI-FÖNSTRET): STALLNINGSVÄGEN. Roten: dagens npm ci-väg
+// (o48-mönstret) stoppar pm2 under HELA installationen+bygget — dokumenterat
+// mörkt ~byggtid — därför att npm ci river prod-node_modules under den gående
+// appen (våg 153: lazy-require-död → next-not-found-kraschloop, 1 309
+// omstarter). Kuren: installation+bygg i en ARKIVKOPIA av HEAD (git archive =
+// tracked yta = exakt det bygget alltid byggt ifrån) med EGEN node_modules;
+// prod-ytan (node_modules/.next) rörs EJ förrän det atomära DUBBELBYTET:
+//   · npm ci --prefix .bygg-kopia — installerar I KOPIAN, pm2 lever
+//   · NEXT_DIST_DIR=.next-ny npm run build i kopian — skriver .bygg-kopia/.next-ny
+//   · dubbelbyte (en &&-kedja under deploylåset + hash-vakt, samma
+//     sekundklass som V182:s enkelbyte): node_modules → -forra, kopians
+//     node_modules → node_modules, .next → -forra, kopians .next-ny → .next,
+//     pm2 restart
+// Fallback: otillräcklig disk (kopia ≈ träd + 1× node_modules) ELLER omätbar
+// ⇒ dagens mörka o48-väg orörd. RAM-notering: fönstret kör med pm2 vid liv
+// (≈ pm2:s fotspår mer last än o48-vägen) — V184-sonden mäter varje försök
+// och VÄNTAR-RAM-grinden gäller som alltid. Misslyckad installation/bygge i
+// kopian lämnar prod HELT orörd (strikt bättre än o48-vägen, där prod-ytans
+// node_modules redan rivits vid fallit npm ci). Kopian städas i gröna
+// fönstret och av nästa stallningsfönsters första rad; ett fallit fönster
+// lämnar DEN kopian kvar tills dess (dokumenterad diskkostnad).
+// Kontraktstest: verktyg/testa-prod-synk-npmci-stallning.mjs
+// ---------------------------------------------------------------------------
+const KOPIA_KATALOG = ".bygg-kopia";
+const STALLNING_DISK_KRAV_MB = 6000; // arkivkopia + kopians node_modules + marginal
+
+export function stallningsKommando() {
+  return [
+    `rm -rf ${KOPIA_KATALOG}`,
+    `mkdir -p ${KOPIA_KATALOG}`,
+    `git archive HEAD | tar -x -C ${KOPIA_KATALOG}`,
+    `npm ci --no-audit --no-fund --prefix ${KOPIA_KATALOG} >> /tmp/synk-npmci.log 2>&1`,
+    `cd ${KOPIA_KATALOG} && NEXT_DIST_DIR=.next-ny npm run build >> /tmp/synk-build.log 2>&1`,
+  ].join(" && ");
+}
+
+export function stallningsByteKommando({ byggTradStart }) {
+  return (
+    `test "$(git rev-parse HEAD)" = "${byggTradStart}" && ` +
+    `mv node_modules node_modules-forra && ` +
+    `mv ${KOPIA_KATALOG}/node_modules node_modules && ` +
+    `mv .next .next-forra && ` +
+    `mv ${KOPIA_KATALOG}/.next-ny .next && ` +
+    `pm2 restart ak1a`
+  );
+}
+
+export function stallningDiskMojlig({ friaMB }) {
+  return typeof friaMB === "number" && friaMB >= STALLNING_DISK_KRAV_MB;
+}
+
+// ---------------------------------------------------------------------------
 // V187 (r276 — BUNTSLAGSRACE-VAKTEN): pushar levererar trädet DIREKT till
 // servern (updateInstead) och kan landa MITT i ett löpande byggfönster.
 // DEPLOYAD-radens hash är SLUTTRÄDET — inte byggträdet. Bevisat 2026-09-27:
@@ -1307,11 +1369,18 @@ async function korSynk() {
   } catch { /* obestämbar ⇒ beslutaNpmCi kör konservativt */ }
   const nodeModulesIntakt = fs.existsSync(path.join(ROT, "node_modules", ".package-lock.json"));
   const npmCiBehov = patchInstallerad ? false : beslutaNpmCi({ diffFiler, nodeModulesIntakt });
-  const bygg = byggNolldowntimeKommando({ npmCi: npmCiBehov });
+  // V183B: npm ci via STALLNINGSVÄGEN när disken tillåter — installation+bygg
+  // i arkivkopia, pm2 LEVER hela fönstret; annars dagens mörka o48-väg.
+  const stallning = npmCiBehov && stallningDiskMojlig({ friaMB: lasFriaMB() });
+  const bygg = npmCiBehov
+    ? stallning
+      ? stallningsKommando()
+      : byggNolldowntimeKommando({ npmCi: true })
+    : byggNolldowntimeKommando({ npmCi: false });
   logga(
-    `NOLLDOWNTIME v182: npm ci ${npmCiBehov ? "KÖRS (lock ändrad/trasigt node_modules — pm2 stoppas enligt o48, fönstret mörkt ~byggtid)" : "HOPPAS ÖVER (node_modules aktuell)"} · bygget skriver .next-ny · prod .next orörd hela fönstret`,
+    `NOLLDOWNTIME v182: npm ci ${npmCiBehov ? (stallning ? "I STALLNING (V183B: arkivkopia + egen node_modules — pm2 LEVER, mörkret = dubbelbytets sekunder)" : "KÖRS (lock ändrad/trasigt node_modules — pm2 stoppas enligt o48, fönstret mörkt ~byggtid)") : "HOPPAS ÖVER (node_modules aktuell)"} · bygget skriver .next-ny · prod .next orörd hela fönstret${stallning ? " (stallningsläget: prod-ytan orörd till dubbelbytet)" : ""}`,
   );
-  if (npmCiBehov) pm2Vakt.stoppa();
+  if (npmCiBehov && !stallning) pm2Vakt.stoppa();
   const { spawn } = await import("node:child_process");
   const korBygg = () =>
     new Promise((lyckas) => {
@@ -1547,7 +1616,9 @@ async function korSynk() {
       skrivAudit("prod-synk", "deploy_stoppad_buntslagsrace", `${String(byggTradStart).slice(0, 8)}->${String(byggTradSlut).slice(0, 8)}`, race.meddelande);
       return;
     }
-    const artefakt = await verifieraArtefakt({ nextKatalog: path.join(ROT, ".next-ny") });
+    // V183B: artefakten lever i kopians .next-ny i stallningsläget.
+    const nyaKatalog = stallning ? path.join(ROT, KOPIA_KATALOG, ".next-ny") : path.join(ROT, ".next-ny");
+    const artefakt = await verifieraArtefakt({ nextKatalog: nyaKatalog });
     if (artefakt.status !== "gron") {
       logga(
         `ARTEFAKT ${artefakt.status.toUpperCase()} efter bygg — ${artefakt.meddelande} · pm2 EJ omstartad, DEPLOYAD-markör EJ skriven (v182: prod .next orörd — skrapen i .next-ny städas vid nästa försök); ombygge nästa poll (RAM-vakten gäller)`,
@@ -1564,14 +1635,18 @@ async function korSynk() {
     const forraKatalog = path.join(ROT, ".next-forra");
     try {
       try {
-        fs.rmSync(path.join(ROT, ".next-ny", "cache"), { recursive: true, force: true });
-        fs.renameSync(path.join(ROT, ".next", "cache"), path.join(ROT, ".next-ny", "cache"));
+        fs.rmSync(path.join(nyaKatalog, "cache"), { recursive: true, force: true });
+        fs.renameSync(path.join(ROT, ".next", "cache"), path.join(nyaKatalog, "cache"));
       } catch { /* cache är optimering — bytet kör utan */ }
       // V187: hash-vakt i själva byte-kommandot — minimerar fönstret mellan
       // JS-domaren och mv:arna; flyttade trädet även där exitar swap-barnet
       // icke-noll och den befintliga bytes-felgrenen (prod orörd, ombygg
       // nästa poll) tar över utan ny kodväg.
-      const swap = `test "$(git rev-parse HEAD)" = "${byggTradStart}" && mv .next .next-forra && mv .next-ny .next && pm2 restart ak1a`;
+      // V183B: stallningsläget byter DUBBELT (node_modules + .next) i samma
+      // &&-kedja — fortfarande en kedja av atomära rename under låset.
+      const swap = stallning
+        ? stallningsByteKommando({ byggTradStart })
+        : `test "$(git rev-parse HEAD)" = "${byggTradStart}" && mv .next .next-forra && mv .next-ny .next && pm2 restart ak1a`;
       const swapOk = await new Promise((lyckas) => {
         const barn = spawn("bash", ["-c", `exec flock -n /tmp/ak1a-deploy.lock bash -c ${JSON.stringify(swap)}`], { cwd: ROT, stdio: "ignore", detached: false });
         barn.on("exit", (kod) => lyckas(kod === 0));
@@ -1624,6 +1699,12 @@ async function korSynk() {
       try { fs.rmSync(laekeKatalog, { recursive: true, force: true }); } catch { /* får ligga — städas nästa gröna deploy */ }
       // V182: förra läget (bytets förlorare) städas — diskhygien.
       try { fs.rmSync(path.join(ROT, ".next-forra"), { recursive: true, force: true }); } catch { /* får ligga — städas nästa gröna deploy */ }
+      // V183B: stallningsfönstrets restprodukter städas — arkivkopian och
+      // bytets node_modules-förlorare.
+      if (stallning) {
+        try { fs.rmSync(path.join(ROT, KOPIA_KATALOG), { recursive: true, force: true }); } catch { /* städas av nästa stallningsfönsters första rad */ }
+        try { fs.rmSync(path.join(ROT, "node_modules-forra"), { recursive: true, force: true }); } catch { /* får ligga — städas nästa gröna stallningsdeploy */ }
+      }
 
       // VÅG 152 — MÅLET FÖDS OM EFTER DEPLOY: pm2-restarten raderar mål-state
       // ur processminnet (bevisat mönster: målet dött efter VARJE deploy tills

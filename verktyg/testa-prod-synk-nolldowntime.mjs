@@ -132,8 +132,11 @@ fs.rmSync(tmp, { recursive: true, force: true });
 // ── 4) KÄLLKONTROLL: flödesanknytningarna i korSynk + next.config.ts ──────
 const kalla = fs.readFileSync(path.join(REPO, "verktyg", "prod-synk.mjs"), "utf8");
 kontroll(
+  // v183B (r280): artefakten mäts mot NYA läget via nyaKatalog — .next-ny i
+  // normalfallet, kopians .next-ny i stallningsläget (aldrig prod .next)
   "14. artefakten mäts mot .next-ny (inte prod .next)",
-  kalla.includes('verifieraArtefakt({ nextKatalog: path.join(ROT, ".next-ny") })'),
+  kalla.includes("verifieraArtefakt({ nextKatalog: nyaKatalog })") &&
+    kalla.includes('const nyaKatalog = stallning ? path.join(ROT, KOPIA_KATALOG, ".next-ny") : path.join(ROT, ".next-ny")'),
 );
 kontroll(
   // v187 (r276): bytet bär hash-vakten först — flyttade trädet under bygget
@@ -152,8 +155,10 @@ kontroll(
   kalla.includes("beslutaNpmCi({ diffFiler, nodeModulesIntakt })"),
 );
 kontroll(
-  "18. npm ci-läget stoppar pm2 (o48-mönstret) — fönstret ärligt mörkt",
-  kalla.includes("if (npmCiBehov) pm2Vakt.stoppa();"),
+  // v183B (r280): o48-mörkret lever ENDAST som fallback — stallningsläget
+  // (disk ≥ tröskel) stoppar ALDRIG pm2
+  "18. npm ci-läget stoppar pm2 endast UTAN stallning (o48-fallbacken) — fönstret ärligt mörkt",
+  kalla.includes("if (npmCiBehov && !stallning) pm2Vakt.stoppa();"),
 );
 kontroll(
   "19. bytet nollställer pm2-vakten (markeraLevande — ingen dubbelrestart)",

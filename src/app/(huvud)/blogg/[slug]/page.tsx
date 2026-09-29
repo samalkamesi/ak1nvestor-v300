@@ -21,8 +21,17 @@ export const revalidate = 3600;
  */
 export const dynamicParams = false;
 
+/**
+ * S2 (SÄLJ-KARTA A2): ALLA poster får sin sidplats vid bygget — även
+ * framtidsdiskade (publishedAt > idag). Renderingen döljer dem ändå (getBlogPost
+ * ⇒ null ⇒ notFound() = äkta 404, våg 81-mönstret), men platsen i ISR-cachen
+ * gör att ett schemalagt inlägg vakar till live AV SIG SJÄLVT vid nästa
+ * omrendering (revalidate 3600) när publiceringsdagen kommer — utan nytt
+ * bygge. Vore framtids-slugs:arna uteslutna här (dynamicParams=false) krävdes
+ * en deploy per publiceringstillfälle.
+ */
 export function generateStaticParams() {
-  return getBlogPosts().map((p) => ({ slug: p.slug }));
+  return getBlogPosts({ inkluderaFramtida: true }).map((p) => ({ slug: p.slug }));
 }
 
 /**

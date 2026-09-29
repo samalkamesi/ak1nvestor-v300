@@ -18955,3 +18955,35 @@ v212(b)). Driftbevis för nya vakten: första :x9 efter push (kompilerad för 06
 Fabriksagent s4-u1 (KVARTALSRAPPORTSERIEN). VAL MED KLAIM DISK-FÖRST FÖRE SÖKVERIFIERING (META-läxan; data/vakten/klaim-s4u1-cnr-q3-2026.md): biblioteket slutkört sedan Verizon-paketet ⇒ r204-kalenderutbyggnadens tio nya bolag är fältet; kö-notis S2-U1-BCE-UTOKNING-OMG24 §10 utpekar Kanada/industri med CNR som förstakoordinat; CNR = enda r204-objekt med FULL bärande universumpost (2026-09-25: värderingsrad, lönsamhetstrappa, balansräkning, FY-serier, utdelning); duplikatkontroll 84 paket/0 CNR-ytor. Syskonläge: u2 Apple ~85:e (novemberfältet), u3 TMUS ~86:e (r204, 22/10→utlysning 28/10) — tre skilda objekt, noll kollision; CNR ~86:e delad position med TMUS (Microsoft-precedensen, öppet redovisat). STOR KALENDERFYND UNDER INSAMLINGEN: universumradens panel-estimat 20/10 (SA, 09-25) var FÖRÅLDRAT — CN:s EGEN IR-kalender (live-verifierad 09-29) bokar Third Quarter 2026 Financial and Operating Results fredagen 30 oktober kl 08:30 ET (= 14:30 svensk tid), Investing.com + TipRanks konvergerar; SA:s statistikvy bar 28/10 (tredje varianten) — divergensen redovisas öppet, bolagskalendern äger (Stora Enso-precedensen); kalender-industri.json RIGHTAD (10-20 → 30/10, IR-källan tillagd, strukturbevarande). LEVERANS: data/blogg-utkast/kvartal/2026-q3/sa-laser-du-cnr-q3-2026.json (2 799 ord, rm 5, industri-grenens 9:e paket). TRE SIGNATURNUMMER: (1) MARGINALTOPPEN PÅ BILLIGA HALVAN — EBIT-marginal 32,4 % = grenens 2:a högst av 31, brutto 3:e, netto 4:e, på P/E 9:e lägst och EV/EBIT 7:e lägst, MEDAN ROIC 9,83 % ligger under medianen 13,2 men över WACC 8,10 (1,73 pp luft = hela moat-marginalen i avkastningshänseende): marginalerna är nätets, kapitalkostnaden är banans; (2) IDENTITETSTESTET SOM SORTERAR EPS-VÄRLDARNA — P/B÷ROE = 22,2 ligger 1,2 % från GAAP-FY-repliken 157,94/7,20 = 21,94 men 6,4 % från källans P/E-fält 20,88 (justerad bas): fyra P/E-världar (20,27 TTM-GAAP · 20,88 justerad · 21,94 GAAP-FY · 22,03 dagens) på samma bolag, ingen fel; (3) JÄRNVÄGSBALANSEN SOM ÄTER MARGINALERNA — D/E 1,03 mot median 0,66, nettoskuld 20,09 mdr, Altman-Z 3,00 EXAKT på källans zongräns, FCF-avkastning 2,62 % under medianen trots toppnettomarginaler. Därtill: kvartalssvängen Q1 −0,6 % → Q2 +11,3 % (kedjans största på fyra kvartal; SA dubbelhämtad deterministisk: Q2-25 4 272/1 172/1,87/940 · Q3-25 4 165/1 139/1,83/808 · Q4-25 4 464/1 248/2,03/998 · Q1-26 4 379/1 146/1,87/826 · Q2-26 4 753/1 249/2,06/916; EPS-kedjan 7,79 = TTM-fältet exakt); källkritikens fältfynd — universumradens netto/FCF-serier och TTM-fält (17 062/4 467) bär inte kedjekontrollen mot kvartalen (17 761/4 782), EV/EBIT-fältet 14,71 når ingen balansväg (imperativ 81,4 mot balans 118,30 mdr), utdelningsfältet 3,40 mot serien 3,55/3,66 — dokumentklass öppet redovisad, kvartalssidan är taltyp; utdelningstrappan 3,16→3,38→3,55→3,66 CAD (+7,0/+5,0/+3,1 %, mars-höjningar); aktieantalet 604,1 M (−2,33 % y/y — återköp); scenarioruta 9 celler P/E 21,4–22,0 mot dagens 22,0 (rotationen trycker ned i SAMTLIGA celler — Q3-25:s 1,83 är fönstrets lägsta; brytpunkt P/E 21 kräver Q3-EPS 2,21 = +20,9 % y/y); branschkoll: 31-bolagsgrenens medianer LIVE ur filen; bakgrundstexterna kornrekorden (cropår 33,8 MMT mot 31,2; augusti 2,50 MMT), UP–NS-villkoren, Amtrak-avtalet, hybridloken 50 %. KVD GRÖN 240 PASS 0 FEL 0 VARNINGAR (verktyg/_s4u1-cnr-kvd.mjs: struktur, universumparitet 40 fält LIVE-låst, medianer/rang 12 rader oberoende omräknade, aritmetik ~60 poster inkl. rutans 27 tal + brytpunkter, kvartalsparitet 25 tal, juridik exakt ett lagrum 2007:528 2 kap 5 § + negerade standard-rekommendationsfraser + R2-sista-rad, språkgrind 0 CJK/0 dubbelmellanslag/0 911, ord/rm-kontrakt; dubbelkörning DETERMINISTISK; --http 16/16 interna länkar 200). PROCESSUREN KURERADE FYND FÖRE GRÖNT: GAAP-repliken 21,95→21,94 (157,94/7,20), Q3-25-nettomarginalen 27,4→27,3, scenarievikterna 0,14/0,04/tre gånger→0,15/0,03/fem gånger, ett kinesiskt tecken och sex språkfel i texten, "nästan 9"→"drygt 9 mdr"; sondbuggar åtgärdade under prov (lonksamhet-stavning, tusentalsnormalisering, rådsordsvitlista återköpen, desc-fönster seriekonvention 654–1 155). Register-rader i BÅDA kö-tabellerna (syskonen orörda). Ren dataleverans: utkast i data/blogg-utkast/, data/blogg/ orörd, src/ orörd = INGET bygge (tsc 0 via grinden), R2 orörd (publicering = kundens beslut). [fabrik]
 
 KOLLISIONSKUR s4-u1 (samma omgång): fabrikskollision bevis nr 4 i kalenderfilerna — syskonets TMUS-bygge (u3) skrev om kalender-industri.json på disk och raderade därmed min redan verifierade CNR-rättning (10-20 → 30/10 + IR-källa), som följaktligen föll ur staging i commit 3d93d128. KUR: omrättning + OMEDELBAR commit e4b4fa95 som lås. Kö till huvudagenten: våg 104/146:s regel om exklusivt filägarskap bör omfatta även KALENDERFILERNA (kalender-*.json) — byggare som behöver kalenderfakta LÄSER, ändrar endast den egna posten, och regenererar aldrig hela filen ur ett inläst underlag. [fabrik]
+
+## ROND 330 [organ:Φ] (2026-09-29 ~07:03–07:1x UTC) — v212(b) LEVERERAD: AUTO-LÄKNING + DUBBELKANALS-FLOCK, allt hermetiskt bevisat
+
+**LEVERANS 1 — AUTO-LÄKNING (konfigintegritetsvakten):** En crontab-massförlust
+selvläker nu inom ett :x9. Principer: APPEND-ONLY (saknade referensrader fylls i
+sist; befintliga rader, kommentarer och okända extra rader röras aldrig — r328-
+mönstret mekaniserat), maskade rader (<PLATSHÅLLARE>) läks ENDAST med värde belagt
+i serverns egna snapshots (u5-backup/offsite-konfig; repot bär aldrig värdet),
+tak en läkning per unik bild/timme, okänd verklighet (crontab -l fel) läks aldrig.
+Dom byggs ur läget EFTER läkning: full läkning ⇒ exit 0 + egen AUTO-LÄKT-
+sessionnotis; oläkta rester ⇒ exit 1 + kritisk notis. Test-yta utökad:
+AK1A_CRONTAB_BIN (emulator).
+
+**LEVERANS 2 — DUBBELKANALS-FLOCK (granssnittsvakt-cron.sh):** Utredningen
+belade att båda kanalerna (crontab-rad 17 1,7,13,19 → sh-direkt + pumpor-rop
+min==17 tim%6==1 → vakt-cron.mjs → SAMMA sh) kör utan ömsesidig exkludering —
+dubbla Chrome-svep vid varje :17. Kuren: flock -n /tmp/ak1a-granssnittsvakt.lock
+tidigt i sh:et — sist kommande kanal hoppar tyst med LÅST-loggrad. Redundansen
+behålls (natten bevisade daemon-kanalens värde när crontab dog); dubbelkörningen
+förbjuds.
+
+**BEVIS (verktyg/_r330-test.mjs, allt hermetiskt):** partiell läkning (omaskerad
+läks + maskerad utan belagt värde lämnas ⇒ exit 1, notis blockerad i testläge) ·
+full läkning ⇒ exit 0 · emulator-crontaben: TESTRAD inlagd, maskerad rad EJ
+inlagd, inplanterad kommentar bevarad · journalrad konfig-autolakning · GRÖN-
+regression 11/11 exit 0 utan läkning · flock: taget lås ⇒ LÅST-rad + exit 0 på
+sekunder. (Metodnotis: första testomgångens "kommentarer bevarade: false" var
+en felbyggd assertion — äkta crontab saknar kommentarer sedan r328; koden
+bevarar rådata, bevisat med inplanterad kommentar.)
+
+**PÅGÅENDE:** 07:17Z-gränssnittsvaktskörningen pollas som första automatiska
+crontab-bevis (resultat bokförs i nästa rond eller tilläggscommit).

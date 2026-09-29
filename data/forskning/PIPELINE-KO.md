@@ -571,3 +571,12 @@ Nästa i kön (händelsestyrda): nattens G2/G5-kvitton 02:30–06:27 UTC 29/9 (7
 | v212(b) | Auto-applicering: automation-motor beslut 6 ⇒ applicera crontab.reference vid drift (massförlust självläker) + utred dubbelkanal-gränssnittsvakten (crontab-rad 2 + pumpor-rop) | BOKAD |
 | v212(c) | Installatörsskydd: crontab-skrivarverktyg med append-aldrig-ersätt + referens-i-samma-ändning mekaniskt | BOKAD |
 | v212(d) | AGENTS.md:s serverrad: Contabo → SSD Nodes 208.87.129.108 (v190/r282) — teknisk korrigering, styrelsen beslutar | BORDLAGD 07:43Z-ronden |
+
+
+## ROND 330 [organ:Φ] (2026-09-29) — v212(b) LEVERERAD: auto-läkning + dubbelkanals-flock
+
+| Post | Innehåll | Status |
+|---|---|---|
+| v212(b) | Auto-applicering: SAKNADE crontab-rader läks append-only ur crontab.reference inom ett :x9 (maskade endast med belagt snapshot-värde; tak 1/bild/h; full läkning ⇒ exit 0 + AUTO-LÄKT-notis) + dubbelkanals-utredning klar: flock i granssnittsvakt-cron.sh (cron-kanal + pumpor-kanal delar sh; sist kommande hoppar tyst) | ✓ LEVERERAD r330 — hermetiskt bevisad i _r330-test.mjs (partiell/full läkning, emulator-crontab, flock, GRÖN-regression 11/11) |
+| v212(c) | Installatörsskydd: crontab-skrivarverktyg med append-aldrig-ersätt mekaniskt | BOKAD (nästa rond-kandidat) |
+| v212(d) | AGENTS.md:s serverrad (SSD Nodes) — styrelseronden 07:43Z beslutar | BORDLAGD |

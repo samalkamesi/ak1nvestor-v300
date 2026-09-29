@@ -39,6 +39,19 @@ RAPPORTKATALOG="${GRANSSNITT_KATALOG:-data/vakten}"
 LOGG="$RAPPORTKATALOG/cron.log"
 mkdir -p "$RAPPORTKATALOG"
 
+# v212(b) r330: ÖMSESIDIG EXKLUDERING — vakten har två avfyringskanaler
+# (crontab-rad 17 1,7,13,19 → detta skript direkt, + pumpor-daemonens rop
+# min==17 tim%6==1 → verktyg/vakt-cron.mjs → samma skript). Utan lås mäter
+# två Chrome-svep samma 180 kombinationer samtidigt vid :17 (dubbel last,
+# race på rapportfiler). flock -n: kanalen som kommer sist hoppar tyst —
+# redundansen (natten 29/9 bevisade daemon-kanalens värde när crontab dog)
+# behålls, dubbelkörningen förbjuds.
+exec 9>/tmp/ak1a-granssnittsvakt.lock
+if ! flock -n 9; then
+  echo "$STAMP LÅST — gränssnittsvakten mäter redan i andra kanalen — hoppar" >> "$LOGG"
+  exit 0
+fi
+
 # VÅG 169 (rond 33): RAM-grind före mätningen — puppeteer+chrome (~500 MB)
 # ska ALDRIG starta in i ett svultet minne (F6-rot 2026-09-15 16:42: fabriksbarn
 # + bygg + pm2-omstart sammanföll → prod osvarar). Vakten kan vänta 5 min;

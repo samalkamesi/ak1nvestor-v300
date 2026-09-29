@@ -43,6 +43,11 @@
  *       pm2-larm — pm2-kanalen ägs av pulsvakten och pm2 självt).
  *   1 = SAKNAD crontab-rad eller crontab-verifiering omöjlig — drifts-
  *       avvikelse som skall synas i pumpor-loggens "slut kod="-rad.
+ *       FÖRE dom: AUTO-LÄKNING (v212(b) r330) — saknade rader som kan
+ *       återskapas läks append-only direkt mot crontab.reference (maskade
+ *       rader endast med värde belagt i serverns egna snapshots), max en
+ *       läkning per unik bild/timme; full läkning ⇒ exit 0 + egen
+ *       AUTO-LÄKT-notis, oläkta rester ⇒ exit 1.
  * Vid exit-1-klassen postas dessutom EN sessionnotis till
  * /api/studio/stream (automation-motorns kanal och nyckelhygien),
  * deduperad per unik larmbild + max en påminnelse per timme medan felet
@@ -63,6 +68,9 @@ const REFERENSDIR = path.join(ROT, "data", "infra", "konfig-referens");
 const CRONTAB_REF = process.env.AK1A_CRONTAB_REF || path.join(REFERENSDIR, "crontab.reference");
 const PM2_REF = path.join(REFERENSDIR, "pm2-processer.reference");
 const VAKTDIR = process.env.AK1A_LARM_DIR || path.join(ROT, "data", "vakten");
+// v212(b) r330: crontab-kommandot överridbart — hermetiska tester kör en
+// emulator (AK1A_CRONTAB_BIN) och rör ALDRIG äkta crontab.
+const CRONTAB_BIN = process.env.AK1A_CRONTAB_BIN || "crontab";
 const LARMFIL = path.join(VAKTDIR, "konfig-larm.jsonl");
 const LOGGFIL = path.join(VAKTDIR, "konfigintegritetvakt.log");
 const TIMEOUT_MS = 30_000;
@@ -159,6 +167,78 @@ async function skickaSessionnotis(kritiska) {
   }
 }
 
+// ── v212(b) r330: auto-läkning — en crontab-massförlust självläker inom ett :x9 ─
+// Principer: APPEND-ONLY (saknade referensrader fylls i sist; befintliga
+// rader, kommentarer och okända extra rader röras ALDRIG — r328-mönstret);
+// maskade rader (<PLATSHÅLLARE>) läks ENDAST med värde belagt i serverns
+// egna snapshots (repot bär aldrig värdet); läkning max 1 gång per unik
+// bild per timme (tak mot loopar); misslyckad läkning är aldrig fatal.
+
+const LAKNINGSSTATUS = path.join(VAKTDIR, "konfig-lakning-senaste.json");
+
+/** Söker en fullständig rad i serverns egna crontab-snapshots som matchar
+ *  den maskade referensradens radform. Returnerar raden med riktiga värden
+ *  eller null — värdet lämnar aldrig servern och loggas aldrig. */
+function belaggMaskeradRad(referensrad) {
+  const re = referensTillRegex(referensrad);
+  const kandidater = [];
+  if (fs.existsSync("/tmp/crontab-ak1a-u5-backup.txt")) kandidater.push("/tmp/crontab-ak1a-u5-backup.txt");
+  try {
+    const offsiteDir = path.join(ROT, "data", "backups", "offsite");
+    for (const namn of fs.readdirSync(offsiteDir)) {
+      if (namn.includes("crontab") || namn.includes("konfig")) kandidater.push(path.join(offsiteDir, namn));
+    }
+  } catch {
+    /* ingen offsite-katalog — u5-backup räcker ofta */
+  }
+  for (const fil of kandidater) {
+    try {
+      const rad = fs
+        .readFileSync(fil, "utf8")
+        .split("\n")
+        .map((r) => r.trim())
+        .find((r) => r.length > 0 && !r.startsWith("#") && re.test(r));
+      if (rad) return rad;
+    } catch {
+      /* oläsbar snapshot — nästa källa */
+    }
+  }
+  return null;
+}
+
+/** Försöker läka SAKNADE rader: nuvarande crontab (rå, kommentarer
+ *  bevaras) + alla saknade rader som kan återskapas. Returnerar de som
+ *  läktes och de som lämnades — kastar ALDRIG. */
+function lakCrontab(saknade) {
+  const lakte = [];
+  const olakte = [];
+  for (const rad of saknade) {
+    if (/<[^>]+>/.test(rad)) {
+      const belagd = belaggMaskeradRad(rad);
+      if (belagd) lakte.push(belagd); else olakte.push(rad);
+    } else {
+      lakte.push(rad);
+    }
+  }
+  if (lakte.length === 0) return { lakte, olakte };
+  const r = körKommando(CRONTAB_BIN, ["-l"]);
+  const nuvarande = String(r.stdout ?? "");
+  try {
+    const tmpDir = fs.mkdtempSync("/tmp/konfig-lakning-XXXX");
+    const fil = path.join(tmpDir, "crontab.txt");
+    fs.writeFileSync(fil, nuvarande.replace(/\n*$/, "\n") + lakte.join("\n") + "\n");
+    const app = körKommando(CRONTAB_BIN, [fil]);
+    if (app.error || app.status !== 0) {
+      logga(`AUTO-LÄKNING misslyckades vid applicering (${app.error?.code ?? "exit=" + app.status}) — lämnar åt larm+notis`);
+      return { lakte: [], olakte: [...lakte, ...olakte] };
+    }
+  } catch (e) {
+    logga(`AUTO-LÄKNING fel: ${String(e?.message ?? e).slice(0, 100)}`);
+    return { lakte: [], olakte: [...lakte, ...olakte] };
+  }
+  return { lakte, olakte };
+}
+
 /** Icke-hemlig utskrift av faktiskt serverinnehåll (försvar på djupet). */
 function maskera(rad) {
   return String(rad)
@@ -199,7 +279,7 @@ function körKommando(kommando, args) {
 function kontrolleraCrontab() {
   const forvantade = lasReferensRader(CRONTAB_REF);
   const regexar = forvantade.map(referensTillRegex);
-  const r = körKommando("crontab", ["-l"]);
+  const r = körKommando(CRONTAB_BIN, ["-l"]);
   const kommandoFel = r.error ? String(r.error.code ?? r.error.message) : r.status !== 0 ? `exit=${r.status}` : null;
   const faktiska = String(r.stdout ?? "")
     .split("\n")
@@ -300,10 +380,52 @@ function kontrolleraPm2() {
     console.log(`GRÖN konfigintegritet ${gron}`);
     logga(`(c) ${gron}`);
   }
-  // v212 (r329): klassad exit + sessionnotis — SAKNADE crontab-rad är den
-  // klass som dog tyst (9 larm, exit 0, sovande session). pm2-larm förblir
-  // exit 0: pulsvakten och pm2 självt äger den kanalen.
-  const crontabKritiska = larm.filter((l) => l.omrade === "crontab");
+  // v212(b) r330: AUTO-LÄKNING före dom — SAKNADE rader som kan återskapas
+  // läks direkt (append-only), så en massförlust är borta inom ett :x9.
+  // Rader som inte kan återskapas (maskade utan belagt värde) lämnas åt
+  // larm + notis + exit 1: manuell åtgärd förblir synlig. Okänd verklighet
+  // (kommandoFel) läks ALDRIG — läkning kräver läsbar crontab.
+  let lakat = 0;
+  if (c && !c.kommandoFel && c.saknade.length > 0) {
+    const bild = c.saknade.join("|");
+    let hash = 11;
+    for (const ch of bild) hash = (hash * 33 + ch.charCodeAt(0)) >>> 0;
+    let lst = {};
+    try {
+      lst = JSON.parse(fs.readFileSync(LAKNINGSSTATUS, "utf8"));
+    } catch {
+      /* första läkningen */
+    }
+    if (lst.hash === hash && Date.now() - (lst.ts ?? 0) < 3_600_000) {
+      logga("AUTO-LÄKNING DEDUP — samma bild nyligen läkt/-försökt");
+    } else {
+      const { lakte, olakte } = lakCrontab(c.saknade);
+      try {
+        fs.writeFileSync(LAKNINGSSTATUS, JSON.stringify({ ts: Date.now(), hash, lakte: lakte.length, olakte: olakte.length }));
+      } catch { /* status får vänta */ }
+      if (lakte.length > 0) {
+        lakat = lakte.length;
+        appendLarm({
+          niva: "info",
+          typ: "konfig-autolakning",
+          medd: `AUTO-LÄKT ${lakte.length} crontab-rad(er) enligt crontab.reference (append-only, r328-mönstret)${olakte.length ? ` — ${olakte.length} oläkta (maskade utan belagt värde)` : ""}: ${lakte.map(maskera).join(" | ").slice(0, 250)}`,
+        });
+        logga(`AUTO-LÄKT ${lakte.length} crontab-rad(er)${olakte.length ? ` — ${olakte.length} oläkta lämnas åt larm+notis` : ""}`);
+        try {
+          c = kontrolleraCrontab(); // dom ur läget EFTER läkning
+        } catch {
+          /* verifiering får vänta till nästa :x9 */
+        }
+      }
+    }
+  }
+
+  // v212 (r329+r330): klassad exit + sessionnotis — dom byggs ur LÄGET
+  // (efter eventuell läkning), inte ur journalens historiklarm. pm2-larm
+  // förblir exit 0: pulsvakten och pm2 självt äger den kanalen.
+  const crontabKritiska = [];
+  if (c?.kommandoFel) crontabKritiska.push({ medd: `crontab -l misslyckades (${c.kommandoFel}) — kan inte verifiera ${c.forvantade.length} referensrader.` });
+  for (const rad of c?.saknade ?? []) crontabKritiska.push({ medd: `SAKNAD crontab-rad: ${rad}` });
   if (crontabKritiska.length > 0) {
     if (process.env.AK1A_KONFIG_NOTIS === "av") {
       logga("sessionnotis BLOCKERAD (AK1A_KONFIG_NOTIS=av — testläge)");
@@ -311,6 +433,11 @@ function kontrolleraPm2() {
       await skickaSessionnotis(crontabKritiska);
     }
     process.exit(1);
+  }
+  if (lakat > 0 && process.env.AK1A_KONFIG_NOTIS !== "av") {
+    // Fullständig läkning förtjänar sin egen rad i sessionen — systemet
+    // självläkade och kunden skall veta det (kort, dedup via tid + hash).
+    await skickaSessionnotis([{ medd: `KONFIG-AUTO-LÄKNING: ${lakat} crontab-rad(er) återställda ur crontab.reference (append-only) — massförlust-klassen självläker nu inom ett :x9. Bokförd i konfig-larm.jsonl; ingen åtgärd krävs.` }]);
   }
   process.exit(0);
 })();

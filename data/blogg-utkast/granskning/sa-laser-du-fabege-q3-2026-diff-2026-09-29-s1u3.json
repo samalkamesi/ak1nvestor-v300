@@ -1,0 +1,85 @@
+{
+  "objekt": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-fabege-q3-2026.json",
+  "utkastMd5Fore": "6f057f31657bf4673f15f8b4cd06a532",
+  "diffVersion": "2026-09-29-s1u3",
+  "granskare": "s1-u3 (manifest auto-s1-1790653512758)",
+  "kontroll": "./sa-laser-du-fabege-q3-2026-KONTROLL-2026-09-29-s1u3.md",
+  "sond": "verktyg/_s1u3-fabege-q3-kontroll.mjs",
+  "dom": "GRÖN GRUND — FLYTTKLAR EFTER RÄTTNINGAR (F1–F6, samtligaVerifierade i paketet)",
+  "pivot": "uppdragstitelns m9-utkast #3 (kassaflodesanalys-101) levererad ≥4 gånger (senast worklog 17305: m9-familjen 6/6 FLYTTKLAR) ⇒ FIFO-etta bland kontrolllösa enligt kö-notis 17074: FABEGE (utkast 2026-09-19 09:50, byggare s4-u1; 0 granskningsfiler på disk vid anspråk 2026-09-29)",
+  "fynd": [
+    {
+      "id": "F1",
+      "allvar": "B — narrativbärande attribueringsfel",
+      "yta": "NYCKELTAL/Lönsamhet, överskottsgradsraden",
+      "sok": "att jämföra med universumets EBIT-marginal **59,49 procent**",
+      "ersatt": "att jämföra med fältets EBIT-marginal **59,49 procent**",
+      "belagg": "FABG.lonksamhet.ebitMarginal = 0,5949 i bolagsunivers.json — 59,49 % är BOLAGETS eget fält; universumets EBIT-median i byggvintagen (48916d8c, 201 rader) är 20,71 %. Parentesen '(grenens median 58,43 — Fabege mitt i)' visar att siffran avsågs som bolagets fält mot GRENENS median — attribueringen 'universumets' förleder läsaren till en universummedian som är 38 procentenheter lägre.",
+      "kurVerifierad": true
+    },
+    {
+      "id": "F2",
+      "allvar": "B — aritmetiskt fel på två ytor (källrad + Test 5)",
+      "yta": "Datavakten Test 5 + Källor-sektionens Datavakts-rad",
+      "sokYta1": "ger ett fritt kassaflöde på 1 766 miljoner kronor, eller 5,61 kronor per aktie",
+      "ersattYta1": "ger ett fritt kassaflöde på 1 763 miljoner kronor, eller 5,60 kronor per aktie",
+      "sokYta2": "(0,077 × 22,901 = 1 766 Mkr mot 0,4446 × 3 480 = 1 547 Mkr, gap plus 14 procent; 5,61 mot 4,92 kr per aktie)",
+      "ersattYta2": "(0,077 × 22,901 = 1 763 Mkr mot 0,4446 × 3 480 = 1 547 Mkr, gap plus 14 procent; 5,60 mot 4,92 kr per aktie)",
+      "belagg": "fcfYield-fältet är exakt 0,077; 0,077 × 22 901 = 1 763,4 Mkr → 1 763 (textens 1 766 förutsätter fältet 0,0771 som källan inte anger). Per aktie: 1 763/314,6 = 5,60 (ej 5,61). Gapet '+14 procent' bär oavsett (13,96 respektive 14,2). Wihlborgs-B7-klassen: källradens ekvation stämmer inte på sina egna tal.",
+      "kurVerifierad": true
+    },
+    {
+      "id": "F3",
+      "allvar": "B/C — källkritisk divergens utan not",
+      "yta": "Datavakten Test 2 (TTM-detektiven)",
+      "sok": "Nettomarginalvägen: 0,1087 × 3 480 = 378 miljoner. Årsserien: minus 348 miljoner.",
+      "ersatt": "Nettomarginalvägen: 0,1087 × 3 480 = 378 miljoner — räknat på fältets intäktsrad 3 480, medan bolagets egen rapport redovisar 3 408 i hyresintäkter för 2025; två böcker, båda redovisade. Årsserien: minus 348 miljoner.",
+      "belagg": "universumfältets intäktsserie 2025 = 3 480 Mkr (Yahoo) medan källradens EGNA MFN-citat säger 'hyresintäkter 3 408 Mkr mot 3 438' — 72 Mkr (2,1 %) divergens mellan textens två böcker, osynliggjord för läsaren. Paketets Text 4 ('bestäm FÖRST vilken bok du mäter mot') förtjänar att hyresintäkts-divergensen själv följer sin regel.",
+      "kurVerifierad": true
+    },
+    {
+      "id": "F4",
+      "allvar": "C — felaktig andelsangivelse",
+      "yta": "Övning A:s Kinnevik-spegelnot",
+      "sok": "här är den en tredjedel av den",
+      "ersatt": "här är den nästan hälften av den",
+      "belagg": "resultatet −348 mot substansrörelsen (värdeförändringarna) −711 ger andelen 348/711 = 0,49 — nästan hälften. Enda vägen till 'tredjedel' är 348/(711+348) = 0,33, en oklar definition som texten inte anger.",
+      "kurVerifierad": true
+    },
+    {
+      "id": "F5",
+      "allvar": "B — död extern länk",
+      "yta": "Praktiskt inför 21 oktober, första punkten",
+      "sok": "https://www.fabege.se/om-fabege/investors",
+      "ersatt": "https://www.fabege.se/en/about-fabege/investors/",
+      "belagg": "sondens fetch: 404 (även med trailing slash). Kalenderunderlagets egen käll-URL (kalender-fastighet.json, hämtad 2026-09-15) är /en/about-fabege/investors/ — byggaren svenskade sökvägen och tappade /en/-segmentet. Kurerad URL verifierad 200.",
+      "kurVerifierad": true
+    },
+    {
+      "id": "F6",
+      "allvar": "B — bruten mekanisk konvention",
+      "yta": "readingMinutes (metadatafältet)",
+      "sok": "\"readingMinutes\": 5",
+      "ersatt": "\"readingMinutes\": 6",
+      "belagg": "kvartalskonventionen round(ord/600): bodyn 3 368 ord → round(5,61) = 6. Syskonen gröna: Castellum 3 125 ord → 5 ✓, NP3 3 098 → 5 ✓ (wihlborgs 3 522 → 6 ✓). Wallenstams rm 5 vid 2 634 ord (round 4) är familjens tidigare avvikare — konventionen (Kinnevik-fallet, wihlborgs-AV1) är den mekaniska regeln. Efter kurerna 3 390 ord → 6.",
+      "kurVerifierad": true
+    }
+  ],
+  "cNotiserUtanKur": [
+    "F7 (vintage): universumtabellens skuld-median 0,520 bärs av 195-vintagen 73745b24 (median exakt 0,52) medan 201-vintagen som bär övriga kolumner (P/E 20,80 · prognos 13,37 · P/B 2,8065 → 2,807 · ROE 15,34) ger 0,51 och dagens fil 0,59 — byggarens mellan-vintage inom det deklarerade intervallet '166–201 poster'; slutsatsen 'vida över universumets' (FABG 0,9692) bär oavsett — texten rättas EJ",
+    "EK-per-aktie-artefakt: textens '118,57 mot 118,56 — gapet 0,01 procent' bygger på mellanstegsavrundning (37,296 ÷ 314,6 = 118,56); direktvägen 22 901 ÷ (0,614 × 314,6) = 118,557 ger gap ~0,00 % — kärnpåståendet 'stängd under ett halvt procentsteg' bär oavsett",
+    "gap-trunkeringar 21,4 (21,46) och 34/78 (34,4/78,1): flyttalstrunkering, wihlborgs-D1-klassen — defensible, ägarens val",
+    "serienummer '53:e' + '52 paket på disk': byggtidens internkonsistens (idag 93 kvartalsfiler) — historien äger numret",
+    "överskottsgraden 73 % är Q2-2026-rapporttal (inte universumfält) — texten håller isär fält och rapport korrekt",
+    "universumdrift: dagens fil 316 rader; FABG-fältposten identisk sedan 2026-09-03 ⇒ utkastets tal stabila"
+  ],
+  "verkstallningsguide": "Paketet sa-laser-du-fabege-q3-2026-FLYTTKLART-PAKET-2026-09-29-s1u3.json bär ALLA sex kurer maskinellt tillämpade och efterverifierade (kontrolleraText 0/0 · 911 = 0 · gamla felsträngar 0 · IR-länk 200 · utkast-md5 oförändrad 6f057f31…). Flytt = paketets innehåll → data/blogg/ vid kundens publiceringsbeslut (R2). Alternativ manuell verkställning på utkastet: sök/ersätt enligt fyndens sok/ersatt (varje sträng EXAKT en träff, assert i paketbygget) + readingMinutes 5→6.",
+  "franStrangar": [
+    { "id": "F1", "sok": "att jämföra med universumets EBIT-marginal **59,49 procent**", "ers": "att jämföra med fältets EBIT-marginal **59,49 procent**" },
+    { "id": "F2a", "sok": "ger ett fritt kassaflöde på 1 766 miljoner kronor, eller 5,61 kronor per aktie", "ers": "ger ett fritt kassaflöde på 1 763 miljoner kronor, eller 5,60 kronor per aktie" },
+    { "id": "F2b", "sok": "(0,077 × 22,901 = 1 766 Mkr mot 0,4446 × 3 480 = 1 547 Mkr, gap plus 14 procent; 5,61 mot 4,92 kr per aktie)", "ers": "(0,077 × 22,901 = 1 763 Mkr mot 0,4446 × 3 480 = 1 547 Mkr, gap plus 14 procent; 5,60 mot 4,92 kr per aktie)" },
+    { "id": "F3", "sok": "Nettomarginalvägen: 0,1087 × 3 480 = 378 miljoner. Årsserien: minus 348 miljoner.", "ers": "Nettomarginalvägen: 0,1087 × 3 480 = 378 miljoner — räknat på fältets intäktsrad 3 480, medan bolagets egen rapport redovisar 3 408 i hyresintäkter för 2025; två böcker, båda redovisade. Årsserien: minus 348 miljoner." },
+    { "id": "F4", "sok": "här är den en tredjedel av den", "ers": "här är den nästan hälften av den" },
+    { "id": "F5", "sok": "https://www.fabege.se/om-fabege/investors", "ers": "https://www.fabege.se/en/about-fabege/investors/" }
+  ]
+}

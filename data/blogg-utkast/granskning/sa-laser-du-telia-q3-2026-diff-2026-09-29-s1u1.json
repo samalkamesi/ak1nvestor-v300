@@ -1,0 +1,74 @@
+{
+  "granskat": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-telia-q3-2026.json",
+  "granskadAv": "agentfabrik auto-s1-1790653512758 s1-u1 (2026-09-29)",
+  "rapport": "sa-laser-du-telia-q3-2026-KONTROLL-2026-09-29-s1u1.md",
+  "bedomning": "FLYTTKLAR efter fyra kirurgiska rättningar (sex strängbyten): 129 maskinella kontroller, 121 PASS — universumrad 28/28 exakta mot LÅST byggvinda 795fe396 (144-postfilen, committad 39 min efter utkastets byggtid; dagens 316-postfil är drift och används ej som domslut), 50+ aritmetikposter exakta (identitetstest, absolutkontroll två vägar, PEG-konvention, EV-kedja fem steg, FCF-kontroll, scenarioruta 9/9), medianer 11/12 exakta (n=11-fyndet = C3), kalender och kollegodagar gröna, juridik 2007:528 ren (26 mönster 0 fel, ett lagrum, disclaimer sist), 911-referenser 0, ord 3169 rm 5, länkar 21/21 HTTP 200",
+  "paket": "kvartal/2026-q3, rappdag 2026-10-21 (bolagets egen kalender; divergensnot mot tredjepart 22/10 korrekt speglad), kommunikationsspårets andra paket, Tele2-spegeln",
+  "anvandning": "Paketägaren verkställer de sex bytena nedan i utkast-JSON:en (samtliga strängar unik-verifierade ×1); därefter är paketet flyttklart — publicering till data/blogg/ är kundens beslut (R2). Tre fynd är dokumenterade utan ingrepp i KONTROLLen: D1 (EV-residualens sista decimal — byggarens egna steg), D2 (tre mittpunktsavrundningar i medianer — defensible), D4 (publishedAt 2026-10-19 före rappdagen = seriens konvention). D3 ('allt de borde köpa') är ett FRIVILLIGT omformuleringsförslag, ej krav. D5 (titellängd) AVVISAD mot full empiri.",
+  "poster": [
+    {
+      "id": "C1",
+      "klass": "C (kirurgisk)",
+      "fil": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-telia-q3-2026.json",
+      "sok": "+227 procent på två år",
+      "ersattMed": "+1 063 procent på två år",
+      "motivering": "Resultatserien 303 → 7 079 → 3 525 Mkr: totalt två år (2023→2025) = 3 525/303 = 11,63× = +1 063 %; per år +241 %; ett år +2 236 %. Inget beräkningssätt ger 227 — och hela stycket är seriens CAGR-ärlighetslektion, varför talet måste stämma."
+    },
+    {
+      "id": "C2",
+      "klass": "C (kirurgisk)",
+      "fil": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-telia-q3-2026.json",
+      "sok": "20 203/20 820/21 437",
+      "ersattMed": "20 196/20 820/21 445",
+      "motivering": "Källraden ska spegla bodyns nivåer: 25,71 % × 78 553 = 20 195,6 → 20 196; × 80 982 = 20 820,4 → 20 820; × 83 411 = 21 444,4 → 21 445. Bodyns tal är korrekta; källradens yttervärden avviker (20 203/21 437)."
+    },
+    {
+      "id": "C3a",
+      "klass": "C (kirurgisk)",
+      "fil": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-telia-q3-2026.json",
+      "sok": "P/E-medianen bygger på n=12 eftersom ett bolag saknar fältet",
+      "ersattMed": "P/E-medianen bygger på n=11 eftersom två bolag saknar fältet",
+      "motivering": "Byggvindan 795fe396: 13 kommunikationsbolag, varav VPLAY-B.ST och WBD saknar P/E (null) ⇒ n=11. Medianen 21,788 → 21,8 är oförändrad korrekt — endast n och antalet fältlösa bolag rättas."
+    },
+    {
+      "id": "C3b",
+      "klass": "C (kirurgisk)",
+      "fil": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-telia-q3-2026.json",
+      "sok": "21,8 (n=12)",
+      "ersattMed": "21,8 (n=11)",
+      "motivering": "Tabellraden speglar samma fakta som C3a (jämförelsetabellens branschmedian-rad)."
+    },
+    {
+      "id": "C4a",
+      "klass": "C (kirurgisk)",
+      "fil": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-telia-q3-2026.json",
+      "sok": "15 läspaket",
+      "ersattMed": "14 läspaket",
+      "motivering": "Git-tillkomst + rappdagsfönster ger 14 paket vid textens commit 04:28 den 17 sep: ABB+Tele2 (20:e), Telia+SKF+Handelsbanken+Iberdrola (21:a), Atlas Copco+Sandvik+Essity+Castellum+Swedbank (22:a), Volvo Car+Volvo Group+Saab (23:e; Saab till 04:06 samma morgon). Efter C4a–C4c: 2+4+5+3 = 14 internt konsistent."
+    },
+    {
+      "id": "C4b",
+      "klass": "C (kirurgisk)",
+      "fil": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-telia-q3-2026.json",
+      "sok": "sju den 22:a",
+      "ersattMed": "fem den 22:a",
+      "motivering": "Empiriskt fem paket med rappdag 22/10 vid commit: Atlas Copco, Sandvik, Essity, Castellum, Swedbank (SEB/Nokia/PG/Newmont tillkom 18–21 sep, efter texten)."
+    },
+    {
+      "id": "C4c",
+      "klass": "C (kirurgisk)",
+      "fil": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-telia-q3-2026.json",
+      "sok": "Volvo Car, Volvo Group, SCA och Saab den 23:e",
+      "ersattMed": "Volvo Car, Volvo Group och Saab den 23:e",
+      "motivering": "SCA står i textens EGEN parentes 'Yara, Billerud och SCA ännu utan paket' — att samtidigt lista SCA bland 23:e-paketen är en intern motsägelse (och SCA-paketet tillkom 11:16 den 17 sep, först efter Telias commit). Parentesen lämnas som byggtidsstämpel; verkställaren kan stryka den vid sen publicering."
+    },
+    {
+      "id": "D3",
+      "klass": "D (frivilligt förslag — ej krav)",
+      "fil": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-telia-q3-2026.json",
+      "sok": "allt de borde köpa",
+      "ersattMed": "allt som borde vara starkt",
+      "motivering": "FRIVILLIGT: grunden ger 0 FEL men metaforens subjekt är oklart och 'borde köpa' ligger nära rådgivningsvokabulär i en utbildningstext. Paketet är flyttklart även utan detta byte."
+    }
+  ]
+}

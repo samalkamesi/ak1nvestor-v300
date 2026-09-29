@@ -1,0 +1,80 @@
+{
+  "_forklaring": "Diff-förslag s1-u2 (2026-09-29) för sa-laser-du-getinge-q3-2026.json. Granskaren skriver ALDRIG andras filer — ägaren (eller nästa våg) verkställer. Alla 'fran'-strängar är maskinellt unika i utkastfilen (verifierade med grep -c = 1). Verkställningsordning: D1–D7 tvingande (B-fynd), D8–D9 valfria C-kurer.",
+  "utkast": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-getinge-q3-2026.json",
+  "kontroll": "data/blogg-utkast/granskning/sa-laser-du-getinge-q3-2026-KONTROLL-2026-09-29-s1u2.md",
+  "sond": "verktyg/_s1u2-getinge-q3-kontroll.mjs",
+  "satser": [
+    {
+      "id": "D1",
+      "allvar": "B",
+      "falt": "description",
+      "fran": "och marginalvikten 5,2 är seriens högsta",
+      "till": "och marginalvikten 5,2 i seriens toppskikt — tredje högsta, efter Electrolux 10,45 och SCA 8,55, men hälsogrenens högsta",
+      "motiv": "B1: motbevisad av seriens egna paket på disk före bygget — Electrolux-paketet (09-18) deklarerar 10,45 som 'seriens nya rekord, slår SCA:s 8,55'; sond X:margvikt-rekord"
+    },
+    {
+      "id": "D2",
+      "allvar": "B",
+      "falt": "title",
+      "fran": "seriens tajtaste kontrollprofil och",
+      "till": "sedan SAP seriens tajtaste kontrollprofil och",
+      "motiv": "B5: texten själv skalor 'den tajtaste i serien sedan SAP' — SAP var tajtare; titeln överdriver mot eget innehåll. Titel 195→206 tkn, tak 314 ovanligt"
+    },
+    {
+      "id": "D3",
+      "allvar": "B",
+      "falt": "body",
+      "fran": "Det är seriens högsta netto-marginalvikt hittills (CellaVision 1,65, ASSA 1,98, Novo 1,01)",
+      "till": "Det är hälsogrenens högsta netto-marginalvikt hittills (CellaVision 1,65, Novo 1,01, JNJ/BS under 2) och seriens tredje totalt — Electrolux 10,45 och SCA 8,55 står över",
+      "motiv": "B1: samma motbevis som D1, body-formen; hälsogrenens högst är den korrekta räddningen"
+    },
+    {
+      "id": "D4",
+      "allvar": "B",
+      "falt": "body (scenariorutan)",
+      "fran": "| Marginal 4,46 % | 1 512 | 2 190 | 2 869 |\n| Marginal 6,46 % | 1 559 | 2 258 | 2 957 |\n| Marginal 8,46 % | 1 605 | 2 326 | 3 046 |",
+      "till": "| Marginal 4,46 % | 1 512 | 1 559 | 1 605 |\n| Marginal 6,46 % | 2 190 | 2 258 | 2 326 |\n| Marginal 8,46 % | 2 869 | 2 957 | 3 046 |",
+      "motiv": "B2: cellinnehållet transponerat (0/9 rätt, 9/9 matchar transponatet; diagonalen 1 512/2 258/3 046 orörd) — kolumnen 'Oms −3 %' bar hela 4,46 %-raden osv. Alla nio tal aritmetiskt korrekta, bara omplacerade"
+    },
+    {
+      "id": "D5",
+      "allvar": "B",
+      "falt": "body",
+      "fran": "men 833 miljoner lägre resultat",
+      "till": "men 853 miljoner lägre resultat",
+      "motiv": "B3: cifraförväxling — 2 491 − 1 638 = 853 Mkr (sond A:botten-resgap, 2,4 % avvikelse)"
+    },
+    {
+      "id": "D6",
+      "allvar": "B",
+      "falt": "body (DuPont-noten)",
+      "fran": "det är där 2024 års 1,75 marginalprocent gick förlorade och där 2025 års återkomst började",
+      "till": "det är där 2024 års 2,87 marginalprocent gick förlorade och där 2025 års 1,75-enheters återkomst började",
+      "motiv": "B4: 1,75 pp är 2025:S återkomst (4,71→6,46); 2024:S förlust var 2,87 pp (7,58→4,71) — sond A:margsteg-24/25"
+    },
+    {
+      "id": "D7",
+      "allvar": "B",
+      "falt": "readingMinutes",
+      "fran": "\"readingMinutes\": 4",
+      "till": "\"readingMinutes\": 5",
+      "motiv": "B6: 2 770 ord → round(2 770/600) = 5 enligt kvartalskonventionen (HB-precedensen); filen säger 4"
+    },
+    {
+      "id": "D8",
+      "allvar": "C",
+      "falt": "title",
+      "fran": "marginalsvängen 8,8 → 4,7 → 6,5 procent bakom",
+      "till": "marginalsvängen 8,8 → 7,6 → 4,7 → 6,5 procent bakom",
+      "motiv": "C1: fyrpunktsbanan komprimerad till tre punkter (2023 års 7,58 utelämnas); valfri kur — titel blir 214 tkn med D2, fortfarande ≤ 314"
+    },
+    {
+      "id": "D9",
+      "allvar": "C",
+      "falt": "description",
+      "fran": "nettomarginalen svängt 8,8 → 4,7 → 6,5 procent",
+      "till": "nettomarginalen svängt 8,8 → 7,6 → 4,7 → 6,5 procent",
+      "motiv": "C1: samma komprimering i description"
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+#!/usr/bin/env node
+// Byggare för s5-u2 o29: pe-09-utdelningsrekapitaliseringen.json (kurskälla).
+// Ersättare efter km-028-pivoten (dokumenterad i anspråksfilen). Påhittade tal.
+import { writeFileSync } from "node:fs";
+
+const kurs = {
+  slug: "pe-09-utdelningsrekapitaliseringen",
+  category: "PRIVATE EQUITY & INVESTMENTBOLAG",
+  weight: "—",
+  chapterCount: 6,
+  totalMinutes: 24,
+  title: "Utdelningsrekapitaliseringen — skulden som betalar ägaren",
+  summary:
+    "Private equity-familjens nionde steg öppnar branschens mest omdiskuterade manöver: bolaget belånas på nytt MITT i innehavsperioden och pengarna betalas ut till fonden — ingen exit, ingen ny ägare, bara ett nytt lager skuld. Sonden mot registret visar det vita fältet: dividend recap saknar kursägare, rekapitalisering nämns endast av en bokkurs. Kursen bygger det påhittade Norra Trä AB med Stenbro Capital som ägare och räknar manövern rakt igenom: det nya lånet 440 som lyfter skuld/EBITDA från 3,6 till 6,0, täckningen som faller från 4,33 till 2,56 — och IRR-magin där samma kassaflödesmängd höjer fondens avkastning från 14,9 till 18,9 procent utan att en krona värde skapas. Pedagogisk kurs i läskonst — inte investeringsråd.",
+  minutes: 24,
+  xp: 50,
+  level: "Avancerad",
+  why: "Familjens åtta första steg har följt kapitalets ordning: livscykeln (pe-01), utfasningarna och IRR-mekaniken (pe-02), förvärvsmaskinen och dess ingående skuld (pe-03), den privata ägarsidan (pe-04), andrahandsmarknaden (pe-05), J-kurvan och capital calls (pe-06), co-investeringen (pe-07) och avgiftsmaskinen (pe-08). Nionde steget böjer den ordningen: här lämnar pengarna fonden FÖRE utgången, genom att det ägda bolaget tar ny skuld och betalar ut den till sina ägare. Gränserna mot grannarna: pe-02 äger IRR-matematiken, vattenfallet, DPI-måttet och fortsättningsfordonet som utgångsdörr — denna kurs äger HÄNDELSEN som flyttar kassaflödet i tiden och dess riskflytt; pe-03 äger förvärvsstrukturens skuld, alltså belåningen VID köpet — här ägs belåningen av det redan ägda bolaget mitt i perioden; pe-08 äger avgiftsmaskinen — här noteras bara att en utdelning kan utlösa carried interest, spelplanen ägs där; ks-02 äger kapitalallokeringen för noterade bolags styrelser — denna kurs äger den privata struktur där ägaren är ensam förhandlingspart; ud-08 äger listade bolags speciella utdelningar — här är bolaget onoterat och utdelningen intern; st-01 och st-02 äger räntetäckning och stresstest — deras verktyg lånas med gränsnot; ks-05 äger covenanter och kreditbetyg — priset på det nya lånet ägs där. Sond mot registret 2026-09-29: «dividend recap» noll kursägare, «utdelningsrekapitalisering» noll, «rekapitalisering» endast bokkursen distress-investing (bokkurs äger inte fläcken). Om du kan läsa en utfasning men inte en rekap: du ser fondens resultat utan att se dess spegelbild — pengarna som lämnade bolaget före exitscenen.",
+  learn: "Manövern: det ägda bolaget tar ny skuld och betalar ut behållningen till ägaren — ingen exit, ingen värdeprövning, ingen ny ägare · Norra Trä (påhittat): köpet till EV 1 200 = 8,0× EBITDA 150 med lån 720 (60 procent) och eget kapital 480 · Läget år 3: EBITDA 180, skuld amorterad till 640, skuld/EBITDA 3,6 — utrymme i trappan · Det nya lånet: 6,0× 180 = 1 080, alltså 440 ny skuld som betalas ut — skuld/EBITDA 6,0, täckning EBITDA/ränta 4,33 → 2,56 · IRR-magin: utan rekap kassaflödet −480 → +960 i år fem (MOIC 2,00, IRR 14,9 procent); med rekap −480 → +440 år tre → +520 år fem (MOIC 2,00, IRR 18,9 procent) — samma kronor, tidigare hämtade, avkastningen +4,0 procentenheter · Värdeskapandet noll: multipeln 8,0× in och 8,0× ut, EBITDA 150 → 200 i båda världarna — rekapen skrev om klockan, inte verkligheten · Riskflytten: fondens exponering faller, bolagets balansräkning bär risken kvar — kreditgivarna prissätter det (ks-05) · DPI-signalen (pe-02): tidig utdelning lyfter andelen återbetalt kapital —LP:n ser pärlan, kreditgivaren ser trappan · Förenklingens prislapp: kursen håller EBITDA-prognosen lika i båda världarna — i verkligheten äter den högre räntan 28,6 per år av investeringsutrymmet",
+  history: {
+    origin:
+      "Att ta ut pengar ur ett bolag man kontrollerar genom att låta bolaget låna är äldre än fondindustrin. Köpmannahus och industriägare belånade verksamheter för att ta ut kapital utan att sälja — manövern blev dock systematisk först när buyout-branschen och dess kreditmarknad växte fram på 1980-talet: högräntelån_marknaden gjorde det möjligt för förvärvare att lasta bolag med skuld inte bara vid köpet utan även efteråt, och utdelningar finansierade med nya lån blev en del av spelboken redan före dess mest kända affärer.",
+    evolution:
+      "Under 1990- och 2000-talen institutionaliserades manövern: levererade låneformationer med prioriterade trappor (senior, mezzanin) gjorde det möjligt att lägga ny skuld på ett bolag utan att refinansiera det gamla lånet, och utdelningsrekapitaliseringar blev en återkommande post i fondernas kassaflöden. Frekvensen följde kreditcykeln — i generösa lånemarknader (mitten av 2000-talet, åren efter 2010, kapitalflödena 2020–2021) växte volymen, i åtstramningarna stängdes dörren. Samtidigt växte kritiken: kreditanalytiker och finansjournalister beskrev manövern som att bolaget betalade ägarens hemkomst med sin egen säkerhet, medan förvaltarna svarade att kapital som återlämnas tidigt minskar risken för investerarna.",
+    modern:
+      "I dag är utdelningsrekapitaliseringen en etablerad — och bevakad — del av private equityns verktygslåda. Kreditmarknadens dokument (covenant-läget, definierade EBITDA-justeringar) avgör hur mycket som kan tas ut, och nyhetsflödet om en portföljbolagsrekap läses på två sätt samtidigt: fondens investerare ser tidig distribution, kreditgivarna ser högre hävstång. För den som studerar branschen är manövern den renaste illustrationen av skillnaden mellan en fonds avkastningsmått och ett bolags bärkraft: det ena kan förbättras utan att det andra förbättras en millimeter.",
+  },
+  chapters_list: [
+    { num: 1, title: "Grunderna — pengarna före utgången", minutes: 4 },
+    { num: 2, title: "Maskinen — det nya lånet steg för steg", minutes: 4 },
+    { num: 3, title: "Praktisk tillämpning — IRR-magin genomräknad", minutes: 4 },
+    { num: 4, title: "Vem som betalar — riskflytten och täckningen", minutes: 4 },
+    { num: 5, title: "Fällor och missvisningar", minutes: 4 },
+    { num: 6, title: "Mästerskap — fem frågor till varje rekap", minutes: 4 },
+  ],
+  lynchSection:
+    "Peter Lynch varnade för bolag vars ledning gör sig själva rika snarare än aktieägarna — och utdelningsrekapitaliseringen är den privata ägarsidans renaste variant av den varningen: ägaren som tar ut sitt kapital ur bolaget och låter bolaget stå kvar med räkningen i form av ny ränta. Lynch-läxan i kursen är frågan han lärde sina läsare att ställa: vems pengar är det som betalas ut, och vem som bär konsekvensen? I en fondvärld är svaret sällan en enda part — och kursen tränar ögat att se båda sidorna samtidigt.",
+  grahamSection:
+    "Benjamin Grahams krav på att finansieringen ska ge säkerhetsmarginal snarare än ta den är hela kursens måttstock: en utdelningsrekapitalisering skapar ingen säkerhetsmarginal — den flyttar den, från ägarens exponering till bolagets balansräkning. Grahams skiljelinje mellan investing och spekulering blir här: manövern kan vara klok kapitalhantering i en fond och samtidigt en försämring av bolagets tålighet. Hans båda parter finns i en och samma affär — och den som bara läser en av dem förstår ingen.",
+  ak1Section:
+    "I AK1A:s metodik är utdelningsrekapitaliseringen kapitalstruktur- och ägarsiddimensionernas mötespunkt: fondens tidsperspektiv (IRR, DPI — pe-02) möter bolagets tålighet (räntetäckning, stress — st-01, st-02). Kursen tränar fyra dimensioner: manövern mekanik (ny skuld, utdelning, ingen exit), IRR-temperaturen (varför avkastningen stiger utan värdeskapande), riskflyttet (vem som står sämre efteråt) och källkritiken (läsa en recaptionis i finansnyhet med båda ögonen öppna). Utbildning i läskonst — metoden undervisas, ingen position rekommenderas.",
+  chapters: [
+    {
+      num: 1,
+      minutes: 4,
+      title: "Grunderna — pengarna före utgången",
+      intro: "Familjens kurser har följt kapitalet fram till utgången — denna kurs handlar om pengarna som lämnar fonden före utgången.",
+      blocks: [
+        {
+          type: "text",
+          content:
+            "En private equity-fonds kassaflöde har en självklar form: kapital betalas in, förvaltas år efter år, och lämnar fonden vid utfasningarna — börsen, den strategiska köparen, den sekundära köparen eller fortsättningsfordonet (pe-02). Utdelningsrekapitaliseringen bryter formen. Bolaget som fonden redan äger tar ett NYTT lån och betalar ut behållningen till sina ägare — alltså till fonden. Ingen exit sker, ingen ny ägare prövar värdet, ingen utfasningsväg öppnas. Det enda som händer är att balansräkningen får ett nytt lager skuld och att kontanter rör sig från bolagets kreditgivare till fondens LP:n.\n\nManövern kallas dividend recap i branschens språk, och den har en berömd egenskap: den förbättrar fondens avkastningsmått utan att bolaget förändras. Det är inte magi utan aritmetik — pengar som hämtas hem tidigare räknas högre i ett tidsvägt mått — och hela skillnaden mellan klok hantering och kosmetika ligger i vad manövern kostar bolaget. Kursens exempel: Stenbro Capital, en påhittad fond, köpte Norra Trä AB, ett påhittat trävarubolag, för tre år sedan. Allt som följer är genomräknat på påhittade tal.\n\nTvå läsningar av manövern existerar sida vid sida, och kursen tränar båda. För fondens investerare är en rekap en tidig hemkomst: kapital återlämnas utan att vänta på en utgång, risken på det återbetalda beloppet försvinner. För bolaget och dess kreditgivare är samma manöver en högre trappa att gå i: mer ränta att betala, mindre marginal när konjunkturen vänder. Båda läsningarna är sanna — och det är just därför manövern är omdiskuterad.",
+        },
+        {
+          type: "definition",
+          content:
+            "Utdelningsrekapitalisering (dividend recap): en transaktion där ett (oftast onoterat) bolag tar upp NY skuld enbart för att betala ut motsvarande belopp till sina ägare. Ingen ägarförändring sker och ingen verksamhetsinvestering finansieras — manövern flyttar kontanter från bolagets kreditsida till ägarna och höjer bolagets skuldsättning. Värdet prövas aldrig av en köpare.",
+        },
+        {
+          type: "insight",
+          content:
+            "Utfasningen säljer bolaget och prövar värdet; rekapitaliseringen låner mot bolaget och förutsätter värdet — pengarna lämnar fonden i båda fallen, men bara i det första finns en motpart som betalat för sin övertygelse.",
+        },
+      ],
+    },
+    {
+      num: 2,
+      minutes: 4,
+      title: "Maskinen — det nya lånet steg för steg",
+      intro: "Rekapitaliseringens mekanik är en lånetrappräkning: utrymmet mellan dagens skuld och trappans tak är utdelningen.",
+      blocks: [
+        {
+          type: "text",
+          content:
+            "Utgångsläget, köpet år 0: Stenbro betalar 1 200 för Norra Trä — ett företagsvärde motsvarande 8,0 gånger årets EBITDA på 150. Finansieringen är klassisk (pe-03): lån 720, alltså 60 procent, och fondens eget kapital 480. Skulden motsvarar 4,8 gånger EBITDA vid köpet, räntan 6,5 procent kostar 46,8 per år.\n\nÅr 3 har två saker hänt: bolaget har växt — EBITDA är 180 — och skulden har amorterats till 640. Skuld/EBITDA har därmed fallit till 3,6, och trappan har fått luft. HÄR ligger rekapitaliseringens fönster: om kreditmarknaden accepterar hävstång upp till 6,0 gånger EBITDA kan bolaget ta ett nytt lån på 6,0 × 180 = 1 080. Efter att det gamla lånet på 640 lösts eller refinansierats återstår 1 080 − 640 = 440 i nya kontanter — och de betalas ut till ägaren. Fondens ursprungliga insats på 480 är därmed till 440 återbetald, tre år före exit, utan att ett enda bolag sålts.\n\nRäknat som vanliga stabilitetsmått (st-01) ser man priset direkt: räntan stiger från 41,6 (640 lån) till 70,2 per år (1 080 lån), täckningen EBITDA/ränta faller från 4,33 till 2,56, och skuld/EBITDA stiger från 3,6 till 6,0. Bolaget är samma rörelse som förut — samma sågverk, samma kunder, samma EBITDA — men det bär en tyngre börda. Kreditgivaren prissätter det (ks-05 äger prissättningen); kursen äger själva flyttningen.",
+        },
+        {
+          type: "tabell",
+          content:
+            "Rekapitaliseringens räknelära (Norra Trä / Stenbro Capital, påhittade tal): KÖPET ÅR 0 — EV 1 200 = 8,0× EBITDA 150 · lån 720 (60 procent) · eget kapital 480 · skuld/EBITDA 4,8 · ränta 46,8 · LÄGET ÅR 3 — EBITDA 180 · skuld 640 · skuld/EBITDA 3,6 · ränta 41,6 · täckning 4,33 · TRAPPANS TAK — 6,0× EBITDA 180 = 1 080 · NYTT LÅN — 1 080 − 640 = 440 som betalas UT till fonden · EFTER REKAP — skuld 1 080 · skuld/EBITDA 6,0 · ränta 70,2 · täckning 2,56 · LÄSANVISNINGEN — utrymmet mellan trappans steg (3,6) och taket (6,0) är manövern; kursen räknar den, den bedömer den aldrig åt läsaren.",
+        },
+        {
+          type: "insight",
+          content:
+            "Utdelningen är inte vad bolaget tjänat — den är skillnaden mellan två skuldtal: 6,0 gånger EBITDA minus 3,6 gånger EBITDA, förvandlad till kontanter genom ett nytt låneavtal.",
+        },
+      ],
+    },
+    {
+      num: 3,
+      minutes: 4,
+      title: "Praktisk tillämpning — IRR-magin genomräknad",
+      intro: "Så nu den berömda egenskapen: varför stiger fondens avkastning av att hämta hem samma kronor tidigare?",
+      blocks: [
+        {
+          type: "text",
+          content:
+            "Två världar, samma bolag. I båda antas exit i år 5 till 1 600 — 8,0 gånger en EBITDA som vuxit till 200, alltså exakt samma multipel som vid köpet: ingen multipelresa, ingen värdestegring från marknadens humör. Prognosen för rörelsen är också identisk i båda världarna; det är medvetet, för att isolera själva manövern (vad som händer i verkligheten när den högre räntan äter investeringsutrymme noteras i kapitel fem).\n\nVärld ett, utan rekap: fonden betalade 480 år 0 och får vid exiten 1 600 − 640 = 960, för skulden är fortfarande 640. Kassaflödet är −480 → +960. Multipeln på insatt kapital, MOIC, blir 960/480 = 2,00, och den interna avkastningen, IRR, landar på 14,9 procent — pengarna fördubblades på fem år.\n\nVärld två, med rekap år 3: fonden betalade 480 år 0, fick 440 i utdelning år 3, och får vid exiten 1 600 − 1 080 = 520, för skulden nu är 1 080. Kassaflödet är −480 → +440 (år 3) → +520 (år 5). Summan är oförändrad: 440 + 520 = 960, MOIC fortfarande 2,00. Men IRR stiger till 18,9 procent — för IRR är tidsviktad (pe-02 äger ekvationen): kronor som kommer hem tidigare räknas som om de arbetat kortare tid. Fyra procentenheter högre avkastning, inte från bättre bolag, inte från bättre exit, inte från en enda ny kund — enbart från klockan. Detta är rekapitaliseringens kärna som finansiell manöver: den flyttar kronor från periodens slut till dess mitt, och måttet som belönar det stiger. Värdeskapandet — rörelsens tillväxt, EBITDA 150 → 200 — är identiskt i båda världarna och ska inte förväxlas med manövern.",
+        },
+        {
+          type: "tabell",
+          content:
+            "IRR-magin, två världar (påhittade tal; IRR-lösning på kassaflöden): UTAN REKAP — år 0: −480 · år 3: 0 · år 5: +960 (1 600 − skuld 640) · MOIC 2,00 · IRR 14,9 procent · MED REKAP — år 0: −480 · år 3: +440 (utdelningen) · år 5: +520 (1 600 − skuld 1 080) · MOIC 2,00 · IRR 18,9 procent · SKILLNADEN — MOIC ±0,00 · IRR +4,0 procentenhet · orsak: KLOCKAN, inte verkligheten — samma 960 kronor, tidigare hämtade · MULTIPEL OCH TILLVÄXT — 8,0× in och 8,0× ut · EBITDA 150 → 200 i båda världarna · LÄSANVISNINGEN — den som rapporterar «18,9 mot 14,9» utan kassaflödesraderna rapporterar en klocka som en motor.",
+        },
+        {
+          type: "insight",
+          content:
+            "Samma kronor, samma bolag, samma exit — och ändå högre avkastning: rekapitaliseringen vittnar inte om värdeskapande utan om tidsomskrivning, och den som skiljer de två begreppen läser fondvärldens nyhetsflöde rätt.",
+        },
+      ],
+    },
+    {
+      num: 4,
+      minutes: 4,
+      title: "Vem som betalar — riskflytten och täckningen",
+      intro: "Manövern skapar inga nya risker — den flyttar dem, och kursens tredje räknelära visar vart.",
+      blocks: [
+        {
+          type: "text",
+          content:
+            "Före rekapen bar fonden risken för hela sitt kvarvarande engagemang: 480 insatta, 480 exponerade, allt beroende av bolagets utveckling till exit. Efter utdelningen på 440 är fondens RISKERADE kapital i praktiken 40 kronor per börjad hundra — resterande har lämnat byggnaden. Fondens investerare, LP:n, ser samma sak i sitt eget mått (pe-02): andelen distribuerat kapital, DPI, stiger ett stort steg tre år före exit. Det är en äkta riskminskning — för den delen av portföljen.\n\nSamtidigt: bolagets värld efter rekapen har BLIVIT riskerna. Räntan 70,2 istället för 41,6 per år betyder att 28,6 mer av årets kassaflöde äts av banker och låntagare innan en enda krona når utveckling eller ägare. Täckningen 2,56 mot 4,33 betyder att en konjunkturnedgång — fallande EBITDA, stigande riskpremie på ny refinansiering — når bremsarna tidigare. Stressar man balansräkningen enligt st-02:s hantverk (EBITDA −25 procent, ränta +2 procentenheter) går täckningen från en trygg nivå till en övervakningsnivå. Kreditgivaren, som burit risken hela tiden, bär den fortfarande — nu med större belopp.\n\nSå manövern är ingen skapelse eller förstörelse av risk utan en FLYTTNING: från fondens exponering till bolagets balansräkning. Den som läser en notis om en rekap med bara ett par ögon — fondens eller kreditgivarens — ser hälften av affären. Kursens träningsmål är dubbelseendet: varje utdelningsrekapitalisering är samtidigt en distribution och en belåning, och de två orden beskriver samma kronor på väg mellan samma parter.",
+        },
+        {
+          type: "tabell",
+          content:
+            "Riskflyttet (påhittade tal): FONDEN FÖRE — 480 riskerat · 0 distribuerat · DPI 0 · FONDEN EFTER — 40 riskerat per 100 · 440 distribuerat år 3 · DPI-steget klart före exit · BOLAGET FÖRE — ränta 41,6/år · täckning 4,33 · skuld/EBITDA 3,6 · BOLAGET EFTER — ränta 70,2/år (+28,6) · täckning 2,56 · skuld/EBITDA 6,0 · STRESSTESTET (st-02:s verktyg) — EBITDA −25 procent och ränta +2 procentenheter: från lugn zon till övervakning · SLUTSATSEN — risken flyttad, inte skapad eller förstörd · LÄSANVISNINGEN — läs varje rekapnotis dubbelt: distributionen och belåningen är samma händelse.",
+        },
+        {
+          type: "insight",
+          content:
+            "Distribution för LP:n, belåning för bolaget, samma kronor på väg mellan samma parter — rekapitaliseringens sanning ligger i att se båda orden samtidigt, och felkursen i att se bara ett.",
+        },
+      ],
+    },
+    {
+      num: 5,
+      minutes: 4,
+      title: "Fällor och missvisningar",
+      intro: "Fyra fallgropar — en för varje sätt att missläsa manövern.",
+      blocks: [
+        {
+          type: "text",
+          content:
+            "Fälla ett: IRR-blinkningen. Kursens genomräkning visar hur en tidsflyttning höjer IRR med 4,0 procentenheter utan värdeskapande — men frestelsen är att läsa «högre IRR» som «bättre affär». pe-02 äger hela IRR-matematiken och dess systematiska partiskhet; här räcker påminnelsen: jämför alltid MOIC och IRR sida vid sida, och misstro avkastningssiffror utan kassaflödesrader. En fond som rapporterar stigande IRR vid fallande MOIC har inte börjat tjäna mer — den har börjat hämta hem tidigare.\n\nFälla två: avgiftsplanet. En utdelning kan — beroende på fondavtalets vattenfall (pe-08) — utlösa carried interest, alltså andel av vinst till förvaltaren, på ett kassaflöde som i grunden är bolagets nybelåning. Spekulationen om huruvida det är «förtjänad» avkastning ägs av avgiftsmaskinskursen; denna kurs äger bara konstaterandet: följderna av en utdelning räknas på två plan — bolagets och fondavtalets — och de sammanfaller inte alltid. Fälla tre: förväxlingen med listade bolags extrautdelningar. Ett noterat bolag som delar ut extraordinärt (ud-08) gör det ur realiserade vinster under aktieägarnas samlade beslut; en rekap görs av en ägare som är ensam förhandlingspart med sig själv och kreditgivarna — makten över beslutet är annorlunda även om kassaflödet ser likadant ut.\n\nFälla fyra: den glömda räntedriften. Kursens modell håller EBITDA-prognosen lika i båda världarna — en medveten förenkling. I verkligheten kostar 28,6 mer i ränta per år antingen tillväxt (mindre reinvestering), marginal (högre priser) eller amorteringstakt — prislappen syns inte i IRR-magin men finns i bolagets budget. Rekapitaliseringen är som alla finansiella manövrar bäst läst med frågan: vem betalar, och när? Cykeltajmingen till sist: dörren öppnas av generösa kreditmarknader och stängs av åtstramning — en rekap som passar i ett lånemonster kan bli en refinansieringsvägg (st-05) i en kreditvinter.",
+        },
+        {
+          type: "tabell",
+          content:
+            "Fällorna (grannkursernas gränser): IRR-BLINKNINGEN — jämför MOIC och IRR sida vid sida; kassaflödesrader före rubriksiffror (matematiken: pe-02) · AVGIFTSPLANET — utdelningen kan utlösa carried interest på nybelåning (maskineriet: pe-08) · LISTADE EXTRAUTDELNINGAR — beslutordningen annorlunda: onoterad ensam ägare mot noterad stämma (ämnet: ud-08) · RÄNTEDRIFTEN — modellens lika EBITDA-prognoser är förenkling; verklig räntedrift 28,6/år äter tillväxt, marginal eller amortering · CYKELTAJMINGEN — generösa lånemarknader öppnar dörren, åtstramning stänger den (muren: st-05) · LÄSANVISNINGEN — fyra fallgropar, fyra gränsnoter till grannkurser; manövern själv ägs här.",
+        },
+        {
+          type: "insight",
+          content:
+            "De fyra fällorna är fyra envända läsningar — av måttet, av avtalet, av beslutordningen, av kalkylen — och var och ende botas av samma rutin: fråga vad som INTE står i notisen.",
+        },
+      ],
+    },
+    {
+      num: 6,
+      minutes: 4,
+      title: "Mästerskap — fem frågor till varje rekap",
+      intro: "Manövern sitter som ett femfrågeprotokoll — samma frågor varje gång, olika svar varje bolag.",
+      blocks: [
+        {
+          type: "text",
+          content:
+            "Fråga ett: hur mycket är det nya lånet, och vad blev skuld/EBITDA efteråt? Fråga två: vad blev täckningen — EBITDA delat med ränta — före och efter? Fråga tre: vart gick kontanterna — hela beloppet till ägarna, eller finansierar en del befintlig skuld? Fråga fyra: vad händer med fondens mått — steg IRR, steg DPI, och steg MOIC alls? Fråga fem: vilket cykelläge öppnade dörren — och hur ser refinansieringskalendern ut när det nya lånet förfaller? Fem frågor, tio tal — och nästan varje nyhetsnotis om en rekapitalisering rymmer svar på åtminstone tre av dem.\n\nKursens plats i familjen är spegeln åt pe-02:s utfasningslära: där lärdes vägarna UT ur innehavet och priserna de betalar, här lärs vägen som tar pengar ut UTAN att lämna innehavet. Tillsammans med pe-03:s ingångstrappa och pe-08:s avgiftsplan tecknar de fyra kurserna kapitalets hela kretslopp i private equity — in, genom, ut och åter — och varje ny läsare av branschens nyhetsflöde kan med de fyra kurserna i ryggen placera varje notis på rätt plats i kretsen.",
+        },
+        {
+          type: "text",
+          content:
+            "Övningen som avslutar kursen bygger på verkliga notiser eller årsredogörelser — men alltid i utbildningens ram: att träna läsningen av manövern, aldrig att ta ställning till en enskild fond eller ett enskilt bolag.",
+        },
+        {
+          type: "utmaning",
+          content:
+            "Din utmaning: hitta en notis eller rapport om en utdelningsrekapitalisering (verkliga tal i övningen, påhittade i kursen) och besvara de fem frågorna: nytt lån och skuld/EBITDA före och efter · täckning före och efter · kontanternas väg · fondens mått (IRR/DPI/MOIC om de rapporteras) · cykelläget och refinansieringsprofilen. Skriv därefter en mening som beskriver manövern MED BÅDA orden — distribution och belåning — och en som anger vem som bär risken efteråt. Detta är en övning i dubbelseende — ingen uppmaning att värdera, köpa eller sälja något.",
+        },
+      ],
+    },
+  ],
+};
+
+writeFileSync("/home/ak1a/AK1/data/kurser-tillagg/pe-09-utdelningsrekapitaliseringen.json", JSON.stringify(kurs, null, 2) + "\n");
+console.log("SKREV pe-09-utdelningsrekapitaliseringen.json:", JSON.stringify(kurs).length, "tecken,", kurs.chapters.length, "kapitel");

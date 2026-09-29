@@ -609,3 +609,11 @@ Nästa i kön (händelsestyrda): nattens G2/G5-kvitton 02:30–06:27 UTC 29/9 (7
 | v207 | Prefetch-eftermätning: puppeteer-browser-mätning av v206-kuren (initial- + scroll-las på /, /blogg, /dataset, /kurser) | ✓ LEVERERAD r333+r334 — GRÖN: 9 motorchunkar i artefakten, 0 laddas på vanliga sidor (två bygggenerationer, samma dom) |
 | r334-läran | Falska positiva: 'monteCarlo|kelly|bayes' träffar KURSTEXT — äkta signaturer = export-/Konstant-namn ur motorerna | ✓ BOKFÖRD i verktyg/prefetch-eftermatning.mjs:s huvud (robust mot nästa bygges hash-namn) |
 | v211-rest | /en/ + /ar/-speglar (on-demand, inga statiska platser) | bokfad — kvarstår till publiceringsdagarna |
+
+
+## ROND 335 [organ:Φ] (2026-09-29) — FÖNSTER-LUCKAN LÄKT I SKARP DRIFT + pushkanalen robust
+
+| Post | Innehåll | Status |
+|---|---|---|
+| v211-fönstret | 09:37-bygget suddade .meta-märkningen (byggde utan ad39ed97 som fastnat i pushkö bakom updateInstead) | ✓ LÄKT r335 — om-märkt 8/8; jungfrulig slug bevisar 404; långpollare (5 h) levererar postbuild-committen vid rent fönster |
+| r336 BOKAD | ISR-omrenderingens meta-beteende efter revalidate (bevaras 404-markering?) | sonder Ericsson-slugen efter >1 h |

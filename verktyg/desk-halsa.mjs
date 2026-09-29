@@ -32,7 +32,7 @@
 //                          kräver ett live-mappat fönster).
 //   5. http-auth-*         OM miljövariabeln DESK_AUTH='user:pass' är satt:
 //                          GET /desk/ (200 + <title> innehåller
-//                          'ZCode-skivbordet'), GET /desk/vnc.html (200),
+//                          'ZCode-skrivbordet'), GET /desk/vnc.html (200),
 //                          GET /desk/app/ui.js (200) — med basic auth.
 //                          UTAN DESK_AUTH => SKIP x3. Lösenord GISSAS
 //                          ALDRIG, hårdkodas ALDRIG, /etc/nginx/.htdesk
@@ -40,6 +40,11 @@
 //                          ALDRIG i utdata.
 //   6. webrot-*            /home/ak1a/desk-web/vnc.html existerar (fs) +
 //                          defaults.json är giltig JSON (JSON.parse).
+//   7. landning-fil        /var/www/desk/index.html (fs): title innehåller
+//                          TITEL_MARKE (samma markör som kontroll 5a —
+//                          SAMORDNAT par sedan U23), INGEN 'resize=scale'-
+//                          pin (U13V2:s kontrakt är defaults resize=remote;
+//                          U17 A1-klassen), inga trasiga sluttaggar ('./p>').
 //
 // DETERMINISM: allt utom de två HTTP-kontrollgrupperna (1 och 5) är lokala
 //   processanrop/filäsningar — deterministiska. HTTP-kontrollerna går via
@@ -48,9 +53,10 @@
 //   anrop, värstafall ~24 s — under svitens 30 s-tak). Redirecter följs
 //   EJ: kedjan förväntas svara exakt (3xx => FAIL).
 //
-// Arkitekturnotering (mätt 2026-09-28): landningssidan på exakt /desk/
+// Arkitekturnotering (mätt 2026-09-28; titel rättad SAMORDNAT med TITEL_MARKE
+// 2026-09-29, DESK-U23): landningssidan på exakt /desk/
 //   serveras av nginx ur /var/www/desk/index.html (title 'AK1A Lab —
-//   ZCode-skivbordet'); prefixet /desk/* proxyas till websockify vars
+//   ZCode-skrivbordet'); prefixet /desk/* proxyas till websockify vars
 //   /desk/vnc.html har title 'noVNC'. Title-kontrollen (5a) gäller därför
 //   LANDNINGEN, inte noVNC-sidan.
 //
@@ -71,7 +77,8 @@ const X_DISPLAY = ':10';
 const BREDD = 1024;
 const HOJD = 576;
 const WEB_ROT = '/home/ak1a/desk-web';
-const TITEL_MARKE = 'ZCode-skivbordet';
+const TITEL_MARKE = 'ZCode-skrivbordet';
+const LANDNING_FIL = '/var/www/desk/index.html';
 const HTTP_TIMEOUT_MS = 6000;
 const KOMMANDO_TIMEOUT_MS = 5000;
 const KROPP_MAX_BYTE = 262144;
@@ -297,6 +304,27 @@ function webrotDefaultsJson() {
   return { status: 'PASS', detalj: `defaults.json giltig (${beskrivning}) + resize=remote enligt U13V2-kontraktet` };
 }
 
+// --- 7. Landningsfilen på disk: titelmarkören + inga kända felspår ---
+// DESK-U23 (2026-09-29): titelstavfelet rättades SAMORDNAT med TITEL_MARKE
+// och resize=scale-pinen (v198:s urspec) ströks ur båda entrélänkarna —
+// denna kontroll bevakar att ingen svävning (jfr defaults-återfallet r314:
+// ett fabriksbarn skrev tillbaka scale 23:56) för tillbaka något av det.
+function landningFil() {
+  const raw = readFileSync(LANDNING_FIL, 'utf8');
+  const m = raw.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+  const titel = m ? m[1].replace(/\s+/g, ' ').trim() : '(ingen title-tagg)';
+  if (!titel.includes(TITEL_MARKE)) {
+    return { status: 'FAIL', orsak: `landningens title är "${titel}" — innehåller ej "${TITEL_MARKE}" (SAMORDNAT par med kontroll 5a sedan U23)` };
+  }
+  if (raw.includes('resize=scale')) {
+    return { status: 'FAIL', orsak: 'landningen pinar resize=scale (v198-urspecen) — kringgår defaults-kontraktet resize=remote (U13V2-dom; jfr U17 A1-klassen)' };
+  }
+  if (raw.includes('./p>')) {
+    return { status: 'FAIL', orsak: 'landningen innehåller en trasig sluttagg "./p>" (DESK-U23 fynd B)' };
+  }
+  return { status: 'PASS', detalj: `title "${titel}" + ingen scale-pin + inga trasiga sluttaggar` };
+}
+
 // --- Huvudflöde ---
 const startTid = Date.now();
 console.log('=== DESK-HÄLSA — /desk-kedjan i EN kontroll ===');
@@ -314,6 +342,7 @@ await kontroll('http-auth-vnc-html', headers ? () => httpAuthFil('noVNC-sidan', 
 await kontroll('http-auth-ui-js', headers ? () => httpAuthFil('noVNC-appen', '/desk/app/ui.js') : skipUtanAuth);
 await kontroll('webrot-vnc-html', webrotVncHtml);
 await kontroll('webrot-defaults-json', webrotDefaultsJson);
+await kontroll('landning-fil', landningFil);
 
 const sek = ((Date.now() - startTid) / 1000).toFixed(1);
 console.log(`Summa: ${antalPass} PASS, ${antalFail} FAIL, ${antalSkip} SKIP · ${sek} s (tak 30 s)`);

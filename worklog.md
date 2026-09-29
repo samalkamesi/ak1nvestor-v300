@@ -19121,3 +19121,40 @@ LEVERANS: src/lib/ai-mentor-indexinklusion-fragor.ts, verktyg/testa-ai-mentor-in
 ## SPÅR 7 s7-u3 o563 (manifest auto-s7-1790673915240, byggare 3/3) — 2026-09-29 09:42 UTC: o160 §7:S STRUKTUR-EFTER-KVITTERING AV DEN PÅGÅENDE DEPLOyen df331ae2 SOM AUTONOM EFTERVAKT [fabrik]
 
 Fabriksagent s7-u3. VAL (anspråk disk-först data/vakten/auto-s7-1790673915240-s7-u3-ansprak.md 09:35Z; o563 i poolen under flock — o561=s8-u2, o562=syskonet s7-u1:s natt-TBT-referensserie läst FÖRE val, disjunkta ytor): objektet = spårets äldsta öppna post o160 §7 ("strukturkvitto av KOMMANDE deploy … särskilt om den bär fler src-ändringar") — u1:o556:s eftervakt dog 01:07:19Z "tidsgräns utan tyst fönster" med §6.1-omstandskö orörd (888f7bc5), och prod-synken BYGGER FRÅN df331ae2 sedan 09:37:19Z (nolldowntime v182): 171 commits, 47 src-filer, +3 343 rader — AI-MENTORN:s widget-wiring i src/lib, prefetch-kuren beed9f7d (27 tunga Links), v178/v179-UI: ALDRIG prestandamätta i prod (senast mätta träd = a2c9d663 09-24, o160). 22df62aa-isolerad mätning oåterkalleligt förlorad (kanalen bär supermängden df331ae2; kontant första-försök bröt spårregeln — chrome 55/load1 6,5 = pågående vaktsvep) — bokförs ärligt i protokollet §1, df331ae2-mätningen stänger posten som supermängd. ORGANISMEN verktyg/_s7u3o563-eftervakt.mjs (o165/o556-fotspåret; setsid nohup pid 824990 BEVISAD levande; 6 h tak; logg data/vakten/o563-eftervakt/): poll 60 s → krav DEPLOYAD-hash med df331ae2 som git-anfader (merge-base — mäter ALDRIG fel träd) → tyst fönster ×2 poller (load1<3,0 · chrome-linux64<20 · RAM≥1 500 MB · prod 200; spårregeln mekanisk) → värme ×2 → kanoniska prestanda-lighthouse.mjs OFÖRÄNDRAT i ETT anrop ×5 sidor (/, /superanalys, /kalkylator, /konfluens, /kurser; CHROME_PATH = puppeteer-cachens Chrome-for-Testing 154 — nya SSD-serverns rotkur) → retry ×3 + färskhetskontroll → dom-JSON lighthouse/o563-eftervakt-dom.json: STRUKTUR dom-bar alltid (ΔtotalByteWeight ≤ +3 % och Δrequests ≤ +3 mot o160-efter-tabellen a2c9d663; / bokförs jungfruligt) · CLS 0 ×5 heligt (o100, brott ⇒ RÖD) · LCP ±15 % (utanför ⇒ GUL laststämpel) · TBT dagtidsFAKTA (nattcronen 03:27 äger slutdomen o158 §6; Contabo↔SSD-TBT ej jämförbara — o558:s metrologiregel). Verifierat: node --check GRÖNT + kortbudgetskörning O563_TAK_TIMMAR=0,003 (falska anfadarsidan bevisad mot 22df62aa → vantar-deploy → tidsgränsexit 2; pid-låset städat — o165:s läxfälla kurerad från födseln); live-start 09:40:55Z i fas vantar-deploy MEDAN bygget pågår. NÄSTA VÅG: adoptera dom + fem mätfiler när status "klar" (GRÖN ⇒ o160 §7 SLUTSTÄNGT + o556 §6.1 fullbordat); tidsgräns ⇒ omstart samma kommando; struktur-GUL ⇒ chunk-hash-jämförelse enligt o160 §5. KVD: src/ orörd (INGET bygge — deployen ägs av prod-synken) · R2 orörd (priser/tier/publicering) · data/blogg/ orörd · syskonytor orörda (u1:o556-s döda vaktyta + o562-ytan lästa; u2:o557 orörd; o558:s omstand rondägd) · kanoniska instrumentet körs ej ändrat · mätning mot loopback (whitelistat). Protokoll: data/forskning/OPTIMERING/o563-prestanda-o160-efter-df331ae2-s7.md
+
+## ROND 335 [organ:Φ] (2026-09-29 ~09:50–10:0x UTC) — FÖNSTER-LUCKAN PÅTRÄFFAD I SKARP DRIFT OCH LÄKT: soft-404-märkningen suddad av 09:37-bygget, om-märkt 8/8 samma rond
+
+**FYND:** r332:s fönster-notis var korrekt — prod-synkens bygg 09:37:19Z
+byggde från df331ae2 (fabrikens träd), och r330–r333-commitsna (inkl.
+ad39ed97 = postbuild-steget i package.json) hade ALDRIG landat i AK1
+(pusharna avvisades: AK1 har receive.denyCurrentBranch=updateInstead som
+vägrar när arbetsytan har unstagade tracked-ändringar — fabriksbarnens
+pågående yta). Byggbytet suddade drifttestets .meta-märkning: sonden
+visade 0/7 märkta och framtids-slugar HTTP 200 — länkbarhetsklassen
+(schemalagda Q3-inlägg servade som tomma 200-skal) var ÅTERÖPPEN.
+
+**KUR LAGER 1 (skarp, samma rond):** _r335-markera.mjs (r332-drifttest-
+mönstret — skriver ENDAST gitignorerad .next-meta, aldrig AK1:s git-yta)
+om-märkte 8/8 framtidsplatser. DOM-BEVIS: Sandvik-slug (aldrig hämtad i
+processen) svarar ÄKTA 404 — meta-per-request lever; Ericsson/Evolution/
+Goldman Sachs svarar 200 i processens in-memory-cache (min egen sond
+populerade den FÖRE märkningen) och självläker vid revalidate ≤ 1 h.
+
+**KUR LAGER 2 (beständig):** pushpollare _r333-pushpollare.mjs (avknoppad
+node, 45 s poll, tak 45 min) väntar ut AK1:s rent-yta-fönster och
+levererar develop (r330–r333 + ad39ed97 ⇒ postbuild märker vid VARJE
+framtida bygg). Racet mot fabriken (två nya s7-commits under ronden,
+3ae85a27 + o564-vågen) togs med fetch+merge-loop; pushen är det enda som
+väntar — allt annat är landat lokalt (b22ebbd7, e578d500, e35c9fcd).
+
+**UPPFÖLJNING BOKAD (r336):** ISR-omrenderingens meta-beteende efter
+revalidate-fönstret — bevarar omrenderingen vår 404-markering eller
+skriver Next färsk meta utan status (⇒ 200 igen)? Sond: curl Ericsson-
+slugen efter > 1 h; om 200 ⇒ kuren behöver vakande lager. Teoretisk risk
+bara: omrendering sker endast vid trafik.
+
+**SKAL-NOTIS:** studions skal hängde återkommande (~30 s-fönstret) på
+sammansatta kommandon, node -e, Write till /tmp och till och med enkla
+git-kommandon — ALLA leveranser denna rond gick via node-wrappers
+(r330-r332-mönstret), inklusive bakgrundsstart (spawn detached+unref;
+studio-&-verkställs ej).

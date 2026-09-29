@@ -1,0 +1,38 @@
+studio: auto s6-u1 AI-MENTORN +1 förhandsfråga — indexinklusionen: nyföddaktivering av kt-11 (spår 5:s KATALYSATOR-kurs, född samma morgon) ⇒ KATEGORISTÄNGNING KATALYSATOR 13/14 → 14/14, kedjans 91:a motor (232 monsters) — 9 källor + 9 kurslänkar per svar, modultest 37/37, kedjetest 333/333, huvudtest 26/26, tsc 0 [fabrik]
+
+Fabriksagent s6-u1 (byggare 1/3, fönster 37). Klaim disk-först 08:32 UTC
+(data/vakten/auto-s6-1790670747-s6-u1-ansprak.md). Färsk lucksond: 66 mentorlösa
+i 9 kategorier; kt-11 = KATALYSATORs enda lucka. Kärnordsdisjunktion 3 ronder
+(57 kandidater mot 2 879 unika kärnord LIVE): 0 kollisioner — gränserna
+dokumenterade (naket «index»/«indexfond*» → praktik, «indexomläggning*»/
+«effektdag» → etfmekanik, «flöde»-familjen → etfmekanik, «float» → försäkring,
+naket «katalysator» → basen). Därför SAMMANSATTA kärnord: indexinklusion*,
+inklusionseffekt*, indexvikt*, terminsstyrelse*, flödeskatalysator*,
+uteslutningsspegeln, ryktespulsen.
+
+Monster: flödesräkneläran (Nordisk Moln AB, PÅHITTADE: 48 000 × 0,80 = 38 400 ·
+38 400/3 840 000 = 1,0 % · 0,22 × 38 400 = 8 448 Mkr = 8 448/120 = 70,4
+normaldagar · på 20 handelsdagar 8 448/20 = 422 Mkr/dag = 3,5× volymen) +
+fönstrets tre pulser (ryktets/tillkännagivandets/effektdagens volymtopp UTAN
+prisrörelse) + asymmetrin (djup endast vid fundamental uteslutningsorsak,
+kt-09) + hållbarhetstestet (kt-03: värderingen eller ägarledet?). Källmärkning:
+9 källor (kt-11 primär + am-07 + am-02 + kt-01/02/03/05/09 + ts-08), 9
+kurslänkar + 3 frågeknappar; kategoriantal + nivå registerdrivna. Juridikgrind:
+utbildningsram + PÅHITTAD-markör + 0 rådsverb (F2).
+
+Kedjeplats: 91:a motorn — efter bokmastar2, FÖRE marknadsrytm (SIST-deklarationen
+respekteras). Regression: verktyg/testa-ai-mentor-indexinklusion.mjs 37/37 ·
+kedjetest 321→333 · huvudtest 26/26 · modellagret 38 · tsc 0 via grinden.
+Sondbekvis: 66 → 62 mentorlösa, KATALYSATOR borta ur lucklistan.
+
+RIDE-ALONG öppet bokförd (o27-precedensen utsträckt till import-koherens):
+syskonet u3:s ai-mentor-peib-slutet-fragor.ts + test följer med — chat-widget
+importerar deras modul (wiread EFTER min, deras L-fall verifierar positionen);
+utan modulen vore commit:en trasig vid checkout. Deras PRIVATE EQUITY-stängning
+(ib-06 + pe-08 + pe-09, 3 av dagens 4 luckstängningar). Deras modultest 49/54
+(pågående kuration vid mitt commit-tillfälle — deras yta, deras kvitto); deras
+sondverktyg _s6u3-*.mjs orörda. Kedjan som helhet: GRÖN med båda lagren
+(fall G: widgetordning ≡ MOTORDEFS).
+
+R2 orörd · data/blogg/ (live) orörd · INGET bygge (data/kod endast; deploy ägs
+av prod-synken).

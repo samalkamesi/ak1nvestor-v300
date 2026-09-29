@@ -1,0 +1,74 @@
+studio: auto s6-u3 AI-MENTORN +3 förhandsfrågor — peib-slutet: KATEGORISTÄNGNING PRIVATE EQUITY & INVESTMENTBOLAG 18/18: evighetskapitalet (ib-06) + avgiftsmaskinen (pe-08) + utdelningsrekapitaliseringen (pe-09), kedjans 92:a motor (235 monsters, TOTALT 232→235) — modultest NYTT 54/54, kedjetest 333/333, huvudtest 26/26, tsc 0 [fabrik]
+
+Fabriksagent s6-u3 (byggare 3/3, manifest auto-s6-1790670317558). VAL MED
+KLAIM DISK-FÖRST (~08:5x UTC, data/vakten/auto-s6-1790670317558-s6-u3-ansprak.md
+FÖRE byggstart): färsk lagerlucksond _s6u3-mentorlosa.mjs (90 lager, 435
+slug-referenser, 66 mentorlösa av 501) visade exakt TRE lösa i PE/IB —
+ib-06-evighetskapitalet + pe-08-avgiftsmaskinen (u2:s omgång-41-rond-1-val,
+KASSERAT av dem själva och aldrig byggt — deras worklog bokför ytan öppen:
+"vilande anspråk på övergivna ytor gäller inte") + pe-09-utdelnings-
+rekapitaliseringen (spår 5:s nyaste PE-kurs, född 2026-09-29 i d105da81 —
+rs-09-precedensen). Uppdragets +3 = full kategoristängning i ett lager.
+
+LEVERANS: src/lib/ai-mentor-peib-slutet-fragor.ts — TRE källmärkta monsters
+med kursernas EGNA modelltal (maskinellt omräknade i D-fallen):
+(1) EVIGHETSKAPITALET (ib-06 primär; källor pe-06+pe-02+pe-05+ib-05+ib-03+
+km-067+the-intelligent-asset-allocator, 8 st): kapitalets två klockor, tre
+friheter mot tre ofriheter, tidens tre utfall 8 %/år i 40 år — 1,08^40 =
+21,7× · (1,08^10 × 0,90)^4 = 1,943^4 = 14,3× (52 % lägre) · tidsstressad
+1,08^30 × (1,08^9 × 0,80) = 16,1× — panikrummet, fem fällor, protokollets
+fem frågor. (2) AVGIFTSMASKINEN (pe-08 primär; källor pe-02+pe-06+pe-07+
+pe-01+ib-05+rk-16, 7 st): Nordisk Kurs I (påhittad) — fasta hjulet 2 % på
+FÖRBANDET 20/år (år ett: 800 investerat men avgift 20 mot 16), 8 × 20 =
+160 = 16 %, plant läge 840 = −16 %, trappan på 1 700: 1 000 → tröskel 400
+(enkel 5 × 8 %; ränta-på-ränta 1,08^5 = 1,4693 ⇒ 469 — 69 Mkr om
+beräkningssättet) → uppfångst 100 (X = 0,20 × (400 + X) ⇒ X = 100; utan
+60 = 8,6 %) → 200 delade 160/40, carry 140 = exakt 20,0 % av 700, LP
+1 560 + 140 = 1 700 stänger, netto-kvot 140/560 = 25,0 %, clawback 40 tvärs
+vägarna (helfond 140 − 100; deal-för-deal 60 − 20 sex år tidigare).
+(3) UTDELNINGSREKAPITALISERINGEN (pe-09 primär; källor pe-02+pe-03+pe-08+
+st-01+st-02+st-05+ud-08, 8 st): Stenbro/Norra Trä (påhittade) — köp EV
+1 200 = 8,0× EBITDA 150, lån 720 (60 %), EK 480; år 3 EBITDA 180/skuld
+640 = 3,6×; nytt lån 6,0 × 180 = 1 080 ⇒ 440 ut, ränta 41,6 → 70,2,
+täckning 4,33 → 2,56; IRR-magin (exit 1 600 i båda världarna): utan rekap
+−480 → +960 MOIC 2,00/IRR 14,9 %, med rekap −480 → +440 år 3 → +520 år 5
+MOIC 2,00/IRR 18,9 % — +4,0 procentenheter av klockan ensam; riskflyttet
+480 → 40 per hundra, räntedriften +28,6/år, fyra fällor, fem frågor.
+
+KÄLLMÄRKNING (spårets mål): 8+7+8 numrerade 📖 Källor + 8+7+8 kurslänkar +
+3 fragor-knappar per monster + registerdrivna tal VID SVARSTID (PEIB-antal
+18 LIVE + kapiteltal ur registret) — utan API-kostnad.
+
+KÄRNORDSDISJUNKTION (sond _s6u3-karnord.mjs: 2 879 levande kärnord, 4
+kollisioner kurerade + 2 TESTFYND): «vattenfallet»/«carried interest»/
+«carry»/«irr»/«dpi»/«fondlivslängden» → pe-mekanikens KÄRNORD (pe-02:s
+värld — kurserna pe-08/pe-09 äger aritmetiken, lagret nås via tröskeln/
+uppfångsten/fördelningstrappan) · «spärrkonto» → tav-1 mot banksektorns
+«sparkontot» (endast text) · «kostnadstrappan» → ib-05 · «familjekontoret»
+→ agarslut · «refinansieringsmuren» → st-05 · «covenanter» → ks-05 ·
+«extrautdelningar» → ud-08. TESTFYND (H-fallets skuggprober, nya klassen
+"fras-kärnord klyvt av tidigare enords-fångst"): «irr-magin» och «dividend
+recap» STRUKNA som kärnord — frågeorden «irr»/«dividend» klyvs ur fraserna
+och fångas av pe-mekaniken/basens utdelnings-monster FÖRE lagret i kedjan;
+fraserna bärs i TEXT med attribution, dokumenterade i modultestets F-fall.
+
+REGRESSIONSTEST: verktyg/testa-ai-mentor-peib-slutet.mjs NYTT — 54 PASS
+0 FAIL (A×3 kanonisk flerkälls 8/7/8 med primär först · A2 MOTORDEFS-
+position + TOTALT-tak · B18 varianter · C determinism · D01–D20 aritmetik
+maskinell inkl. NPV-lösningarna 14,9 %/18,9 % + gränsvakter + register-
+drivet ×3 + fantomslug ×3 · E24 ingångar · F17 null-gränser · F2 juridik
+båda tre · G16 antistöld · H NULL genom 91 motorer LIVE + H2 · J disjunktion
+mot 90 levande lager · L widget-synk). KEDJETESTET 333 PASS 0 FAIL (92
+motorer / 235 monsters, inventarie peibslutet=3, fall G widget-ordning
+grön). HUVUDTESTET 26/26 (registerparitet 501). tsc 0 (projektbinär,
+exit 0). KVD: data-only — src/ orörd av byggen (INGET npm run build —
+prod-synken äger) · R2 orörd · data/blogg/ (live) orörd · syskonytor
+respekterade (u1:s indexinklusion committrad 0dd978d4; u2:s aterstangning-
+modul på disk ocommittad — deras yta, deras commit).
+
+RIDE-ALONG-BOKFÖRING: u1:s konvergenscommit 0dd978d4 bar mina då på-disk-
+liggande filer (modul + test, bd7cfe04-precedensen); denna kvitto-commit
+bär kurerarna (kärnordsstuk + gränsnotiser + 160/40-formuleringen +
++4,0-pp-formuleringen), MOTORDEFS-rad + TOTALT 232→235 + widget-wiring
+(efter indexinklusion, före aterstangning/marknadsrytm-SIST) + sonder +
+anspråk. [fabrik]

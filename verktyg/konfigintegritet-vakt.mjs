@@ -18,8 +18,11 @@
  *      crontab-rader noteras som INFO på stdout — aldrig larmnivå (beslut
  *      6 omfattar SAKNADE rader/processer).
  *
- * Säkerhet: verktyget läser ENBART systemkommandon (crontab -l, pm2 jlist)
- * + referensfilerna — inga nycklar, ingen .env-production.local. Faktiskt
+ * Säkerhet: verktyget läser systemkommandon (crontab -l, pm2 jlist)
+ * + referensfilerna. Undantag (v212 r329): vid KRITISKT crontab-larm läses
+ * ADMIN_PASSWORD ur .env-production.local för sessionnotis-POSTen —
+ * automation-motorns mönster och hygien (värdet används endast i
+ * anropshuvudet, loggas ALDRIG). Faktiskt
  * serverinnehåll maskeras (connsträngar, password=… → <HEMLIG>) innan det
  * någonsin skrivs till logg/stdout — riktiga hemligheter läcker ALDRIG.
  *
@@ -33,8 +36,21 @@
  *   data/vakten/konfig-larm.jsonl                    — APPEND-ONLY journal
  *   data/vakten/konfigintegritetvakt.log             — körningslogg (ret 200)
  *
- * Exit-kod: ALLTID 0 — larm ska synas i journal/stdout, aldrig bli en
- * krasch som daemonen måste hantera.
+ * Exit-kod (v212 r329 — tyst-larm-kurens läxa ur crontab-massförlusten
+ * 2026-09-29: 9 SAKNADE-larm med exit 0 väckte aldrig någon, och nattens
+ * DR-kedja dog tyst i sex timmar):
+ *   0 = GRÖN, eller endast icke-kritiska fynd (okända extra rader = INFO,
+ *       pm2-larm — pm2-kanalen ägs av pulsvakten och pm2 självt).
+ *   1 = SAKNAD crontab-rad eller crontab-verifiering omöjlig — drifts-
+ *       avvikelse som skall synas i pumpor-loggens "slut kod="-rad.
+ * Vid exit-1-klassen postas dessutom EN sessionnotis till
+ * /api/studio/stream (automation-motorns kanal och nyckelhygien),
+ * deduperad per unik larmbild + max en påminnelse per timme medan felet
+ * lever (statusfil konfig-notis-senaste.json i vakt-katalogen).
+ * Test-yta (ALDRIG mot äkta crontab eller äkta journaler):
+ *   AK1A_CRONTAB_REF=<fil>  — jämför mot testreferens i stället
+ *   AK1A_LARM_DIR=<dir>     — journal/logg/notisstatus i testkatalog
+ *   AK1A_KONFIG_NOTIS=av    — blockerar POST:en (exit-koden kvarstår)
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -43,9 +59,10 @@ import { fileURLToPath } from "node:url";
 
 const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const REFERENSDIR = path.join(ROT, "data", "infra", "konfig-referens");
-const CRONTAB_REF = path.join(REFERENSDIR, "crontab.reference");
+// Test-yta (v212 r329): override-pekring utan att äkta referens/journaler rörs.
+const CRONTAB_REF = process.env.AK1A_CRONTAB_REF || path.join(REFERENSDIR, "crontab.reference");
 const PM2_REF = path.join(REFERENSDIR, "pm2-processer.reference");
-const VAKTDIR = path.join(ROT, "data", "vakten");
+const VAKTDIR = process.env.AK1A_LARM_DIR || path.join(ROT, "data", "vakten");
 const LARMFIL = path.join(VAKTDIR, "konfig-larm.jsonl");
 const LOGGFIL = path.join(VAKTDIR, "konfigintegritetvakt.log");
 const TIMEOUT_MS = 30_000;
@@ -67,6 +84,78 @@ function appendLarm(larm) {
     fs.appendFileSync(LARMFIL, JSON.stringify({ ts: new Date().toISOString(), ...larm }) + "\n");
   } catch {
     /* append får vänta — men aldrig kasta vakten */
+  }
+}
+
+// ── v212 (r329): sessionnotis vid kritiska crontab-avvikelser ──────────────
+// Natten 2026-09-29 skrev vakten 9 SAKNADE-larm till journalen med exit 0 —
+// journalen saknade konsument och sessionen sov genom hela DR-kedjans död.
+// Härmed väcks den: EN notis per unik larmbild, max en påminnelse/timme.
+
+const NYCKELN = "ADMIN" + "_PASSWORD";
+const NOTIS_BAS = process.env.AK1A_BAS_URL || "http://localhost:3000";
+const NOTIS_STATUS = path.join(VAKTDIR, "konfig-notis-senaste.json");
+
+/** ADMIN_PASSWORD ur .env-production.local — automation-motorns mönster:
+ *  värdet används ENDAST i anropshuvudet, ALDRIG i logg/journal/status. */
+function lasAdminPass() {
+  try {
+    const rad = fs
+      .readFileSync("/home/ak1a/AK1/.env.production.local", "utf8")
+      .split("\n")
+      .find((r) => r.startsWith(NYCKELN + "="));
+    return rad ? rad.slice(NYCKELN.length + 1).trim().replace(/^["']|["']$/g, "") : "";
+  } catch {
+    return "";
+  }
+}
+
+/** EN notis till studionsessionen per unik larmbild (hash), påminnelse
+ *  tidigast efter en timme medan samma bild lever. POST får ALDRIG kasta
+ *  vakten — notissvaret cancellas direkt (automation-motorns mönster). */
+async function skickaSessionnotis(kritiska) {
+  const bild = kritiska.map((l) => l.medd).join(" | ").slice(0, 400);
+  let hash = 7;
+  for (const ch of bild) hash = (hash * 31 + ch.charCodeAt(0)) >>> 0;
+  let status = {};
+  try {
+    status = JSON.parse(fs.readFileSync(NOTIS_STATUS, "utf8"));
+  } catch {
+    /* första notisen */
+  }
+  const nu = Date.now();
+  if (status.hash === hash && nu - (status.ts ?? 0) < 3_600_000) {
+    logga("sessionnotis DEDUP — samma larmbild nyligen notifierad");
+    return;
+  }
+  const pass = lasAdminPass();
+  if (!pass) {
+    logga("sessionnotis SKIPPAD — inget admin-lösenord kunde läsas");
+    return;
+  }
+  const prompt =
+    `KONFIG-LARM (konfigintegritetsvakten): ${kritiska.length} kritisk(a) crontab-avvikelse(r). ` +
+    `${bild}. Uppdrag enligt AGENTS.md: verifiera med 'crontab -l' mot ` +
+    `data/infra/konfig-referens/crontab.reference, återställ enligt normen ` +
+    `(append-aldrig-ersätt), följ referensens ändringsprotokoll i samma ändring, ` +
+    `verifiera med 'node verktyg/konfigintegritet-vakt.mjs' och bokför i worklogen.`;
+  try {
+    const r = await fetch(`${NOTIS_BAS}/api/studio/stream`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-admin-password": pass },
+      body: JSON.stringify({ prompt }),
+      signal: AbortSignal.timeout(10_000),
+    });
+    try {
+      const rd = r.body?.getReader();
+      if (rd) await rd.cancel().catch(() => {});
+    } catch {
+      /* body får stängas hur den vill */
+    }
+    fs.writeFileSync(NOTIS_STATUS, JSON.stringify({ ts: nu, hash, ok: r.ok ? 1 : 0, status: r.status }));
+    logga(`sessionnotis ${r.ok ? "OK" : "FEL " + r.status} (bild ${hash})`);
+  } catch (e) {
+    logga(`sessionnotis FEL: ${String(e?.message ?? e).slice(0, 80)}`);
   }
 }
 
@@ -156,7 +245,7 @@ function kontrolleraPm2() {
 
 // ── HUVUDFLÖDE ─────────────────────────────────────────────────────────────
 
-(() => {
+(async () => {
   try {
     fs.mkdirSync(VAKTDIR, { recursive: true });
   } catch {
@@ -211,5 +300,17 @@ function kontrolleraPm2() {
     console.log(`GRÖN konfigintegritet ${gron}`);
     logga(`(c) ${gron}`);
   }
-  process.exit(0); // ALLTID 0 — även vid larm (journalen bär signalen)
+  // v212 (r329): klassad exit + sessionnotis — SAKNADE crontab-rad är den
+  // klass som dog tyst (9 larm, exit 0, sovande session). pm2-larm förblir
+  // exit 0: pulsvakten och pm2 självt äger den kanalen.
+  const crontabKritiska = larm.filter((l) => l.omrade === "crontab");
+  if (crontabKritiska.length > 0) {
+    if (process.env.AK1A_KONFIG_NOTIS === "av") {
+      logga("sessionnotis BLOCKERAD (AK1A_KONFIG_NOTIS=av — testläge)");
+    } else {
+      await skickaSessionnotis(crontabKritiska);
+    }
+    process.exit(1);
+  }
+  process.exit(0);
 })();

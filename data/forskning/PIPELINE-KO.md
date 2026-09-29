@@ -561,3 +561,13 @@ Nästa i kön (händelsestyrda): nattens G2/G5-kvitton 02:30–06:27 UTC 29/9 (7
 | v205 | NATTEMOTTAGET G2/G5 (7 spårkvitton) | ✓ LEVERERAD r328 — 6/7 uteblivna: rot = crontab-massförlust (desk-installatör ersatte crontaben efter 28/9 16:12Z; u5-filerna i /tmp är beviset) · KUR: crontab 11 rader återställd + referens rad 10–11 (desk) + RPO-täppning manuell (appdump/moln/kedja1, kvitton /tmp/r328-*.log) · vakt GRÖN 9/9 |
 | v212 | CRONTAB-SÄKRINGEN: (a) tyst-larm-kur — SAKNADE crontab-rad ⇒ exitkod 1 + sessionnotis (idag: 9 larm kod 0, hjärtat sov); (b) automationsmotor beslut 6 ⇒ APPLICERA crontab.reference vid drift (auto-läkning av massförlust); (c) installatörsprotokoll append-aldrig-ersätt mekaniskt (t.ex. crontab-skrivarverktyg med inbyggt skydd); (d) AGENTS.md:s serverrad (Contabo→SSD Nodes 208.87.129.108) — styrelserondsbeslut | BOKAD |
 | v211 | SOFT-404-KUREN (se r327) | BOKAD (oförändrad) |
+
+
+## ROND 329 [organ:Φ] (2026-09-29) — v212(a) tyst-larm-kur LEVERERAD; (b)(c) kvar; AGENTS.md-rad bordlagd till 07:43Z-ronden
+
+| Post | Innehåll | Status |
+|---|---|---|
+| v212(a) | Tyst-larm-kur: SAKNADE crontab-rad ⇒ exit 1 + sessionnotis (dedup 1/h, automation-kanal) | ✓ LEVERERAD r329 — konfigintegritet-vakt.mjs klassad exit + skickaSessionnotis; testad båda vägarna (GRÖN 11/11 exit 0 · RÖD exit 1, _r329-test.mjs); driftbevis: första :x9 efter push |
+| v212(b) | Auto-applicering: automation-motor beslut 6 ⇒ applicera crontab.reference vid drift (massförlust självläker) + utred dubbelkanal-gränssnittsvakten (crontab-rad 2 + pumpor-rop) | BOKAD |
+| v212(c) | Installatörsskydd: crontab-skrivarverktyg med append-aldrig-ersätt + referens-i-samma-ändning mekaniskt | BOKAD |
+| v212(d) | AGENTS.md:s serverrad: Contabo → SSD Nodes 208.87.129.108 (v190/r282) — teknisk korrigering, styrelsen beslutar | BORDLAGD 07:43Z-ronden |

@@ -18914,3 +18914,31 @@ AGENTS.md:s Contabo-rad (5.189.162.162) behöver uppdatering (notis till styrels
 **v205-status:** ✓ LEVERERAD (7/7 spår nu belysta: 6 uteblivna + kur + manuell
 eftersläpning; rop-hälsans daemon-kanal lever). Gränssnittsvakten 07:17Z-körning är
 första automatiska beviset på återställd crontab.
+
+## ROND 329 [organ:Φ] (2026-09-29 ~06:45–06:55 UTC) — v212(a) TYST-LARM-KUREN LEVERERAD OCH BEVISAD
+
+**LEVERANS:** verktyg/konfigintegritet-vakt.mjs kuras — klassad exit + sessionnotis.
+Nattens läxa (9 SAKNADE-larm med exit 0, journal utan konsument, sovande session genom
+DR-kedjans död) är mekaniskt stängd: SAKNAD crontab-rad / crontab-verifiering omöjlig ⇒
+**exit 1** (syns i pumpor-loggens "slut kod="-rad; pumpor-hundvakten kan bevaka den) +
+**EN sessionnotis** till /api/studio/stream (automation-motorns kanal: x-admin-password
+ur .env-production.local, samma hygien — värdet loggas ALDRIG), deduperad per unik
+larmbild + max en påminnelse/timme (statusfil konfig-notis-senaste.json). pm2-larm
+förblir exit 0 (pulsvaktens bord). Test-yta: AK1A_CRONTAB_REF / AK1A_LARM_DIR /
+AK1A_KONFIG_NOTIS=av — vakten testas ALDRIG mot äkta crontab.
+
+**BEVIS (verktyg/_r329-test.mjs):** syntax OK · GRÖN-vägen: crontab 11/11 + pm2 4/4 ⇒
+exit 0 (första 11/11-kvittot — r328:s desk-referensrader i full synk) · RÖD-vägen
+(testreferens + rad som aldrig finns): SAKNAD-rad larmas, notis BLOCKERAD-rad loggas,
+**exit 1**. Pumpor-säkerhet: kör() loggar endast exit-koder — exit 1 startar inga
+omstarter (bevisat i daemonkällan).
+
+**STYRELSE-BOKNING (07:43Z-ronden beslutar):** AGENTS.md:s serverrad är inaktuell —
+prod är SSD Nodes 208.87.129.108 sedan v190-cutovern (r282), AGENTS.md skriver fortfarande
+Contabo 5.189.162.162. Teknisk faktakorrigering (ej R2) men dokumentet är sannings-
+hierarkins topp — styrelsen beslutar uppdateringens formulering och tidpunkt.
+
+**PÅGÅENDE BELOPP:** 07:17Z-gränssnittsvaktskörningen = första automatiska beviset på
+den återställda crontaben (pollas nästa rond; bi-notis: gränssnittsvakten har dubbla
+kanaler — crontab-rad 2 + pumpor-rop min==17 tim%6==1 — dubbelkörningen utreds vid
+v212(b)). Driftbevis för nya vakten: första :x9 efter push (kompilerad för 06:59Z).

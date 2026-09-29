@@ -29055,5 +29055,104 @@
         -2275000000
       ]
     }
+  },
+  {
+    "ticker": "VIE.PA",
+    "namn": "Veolia Environnement S.A.",
+    "bransch": "industri",
+    "land": "Frankrike",
+    "valuta": "EUR",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-29",
+        "url": "https://stockanalysis.com/quote/epa/VIE/ (+ /statistics/ + /financials/ + /financials/balance-sheet/ + /financials/cash-flow-statement/)",
+        "paranoid": "Euronext Paris-primärnotering, S&P Global Market Intelligence-underlag, close 2026-09-28 CET (fördröjd slutnotering vid hämtningsläget, SAMPO-precedensen): pris 31,09 EUR/22,77 mdr EUR (aktier 732,35 M; replik 31,09×732,35 = 22 769 M EXAKT); STATISTICS-panelen bär multiplarna: P/E 17,99 trailing mot forward 12,41 ⇒ prognosTillvaxt +44,96 % implicit (normaliseringsgap — källans EGEN 3-års EPS-prognos +8,28 %/år dokumenterad som kontrast-not, ASML-precedensens klass); PEG 1,32 källans fält (protokollet), spårets peg-konvention pe÷prognos = 0,40 dokumenterad i protokollet med källans fält som primär (industri-familjens AIR.PA-notering bär spårvägen; skillnaden enbart den stora implicita normaliseringen); P/B 1,69 (replik mcap÷totalt EK 13 264 = 1,72 på års-slutet, källans fält bärs); EV/EBIT 13,80 (replik EV 49 660÷(7,87 %×44 541) = 14,16 — källans fält bärs, troligen normaliserat EBIT-fönster; EV 49,66 mot mcap 22,77 + nettoskuld 19,37 = 42,14 ⇒ differens ~7,5 mdr € bär minoritetsintressen + pensionsåtaganden, fransk koncessionsstruktur); netto 2,59 % = 1 153÷44 541 TTM EXAKT (financials-sidans eget TTM-fält; statistics 2,79 % = annan EPS-bas, avvikelsen dokumenterad); FCF POSITIV (kontrast mot nyttovalt-elbolagens samtliga negativa): fcfYield 9,55 % = 2 175÷22 770 EXAKT, fcfMarginal 4,88 % = 2 175÷44 541 EXAKT; brutto 17,86 % enbart TTM i källan (ingen 5-årig bruttovinstserie ⇒ moat-fält null, NEE-precedensen); skuld/EK 2,50 källans fält (replik 29 517÷13 264 = 2,23 på års-slutet — källans snitt-/justerade bas, fältet bärs); räntetäckning 3,69; ROE 13,43 % ROIC 4,87 % (S&P-bearbetade baser med minoritetsjusteringar — replikerna avviker, fälten bärs); utdelning 1,50 EUR (4,83 %) payout 97,67 % av vinsten MOT FCF-payout 50,51 % (definitionsnoten dokumenterad); beta 0,99; 52-v 27,69–37,66; 203 100 anställda; analytiker Buy 39,56 EUR (17 st); nästa rapp 2026-11-05; branschfältet industri = källans Sector Industrials/Industry Waste Management (S&P; KLASSNINGSFYNDET: vardagligt 'utility' men GICS/S&P bär Industrials→Environmental & Facilities Services — Keyence-precedensen primärkällan vinner, raden landar i industri som branschens FÖRSTA avfallshantering-rad); FY kalenderår; seriens stegetapp 2021→2022 (oms 28,5→42,9 mdr) bär Suez-fusionen (slutförd 2022) — endpoint-CAGR dokumenteras som fusionseffekt i protokollet"
+      }
+    ],
+    "hamtat": "2026-09-29",
+    "pris": 31.09,
+    "marknadsKapitalMdr": 22.77,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.1171,
+      "resultatCAGR5ar": 0.2923,
+      "omsattningTillvaxtTTM": -0.002,
+      "prognosTillvaxt": 0.4496
+    },
+    "lonksamhet": {
+      "roe": 0.1343,
+      "roic": 0.0487,
+      "bruttoMarginal": 0.1786,
+      "ebitMarginal": 0.0787,
+      "nettoMarginal": 0.0259,
+      "fcfMarginal": 0.0488
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 2.5,
+      "rantaTackning": 3.69,
+      "fcfPositivaSenaste5": null,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": null,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": null,
+      "bruttoMarginalSpread5ar": null,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 17.99,
+      "pb": 1.69,
+      "evEbit": 13.8,
+      "peg": 1.32,
+      "fcfYield": 0.0955,
+      "egenKapitalMultipl": 1.69
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        28508000000,
+        42885000000,
+        45351000000,
+        44692000000,
+        44396000000
+      ],
+      "resultat": [
+        404300000,
+        716000000,
+        937000000,
+        1040000000,
+        1128000000
+      ],
+      "egetKapital": [
+        12770000000,
+        14867000000,
+        14702000000,
+        15306000000,
+        13264000000
+      ],
+      "fcf": [
+        1418000000,
+        1364000000,
+        1865000000,
+        2073000000,
+        2097000000
+      ]
+    }
   }
 ]

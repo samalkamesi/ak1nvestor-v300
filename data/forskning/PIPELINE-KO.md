@@ -617,3 +617,13 @@ Nästa i kön (händelsestyrda): nattens G2/G5-kvitton 02:30–06:27 UTC 29/9 (7
 |---|---|---|
 | v211-fönstret | 09:37-bygget suddade .meta-märkningen (byggde utan ad39ed97 som fastnat i pushkö bakom updateInstead) | ✓ LÄKT r335 — om-märkt 8/8; jungfrulig slug bevisar 404; långpollare (5 h) levererar postbuild-committen vid rent fönster |
 | r336 BOKAD | ISR-omrenderingens meta-beteende efter revalidate (bevaras 404-markering?) | sonder Ericsson-slugen efter >1 h |
+
+
+## ROND 339 [organ:Φ] (2026-09-29) — v211:permanent i kod; tre bokningar framåt
+
+| Post | Innehåll | Status |
+|---|---|---|
+| v211:permanent | FRAMTIDS-404-gren i src/proxy.ts (L3-barriären; L1 postbuild + L2 cron-vakt lever) | ✓ LEVERERAD I KOD r339 (54912f0c) — driftbevis väntar deploy |
+| r340 BOKAD | Bygg under flock när pushkön landat + DRIFTBEVIS: framtids-slug ⇒ 404 MED Server-Timing-signatur (proxy-vägen, ej .meta), kontrollpost + publicerat inlägg ⇒ 200, prod 200 | nästa iteration |
+| r341 BOKAD | Vaktkvitto 13:17-cronsvepet (180 kombinationer mot aktuellt träd) + systemkoll: cron-vaktens loggfönster (första */10-varven) | efter r340 |
+| r342 BOKAD | S7-familjens emottag: o562/o563/o564-domerna när deras eftervakter landar (adoptera dom-JSON:er enligt deras commit-meddelanden) | löpande |

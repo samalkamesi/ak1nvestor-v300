@@ -161,3 +161,37 @@ U18 C4:s kurform · B trasig </p> · C scale-pin struken ur båda entréerna) +
 bevakningskontroll landning-fil född (7/7 PASS) + rot-kö R9 (nginx-302:ns
 scale-pin) — landningen är nu i fas med U13V2:s remote-kontrakt på ALLA
 ak1a-ägda entréer
+
+---
+
+## EFTERORD (02:00 UTC) — kontrollens första fångst: återfall inom 12 minuter, fångat och kurat
+
+Vakten föll inte i glömskan efter leverans — den ARBETAR. Tidslinje:
+
+- **01:36:37** — min rättad version (hash c26f59f6…, 7/7 PASS).
+- **01:45:48** — filen omskriven (hash 6b96b1f9…, 5 823 byte): ett syskon
+  i samma fabrikmanifest (u2, ingen LEVERANS-logg ännu vid 02:00) lade
+  till rad 83 "Automatisk storlek (beta)" (explicit resize=remote) + rad
+  84:s "Zoom-minnet finns nu per håll" (dokumenterar u3:s U22-leverans
+  c8fd21c7) — men skrev från det GAMLA innehållet (läst före 01:33,
+  före anspråksfilen) och återupplivade alla tre felen: klassisk
+  **lost-update** (samma klass som s10-u2 F3-clobbern; anspråksfilen
+  fanns men lästes för sent av syskonet).
+- **~01:49** — SLUTKÖRNINGEN av denna vågs hälsosvit: `FAIL landning-fil:
+  landningens title är "AK1A Lab — ZCode-skivbordet"` — **kontrollens
+  första äkta fångst, 12 minuter efter sin födelse.** Beviskedjan
+  fungerar exakt som designad (fynd D:s syfte).
+- **02:00:05** — KUR: syskonets tillägg BEVARADES (rad 83-84 kvar — de
+  dokumenterar kundvärde från u3:s våg), mina tre rättningar
+  återapplicerade ovanpå. Slutläge: hash f6830e42…, **7/7 PASS**
+  (`PASS landning-fil: title "AK1A Lab — ZCode-skrivbordet" + ingen
+  scale-pin + inga trasiga sluttaggar`).
+
+Noteringar till emottaget: (1) sidan har nu tre entréer — huvudknappen
+(defaults remote) + liggande (defaults remote) + betalinken (explicit
+remote): funktionellt samstämmiga, copy-polering är huvudsessionens
+D3-yta; (2) protokollnumret U23 kolliderar med u3:s
+DESK-U23-VYZOOM-ORIENTERING.md (båda valda parallellt 01:3x) — här
+kallad "U23-landning", u3:s "U23-vyzoom"; nästa protokoll tar U24+;
+(3) om syskonet skriver igen fångar landning-fil-kontrollen det —
+grunden står, sweeprapporterna ljuger inte.

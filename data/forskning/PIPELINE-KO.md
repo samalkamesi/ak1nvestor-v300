@@ -552,3 +552,12 @@ Nästa i kön (händelsestyrda): nattens G2/G5-kvitton 02:30–06:27 UTC 29/9 (7
 | v207 | PREFETCH-EFTERMÄTNING (1,35 MB-motorbuntar borta ur vanlig sidlast) | BOKAD — INSTRUMENTFYND r327: prefetch syns ej i serverad HTML (runtime-fenomen); kräver browser/motor-mätning (Browser Use eller prestanda-mätverktyg); baslinje: startsida 19 buntar/965 kB |
 | v211 | SOFT-404-KUREN: framtida blogg-platser (idag 3 Q3-slugar × 3 språk) serveras HTTP 200 + 404-skal — .meta saknar status i Next 16.3.6; designen (platser vid byggtid för S2-autopublicering utan deploy) är RÄTT, statuskoden är felet | BOKAD — kur-alternativ: (a) middleware sätter 404 vid notFound-platser, (b) plats-exklusion + acceptera deploy-per-publicering (bryter S2), (c) Next-uppgraderingsutredning; beslut nästa dedikerade rond |
 | v205 | NATTEMOTTAGET G2/G5 (7 spårkvitton 02:30–06:27 UTC) | PÅGÅR — fönstret löpt; kvitton läsas nästa rond (denna rond ägdes av läckesutredningen) |
+
+
+## ROND 328 [organ:Φ] (2026-09-29) — v205 LEVERERAD med eskalering; v212 crontab-säkringen bokad
+
+| Våg | Innehåll | Status |
+|---|---|---|
+| v205 | NATTEMOTTAGET G2/G5 (7 spårkvitton) | ✓ LEVERERAD r328 — 6/7 uteblivna: rot = crontab-massförlust (desk-installatör ersatte crontaben efter 28/9 16:12Z; u5-filerna i /tmp är beviset) · KUR: crontab 11 rader återställd + referens rad 10–11 (desk) + RPO-täppning manuell (appdump/moln/kedja1, kvitton /tmp/r328-*.log) · vakt GRÖN 9/9 |
+| v212 | CRONTAB-SÄKRINGEN: (a) tyst-larm-kur — SAKNADE crontab-rad ⇒ exitkod 1 + sessionnotis (idag: 9 larm kod 0, hjärtat sov); (b) automationsmotor beslut 6 ⇒ APPLICERA crontab.reference vid drift (auto-läkning av massförlust); (c) installatörsprotokoll append-aldrig-ersätt mekaniskt (t.ex. crontab-skrivarverktyg med inbyggt skydd); (d) AGENTS.md:s serverrad (Contabo→SSD Nodes 208.87.129.108) — styrelserondsbeslut | BOKAD |
+| v211 | SOFT-404-KUREN (se r327) | BOKAD (oförändrad) |

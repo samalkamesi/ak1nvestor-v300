@@ -18885,3 +18885,32 @@ trädet vid nästa gröna poll (fabrikens s4-manifest aktiv, VÄNTAR-FABRIK-sekv
 
 **Verktyg:** _r325-familjen (ingrepp/truth), _r326-familjen (byggsond/deployvakt),
 _r327-familjen (sond 1–8 + detta landa-skript) — 14 skript committade.
+
+## ROND 328 [organ:Φ] (2026-09-29 ~06:2x–06:4x UTC) — v205 ESKALERAT OCH KURAT: CRONTAB-MASSFÖRLUSTEN (nattens DR-kedja dog)
+
+**FYND (v205-morgonemottaget):** 6 av 7 G2/G5-spår uteblivna på 29/9-schemat (kedja 1
+supabase-dump, moln-export, app-dump, döda länkar, beroendevakt, rop-hälsa; natt-TBT
+sist 28/9 01:28Z). ROT: användar-crontaben var ERSATT av endast 2 desk-rader —
+referensens 9 rader borta. BEVIS-KEDJA: u5-installatörens /tmp/crontab-ak1a-u5-{backup,
+ny,efter}.txt visar FRISKT LÄGE 28/9 16:12:37Z (10 rader, append+koll) — massförlusten
+skedde EFTER det av en senare desk-installatör (r315:s desk-läkare i ny form
+/home/ak1a/desk-lakare + v201-u3:s login-backup-rad): ERSÄTT i stället för APPEND,
+utan referensuppdatering.
+
+**KUR (verkställd 06:27–06:29Z):** crontab återställd till 11 rader (referensens 9 +
+desk 2; kedja 1:s lösenordslösa anslutningssträng belagd ur u5-backupen) ·
+konfigintegritetsvakten GRÖN 9/9 (2 okända INFO) · ändringsprotokollet följt: desk-
+raderna APPENDADE till crontab.reference (rad 10–11, blindhetsklass G1) · RPO-TÄPPNING
+manuellt: appdump (aufr → db-app-2026-09-29) + moln-export + kedja 1 (rkaq →
+db-2026-09-29) detacherade med kvitto-loggar /tmp/r328-*.log.
+
+**FYND-KLASSER bokade som v212:** (1) TYST-LARM — vakten larmade 9 SAKNADE rader med
+exitkod 0 utan sessionnotis (hjärtat väcktes aldrig); SAKNADE crontab-rad = kod 1 +
+notis. (2) INSTALLATÖRSFÄLLAN — append-aldrig-ersätt + referens-i-samma-ändring skall
+mecaniskt förhindras (automationsmotorns beslut 6 = applicera referensen vid drift).
+(3) AGENTS.md-INAKTUALITET — prod är SSD Nodes 208.87.129.108 sedan v190 (r282);
+AGENTS.md:s Contabo-rad (5.189.162.162) behöver uppdatering (notis till styrelseronden).
+
+**v205-status:** ✓ LEVERERAD (7/7 spår nu belysta: 6 uteblivna + kur + manuell
+eftersläpning; rop-hälsans daemon-kanal lever). Gränssnittsvakten 07:17Z-körning är
+första automatiska beviset på återställd crontab.

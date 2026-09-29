@@ -112,3 +112,15 @@
 # användar-crontaben (crontab -l, ingen användarkolumn).
 # OBS 2: pumporna (hjärtslag, ronder m.m.) schemaläggs av pm2-processen
 # ak1a-pumpor — de ska INTE ligga här (dubbelkörningsrisk).
+
+# ── Rad 10: desk-läkaren var 30:e minut (v198-u5+r315: halsa var 30:e min; 2 fel
+# i foljd => restart zdesk-zcode via vitlistad sudo; journalfors i desk-halsa.log)
+# Tillagd i referensen r328 (2026-09-29): raden installerats i crontaben av
+# desk-spåret men bokfördes aldrig här (samma blindhetsklass som G1) — och
+# crontab-massförlusten r328 (se worklog ROND 328) visade att referensen är
+# återställningskällan: ALLA aktiva crontab-rader MÅSTE finnas här.
+*/30 * * * * /home/ak1a/desk-lakare >> /home/ak1a/desk-halsa.log 2>&1
+#
+# ── Rad 11: loginpersistens-backup 03:47 lokal, dagligen (v201-u3 DESK-U7;
+# keep 7; fritt fönster efter natt-TBT 03:27, före döda länkar 04:17) ──
+47 3 * * * /home/ak1a/desk-login-backup/spara-login.sh >> /home/ak1a/desk-login-backup/cron.log 2>&1

@@ -591,3 +591,12 @@ Nästa i kön (händelsestyrda): nattens G2/G5-kvitton 02:30–06:27 UTC 29/9 (7
 | gränssnittsvakten | 07:17Z-svepets rapport: 180 kombinationer 0 fynd, status ok | ✓ GRÖN — standby-målet "vakten till 0 fynd" kvitterat (granssnitt-2026-09-29T074627.json) |
 | v211 | SOFT-404-kuren (r327:s bokning) | NÄSTA i kön |
 | v207 | Prefetch-eftermätning (runtime-instrument) | BOKAD |
+
+
+## ROND 332 [organ:Φ] (2026-09-29) — v211 SOFT-404-KUREN LEVERERAD: postbuild-märkning, 8/8 skarpt bevisade
+
+| Post | Innehåll | Status |
+|---|---|---|
+| v211 | Soft-404-kuren: verktyg/marke-framtids-404.mjs (postbuild i package.json) märker "status": 404 i .meta för opublicerade bloggplatsers statiska platser; ISR-vakningen bevarad (publiceringsdagen ⇒ omrendering ⇒ 200 automatiskt) | ✓ LEVERERAD r332 — skarpt bevisad: 8/8 framtids-slugar (hela Q3-familjen) äkta 404 direkt efter märkning, kontroll 200, ingen omstart krävd |
+| v211-rest | /en/ + /ar/-speglarnas on-demand soft-404 (inga statiska platser att märka) | BOKAD — mindre klass (innehållslösa skal, ingen läcka); kurbehov utreds om sökrapport visar indexering |
+| v207 | Prefetch-eftermätning (runtime-instrument) | BOKAD (nästa) |

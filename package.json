@@ -6,6 +6,7 @@
     "dev": "next dev -p 3000",
     "prebuild": "node verktyg/ram-grind.mjs --min 1600 --tak 900",
     "build": "next build",
+    "postbuild": "node verktyg/marke-framtids-404.mjs",
     "start": "next start -p 3000",
     "lint": "eslint .",
     "og": "node scripts/og-generate.mjs"

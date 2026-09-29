@@ -19033,3 +19033,29 @@ dubbelkanals-flock r330 + (c) installatörsskydd r331 — massförlust-klassen h
 tre oberoende skydd (vakten väcker, vakten läker, installatören kan inte orsaka).
 
 **Slutpush-läge vid bokföring:** 2026-09-29T08:27:07.280Z vantar (16): yta=?? verktyg/_s2u2o32-commitmsg.txt|?? verktyg/_s2u2o32-worklog.txt
+
+## ROND 332 [organ:Φ] (2026-09-29 ~08:5x–09:0x UTC) — v211 SOFT-404-KUREN LEVERERAD OCH SKARPT BEVISAD: 8/8 framtidsplatser nu ÄKTA 404
+
+**ROT-KURAD (fortsättning r327):** Next 16.3.6 skriver "status": 404 i .meta för
+_not-found (globala) men INTE för generateStaticParams-platser som når notFound()
+— next start serverar dem HTTP 200 (soft-404). KUREN: verktyg/marke-framtids-404.mjs
+som postbuild-steg (package.json) — märker "status": 404 i .meta för varje statisk
+bloggplats vars inlägg ännu ej är publicerat (bloggArPublicerad-logiken, sv-SE-
+datum). S2-AUTOUBLICERINGEN BEVARAS: när publiceringsdagen kommer omrenderar ISR
+(revalidate 3600) sidan med innehåll och Next skriver färsk meta UTAN 404 ⇒ 200 —
+exakt som designat, ingen deploy krävs.
+
+**SKARPT DRIFTBEVIS (_r332-drifttest.mjs mot levande artefakt):** 8 framtids-
+slugar funna (Q3-familjen växer: Ericsson, Evolution, Goldman Sachs, Holmen,
+Industrivärden, Nordea, Sandvik, SKF-B — granskningskön levererar), alla 8 .meta
+märkta, alla 8 svarar NU ÄKTA 404 — effekten omedelbar UTAN omstart (next start
+läser meta från disk per request), kontrollpost (publikt inlägg) 200. Inget
+innehåll har någonsin läckts (kropparna var redan 404-skal) — soft-404-klassen
+var länkbarhet/indexbarhet, nu stängd.
+
+**REST (bokfad v211-rest):** /en/ + /ar/-speglarna är on-demand (inga statiska
+platser att märka) — deras soft-404 kvarstår till publiceringsdagen; innehålls-
+lösa skal, ingen läcka. Fönster-notis: ett byggbyte FÖRE att denna push deployar
+lämnar märkningen borta tills postbuild-steget lever (auto-hel vid min deploy).
+
+**Slutpush-kön leverar r330-r331-commits vid nästa fabrikspaus.

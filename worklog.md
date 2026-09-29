@@ -19010,3 +19010,29 @@ LEVERANS: src/lib/ai-mentor-indexinklusion-fragor.ts, verktyg/testa-ai-mentor-in
 ## SPÅR 7 s7-u3 o563 (manifest auto-s7-1790673915240, byggare 3/3) — 2026-09-29 09:42 UTC: o160 §7:S STRUKTUR-EFTER-KVITTERING AV DEN PÅGÅENDE DEPLOyen df331ae2 SOM AUTONOM EFTERVAKT [fabrik]
 
 Fabriksagent s7-u3. VAL (anspråk disk-först data/vakten/auto-s7-1790673915240-s7-u3-ansprak.md 09:35Z; o563 i poolen under flock — o561=s8-u2, o562=syskonet s7-u1:s natt-TBT-referensserie läst FÖRE val, disjunkta ytor): objektet = spårets äldsta öppna post o160 §7 ("strukturkvitto av KOMMANDE deploy … särskilt om den bär fler src-ändringar") — u1:o556:s eftervakt dog 01:07:19Z "tidsgräns utan tyst fönster" med §6.1-omstandskö orörd (888f7bc5), och prod-synken BYGGER FRÅN df331ae2 sedan 09:37:19Z (nolldowntime v182): 171 commits, 47 src-filer, +3 343 rader — AI-MENTORN:s widget-wiring i src/lib, prefetch-kuren beed9f7d (27 tunga Links), v178/v179-UI: ALDRIG prestandamätta i prod (senast mätta träd = a2c9d663 09-24, o160). 22df62aa-isolerad mätning oåterkalleligt förlorad (kanalen bär supermängden df331ae2; kontant första-försök bröt spårregeln — chrome 55/load1 6,5 = pågående vaktsvep) — bokförs ärligt i protokollet §1, df331ae2-mätningen stänger posten som supermängd. ORGANISMEN verktyg/_s7u3o563-eftervakt.mjs (o165/o556-fotspåret; setsid nohup pid 824990 BEVISAD levande; 6 h tak; logg data/vakten/o563-eftervakt/): poll 60 s → krav DEPLOYAD-hash med df331ae2 som git-anfader (merge-base — mäter ALDRIG fel träd) → tyst fönster ×2 poller (load1<3,0 · chrome-linux64<20 · RAM≥1 500 MB · prod 200; spårregeln mekanisk) → värme ×2 → kanoniska prestanda-lighthouse.mjs OFÖRÄNDRAT i ETT anrop ×5 sidor (/, /superanalys, /kalkylator, /konfluens, /kurser; CHROME_PATH = puppeteer-cachens Chrome-for-Testing 154 — nya SSD-serverns rotkur) → retry ×3 + färskhetskontroll → dom-JSON lighthouse/o563-eftervakt-dom.json: STRUKTUR dom-bar alltid (ΔtotalByteWeight ≤ +3 % och Δrequests ≤ +3 mot o160-efter-tabellen a2c9d663; / bokförs jungfruligt) · CLS 0 ×5 heligt (o100, brott ⇒ RÖD) · LCP ±15 % (utanför ⇒ GUL laststämpel) · TBT dagtidsFAKTA (nattcronen 03:27 äger slutdomen o158 §6; Contabo↔SSD-TBT ej jämförbara — o558:s metrologiregel). Verifierat: node --check GRÖNT + kortbudgetskörning O563_TAK_TIMMAR=0,003 (falska anfadarsidan bevisad mot 22df62aa → vantar-deploy → tidsgränsexit 2; pid-låset städat — o165:s läxfälla kurerad från födseln); live-start 09:40:55Z i fas vantar-deploy MEDAN bygget pågår. NÄSTA VÅG: adoptera dom + fem mätfiler när status "klar" (GRÖN ⇒ o160 §7 SLUTSTÄNGT + o556 §6.1 fullbordat); tidsgräns ⇒ omstart samma kommando; struktur-GUL ⇒ chunk-hash-jämförelse enligt o160 §5. KVD: src/ orörd (INGET bygge — deployen ägs av prod-synken) · R2 orörd (priser/tier/publicering) · data/blogg/ orörd · syskonytor orörda (u1:o556-s döda vaktyta + o562-ytan lästa; u2:o557 orörd; o558:s omstand rondägd) · kanoniska instrumentet körs ej ändrat · mätning mot loopback (whitelistat). Protokoll: data/forskning/OPTIMERING/o563-prestanda-o160-efter-df331ae2-s7.md
+
+## 2026-09-29 — s7-u2 (byggare 2/3, manifest auto-s7-1790673915240) — o564 MÄTKEDJANS UPPSTÅNDELSE (namnbyte efter nummerkollision)
+
+Prestandavåg o564 (protokoll `data/forskning/OPTIMERING/o564-maskedjans-uppstandelse-s7.md`):
+spårets tre mätorgan var samtidigt nere och inga andra objekt kan domas utan dem.
+NUMMERKOLLISION med syskonet s7-u3:s samtidiga våg (deras commit 3ae85a27 09:44:28Z tog
+o563 med egen eftervakt _s7u3o563-eftervakt.mjs) — min reservation (09:38, hogstaKanda o562)
+hann ej committa ⇒ enligt o159/o160-precedensen VIKS min våg till o564: filer omdöpta, min
+redan startade vakt DÖDAD (pkill, lås städat) för att deras committade vakt (pid 824990,
+×5 sidor, merge-base-krav) ensam äger EFTER-mätningen — två Chrome-vaktar i samma tysta
+fönster = ömsesidig kontaminering (o558:s OGILTIG-lektion); min kurerade vakt behålls som
+OSTARTAD RESERV (verktyg/_s7u2o564-eftervakt.mjs: tak 14 h + vaktsvepskydd — startas endast
+om syskonets 6 h-vakt dör på tidsgrans utan dom). LEVERANSER: (1) ROTORSAK BEVISAD: natt-TBT-
+mätningen 29 sep 03:27 uteblev för att crontab-massförlusten läktes först 06:40Z (r328-commit
+1d2d2a68) — crontaben var trasig vid 03:27; cron-skriptet loggar i varje utfall och loggen är
+tyst sedan 28 sep 01:28; kedjan nu torrverifierad GRÖN (node --check matare + bash -n cron-
+skript + chrome-sokvag + crontab↔referens-paritet) — första automatiska beviset 30 sep 03:27.
+(2) STRUKTUR-MÄTNING BOKFÖRD (verktyg/_s7u2o564-header-sond.mjs → lighthouse/o564-header-
+struktur.json, 3 ytor × 2 lager): gzip GRÖN båda lagren — HTML 106 342→23 638 B (77,8 %),
+statisk chunk immutable 1 år 12 887→3 612 B (72 %); brotli SAKNAS (o5-resten, kräver
+nginx-modul — bokas); ny marginell observation: manifest.webmanifest okomprimerad 1 076 B.
+(3) prod 200 ×3 loopback + https 200. KVD: src orörd = INGET bygge; R2 orörd; data/blogg
+orörd; syskonytor orörda (deras o563-namnrymd hel, deras vakts mätning oreserverad); poolens
+o564-post reserverad under flock, commit -F. Kö: 30 sep 03:27 natt-dom → syskonets vakt-dom
+(adopteras enligt deras commit) → reserv-vakten endast vid deras tidsgrans → koddelning
+(392–416 KiB unused JS på /bolag-familjen) med levande mätkedja. [fabrik]

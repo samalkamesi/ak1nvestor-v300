@@ -1,0 +1,100 @@
+{
+  "ts": "2026-09-29T09:56:54.502Z",
+  "protokoll": "o564",
+  "sonTyp": "struktur-header",
+  "sidantal": 6,
+  "lager": [
+    {
+      "namn": "next-direkt",
+      "bas": "http://localhost:3000",
+      "statiskChunkHittad": true,
+      "ytor": [
+        {
+          "sokvag": "/",
+          "status": "200",
+          "cacheControl": "s-maxage=3600, stale-while-revalidate=31532400",
+          "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+          "encodingGzipBr": "gzip",
+          "encodingBrOnly": null,
+          "encodingIdentitet": null,
+          "byteRå": 106342,
+          "byteKomprimerad": 23638,
+          "besparningProc": 77.8
+        },
+        {
+          "sokvag": "/_next/static/chunks/0el5nt6-nk2y3.js",
+          "status": "200",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "vary": "Accept-Encoding",
+          "encodingGzipBr": "gzip",
+          "encodingBrOnly": null,
+          "encodingIdentitet": null,
+          "byteRå": 12887,
+          "byteKomprimerad": 3612,
+          "besparningProc": 72
+        },
+        {
+          "sokvag": "/manifest.webmanifest",
+          "status": "200",
+          "cacheControl": "public, max-age=0, must-revalidate",
+          "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+          "encodingGzipBr": null,
+          "encodingBrOnly": null,
+          "encodingIdentitet": null,
+          "byteRå": 1076,
+          "byteKomprimerad": 1076,
+          "besparningProc": 0
+        }
+      ]
+    },
+    {
+      "namn": "nginx-https",
+      "bas": "https://lab.ak1nvestor.com",
+      "statiskChunkHittad": true,
+      "ytor": [
+        {
+          "sokvag": "/",
+          "status": "200",
+          "cacheControl": "s-maxage=3600, stale-while-revalidate=31532400",
+          "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+          "encodingGzipBr": "gzip",
+          "encodingBrOnly": null,
+          "encodingIdentitet": null,
+          "byteRå": 106342,
+          "byteKomprimerad": 23638,
+          "besparningProc": 77.8
+        },
+        {
+          "sokvag": "/_next/static/chunks/0el5nt6-nk2y3.js",
+          "status": "200",
+          "cacheControl": "public, max-age=31536000, immutable",
+          "vary": "Accept-Encoding",
+          "encodingGzipBr": "gzip",
+          "encodingBrOnly": null,
+          "encodingIdentitet": null,
+          "byteRå": 12887,
+          "byteKomprimerad": 3612,
+          "besparningProc": 72
+        },
+        {
+          "sokvag": "/manifest.webmanifest",
+          "status": "200",
+          "cacheControl": "public, max-age=0, must-revalidate",
+          "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+          "encodingGzipBr": null,
+          "encodingBrOnly": null,
+          "encodingIdentitet": null,
+          "byteRå": 1076,
+          "byteKomprimerad": 1076,
+          "besparningProc": 0
+        }
+      ]
+    }
+  ],
+  "dom": {
+    "gzipPåStartsida": "GRÖN",
+    "statiskaChunksImmutable": "GRÖN",
+    "brotli": "SAKNAS (o5-resten — kräver nginx-modul, bokat)",
+    "obs": "Strukturdom giltig dagtid (o160); CPU/TBT-tal ägs av tysta fönster (syskonets o563-eftervakt + natt-cron 03:27)."
+  }
+}

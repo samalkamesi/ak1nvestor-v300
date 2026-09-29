@@ -156,9 +156,21 @@ kontroll(
 );
 kontroll(
   // v183B (r280): o48-mörkret lever ENDAST som fallback — stallningsläget
-  // (disk ≥ tröskel) stoppar ALDRIG pm2
-  "18. npm ci-läget stoppar pm2 endast UTAN stallning (o48-fallbacken) — fönstret ärligt mörkt",
-  kalla.includes("if (npmCiBehov && !stallning) pm2Vakt.stoppa();"),
+  // (disk ≥ tröskel) stoppar ALDRIG pm2. JÄRN-U1 (2026-09-29): fallbacken
+  // är MARKERAD 'MÖRKER-VÄG' + larmar /desk/larm.json — stoppet sker
+  // ALDRIG tyst, och ligger fortfarande FÖRE korBygg.
+  "18. npm ci-läget stoppar pm2 endast UTAN stallning (MÖRKER-VÄG-fallbacken) — markerat + larmat + före bygg",
+  kalla.includes("if (npmCiBehov && !stallning) {") &&
+    kalla
+      .slice(kalla.indexOf("if (npmCiBehov && !stallning) {"), kalla.indexOf("if (npmCiBehov && !stallning) {") + 900)
+      .includes("MÖRKER-VÄG") &&
+    kalla
+      .slice(kalla.indexOf("if (npmCiBehov && !stallning) {"), kalla.indexOf("if (npmCiBehov && !stallning) {") + 900)
+      .includes("skrivMorkerVagLarm(") &&
+    kalla
+      .slice(kalla.indexOf("if (npmCiBehov && !stallning) {"), kalla.indexOf("if (npmCiBehov && !stallning) {") + 900)
+      .includes("pm2Vakt.stoppa();") &&
+    kalla.lastIndexOf("pm2Vakt.stoppa();") < kalla.indexOf("const korResultat = await korByggMedSond()"),
 );
 kontroll(
   "19. bytet nollställer pm2-vakten (markeraLevande — ingen dubbelrestart)",

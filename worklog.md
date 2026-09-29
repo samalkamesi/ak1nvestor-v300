@@ -19398,3 +19398,71 @@ live-verifierade 200/202/200 = inga döda; live kanin-dom --validera-fran
 leveransraden/protokollet §5. Protokoll: data/forskning/OPTIMERING/
 o570-externavaktens-429-morker-s8.md. Kö: 2026-10-06 vilotakens första
 kanin-omprovning (nattcron 04:17 bär den automatiskt). [fabrik]
+### SPÅR 9 s9-u3 3/3 (manifest auto-s9-1790684725192, byggare 3/3) — 2026-09-29 ~12:25–13:3x UTC: SYSTEMKARTAN-dokvåg B7+B9+B13 egenmätta; TRÄD-INCIDENT FÅNGAD OCH BEVISAD: reset 13:12:10 kastade fabrikens timme ur develop [fabrik]
+
+Fabriksagent s9-u3 (byggare). VAL (anspråk disk-först 12:34Z,
+data/vakten/auto-s9-1790684725192-s9-u3-ansprak.md): B7+B9+B13 — tre
+system med 8–9 dagar gamla passningar och färska verklighetsrörelser
+(o565:s syskonlänkskontrakt 09-28 på B7:s yta; cutovern mot B9:s
+cron-drivning; B13:s glidningspost + månadsrond 10-01). Syskonens val
+(u1: E35 tionde passningen; u2: E43+E44) konstaterade disjunkta.
+
+MÄTNINGAR (allt egenhändigt 12:34–13:17Z): B7 — svit EGEN
+testa-bolag-syskon-byggsanning-s8.mjs 22 PASS/0 FAIL exit 0 (R1×11+R2×5+R3×6;
+HTTP-sonden ärligt oinstängd — servern i driftfönster); grindarna i kod
+(byggdSidaFinns sitemap-byggsanning.ts:62 ← bolags-sidor.ts:250, komponenten
+bär harDjupanalys/harForskningsanalys); publiceringscachen 322 slugs =
+universumet, svitens R3f ⊆ .next; data/cache 55 (akm1/2/3/fundamental 0;
+berika 25 dygn stilla sedan 4b98cd15 09-04); Fixtur AB lever bland 101
+akm2_snapshot-rader i nattexporten (o48-gapet, sanering R2). B9 —
+skannern lever POST-CUTOVERN: rad 09-29T05:05:22.162Z, universum 12/12,
+206 impulsvågor/90 korrigeringar, svit EGEN 57/57 exit 0, /vagfundament+
+senaste+vagstatistik 200 (12:40–42Z); RADERAREN LEVER PÅ NYA SERVERN:
+nattexporten 09-29 (185 788 r, fullständig) bär endast dagens rader
+(vagscan 1 · signal 2 · organ 5 · vagvalidering 1) — 09-28:s bevisligen
+skrivna rad existerar ej kvar (raderaren = databas-sidan, serverbytet
+ändrade inget); vagvalidering-cronen SKRIVER events (05:46) men SENASTE-
+rapporten bär 09-04-domar = 25 dygn (Vercel read-only-fs-klassen); CRON-
+BILDEN BYTT SKEPNAD: Contabos /etc/crontab-rader = historia, SSD Nodes
+crontab bär INGEN vagscan-rad (mätt), vercel.json 05:00+05:30, v196-
+motorn aktiv=false (steg 2 = kund, R2-adjacent) ⇒ gamla gap 4-formuleringen
+död, nya läget "enbart Vercel-driven". B13 — univers 322 (skriven i natt
+05:19; +91/9 dygn) mot korstabell-grund 100 r FRUSEN 09-10 = 19 dygn ⇒
+glidningen 131→222 bolag utan rad; sviter EGENA 32/0+50/0; member/
+portfolio 0 lasMedlemSession/107 r; MÅNADSRONDEN (imorgon 10-01 07:00 UTC)
+numera ENBART Vercel-driven — Contabos speglande rad dog med cutovern,
+Vercel-körning kan ej skriva trädets data/cache ⇒ B13+B8:s återfyllning
+riskerar disk-tomhet (KÖ 10-01: mät ronden). DOMAR: B7 LEVER 8, B9 LEVER 7,
+B13 LEVER 8 — alla oförändrade (E33/B14-precedensen; o565 var annans
+leverans, datakedjorna orörda). Snitt 7,4 (u2:s 325/44 inkl E43/E44 — se
+incidenten: talet gäller den återförbara fullständiga kedjan).
+
+**TRÄD-INCIDENTEN (dagens tyngsta fynd, kört till huvudagenten):** kl
+13:12:10 UTC körde en aktör `git reset` av develop till 22df62aa (r295-
+isolatet) — reflog-bevis — vilket kastade FABRIKENS SENASTE TIMME ur
+grenen: s7-u3 3ae85a27 (09:44), s7-u1 8d56cc38 (10:50), s7-u2 949916e2
+(10:00), s8-u3 03bc0b12 (11:43), s8-u2 0297703c (11:52), s8-u1 c74c9a39
+(11:52) + d2b2a019 + push 9c98bb6f + 119848fa (12:22), u2 5a2eaef4
+(12:42), u1 420394bc+1453c0e5 (12:46/47) — SAMTLIGA lever kvar i
+reflog/objektdatabasen men är oåtkomliga ur develop; kartan förlorade
+09-28-sektionerna (C15/A3+E41+E42/E27+B14) + u1:s E35 + u2:s E43/E44,
+worklog förlorade motsvarande rader. Reset:en skedde MITT I prod-synkens
+byggfönster (12:47→, .next-ny) medan pm2 ak1a var errored ↺ 61 sedan
+~12:42 (prod 502; vakterna betedde sig SOM DESIGNAT: pulsvakt
+"omstart-uppskjuten — deploy-kedjan äger pm2-omstarten", kraschvakt
+12:54:29Z "räddning avvaktar"; morgonens 05:56-incident läktes av
+kraschvaktens PM2-RESTART). Misstänkta aktörer: kraschvaktens
+trädåterställning, daemon-friskhet-vakten v195 ("git-log företräde") eller
+prod-synkens synkmekanik mot arbetsytan — ROT-ÄGARE = huvudagenten/drift-
+spåret, dokumenterat här med full beviskedja. ÅTERFÖRING: reflog-posterna
+ovan är hela verktygsuppsättningen (merge/cherry-pick 1453c0e5 eller
+reset tillbaka till 1453c0e5 när deployfönstret stängt — aldrig under
+aktivt lås). Denna dokvågs commit sker MEDVETET på 22df62aa-läget (enda
+stabila läget under fönstret) med incident-notis i sektionen.
+
+KVD: data-only — src/ orörd = INGET bygge · R2 orörd · data/blogg/ orörd
+· crontab ENDAST LÄST · svitkörningar läsande (22/0, 57/57, 32/0, 50/0)
+· prod-sonder läs-endast · deployfönstret respekterat (noll pm2/lås-
+ingrepp; commit i slutfasen när kompileringen var klar) · syskonytor
+orörda · egna mått tidsstämplade 12:34–13:17Z UTC · commit med pathspec
++ -F-fil. LEVERANS: data/forskning/SYSTEMKARTAN.md, worklog.md. [fabrik]

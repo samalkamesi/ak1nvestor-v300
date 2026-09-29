@@ -18714,3 +18714,21 @@ Fabriksagent v206-u1 (byggare, AI-MENTORN: BOKMASTER +2 monsters, manifest v206-
   eller robotens första ÄKTA ärende som levererar självbeviset. Utkast + dump
   rensade/raderade (integritet enligt U14 §8).
 - Desk-hälsan berörs ej av vilolägesbytet (resize-medveten invariant = runtime).
+
+
+### ROND 316 [organ:Φ] — STRÖMMÄTAREN INSTALLERAD I PUMPORNA — 2026-09-29
+
+- PUMPOR-RAD (r316): verktyg/pumpor-daemon.mjs ropar desk-strommatare.mjs var
+  10:e min (min % 10 === 3) — mätgläppet från U15 §7.1 är stängt från nästa
+  landning: varje kundbesök loggar AKTIVA Mbit/s per iface till
+  data/vakten/desk-strommatare.jsonl, tyst kod 0 i vila.
+- INSTALLATIONSBEVAKAREN (_r316-strombevakare, engångs-bakgrundsjobb): väntar
+  in att strömmätare+pumpor-rad landat i AK1 (via v206-slutledets push), tar
+  omstarten av ak1a-pumpor enligt v216-journal-kontraktet (annan kanal <3 min
+  ⇒ vänta; deploylåset fritt) och verifierar daemon-friskheten efteråt —
+  kvitto data/vakten/r316-strominstall-kvitto.json. Daemon-friskhetsglappet
+  hålls < 5 min (v195-kontraktet).
+- Evighetsmotor-rondens övriga läge: v206-slutledet lever och väntar ut
+  fabrikens nattsväp (pid-bevisat); nattens G2/G5-spårkvitton börjar 02:30
+  UTC (v205 morgonronden); v207 (prefetch-eftermätning) + v208 (U6-steg I,
+  omdöpt) + ström-installationen står i kön.

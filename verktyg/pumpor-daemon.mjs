@@ -98,6 +98,7 @@ function tick() {
   if (tim === 4 && min === 41) korEnGang("ra-gallring", "curl", ["-s", "-m", "120", "-H", "Host: lab.ak1nvestor.com", "http://127.0.0.1/api/cron/rapportakademin-gallring"]); // v169: GDPR art 5.1 e — BESLUT 1.2:s automatiska gallring får sin motor (dagligen; idempotent)
   if (tim === 4 && min === 44) korEnGang("scenariotest", "node", ["verktyg/testa-studio-scenarion.mjs"]);
   if (min % 15 === 12) korEnGang("feljagaren", "node", ["verktyg/feljagaren.mjs"]);
+  if (min % 10 === 3) korEnGang("desk-ström", "node", ["verktyg/desk-strommatare.mjs"]); // r316 (U15 §7.1): strömmätaren — tyst kod 0 i vila, aktiva Mbit/s vid kundbesök till data/vakten/desk-strommatare.jsonl
   if (dag === 0 && tim === 3 && min === 33) korEnGang("data-hygien", "node", ["verktyg/data-hygien.mjs"]);
   // Spår 8-vaktinstrumentens triggers (o21/o22/o26-bokningarna, infriade
   // 2026-09-16): ett instrument utan pump-rad är mätblint i drift — o22:s

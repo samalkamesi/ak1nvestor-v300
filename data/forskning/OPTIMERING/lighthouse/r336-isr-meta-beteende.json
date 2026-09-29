@@ -1,0 +1,17 @@
+{
+  "slug": "sa-laser-du-ericsson-q3-2026",
+  "ts": "2026-09-29T11:00:42.002Z",
+  "händelse": "omrendering belagd (.meta-mtime ändrad)",
+  "metaFore": {
+    "status": 404,
+    "mtime": "2026-09-29T10:00:36.744Z"
+  },
+  "metaEfter": {
+    "status": 200,
+    "mtime": "2026-09-29T10:59:35.828Z"
+  },
+  "httpFore": "200",
+  "httpEfter": "200",
+  "fyrtioFyraBevarad": false,
+  "dom": "RÖD — omrenderingen skrev meta utan status 404 ⇒ sidan blir soft-200 igen: VAKANDE LAGER behövs (marke-verktyget cron/på begäran)"
+}

@@ -133,3 +133,8 @@
 # ── Rad 11: loginpersistens-backup 03:47 lokal, dagligen (v201-u3 DESK-U7;
 # keep 7; fritt fönster efter natt-TBT 03:27, före döda länkar 04:17) ──
 47 3 * * * /home/ak1a/desk-login-backup/spara-login.sh >> /home/ak1a/desk-login-backup/cron.log 2>&1
+
+# ── Rad (installatör 2026-09-29T11-25-26-361Z): v211-ISR-vakt r338: om-märker framtids-bloggplatser 404 var 10:e minut (ISR-omrenderingar skriver om .meta till 200 — r336-sondens RÖA dom) ──
+# Tillagd via verktyg/crontab-installera.mjs (append-aldrig-ersätt, v212(c) r331
+# — roten till 2026-09-29:s massförlust var en ersätt-installatör).
+*/10 * * * * cd /home/ak1a/AK1 && node verktyg/marke-framtids-404.mjs >> data/vakten/marke-framtids-404.log 2>&1

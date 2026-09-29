@@ -19001,3 +19001,35 @@ historiken i samma logg (GRÖN fulla svep 26–28/9, UPPSKJUTEN vid nattens
 deploys) intygar cron-kanalens kontinuitet före förlusten. Rapportens
 GRÖN/0-fynd-dom pollas nästa hjärtslag (RAM-grinden kan hålla svepet uppe
 till ~08:30).
+
+## ROND 331 [organ:Φ] (2026-09-29 ~08:22–08:4x UTC) — VAKTEN GRÖN 0 FYND (07:17-svepets dom) + v212(c) INSTALLATÖRSSKYDDET LEVERERAT
+
+**GRÖN-KVITO:** granssnitt-2026-09-29T074627.json — status ok, 180 kombinationer
+(båda teman × mobil/dator), **0 FYND**. Svepet togs av CRON-KANALEN (flockens
+innehavare från 07:17:00; pumpor-kanalen blockerad korrekt) — dubblettbeviset
+ståndar: den återställda crontaben avfyrar själv OCH mäter grönt. Standby-målet
+"vakten till 0 fynd" är kvitterat med färsk rapport.
+
+**v212(c) LEVERERAD — installatörsskyddet (tredje och sista delmålet):**
+1. verktyg/crontab-installera.mjs — DEN SANNA VÄGEN att lägga cron-rader:
+   append-aldrig-ersätt (befintliga rader, kommentarer och okända rader kopieras
+   orörda), backup FÖRE ändring (u5-mönstret mekaniskt), crontab.reference
+   uppdateras I SAMMA ANROP (ändringsprotokollet garanterat), idempotens via
+   radforms-match (platshållare = joker), verifiering efteråt, --torr-läge;
+   test-yta AK1A_CRONTAB_BIN/AK1A_CRONTAB_REF/AK1A_INSTALL_TMP.
+2. agentfabrik.mjs barn-prefix: ny ALDRIG-regel — "ALDRIG crontab <fil>/crontab
+   -r/direkt crontab-skrivning — nya cron-rader ENDAST via crontab-installera.mjs"
+   (våg 162-npm-regelns mönster; massförlustens rot var just ett fabriks-
+   installerat desk-skript).
+3. crontab.reference-huvudet: INSTALLATÖRSPROTOKOLL-block som pekar på verktyget.
+**BEVIS (_r331-test.mjs, hermetiskt):** append-installation (rad + referens +
+backup, kommentar och alla äkta rader bevarade) · idempotens (andra körningen
+hoppar, raden finns exakt 1 gång) · torrkörning (inget skrivet) · båda filerna
+syntax-gröna. (Metodläxa: blockkommentar + cron-schema '*/5' = kommentar-
+avslut i förtid — exempelraden skrivs nu generiskt.)
+
+**v212 är därmed HELT levererat:** (a) tyst-larm-kur r329 + (b) auto-läkning +
+dubbelkanals-flock r330 + (c) installatörsskydd r331 — massförlust-klassen har
+tre oberoende skydd (vakten väcker, vakten läker, installatören kan inte orsaka).
+
+**Slutpush-läge vid bokföring:** 2026-09-29T08:27:07.280Z vantar (16): yta=?? verktyg/_s2u2o32-commitmsg.txt|?? verktyg/_s2u2o32-worklog.txt

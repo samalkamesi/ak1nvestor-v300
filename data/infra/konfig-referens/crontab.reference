@@ -7,6 +7,15 @@
 # Verktyg/konfigintegritet-vakt.mjs jämför varje rad nedan mot `crontab -l`
 # rad-för-rad (var 10:e minut via pumpor-daemonen, min%10==9).
 #
+# INSTALLATÖRSPROTOKOLL (v212(c) r331 — roten till 2026-09-29:s crontab-
+# massförlust var en installatör som ERSATT hela crontaben med sina egna
+# 2 rader; nattens DR-kedja dog tyst i 6 timmar): nya cron-rader läggs
+# ENDAST via `node verktyg/crontab-installera.mjs --rad '...' --beskrivning
+# '...'` — verktyget APPEND:ar (aldrig ersätt), tar backup FÖRE ändring,
+# uppdaterar DENNA FIL i samma anrop och verifierar läget efteråt. Vakten
+# kan dessutom AUTO-LÄKA saknade rader (v212(b) r330). Direkt `crontab
+# <fil>` från skript/barn är FÖRBUDET.
+#
 # REGLER:
 #   · Rader som BÖRJAR med "#" är dokumentation och jämförs ALDRIG.
 #   · Övriga rader = rader som SKA FINNAS i crontab, jämförda ordagrant.

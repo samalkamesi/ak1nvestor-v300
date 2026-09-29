@@ -580,3 +580,14 @@ Nästa i kön (händelsestyrda): nattens G2/G5-kvitton 02:30–06:27 UTC 29/9 (7
 | v212(b) | Auto-applicering: SAKNADE crontab-rader läks append-only ur crontab.reference inom ett :x9 (maskade endast med belagt snapshot-värde; tak 1/bild/h; full läkning ⇒ exit 0 + AUTO-LÄKT-notis) + dubbelkanals-utredning klar: flock i granssnittsvakt-cron.sh (cron-kanal + pumpor-kanal delar sh; sist kommande hoppar tyst) | ✓ LEVERERAD r330 — hermetiskt bevisad i _r330-test.mjs (partiell/full läkning, emulator-crontab, flock, GRÖN-regression 11/11) |
 | v212(c) | Installatörsskydd: crontab-skrivarverktyg med append-aldrig-ersätt mekaniskt | BOKAD (nästa rond-kandidat) |
 | v212(d) | AGENTS.md:s serverrad (SSD Nodes) — styrelseronden 07:43Z beslutar | BORDLAGD |
+
+
+## ROND 331 [organ:Φ] (2026-09-29) — v212(c) LEVERERAD: v212 komplett; vakten GRÖN 0 fynd
+
+| Post | Innehåll | Status |
+|---|---|---|
+| v212(c) | Installatörsskydd: verktyg/crontab-installera.mjs (append+backup+referens-i-samma-anrop+idempotens+--torr) + fabriksprefix-regel + INSTALLATÖRSPROTOKOLL i crontab.reference | ✓ LEVERERAD r331 — hermetiskt bevisad i _r331-test.mjs |
+| v212 | HELA säkringsspåret: (a) tyst-larm r329 + (b) auto-läkning+flock r330 + (c) installatörsskydd r331 | ✓ HELT LEVERERAT — tre oberoende skydd mot massförlust-klassen |
+| gränssnittsvakten | 07:17Z-svepets rapport: 180 kombinationer 0 fynd, status ok | ✓ GRÖN — standby-målet "vakten till 0 fynd" kvitterat (granssnitt-2026-09-29T074627.json) |
+| v211 | SOFT-404-kuren (r327:s bokning) | NÄSTA i kön |
+| v207 | Prefetch-eftermätning (runtime-instrument) | BOKAD |

@@ -580,6 +580,13 @@ function prefix(titel, roll = "byggare") {
     "installation och byggen ägs ENDAV prod-synken/kraschvakten under",
     "/tmp/ak1a-deploy.lock; typkoll = `node node_modules/typescript/bin/tsc --noEmit`",
     "(läser, installerar ej — ALDRIG npx tsc: i deployfönster kan npx lösa tsc till cachens dummy-paket).",
+    // V212(c) r331 (massförlust-roten 2026-09-29): en installatör ERSATT
+    // hela crontaben med sina 2 rader — nattens DR-kedja dog tyst. Barn
+    // får ALDRIG skriva crontab direkt; append-installatören garanterar
+    // backup + referensuppdatering i samma anrop.
+    "ALDRIG `crontab <fil>`/`crontab -r`/direkt crontab-skrivning — nya",
+    "cron-rader ENDAST via `node verktyg/crontab-installera.mjs --rad '...' --beskrivning '...'`",
+    "(append-aldrig-ersätt; verktyget tar backup och uppdaterar crontab.reference i samma anrop).",
     "När du är klar: commit:a DINA filer (git add <dina filer>) och avsluta svaret",
     "med en rad 'LEVERANS: <fil1>, <fil2>, …' — fabriken läser den som kvitto.",
   ].join("\n");

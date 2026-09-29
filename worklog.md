@@ -19299,3 +19299,37 @@ träff — omrenderingsokänslig, kallstartsokänslig, cacheokänslig. Kod-yta
 vaktkörning. FALL-TILLBAKA: behåll cron-vakten permanent (fönstret ≤10
 min godtagbart) om middleware-kostnaden per request visar sig för hög —
 beslut efter sond av befintlig middleware-yta.
+
+## ROND 339 [organ:Φ] (2026-09-29 ~11:4x–12:0x UTC) — v211:permanent LEVERERAD I KOD: FRAMTIDS-404-grenen i proxyn — äkta 404 FÖRE routern, omrenderings-/cache-/kallstartsokänslig
+
+**SOND-FYNDET:** src/proxy.ts (Next 16:s namn på middleware; Node-runtime,
+fs tillgänglig) har REDAN våg 83 B:s SPEGLAR-404-mönster — slug-lista,
+exakt path-regex, inline 404-sida i marin ton, fail-open. r339 blev ett
+SVENSKT SYSKONBLOCK, inte en ny uppfinning.
+
+**LEVERANS (src/proxy.ts, gren 5 i proxy()):**
+- FRAMTIDS_PATH_MONSTER = /^\\/blogg\\/([^/]+)$/ — ENDAST exakt ett
+  segment; listsidor/RSS/API orörda (matcher ovan fångar allt redan).
+- lasFramtidaBloggSlugar(): läser data/blogg/*.json från DISK (datafil-
+  driven — nya schemalagda inlägg syns UTAN bygg) med 60 s-cache;
+  datumkontraktet ÄR content.ts:s (ISO YYYY-MM-DD, lexikal, Stockholm,
+  dagens datum = publicerad). Publiceringsdagen ⇒ slugen lämnar mängden
+  inom 60 s ⇒ S2-autopubliceringen (ISR) tar över — bevarad exakt.
+- framtids404Svar(): träff ⇒ ÄKTA 404 med svensk inline-sida (syskon-
+  design), no-store + X-Robots-Tag: noindex + x-ak1a-klass/Server-Timing
+  (= entydig proxy-signatur för driftbeviset — skiljer från .meta-404:ns
+  Next-skal).
+- Fail-open vid varje läs-/parsefel (cron-vakten bär .meta-hygienen kvar
+  som redundanslager); ogiltigt publishedAt ⇒ ej i mängden (S2:s render-
+  gren döljer innehållet fail-closed ändå).
+
+**KVD:** tsc 0 FEL (projektbinären) · proxyns egna traffic-/säkerhets-
+grenar orörda (ren tilläggsgren, anrop sist före passera) · R2 orörd ·
+data/blogg orörd. DRIFTBEVIS (404 med Server-Timing-signatur på framtids-
+slug + 200 på kontrollposter + publicerad inlägg 200) körs efter deploy
+— bokat som r340 med bygg under flock när pushkön landat.
+
+**v211-lagren efter r339:** (L1) postbuild-märkning vid varje bygg ·
+(L2) cron-vakt var 10:e minut (.meta-hygien) · (L3) PROXY-BARRIÄREN =
+kärnan — tre oberoende lager, var och en tillräcklig, tillsammans
+omöjliga att snärja.

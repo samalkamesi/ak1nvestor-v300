@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse, NextFetchEvent } from "next/server";
+import fs from "node:fs";
+import path from "node:path";
 import {
   hashIp,
   klassificeraRequest,
@@ -232,6 +234,18 @@ export async function proxy(req: NextRequest, event: NextFetchEvent) {
   const spegel404 = speglar404Svar(req.nextUrl.pathname, klass === "ok" ? uaKlass : klass);
   if (spegel404) return spegel404;
 
+  // 5) FRAMTIDS-404 (r339, v211:permanent): schemalagda blogginlägg ⇒ äkta
+  //    404 FÖRE routern FÖRE publiceringsdagen. Roten: Next 16 skriver inte
+  //    status i .meta för notFound-via-generateStaticParams (soft-200) och
+  //    ISR-omrenderingar skriver OM .meta till 200 (r336-sondens dom) —
+  //    .meta-märkning (postbuild + cron-vakt) är hygien; DETTA är barriären.
+  //    Datafil-driven: läser data/blogg/*.json från disk (Node-runtime),
+  //    60 s-cache — nya schemalagda inlägg syns utan bygg; publiceringsdagen
+  //    lämnar slugen mängden inom 60 s och S2-autopubliceringen (ISR) tar
+  //    över. Fail-open: läs-fel ⇒ passera (cron-vakten bär kvar).
+  const framtids404 = framtids404Svar(req.nextUrl.pathname, klass === "ok" ? uaKlass : klass);
+  if (framtids404) return framtids404;
+
   // Passera med klass-märkning (Server-Timing är läsbar av klient-JS).
   const res = NextResponse.next();
   res.headers.set("x-ak1a-klass", klass === "ok" ? uaKlass : klass);
@@ -361,6 +375,123 @@ function speglar404Svar(pathname: string, klass: string): Response | null {
       "Cache-Control": "no-store",
       "x-ak1a-klass": klass,
       "Server-Timing": `ak1a;desc="${klass}"`,
+    },
+  });
+}
+
+// ── FRAMTIDS-404 (r339, v211:permanent — svenska originalens blogg) ───────────
+//
+// Schemalagda inlägg (data/blogg/*.json med publishedAt i framtiden) skall
+// vara OSYNLIGA till publiceringsdagen (SÄLJ-KARTA A2/S2). Statuskodsläckan
+// (soft-404) belagd i tre lager: Next 16 skriver ingen .meta-status för
+// notFound-via-generateStaticParams (r327/r332), ISR-omrenderingar skriver
+// om .meta till 200 (r336-sonden), och .meta respekteras bara utan färsk
+// cache (r338). Denna gren svarar ÄKTA 404 FÖRE routern — omrenderings-,
+// cache- och kallstartsokänslig. Datumreglerna ÄR content.ts:s kontrakt:
+// ISO YYYY-MM-DD, lexikal jämförelse, Europe/Stockholm (dagens datum
+// inkluderas). Regler:
+//   • ENDAST exakt /blogg/<ett-segment> — listsidor, RSS, API orörda.
+//   • data/blogg läses från disk med 60 s mtime-cache (datafil-driven:
+//     nya schemalagda inlägg + publiceringsdagssläpp UTAN bygg).
+//   • Fail-open vid varje läs-/parsefel (då bär .meta-cron-vakten kvar).
+//   • Ogiltigt publishedAt-format ⇒ INTE i mängden (fail-open — S2:s
+//     fail-closed-rendering döljer innehållet ändå; här styrs bara status).
+
+/** Dagens datum YYYY-MM-DD i svensk tidszon — content.ts bloggDagensDatum(). */
+function framtidsDagensDatum(): string {
+  return new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Stockholm", dateStyle: "short" }).format(new Date());
+}
+
+/** Cache: { slug: publishedAt } för framtidsdiskreta inlägg + läs-tidpunkt. */
+let FRAMTIDA_CACHE: { last: number; slugar: Map<string, string> } | null = null;
+const FRAMTIDA_CACHE_MS = 60_000;
+
+function lasFramtidaBloggSlugar(): Map<string, string> {
+  if (FRAMTIDA_CACHE && Date.now() - FRAMTIDA_CACHE.last < FRAMTIDA_CACHE_MS) {
+    return FRAMTIDA_CACHE.slugar;
+  }
+  const slugar = new Map<string, string>();
+  try {
+    const dir = path.join(process.cwd(), "data", "blogg");
+    const idag = framtidsDagensDatum();
+    for (const f of fs.readdirSync(dir)) {
+      if (!f.endsWith(".json")) continue;
+      try {
+        const post = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")) as {
+          slug?: unknown;
+          publishedAt?: unknown;
+        };
+        if (typeof post.slug !== "string" || typeof post.publishedAt !== "string") continue;
+        const d = post.publishedAt.slice(0, 10);
+        if (/^\d{4}-\d{2}-\d{2}$/.test(d) && d > idag) slugar.set(post.slug, d);
+      } catch {
+        /* ogiltig json-fil — content.ts:s klass, inte vår */
+      }
+    }
+  } catch {
+    return FRAMTIDA_CACHE?.slugar ?? new Map<string, string>(); // fail-open
+  }
+  FRAMTIDA_CACHE = { last: Date.now(), slugar };
+  return slugar;
+}
+
+/** Svenska bloggens detaljsida: exakt /blogg/{ett-segment}. */
+const FRAMTIDS_PATH_MONSTER = /^\/blogg\/([^/]+)$/;
+
+/** 404-sida i svenska originalets ton (syskon till speglarnas — sv/ltR). */
+function framtids404Sida(): string {
+  return `<!doctype html>
+<html lang="sv" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sidan hittades inte (404) | AK1A Research Lab</title>
+<style>
+:root{color-scheme:dark}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;background:#0b1321;color:#EDE6D6;display:flex;min-height:100vh;align-items:center;justify-content:center;padding:24px;box-sizing:border-box}
+main{background:#0E1B2E;border:1px solid rgba(232,199,102,.35);border-radius:16px;max-width:560px;width:100%;padding:44px 32px;text-align:center}
+.etikett{font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(232,199,102,.85);margin:0}
+.kod{font-size:72px;font-weight:700;color:#E8C766;line-height:1;margin:20px 0 0}
+h1{font-size:24px;margin:12px 0 0}
+.brod{font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.7;color:rgba(237,230,214,.8);margin:12px auto 0;max-width:420px}
+nav{margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+a{display:inline-block;padding:12px 20px;border:1px solid #E8C766;border-radius:8px;color:#E8C766;text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-size:14px}
+a:hover{background:rgba(232,199,102,.12)}
+footer{margin-top:28px;padding-top:16px;border-top:1px solid rgba(232,199,102,.3);font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(237,230,214,.55)}
+</style>
+</head>
+<body>
+<main>
+<p class="etikett">AK1A Research Lab · Navigeringsfel</p>
+<p class="kod" aria-hidden="true">404</p>
+<h1>Sidan hittades inte</h1>
+<p class="brod">Även analytiker tar fel vändningar ibland — sidan du söker har flyttats eller finns inte (än). Låt oss lotsa dig tillbaka.</p>
+<nav><a href="/blogg">Alla blogginlägg</a><a href="/">Startsidan</a></nav>
+<footer>AK1A Research Lab · Utbildande finansiell forskning — inte investeringsråd</footer>
+</main>
+</body>
+</html>`;
+}
+
+/**
+ * Ren lookup: 404-Response för schemalagda (ännu ej publicerade) blogg-
+ * inläggs-slugar, null om förfrågan ska passera (publicerad slug, ej
+ * blogg-detaljsida, läs-fel ⇒ fail-open).
+ */
+function framtids404Svar(pathname: string, klass: string): Response | null {
+  const m = FRAMTIDS_PATH_MONSTER.exec(pathname);
+  if (!m) return null; // Ej /blogg/<slug> — helt orörd trafik.
+  const slug = m[1];
+  if (!lasFramtidaBloggSlugar().has(slug)) return null; // Publicerad/okänd ⇒ routern.
+  return new Response(framtids404Sida(), {
+    status: 404,
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "no-store",
+      "x-ak1a-klass": klass,
+      "Server-Timing": `ak1a;desc="${klass}"`,
+      "X-Robots-Tag": "noindex",
     },
   });
 }

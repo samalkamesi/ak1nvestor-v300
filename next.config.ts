@@ -185,6 +185,16 @@ const nextConfig: NextConfig = {
       // (id="kontakt" tillagt samma våg — scroll-mt enligt #fas2-mönstret).
       { source: "/pris", destination: "/medlemskap", permanent: true },
       { source: "/kontakt", destination: "/om-oss#kontakt", permanent: true },
+      // v207-u4 (konverteringsresan): /bli-medlem är den naturliga URL:en en
+      // försäljningslänk lovar men gav 404 (aldrig egen sida). Registreringen
+      // ÄR sidan: /logga-in bär formuläret, ?lage=registrera öppnar det direkt
+      // i Skapa konto-läget ( MedlemInloggning läser paramen vid mount).
+      // 308-permanent som /pris — kanoniken samlas på en route.
+      {
+        source: "/bli-medlem",
+        destination: "/logga-in?lage=registrera",
+        permanent: true,
+      },
     ];
   },
   // Vercel-bundla datafilerna som läses dynamiskt med readFileSync i routes —

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getCourseList } from "@/lib/content";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { FortsattPanel } from "@/components/ak1a/fortsatt-panel";
+import { SparaFramstegPanel } from "@/components/ak1a/spara-framsteg-panel";
 import { KursSok } from "@/components/ak1a/kurs-sok";
 import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
 import { StrukturData } from "@/components/seo/StrukturData";
@@ -138,7 +139,11 @@ export default async function KurserPageEn() {
               xp: c.xp,
             }))}
           />
-        <aside className="h-fit"><FortsattPanel /></aside>
+        {/* v207-u4: save-progress panel beside the courses (hidden for members) */}
+        <aside className="h-fit space-y-4">
+          <FortsattPanel />
+          <SparaFramstegPanel />
+        </aside>
       </div>
 
       {/* NUMBERS BAND — figures from the single source of truth

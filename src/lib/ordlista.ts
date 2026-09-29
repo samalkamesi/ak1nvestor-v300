@@ -2074,6 +2074,11 @@ export const ORDLISTA = {
     en: "Growth",
     ar: "النمو",
   },
+  "dataset.bransch.nyttovalt": {
+    sv: "Nyttovalt",
+    en: "Utilities",
+    ar: "المرافق",
+  },
   "dataset.meta.titel": {
     sv: "Branschmedianer — median P/E, P/B och marginaler per bransch | AK1A",
     en: "Industry medians — median P/E, P/B and margins per industry | AK1A",

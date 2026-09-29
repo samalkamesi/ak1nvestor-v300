@@ -1,0 +1,96 @@
+{
+  "motorChunkar": [
+    "054kfxstzysh9.js",
+    "05qu1n21fxgx9.js",
+    "0orcvn7zo33vn.js",
+    "1ii-boh4hwx7e.js",
+    "1ktrzsld-kluf.js",
+    "1z72eobx3p3c_.js",
+    "3rn36n7iu8t6y.js",
+    "3up5sqq44sgdg.js",
+    "40nefob_jl-k5.js"
+  ],
+  "motorLastade": [],
+  "sidaMedMotor": [],
+  "gron": true,
+  "resultat": [
+    {
+      "url": "http://localhost:3000/",
+      "initial": {
+        "antalJs": 19,
+        "motorChunkar": []
+      },
+      "efterScroll": {
+        "antalJs": 32,
+        "nyaEfterScroll": [
+          "1qvevmz_r67hk.js",
+          "1c3hmq2wqhl4q.js",
+          "3ez0fiei-sc5n.js",
+          "1ey0j44q2t846.js",
+          "1vzidlm-45ju_.js",
+          "26cy_8m3039nw.js",
+          "1zwf7ocoi2979.js",
+          "2ckgowj_mt_om.js",
+          "3_7f8rl29qxbl.js",
+          "1bqjjce0d79ai.js",
+          "1n5bovmkaetv6.js",
+          "2su890ocush7p.js",
+          "155pgd04dr-v9.js"
+        ],
+        "motorChunkar": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/blogg",
+      "initial": {
+        "antalJs": 17,
+        "motorChunkar": []
+      },
+      "efterScroll": {
+        "antalJs": 24,
+        "nyaEfterScroll": [
+          "3ez0fiei-sc5n.js",
+          "1vzidlm-45ju_.js",
+          "26cy_8m3039nw.js",
+          "1ey0j44q2t846.js",
+          "3_7f8rl29qxbl.js",
+          "1zwf7ocoi2979.js",
+          "2ckgowj_mt_om.js"
+        ],
+        "motorChunkar": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/dataset",
+      "initial": {
+        "antalJs": 24,
+        "motorChunkar": []
+      },
+      "efterScroll": {
+        "antalJs": 24,
+        "nyaEfterScroll": [],
+        "motorChunkar": []
+      }
+    },
+    {
+      "url": "http://localhost:3000/kurser",
+      "initial": {
+        "antalJs": 17,
+        "motorChunkar": []
+      },
+      "efterScroll": {
+        "antalJs": 24,
+        "nyaEfterScroll": [
+          "3ez0fiei-sc5n.js",
+          "26cy_8m3039nw.js",
+          "1ey0j44q2t846.js",
+          "1vzidlm-45ju_.js",
+          "3_7f8rl29qxbl.js",
+          "1zwf7ocoi2979.js",
+          "2ckgowj_mt_om.js"
+        ],
+        "motorChunkar": []
+      }
+    }
+  ]
+}

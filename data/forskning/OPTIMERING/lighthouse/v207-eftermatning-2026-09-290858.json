@@ -1,0 +1,107 @@
+{
+  "motorChunkar": [
+    "0w188-0nasg92.js",
+    "1qvevmz_r67hk.js",
+    "1vzidlm-45ju_.js",
+    "41n3ihu_gg2zl.js"
+  ],
+  "motorLastade": [
+    "1vzidlm-45ju_.js",
+    "1qvevmz_r67hk.js"
+  ],
+  "sidaMedMotor": [
+    "http://localhost:3000/",
+    "http://localhost:3000/blogg",
+    "http://localhost:3000/dataset",
+    "http://localhost:3000/kurser"
+  ],
+  "gron": false,
+  "resultat": [
+    {
+      "url": "http://localhost:3000/",
+      "initial": {
+        "antalJs": 27,
+        "motorChunkar": [
+          "1vzidlm-45ju_.js",
+          "1qvevmz_r67hk.js"
+        ]
+      },
+      "efterScroll": {
+        "antalJs": 28,
+        "nyaEfterScroll": [
+          "1c3hmq2wqhl4q.js"
+        ],
+        "motorChunkar": [
+          "1vzidlm-45ju_.js",
+          "1qvevmz_r67hk.js"
+        ]
+      }
+    },
+    {
+      "url": "http://localhost:3000/blogg",
+      "initial": {
+        "antalJs": 17,
+        "motorChunkar": []
+      },
+      "efterScroll": {
+        "antalJs": 24,
+        "nyaEfterScroll": [
+          "3ez0fiei-sc5n.js",
+          "1ey0j44q2t846.js",
+          "1vzidlm-45ju_.js",
+          "26cy_8m3039nw.js",
+          "1zwf7ocoi2979.js",
+          "2ckgowj_mt_om.js",
+          "3_7f8rl29qxbl.js"
+        ],
+        "motorChunkar": [
+          "1vzidlm-45ju_.js"
+        ]
+      }
+    },
+    {
+      "url": "http://localhost:3000/dataset",
+      "initial": {
+        "antalJs": 17,
+        "motorChunkar": []
+      },
+      "efterScroll": {
+        "antalJs": 24,
+        "nyaEfterScroll": [
+          "3ez0fiei-sc5n.js",
+          "1vzidlm-45ju_.js",
+          "26cy_8m3039nw.js",
+          "1ey0j44q2t846.js",
+          "3_7f8rl29qxbl.js",
+          "1zwf7ocoi2979.js",
+          "2ckgowj_mt_om.js"
+        ],
+        "motorChunkar": [
+          "1vzidlm-45ju_.js"
+        ]
+      }
+    },
+    {
+      "url": "http://localhost:3000/kurser",
+      "initial": {
+        "antalJs": 17,
+        "motorChunkar": []
+      },
+      "efterScroll": {
+        "antalJs": 24,
+        "nyaEfterScroll": [
+          "3ez0fiei-sc5n.js",
+          "1vzidlm-45ju_.js",
+          "1ey0j44q2t846.js",
+          "26cy_8m3039nw.js",
+          "3_7f8rl29qxbl.js",
+          "1zwf7ocoi2979.js",
+          "2ckgowj_mt_om.js"
+        ],
+        "motorChunkar": [
+          "1vzidlm-45ju_.js"
+        ]
+      }
+    }
+  ]
+}

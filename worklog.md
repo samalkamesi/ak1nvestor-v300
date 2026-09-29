@@ -19058,4 +19058,44 @@ platser att märka) — deras soft-404 kvarstår till publiceringsdagen; innehå
 lösa skal, ingen läcka. Fönster-notis: ett byggbyte FÖRE att denna push deployar
 lämnar märkningen borta tills postbuild-steget lever (auto-hel vid min deploy).
 
+## ROND 333+334 [organ:Φ] (2026-09-29 ~08:5x–09:2x UTC) — v207 EFTERMÄTNINGEN LEVERERAD: v206-KUREN BEVISAD I BROWSER — 0 MOTORCHUNKAR PÅ VANLIGA SIDOR
+
+**INSTRUMENTET (r333):** verktyg/prefetch-eftermatning.mjs — riktig
+puppeteer-browser-mätning (chromeSokvag-mönstret ur vakten) av v206:s
+prefetch={false}-kur (beed9f7d): per sida (/, /blogg, /dataset, /kurser)
+mäts INITIAL-lasen (networkidle2, ingen scroll) och SCROLL-lasen (full
+botten-scroll + 6 s = viewport-prefetchens exakta trigg-fönster).
+Motorchunkarna identifieras i ARTEFAKTENS chunkkatalog (CHUNKDIR härleds
+ur BAS: localhost ⇒ /home/ak1a/AK1 — ytan och prod är olika byggen med
+olika hash-namn; korsmätning mellan träd ger falskt negativ, r334).
+
+**R334-LÄRAN — DE FALSKA POSITIVA:** första signaturen
+'monteCarlo|kelly|bayes' gav FYND (08:58-rapporten: 2 "motorchunkar"
+"laddade" på alla 4 sidor). Granskningen (_r334-signatur.mjs mot de 4
+rapporterade chunkarna) belag roten: KURSTEXT (flashcards, kurs-ID:n,
+AI-mentor-text) nämner Monte Carlo/Kelly/Bayes — text, inte motor-kod.
+ÄKTA signaturer är export-/Konstant-namn som ENDAST finns i motorerna:
+skannaKonfluens · AKM1_VARIABLER · ak1tsTolkning · raknaKategorier ·
+valideraKonfluens · MAX_TICKER_KONFLUENS · AKM2_2026_GRUNDTABELL_KARNA ·
+SUPERANALYS_2026_KATEGORIVIKTER · KARNVARIABLER · raknaAKM1Intern ·
+losaVikter (superanalys.ts · konfluens-motor.ts · akm2/{karna,vikter}.ts).
+
+**DOMSLUT (09:16 + 09:20, äkta signaturer):** 9 motorchunkar identifierade
+i artefakten — 0 laddas på NÅGON av de fyra vanliga sidorna, varken i
+initial- eller scroll-lasen (09:20: / 26→31 js · /blogg 17→24 · /dataset
+17→24 · /kurser 24→24; motorChunkar [] överallt). v206:s mål därmed
+BEVISAT i browser: motorbunten (~1,35 MB monte/kelly/SAM/bayes) laddas
+inte längre på vanliga sidor. Två gröna körningar mot två bygg-
+generationer (nya chunk-hashar mellan 09:16 och 09:20 — prod-synkens
+deploy byggde mitt i fönstret), samma dom. r327:s instrumentfynd stadgar
+varför HTML-granskning aldrig räckte: prefetch sker i RUNTIME
+(viewport-triggat) — serverad HTML kan ALDRIG visa effekten; browser-
+mätningen är den enda ärliga eftermätningen.
+
+**KVD:** data + verktyg — src/ orörd, INGET bygge. Rapporter kvar som
+beviskedja: v207-eftermatning-2026-09-29{0858,0916,0920}.json (0858 =
+falska-positiv-beviset, 0916+0920 = gröna domarna). Sondskript
+_r333-{sond1,sond2,djup}.mjs + _r334-{sond,manifest,signatur}.mjs
+committade enligt r330-r332-mönstret.
+
 **Slutpush-kön leverar r330-r331-commits vid nästa fabrikspaus.

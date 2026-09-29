@@ -200,6 +200,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/en/blogg`, changeFrequency: "daily", priority: 0.7, lastModified: now },
     { url: `${BASE_URL}/ar/blogg`, changeFrequency: "daily", priority: 0.7, lastModified: now },
     { url: `${BASE_URL}/villkor`, changeFrequency: "yearly", priority: 0.3, lastModified: now },
+    // v207-u2 (säljkrav): svensk URL för integritetspolicyn — GDPR art 13.
+    // Samma juridikblock som grannarna; innehållet speglar /privacy-policy
+    // (som fortfarande lever parallellt, se SALJ-U2-JURIDIK.md).
+    { url: `${BASE_URL}/integritetspolicy`, changeFrequency: "yearly", priority: 0.3, lastModified: now },
     { url: `${BASE_URL}/cookiepolicy`, changeFrequency: "yearly", priority: 0.3, lastModified: now },
     { url: `${BASE_URL}/ansvar`, changeFrequency: "yearly", priority: 0.3, lastModified: now },
     { url: `${BASE_URL}/upphovsratt`, changeFrequency: "yearly", priority: 0.4, lastModified: now },

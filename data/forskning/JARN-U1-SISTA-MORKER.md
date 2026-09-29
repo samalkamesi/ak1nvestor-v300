@@ -133,6 +133,48 @@ kvittot syns i `data/vakten/prod-synk.log` (sök "JÄRN-U1" / "MÖRKER-VÄG").
 disk (v186-mönstret: leveransen väntar sin första äkta körning).
 
 **Leveransfilosofi notering:** om en framtida patch-körning mörkar beror det
-numera på att disken SANNLICT nekade kopian plats — och då står det i loggen
+numera på att disken SANNLIGT nekade kopian plats — och då står det i loggen
 MARKERAT, i /desk/larm.json och i vakttornets rapport. Noll mörker = noll
 TYSTA mörker; de ärliga sista utvägarna lever som larmade undantag.
+
+## 7. Omkörningsverifikation (fabriksagent v213-u1, 2026-09-29 ~22:05Z)
+
+Leveransen committades 21:30:13 (e0aaf095) men det utförande barnets turn
+dog FÖRE LEVERANS-kvittot (utdata-loggen slutar "Error: Turn execution
+failed") — fabriken omkörde uppgiften. Omkörningens färskta bevis på att
+leveransen är intakt och lever:
+
+| Kontroll (omkörning ~22:00Z) | Resultat |
+|---|---|
+| `node --check` prod-synk.mjs + båda testfilerna | OK |
+| testa-prod-synk-npmci-stallning (JÄRN-U1-svit 25–33) | **33 PASS · 0 FAIL** |
+| testa-prod-synk-nolldowntime (test 18 = MÖRKER-VÄG) | **25 PASS · 0 FAIL** |
+| testa-prod-synk-pm2vakt (strukturellt: exakt 2 stopp, före korBygg) | **36 PASS / 0 FAIL** |
+| testa-prod-synk-patchko (byggPatchInstallKommando orörd) | **67 PASS / 0 FAIL** |
+| Driftskvitto §6 "nästa :x7": prod-synk.log | **"NY KOD: aa2f35eb → e0aaf095" 21:37 · 21:47 · 21:57** — JÄRN-U1-koden plockad; inga patch-kö-poster i fönstret ⇒ ingen äkta stallningsdebut än (väntar enligt §6) |
+
+Driftsläge vid omkörningen: prod-synken står i VÄNTAR-FABRIK på själva
+fabriksmanifestet (v213-jarnbur, V235-sekvens) med HEAD e0aaf095 orört —
+deploy av JÄRN-U1-trädet sker när fabriksfönstret släpper/tak passerar.
+
+**.bygg-kopia-läget (observationer vid omkörningen, trädägarens bord):**
+- Katalogen refereras i ALL tooling (verktyg/, .zcode/, crontab,
+  hemkatalogens driftverktyg genomsökta) av ENDAST prod-synk.mjs + dess
+  kontraktstest ⇒ exklusivt prod-synk-ägd, ingen namnkollision.
+- Ingen process har cwd i kopian (/proc/*/cwd genomsökt 22:01Z).
+- Nuvarande rest ≈ 995 MB (främst node_modules, mtime 19:42) = det i §2
+  dokumenterade läget "ett fallit fönster lämnar DEN kopian kvar" efter
+  18:57→19:42:s tre fallna byggen (byggfel → revert-ombygge → goodhead-
+  KRITISKT, se aa2f35eb:s trädincidentrapport). Nästa stallningsfönsters
+  första rad (`rm -rf`) städar den mekaniskt.
+- Kopians filstämplar 13:25 = aa2f35eb:s commit-tid 13:25:55 (git archive
+  stämplar alla poster med den arkiverade kommunens tid) — innehållet är
+  ren arkivspår, inget främmande. Kopians källkataloger (src/, verktyg/,
+  package*.json m.fl.) är dock BORTTAGNA; katalogstämplingar 21:55 daterar
+  senaste ändringen — aktör okänd (konsistent med manuell städning under
+  dagens incidentefterdykning). Ingen leveranspåverkan.
+- `.bygg-kopia/` saknas i .gitignore (gamma sedan V183B, EJ JÄRN-U1): syns
+  som `??` i git status, men prod-synkens smutsig-kontroll kör
+  `--untracked-files=no` ⇒ ingen deploypåverkan. Kosmetiskt spår utanför
+  denna uppgifts filägarskap (V182-mönstret /.next-ny/ etc. föreslår att
+  även /.bygg-kopia/ hör hemma där).

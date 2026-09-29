@@ -1,0 +1,113 @@
+{
+  "ts": "2026-09-29T10:28:16.541Z",
+  "lage": "sond",
+  "steg": [
+    {
+      "steg": "0-ram",
+      "ramMB": 52858,
+      "tak": 1500,
+      "pass": true
+    },
+    {
+      "steg": "0b-lastvakt",
+      "busyProc": 1.9,
+      "loadavg": [
+        3.05,
+        3.82,
+        5.35
+      ],
+      "cpuKalibMs": 633.3,
+      "zcodeBarn": 6,
+      "tyst": false,
+      "kriterier": {
+        "busyUnder": 30,
+        "l1Under": 1.5
+      },
+      "vantadeMs": 740388,
+      "pass": true
+    },
+    {
+      "steg": "1-prod200-varmning",
+      "status": {
+        "/superanalys": 200,
+        "/kalkylator": 200
+      },
+      "pass": true
+    },
+    {
+      "steg": "1b-last-ater",
+      "busyProc": 2.5,
+      "loadavg": [
+        2.87,
+        3.73,
+        5.29
+      ],
+      "cpuKalibMs": 250.6,
+      "tyst": false,
+      "pass": true
+    },
+    {
+      "steg": "2-lighthouse",
+      "exit": 0,
+      "svans": [
+        "",
+        "Sammanfattning → /home/ak1a/AK1/data/forskning/OPTIMERING/lighthouse/o562-sond-sammanfattning.json",
+        "",
+        "Jämförelse mot o139-fore:",
+        "/superanalys: P 73→33 · LCP 4355→19371 (+15016 ms) · TBT 375→29279",
+        ""
+      ]
+    },
+    {
+      "steg": "2b-last-slut",
+      "busyProc": 9.7,
+      "loadavg": [
+        4.96,
+        5.07,
+        5.45
+      ],
+      "cpuKalibMs": 394.9,
+      "kalibStart": 633.3,
+      "kalibKvot": 0.62,
+      "zcodeBarn": 6,
+      "tyst": false,
+      "kalibDrift": true,
+      "kriterier": {
+        "busyUnder": 30,
+        "l1Under": 1.5,
+        "kalibKvotUnder": 1.5
+      },
+      "pass": true
+    },
+    {
+      "steg": "3-referens",
+      "serie": "ssdnodes-4k",
+      "harSidor": false,
+      "seedTillaten": false,
+      "sejmade": false,
+      "bandCenter": 73
+    }
+  ],
+  "dom": [
+    {
+      "sida": "/superanalys",
+      "serieFore": "ssdnodes-4k osådd — ingen FÖRE-jämförelse (o562)",
+      "poangEfter": 33,
+      "lcpEfter": 19371,
+      "tbtEfter": 29279,
+      "clsEfter": 0,
+      "kriterier": {
+        "clsNoll": true,
+        "tbtKalkylator450": "29279 (SOND — dagfönster, ej dom enligt o143 §3)"
+      }
+    },
+    {
+      "sida": "/kalkylator",
+      "fel": "Error: spawnSync npx ETIMEDOUT"
+    }
+  ],
+  "lastOK": false,
+  "serie": "ssdnodes-4k",
+  "serieSejad": false,
+  "sammanfattning": "o562-sond-sammanfattning.json"
+}

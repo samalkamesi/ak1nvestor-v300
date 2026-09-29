@@ -1,0 +1,51 @@
+{
+  "datum": "2026-09-29T10:06:57.483Z",
+  "bas": "http://localhost:3000",
+  "namn": "o562-sond2",
+  "sidor": [
+    {
+      "sokvag": "/superanalys",
+      "poang": {
+        "prestanda": 0.34,
+        "tillganglighet": 1,
+        "bastaPraxis": 1,
+        "seo": 1
+      },
+      "karnmattMs": {
+        "FCP": 1884,
+        "LCP": 20044,
+        "TBT": 63100,
+        "CLS": 0,
+        "TTI": 68388,
+        "SI": 44892
+      },
+      "nyckelauditer": {
+        "unused-javascript": {
+          "poang": 0,
+          "visar": "Est savings of 439 KiB",
+          "rad": "Reduce unused JavaScript — Est savings of 439 KiB"
+        },
+        "total-byte-weight": {
+          "poang": 1,
+          "visar": "Total size was 485 KiB",
+          "rad": "Avoids enormous network payloads — Total size was 485 KiB"
+        },
+        "unused-css-rules": {
+          "poang": 1,
+          "visar": "",
+          "rad": null
+        },
+        "bootup-time": {
+          "poang": 0,
+          "visar": "36.7 s",
+          "rad": "Reduce JavaScript execution time — 36.7 s"
+        },
+        "mainthread-work-breakdown": {
+          "poang": 0,
+          "visar": "103.1 s",
+          "rad": "Minimize main-thread work — 103.1 s"
+        }
+      }
+    }
+  ]
+}

@@ -185,7 +185,47 @@ export function getCaseStudy(id: string): CaseStudy | null {
 
 // ── Blogg ───────────────────────────────────────────────────────────────────
 
-export function getBlogPosts(): BlogPost[] {
+/**
+ * Dagens datum (YYYY-MM-DD) i svensk tidszon, läst VID ANROPET — render-/ISR-
+ * tid, inte byggtid. SÄLJ-KARTA A2/S2: ett schemalagt inlägg (publishedAt i
+ * framtiden) ska vara osynligt tills datumet är inne och sedan bli publikt av
+ * sig själv vid nästa omrendering (revalidate 3600) — utan nytt bygge.
+ * sv-SE-lokalens korta datumform är exakt ISO YYYY-MM-DD och publishedAt i
+ * data/blogg/ har samma form ⇒ jämförelsen nedan är lexikal och korrekt.
+ */
+export function bloggDagensDatum(): string {
+  return new Intl.DateTimeFormat("sv-SE", {
+    timeZone: "Europe/Stockholm",
+    dateStyle: "short",
+  }).format(new Date());
+}
+
+/**
+ * true när postens publiceringsdatum är inne (publishedAt <= idag, dag-
+ * granulärt; dagens datum inkluderas — "publicerad idag" är publicerad).
+ * Ogiltigt datum-format ⇒ false + larm i pm2-loggen (fail-closed, samma
+ * filosofi som kf1: tydligt larm, aldrig tyst läckage) — S2.
+ */
+export function bloggArPublicerad(post: BlogPost, idag = bloggDagensDatum()): boolean {
+  const d = post.publishedAt.slice(0, 10);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(d) || Number.isNaN(Date.parse(d))) {
+    console.warn(
+      `[blogg] hoppar över ${post.slug}: ogiltigt publishedAt "${post.publishedAt}" — dolt tills rättat (S2)`,
+    );
+    return false;
+  }
+  return d <= idag;
+}
+
+/**
+ * Allt publikt (listor sv/en/ar, detaljsidor, speglar, sitemap, llms.txt,
+ * chatbot-räknear) läser via denna funktion UTAN flagga ⇒ ENDAST publicerade
+ * inlägg syns. `inkluderaFramtida: true` används ENBART av generateStaticParams
+ * i /blogg/[slug] (sidplatsen måste finnas vid bygget för att ISR ska kunna
+ * väcka ett schemalagt inlägg till live när datumet kommer — själva renderingen
+ * döljer det ändå via getBlogPost).
+ */
+export function getBlogPosts(opts?: { inkluderaFramtida?: boolean }): BlogPost[] {
   const dir = join(ROOT, "data", "blogg");
   if (!existsSync(dir)) return [];
   // Per-fils felhantering (kf1): ett halvskrivet/trasigt JSON-filer eller en
@@ -225,6 +265,10 @@ export function getBlogPosts(): BlogPost[] {
         continue;
       }
       sesattaSlugs.add(post.slug);
+      // S2-filtret (SÄLJ-KARTA A2): framtidsdiskade inlägg lämnar det publika
+      // lagret här — EN punkt täcker listor, detaljsidor, speglar, sitemap,
+      // llms.txt och räknear.
+      if (!opts?.inkluderaFramtida && !bloggArPublicerad(post)) continue;
       poster.push(post);
     } catch (e) {
       console.warn(
@@ -235,6 +279,8 @@ export function getBlogPosts(): BlogPost[] {
   return poster.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 }
 
+/** Enskilt inlägg — framtidsdiskat/ogiltigt ⇒ null ⇒ detaljsidorna (sv +
+ *  en/ar-speglar) svarar notFound(), se S2. */
 export function getBlogPost(slug: string): BlogPost | null {
   return getBlogPosts().find((p) => p.slug === slug) ?? null;
 }

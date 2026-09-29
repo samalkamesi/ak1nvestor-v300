@@ -7123,3 +7123,28 @@ förbättrar). Första skivan levererad:
   `tar -tzf` (ej bara gzip -t) och kör integrity_check på db-kopian.
   Pumpornas 02:52-körning natten till 09-29 = kur v2:s första autonoma
   pass — morgonronden läser loggen ("SKAPAD … läsverifierad" väntas).
+
+## S1 — PROD-KRASCHLOOP 02:44 + PM2-RÄDDNING MOT FULLBORDAD ARTEFAKT (2026-09-29, ÅTERSTÄLLD 03:19)
+
+- **Symptom**: 502 på ALLA rutter från ~02:44 (även kända levande sidor).
+- **Orsakskedja**: prod-synkens .next-ny-fönster 02:36 lämnade `.next`
+  trasig ⇒ pm2 `ak1a` kraschloop (+39 omstarter; error-loggsignaturen
+  `ENOENT .next/prerender-manifest.json`) ⇒ kraschvakten stoppade pm2
+  (rätt — restart mot ofullständig artefakt = kraschloop) och startade
+  fullt räddningsbygge 02:44 (rm -rf .next + npm ci + build under låset).
+- **Vändan**: kraschvaktens spawnSync-timeout 03:09 dömde artefakten
+  "trasig" PREMATURT — `prerender-manifest.json` skrivs först vid
+  byggslut och cpus:1-bygget tog ~29 min. Bygget fullbordade 03:17 som
+  föräldralöst (BUILD_ID + prerender-manifest.json 1,3 MB, normal exit).
+- **Åtgärd (fabriksagent S1, drift-ops-ordningen)**: verifierade artefakten
+  komplett ⇒ `pm2 restart ak1a --update-env` 03:19 ⇒ localhost 200,
+  omstartsräknare stabil. Kraschvaktens ~03:39-poll finner appen
+  svarande ⇒ riv+ombygge av den färska artefakten avstyrs (~35 min
+  extra driftstopp undviket). Byggen/installationer rördes EJ av agenten.
+- **Läxa/fynd till huvudagenten**: kraschvaktens spawnSync-timeout <
+  cpus:1-byggtid + artefaktkontroll före processexit = falskt "trasig"
+  på långsamma men friska byggen. Förslag: timeout ≥ 40 min eller
+  kontroll först efter processexit. Kraschvakten är EJ ändrad (utanför
+  fabriksbarnets ägarskap). Kvitton: /integritetspolicy 200,
+  /bli-medlem 308 → /logga-in?lage=registrera, tsc 0 — protokoll
+  `data/forskning/SALJ-U5-S1-REDIRECTS.md`.

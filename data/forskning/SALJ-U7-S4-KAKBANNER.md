@@ -83,14 +83,16 @@ byggen ägs av prod-synken — avvaktades låset, inget ingripande.
   innehåller bannern i klientbunten — `"Vi använder cookies"` hittad i
   `static/chunks/2hw3pf73h50t5.js` — men INTE `"Accept all"`: det
   bygget läste cookie-modulen FÖRE S4:s 02:52-rättning (väntat; inga
-  fel). Prod-synkens påföljande bygge (start 03:07, `NEXT_DIST_DIR=
-  .next-ny`, källor lästa EFTER rättningen) ger leveranskvitot: nästa
-  byggda chunk ska innehålla "Accept all" + "قبول الكل".
-- **Deploy-kvito:** S4:s rättning är på disk i arbetsytan sedan 02:52 —
-  pågående synk-bygge läser källorna DÄRFÖR EFTER rättningen och bär den
-  vid swap+omstart; commit före/efter påverkar bara historiken, inte
-  bygginnehållet. Kvarvarande kvito-post: chunk-grep i .next-ny när det
-  fönstret stänger.
+  fel). Även kraschvaktens 03:17-räddningsbygge bar den återställda
+  (orättade) filen — se § 7. Leveranskvitot kommer med nästa
+  deployfönster efter omapplicerings-commiten: nästa byggda chunk ska
+  innehålla "Accept all" + "قبول الكل".
+- **Deploy-kvito:** se § 7 — rättningen revs ur trädet av kraschvaktens
+  03:07-trädåterställning och 03:17-räddningsbygget läste därför den
+  ÅTERSTÄLLDA filen. Efter omapplicering + commit lever rättningen med
+  nästa deployfönster från git; kvarvarande kvito-post: chunk-grep
+  ("Accept all" + "قبول الكل") i nästa byggda .next + ev. omkontroll av
+  /, /en, /ar efter omstart.
 
 ## 5. Före → Efter (komponent, levererad)
 
@@ -105,11 +107,32 @@ byggen ägs av prod-synken — avvaktades låset, inget ingripande.
 
 - Källtripp: ovan (komponent + montering/språkleverantör + prod/chunks).
 - tsc: `node node_modules/typescript/bin/tsc --noEmit` — **0 fel**
-  (efter deployfönstrets låssläpp; aldrig under npm ci).
-- Commit: denna fil + `src/components/ak1a/cookie-consent.tsx` via
-  `git commit -F` (grinden aktiv, inget --no-verify).
+  (efter deployfönstrets låssläpp; aldrig under npm ci). Omapplicerad
+  fil är byte-identisk med den typkontrollerade versionen.
+- Commit: protokollet i 2ace72d2; komponenträttningen + denna notis i
+  den efterföljande commiten (se § 7) via `git commit -F` (grinden
+  aktiv, inget --no-verify).
 - R2: priser/tier/publicering orörda; ingen juridisk textändrad —
   bannerns svenska kärnbudskap är ordagrant bevarat.
 - Deploy-kvito: VÄNTAR nästa deployfönster (rondens fönster var upptaget).
+
+## 7. Driftincident under ronden — rättningen revs och omapplicerades (redovisad)
+
+- **02:44–03:19 prod 502:** prod-synkens fönster lämnade .next trasigt
+  (full redogörelse i syskon S1:s commit 375f6a1f + protokoll
+  SALJ-U5-S1: kraschloop +39 omstarter, kraschvakten stoppade pm2 och
+  räddningsbyggde; prod 200 igen 03:19).
+- **03:07 kollateral:** kraschvaktens trädåterställning rev S4:s då
+  OSPARKADE komponenträttning (på disk 02:52, typkontrollerad 03:15).
+  S4:s första commit 2ace72d2 (03:29) fick därför ENBART protokollet —
+  upptäckt av S4:s egen grep-kontroll efter commit ("Accept all"
+  saknades i trädet; filens mtime 03:07:12 matchar återställningen).
+- **03:3x omapplicering:** rättningen omapplicerades ordagrant
+  (byte-identisk med den tsc-0-granskade versionen) och committas i
+  samma commit som denna notis (C4-principen: ändring + dokumentation
+  samordnat).
+- **Lärdom till fabriken:** osparkade src-ändringar är sårbara under
+  driftincidenter — commit:a komponentändringar tidigt (före långa
+  verifieringsslussar), eller lås dem mot trädåterställningar.
 
 RESULTAT: banner (2 fynd — båda rättade: F1 språk, F2 förbockat) — avbryt-väg finns

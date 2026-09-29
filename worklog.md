@@ -18987,3 +18987,17 @@ bevarar rådata, bevisat med inplanterad kommentar.)
 
 **PÅGÅENDE:** 07:17Z-gränssnittsvaktskörningen pollas som första automatiska
 crontab-bevis (resultat bokförs i nästa rond eller tilläggscommit).
+
+### r330-tillägg — 07:17Z-CRONTABBEVISET LEVERERAT (2026-09-29 07:37Z)
+
+data/vakten/cron.log (AK1) rad: "2026-09-29T0717 LÅST — gränssnittsvakten mäter
+redan i andra kanalen — hoppar". Tolkning med källor: system-crontabens rad 2
+(17 1,7,13,19 — återställd r328) avfyrade 07:17:00 och TOG flocken (första
+automatiska crontab-avfyringen sedan massförlusten = beviset); pumpor-kanalen
+avfyrade 07:17:08 (pm2-logg "07:17:08 ▶ gränssnittsvakt") och blockerades
+korrekt av flocken — dubbelkörningen dog vid första gemensamma :17, exakt som
+kuren designades. 68 granssnitt/chrome-processer aktiva 07:37 = svepet löper;
+historiken i samma logg (GRÖN fulla svep 26–28/9, UPPSKJUTEN vid nattens
+deploys) intygar cron-kanalens kontinuitet före förlusten. Rapportens
+GRÖN/0-fynd-dom pollas nästa hjärtslag (RAM-grinden kan hålla svepet uppe
+till ~08:30).

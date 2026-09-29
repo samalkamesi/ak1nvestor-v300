@@ -11,6 +11,7 @@ import {
 import { StrukturData } from "@/components/seo/StrukturData";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { FortsattPanel } from "@/components/ak1a/fortsatt-panel";
+import { SparaFramstegPanel } from "@/components/ak1a/spara-framsteg-panel";
 import { KursSok } from "@/components/ak1a/kurs-sok";
 import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
 import { SocialProof } from "@/components/ak1a/social-proof";
@@ -285,7 +286,14 @@ export default async function KurserPage() {
               0
             ) * 10 + 50,
         }))}
-        sidopanel={<FortsattPanel />}
+        sidopanel={
+          // v207-u4: Fortsatt-panelen + spara-framsteg-CTA:n tillsammans i
+          // kurslistans sidospalt (döljs för inloggade medlemmar).
+          <div className="space-y-4">
+            <FortsattPanel />
+            <SparaFramstegPanel />
+          </div>
+        }
       >
         {/* (a) FLAGGSKEPPEN — sex nyckelverk, RO-förhöjda kort */}
         <UtvaltSektion

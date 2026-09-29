@@ -236,7 +236,7 @@ const STIG: {
     rubrikNyckel: "home.stig1Rubrik",
     undertext: "0 kr · en minut",
     undertextNyckel: "home.stig1Undertext",
-    href: "/logga-in",
+    href: "/logga-in?lage=registrera",
   },
   {
     num: "2",
@@ -366,7 +366,7 @@ export function HomeSection() {
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link
-                  href="/logga-in"
+                  href="/logga-in?lage=registrera"
                   prefetch={false}
                   // prefetch={false} (o17/o41/o49-precedensen): herons knappar
                   // sitter i viewport på sajtens entré ⇒ varje kall besökare
@@ -619,7 +619,7 @@ export function HomeSection() {
                 {t("home.slutUnderrubrik", { kurser: ANTAL_KURSER })}
               </p>
               <Link
-                href="/logga-in"
+                href="/logga-in?lage=registrera"
                 className="btn-guld-signatur mt-8 inline-flex items-center gap-2 px-8 py-4 text-base font-bold sm:text-lg"
               >
                 {t("home.bliMedlemGratis")} <span aria-hidden="true">→</span>

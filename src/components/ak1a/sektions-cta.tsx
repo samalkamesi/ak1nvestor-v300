@@ -12,7 +12,7 @@ export function SektionsCta({ sjalvstandig = false }: { sjalvstandig?: boolean }
   const { t } = useSprak();
   const knapp = (
     <Link
-      href="/logga-in"
+      href="/logga-in?lage=registrera"
       prefetch={false}
       className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-lg border border-gold/50 bg-gold/10 px-6 py-3 text-sm font-bold text-gold transition-colors hover:bg-gold/20 sm:w-auto"
     >

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getCourseList } from "@/lib/content";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { FortsattPanel } from "@/components/ak1a/fortsatt-panel";
+import { SparaFramstegPanel } from "@/components/ak1a/spara-framsteg-panel";
 import { KursSok } from "@/components/ak1a/kurs-sok";
 import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
 import { SIFFROR } from "@/lib/siffror";
@@ -140,7 +141,11 @@ export default async function KurserPageAr() {
               xp: c.xp,
             }))}
           />
-          <aside className="h-fit"><FortsattPanel /></aside>
+          {/* v207-u4: لوحة حفظ التقدم بجوار الدورات (تختفي للأعضاء المسجّلين) */}
+          <aside className="h-fit space-y-4">
+            <FortsattPanel />
+            <SparaFramstegPanel />
+          </aside>
         </div>
 
         {/* شريط الأرقام — من المصدر الوحيد للأرقام (src/lib/siffror)،

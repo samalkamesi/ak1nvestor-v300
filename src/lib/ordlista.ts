@@ -1695,6 +1695,23 @@ export const ORDLISTA = {
     en: "Continue where you left off",
     ar: "تابع من حيث توقفت",
   },
+  // v207-u4 (konverteringsresan): spara-framsteg-panelen vid kurserna —
+  // kontextuell konto-CTA (varför konto: framsteg följer med mellan enheter).
+  "kurser.sparaRubrik": {
+    sv: "Spara ditt framsteg",
+    en: "Save your progress",
+    ar: "احفظ تقدّمك",
+  },
+  "kurser.sparaText": {
+    sv: "Utan konto sparas framstegen bara på den här enheten. Med ett gratis konto följer kurser, XP och stjärnor med dig mellan enheter.",
+    en: "Without an account your progress is saved only on this device. With a free account your courses, XP and stars follow you across devices.",
+    ar: "دون حساب يُحفظ تقدّمك على هذا الجهاز فقط. مع حساب مجاني تتبعك الدورات ونقاط الخبرة والنجوم عبر أجهزتك.",
+  },
+  "kurser.sparaKnapp": {
+    sv: "Skapa konto — gratis",
+    en: "Create account — free",
+    ar: "أنشئ حسابًا — مجانًا",
+  },
   "tips.oppna": { sv: "→ Öppna", en: "→ Open", ar: "افتح ←" },
 
   // Kursporten + nivåbaren (kurs-gate.tsx) — syns post-hydration på

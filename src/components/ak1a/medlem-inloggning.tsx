@@ -122,6 +122,19 @@ export function MedlemInloggning() {
     window.history.replaceState(null, "", window.location.pathname + window.location.search);
   }, []);
 
+  // v207-u4 (konverteringsresan): ?lage=registrera|skapa från CTA-vägarna
+  // (/bli-medlem-redirecten + "Börja gratis"-knapparna) öppnar formuläret
+  // direkt i Skapa konto-läget — besökaren slipper hitta växellänken själv.
+  // Samma mount-mönster som recovery-fångsten ovan; paramen är ofarlig i
+  // adressfältet (delbar länk, omladdning behåller läget). En recovery-hash
+  // äger läget före paramen — återställningen är alltid viktigast.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.location.hash.includes("type=recovery")) return;
+    const p = new URLSearchParams(window.location.search).get("lage");
+    if (p === "registrera" || p === "skapa") setLage("skapa");
+  }, []);
+
   // Redan inloggad från ett tidigare besök (httpOnly-kakorna)? EN kontroll
   // vid mount — ingen polling. Tyst vid fel: SSR-vyn (formuläret) står kvar.
   useEffect(() => {

@@ -1,0 +1,132 @@
+studio: auto s5-u3 lärvägar — mt-09 REGLERINGSMOAT · kt-11 INDEXINKLUSIONEN · bk-09 VALUTADIFFERENSERNA (+3 kurser med varför-rader, register 498→501) — kursregister-synk GRÖN 501=501=501, front B, tsc 0 [fabrik]
+
+Manifest auto-s5-1790664909035, omgång 31, byggare 3/3. Postmallen ordagrant
+infriad: "+3 kurser med varför-rader, kursregister-synk, front B, tsc 0".
+Tre seriefortsättningar i egna linjer, klaim disk-först 07:06 UTC
+(data/vakten/auto-s5-1790664909035-s5-u3-ansprak.md, gitignorerad väg) med
+sondbelägg mot 495-registrets ALLA textfält (verktyg/_s5u3o31-sond{,2,3}.mjs):
+
+(1) MT-09 REGLERINGSMOAT — MOAT-familjens nionde steg (Intermediär, 24 min,
+xp 50): vallgraven lagstiftaren byggde — skydd och tak i samma lag.
+Vitfläcksbelägg: «regleringsmoat» 0 KURSÄGARE (1 bokträff:
+competition-demystified — se-19-presedensen), «tillåten avkastning» 0 TOTALT,
+«inklåsning» 0, «tillståndsmarknad» 0 (o27-könotans reservkandidat).
+Gränser: mt-01/mt-02 (begreppet + erosion), v18 (reglering som
+PRISHÄNDELSE), rk-06 (som NEDSIDRISK), km-047 (sektorlexemplen), roic-06/
+se-24 (kapitalkravens gren), se-19/se-11. Tre signaturräkningar, alla
+påhittade tal och maskinellt efterräknade i KVD: (a) TAKETS MEKANIK —
+Kustleden Elnät: intäktsram 5 000 × 6,4 % = 320 Mkr mot kapitalkostnad
+5 000 × 5,8 % = 290 — glappet 30 Mkr är den reglerade vinsten; takträning
+till 5,9 %: glapp 5 Mkr; capex-paradoxen 400 × 6,4 % = 25,6 Mkr nästa års
+ramtillväxt ((5 000+400) × 6,4 % = 345,6); (b) TILLSTÅNDSMARKNADENS SKALA —
+Svea Spel: licens 18 Mkr = 0,18 % av incumbentens omsättning 10 000 men
+1,8 % för utmanaren på tiondels skala (tjugo gånger) + inträdespris 268 Mkr
+(250 täckning + 18 avgift); (c) DUPLICATIONSTESTET — ett andra nät kostar
+5 000, delar ramen (320/2 = 160 mot kapitalkostnad 290): minus 130 Mkr/år,
+avkastning 3,2 % mot WACC 5,8 % — aritmetiskt nej; mt-05-gränsen (bytes-
+kostnad per kund mot duplication per marknad) + v15-gränsen (nätverk mot
+fysiskt nät). Erosionens tre riktningar: avreglering (telekomprecedensen,
+moat-migration), takträning, politisk pendel — Lynch (börsklädda monopol,
+hyresvärden skriver om avtalet), Graham (utilities: obligation i aktiekläder,
+retroaktivt föränderligt regelverk), AK1 (SAM-stabilitetspoäng mot
+tillväxtavdrag, riskmatrisrad «regeländring»).
+
+(2) KT-11 INDEXINKLUSIONEN — KATALYSATOR-familjens elfte steg (Intermediär,
+24 min, xp 50): katalysatorn som inte handlar om bolaget. Vitfläcksbelägg:
+«indexinklusion» 0, «tas in i index» 0, «inklusionseffekten» 0,
+«terminsstyrelse» 0. Gränser: am-07 (omläggningsMEKANIKEN — deras
+«rebalanseringsflöde»/«indexförändring»), am-02 (passiva ägare), am-03
+(aktiesidan), kt-02 (förväntningsklyftan), kt-05 (kalendern), km-035/bf-15
+(beteendet), ts-08 (volymbeviset), kt-09 (budprocessen i uteslutnings-
+spegeln). Tre signaturräkningar: (a) FLÖDESARITMETIKEN — Nordisk Moln:
+justerat värde 48 000 × 80 % = 38 400; indexvikt 38 400/3 840 000 = 1,0 %;
+köpbehov 0,22 × 38 400 = 8 448 Mkr = 70,4 normaldagar (120/dag) på 20
+handelsdagar = 422 Mkr/dag = 3,5 × volymen; (b) TRE PULSER — ryktet
+(väntevärde 0,60 × 6 % = 3,6 %), tillkännagivandet (i studier dokumenterad
+genomsnittsreaktion i låga enkla procentenheter — källkritik: bred spridning
+mellan studier), effektdagen (volymtopp vid terminsstyrelseringen, liten
+nettorörelse: flödet möter flöde); (c) ASYMMETRIN — uteslutningsspegeln
+Bergslagen Livs: 0,22 × 12 000 = 2 640 Mkr = 66 normaldagar; diagnosregeln:
+sortera på ORSAK (fundamental: fusion/kollaps — eller teknisk: tröskel/
+omläggning) före tolkning. Hållbarhetstestets tre historier: fade,
+likviditetspåslag (bestående och VÄRDERBART som likviditet — am-01/am-08),
+symptom (vuxit in i indexvikt — tx-01). Lynch (priset följer intjäningen —
+inklusionen är laboratoriet där det inte gör det), Graham (mr Market
+mekaniskt tvingad: värdet identiskt, priset rör sig), AK1 (AKM2:s
+likviditetsdimension, scenariotriaden före/fönster/efter).
+
+(3) BK-09 VALUTADIFFERENSERNA — BOKFÖRING & ÅRSREDOVISNING-familjens nionde
+steg (Intermediär, 24 min, xp 50): koncernens tysta valutaposition.
+Vitfläcksbelägg: «funktionell valuta» 0 TOTALT, «valutadifferens» 0
+KURSÄGARE (1 bokträff: financial-statement-analysis-and-security-valuation);
+«valutareserv»-träffarna är nationers reserver (mk-03 m.fl.) — inte
+EK-posten. Gränser: bk-04 (konsolideringens stomme), ks-08 (säkrings-
+instrumentet — säkrar DELTAT, inte reserven), rk-07 (riskmåttet), ma-07
+(kursens makro), se-18 (globala intäkter), km-002 (förändringsanalysens
+helhet). Tre signaturräkningar: (a) TRANSLATIONEN — ToolCo (funktionell
+valuta USD: marknad+kostnader+finansiering): tillgångar 320 × 9,70 = 3 104,
+skulder 220 × 9,70 = 2 134, transit-EK 970,0; resultat 12 × 9,45 = 113,4
+(genomsnitt), ingående EK 88 × 9,20 = 809,6 — differensen 970,0 − 809,6 −
+113,4 = 47,0 Mkr DIREKT i valutareserven, aldrig resultatet; kontrollvägen:
+100 MUSD × 9,70 = 970,0 mot blandkursen 923,0 = 47,0 igen (två vägar, en
+siffra); (b) KÄNSLIGHETEN — slutkurs 10,10: reserv 87,0 (+40,0); 9,40:
+17,0 (−30,0): reserven är en ren valutaposition i EK, synlig ENDAST i
+förändringsanalysen; (c) REALISATIONEN — avyttring: ackumulerad reserv
+47,0 + 23,0 = 70,0 återförs till resultatet som realiserad valutadifferens
+(«parkeringen töms»); vinstens tre stories separeras (försäljningsvinst +
+valutarealisation + engångsposter). Lynch (valutabruset förklarat bokförings-
+tekniskt), Graham (substansen delvis KURSBÄRANDE kapital; engångsposter ur
+driften), AK1 (AKM2-justeringspost, EK-kvalitet med vm-10/bk-06,
+valutatriaden 87/47/17 i scenariearket).
+
+FÖRKASTADE med belägg i anspråket: eventualförpliktelser (5 kursägare —
+rs-05 äger), survivorship (ek-04 + 8), nyckelperson (22), utdelningsstopp
+(ks-05), NRR-retention (se-01/v01/v02), övertagandeerbjudande (kt-09),
+rp-08 korrelationsbudget (tunn mot rk-10/km-014), vm-12 magiska formeln
+(böckerna täta — vm-12 togs sedan av u2 som REVERSERAD DCF, annan vinkel).
+
+SYNK ATOMISK GRÖN 498→501 (mellanläge tålt): registerinsert ×3 med
+serieordning (mt-08@<mt-09, kt-10@<kt-11, bk-08@<bk-09 · round-trip källa ≡
+register bitidentisk ×3 · verktyg/_s5u3o31-synk.mjs) · larvag-karta.ts +3
+rader + header 501/459 gratis (Edit-kanalan) · sok-index 501 · speglar 501 ·
+siffror 501 (quiz 8 283 oförändrad) · llms ×2 498→501 mönstersträngt (6+4
+ställen) · ai-mentor-register 501 rader antal-vakt GRÖN (rebaken bar
+syskonens kurser mekaniskt — u2:s verktyg skrev filen 07:46 med mina tre
+rader i, spegelbilden av o27; 0 diff mot komplett 501-bake verifierad) ·
+larvag-synk GRÖN 501=501=501 (37 profilkurser). KOLLISIONSLÄGET ÖPPET
+BOKFÖRT: u1:s vr-10 landade 495→496 under mitt byggfönster (deras commit
+c02446ca), u2:s ud-10+vm-12 496→498 på disk under mitt fönster (deras
+ kursfiler ocommittade vid min commit — deras leverans att bokföra i egen
+rad; registerposterna åker med i den gemensamma registerfilen enligt
+o27-precedensen). tsc-blockad en period av u2:s verktyg/_s5u2o29-frontb-lib/
+(.ts-importsuffix i deras lib-kopior) — deras yta, läkt av dem själva före
+min commit (grönt verifierat i min KVD).
+
+KVD 248 PASS 0 FEL 0 VARNING (verktyg/_s5u3o31-kvd.mjs: struktur 18 fält
+×3 + blockkonvention kap 1 definition/kap 6 utmaning/kap 2-5 tabell ·
+aritmetik 47 ekvationer oberoende omräknade · sondbelägg kärntermer ägs exakt
+av sina kurser (bokträffar räknas ej — arKurs-filtret) · korslänkar
+registeräkta · språkgrind 0 CJK/kyrilliska/dubbelord/dubbla mellanslag +
+kända-fel-ordlista · juridikgrind 0 rådsfraser + utbildningsframing ×3 +
+R2-pristal 0 + lagrumsformat 0) — kontrollens EGA fynd självrättade FÖRE
+grönt: CJK-läckor ×3 (组织的 ×2, 公用), stavfel BARriär/klyfga/ämer/främde
+valutas/aktiemedlemmar/studiedokumentade/ena fallen/BeteendeSKIFTET +
+meningsfel (klyft-diagNOSTIKUM, SAM-viktningen intressant), korslänk mk-058
+→ km-058 (valutor är KM-familjen), 3 KVD-egna buggar (felaktigt
+transit-EK-uttryck, överstrikt svarsräknare, valutareserv som nollterm —
+nationers reserver är inte EK-posten). FRONT B 30 PASS 0 FEL
+(verktyg/_s5u3o31-frontb.mjs läsreplik av larvag.ts mot kartans faktiska
+data: 90p svagheten +4 nivåmatch ×3 (Intermediär↔växande) och 90 utan
+påslag i båda omvända riktningarna (nybörjare/avancerad) · 86p
+kategori-fortsättning ×3 efter ALLA seriegrillar · 0 progress: nya kurser
+vilar, 3 starter · determinism bitidentisk ×2 · vIndex −1 + kraverFas 0 ×3 ·
+serieordning i kartan ×3 · syskonkurserna vr-10/ud-10/vm-12 oskadda ·
+why-paritet register ≡ kursfil ×3). tsc 0 via projektbinär (node
+node_modules/typescript/bin/tsc --noEmit, exit 0). INGET bygge (prod-synken
+äger); R2 orörd (kraverFas 0 ×3, 0 pris-/tier-/publiceringsytor);
+data/blogg/ (live) orörd; syskonens ytor orörda (u1:s profilfil, u2:s
+kursfiler och verktyg ej adderade). Kö i spåret (sondbelagda vita fläckar
+för kommande omgångar): se anspråkets reservlista — rp-08 tunt, ek-08 dött,
+vm-12 upptaget av u2 — nya sonder behövs (kt-12? od-12? ma-10?).
+
+LEVERANS: data/kurser-tillagg/mt-09-regleringsmoat.json, data/kurser-tillagg/kt-11-indexinklusionen.json, data/kurser-tillagg/bk-09-valutadifferenserna.json, public/deep-courses.json, src/lib/larvag-karta.ts, src/lib/ai-mentor-register.ts, public/sok-index.json, public/speglar-slugar.json, public/llms.txt, public/llms-full.txt, data/siffror.json, verktyg/_s5u3o31-{sanera,sond,sond2,sond3,kvd,synk,frontb}.mjs, verktyg/_s5u3o31-commitmsg.txt

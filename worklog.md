@@ -18614,3 +18614,42 @@ Fabriksagent s10-u2 (vakt). VAL (anspråk disk-först 22:4x UTC med P1–P8 lås
 ## SPÅR 10 s10-u3 (manifest auto-s10-1790634304502, vakt 3/3) — 2026-09-28 22:2x–23:2x lokal: OFFSITE-KEDJAN PÅ SSD NODES — ruin upptäckt, rotorsakad, kurad och återbevisad samma kväll [fabrik]
 
 Fabriksagent s10-u3. VAL (anspråk disk-först med P1–P9 låsta FÖRE mätning; duplikatkontroll i båda böckerna + data/: offsite-led 3 bevisades på CONTABO 09-19 med dåtidens arkiv — dagens post-cutover-arkiv på SSD Nodes ospelat; u1 höll app-DB-kvällsrepliken, u2 app-kedjans pg17-kur — noll kollisionsyta, flock-delat PG-fönster respekterat, deras städning eftermätt och respekterad). DR-ÖVNINGEN BLEV AKTUELT DRIFTFALL: (1) FYND A — enda offsite-arkivet var en RUIN: fyra ETIMEDOUT samma dag (02:57:42, 08:55:09, 14:54:45, 20:55:14 — alla exakt 120 s efter snapshotraden = gamla timeouten) lämnade halvfärdiga arkiv som skrev ÖVER dagens fungerande (00:53:57, 775 MB); symptomkuriosa: gzip -t GRÖN på ruinen (den dödade tar-processens gzip-barn hann skriva trailern) — tar -tzf är enda säkra provet. (2) FYND B — db-snapshot.sqlite (2,4 GB) integrity_check "*** in database main ***" (invalid pages, out-of-order rowids): copyFileSync på zcode:s LEVANDE db.sqlite = inkonsistent kopia — arkiven bar en trasig trådkärna. KUR (commits 787e1199 + 7ed20962, svit testa-backup-offsite.mjs 24/0 — ruindetektorn arArkivLasbart bevisad mot riktig fixture helt→true/trunkerad→false): ATOMISKT KONTRAKT (tar skriver .part.tar.gz → hela strömmen läsverifieras → rename först vid grönt — en misslyckad körning kan aldrig mer radera föregångaren) + snapshot via SQLite backup-API (python3 src.backup + PRAGMA quick_check-grind; skarp: 57–68 s, ok) + GZIP=-1 via ren env-option med 1 200 s (GENOMSTRÖMMNINGSMÄTNING på 256 MB verklig data: -6 CPU-bunden ~8,4 MB/s in, -1 ~13,9 — källan ~2,6 GB klår ej -6; argv-formen -czf oförändrad, o93-härdningen består) + BACKUP-FEL ⇒ exit 1 (rundan före loggade felet men lämnade exit 0). FYND D — processlära: ocommittat verktygsarbete skrevs över 22:37 av syskon-/synk-återställning mitt i fönstret → omskrivet + TIDIG COMMIT som skydd (dokumentärt för fabriken: pågående-aldrig-committat arbete ser smutsigt ut för syskons städningsregler). SKARPKÖRT BEVIS (nya arkivet 23:03, 983 030 401 B ≈ 938 MB, SHA 1be286f7…cd88b): läsverifierad vid skapandet · extraktion RTO 177 s → 2 066 filer/2 605 MiB · integritet tar -tzf GRÖN 2 087 poster (u1:s kvällsräkenskap "2 075" = ruinens avklippta lista, korrigerad i DRIFTSBOKEN) · FULL integrity_check "ok" på återställd 2,27 GiB-trådkärna (u1:s öppna sqlite-djuppost STÄNGD) · part 366 609/message 88 774/session 2 514/tool_usage 92 583 · huvudtrad.json parselbar · ARKIV == LIVE EXAKT (forskning 1 467/1 467 · blogg-utkast 425/425 · kurser-tillagg 162/162) · säkerhetssvep 0 träffar på 2 087 poster · P8 lokal PG18 viloläge oberoende eftermätt (0 postgres-processer · port 55432 fri · base/ endast OID 1/4/5 — syskonets skrap-DB städad av dem) · P9 arkivet SHA+mtime byte-identiskt före/efter (ENDAST LÄST; arbetet på /tmp-kopia, nu borttagen). PREDIKTIONSDOM 8/9 ärligt (P2 ✗: <60 s byggde på -6-volym; nytt extraktionsband 150–200 s för ~2,6 GiB under drift). KVD: src/ orörd = INGET bygge (commit 7ed20962 passerade pre-commit-grinden) · R2 orörd · data/blogg/ orörd · data/backups ENDAST LÄST bevisat · prod aldrig rörd (200) · GDPR endast antal. KÖ: pumpornas 02:52-körning natten till 09-29 = kur v2:s första autonoma pass (morgonronden läser "SKAPAD … läsverifierad") · GitHub-push-benet förblir R2-köpost (SSH-nyckeln hos NewUserAK/AK1, känd sedan 09-19) · retention 7 dagar byggs från 09-28, granskning 10-05 · offsite-restore repeteras med kvartalsövningen. LEVERANS: data/forskning/DR-OVNING-2026-09-28-OFFSITE-SSDNODES.md, data/DRIFTSBOKEN.md, worklog.md, verktyg/backup-offsite.mjs (787e1199+7ed20962), verktyg/testa-backup-offsite.mjs (24/0); anspråk på disk: data/vakten/auto-s10-1790634304502-s10-u3-ansprak.md (gitignorerad katalog). [fabrik]
+
+## KVALITET v213b-fortsättning — 2026-09-28: AKM3-KONTRAKTSSVITER LEVERERADE (ensemble 35/35 · osakerhet 34/34 · regim 48/48)
+
+Fabriksagent (KVALITET: kontraktssviter för nästa otestade motorer). VAL:
+registret 09-19 säger 0 otestade men är 9 dagar gammalt — träddiff mot
+data/motorregister.json + svitlista gav AKM3-familjen som DE TRE nästa
+otestade: src/lib/akm3/ensemble.ts + osakerhet.ts + regim.ts (endast
+kalibrering.ts hade svit; alla tre saknas i registrets 105 poster —
+nästa modellgeneration helt utan kontraktsviter). DIFF (v213b-doktrinen —
+motorfilen läst FÖRST, kontrakt ur filhuvudena, FAKTISKA exporter):
+tre nya deterministiska sviter via ts-import-bryggan (ren node 22.23,
+type stripping — hela kedjan inkl akm2/karna.ts laddar grönt, sonderad
+FÖRE svitskrivandet): (1) testa-motor-akm3-ensemble.mjs — α=1/3 LÅST,
+total=round(Σ α·K) omräknad oberoende, kanonisk profilordning, band/
+median/spridning/diagnostik, porten följer DATA (PORT-fixture portAktiv ×3,
+K_p ≤ 45), NUL ärvs osatt, determinism 2× + ren funktion, formguard
+6 negativa fall — 35/35 PASS exit 0 (~4 s). (2) testa-motor-akm3-
+osakerhet.mjs — Manski-bounds [K, min(100, K+100(1−t))], t-clamp,
+PORT_TAK 45 endast vid naiv övre > 45, fullviktsraden (primären minst
+lika BREDD — bredd, ej inneslutning), visningsformaten exakt ur filhuvudet
+("58 [58–91] (täckning 67 %)" / "58 ± 16,5 (täckning 67 %)" / "[58–91]"),
+null-ärlighet ×5 — 34/34 PASS exit 0 (~2,6 s). (3) testa-motor-akm3-
+regim.mjs — trösklarna speglar forskningslaget.ts (en källa), BESLUT §8:s
+dokumenterade genesis (G=0,07 R=0,17 ⇒ magert), N-vakten (12 < 30 ⇒ osatt
+med orsak), fruset tillstånd, hysteressen (2-snapshots-bekräftelse,
+kandidat dör vid mål-tillbaka, magert-bandet 0,08–0,10), Σu-gaten (3
+snapshots vid > 25 %), hash-kedjan (sha256 INJICERAD — kanonisk JSON,
+tamper/fel-prev/utan-hash ogiltiga), determinism — 48/48 PASS exit 0
+(~6,6 s). ÄRLIGT RÖTT under utvecklingen: ensembles NUL-fixture läckte
+mätta serier/aterkop via spread (fixad i fixturen); osakerhet bar tre
+TESTFEL (flyttal i D3, F3 testade inneslutning mot filens "bredd"-löfte,
+G6 slarvhalvbredd) — motorn orörd i alla fall, testen kurade mot filens
+faktiska kontrakt. KVD: sviterna körs ×3 med utdata klistrad i
+data/rapporter/akm3-kontraktssviter-2026-09-28.md · src/ ORÖRD (inget
+bygge) · R2 orörd · data/blogg/ orörd · körningar < 7 s (tak 60 s).
+Backlog som följde med: oversattning/motor.ts (ÖVERSÄTTNINGSMOTORN,
+820 rader), dataset-medianer, analysfabrik, observatoriet, forskningslaget,
+larvag*, ordlista, vagvalidering, siffror* — samt registrets regen.
+[fabrik]

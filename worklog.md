@@ -18849,3 +18849,39 @@ Fabriksagent s2-u2 (byggare). VAL med anspråk disk-först FÖRE all datahämtni
 Fabriksagent s2-u3 (byggare). VAL med anspråk disk-först (auto-s2-1790657113931-s2-u3-ansprak.md) och TVÅ ÄRLIGA PIVOTS: (1) könotisens EDF är AVNOTERAD — /quote/epa/EDF/ 404 + webbverifiering: statens utköp €12/aktie, retrait obligatoire, delisting Euronext Paris 2023-06-08 (stat 100 %) — könotisens "börsnoterad dock" var fel; även Redeia (bme) + EDP (els + NYSE-ADR) 404. (2) Veolia-kollision: syskon u1 skrev VIE.PA som industri (källans Waste Management-etikett, commit ccf43fe7) — deras rad deras ägo, Veolia lämnad åt u1, EDIT-KRIG ALDRIG ett alternativ; Snam (bit) lever men dubblerar Enagás TSO-profil ⇒ VALD: VERBUND (vie-vägen, Utilities–Renewable, Europas största vattenkraft, Österrike = universumets 24:e land). SLUTGILTIG TRIO = tre AFFÄRSMODELLER: Endesa ELE.MC (reglerat el, Spanien) + Enagás ENG.MC (gas-TSO, Spanien, brutto 93,65 % = universumets högsta klass) + Verbund VER.VI (förnyelse, D/E 0,31 cellens lägsta belåning). Full panel ×5 sidor ×3 bolag (StockAnalysis/S&P GMI, pålästa 2026-09-29, close 2026-09-28 CET; BME- + vie-vägar kanalbevisade — LSE förblir olöst). ARITMETIKGRIND 48/48 GRÖN FÖRE skrivning (första körningen 45/3: två egna enhetsbuggar i EPS-replik rättade + två toleranskalibreringar mot NEE/EXC-precedensklasserna); FYND-identitet: EV = mcap+skuld−kassa+MINORITET belagt EXAKT ×3. Append mutex+idempotent+läs-tillbaka ×2, syskonrader värde-identiska, diff kirurgisk (298+/2−). MEDIANER EFTER (raknaBranschMedianer-replik): NYTTOVALT 8 bolag — P/E 17,0 (kv 16,2–18,9) · P/B 2,1 · EBIT 23,6 % · FCF −9,2 % · tillväxt 6,4 % · resultat-CAGR 12,1 % (kv 8,8–14,7); UNIVERSUM 322 — median P/E 19,8→19,7 (n 306→309). Pedagogikfynd: europakontrasten FCF (ELE +9,51 % cellens första kraftigt positiva mot USA-systernas negativa) · Enagás FY2024-förlustår −299,31 M€ MITTEN i serien (CAGR definierad, start/slut positiva; TTM "+115,5 %" = förluståret som bas) · Verbund = spårets första NEGATIVA prognosTillväxt (−7,38 %/år, gap +1,25 % positivt släpper BUD-fältet — energikrisens engångsvinster tvättas ur: EPS 2,51→4,94→6,52→5,40→4,29). KRASCHVAKT-KOLLISIONEN: efter första appenden återställde trädet mot HEAD (byggfönstret, minnesklassen 2026-09-29) — mina ospårade filer överlevde, raderna/spåren raderades; KUR = idempota skript omkörd (grind 48/48 igen, append 322, regen) + OMEDELBAR commit (denna). llms.txt HELREGEN 322-läget (bygggrinden: samtliga branscher byggda — NYTTOVALT-raden LIVE med 8-bolagstal); sitemap datadriven (inga nya sidor: Spanien×nyttovalt 2, Österrike 1 — matta ≥5 ej nådd). KVD: läckagevakt v98 GRÖN 322 tickers+namn/0 träffar i 1 755 utdatafiler · tsc 0 (src orörd, INGET bygge) · prod 200 ×3 (/, /dataset, /dataset/nyttovalt) · R2 orörd · data/blogg orörd · syskonytor orörda (u1:s Veolia + u2:s BIDU/NTES värde-identiska genom hela omgången). Könotis: LSE via YAHOO-vägen (ENEL.MI-precedensen — StockAnalysis saknar UK, Yahoo bär NG.L redan); strukturfrågan R1 kvarstår. Protokoll: data/forskning/NYTTOVALT-EUROPA-UTOKNING-U3.md. [fabrik]
 
 - Fabriksagent s3-u3 (byggare 3/3, manifest auto-s3-1790659517934). LEVERANS: Ö28 — data/blogg-utkast/kemiktier-sa-analyserar-du-kemibalag-en.json, engelsk spegling av B31 kemiguiden (1 399 ord mot originalets 1 392; klaimfil data/vakten/s3-b31-en-kemi-ansprak-2026-09-29.md skriven FÖRE arbetet, disk-först; slot-val enligt Ö17/Ö20-precedensen: TREDJE lediga -en-objektet — B29 gruv-en och B30 rederi-en lämnades åt syskonens u1/u2-presumtiva slotar; B29–B33:s fem nya original har öppnat fem nya -en-luckor efter Ö27:s "komplett"-notis, som uppdaterades i Ö28-raden). Samma tal, formler och korslänkar som originalet: marginalbanden 12–18 mot 25–40, Norden-kontrasten 12 000 × 18 % = 2 160 mot 3 000 × 38 % = 1 140 med 34,5 % av bruttovinsten på 20 % av omsättningen, gasräkningen 33 × 4/8/12 = 132/264/396, utbudstrappan 546/282/560 med kvoten 278 ÷ 14 = 19,9 och stabiliseringen 414/86/218, Yara 249,7→165,1 = −33,9 % med resultattrappan 28,8→510→157→13,0 mdr, Nutrien 7 660→1 410→744→2 153, Shin-Etsu 2 338→2 912 mdr yen, Air Liquide 23 335→26 940 M€, BASF 87 327→59 657 = −31,7 %, SHW 42,8→48,9 spread 6,75, P/E-trappan 8,3/17,28/29,61/29,36/13,42/22,13. KVD GRÖN 0 FEL/0 VARN i 14 maskinella kontroller (verktyg/_s3u3-b31-en-kvd-kemi.mjs, B33-mallen anpassad för -en-fallet): varumärkesgrind 26 regexer × 3 ytor = 0 · rådverb SV+EN 0 (körning 1 fångade "hold margins" — omformulerat till "keep margins" FÖRE leverans, B33-precedensen) · sökord "chemical stocks" i title+description+H1+ingress+2 H2 · title 50/60 · OG 144/155 · ord 1 399/1 200–1 400 efter FEM trimomgångar 1 694→1 582→1 462→1 405→1 399 (komprimerad trogen stil enligt Ö8/Ö11/Ö12-konventionen) · korslänkar 18/18 MULTISET-identiska med B31 mot publicerade ytor · externa URL:er 5/5 slutstatus 200 live (originalets egna uppsättning) · aritmetik 24/24 motorräknad · TALPARITET 171/171 tal tusentelsnormaliserad multiset (kontrollens tokenisering kurerad symmetriskt mot "26 940 2025"-grannsammansmältning — AR8/Ö14-klassen, guidetexten orörd av kuren) · H2 8 = originalets 8 · readingMinutes 2 · publishedAt 2026-09-29 = leveransdagen · disclaimer engelsk exakt sista rad. Ren dataleverans — src orörd, inget bygge, data/blogg/ orörd (utkast-mappen enligt R2). Kvar i -en-spåret efter denna omgångs val: gruv-en/rederi-en (syskonen) samt stål-en/betalning-en + de fem -ar-speglarna som nästa luckor. [fabrik]
+
+## ROND 327 [organ:Φ] (2026-09-29 ~06:1x UTC) — Q3-LÄCKESROTSUTREDNING: akut läckage TÄPPT i prod; soft-404-defekt bokas som v211; v206 LEVERERAD I PROD
+
+**UTREDNINGEN (hjärtatslagets kö-uppgift, fortsättning på r325:s fynd):** Alla tre
+Q3-framtidsslugar (Holmen/Evolution/Sandvik, publishedAt 2026-10-21) svarade fortfarande
+200 — men kroppsmätningen avgjorde domen: **nuvarande artefakt (BUILD_ID 05:38:36 =
+7dad3195-trädet) bär datumfiltret (847185f8, bloggArPublicerad i src/lib/content.ts) och
+serverar 404-SKAL utan innehåll** (45,7 kB, generell titel, noll "Holmens"-träffar).
+r325:s "äkta titel 144 kB"-mätning träffade den GAMLA 03:07-artefakten — läckaget dog
+med 05:38-bytet (räddningsbytes-markörens bullriga fönster förklarar förvirringen).
+
+**BEVIS-KEDJAN:** 86/86 publika poster → 200 + äkta titel (ingen regression) · okända
+slugar → ÄKTA 404 i alla tre språk (våg 81-kuren intakt i Next 16.3.6) · listvyer (/ och
+/blogg) läcker inte framtidsposter · .meta-filerna saknar statusmarkering — roten till
+kvarvarande defekt (nedan).
+
+**KVARVARANDE DEFEKT (godartad, bokas v211):** Framtidsslugar serveras som SOFT-404
+(HTTP 200 + 404-skal) i alla tre språk — länkbara/indexerbara men innehållslösa.
+Rot: generateStaticParams inkluderar framtida slugar medvetet (S2: schemalagda inlägg
+skall vakna live vid revalidate 3600 utan deploy — designen är RÄTT), men Next 16.3.6
+skriver ingen 404-status i .meta för notFound-renderade statiska platser. Kur-alternativ
+i PIPELINE (middleware-status / plats-exklusion+S2-offer / Next-uppgraderingsutredning).
+
+**v206 PREFETCH-KUREN → LEVERERAD I PROD:** koden (beed9f7d, 27 platser) är bevisat i
+05:38-artefakten (landade i trädet 01:04 < byggstart 05:17). v207 EFTERMÄTNINGEN får
+ett INSTRUMENTFYND: prefetch syns ALDRIG i serverad HTML (next/link prefetchar i
+runtime vid viewport) — HTML-mätning är fel instrument; kräver browser/motor-mätning.
+Noterad baslinje: startsidans 19 script-buntar = 965 kB.
+
+**FABRIKS_EMOTTAG:** s2–s4-familjens commits merge:ade hem (universum 322 via
+s2-u2 KINA + s2-u3 EUROPA-UTILITIES + Veolia-industri; SEO-speglarna Ö28–Ö30 gruv/
+rederi/kemiktier-EN). Deploy: bokföringspushen landar utan src-ändring — synken tar
+trädet vid nästa gröna poll (fabrikens s4-manifest aktiv, VÄNTAR-FABRIK-sekvens).
+
+**Verktyg:** _r325-familjen (ingrepp/truth), _r326-familjen (byggsond/deployvakt),
+_r327-familjen (sond 1–8 + detta landa-skript) — 14 skript committade.

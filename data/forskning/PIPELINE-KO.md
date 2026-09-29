@@ -542,3 +542,13 @@ Nästa i kön (händelsestyrda): nattens G2/G5-kvitton 02:30–06:27 UTC 29/9 (7
 | v206 | PREFETCH-KUREN (o557:s produktnivå-bokning, spår 7; OMDÖPT r311 — fabrikens v203 = telefonparitet, nummerkollision kurad): 1,35 MB-chunken med superanalys/konfluens-motorerna (monte/kelly/SAM/bayes) laddas via Next-Link-ruttprefetch av ALLA sidor men exekveras aldrig — kur: prefetch={false}/demand-laddning på tunga rutt-länkar (10+ globala komponenter × 3 språkytor: menyer, footer, CTA-sektioner); src-yta ⇒ tsc + bygg under flock vid fönster (V235: väntar ut fabrik) | BOKAD (huvudagenten, nästa dedikerade rond) |
 | v204 | U6-STEG I VIA ROOT-ROND (spår 11): Chrome hardware acceleration av på GPU-lös Xvnc — FIL-proceduren är fri (setting.json i ~/.zcode, backup .bak-u6 finns) men OMSTARTEN kräver systemctl = root-kanal (r310 bevisade: studio-kanalens systemctl → Access denied; sudo-fria kill-vägen ger okontrollerad timing + feltända stoppregler). Procedur till root-ronden: sätt "desktopChromiumHardwareAccelerationEnabled": false (kirurgisk replace, exakt 1 träff) → systemctl restart zdesk-zcode → verifiera is-active + 0 gpu-process + providerCount-rad. Mätning enligt U6 §6 | BOKAD (root-rond) |
 | v205 | NATTEMOTTAGET G2/G5 + EFTERVAKTSOMSTART (spår 9+7): läs nattens 7 spårkvitton (02:30–06:27 UTC 29/9; eskalering enligt DRIFTSBOKEN vid uteblivna) + starta om o556/o558-eftervakterna (dog på tidsgränser under fabrikslast — omstartbara, nattens tysta fönster är deras) | BOKAD (morgonronden) |
+
+
+## ROND 327 [organ:Φ] (2026-09-29) — Q3-läckesutredning klar; v206 kvitterad i prod; v211 soft-404-kur bokad
+
+| Våg | Innehåll | Status |
+|---|---|---|
+| v206 | PREFETCH-KUREN (27 tunga länkar, beed9f7d) | ✓ LEVERERAD I PROD r327 — koden bevisad i 05:38-artefakten (BUILD_ID 05:38:36, träd 7dad3195); prod 200 ×10 rutter; effektmätning överlämnad till v207 |
+| v207 | PREFETCH-EFTERMÄTNING (1,35 MB-motorbuntar borta ur vanlig sidlast) | BOKAD — INSTRUMENTFYND r327: prefetch syns ej i serverad HTML (runtime-fenomen); kräver browser/motor-mätning (Browser Use eller prestanda-mätverktyg); baslinje: startsida 19 buntar/965 kB |
+| v211 | SOFT-404-KUREN: framtida blogg-platser (idag 3 Q3-slugar × 3 språk) serveras HTTP 200 + 404-skal — .meta saknar status i Next 16.3.6; designen (platser vid byggtid för S2-autopublicering utan deploy) är RÄTT, statuskoden är felet | BOKAD — kur-alternativ: (a) middleware sätter 404 vid notFound-platser, (b) plats-exklusion + acceptera deploy-per-publicering (bryter S2), (c) Next-uppgraderingsutredning; beslut nästa dedikerade rond |
+| v205 | NATTEMOTTAGET G2/G5 (7 spårkvitton 02:30–06:27 UTC) | PÅGÅR — fönstret löpt; kvitton läsas nästa rond (denna rond ägdes av läckesutredningen) |

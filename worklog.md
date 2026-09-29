@@ -18732,3 +18732,23 @@ Fabriksagent v206-u1 (byggare, AI-MENTORN: BOKMASTER +2 monsters, manifest v206-
   fabrikens nattsväp (pid-bevisat); nattens G2/G5-spårkvitton börjar 02:30
   UTC (v205 morgonronden); v207 (prefetch-eftermätning) + v208 (U6-steg I,
   omdöpt) + ström-installationen står i kön.
+
+- RADIKKEL r319 [Φ] (evighetssond): defaults-återfallets rot — v206-mega-kapacitet (6/6 klara 00:24Z, kundorder "maximera i alla delar") deklarerar INTE desk-web/defaults.json i någon leverans; skrivningen 23:56:05 var UTANFÖR deklarerat filägarskap (våg 104-regeln), exakt barn ej belägbart bland u1-u6 (alla löpte vid tidpunkten). Bokförs till v205-emottaget: desk-web-ytan tillhör huvudsessionen (D3-rätten). FABRIKENS NAMNRYMD: manifest-familjen tagit v205-v208-nummer (desk-expertradet/mega-kapacitet/saljberedskap/desk-orientering) — PIPELINE:v207/v208 krockar kosmetiskt; emottag-ronden tydliggör namnrymderna.
+
+- RADIKKEL r321 [Φ] (evighetssond): prod-synkens 00:57-deploy byggde träd 376ad973 KLART (compile 13,7 + TS 8,8 min, loggen slutar frisk) men BYTET till .next skedde ej (BUILD_ID kvar 11:40Z) — TROLIG ORSAK (hypotes, beläggsrad ej återvunnen): v187-buntslagsvakten stoppade bytet därför att fabrikens barn landade nya commits i AK1 under de 40 byggminuterna (byggträd ≠ slutträd); synkens nästa poll ombygger. Konsekvenshanteringen verkställd av slutled v5: EGEN bygg under flock startad 01:35 (låstest grönt, ren-yta, RAM-grind) — sekvensen är korrekt och prod har aldrig varit nere (gamla bunten serverade 200 hela vägen). Strömbevakaren köar bakom v5:s lås (pm2-omstart av pumpor efteråt, v216-ordning).
+
+### ROND 322 [organ:Φ] (styrelserond 134) — RAK-BYGG-UTBILDNINGEN: kundsynligt ostylat under huvudagentens egna byggen — 2026-09-29
+
+FYND (pulsvakten varv 1-3, 01:40-01:42): 24/24 statiska tillgångar 500 under
+slutled v5:s egen bygg — det raka protokollskommandot (npm run build direkt i
+.next medan pm2 serverar) river kundsynliga font/media-filer i byggfönstret;
+prod-synkens NEXT_DIST_DIR=.next-ny + atomiska byte finns PRECIS för att
+undvika detta. Skadan självläks vid v5:s pm2-restart; v5 fullföljs (avbrott
+vore värre). KUR bokas som v209: ALLA huvudagentens egna bygg-kedjor (slutled-
+mallen) byter till .next-ny-mönstret (NEXT_DIST_DIR=.next-ny npm run build →
+atombyte mv → pm2 restart under flock) — rak-bygg i prod är HÄRIGENOM
+förbjudet i huvudagentens verktygslåda. Rondens prod-krav: e17795e9 [Φ] +
+376ad973-merge landade efter förra ronden; v5:s FAS D-commit på väg.
+Protokoll: inget organ fött/dött; kön ≥3 (v205/v207/v208/v209); gap-registret
+fortfarande uttömt 36/36; fabrikens v207/v208-familjer + s11 + U20/U21/U22
+levererade under natten (47 commits) — emottag bokas i morgonrondens svep.

@@ -19552,3 +19552,66 @@ data/blogg orörd · prod-träd orört före rundans egen push.
 LEVERANS: worklog.md (detta protokoll) + data/vakten/_r344-sond.json
 + agent-status.mjs + verktyg/_r344-sond.mjs + verktyg/_r344-klocka.mjs.
 [organ:Φ]
+
+## ROND 348 [organ:Φ] (2026-09-29 23:0xZ) — TRÄD-ÅTERFÖRING r348: develop ⇄ prod förenade; r344:s efterlämnade leverans landad; paraplyfynd läkt
+
+**Läge vid rondstart**: prod-ytans develop (efa11145, JÄRN U1–U3-serien:
+e0aaf095 stallningsbygg+mörkerlarm · 7b5c720c omkörningsverifikation ·
+41114c33 paraplyvakten · efa11145 sitvakten v3) och vår develop (cfc6ae09,
+r338–r343-kedjan) hade DIVERGERAT från gemensam bas aa2f35eb — 198 commits
+mot 4, ingen sida visste om den andra. Paraplyvakten larmade 3 fynd
+(puls STALE + vakttornet.mjs + desk-halsa.mjs saknas).
+
+**(1) MERGEN**: `git fetch prod develop` (node-wrapper; direktskal hängde —
+skal-kvot kur 1 följd) → merge --no-ff FETCH_HEAD = d70b417a. Ren auto-
+merge; ENDA överlappfilen verktyg/testa-prod-synk-nolldowntime.mjs förenad
+av ort-strategin — båda vaccinen bevisade lever efteråt: svit 25 PASS /
+0 FAIL / exit 0 (JÄRN-U1:s test-18-MÖRKER-VÄG-märkning + o560:s
+kontroll-25-gitignorevaccin), node --check OK på paraplyvakt.mjs +
+prod-synk.mjs. develop är åter DEN ENDA fullständiga linjen (båda sidornas
+värde: JÄRN:s vaktöverbyggnad + vår 17:36-artefakt-kodbas).
+
+**(2) r344:S EFTERLÄMNADE LEVERANS** landad som 45c0b8cc (tsc-grinden grön):
+rond 344:s session dog före commit — protokollet lev färdigt i worklog-
+diffen (ISR-meta-beviset r336-stängning + tidsstämpelkuren i agent-status.mjs
++ r341-kvittot) och committades ordagrant med dess två verktyg.
+
+**(3) PUSHEN**: deploylåset respekterat — prod-synkens efa11145-byggfönster
+(22:37:20Z→) väntades ut (8 min poll, node-Atomics-sleep); FÖRST därefter
+`git push prod develop` = efa11145..45c0b8cc. OBS: efa11145-bygget FÖLL
+22:58:23Z (google-font-modul module-not-found — JÄRN-U2:s kända byggfelloop;
+läkeinfrastrukturen återställde .next, pm2 levde, revert avståtts enligt
+o72) — nästa :x7-poll bygger från 45c0b8cc = SAMMA src som gröna artefakten
+ZG-84L6-upvH (17:36), odds goda.
+
+**(4) DRIFTBEVIS EFTER PUSH**: prod-ytans topp 45c0b8cc · desk-halsa.mjs
+ÅTERSTÄLLD i prod-trädet (paraplyfynd läkt — bevis: paraplyvakt-larm.loggen
+22:22:59 tre fynd → 23:02:22 två fynd, fil-desk-halsa.mjs borta) ·
+kraschvakt.mjs + paraplyvakt.mjs lever · kontrollposter: / 200 ·
+/integritetspolicy 200 · /blogg 200 · framtids-slug 404 med FULL L3-signatur
+(cache-control: no-store + server-timing: ak1a;desc="bot" + x-ak1a-klass: bot
++ X-Robots-Tag: noindex) — tre-lagrs-barriären intakt genom hela händelsen.
+
+**(5) ÖPPEN POST TILL TRÄDÄGAREN**: vakttornet.mjs-zombien lever kvar —
+schema-radern ropar var 5:e minut MODULE_NOT_FOUND (koden raderades 21:55:42,
+levde ALDRIG i git, r332) och pulsen vakttornet.json är STALE. JÄRN-U3 §5
+klassar återskapandet som ägarens bord (paraplyet skriver ingen vaktkod);
+samma princip följs här — originalets A-O-kontrolluppsättning är okänd och
+en gissad kopia vore en vit fläck. BOKAS: vakttornet-återskapande på
+huvudagentens bord (källkontrakt i JARN-U3-PARAPLY.md §3+§7) ELLER
+styrelsebesluten ny design. Paraplyvakten larmar tills vidare korrekt.
+
+**KVD**: merge+push under respekterat byggfönster (aldrig yta bytt under
+livs bygge) · data/verktyg-only i rondens commits utöver r344:s egna ·
+tsc-grinden körd vid varje commit (baslinje 0) · R2 orörd · data/blogg
+orörd · tmp-sonder r345–r347 + rot-tmp städade via node (skal-rm hängde
+och verkställdes delvis — verifierat med git status, kur-mönstret följt).
+
+LEVERANS: d70b417a (merge) + 45c0b8cc (r344-leverans) + denna rondcommit —
+alla pushade till prod (prod-ytan på 45c0b8cc+).
+
+NÄSTA I KÖN: (a) bevakning: 45c0b8cc-bygget vid nästa :x7-poll grönt +
+paraplyvakten stabil; (b) BRANDING-spåret (strategiska skiftets prioritet
+1 — BRANDING-AUDIT-2026-09.md läses nästa rond); (c) vakttornet-återskapandet
+(ägarrond, se (5)).
+

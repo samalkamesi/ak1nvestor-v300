@@ -163,12 +163,16 @@
       "ticker": "CNR",
       "namn": "Canadian National Railway Company",
       "land": "Kanada",
-      "rapportfenster": "2026-10-20",
-      "notera": "Q3-rapport est. 20 oktober 2026 enligt leverantörens panel (est.) — fönstrets första av vågens bolag. Endast kalenderfakta — inga siffror, inga råd.",
+      "rapportfenster": "2026-10-30",
+      "notera": "Q3 Financial and Operating Results fredagen 30 oktober 2026 kl 08:30 ET (BOLAGSBEKRÄFTAT: CN:s egen IR-kalender under Upcoming Events, live-verifierad 2026-09-29; Q2-26 infriad samma kanal fredagen 24/7 kl 08:30 ET; tidigare panel-estimat 20/10 (hämtat 09-25) föråldrat — höjt två klasser av denna verifiering; Investing.com + TipRanks konvergerar på 30/10). Endast kalenderfakta — inga siffror, inga råd.",
       "kallor": [
         {
           "namn": "StockAnalysis — Est. Earnings-rad (hämtat 2026-09-25)",
           "url": "https://stockanalysis.com/quote/tsx/CNR/"
+        },
+        {
+          "namn": "CN Investors — Upcoming Events (live-verifierad 2026-09-29)",
+          "url": "https://www.cn.ca/en/investors/"
         }
       ]
     },

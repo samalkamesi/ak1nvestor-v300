@@ -1,0 +1,95 @@
+{
+  "granskat": "data/blogg-utkast/lakemedelsaktier-sa-analyserar-du-lakemedelsbolag-en.json",
+  "granskadAv": "agentfabrik v206-u3 (2026-09-28, manifest v206-mega-kapacitet-1789637000)",
+  "rapport": "granskning/lakemedelsaktier-sa-analyserar-du-lakemedelsbolag-en-KONTROLL-2026-09-28-v206u3.md",
+  "bedomning": "FLYTTKLART EFTER C-POSTERNA — 0 blockerande fynd; C1–C3 är exakta engelska paralleller till det granskade originalets egen C1–C3 (som är overksatta i originalet sedan 2026-09-15); D-poster är förslag som kräver beslut",
+  "anvandning": "C1–C3 är VERKSTÄLLDA i FLYTTKLART-PAKET-filen (lakemedelsaktier-…-en-FLYTTKLART-PAKET-2026-09-28-v206u3.json, samma mapp) — flytta paketet, inte utkastet, om rättningarna ska följa med. 'forslag' kräver beslut före verkställning. Utkastet (byggarens fil) ändras inte av granskaren.",
+  "poster": [
+    {
+      "id": "C1",
+      "typ": "byt",
+      "fil": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag-en.json",
+      "falt": "readingMinutes",
+      "gammalt": 3,
+      "nytt": 2,
+      "orsak": "Plattformskontraktet (src/lib/blogg-utkast.ts, ORD_PER_MINUT=600): 1 395 ord (titel+ingress+body) ÷ 600 avrundat = 2. Engelsk parallell till originalets C1 (1 220 ord → 2), som är overksatt i originalet. Exportvägen räknar om automatiskt — kosmetiskt, men rättas i paketet för kontraktstrethet"
+    },
+    {
+      "id": "C2",
+      "typ": "byt",
+      "fil": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag-en.json",
+      "falt": "body",
+      "gammalt": "the project, in phase III with a historical success rate of 70 percent, gets a risk-adjusted value of 20 × 0.7 = SEK 14 billion",
+      "nytt": "the project, in phase III with an assumed probability of approval of 70 percent, gets a risk-adjusted value of 20 × 0.7 = SEK 14 billion",
+      "orsak": "Engelsk parallell till originalets väsentliga fynd C2 (2026-09-15): 'historical success rate of 70 percent' är ett faktapåstående som textens egen källa (BIO Clinical Development Success Rates 2011–2020) motsäger — fas III → godkännande är 57,8 % × 90,6 % ≈ 52 %. Exemplet är deklarerat påhittat och får anta 70 %, men etiketten ska vara 'antagen' (assumed), inte 'historisk'. Räkneexemplet 20 × 0.7 = 14 orört"
+    },
+    {
+      "id": "C3",
+      "typ": "byt",
+      "fil": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag-en.json",
+      "falt": "body",
+      "gammalt": "Had data been expected at twelve or more quarters, the company would have had to raise capital again before the value-driving news",
+      "nytt": "Had data been expected in twelve or more quarters, the company would have had to raise capital again before the value-driving news",
+      "orsak": "Prepositions-konsistens (engelsk parallell till originalets C3 'på tolv'→'om tolv'): texten skriver själv 'phase III data is expected IN eight quarters' tre meningar tidigare — 'at twelve' bryter mönstret. Ingen innehållsförändring"
+    },
+    {
+      "id": "D1",
+      "typ": "forslag",
+      "fil": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag-en.json",
+      "falt": "body (Källor)",
+      "gammalt": "- BIO — Clinical Development Success Rates and Contributing Factors ([bio.org](https://www.bio.org))",
+      "nytt": "- BIO — Clinical Development Success Rates and Contributing Factors ([bio.org — the 2011–2020 report](https://www.bio.org/clinical-development-success-rates-and-contributing-factors-2011-2020))",
+      "orsak": "Engelsk parallell till originalets D1: djuplänk till rapportens egen sida — stärker spårbarheten för textens tyngsta tal (ett-av-tio-oddset, fas III-talen bakom C2). Bio.org-roten svarar 200 (2026-09-28); djuplänken 200-verifierad av originalets granskare 2026-09-15"
+    },
+    {
+      "id": "D2",
+      "typ": "forslag",
+      "fil": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag-en.json",
+      "falt": "body (Källor)",
+      "gammalt": "- PRV (the Swedish Patent and Registration Office) — the foundations and term of patent law ([prv.se](https://www.prv.se))",
+      "nytt": "- PRV (the Swedish Patent and Registration Office) — the foundations and term of patent law ([prv.se](https://www.prv.se))\n- Wouters et al., JAMA 2020 — the development cost per new medicine ([pubmed.ncbi.nlm.nih.gov](https://pubmed.ncbi.nlm.nih.gov/32267798/))",
+      "orsak": "Engelsk parallell till originalets D2: 'costs in the billions per approved medicine' saknar källa — BIO mäter framgångstal, inte kostnader. Wouters m.fl. (JAMA 2020): median 985–1 336 miljoner USD per godkänd produkt, belägger 'billions'-klassen exakt"
+    },
+    {
+      "id": "D3",
+      "typ": "forslag",
+      "fil": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag-en.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-17",
+      "nytt": null,
+      "orsak": "Publiceringsdagen stämplas vid flytten (publicering = kundens beslut, R2) — samma praxis som fastighetsaktier-en-paketet 2026-09-24. VERKSTÄLLT i FLYTTKLART-PAKETET"
+    },
+    {
+      "id": "D4",
+      "typ": "forslag",
+      "fil": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag-en.json",
+      "falt": "body",
+      "gammalt": "phase I tests safety in a few healthy volunteers",
+      "nytt": "phase I tests safety in a few, usually healthy, volunteers",
+      "orsak": "Engelsk parallell till originalets D5: onkologiska fas I-studier sker på patienter, inte friska frivilliga — 'usually' täcker undantaget"
+    },
+    {
+      "id": "D5",
+      "typ": "forslag",
+      "fil": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag-en.json",
+      "falt": "body (flera små, språklig polish)",
+      "gammalt": "fyra direktöversatta formuleringar: (a) 'The patent turns the revenue stream into a loan on time'; (b) 'the window lasts with margin'; (c) 'share issues cost the most in uncertainty'; (d) 'the risk not visible in the P/E is taken up in'",
+      "nytt": "(a) 'a loan with a fixed term'; (b) 'the window holds with margin to spare'; (c) 'share issues are at their most expensive in uncertain times'; (d) 'the risk not visible in the P/E is addressed in'",
+      "orsak": "Speglingens few svengelska-rester (källtextens 'lån på tid', 'räcker med marginal', 'kostar som mest i osäkerhet', 'tas upp i') — idiomatisk engelska. Ej fakt fel; samlad polish-post"
+    },
+    {
+      "id": "D6",
+      "typ": "forslag",
+      "fil": "lakemedelsaktier-sa-analyserar-du-lakemedelsbolag-en.json",
+      "falt": "body",
+      "gammalt": "and share price moves of tens of percent in both directions are everyday events. Few industries have single decisions that move value this much.",
+      "nytt": "and share price moves of tens of percent in both directions are everyday events. That is the industry's particular risk profile — few industries have single decisions that move value this much.",
+      "orsak": "Originalets mening 'Det är branschens särskilda riskprofil —' är ej översatt; -en hoppar direkt till 'Few industries…'. Förslag på återställd parallell (innehållsligt delvis redundant — därför D, ej C)"
+    }
+  ],
+  "flaggorTillAgare": [
+    "N1: Originalets C1–C3 (2026-09-15) är ALLA fortfarande overksatta i originalet (läst 2026-09-28): readingMinutes 3, 'historisk träffsäkerhet på 70 procent', 'Väntade data på tolv'. Om -en-paketet publiceras medan originalet behåller feltexterna divergerar sv/en i just de granskningspunkter som bäär faktainnehållet — koordinerad verkställning rekommenderas (ägare: guidens ägare/nästa våg).",
+    "N2: NYTT fynd i originalet (ej i 09-15-protokollet): källraden 'Europäiska läkemedelsmyndigheten (EMA)' — stavfel 'Europäiska', korrekt 'Europeiska'. -en har 'The European Medicines Agency (EMA)' korrekt.",
+    "N3: 'Ten of the 109 companies' är tidsbundet: universumfilen hade exakt 109 poster/10 hälsovård vid utkastets födelse (commit ea7ad8bd 2026-09-15 14:31, 19 min före 14:50-bygget — arvsbevisat) men har 2026-09-28 vuxit till 311/32. Inget fel i utkastet (paritet med granskat original); framtida evergreen-uppdatering kan vilja bära datumet i påståendet."
+  ]
+}

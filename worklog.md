@@ -18669,3 +18669,24 @@ Backlog som följde med: oversattning/motor.ts (ÖVERSÄTTNINGSMOTORN,
 820 rader), dataset-medianer, analysfabrik, observatoriet, forskningslaget,
 larvag*, ordlista, vagvalidering, siffror* — samt registrets regen.
 [fabrik]
+
+
+### ROND 314 [organ:Φ] — DESK-STRÖMMÄTAREN född + REMOTE-RESIZE BEVISAT + defaults-återfallet kurat — 2026-09-29
+
+- STRÖMMÄTAREN (U15 §7.1): verktyg/desk-strommatare.mjs — engångsmätning 3×10 s,
+  /proc/net/dev-rx per iface + aktivitetsvittne ss :6080/:5910; tyst kod 0 i vila,
+  JSONL till data/vakten/desk-strommatare.jsonl vid besök. INSTALLATION (pumpor-rop
+  el. cron var 10:e min) BOKAS nästa bokföringsrond. FÖRSTA KÖRNINGEN 00:13Z tog
+  ett AKTIVT kundbesök: lo 0,22/0,22/1,22 Mbit/s + enp3s0 0,18/0,29/0,13 — U15:s
+  prognos (enstaka Mbit/s, marginal 4-20× mot 5G) bekräftad på riktiga data.
+- REMOTE-RESIZE BEVISAT (U13V2 §2.4 acceptanstest): xrandr current 720x405 ≠
+  viloläge 960x540 efter kundbesök ~00:1x — telefonens egna pixlar lever; workarea
+  följde med (openbox 720x405) och r313:s resize-medvetna invariant PASSADE i
+  skarpt läge ("workarea == xrandr current == 720x405") — 5515c7c1:s KVD-live-bevis.
+- DEFAULTS-ÅTERFALL KURAT: defaults.json mtime 23:56:05 (fabriksbarnets svep) skrev
+  resize="scale" — kontraktet bröts igen; desk-hälsan FAILade rätt (kontraktet
+  lever!). Kurerad 00:18 → resize="remote", verifierad GRÖN. Bevakning: hälsans
+  kontroll + nästa rond; rot-barnet identifieras vid nästa fabriksemottag.
+- Desk-hälsa efter kur: 6/6 PASS (3 auth-SKIP enligt kontrakt — DESK_AUTH ej satt).
+- v206-slutledet (prefetch-kurens push+bygg+bokföring) springer parallellt med
+  150-min-fönster + ren-yta-grind ( denna commits filer kolliderar ej).

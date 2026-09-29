@@ -19191,3 +19191,40 @@ DR-pass bevisar de tre bladens restore" — full restore-övning av 09-29-
 bladens tre familjer (db · moln · app) enligt dr-ovning-mönstret (RTO-
 band 70–85 s på nya servern); (c) långpollarkvito pollas (PUSH GRÖN =
 postbuild-kuren beständig).
+
+## ROND 337 [organ:Φ] (2026-09-29 ~10:2x–10:4x UTC) — DE TRE BLADENS RESTORE BEVISADE: hela nattens backupdjur GRÖNT ända till restore (db 127,9 s · app 89,3 s · moln 11/11)
+
+**Driftsbokens bokade "nästa DR-pass bevisar de tre bladens restore" —
+INLÖST, alla tre:**
+- **BLAD 1 (db-2026-09-29.sql.gz, 35,9 MB):** dumpkontroll GRÖN (1 565 974
+  rader · CREATE 99 · COPY 101, 87,2 s) → userspace-PG18 restore RTO
+  **127,9 s** · public 60 tabeller / 1 543 149 rader · felrader 1077
+  (okända 0) · städning verifierad. Protokoll DR-PROV-2026-09-29-SSDNODES-AUTO.md.
+- **BLAD 3 (db-app-2026-09-29.sql.gz, 85,6 MB):** dumpkontroll GRÖN
+  (2 309 527 rader · CREATE 418 · COPY 420 — tabellkontraktet IDENTISKT
+  med Contabo-serien, 133,3 s) → restore RTO **89,3 s** (gårdagens
+  210,1 s i fabrikslast → idag lugnare fönster) · public 372 tabeller /
+  201 910 rader (aufr-tillväxt +227/dag mot 09-28) · felrader 3307
+  (okända 0 — samma kända Supabase-klass som gårrdagens 3 307) ·
+  städning verifierad. Protokoll DR-PROV-2026-09-29-SSDNODES-AUTO-2.md.
+- **BLAD 2 (moln-JSON-familjen, 11 filer):** läsverifierad med riktig
+  JSON-parse (_r337-moln-sond.mjs): 10 små + system-events-full
+  348,4 MB okomprimerat — 11/11 OK, äldsta 3,9 h. (Sondens första
+  gz-gren var egen citatbugg — kurerad i samma rond.)
+
+**METODFYND (äfritt kvarlagt i DR-PROV-2026-09-29-AUTO.md):** första
+försöket körde Contabo-verktyget dr-ovning.mjs (sudo+PG17) som dött på
+nya servern — sudo tillåter ENDAST systemctl zdesk-zcode-* (sudo -n -l
+belagt); v193:s SSD Nodes-syskon dr-ovning-ssdnodes.mjs (userspace-PG18,
+root-fritt, port 55432) är DEN SANNA vägen — dokumentationsläxa: DRIFT-
+BOKENS topplista bör flagga Contabo-verktyget som historiskt så nästa
+rond väljer rätt direkt.
+
+**ISR-SONDEN löper vid bokföring** (pid 843519, startläge HTTP 200
+cachat + .meta 404 märkt — cache-fönster till ~10:55Z; sondens curl:ar
+är omrenderingstriggern); dom-JSON landar automatiskt i
+lighthouse/r336-isr-meta-beteende.json — r338 läser och verkställer
+vakande lager om RÖD.
+
+**R338 BOKAT:** ISR-dom + långpollarkvito + (vid PUSH GRÖN) vaktkörning
+mot aktuellt träd.

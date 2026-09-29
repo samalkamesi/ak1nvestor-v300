@@ -41,6 +41,16 @@
  *   lyckade poll. Fail-open: varje backup-fel loggas och lämnar beteendet
  *   som före kuren — deploy-kedjan får ALDRIG dö av läkevägen.
  *
+ *   JÄRN-U1 (kundorder "noll mörker", 2026-09-29): prod-synkens TVÅ sista
+ *   app-stoppar kurade — (a) PATCH-KÖN installerar+bygger i STALLNINGEN
+ *   (arkivkopia .bygg-kopia) när disken tillåter: prod-ytans node_modules
+ *   och .next orörs av hela fönstret, pm2 LEVER, dubbelbyte i gröna läget —
+ *   o48-risken (rmdir av .next medan pm2:s ISR skriver) försvinner mekaniskt
+ *   eftersom .next aldrig raderas i prod-ytan; (b) stallningströskeln ärlig
+ *   (20 000 MB) och de båda mörker-FALLBACKERNA (patch + npm ci utan plats
+ *   för kopian) är MARKERADE 'MÖRKER-VÄG' + larmar /desk/larm.json — ett
+ *   stopp sker ALDRIG tyst. Kraschvaktens mörker var redan kurerat (r336).
+ *
  * BEVISAT behov 2026-09-14 (10X-omgången): p4-p9-leveranscommitters
  * byggdes under minnestaket (7 zcode-barn + pm2 + npm ci ≈ 8 GB) →
  * "Killed" → den gamla kedjan revert → reset --hard goodHead raderade
@@ -840,6 +850,36 @@ export function byggPatchInstallKommando(spec) {
   );
 }
 
+/**
+ * JÄRN-U1 (kundorder "noll mörker", 2026-09-29): patch-installationen i
+ * STALLNINGEN. Roten den stänger: dagens patch-väg installerar i PROD-ytan
+ * (npm install byter ut paket under den gående appens fötter — lazy-require-
+ * risken, våg 153-klassen) och stoppar sedan pm2 under HELA byggfönstret
+ * (dokumenterat mörkt ~byggtid; o48-risken: ett lock-byte tömmer .next och
+ * live-ISR:n racar rmdir — ENOTEMPTY, bevisat 11:29 + 11:39). Kuren:
+ * installationen + TSC-GRINDEN (o106) sker i en ARKIVKOPIA av HEAD med EGEN
+ * node_modules — prod-ytan (node_modules/.next) rörs EJ förrän det atomära
+ * DUBBELBYTET, .next raderas ALDRIG i prod-ytan ⇒ pm2 LEVER hela fönstret.
+ * Kopian börjar från `git archive HEAD` (exakt byggträdet — V187-paritet:
+ * byggTradStart låses FÖRE installationsbarnet i korSynk) och patchen
+ * installeras med `npm install <spec>` DÄR (npm ci kan inte applicera en
+ * spec — installationen är alltså install-med-spec i kopian, semantiskt
+ * identisk med dagens prod-yte-install men flyttad ur prod-ytan). Misslyckad
+ * installation/tsc i kopian lämnar prod HELT orörd (striktrare än dagens
+ * väg, där prod-node_modules redan patchats när tsc faller). Kontraktstest:
+ * verktyg/testa-prod-synk-npmci-stallning.mjs (JÄRN-U1-blocket).
+ */
+export function byggPatchInstallStallningsKommando(spec) {
+  return (
+    `rm -rf ${KOPIA_KATALOG} && ` +
+    `mkdir -p ${KOPIA_KATALOG} && ` +
+    `git archive HEAD | tar -x -C ${KOPIA_KATALOG} && ` +
+    `cd ${KOPIA_KATALOG} && ` +
+    `npm install ${spec} --no-audit --no-fund >> /tmp/synk-patch.log 2>&1` +
+    " && node node_modules/typescript/bin/tsc --noEmit >> /tmp/synk-patch.log 2>&1"
+  );
+}
+
 /** Antal "error TS<kod>:"-rader i loggen — kvitto-detalj + klassning. */
 export function raknaTsFel(loggText) {
   if (typeof loggText !== "string") return 0;
@@ -924,6 +964,39 @@ function standardPm2(args) {
 const pm2Vakt = skapaPm2Vakt();
 
 // ---------------------------------------------------------------------------
+// JÄRN-U1 (kundorder "noll mörker", 2026-09-29): MÖRKER-VÄG-LARMET. De två
+// kvarvarande pm2-stoppen (patch-mörker-fallback + npm ci utan stallning) är
+// ÄRLIGA sista utvägar när disken nekar stallningen kopian — men de sker
+// ALDRIG TYST: landningens larmbanner (/desk/larm.json — samma fil
+// vakttornet skriver var 5:e minut, r332) får en ALARM-rad med ORSAK direkt
+// vid stoppet, innan vakttornets nästa svep ens hunnit se pm2-offline.
+// Vakttornet skriver om filen med sina egna kontroller var 5:e minut —
+// larmraden är därmed per-design kortlivad utöver fönstret (mörkret självt
+// syns då som vakttornets pm2-organ ALARM). Befintliga felrader bevaras och
+// mergas; exakt samma rad dedupliceras. Skrivfel sväljs ALWAYS — larmet får
+// ALDRIG påverka deploy-utfallet. Kontraktstest:
+// verktyg/testa-prod-synk-npmci-stallning.mjs (JÄRN-U1-blocket).
+// ---------------------------------------------------------------------------
+const DESK_LARM_SOKVAGAR = ["/var/www/desk/larm.json", "/home/ak1a/desk-web/larm.json"];
+
+export function skrivMorkerVagLarm(meddelande, { sokvagar = DESK_LARM_SOKVAGAR, las, skriv, nu = new Date().toISOString() } = {}) {
+  const lasFil = typeof las === "function" ? las : (p) => { try { return fs.readFileSync(p, "utf8"); } catch { return null; } };
+  const skrivFil = typeof skriv === "function" ? skriv : (p, data) => { try { fs.writeFileSync(p, data); } catch { /* aldrig dödande */ } };
+  const larmRad = `prod-synk MÖRKER-VÄG: ${meddelande}`;
+  for (const sokvag of sokvagar) {
+    try {
+      let fel = [];
+      try {
+        const befintlig = JSON.parse(lasFil(sokvag) || "");
+        if (befintlig && Array.isArray(befintlig.fel)) fel = befintlig.fel.filter((f) => typeof f === "string");
+      } catch { /* oläsbar/saknad fil — färsk kropp nedan */ }
+      if (!fel.includes(larmRad)) fel.push(larmRad);
+      skrivFil(sokvag, JSON.stringify({ lag: "ALARM", t: nu, fel }, null, 2));
+    } catch { /* larm-skrivning får ALDRIG påverka deploy-utfallet */ }
+  }
+}
+
+// ---------------------------------------------------------------------------
 // V182 (r272 — F6-ROTENS VACCIN): BYGG UTAN KUNDAVBROTT. Roten (r271:s
 // F6-utredning): varje prod-bygge mörkar sajten medan det pågår — next build
 // tömmer .next progressivt medan pm2 serverar filerna från disk (statiska
@@ -966,8 +1039,10 @@ export function byggNolldowntimeKommando({ npmCi }) {
 //     sekundklass som V182:s enkelbyte): node_modules → -forra, kopians
 //     node_modules → node_modules, .next → -forra, kopians .next-ny → .next,
 //     pm2 restart
-// Fallback: otillräcklig disk (kopia ≈ träd + 1× node_modules) ELLER omätbar
-// ⇒ dagens mörka o48-väg orörd. RAM-notering: fönstret kör med pm2 vid liv
+// Fallback: otillräcklig disk (kopia ≈ träd + 1× node_modules + .next-ny)
+// ELLER omätbar ⇒ dagens mörka o48-väg — sedan JÄRN-U1 MARKERAD 'MÖRKER-VÄG'
+// i synkloggen + larm till /desk/larm.json (stoppet sker ALDRIG tyst).
+// RAM-notering: fönstret kör med pm2 vid liv
 // (≈ pm2:s fotspår mer last än o48-vägen) — V184-sonden mäter varje försök
 // och VÄNTAR-RAM-grinden gäller som alltid. Misslyckad installation/bygge i
 // kopian lämnar prod HELT orörd (strikt bättre än o48-vägen, där prod-ytans
@@ -977,7 +1052,14 @@ export function byggNolldowntimeKommando({ npmCi }) {
 // Kontraktstest: verktyg/testa-prod-synk-npmci-stallning.mjs
 // ---------------------------------------------------------------------------
 const KOPIA_KATALOG = ".bygg-kopia";
-const STALLNING_DISK_KRAV_MB = 6000; // arkivkopia + kopians node_modules + marginal
+// JÄRN-U1: mätt 2026-09-29 är kopian ≈ träd (~0,5 GB tracked) + node_modules
+// (~0,9 GB) + .next-ny (~0,9 GB) ≈ 2,4 GB — men fönstrets TOPP bär även
+// bytets -forra-kopior (node_modules-forra + .next-forra ≈ 1,8 GB), ev.
+// läkebackup (~0,9 GB) och npm-cachens tillväxt; kundorderns mått
+// ("kopian ~8-10 GB") plus marginalen landar på 20 000 MB som ÄRLIG gräns:
+// stallningen lovar HELT fönster-plats, aldrig "nästan". Under tröskeln ⇒
+// MARKERAD MÖRKER-VÄG-fallback (stopp + larm), aldrig tyst haltläge.
+const STALLNING_DISK_KRAV_MB = 20000;
 
 export function stallningsKommando() {
   return [
@@ -987,6 +1069,20 @@ export function stallningsKommando() {
     `npm ci --no-audit --no-fund --prefix ${KOPIA_KATALOG} >> /tmp/synk-npmci.log 2>&1`,
     `cd ${KOPIA_KATALOG} && NEXT_DIST_DIR=.next-ny npm run build >> /tmp/synk-build.log 2>&1`,
   ].join(" && ");
+}
+
+/**
+ * JÄRN-U1: bygg-steget i stallningen för PATCH-läget. Kopian är då redan
+ * fullt förberedd av installationsbarnet (byggPatchInstallStallningsKommando:
+ * arkiv + npm install <spec> + tsc-grind) — korBygg skall ENDAST bygga i
+ * den, aldrig installera om (installationen är bevisat OK; det är exakt
+ * dagens patch-semantik där ombyggen aldrig kör npm ci på nytt). Ombyggen
+ * återanvänder samma kopia: next build rensar egen distDir och
+ * artefaktgrinden mäter kopians .next-ny före bytet som vanligt.
+ * Kontraktstest: verktyg/testa-prod-synk-npmci-stallning.mjs (JÄRN-U1).
+ */
+export function stallningsByggKommando() {
+  return `cd ${KOPIA_KATALOG} && NEXT_DIST_DIR=.next-ny npm run build >> /tmp/synk-build.log 2>&1`;
 }
 
 export function stallningsByteKommando({ byggTradStart }) {
@@ -1319,14 +1415,37 @@ async function korSynk() {
     try { git(["checkout", "--", "package.json", "package-lock.json"]); } catch { /* */ }
   };
   let patchInstallerad = false;
+  // V187 + JÄRN-U1: BYGGER FRÅN — byggträdets hash låses VID INSTALLATIONEN
+  // (provenansraden; vaktas av buntslagsrace-domaren före bytet och av
+  // hash-vakten i själva byte-kommandot). Sedan JÄRN-U1 är hashen låses
+  // FÖRE patch-installationen: i patchens stallningsläge är KOPIAN byggträdet
+  // (git archive sker i installationsbarnet) och dubbelbytets hash-vakt måste
+  // vakta DET trädet — ett träd som flyttar under installationen (push landar)
+  // får aldrig passera bytet bara för att hashen mättes EFTER flytten (det
+  // vore r276:s buntslagsrace-klass på nytt). För övriga lägen är det
+  // oförändrat "lås vid byggstart" — fönstret växer strikt säkrare.
+  // Fail-closed vid omätbar hash: git() kastar ⇒ korSynk:s överliggande
+  // felhantering, bygg sker ej halvbevisat.
+  const byggTradStart = git(["rev-parse", "HEAD"]);
+  logga(`BYGGER FRÅN: ${byggTradStart.slice(0, 8)}`);
+  // JÄRN-U1 KUR (a): patch-installationen väljer STALLNINGEN (arkivkopia +
+  // installation + tsc-grind DÄR — pm2 LEVER, prod-ytan orörd till
+  // dubbelbytet) när disken tillåter kopian; annars dagens prod-yte-väg som
+  // MARKERAD mörker-fallback. Beslutet tas EN gång här och gäller hela
+  // fönstret (bygg-steget och gröna fönstrets lock-överföring följer det).
+  let patchStallning = false;
   if (patchPlan.length) {
     const spec = patchPlan.map((p) => `${p.paket}@${p.version}`).join(" ");
+    patchStallning = stallningDiskMojlig({ friaMB: lasFriaMB() });
     try { fs.writeFileSync("/tmp/synk-patch.log", ""); } catch { /* */ }
     const { spawn: spawnPatch } = await import("node:child_process");
+    const installKommando = patchStallning
+      ? byggPatchInstallStallningsKommando(spec)
+      : byggPatchInstallKommando(spec);
     const installOk = await new Promise((lyckas) => {
       const barn = spawnPatch(
         "bash",
-        ["-c", `exec flock -w 900 /tmp/ak1a-deploy.lock bash -c ${JSON.stringify(byggPatchInstallKommando(spec))}`],
+        ["-c", `exec flock -w 900 /tmp/ak1a-deploy.lock bash -c ${JSON.stringify(installKommando)}`],
         { cwd: ROT, stdio: "ignore", detached: false },
       );
       barn.on("exit", (kod) => lyckas(kod === 0));
@@ -1336,19 +1455,21 @@ async function korSynk() {
     const installDom = bedomPatchInstall(installOk, patchLogg);
     if (installDom === "ok") {
       patchInstallerad = true;
-      logga(`PATCH-KÖ installerad + TSC-GRIND GRÖN: ${spec} — package-lock uppdaterad i arbetsytan, baslinjen 0 hållet`);
-      // O48 (r58:s köpost): pm2 STOPPAS före byggsteget i patch-läget —
-      // ett lock-byte (t.ex. next 16.3.2→16.3.5) byter chunknamn och
-      // tömmer .next, och pm2:s live-ISR hinner skriva filer i kataloger
-      // som håller på att rmdir:as (ENOTEMPTY, bevisat 11:29 + 11:39).
-      // Stoppet sker FÖRE korBygg så hela fönstret (npm ci raderar
-      // node_modules + build tömmer .next) är skrivarfritt — och utan de
-      // bevisade next-not-found-restartlooparna (pm2 stoppad restartar
-      // inte). Återstarten är mekaniskt garanterad av main():s finally.
-      // Misslyckas stoppet: byggfönstret körs som idag och felgrenen
-      // (ombygge på god lock) fångar fallet — fail-open mot gårdagens
-      // beteende, aldrig ny död vinkel.
-      pm2Vakt.stoppa();
+      logga(`PATCH-KÖ installerad + TSC-GRIND GRÖN: ${spec} — ${patchStallning ? `I STALLNINGEN (JÄRN-U1): arkivkopia ${KOPIA_KATALOG} + installation + tsc DÄR — prod-ytans node_modules orörd, pm2 LEVER hela fönstret, dubbelbyte i gröna läget` : "package-lock uppdaterad i arbetsytan, baslinjen 0 hållet"}`);
+      if (patchStallning) {
+        logga(`PATCH-KÖ: stallningen förberedd — bygg-steget kör i ${KOPIA_KATALOG}, prod-ytan orörd till dubbelbytet (o48-risken mekaniskt borta: .next raderas ALDRIG i prod-ytan)`);
+      } else {
+        // JÄRN-U1: mörker-FALLBACKEN — kopian fick ej plats på disken och
+        // installationen skedde i prod-ytan. O48 (r58): pm2 STOPPAS före
+        // byggsteget — live-ISR:n får aldrig skriva i kataloger som håller
+        // på att raderas (ENOTEMPTY, bevisat 11:29 + 11:39); stoppad pm2
+        // restartar inte (inga next-not-found-loopar) och återstarten är
+        // mekaniskt garanterad av main():s finally. ALDRIG tyst: raden
+        // loggas MARKERAT och /desk/larm.json larmas (vakttornet ser det).
+        logga(`MÖRKER-VÄG (JÄRN-U1): patchen installerades i PROD-YTAN (stallningen fick ej plats — fritt disk under ${STALLNING_DISK_KRAV_MB} MB-tröskeln) — pm2 stoppas ~byggtid, fönstret är mörkt; återstart garanteras av main():s finally`);
+        skrivMorkerVagLarm(`patch-fönster (${spec}) installerat i prod-ytan — stallningen fick ej plats på disken, pm2 stoppad ~byggtid`);
+        pm2Vakt.stoppa();
+      }
     } else if (installDom === "tsc-fel") {
       // o106: patchens typer bröt baslinjen 0 — locken riven FÖRE
       // byggsteget så korBygg kör npm ci på god lock (deploy fortsätter
@@ -1357,7 +1478,7 @@ async function korSynk() {
       // versionbyte i köfilen ger nytt liv.
       const antal = raknaTsFel(patchLogg);
       aterskapaPatchLas();
-      logga(`PATCH-KÖ: TSC-GRINDEN STOPPADE ${spec} — ${antal} typfel mot baslinjen 0 (se /tmp/synk-patch.log) — lock riven, deploy fortsätter på befintlig lock`);
+      logga(`PATCH-KÖ: TSC-GRINDEN STOPPADE ${spec} — ${antal} typfel mot baslinjen 0 (se /tmp/synk-patch.log) — ${patchStallning ? "stallningskopian lämnad åt städning nästa försök, prod-ytan var orörd" : "lock riven"}, deploy fortsätter på befintlig lock`);
       for (const p of patchPlan) skrivPatchKvitto(kvittoFil, p, "misslyckad", `tsc-fel: ${antal} typfel efter patch-install — baslinjen 0 är deployvillkor`);
     } else {
       logga("PATCH-KÖ: installation MISSLYCKADES (se /tmp/synk-patch.log) — deploy fortsätter på befintlig lock");
@@ -1379,16 +1500,35 @@ async function korSynk() {
   const npmCiBehov = patchInstallerad ? false : beslutaNpmCi({ diffFiler, nodeModulesIntakt });
   // V183B: npm ci via STALLNINGSVÄGEN när disken tillåter — installation+bygg
   // i arkivkopia, pm2 LEVER hela fönstret; annars dagens mörka o48-väg.
-  const stallning = npmCiBehov && stallningDiskMojlig({ friaMB: lasFriaMB() });
-  const bygg = npmCiBehov
+  // JÄRN-U1 KUR (a): PATCH-läget bygger i stallningen när installationen
+  // gjorde det (kopian är redan installerad — bygg-steget återanvänder den);
+  // mörker-fallbacken (prod-yte-install) bygger i prod-ytan som innan.
+  const friaMB = npmCiBehov ? lasFriaMB() : null;
+  const stallning = patchInstallerad
+    ? patchStallning
+    : npmCiBehov && stallningDiskMojlig({ friaMB });
+  const bygg = patchInstallerad
     ? stallning
-      ? stallningsKommando()
-      : byggNolldowntimeKommando({ npmCi: true })
-    : byggNolldowntimeKommando({ npmCi: false });
+      ? stallningsByggKommando()
+      : byggNolldowntimeKommando({ npmCi: false })
+    : npmCiBehov
+      ? stallning
+        ? stallningsKommando()
+        : byggNolldowntimeKommando({ npmCi: true })
+      : byggNolldowntimeKommando({ npmCi: false });
   logga(
-    `NOLLDOWNTIME v182: npm ci ${npmCiBehov ? (stallning ? "I STALLNING (V183B: arkivkopia + egen node_modules — pm2 LEVER, mörkret = dubbelbytets sekunder)" : "KÖRS (lock ändrad/trasigt node_modules — pm2 stoppas enligt o48, fönstret mörkt ~byggtid)") : "HOPPAS ÖVER (node_modules aktuell)"} · bygget skriver .next-ny · prod .next orörd hela fönstret${stallning ? " (stallningsläget: prod-ytan orörd till dubbelbytet)" : ""}`,
+    `NOLLDOWNTIME v182: npm ci ${patchInstallerad ? (stallning ? `PATCH I STALLNINGEN (JÄRN-U1: kopian installerad av installationsbarnet — prod-ytans node_modules orörd, pm2 LEVER, mörkret = dubbelbytets sekunder)` : "PATCH INSTALLERAD I PROD-YTAN (mörker-fallback — pm2 stoppad sedan installationen, fönstret mörkt ~byggtid)") : npmCiBehov ? (stallning ? "I STALLNING (V183B: arkivkopia + egen node_modules — pm2 LEVER, mörkret = dubbelbytets sekunder)" : "KÖRS (lock ändrad/trasigt node_modules — MÖRKER-VÄG: pm2 stoppas enligt o48, fönstret mörkt ~byggtid)") : "HOPPAS ÖVER (node_modules aktuell)"} · bygget skriver .next-ny · prod .next orörd hela fönstret${stallning ? " (stallningsläget: prod-ytan orörd till dubbelbytet)" : ""}`,
   );
-  if (npmCiBehov && !stallning) pm2Vakt.stoppa();
+  if (npmCiBehov && !stallning) {
+    // JÄRN-U1 KUR (b): npm ci i prod-ytan är den ÄRLIGA sista utvägen när
+    // disken nekar stallningen kopian — pm2 stoppas enligt o48 (fönstret
+    // mörkt ~byggtid, återstart garanteras av main():s finally) men
+    // ALDRIG tyst: raden loggas MARKERAT och /desk/larm.json larmas så att
+    // landningens banner (och vakttornet) ser mörkret med orsak direkt.
+    logga(`MÖRKER-VÄG (JÄRN-U1): npm ci i PROD-YTAN (fritt disk ${friaMB === null ? "omätbart" : `${friaMB} MB`} < ${STALLNING_DISK_KRAV_MB} MB-tröskeln för stallningen) — pm2 stoppas ~byggtid; återstart garanteras av main():s finally`);
+    skrivMorkerVagLarm(`npm ci-fönster i prod-ytan (fritt disk ${friaMB === null ? "omätbart" : `${friaMB} MB`} under ${STALLNING_DISK_KRAV_MB} MB-tröskeln) — pm2 stoppad ~byggtid`);
+    pm2Vakt.stoppa();
+  }
   const { spawn } = await import("node:child_process");
   const korBygg = () =>
     new Promise((lyckas) => {
@@ -1418,12 +1558,9 @@ async function korSynk() {
       }
     }
   };
-  // V187: BYGGER FRÅN — byggträdets hash låses vid start (provenansraden;
-  // vaktas av buntslagsrace-domaren före bytet och av hash-vakten i själva
-  // byte-kommandot). Fail-closed vid omätbar hash: git() kastar ⇒ korSynk:s
-  // överliggande felhantering, bygg sker ej halvbevisat.
-  const byggTradStart = git(["rev-parse", "HEAD"]);
-  logga(`BYGGER FRÅN: ${byggTradStart.slice(0, 8)}`);
+  // (BYGGER FRÅN + byggTradStart fångas sedan JÄRN-U1 före patch-installationen
+  //  — se kommentaren vid fångsten. KorBygg och ombyggen bygger aldrig mot ett
+  //  annat träd än dubbelbytets hash-vakt vakar.)
   let ok = false;
   try { fs.writeFileSync("/tmp/synk-npmci.log", ""); } catch { /* */ }
   try { fs.writeFileSync("/tmp/synk-build.log", ""); } catch { /* */ }
@@ -1677,6 +1814,15 @@ async function korSynk() {
       if (patchInstallerad) {
         const spec = patchPlan.map((p) => `${p.paket}@${p.version}`).join(", ");
         try {
+          // JÄRN-U1: i stallningsläget lever den patchade package.json +
+          // package-lock.json I KOPIAN (prod-trädets var orörda hela fönstret)
+          // — för över dem FÖRE add+commit. Kopian städas strax nedan, och
+          // dubbeltbytet har redan flyttat dess node_modules till prod-ytan:
+          // efter överföringen är träd, lock och deployat läget ETT.
+          if (patchStallning) {
+            fs.copyFileSync(path.join(ROT, KOPIA_KATALOG, "package.json"), path.join(ROT, "package.json"));
+            fs.copyFileSync(path.join(ROT, KOPIA_KATALOG, "package-lock.json"), path.join(ROT, "package-lock.json"));
+          }
           git(["add", "package.json", "package-lock.json"]);
           fs.writeFileSync(
             "/tmp/synk-patchmsg.txt",

@@ -13,8 +13,13 @@
  *   · stallningsKommando — fem steg i rätt ordning, pm2 nämns ALDRIG
  *   · stallningsByteKommando — hash-vakt + fem atomära steg i EN &&-kedja
  *   · stallningDiskMojlig — tröskel + konservativ null-hantering
+ *     (JÄRN-U1 2026-09-29: tröskeln 20 000 MB — mätt kopia ≈ 2,4 GB,
+ *      fönstrets topp ~6 GB; ordermått "kopian ~8-10 GB" + marginal)
  *   · reallivssimulering — dubbelbytet mot ett sandlåderepo med stubbad pm2
  *     (grönt byte + hash-vaktens stopp vid flyttat träd)
+ *   · JÄRN-U1 — patchens stallnings-installation (kopia, aldrig prod-ytan)
+ *     + bygg-steget i kopian + MÖRKER-VÄG-larmet (ALARM/dedupe/merge,
+ *     skrivfel sväljs — skarp /desk/larm.json rörs aldrig av sviten)
  *
  * Användning:  node verktyg/testa-prod-synk-npmci-stallning.mjs
  * Exit 0 = alla PASS, exit 1 = minst ett FAIL.
@@ -30,6 +35,9 @@ import {
   stallningDiskMojlig,
   byggNolldowntimeKommando,
   beslutaNpmCi,
+  byggPatchInstallStallningsKommando,
+  stallningsByggKommando,
+  skrivMorkerVagLarm,
 } from "./prod-synk.mjs";
 
 let pass = 0;
@@ -97,9 +105,10 @@ kontroll(
   !/[;\n]/.test(byte),
 );
 
-// ── 3) DISKVAKTEN ──────────────────────────────────────────────────────────
-kontroll("11. diskvakt: 6 000 MB fria ⇒ stallning möjlig", stallningDiskMojlig({ friaMB: 6000 }) === true);
-kontroll("12. diskvakt: 5 999 MB fria ⇒ fallback till o48-vägen", stallningDiskMojlig({ friaMB: 5999 }) === false);
+// ── 3) DISKVAKTEN (JÄRN-U1: tröskeln 20 000 MB — kundorderns mått "kopian
+//        ~8-10 GB" + marginal; mätt kopia ≈ 2,4 GB, fönstrets topp ~6 GB) ──
+kontroll("11. diskvakt: 20 000 MB fria ⇒ stallning möjlig (JÄRN-U1-tröskeln)", stallningDiskMojlig({ friaMB: 20000 }) === true);
+kontroll("12. diskvakt: 19 999 MB fria ⇒ MARKERAD mörker-fallback (JÄRN-U1: aldrig tyst)", stallningDiskMojlig({ friaMB: 19999 }) === false);
 kontroll("13. diskvakt: omätbart (null) ⇒ konservativt fallback", stallningDiskMojlig({ friaMB: null }) === false);
 kontroll("14. diskvakt: odefinierat ⇒ konservativt fallback", stallningDiskMojlig({}) === false);
 
@@ -213,6 +222,73 @@ try {
 }
 
 fs.rmSync(SL, { recursive: true, force: true });
+
+// ── 6) JÄRN-U1 — patchens stallningsväg + MÖRKER-VÄG-larm ─────────────────
+// (kundorder "noll mörker" 2026-09-29: patch-installationen flyttas ur
+//  prod-ytan in i arkivkopian — pm2 lever hela fönstret — och de båda
+//  mörker-FALLBACKERNA loggas MARKERAT + larmar /desk/larm.json)
+const patchCmd = byggPatchInstallStallningsKommando("next@16.3.5");
+kontroll(
+  "25. patch-stallning: kopian rivs+skapas+arkiveras FÖR installationen (färsk kopia varje försök)",
+  patchCmd.indexOf("rm -rf .bygg-kopia") < patchCmd.indexOf("mkdir -p .bygg-kopia") &&
+    patchCmd.indexOf("mkdir -p .bygg-kopia") < patchCmd.indexOf("git archive HEAD") &&
+    patchCmd.indexOf("git archive HEAD") < patchCmd.indexOf("npm install"),
+);
+kontroll(
+  "26. patch-stallning: npm install MED SPEC i KOPIAN (cd .bygg-kopia) — installationen lämnar ALDRIG prod-ytan",
+  /cd \.bygg-kopia && npm install next@16\.3\.5 --no-audit --no-fund/.test(patchCmd) && !patchCmd.startsWith("npm install"),
+);
+kontroll(
+  "27. patch-stallning: tsc-grinden (o106) kedjad EFTER installationen, i kopians node_modules",
+  patchCmd.endsWith(" && node node_modules/typescript/bin/tsc --noEmit >> /tmp/synk-patch.log 2>&1") &&
+    patchCmd.indexOf("npm install") < patchCmd.indexOf("tsc --noEmit"),
+);
+kontroll(
+  "28. patch-stallning: ALDRIG pm2 i kommandot (appen lever hela fönstret)",
+  !patchCmd.includes("pm2"),
+);
+kontroll(
+  "29. stallningsbygget (patch-läge): ENDAST bygg i kopian — installationen skedde i installationsbarnet, ombyggen installerar ej om",
+  stallningsByggKommando() === "cd .bygg-kopia && NEXT_DIST_DIR=.next-ny npm run build >> /tmp/synk-build.log 2>&1",
+);
+// mörker-larmet mot tmp-filer — skarp /desk/larm.json rörs ALDRIG av sviten
+{
+  const larmTmp = fs.mkdtempSync(path.join(os.tmpdir(), "jarn-u1-"));
+  const larmFil = path.join(larmTmp, "larm.json");
+  const las = (p) => (p === larmFil && fs.existsSync(larmFil) ? fs.readFileSync(larmFil, "utf8") : null);
+  const skriv = (p, data) => fs.writeFileSync(p, data);
+  skrivMorkerVagLarm("test-fönster", { sokvagar: [larmFil], las, skriv, nu: "2026-09-29T00:00:00.000Z" });
+  const efter1 = JSON.parse(fs.readFileSync(larmFil, "utf8"));
+  kontroll(
+    "30. mörker-larm: ALARM + MÖRKER-VÄG-rad med orsak + tidsstämpel (desk/larm.json-formatet)",
+    efter1.lag === "ALARM" && efter1.t === "2026-09-29T00:00:00.000Z" && efter1.fel.includes("prod-synk MÖRKER-VÄG: test-fönster"),
+  );
+  skrivMorkerVagLarm("test-fönster", { sokvagar: [larmFil], las, skriv, nu: "2026-09-29T00:05:00.000Z" });
+  const efter2 = JSON.parse(fs.readFileSync(larmFil, "utf8"));
+  kontroll(
+    "31. mörker-larm: identisk rad DEDUPLICERAS (ingen radtillväxt per poll)",
+    efter2.fel.filter((f) => f === "prod-synk MÖRKER-VÄG: test-fönster").length === 1,
+  );
+  fs.writeFileSync(larmFil, JSON.stringify({ lag: "OK", t: "x", fel: ["app-framsida: HTTP 200"] }, null, 2));
+  skrivMorkerVagLarm("annan orsak", { sokvagar: [larmFil], las, skriv, nu: "2026-09-29T00:10:00.000Z" });
+  const efter3 = JSON.parse(fs.readFileSync(larmFil, "utf8"));
+  kontroll(
+    "32. mörker-larm: MERGAR med vakttornets befintliga felrader (bannerförlust = larmförlust)",
+    efter3.lag === "ALARM" && efter3.fel.includes("app-framsida: HTTP 200") && efter3.fel.includes("prod-synk MÖRKER-VÄG: annan orsak"),
+  );
+  kontroll(
+    "33. mörker-larm: skrivfel sväljs (larmet får ALDRIG döda deploy-kedjan)",
+    (() => {
+      try {
+        skrivMorkerVagLarm("x", { sokvagar: ["/proc/omöjlig/larm.json"], las: () => null, skriv: () => { throw new Error("skrivfel"); }, nu: "t" });
+        return true;
+      } catch {
+        return false;
+      }
+    })(),
+  );
+  fs.rmSync(larmTmp, { recursive: true, force: true });
+}
 
 // ── SUMMA ─────────────────────────────────────────────────────────────────
 console.log(`\n=== ${pass} PASS · ${fail} FAIL ===`);

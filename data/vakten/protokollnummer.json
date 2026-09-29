@@ -388,6 +388,14 @@
       "titel": "oprovat val",
       "ts": 1790626731127,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o563",
+      "agare": "s7-u2",
+      "manifest": "auto-s7-prestanda-2026-09-29",
+      "titel": "mätkedjans uppståndelse: natt-TBT-cronens crontab-rotorsak bevisad + o558-eftervakt omstart + dom-bokföring",
+      "ts": 1790674672857,
+      "status": "reserverat"
     }
   ]
 }

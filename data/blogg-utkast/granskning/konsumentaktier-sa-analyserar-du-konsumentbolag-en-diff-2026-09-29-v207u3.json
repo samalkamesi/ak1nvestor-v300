@@ -1,0 +1,63 @@
+{
+  "granskat": "data/blogg-utkast/konsumentaktier-sa-analyserar-du-konsumentbolag-en.json",
+  "granskadAv": "agentfabrik v207-u3 (manifest v207-saljberedskap-1789640600, 2026-09-29)",
+  "rapport": "konsumentaktier-sa-analyserar-du-konsumentbolag-en-KONTROLL-2026-09-29-v207u3.md",
+  "bedomning": "FLYTTKLART MED 3 VERKSTÄLLDA RÄTTNINGAR — -en speglade originalets tre dom-krävande innehållsfel i oförändrad form (B1 falsk universums-superlativ 'universe's highest' = i verkligheten rang 35 av 119 med Evolution 100,0 i samma bransch; B2 sammanfattningens 'universe span 14–66'; C1 datumangivelsen 'retrieved 2026-09-15' som endast stämmer för 1 av 6 tal i sin egen mening). Paketet bär alla tre engelska parallellerna verkställda. Mekaniken 15/15 gröna, 87/87 tal i multiset-paritet, 15/15 interna länkar HTTP 200. -en:description bär den mjuka formen 'the sector's high ROE' (sann) — originalets B3 behövs EJ parallelliseras",
+  "anvandning": "Paketet (…-FLYTTKLART-PAKET-2026-09-29-v207u3.json) bär B1p+B2p+C1p verkställda och publishedAt=null — flyttfärdigt. Originalet bär fortfarande sina oreviderade B1–B4/C1 (läst 2026-09-29): verkställ originalets diff koordinerat så att sv/en inte divergerar. Publicering är kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "B1p",
+      "typ": "byt (VERKSTÄLLT i paketet)",
+      "fil": "konsumentaktier-sa-analyserar-du-konsumentbolag-en.json",
+      "falt": "body (Lyx-bullet under 'What are consumer stocks')",
+      "gammalt": "LVMH's 66 percent gross margin is the universe's highest: the customer pays for the brand, not the manufacturing cost.",
+      "nytt": "LVMH's 66 percent gross margin is the highest among the sector's brand companies — only the platform company Evolution sits higher: the customer pays for the brand, not the manufacturing cost.",
+      "orsak": "Engelsk parallell till originalets B1 (dom-krävande, 'FLYTTKLAR EFTER RÄTTNINGAR'): superlativen är falsk i utkastets eget underlag (vintage 319a8b20, 120 bolag) — 34 av 119 mätta bolag ligger över LVMH:s 66,4, däribland Evolution i SAMMA bransch (100,0). Rättningen håller kontrasten inom branschens varumärkesbolag (närmaste under: McDonald's 57,4) och är sann i guidens egen taxonomi (Evolution = plattformsbolag enligt spel-bulletn)"
+    },
+    {
+      "id": "B2p",
+      "typ": "byt (VERKSTÄLLT i paketet)",
+      "fil": "konsumentaktier-sa-analyserar-du-konsumentbolag-en.json",
+      "falt": "body (The summary, punkt 2)",
+      "gammalt": "The gross margin is the brand measure: universe span 14–66 percent; pricing power shows there first.",
+      "nytt": "The gross margin is the brand measure: within the sector it runs from 14 to 66 percent — Evolution's platform margin lies outside; pricing power shows there first.",
+      "orsak": "Engelsk parallell till originalets B2: 'universe span 14–66' gäller inte — konsumentbranschens faktiska spann är 14,1–100,0 (Evolution 100,0) och universumets −1,1–100,0 i vintagen. Rättningen scoper spannet till branschens varumärkes- och handelsdel med Evolution explicit utanför — samma information, sann scope"
+    },
+    {
+      "id": "C1p",
+      "typ": "byt (VERKSTÄLLT i paketet)",
+      "fil": "konsumentaktier-sa-analyserar-du-konsumentbolag-en.json",
+      "falt": "body (The two worlds of margins, första stycket)",
+      "gammalt": "(universe raw data, retrieved 2026-09-15)",
+      "nytt": "(universe raw data, retrieved September 2026)",
+      "orsak": "Engelsk parallell till originalets C1: fem av de sex talen i meningen (LVMH, Inditex, H&M, Electrolux, Volvo Cars) är 2026-09-03-rader i vintagen; bara Axfood är en 2026-09-15-rad — 'retrieved 2026-09-15' är fel för sitt eget innehåll och 'September 2026' täcker båda hämtningsfönstren"
+    },
+    {
+      "id": "B3-analys",
+      "typ": "notis",
+      "fil": "konsumentaktier-sa-analyserar-du-konsumentbolag-en.json",
+      "falt": "description",
+      "gammalt": "the DuPont math behind the sector's high ROE",
+      "nytt": "(ingen ändring — mjuk form, sann)",
+      "orsak": "Originalets B3 ('branschens högsta ROE' motägd av teknik 28,68 > konsument 24,19) behövs INTE parallelliseras: översättningen bär redan den mjuka formen 'the sector's high ROE' (24 % är hög — inget falskt superlativ). Översättaren mjukade formuleringen korrekt"
+    },
+    {
+      "id": "B4-koordinering",
+      "typ": "notis",
+      "fil": "konsumentaktier-sa-analyserar-du-konsumentbolag.json (ORIGINALET — ej denna fil)",
+      "falt": "readingMinutes",
+      "gammalt": "Originalets B4-dom (2026-09-18): rm 2 → 7 enligt publicerad ~ord/200-praxis",
+      "nytt": "-en bär rm 2 = kodkontraktet round(1 424/600) — GRÖNT enligt -en-familjens normerade dom (fastighetsaktier-en-precedensen 2026-09-24, samma granskare). Seriekonflikten ord/200 vs ord/600 är mallägarens/kodens koordineringsfråga, inte detta utkastfel",
+      "orsak": "Två granskningsdomar i serien använder olika rm-praxis; -en-familjen döms mot exportkontraktet (src/lib/blogg-utkast.ts räknar om rm automatiskt vid export: round(ord/600)). Originalets B4 väntar på sin ägare och påverkar inte -en-paketet"
+    },
+    {
+      "id": "D1p",
+      "typ": "notis",
+      "fil": "konsumentaktier-sa-analyserar-du-konsumentbolag-en.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-17",
+      "nytt": "null i paketet — publiceringsdag sätts av kunden vid flytt",
+      "orsak": "Värdet är skapandedatum. R2: publicering = kundens beslut"
+    }
+  ]
+}

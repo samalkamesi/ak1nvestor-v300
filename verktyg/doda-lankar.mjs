@@ -10,8 +10,9 @@
 //
 // MÄTFÖNSTER-GRIND (o47 §2 inbyggt i verktyget 2026-09-17 — tidigare fanns
 // kuren bara i protokollet): FÖRE crawlen verifieras (a) att ingen process
-// ÄGER deploy-låset — fuser = öppna fd:n, ALDRIG låsfilens existens (flock
-// lämnar filen kvar mellan deploys) — (b) ingen bygg/install-process
+// ÄGER deploy-låset — /proc-fd-läsning (o570: fuser/psmisc saknas på SSD
+// Nodes-servern; en flock-hållare bär alltid en öppen fd), ALDRIG låsfilens
+// existens (flock lämnar filen kvar mellan deploys) — (b) ingen bygg/install-process
 // (pgrep "next build"/"npm ci"), (c) basen frisk (/ och /kurser = 200).
 // Missar ⇒ avbrott INNAN något mätvärde producerats. En crawl som PåGÅR när
 // ett byggfönster öppnar fångas av DRIFTFEL-TAKET efteråt: landar > 5 % av
@@ -82,15 +83,41 @@ function logg(handelse, data) {
 }
 
 async function lasHollare() {
-  // fuser listar processer med filen ÖPPNAD — en flock-hållare bär en öppen
-  // fd under hela byggfönstret. Filens existens säger inget (flock städar ej).
+  // o570: fuser (psmisc) SAKNAS på SSD Nodes-servern (Contabo-födda verktyg)
+  // — fd-ägandet läses i stället direkt ur /proc: en flock-hållare bär ALLTID
+  // en öppen fd mot låsfilen, exakt den sanning fuser lämnade. ALDRIG en egen
+  // flock-probe här: den skulle själv ta låset en microsekund och kan få en
+  // ÄKTA deploys non-blocking acquire att fela. Stat öppnar ingen fd — sonden
+  // kan aldrig se sig själv.
+  let lasSokvag;
   try {
-    const { stdout } = await koraKommando("fuser", [DEPLOY_LAS]);
-    const pids = stdout.split(/\s+/).filter(Boolean);
-    return pids.length > 0 ? pids.join(",") : null;
+    lasSokvag = fs.realpathSync(DEPLOY_LAS);
   } catch {
-    return null; // exit 1 = ingen hållare; verktyg saknas = samma bedömning
+    return null; // filen finns ej = ingen kan hålla den
   }
+  const pids = [];
+  for (const pid of fs.readdirSync("/proc")) {
+    if (!/^\d+$/.test(pid)) continue;
+    let fds;
+    try {
+      fds = fs.readdirSync(`/proc/${pid}/fd`);
+    } catch {
+      continue; // andra användare/processzoner — fuser hade samma gräns
+    }
+    for (const fd of fds) {
+      let mal;
+      try {
+        mal = fs.readlinkSync(`/proc/${pid}/fd/${fd}`);
+      } catch {
+        continue;
+      }
+      if (mal === lasSokvag) {
+        pids.push(pid);
+        break;
+      }
+    }
+  }
+  return pids.length > 0 ? pids.join(",") : null;
 }
 
 async function lasByggprocess() {

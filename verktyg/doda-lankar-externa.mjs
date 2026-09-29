@@ -23,9 +23,10 @@
 //
 // MÄTFÖNSTER-GRIND + DRIFT-TAK (o87 2026-09-19, o55 §2-doktrinen bärd hit —
 // samma kontrakt som verktyg/doda-lankar.mjs): FÖRE crawlen verifieras
-// (a) att ingen process ÄGER deploy-låset (fuser = öppna fd:n, ALDRIV
-// låsfilens existens — flock lämnar filen kvar), (b) ingen bygg/install-
-// process (kommaseparerade HELA mönster: "next build" finns bara i ett äkta
+// (a) att ingen process ÄGER deploy-låset (/proc-fd-läsning — en flock-
+//     hållare bär alltid en öppen fd; fuser togs bort o570: psmisc saknas
+//     på SSD Nodes-servern; ALDRIG låsfilens existens — flock städar ej),
+// (b) ingen bygg/install-process (kommaseparerade HELA mönster: "next build" finns bara i ett äkta
 // bygg — pm2:s "next start" bär aldrig sekvensen; "npm ci" ensamt matchar
 // fabrikorsagtersas prompt-cmdlines), (c) basen frisk (/ och /kurser = 200).
 // Missar ⇒ avbrott INNAN något mätvärde producerats (exit 1). EFTER crawlen:
@@ -40,6 +41,37 @@
 // --tvinga = diagnostikläge: hoppar grunderna och taket, märker ALLA
 // utdatafiler "diagnostik" — resultatet är ALDRIG ett mätvärde.
 //
+// DOMÄNVETTET (o570, 2026-09-29 — 429-mörkrets rotorsakskur): bevisat läge
+// 2026-09-15→09-27: Adlibris+Bokus (bokköpslänkar, 102 mål vardera = 59 % av
+// alla externa mål) svarade 429 på ALLT — startsidor, produktsidor, egna
+// UA:er som webbläsare — dvs IP-nivåblock, och instrumentet underhöll det
+// SELVT: korDom avlossade 102 back-to-back-förfrågningar per domän varje
+// natt, och en domän som sagt STOOOP fick ytterligare 101 den nästa natten.
+// KUR, tre lager:
+//   1. DOMÄNTAKT      minst AK1A_DOMAN_TAKT_MS (standard 1200) mellan två
+//                     förfrågningar till SAMMA domän — främst skydd för de
+//                     domäner som TÅL oss idag (amazon 102 OK) och skall
+//                     inte tröttna imorgon.
+//   2. KANIN+KLIPP    domänens FÖRSTA mål är kanin: svarar det 429 väntas
+//                     (Retry-After i förekommande fall, annars
+//                     AK1A_429_RETRY_MS) och omprovas EN gång med GET —
+//                     läker det (t.ex. HEAD-specifik 429) fortsätter hela
+//                     domänen normalt; består 429:n KLIPPS domänen: övriga
+//                     mål klassas BLOCKERAD UTAN förfrågningar (blockeradTyp
+//                     "rate") och domänen skrivs in i vilofilen.
+//   3. VILOPERIOD     data/vakten/doda-lankar-externa-doman-vila.json bär
+//                     per-domän `tills` (standard AK1A_DOMAN_VILA_MS =
+//                     604800000 = 7 dygn): under vilen ställs domänens mål
+//                     som BLOCKERAD (blockeradTyp "vila") med NOLL
+//                     förfrågningar — värdarna får vila så ett avklingande
+//                     rateblock kan läka, kaninen provar igen när vilen löper
+//                     ut. --tvinga (diagnostik) respekterar ALDRIG vila och
+//                     skriver ALDRIG vila — diagnostiken ändrar inget tillstånd.
+// Ärlighet: BLOCKERAD delas i rapporten upp per blockeradTyp — "vagg"
+// (401/403: vägrade oss, inte länkens fel), "rate" (429: vår IP är
+// begränsad, länken overifierbar), "vila" (domän vilar efter 429). perKlass
+// och stdout-kontraktet (cron-wrapperns parsning) är OFÖRÄNDRADE.
+//
 // Miljövariabler (testbarhet; standardvärden = skarpt läge):
 //   AK1A_DEPLOY_LAS    sökväg till deploy-låset (standard /tmp/ak1a-deploy.lock)
 //   AK1A_BYGG_MONSTER  kommaseparerade HELA pgrep-mönster (standard
@@ -47,6 +79,13 @@
 //   AK1A_RETRY_VANTA_MS   väntetak för fönstervakt vid återmätning (standard
 //                         480000 = 8 min; typiskt byggfönster 3–5 min)
 //   AK1A_RETRY_POLL_MS    pollintervall under fönstervakten (standard 30000)
+//   AK1A_DOMAN_TAKT_MS    minsta mellanrum mellan förfrågningar till samma
+//                         domän (standard 1200)
+//   AK1A_429_RETRY_MS     kaninens omprovningpaus när Retry-Aten saknas
+//                         (standard 15000)
+//   AK1A_DOMAN_VILA_MS    vilolängd för klippt domän (standard 604800000)
+//   AK1A_VILA_FIL         vilofilens sökväg (standard
+//                         data/vakten/doda-lankar-externa-doman-vila.json)
 //
 // ÅTERMÄTNING VID DRIFTTAK-TRÄFF (o113, 2026-09-20): grunden är en SNAPSHOT
 // före crawl — ett byggfönster som ÖPPNAR MITT I crawlen (bevisat första
@@ -96,6 +135,11 @@ const BYGG_MONSTER = (process.env.AK1A_BYGG_MONSTER || "next build,npm ci --no-a
   .filter(Boolean);
 const RETRY_VANTA_MS = parseInt(process.env.AK1A_RETRY_VANTA_MS || "480000", 10);
 const RETRY_POLL_MS = parseInt(process.env.AK1A_RETRY_POLL_MS || "30000", 10);
+const DOMAN_TAKT_MS = parseInt(process.env.AK1A_DOMAN_TAKT_MS || "1200", 10);
+const RETRY_429_MS = parseInt(process.env.AK1A_429_RETRY_MS || "15000", 10);
+const DOMAN_VILA_MS = parseInt(process.env.AK1A_DOMAN_VILA_MS || "604800000", 10);
+const VILA_FIL =
+  process.env.AK1A_VILA_FIL || path.join(process.cwd(), "data", "vakten", "doda-lankar-externa-doman-vila.json");
 
 // Skonsamhet mot externa värdar: aldrig mer än en pågående förfrågan per
 // domän, högst DOMANER_PARALLELLT domäner samtidigt, aldrig fler än så många
@@ -156,15 +200,41 @@ async function hamta(sokvag) {
 // --- mätfönster-grind (o87, o55 §2:s kontrakt) -------------------------------
 
 async function lasHollare() {
-  // fuser listar processer med filen ÖPPNAD — en flock-hållare bär en öppen
-  // fd under hela byggfönstret. Filens existens säger inget (flock städar ej).
+  // o570: fuser (psmisc) SAKNAS på SSD Nodes-servern (Contabo-födda verktyg)
+  // — fd-ägandet läses i stället direkt ur /proc: en flock-hållare bär ALLTID
+  // en öppen fd mot låsfilen, exakt den sanning fuser lämnade. ALDRIG en egen
+  // flock-probe här: den skulle själv ta låset en microsekund och kan få en
+  // ÄKTA deploys non-blocking acquire att fela. Stat öppnar ingen fd — sonden
+  // kan aldrig se sig själv.
+  let lasSokvag;
   try {
-    const { stdout } = await koraKommando("fuser", [DEPLOY_LAS]);
-    const pids = stdout.split(/\s+/).filter(Boolean);
-    return pids.length > 0 ? pids.join(",") : null;
+    lasSokvag = fs.realpathSync(DEPLOY_LAS);
   } catch {
-    return null; // exit 1 = ingen hållare; verktyg saknas = samma bedömning
+    return null; // filen finns ej = ingen kan hålla den
   }
+  const pids = [];
+  for (const pid of fs.readdirSync("/proc")) {
+    if (!/^\d+$/.test(pid)) continue;
+    let fds;
+    try {
+      fds = fs.readdirSync(`/proc/${pid}/fd`);
+    } catch {
+      continue; // andra användare/processzoner — fuser hade samma gräns
+    }
+    for (const fd of fds) {
+      let mal;
+      try {
+        mal = fs.readlinkSync(`/proc/${pid}/fd/${fd}`);
+      } catch {
+        continue;
+      }
+      if (mal === lasSokvag) {
+        pids.push(pid);
+        break;
+      }
+    }
+  }
+  return pids.length > 0 ? pids.join(",") : null;
 }
 
 async function lasByggprocess() {
@@ -317,15 +387,17 @@ async function sond(url, metod) {
     });
     const status = svar.status;
     const slutlig = svar.url;
+    const raRad = svar.headers.get("retry-after");
+    const retryAfter = raRad !== null && /^\d+$/.test(raRad.trim()) ? parseInt(raRad, 10) : null;
     // kroppen läses aldrig — släpp socketen direkt
     try {
       await svar.body?.cancel();
     } catch {
       kontroll.abort();
     }
-    return { status, slutlig, fel: null };
+    return { status, slutlig, fel: null, retryAfter };
   } catch (fel) {
-    return { status: 0, slutlig: url, fel: felText(fel) };
+    return { status: 0, slutlig: url, fel: felText(fel), retryAfter: null };
   } finally {
     clearTimeout(tid);
   }
@@ -363,7 +435,7 @@ async function valideraMal(mal) {
     const r2 = await sond(mal, "HEAD");
     if (r2.status !== 0) r = r2;
   }
-  return { klass: klassificera(r.status, r.fel), status: r.status, slutlig: r.slutlig, fel: r.fel };
+  return { klass: klassificera(r.status, r.fel), status: r.status, slutlig: r.slutlig, fel: r.fel, retryAfter: r.retryAfter ?? null };
 }
 
 function doman(url) {
@@ -374,6 +446,42 @@ function doman(url) {
   }
 }
 
+function blockeradTyp(status) {
+  if (status === 429) return "rate";
+  if (status === 401 || status === 403) return "vagg";
+  return "vagg"; // övriga BLOCKERAD-klasser (skall ej förekomma) — ärlig vägg-typ
+}
+
+// --- vilofilen (o570 lager 3): domäner som klippts för 429 vilar — noll
+// förfrågningar tills vilen löper ut och kaninen provar igen. Läsning är
+// alltid förlåtande (korrupt fil = ingen vila, aldrig krasch), skrivning
+// atomisk (temp+rename) — cron och manuell körning kan överlappa.
+function lasVila() {
+  try {
+    const rå = JSON.parse(fs.readFileSync(VILA_FIL, "utf8"));
+    return rå && typeof rå === "object" ? rå : {};
+  } catch {
+    return {};
+  }
+}
+
+function skrivVila(vila) {
+  fs.mkdirSync(path.dirname(VILA_FIL), { recursive: true });
+  const tmp = `${VILA_FIL}.tmp-${process.pid}`;
+  fs.writeFileSync(tmp, JSON.stringify(vila, null, 2) + "\n");
+  fs.renameSync(tmp, VILA_FIL);
+}
+
+function vilaAktiv(vila, d) {
+  const post = vila[d];
+  return post && typeof post.tills === "number" && post.tills > Date.now() ? post : null;
+}
+
+// valideraAlla — med domänvettet (o570): vila ⇒ noll förfrågningar; kanin-429
+// ⇒ en GET-omprovning efter paus; består den ⇒ domänklipp (övriga mål
+// BLOCKERAD-rate utan förfrågningar) + vilopost; taktföring mellan varje
+// förfrågning till samma domän. Returnerar { resultat, klipp, vila } —
+// vila = den postförda vila-ståndpunkten (läst ∪ nyklippt) för rapporten.
 async function valideraAlla(sett, progress) {
   const perDom = new Map();
   for (const [url, kallor] of sett) {
@@ -383,12 +491,69 @@ async function valideraAlla(sett, progress) {
   }
   const resultat = [];
   const domanKo = [...perDom.entries()];
+  const vila = TVINGAD ? {} : lasVila();
+  const klipp = new Map(); // doman → vilopost (nya klipp denna körning)
   let gjorda = 0;
 
+  function rapportera(d, m, v) {
+    const post = { mal: m.url, doman: d, ...v, kallor: [...m.kallor].sort().slice(0, 25) };
+    if (post.klass === "BLOCKERAD") post.blockeradTyp = v.blockeradTyp || blockeradTyp(post.status);
+    resultat.push(post);
+  }
+
   async function korDom([d, mal]) {
-    for (const m of mal) {
-      const v = await valideraMal(m.url);
-      resultat.push({ mal: m.url, doman: d, ...v, kallor: [...m.kallor].sort().slice(0, 25) });
+    const vilande = vilaAktiv(vila, d);
+    if (vilande) {
+      for (const m of mal) {
+        rapportera(d, m, {
+          klass: "BLOCKERAD",
+          status: null,
+          slutlig: m.url,
+          fel: `vilande domän — 429-vila till ${new Date(vilande.tills).toISOString()}`,
+          retryAfter: null,
+          blockeradTyp: "vila",
+        });
+        gjorda++;
+      }
+      logg("doman-vila", { doman: d, mal: mal.length, tills: vilande.tills });
+      return;
+    }
+    let klippt = false;
+    for (const [i, m] of mal.entries()) {
+      if (klippt) {
+        rapportera(d, m, {
+          klass: "BLOCKERAD",
+          status: 429,
+          slutlig: m.url,
+          fel: "domänklippt — kaninmålet svarade 429 två gånger (HEAD+GET), övriga mål ej förfrågade",
+          retryAfter: null,
+          blockeradTyp: "rate",
+        });
+        gjorda++;
+        continue;
+      }
+      if (i > 0) await new Promise((losa) => setTimeout(losa, DOMAN_TAKT_MS)); // domäntakt
+      let v = await valideraMal(m.url);
+      // KANIN-429 (o570 lager 2): första målet bär domänens dom. 429 ⇒ pausa
+      // (Retry-After i mån, aldrig > 2 min) och omprova EN gång med GET —
+      // läker den (HEAD-specifik begränsning) fortsätter domänen normalt.
+      if (i === 0 && v.status === 429) {
+        const vanta = v.retryAfter !== null ? Math.min(v.retryAfter * 1000, 120_000) : RETRY_429_MS;
+        logg("kanin-429", { doman: d, vantaMs: vanta });
+        await new Promise((losa) => setTimeout(losa, vanta));
+        const r2 = await sond(m.url, "GET");
+        if (r2.status !== 0) {
+          v = { klass: klassificera(r2.status, r2.fel), status: r2.status, slutlig: r2.slutlig, fel: r2.fel, retryAfter: r2.retryAfter };
+        }
+        if (v.status === 429 && !TVINGAD) {
+          klippt = true;
+          const post = { tills: Date.now() + DOMAN_VILA_MS, orsak: "kanin 429 ×2 (HEAD+GET)", sedan: new Date().toISOString() };
+          klipp.set(d, post);
+          vila[d] = post;
+          logg("doman-klipp", { doman: d, atersparadeForfragningar: mal.length - 1, vilaMs: DOMAN_VILA_MS });
+        }
+      }
+      rapportera(d, m, v);
       gjorda++;
       if (progress && gjorda % 25 === 0) logg("progress", { gjorda, av: sett.size });
     }
@@ -410,7 +575,7 @@ async function valideraAlla(sett, progress) {
     }
     pumpa();
   });
-  return resultat;
+  return { resultat, klipp, vila };
 }
 
 // --- självtest (offline: lokal http-server + ouppnåbar port) -----------------
@@ -602,13 +767,28 @@ if (sett.size > TAK_URL) {
   process.exit(1);
 }
 
-const resultat = await valideraAlla(sett, true);
+const { resultat, klipp, vila } = await valideraAlla(sett, true);
 resultat.sort((a, b) => (a.klass === b.klass ? a.mal.localeCompare(b.mal) : a.klass.localeCompare(b.klass)));
+
+// Nyklippta domäner ⇒ vilofil (o570 lager 3). Diagnostik (--tvinga) skriver
+// ALDRIG vila — den ändrar inget tillstånd.
+if (klipp.size > 0 && !TVINGAD) {
+  skrivVila(vila);
+  logg("vila-skriven", { domaner: [...klipp.keys()], fil: VILA_FIL });
+}
 
 const perKlass = {};
 for (const r of resultat) perKlass[r.klass] = (perKlass[r.klass] || 0) + 1;
 const perDoman = {};
 for (const r of resultat) perDoman[r.doman] = perDoman[r.doman] || { OK: 0, BLOCKERAD: 0, DOD: 0, SERVERFEL: 0, OUPPNABAR: 0 }, perDoman[r.doman][r.klass]++;
+
+// Aktiv vila-ståndpunkt för rapporten: vilande + nyklippta domäner.
+const vilaStandalone = {};
+for (const [d, post] of Object.entries(vila)) {
+  if (vilaAktiv(vila, d)) vilaStandalone[d] = post;
+}
+const blockeradeTyper = { rate: 0, vagg: 0, vila: 0 };
+for (const r of resultat) if (r.klass === "BLOCKERAD") blockeradeTyper[r.blockeradTyp || "vagg"]++;
 
 const rapport = {
   bas: BAS,
@@ -630,6 +810,8 @@ const rapport = {
     serverfel: resultat.filter((r) => r.klass === "SERVERFEL"),
     blockerade: resultat.filter((r) => r.klass === "BLOCKERAD"),
   },
+  blockeradeTyper,
+  domanVila: vilaStandalone,
   alla: resultat,
 };
 
@@ -644,4 +826,8 @@ for (const d of rapport.fynd.doda) console.log(`  ${d.status} ${d.mal}  ← ${d.
 console.log(`OUPPNÅBARA (domän/anslutning): ${rapport.fynd.ouppnabara.length}`);
 for (const d of rapport.fynd.ouppnabara) console.log(`  ${d.fel} ${d.mal}  ← ${d.kallor.slice(0, 3).join(", ") || "(sitemap)"}`);
 console.log(`SERVERFEL kvarstår: ${rapport.fynd.serverfel.length} · BLOCKERADE (kan ej maskinverifiera): ${rapport.fynd.blockerade.length}`);
+console.log(
+  `Blockerade-typ: rate ${blockeradeTyper.rate} (429-begränsad IP) · vägg ${blockeradeTyper.vagg} (401/403) · vila ${blockeradeTyper.vila} (domän vilar, o570)` +
+    (Object.keys(vilaStandalone).length > 0 ? ` — domäner i vila: ${Object.keys(vilaStandalone).sort().join(", ")}` : ""),
+);
 console.log(`Rapport: ${utFil}`);

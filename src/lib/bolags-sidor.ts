@@ -1,5 +1,6 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import { byggdSidaFinns } from "./sitemap-byggsanning";
 
 // ── BOLAGSSIDORNA (VÅG 149 — B1 i SOKORDSINVENTERING-2026) ─────────────────
 //
@@ -233,12 +234,20 @@ export function bolagUrSlug(slug: string): BolagSida | null {
 
 /** Bolag i samma bransch (exklusive sig själv) — syskonlänkarna.
  *  o146: enbart publicerade syskon — en ISR-revalidaterad sida får aldrig
- *  länka till ett universumbolag vars sida ännu inte byggts. */
+ *  länka till ett universumbolag vars sida ännu inte byggts.
+ *  o565: andra ledet — publiceringscachen är en runtime-fil (gitignorerad);
+ *  faller den bort medan .next lever (städning, återställning) lovade
+ *  fallbacken hela universumet, även obyggda slugs. .next-grinden (fail-open,
+ *  o559-mönstret) håller då tillbaka konstaterat obyggda syskon; friskt läge
+ *  (ledger ⊆ bygget) ändrar inget, dev utan .next lovar som förut. */
 export function syskonBolag(slug: string): BolagSida[] {
   const sida = bolagUrSlug(slug);
   if (!sida) return [];
   return publiceradeBolagSidor().filter(
-    (s) => s.bransch === sida.bransch && s.slug !== slug,
+    (s) =>
+      s.bransch === sida.bransch &&
+      s.slug !== slug &&
+      byggdSidaFinns(`bolag/${s.slug}`),
   );
 }
 

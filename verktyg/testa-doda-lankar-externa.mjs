@@ -17,13 +17,21 @@
 //   C friskt läge         → mätvärde levererat, DOD-mål med källor
 //   D filskydd            → befintliga filer skrivs ALDRIG över
 //   E byggprocess pågår   → avbrott vid pgrep-grind
-//   F deploylås ägs       → avbrott vid fuser-grind (ÄGANDE, ej existens)
+//   F deploylås ägs       → avbrott vid lås-ägandegrinden (/proc-fd, ÄGANDE, ej existens)
 //   G hela mönster        → "next build"-sekvensen ger inget falsklarm
 //   H --tvinga            → diagnostikläget levererar märkt data, aldrig mätvärde
 //   J driftfönster slut   → fönstervakt + EN återmätning räddar mätomgången
 //                           (kod 0, andra mellanlagret grönt, atermatAntal=1)
 //   K fönstret stänger ej → väntetak → exit 2, ENDA insamlingen bevaras,
 //                           aldrig ändlös omkring-crawl
+//   L kanin-429 ⇒ klipp    → första målets 429 (HEAD+GET) klipper domänen:
+//                           övriga mål BLOCKERAD-rate med NOLL förfrågningar,
+//                           vilofil skriven (o570)
+//   M viloperiod           → förseedad vilofil ⇒ NOLL förfrågningar, typ vila
+//   N domäntakt            → minst AK1A_DOMAN_TAKT_MS mellan samma domäns
+//                           förfrågningar
+//   R retry-after-läkning  → kanin 429 + retry-after: 0 ⇒ GET-omprovning läker
+//                           ⇒ ingen klipp, hela domänen OK
 
 import fs from "node:fs";
 import os from "node:os";
@@ -55,13 +63,13 @@ function textSida(kropp) {
   return `<!doctype html><html><body>${kropp}</body></html>`;
 }
 
-// Fejk-server med router: (reqPath) → { status, kropp } | undefined (404)
+// Fejk-server med router: (reqPath) → { status, kropp, headers? } | undefined (404)
 function startaServer(router) {
   return new Promise((losa) => {
     const server = http.createServer((req, res) => {
       const u = new URL(req.url, "http://x");
       const svar = router ? router(u.pathname) : undefined;
-      res.writeHead(svar?.status || 404, { "content-type": "text/html" });
+      res.writeHead(svar?.status || 404, { "content-type": "text/html", ...(svar?.headers || {}) });
       res.end(svar?.kropp ?? "");
     });
     server.listen(0, "127.0.0.1", () => losa({ server, port: server.address().port }));
@@ -97,6 +105,10 @@ function korVerktyg({ bas, cwd, extra = [], miljo = {} }) {
           AK1A_BYGG_MONSTER: miljo.monster || "akt1a-testbyggare-som-aldrig-finns",
           ...(miljo.retryVanta ? { AK1A_RETRY_VANTA_MS: miljo.retryVanta } : {}),
           ...(miljo.retryPoll ? { AK1A_RETRY_POLL_MS: miljo.retryPoll } : {}),
+          ...(miljo.takt ? { AK1A_DOMAN_TAKT_MS: miljo.takt } : {}),
+          ...(miljo.retry429 ? { AK1A_429_RETRY_MS: miljo.retry429 } : {}),
+          ...(miljo.vilaFil ? { AK1A_VILA_FIL: miljo.vilaFil } : {}),
+          ...(miljo.vilaMs ? { AK1A_DOMAN_VILA_MS: miljo.vilaMs } : {}),
         },
       },
       (fel, stdout, stderr) => losa({ kod: fel ? fel.code : 0, stdout, stderr })
@@ -228,7 +240,7 @@ console.log(`Fixtures: ${arbete}`);
   await stang(server);
 }
 
-// --- F: deploylåset ÄGS — fuser-grinden stoppar (existens räcker ej) --------
+// --- F: deploylåset ÄGS — lås-ägandegrinden stoppar (existens räcker ej) -----
 {
   const { server, port } = await startaServer((p) => {
     if (p === "/sitemap.xml") return { status: 200, kropp: sitemap(["/"]) };
@@ -354,6 +366,168 @@ console.log(`Fixtures: ${arbete}`);
   rapport("K3", "väntetaket loggades", /driftfonster-vantak/.test(r.stderr || ""), "");
   const f = vaktenFiler(cwd);
   rapport("K4", "EN insamling (ommätning skedde aldrig), ingen fyndfil", f.insamling.length === 1 && f.fynd.length === 0, JSON.stringify(f));
+  await stang(server);
+}
+
+// --- L: KANIN-429 ⇒ DOMÄNKLIPP (o570 lager 2) — kaninmålet (första målet i
+//        domänen) svarar 429 två gånger (HEAD + GET-omprovning) ⇒ övriga mål
+//        klassas BLOCKERAD-rate UTAN en enda förfrågan, domänen skrivs in i
+//        vilofilen. Levande motstycke: Adlibris/Bokus 102-målsdomäner.
+//        Isolering: målen på EN EGEN PORT (annat ursprung) — crawlen följer
+//        aldrig dit, räknarna ser enbart valideringssonder. -----------------
+{
+  const traff = {}; // sökväg → antal valideringsträffar
+  const malServer = await startaServer((p) => {
+    if (p.startsWith("/l-")) {
+      traff[p] = (traff[p] || 0) + 1;
+      return p === "/l-rate" ? { status: 429, kropp: "" } : { status: 200, kropp: "" };
+    }
+    return { status: 404, kropp: "" };
+  });
+  const { server, port } = await startaServer((p) => {
+    if (p === "/sitemap.xml") return { status: 200, kropp: sitemap(["/l"]) };
+    if (p === "/l") {
+      // DOM-ordning styr kaninen: rate-målet först
+      return {
+        status: 200,
+        kropp: textSida(
+          `<a href="http://127.0.0.1:${malServer.port}/l-rate">r</a><a href="http://127.0.0.1:${malServer.port}/l-ok1">o1</a><a href="http://127.0.0.1:${malServer.port}/l-ok2">o2</a>`,
+        ),
+      };
+    }
+    return { status: 200, kropp: textSida("") };
+  });
+  const cwd = fs.mkdtempSync(path.join(arbete, "l-"));
+  const vilaFil = path.join(cwd, "vila-test.json");
+  const r = await korVerktyg({
+    bas: `http://127.0.0.1:${port}`,
+    cwd,
+    miljo: { retry429: "300", vilaFil, vilaMs: "604800000" },
+  });
+  rapport("L1", "mätvärde levererat (kod 0) trots klippt domän", r.kod === 0, `kod=${r.kod}`);
+  const f = vaktenFiler(cwd);
+  const j = lasJson(cwd, f.fynd[0]);
+  rapport("L2", "alla 3 mål BLOCKERADE, inget OK (kanin 429 + 2 klippta)", j?.perKlass?.BLOCKERAD === 3 && (j?.perKlass?.OK || 0) === 0, JSON.stringify(j?.perKlass));
+  const blockerade = j?.fynd?.blockerade || [];
+  rapport(
+    "L3",
+    "klippta mål bärs rate-typ + förklaring, utan förfrågningar",
+    blockerade.filter((b) => b.blockeradTyp === "rate").length === 3 && blockerade.some((b) => /domänklippt/.test(b.fel || "")),
+    JSON.stringify((j?.fynd?.blockerade || []).map((b) => b.blockeradTyp)),
+  );
+  rapport("L4", "kaninen fick EXAKT 2 förfrågningar (HEAD + GET-omprovning)", traff["/l-rate"] === 2, JSON.stringify(traff));
+  rapport("L5", "klippta mål fick NOLL förfrågningar", (traff["/l-ok1"] || 0) === 0 && (traff["/l-ok2"] || 0) === 0, JSON.stringify(traff));
+  const vila = JSON.parse(fs.readFileSync(vilaFil, "utf8"));
+  rapport("L6", "domänen skrevs in i vilofilen (7-dagars-vila)", vila["127.0.0.1"]?.tills > Date.now(), JSON.stringify(vila["127.0.0.1"] || null));
+  rapport("L7", "stdout redovisar rate-typ + domäner i vila", /rate 3/.test(r.stdout || "") && /domäner i vila: 127\.0\.0\.1/.test(r.stdout || ""), "");
+  await stang(malServer.server);
+  await stang(server);
+}
+
+// --- M: VILOPERIOD RESPEKTERAS (o570 lager 3) — förseedad vilofil ⇒ noll
+//        förfrågningar mot vilande domän, BLOCKERAD-vila, kod 0 --------------
+{
+  const traff = {};
+  const malServer = await startaServer((p) => {
+    if (p.startsWith("/m-")) {
+      traff[p] = (traff[p] || 0) + 1;
+      return { status: 200, kropp: "" };
+    }
+    return { status: 404, kropp: "" };
+  });
+  const { server, port } = await startaServer((p) => {
+    if (p === "/sitemap.xml") return { status: 200, kropp: sitemap(["/m"]) };
+    if (p === "/m") return { status: 200, kropp: textSida(`<a href="http://127.0.0.1:${malServer.port}/m-ok">ok</a>`) };
+    return { status: 200, kropp: textSida("") };
+  });
+  const cwd = fs.mkdtempSync(path.join(arbete, "m-"));
+  const vilaFil = path.join(cwd, "vila-test.json");
+  fs.writeFileSync(vilaFil, JSON.stringify({ "127.0.0.1": { tills: Date.now() + 3_600_000, orsak: "kanin 429 ×2 (HEAD+GET)", sedan: "2026-09-29T00:00:00.000Z" } }));
+  const r = await korVerktyg({ bas: `http://127.0.0.1:${port}`, cwd, miljo: { vilaFil } });
+  rapport("M1", "mätvärde levererat (kod 0) med vilande domän", r.kod === 0, `kod=${r.kod}`);
+  const f = vaktenFiler(cwd);
+  const j = lasJson(cwd, f.fynd[0]);
+  rapport("M2", "målet klassas BLOCKERAD med typ vila", j?.perKlass?.BLOCKERAD === 1 && j?.fynd?.blockerade?.[0]?.blockeradTyp === "vila", JSON.stringify(j?.perKlass));
+  rapport("M3", "vilande mål fick NOLL förfrågningar", (traff["/m-ok"] || 0) === 0, JSON.stringify(traff));
+  rapport("M4", "rapporten förklarar vila-till-tid i fel-fältet", /429-vila till/.test(j?.fynd?.blockerade?.[0]?.fel || ""), j?.fynd?.blockerade?.[0]?.fel || "");
+  await stang(malServer.server);
+  await stang(server);
+}
+
+// --- N: DOMÄNTAKT (o570 lager 1) — minst AK1A_DOMAN_TAKT_MS mellan förfråg-
+//        gningar till samma domän (skydd för domäner som tåler oss idag) ----
+{
+  const traffTider = {}; // sökväg → ankomsttid (ms)
+  const malServer = await startaServer((p) => {
+    if (p.startsWith("/n-")) {
+      traffTider[p] = Date.now();
+      return { status: 200, kropp: "" };
+    }
+    return { status: 404, kropp: "" };
+  });
+  const { server, port } = await startaServer((p) => {
+    if (p === "/sitemap.xml") return { status: 200, kropp: sitemap(["/n"]) };
+    if (p === "/n") {
+      return {
+        status: 200,
+        kropp: textSida(
+          `<a href="http://127.0.0.1:${malServer.port}/n-a">a</a><a href="http://127.0.0.1:${malServer.port}/n-b">b</a><a href="http://127.0.0.1:${malServer.port}/n-c">c</a>`,
+        ),
+      };
+    }
+    return { status: 200, kropp: textSida("") };
+  });
+  const cwd = fs.mkdtempSync(path.join(arbete, "n-"));
+  const r = await korVerktyg({ bas: `http://127.0.0.1:${port}`, cwd, miljo: { takt: "350" } });
+  rapport("N1", "mätvärde levererat (kod 0)", r.kod === 0, `kod=${r.kod}`);
+  const f = vaktenFiler(cwd);
+  const j = lasJson(cwd, f.fynd[0]);
+  rapport("N2", "alla 3 mål OK (ingen klipp/vila i frisk domän)", j?.perKlass?.OK === 3, JSON.stringify(j?.perKlass));
+  const a = traffTider["/n-a"], b = traffTider["/n-b"], c = traffTider["/n-c"];
+  const gap1 = b - a, gap2 = c - b;
+  rapport("N3", "mellanrum ≥ ~takten mellan förfrågningar (350 ms)", gap1 >= 330 && gap2 >= 330, `gap1=${gap1}ms gap2=${gap2}ms`);
+  await stang(malServer.server);
+  await stang(server);
+}
+
+// --- R: RETRY-AFTER-LÄKNING (o570 kaninens förlåtande) — kanin 429 med
+//        retry-after: 0 ⇒ omprovning med GET ⇒ 200 ⇒ domänen FORTSÄTTER
+//        normalt: ingen klipp, ingen vila, alla mål validerade --------------
+{
+  const traff = {};
+  const malServer = await startaServer((p) => {
+    if (p === "/r-a") {
+      traff[p] = (traff[p] || 0) + 1;
+      // träff 1 (HEAD): 429 med retry-after: 0 — träff 2 (GET-omprovning): läkt
+      return traff[p] === 1 ? { status: 429, kropp: "", headers: { "retry-after": "0" } } : { status: 200, kropp: "" };
+    }
+    if (p === "/r-b") {
+      traff[p] = (traff[p] || 0) + 1;
+      return { status: 200, kropp: "" };
+    }
+    return { status: 404, kropp: "" };
+  });
+  const { server, port } = await startaServer((p) => {
+    if (p === "/sitemap.xml") return { status: 200, kropp: sitemap(["/r"]) };
+    if (p === "/r") {
+      return {
+        status: 200,
+        kropp: textSida(`<a href="http://127.0.0.1:${malServer.port}/r-a">a</a><a href="http://127.0.0.1:${malServer.port}/r-b">b</a>`),
+      };
+    }
+    return { status: 200, kropp: textSida("") };
+  });
+  const cwd = fs.mkdtempSync(path.join(arbete, "r-"));
+  const vilaFil = path.join(cwd, "vila-test.json");
+  const r = await korVerktyg({ bas: `http://127.0.0.1:${port}`, cwd, miljo: { takt: "10", retry429: "5000", vilaFil } });
+  rapport("R1", "mätvärde levererat (kod 0)", r.kod === 0, `kod=${r.kod}`);
+  const f = vaktenFiler(cwd);
+  const j = lasJson(cwd, f.fynd[0]);
+  rapport("R2", "läkt kanin ⇒ hela domänen OK (ingen klipp)", j?.perKlass?.OK === 2 && j?.perKlass?.BLOCKERAD === undefined, JSON.stringify(j?.perKlass));
+  rapport("R3", "kanin-omprovningen loggades", /kanin-429/.test(r.stderr || ""), "");
+  rapport("R4", "retry-after: 0 ⇒ ingen klipplogg, ingen vilofil", !/doman-klipp/.test(r.stderr || "") && !fs.existsSync(vilaFil), "");
+  rapport("R5", "kaninen 2 förfrågningar (HEAD+GET), syskonet 1", traff["/r-a"] === 2 && traff["/r-b"] === 1, JSON.stringify(traff));
+  await stang(malServer.server);
   await stang(server);
 }
 

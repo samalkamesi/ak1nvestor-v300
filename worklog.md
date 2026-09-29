@@ -19333,3 +19333,68 @@ slug + 200 på kontrollposter + publicerad inlägg 200) körs efter deploy
 (L2) cron-vakt var 10:e minut (.meta-hygien) · (L3) PROXY-BARRIÄREN =
 kärnan — tre oberoende lager, var och en tillräcklig, tillsammans
 omöjliga att snärja.
+## SPÅR 8 s8-u3 (manifest auto-s8-1790679320397, vakt 3/3) — 2026-09-29 ~11:0x–11:5x UTC: kvalitetsvåg o566 — SERIENS KONTINUITET + BOTVÄGGSROTFÖRFINING + DAGENS PATCH-KÖ: två ärliga pivoter (döda-länksfynden 25-27 sep var redan triagerade av r260+r270 — duplikat nedställt; instrumentytorna togs live av syskon: u1/o570 redigerade verktyg/doda-lankar-externa.mjs 11:13 OCH verktyg/doda-lankar.mjs 11:20 — min svitkörning mitt i deras edit gav RÖTT+krasch, bokförd som mätkontamination) ⇒ VAL: mätseriernas hål + det genuint nya fyndet [fabrik]
+
+Fabriksagent s8-u3 (vakt). ROTFÖRFINING MED KONTROLLERAT EXPERIMENT (gåva till o565/o570): r270 dömde nasdaq-familjens vägg som "Akamai tappar datacenteranslutningen" — samma server, samma minut: verktygets UA HEAD=TIMEOUT 15 888 ms + GET=TIMEOUT 15 038 ms men webbläsar-UA GET=200 på 4 684 ms (curl-par: 200 respektive anslutning dödad 1,3 s) ⇒ väggen är UA-SELEKTIV, inte IP-baserad; implication: diagnostisk webbläsar-UA-GET ENDAST efter två fallerade ärliga försök skiljer "väggad men levande för besökare" (BLOCKERAD/KÄND) från "genuint död" (DOD/OUPPNABAR) utan att maskera persistent död (o113 hel). FYND-DOMAR med verktygets exakta UA: Holmen Interim Report 200/147 ms + korrekt titel (nattens tre 500or = deras transienter; SERVERFEL larmar ej per o95-kontraktet — klassystemet domade rätt), eur-lex 202/906 ms (r270 transient-dom bekräftad), investor.tsmc.com 200 (r260:s kur levande), nasdaqomxnordic 301 (lever; Avanza-bytet kvarstår rätt — länken var felriktad). SERIENS KONTINUITET bokförd: 28 sep DRIFTFÖNSTER (1 884→1 166 interna sidfel under läkebyggsnatten, taket kasserade korrekt o47 §2); 29 sep HÅL: 04:17 externa + 05:37 berodevakt uteblivna i crontab-massförlustens fönster 02:30-06:40 (läkt r328) — båda rader verifierade LEVA 11:2xZ, imorgon = första organiska kvitot; HÅLET FYLLT: berodevakten mätte manuellt 0 sårbarheter · 4 inom intervall · 9 major-steg (SENASTE=ny). PATCH-KÖN: 4 poster appenderade data/infra/patch-ko.json (next 16.3.7 ramverks-patch väcker synken per o46 · eslint-config-next 16.3.7 · next-intl 4.14.8 · sharp 0.35.5; 18 poster, dedup sista-vinner, kvittohistorik orörd; installation ägs ENDELIGT av prod-synken under låset). KVD: ingen src-kod ⇒ INGET bygge; tsc 0 ritual (projektbinär); R2 orörd; data/blogg/ orörd; syskonytor orörda (u1:s verktygsediter + u2:s ytor ospårade; pool/patch-ko/SENASTE via etablerade append-mönster + omedelbar staging); node --check GRÖNT ×2. Protokoll: OPTIMERING/o566-seriehal-berodevakt-patchko-s8.md · råbevis: data/vakten/_s8u3o566-seriehal-och-vaggbevis.json · sond: verktyg/_s8u3o566-nasdaq-sond.mjs. [fabrik]
+
+## SPÅR 8 s8-u2 (manifest auto-s8-1790679320397, vakt 2/3) — 2026-09-29 ~11:0x–12:3x lokal: kvalitetsvåg o565 — BOLAGSSIDORNAS SYSKONLÄNKS-KONTRAKT: o559:s namngivna grannpost kartlagd och kurad (W1-analysgrindar + W3-syskon-.next-grind, W2-domad säker genom enkelkälla) + bevakningssvit 22/0 + fullsvepsbevis 314 sidor/364 mål/0 döda [fabrik]
+
+Fabriksagent s8-u2 (vakt). PIVOT ärligt bokförd: första valet var döda-länkar-externa (3 nätters FYND-larm utan dom) men syskonet s8-u1 reserverade o570 (429-mörkret) = SAMMA instrumentfil ⇒ våg 104:s exklusiva filägarskap, jag vek och tog i stället o559:s namngivna grannpost: "/bolag/[slug]:s egna syskonlänkar (syskonBolag o146) — obevakad samma klass, ej kartlagd denna våg". Min döda-länkar-domkedja (tsmc-DÖD sann men REDAN kurerad av r260 f235d817; kurens nya nasdaq-URL lever 301→200 med browser-UA men UA-selektiv Akamai-vägg dödar crawlern ⇒ TIMEOUT⇒OUPPNABAR⇒FYND-larm varje natt = instrumentbrus; eur-lex 202 lever; holmen 500→200 transient) lämnad som NOTIS till u1 med korsreferens till o566:s parallella UA-experiment (samma dom, två agenter) + svitfyndet att testa-doda-lankar-externa.mjs FINNS (utöka, ej dubblett) + regressionsvakt: tsmc/nasdaqomxnordic-URL:erna är borta ur innehållet och SKA larma om de återkommer. KARTLÄGGNING av /bolag/[slug]:s SAMTLIGA länkytor (page.tsx + BolagDetaljVy): syskon (o146-filterrad men fallbacken lovar hela universumet vid saknad cache-fil = W3) · dataset-kortet (W2: SÄKER GENOM ENKELKÄLLA — lasBranschMedianer läser bolagsunivers.json DIREKT, branscherna kan ej glida isär i ett bygge; ingen kur, sviten bevakar enkelkällan) · djupanalys-/forskningskorten (W1 ÄKTA: villkoren läser getAnalyses()/lasAnalyser() LIVE vid ISR-revalidate 24 h medan /analyser/[ticker] + /forskningsbiblioteket/[ticker] är force-static+dynamicParams=false — data-doktrinen levererar analyser UTAN deploy ⇒ revalidaterad sida länkade obyggt mål = o146-klassen från bolagssidan) · statiska ytor säkra. FÄRSKT LÄGE: 322 bolag · 11 branscher · 11/11 dataset · 11=11 analyser · 22=22 forskningsöversikter · 0 ticker-missmatchar (fuzzy tickerNyckel ≡ exakt href-mål) ⇒ 0 döda idag — kurens verkar ENDAST i gap-fönstret (o559:s vaktdefinition). KUR (src via Edit, fail-open o147/o559): W1 = harDjupanalys/harForskningsanalys förlängs med byggdSidaFinns(`analyser/${encodeURIComponent(ticker)}`) resp. forskningsbiblioteket — endast KONSTATERAT obyggt hålls tillbaka, nästa gröna bygge släpper in automatiskt; W3 = syskonBolags filter + byggdSidaFinns(`bolag/${s.slug}`) — friskt läge noll synlig ändring, ledger borta + .next lever = ärligt gallrade syskon, dev fail-open; o146:s mjuka fallback bevaras ordagrant (grinden är ett ANDRA led, ingen ersättning). BEVAKNINGSSVIT verktyg/testa-bolag-syskon-byggsanning-s8.mjs (DETERMINISTISK-klassen plockar automatiskt): 22 PASS 0 FAIL — R1 källkontrakt ×11 (grindar sitter, o146/o148-kärnor orörda, enkelkälla, detaljvyns /bolag-länkar endast själv+syskon-prop) · R2 mekanik-eldprov ×5 mot låtsade träd (friskt oförändrat/gap gallrar exakt/ledger-borta+.next-delvis = kurens kärna/dev fail-open/främmande ledger-slugs) · R3 datakontrakt ×6 (slug-härledning exakt som lib, cache ⊆ universum, ticker-paritet, branschsymmetri, analysmål byggbara, cache ⊆ .next) · villkorad HTTP-sond info-only: standing-prob vart 8:e slug (41 sidor · 337 mål · 0 döda) + fullsvep bakom O565_FULLSOND=1. BEVIS: fullsvep 314/322 sidor (tidsbudget-stopp ärligt bokfört) · 364 unika interna länkmål · 0 DÖDA = LEVERANS-GRÖN · tsc 0 projektbinär (src berörd) · node --check ×2 · INGET bygge (prod-synken äger; kuren aktiveras vid nästa gröna bygge). RESTPOSTER: EFTER-deploy-kvitto O565_FULLSOND=1 efter nästa gröna bygge (skall förbli 0 döda) · bredare klasskartläggning (andra ytor med live-villkor + byggfrusna mål: portfolj-forskning, superanalys-widget, AI-mentor-kort) · u1:s o570 äger instrumentets dom-hantering (notis bär kedjan). KVD: R2 orörd · data/blogg orörd (endast läst) · crontab endast läst · syskonytor orörda (u1:s fyra modified instrumentfiler lämnade ostaged; o566:s ytor ostaged; poolen redan committad av o566 med min post) · commit -F + explicit pathspec · pre-commit-grinden bärs. Protokoll: OPTIMERING/o565-bolag-syskon-byggsanning-s8.md [fabrik]
+
+## SPÅR 8 s8-u1 o570 (manifest auto-s8-1790679320397, vakt 1/3) — 2026-09-29 ~11:0x–12:0x lokal: EXTERNAVAKTENS 429-MÖRKER — egenförvållat Adlibris/Bokus-IP-block kurat (takt+kaninklipp+vila) + FUSER-BLINDHETEN: länkvaktarnas deploylås-öga var dött på SSD Nodes (/proc-kur, levande bevis) [fabrik]
+
+Fabriksagent s8-u1 (vakt). VAL (duplikatkontroll innan start): senaste s8-vågen
+(o559–o561) stängde dataset-byggsanning/cron-exekverbarbit/trädhälsa; dödlänkspåret
+öppet — externa vaktens 10 rapporter 09-15→09-27 visade samma 429-mörker, interna
+vaktens senaste giltiga dom 09-21 (0 döda; 09-28-körningarna kasserade som
+driftfönster 41–66 % i fabrikslast, 09-29 saknades helt efter crontab-förlusten).
+Reservation o570 under flock (högsta kända o564; o565–o569 buffert mot syskonen).
+
+FYND 1 — ROTORSAK BEVISAD (live-sonder 09-29): 204/343 externa mål (59,5 %) =
+Adlibris+Bokus bokköpslänkar, 102/102 var, ALLA 429 i ALLA rapporter sedan
+födelsen. Enstaka förfrågningar (HEAD/GET, startsida/produkt/sök, egen UA +
+webbläsar-UA): 429 — domänbrett, UA-oberoende, kvarstår 36+ h efter senaste
+körning = IP-nivåblock, och instrumentet UNDERHÖLL det: korDom avlossade 102
+back-to-back per domän varje natt sedan 09-15 (skonsamhetskontraktet brutet:
+204 förfrågningar/natt mot värdar som sagt stopp).
+
+KUR 1 — DOMÄNVETTET i verktyg/doda-lankar-externa.mjs: (lager 1) domäntakt
+AK1A_DOMAN_TAKT_MS 1200 ms mellan samma domäns förfrågningar (skydd för
+amazon 102-OK-kedjan); (lager 2) KANIN: domänens första mål — 429 ⇒ paus
+(Retry-After, tak 2 min) ⇒ EN GET-omprovning (imy-precedens): läkt ⇒ domänen
+fortsätter, består ⇒ DOMÄNKLIPP (övriga mål BLOCKERAD-rate med NOLL
+förfrågningar) + vilopost; (lager 3) vilofil data/vakten/doda-lankar-externa-
+doman-vila.json (atomisk, AK1A_VILA_FIL för sviten): klippt domän = 0
+förfrågningar i 7 dygn (AK1A_DOMAN_VILA_MS), kanin provar igen när vilen löper
+ut. Ärlig räkenskap: blockeradTyp rate/vagg/vila per post + blockeradeTyper +
+domanVila i rapporten + ETT nytt stdout-radslag; cron-wrapperns parsrader
+byte-kompatibla. --tvinga respekterar/skriver ALDRIG vila.
+
+FYND 2 — FUSER/PSMISC SAKNAS PÅ SSD NODES: svitens F-grupp föll, rot: lasHollare
+läste fuser (fanns på Contabo, aldrig här) ⇒ deploylås-ägandekontrollen konstant
+null = TYST BLIND sedan serverbytet (pgrep+drift-tak levde kvar). KUR: /proc-fd-
+läsning i BÅDA länkvakterna (flock-hållare bär alltid öppen fd; RATAD alternativet
+egen flock -n-probe — den tar själv låset en mikrosekund och kan fela en äkta
+deploys non-blocking acquire, dokumenterat i koden). LEVANDE BEVIS mitt i vågen:
+prod-synken (pid 866092 flock-w-900 + barn) pågick ⇒ `GRIND: deployfönster
+aktivt — låset ägs av PID 866092,866093,870062`. KOLLATERAL-ROT: intern-sviten
+refererade odefinierade miljo.egenLas ⇒ sviten körde mot SKARPA låset (maskerad
+av blindheten; på Contabo slump-fail vid samtidig deploy) — kurerad med svit-egen
+låsfil. ÖPPEN POST TILL NÄSTA s8-VÅG: kvalitetsvakt.mjs, rapport-intag-
+karantan.mjs, ssr-livssond.mjs, _r325-synkpal.mjs bär samma fuser-sond (mönstret:
+kopiera /proc-sonden).
+
+BEVIS: externasvit 61 PASS / 0 FAIL / 1 ärlig SKIP (G: äkta byggfönster pågick
+— designat skepp) med NYA fallen L1–L7 (kanin exakt 2 förfrågningar, klippta 0,
+vilofil, rate-typ), M1–M4 (förseedad vila ⇒ 0 förfrågningar), N1–N3 (takt 350 ms
+⇒ mellanrum 462/627 ms), R1–R5 (retry-after: 0 ⇒ GET-läkt kanin ⇒ ingen klipp,
+hela domänen OK); fixturer byggda om till MÅL PÅ EGEN PORT (annat ursprung —
+crawlen följer aldrig dit, räknarna ser enbart validering; C3-precedensens
+samma-ursprung-fälla kringgådd); intern svit 22/0/1; --sjalvtest 6/6;
+node --check ×4; tsc 0 (baslinjen hel); src/ orörd = INGET bygge; R2 orörd;
+data/blogg orörd; 09-27:s transienta fynd (holmen 500, eur-lex/nasdaq TIMEOUT)
+live-verifierade 200/202/200 = inga döda; live kanin-dom --validera-fran
+09-27-insamlingen (343 mål) körd när deployfönstret friade — tal i
+leveransraden/protokollet §5. Protokoll: data/forskning/OPTIMERING/
+o570-externavaktens-429-morker-s8.md. Kö: 2026-10-06 vilotakens första
+kanin-omprovning (nattcron 04:17 bär den automatiskt). [fabrik]

@@ -10,6 +10,7 @@ import {
 import { lasBranschMedianer, branschUrSlug } from "@/lib/dataset-medianer";
 import { getAnalyses } from "@/lib/content";
 import { lasAnalyser } from "@/lib/analysfabrik";
+import { byggdSidaFinns } from "@/lib/sitemap-byggsanning";
 import { BolagDetaljVy } from "@/components/ak1a/bolag-sidor";
 import { sidaMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { StrukturData } from "@/components/seo/StrukturData";
@@ -80,8 +81,18 @@ export default async function BolagDetaljSida({
   const medianRad = branschUrSlug(lasBranschMedianer(), sida.bransch);
   const syskon = syskonBolag(slug);
   const nyckel = tickerNyckel(sida.ticker);
-  const harDjupanalys = getAnalyses().some((a) => tickerNyckel(a.ticker) === nyckel);
-  const harForskningsanalys = lasAnalyser().some((a) => tickerNyckel(a.ticker) === nyckel);
+  // o565: analyserna/forskningsöversikterna växer som DATA (data-doktrinen —
+  // leverans utan deploy) medan deras rutter är force-static+dynamicParams=false.
+  // Ett ISR-revalidate av denna sida skulle annars länka ett mål bygget saknar
+  // (o146-klassen). Grinden är fail-open: utan .next (dev) eller vid sondfel
+  // lovar vi som förut — endast konstaterat obyggd hålls kortet tillbaka till
+  // nästa gröna bygge (o559-mönstret).
+  const harDjupanalys =
+    getAnalyses().some((a) => tickerNyckel(a.ticker) === nyckel) &&
+    byggdSidaFinns(`analyser/${encodeURIComponent(sida.ticker)}`);
+  const harForskningsanalys =
+    lasAnalyser().some((a) => tickerNyckel(a.ticker) === nyckel) &&
+    byggdSidaFinns(`forskningsbiblioteket/${encodeURIComponent(sida.ticker)}`);
 
   return (
     <>

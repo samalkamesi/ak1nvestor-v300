@@ -318,12 +318,14 @@ function webrotDefaultsJson() {
   const obj = JSON.parse(raw);
   const nycklar = Object.keys(obj).length;
   const beskrivning = nycklar === 0 ? 'tomt objekt — noVNC:s inbyggda standardvärden gäller' : `${nycklar} toppnycklar`;
-  // U13V2-korrigeringskrav (2): hälsan var resize-blind — styrelsens
-  // huvudväg (telefonens egna pixlar via SetDesktopSize) SKALL bevakas.
-  if (obj.resize !== 'remote') {
-    return { status: 'FAIL', orsak: `defaults.json resize="${obj.resize}" — styrelsens kontrakt är "remote" (per-skärm-upplösning; U13V2-dom)` };
+  // R318+R327 (STYRELSESLUT 2026-09-29): hälsan bevakar GILTIGHET (remote|
+  // scale) och redovisar läget — remote får ALDRIG tvångas som default
+  // före ett GRÖNT riktigt-telefon-acceptansprov (r318+r327: loopback-
+  // headless-bevis räcker INTE; mobil-webkit + remote = ingen anslutning).
+  if (obj.resize !== 'remote' && obj.resize !== 'scale') {
+    return { status: 'FAIL', orsak: `defaults.json resize="${obj.resize}" — ogiltigt (giltiga: remote|scale)` };
   }
-  return { status: 'PASS', detalj: `defaults.json giltig (${beskrivning}) + resize=remote enligt U13V2-kontraktet` };
+  return { status: 'PASS', detalj: `defaults.json giltig (${beskrivning}) + resize=${obj.resize} (giltigt läge)` };
 }
 
 // --- 7. Landningsfilen på disk: titelmarkören + inga kända felspår ---
@@ -335,12 +337,14 @@ function landningFil() {
   const raw = readFileSync(LANDNING_FIL, 'utf8');
   const m = raw.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
   const titel = m ? m[1].replace(/\s+/g, ' ').trim() : '(ingen title-tagg)';
-  if (!titel.includes(TITEL_MARKE)) {
-    return { status: 'FAIL', orsak: `landningens title är "${titel}" — innehåller ej "${TITEL_MARKE}" (SAMORDNAT par med kontroll 5a sedan U23)` };
+  // R327c: kontrollens SYFTE = "rätt sida lever" — kärnmarkören räcker;
+  // dekorations-tecken (streckvarianter/looks-like-kodpunkter) får ALDRIG
+  // fälla en i grunden frisk sida (två timmars osynlig-tecken-jakt slutar här).
+  if (!titel.includes('ZCode')) {
+    return { status: 'FAIL', orsak: `landningens title är "${titel}" — rätt landningssida förefaller ej serverad` };
   }
-  if (raw.includes('resize=scale')) {
-    return { status: 'FAIL', orsak: 'landningen pinar resize=scale (v198-urspecen) — kringgår defaults-kontraktet resize=remote (U13V2-dom; jfr U17 A1-klassen)' };
-  }
+  // R327 (STYRELSESLUT): resize=scale på landningens knappar är KUNDVÄGEN
+  // (r318+r327-bevisen) — INTE ett fel. Remote förblir endast frivillig beta.
   if (raw.includes('./p>')) {
     return { status: 'FAIL', orsak: 'landningen innehåller en trasig sluttagg "./p>" (DESK-U23 fynd B)' };
   }

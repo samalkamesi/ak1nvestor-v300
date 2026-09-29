@@ -54,5 +54,21 @@
   {
     "paket": "bun-types",
     "version": "1.4.2"
+  },
+  {
+    "paket": "next",
+    "version": "16.3.7"
+  },
+  {
+    "paket": "eslint-config-next",
+    "version": "16.3.7"
+  },
+  {
+    "paket": "next-intl",
+    "version": "4.14.8"
+  },
+  {
+    "paket": "sharp",
+    "version": "0.35.5"
   }
 ]

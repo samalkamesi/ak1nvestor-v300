@@ -404,6 +404,30 @@
       "titel": "namnbyteskur: mätkedjans uppståndelse efter nummerkollision med s7-u3:s committade o563",
       "ts": 1790675571710,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o570",
+      "agare": "s8-u1",
+      "manifest": "auto-s8-1790679320397",
+      "titel": "kvalitetsvåg: externavaktens 429-mörker — Adlibris+Bokus 204/343 mål overifierbara EGENFÖRVÅLLAT (102-salvor varje natt håller IP-blocket vid liv); kur: domäntakt + kanin-429-domänklipp + viloperiod mellan körningar; bevis: svit + tsc 0 + live kanin-dom",
+      "ts": 1790680167215,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o566",
+      "agare": "s8-u3",
+      "manifest": "auto-s8-1790679320397",
+      "titel": "kvalitetsvåg: INTERNA döda länkar återmätning efter 8 dagars tillväxt (Q3-paket + 6 kurser + 5 datasetbolag + soft-404-kur sedan 09-21:s 0-fynd) + gåva till o565/o570: nasdaq.com-botväggens kontrollerade UA-bevis (verktygets UA tarpits HEAD+GET 15 s, webbläsar-UA 200/4,7 s)",
+      "ts": 1790680819170,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o565",
+      "agare": "s8-u2",
+      "manifest": "auto-s8-1790679320397",
+      "titel": "kvalitetsvåg: bolagssidornas syskonlänks-kontrakt (o559:s namngivna grannpost) — kartläggning av /bolag/[slug]:s samtliga länkytor + W1-kur (analyser/forskningsbiblioteket växer utan deploy ⇒ ISR-revalidate länkar byggfrusna mål — byggdSidaFinns-grind) + W3-kur (syskonBolag ledger-fallback ⇒ .next-grind) + bevakningssvit; döda-länkar-fyndens domkedja lämnad som notis till s8-u1/o570",
+      "ts": 1790681216774,
+      "status": "reserverat"
     }
   ]
 }

@@ -600,3 +600,12 @@ Nästa i kön (händelsestyrda): nattens G2/G5-kvitton 02:30–06:27 UTC 29/9 (7
 | v211 | Soft-404-kuren: verktyg/marke-framtids-404.mjs (postbuild i package.json) märker "status": 404 i .meta för opublicerade bloggplatsers statiska platser; ISR-vakningen bevarad (publiceringsdagen ⇒ omrendering ⇒ 200 automatiskt) | ✓ LEVERERAD r332 — skarpt bevisad: 8/8 framtids-slugar (hela Q3-familjen) äkta 404 direkt efter märkning, kontroll 200, ingen omstart krävd |
 | v211-rest | /en/ + /ar/-speglarnas on-demand soft-404 (inga statiska platser att märka) | BOKAD — mindre klass (innehållslösa skal, ingen läcka); kurbehov utreds om sökrapport visar indexering |
 | v207 | Prefetch-eftermätning (runtime-instrument) | BOKAD (nästa) |
+
+
+## ROND 333+334 [organ:Φ] (2026-09-29) — v207 EFTERMÄTNINGEN LEVERERAD OCH GRÖN
+
+| Post | Innehåll | Status |
+|---|---|---|
+| v207 | Prefetch-eftermätning: puppeteer-browser-mätning av v206-kuren (initial- + scroll-las på /, /blogg, /dataset, /kurser) | ✓ LEVERERAD r333+r334 — GRÖN: 9 motorchunkar i artefakten, 0 laddas på vanliga sidor (två bygggenerationer, samma dom) |
+| r334-läran | Falska positiva: 'monteCarlo|kelly|bayes' träffar KURSTEXT — äkta signaturer = export-/Konstant-namn ur motorerna | ✓ BOKFÖRD i verktyg/prefetch-eftermatning.mjs:s huvud (robust mot nästa bygges hash-namn) |
+| v211-rest | /en/ + /ar/-speglar (on-demand, inga statiska platser) | bokfad — kvarstår till publiceringsdagarna |

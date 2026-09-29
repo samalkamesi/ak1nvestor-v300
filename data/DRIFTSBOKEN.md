@@ -7148,3 +7148,12 @@ förbättrar). Första skivan levererad:
   fabriksbarnets ägarskap). Kvitton: /integritetspolicy 200,
   /bli-medlem 308 → /logga-in?lage=registrera, tsc 0 — protokoll
   `data/forskning/SALJ-U5-S1-REDIRECTS.md`.
+
+- **2026-09-29 04:47Z — BYGGRACE-larm (integritetsvakten), rot godartad**:
+  BUILD_ID DS3agX95 (03:07, kraschvaktens räddningsbyte) utan deployad-
+  markör; synkens omdeploy fördröjd av VÄNTAR-FABRIK (auto-s2-manifestet)
+  + BUNTSLAGSRACE 04:45. Artefakten hel (prerender-manifest 1,35 MB 03:17;
+  pm2 omstart 03:19; 10/10 rutter 200). Åtgärd: ingen olåst ombygge —
+  bokföring + push i väntar-fönstret, deployvakt mot senaste-deployad ≠
+  22df62aa + vaktkörning GRÖN. Lärdom: räddnings-byte utan markör = larm-
+  fönster fram till nästa omdeploy (markör/vakttolerans = nästa våg).

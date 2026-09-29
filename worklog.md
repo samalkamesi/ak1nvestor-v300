@@ -18806,3 +18806,32 @@ Fabriksagent s1-u3 (granskare). PIVOT (öppen, duplikatregeln): ursprungsordern 
 
 Fabriksagent s1-u1 (granskare). VAL (anspråk disk-först: data/vakten/auto-s1-1790653512758-s1-u1-ansprak.md; m9-utkast #1 redan levererad 09-20 med FLYTTKLART-PAKET ⇒ pivot enligt släktets praxis; kö-notis worklog 17074: fabege/getinge 10-20 → 10-21-klustret; syskon u3=fabege, u2=getinge enligt deras anspråk ⇒ TELIA = FIFO-trea bland kontrolllösa, 0 telia-träffar i gransknings/). GRANSKNING: 129 maskinella kontroller 121 PASS (sond verktyg/_s1u1-telia-kontroll.mjs; tre sondbuggar ärligt bokförda och omkörda: fel vindsha 138-postare först — rätt byggvinda = 795fe396 144-postfilen committad 39 min efter utkastets byggtid 02:25; avrundat netto i residualvägen; titelspann felkalibrerat mot 2 datapunkter → D5 AVVISAD när full empiri visade 39/84 utkast över 229 tkn) — universumrad 28/28 exakta mot låst vind (dagens 316-postfil = drift, ej domslut) · 50+ aritmetikposter exakta (identitetstest 33,45/−6,6 %; absolutkontroll −0,6/−28,3 %; PEG 5,47/0,36/18,2; EV-kedja 49,8/84,3/134,1/14 318/9,37/0,52; FCF 11,83 %; scenarioruta 9/9; marginalvikt 1,89) · medianer 11/12 (P/E-värdet 21,8 exakt men n=11 — TVÅ kommunikationsbolag saknar fältet: VPLAY+WBD) · kalender och kollegodagar gröna (rappdag 21/10 + divergensnot; ABB/Tele2 20:e, SKF/SHB/Iberdrola 21:a, Yara/Billerud 22:a, SCA/Hydro 23:e, SSAB/UPM 28:e, Boliden 29:e, Stora Enso 30:e) · seriepåståenden 7/7 (Tele2 47,6/1,35/11,9/24 pp; Iberdrola 1,96/15,9/5,8) · JURIDIK 2007:528 REN: kontrolleraText-spegel 26 mönster × 3 ytor 0 FEL, exakt ett lagrum, ingen lagrumsblandning, utbildningsram + negerad räd-fras + disclaimer sist; 911-referenser 0 (sex mönster); D3-not 'allt de borde köpa' med frivilligt omformuleringsförslag · struktur ord 3 169 rm 5 · LÄNKAR 21/21 HTTP 200 inkl externa Telia-kalendern. FYND: 0 B · 4 C · 5 D — C1 '+227 procent på två år' oreproducerbart (serien 303→3 525: totalt +1 063 %, per år +241 %; inget = 227) → '+1 063 procent'; C2 källradens FCF-nivåer 20 203/21 437 ≠ bodyns korrekta 20 196/21 445; C3 n=12/ett bolag → n=11/två bolag (två ställen); C4 läspaketsantal '15 … sju den 22:a … SCA och Saab den 23:e' → '14 … fem … Volvo Car, Volvo Group och Saab' (git-tillkomstempiri: 2+4+5+3 = 14 vid commit 04:28; SCA i textens EGEN utan-paket-parentes = intern motsägelse); D1 EV-residual −121,9 (byggarens egna steg, bevaras), D2 tre mittpunktsavrundningar (2,675→2,68; 0,515→0,52; 15,585→15,58 — defensible), D4 publishedAt 10-19 ≤ rappdag = seriens konvention (skf/sandvik-precedens; Investor-passets '=rappdag' var ej regeln). LEVERANS: granskning/sa-laser-du-telia-q3-2026-KONTROLL-2026-09-29-s1u1.md + -diff-2026-09-29-s1u1.json (sex strängbyten, samtliga unik-verifierade ×1; utkast-JSON orörd — granskaren skriver aldrig andras filer). KVD: src/ orörd = inget bygge · R2 orörd (data/blogg ENDAST LÄST) · syskonytor orörda (u2 getinge, u3 fabege). Kö efter denna: var-energi → att (10-21-klustret fortsättning; kontrolllösa). [fabrik]
 
+
+
+## r326 (2026-09-29 ~05:00Z) — integritetslarm BYGGRACE 04:47: rot godartad, deploy-bokföringsglapp väntar synkens byte
+
+LARMET (byggrace): BUILD_ID DS3agX95 (03:07) ≠ senaste-deployad 22df62aa —
+vakten tolkade det som olåst främmande bygge. ROT (_r326-diag): .next
+byttes 03:07–03:17 av KRASCHVAKTENS räddning under incidenten 02:44–03:19;
+den grenen skriver medvetet INGEN deployad-markör (synkens design — omdeploy
+vid nästa poll, prod-synk.mjs:1611). Synken har sedan 03:57 försökt men
+sekvensväntar bakom fabrikens manifest (V235; auto-s1→auto-s2, tre s2-barn
+startade 04:45) och tog BUNTSLAGSRACE 04:45 (ed8864f3→227feea6 under
+bygget — korrekt avbrott, ombygg nästa poll).
+
+ARTEFAKTEN HEL: BUILD_ID + prerender-manifest.json (1,35 MB, 03:17) +
+required-server-files.json på plats; pm2 restartad 03:19; 10/10 rutter 200
++ localhost 200; inga byggprocesser; lås ledigt — larmets "pm2 kan köra
+halvfärdigt träd" är MOTBEVISAT på artefaktnivå (r325:FYND-B:s manifestoro
+gällde 03:09-domens läge, botat av 03:17-slutförandet).
+
+ÅTGÄRD: INGET eget ombygge (vore kapplöpning med synken; synkens v182
+bygger i .next-ny med prod orörd). I stället: merge av nattens fabriks-
+commits + denna bokföring pushad under väntar-fönstret ⇒ nästa gröna poll
+deployar ETT träd som täcker allt. DÄREFTER _r326-deployvakt.mjs: kvito =
+senaste-deployad ≠ 22df62aa + 404 framtidslug + 200 sajt + vaktkörning GRÖN.
+
+LÄRDOM (nästa våg-kandidat till prod-synk/integritetsvakten): räddnings-
+byte utan markör öppnar ett bullrigt byggrace-fönster (idag 03:07→05:nn) —
+kraschvakten bör skriva en igenkänningsmarkör (t.ex. senaste-deployad med
+"kraschvakt:"-prefix) eller vakten tolerera dokumenterade räddnings-byte.

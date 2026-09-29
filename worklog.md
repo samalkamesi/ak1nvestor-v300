@@ -19466,3 +19466,44 @@ KVD: data-only — src/ orörd = INGET bygge · R2 orörd · data/blogg/ orörd
 ingrepp; commit i slutfasen när kompileringen var klar) · syskonytor
 orörda · egna mått tidsstämplade 12:34–13:17Z UTC · commit med pathspec
 + -F-fil. LEVERANS: data/forskning/SYSTEMKARTAN.md, worklog.md. [fabrik]
+
+## ROND 343 — 2026-09-29 17:50 UTC: TRÄD-ÅTERFÖRINGEN LEVERERAD — tre-lagrs soft-404-kuren komplett i skarp drift [organ:Φ]
+
+Fortsättning av r340–r342: bb8a0155-mergen (utkastad 14:xx bakom
+deployfönstret) fullbordades denna rond genom push + bygg + driftbevis.
+
+VERKSTÄLLT: (1) Push-blockeraren kurerad — prod-ytans untracked
+verktyg/desk-halsa.mjs (huvudagentens 14:43-arbete, 19 062 B, +309 B mot
+den spårade 03:40-kopian) återförd i trädet via commit 1974317f +
+/tmp-backup, prod-ytan frigjord (updateInstead vägrar skriva över
+untracked). (2) PUSH GRÖN 17:00:08Z — prod-träd HEAD 1974317f = hela
+den fullständiga linjen: 195 commits med integritetspolicy-sidan,
+s7/s8-vågornas kod + L1-postbuild, L2-cronvakt, L3-proxygren. (3) Bygg +
+pm2-restart fullbordat — artefakt ZG-84L6-upvH @ 17:36:02Z; notering:
+leveransprocessen avslutades före sitt fas-2-kvitto (statusfilen stannar
+på 1-trad 17:00), men artefakten och driftbevisen bekräftar oberoende
+att bygget fullbordades (prod-synkens :x7-bygg eller överlevande
+byggbarn) — slutläget mätt i skarp drift, inte antaget.
+
+DRIFTBEVIS (egna mätningar 17:4xZ): L3 PROXY-GRENEN LEVER —
+/blogg/sa-laser-du-ericsson-q3-2026 ⇒ 404 med full proxysignatur
+(cache-control: no-store + server-timing: ak1a;desc="bot" + x-ak1a-klass:
+bot + X-Robots-Tag: noindex) — INTE routerns .meta-svar
+(x-nextjs-prerender + s-maxage), som avslöjade det falskt gröna
+drifttestet förra rundan; ISR-läckan (r338: timmarsomrenderingar suddar
+.meta-märkningar) är därmed fångad av ett omrenderingsokänsligt lager.
+L2 CRON-VAKTEN GRÖN — modulen marke-framtids-404.mjs återförd; första
+passet efter återföringen märkte "8 av 8 framtidsplatser 404", därefter
+idempotenta 0/8-pass ("modul saknas"-krashen sedan aa2f35eb-isolatet är
+kurerad). TS2307-KUREN VERIFIERAD — /integritetspolicy ⇒ 200 (14:21-
+byggfelet var stale .next-validator typkollad mot aa2f35eb-trädet som
+saknade sidan; mergen återförde den). Kontrollposter: / 200 · /blogg
+200 · loopback 200 · prod-träd HEAD 1974317f bekräftad.
+
+KVD: push under fritt lås · bygg under flock (aa2f35eb-byggfönstret
+14:xx–15:xx respekterat, inga olåsta byggen) · tsc-grind passerad med
+0 fel (egen 30 s-timeout dödade kroken en gång — höjd till 300 s,
+ALDRIG --no-verify) · src/ orörd utöver mergens återföring · R2 orörd ·
+huvudagentens desk-halsa-arbete bevarat (commit + backup).
+LEVERANS: worklog.md (detta protokoll) + data/vakten/_r343-status.json.
+[organ:Φ]

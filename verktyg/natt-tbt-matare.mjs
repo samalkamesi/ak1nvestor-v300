@@ -31,9 +31,15 @@
  *           last avslutad före slutproben syns ej — post-hoc-kvotdiagnos
  *           (o155 §5.3) täcker när tyst kalib-referens etablerats.
  *   Steg 1  prod 200-preflight: /superanalys + /kalkylator på localhost
- *   Steg 2  kanoniska prestanda-lighthouse.mjs med LH_JAMFOR=o139-fore
- *           (värmning sköts av verktygets egen körning)
- *   Steg 3  maskinell dom mot o139 §7.2: CLS 0 ×2 (heligt) · LCP ±15 %
+ *   Steg 2  kanoniska prestanda-lighthouse.mjs (värmning sköts av verktygets
+ *           egen körning); LH_JAMFOR = aktuell serie om seedad, annars
+ *           o139-fore (JAMFOR styr endast utskriftstabellen)
+ *   Steg 3  maskinell dom mot o139 §7.2 — FÖRE ur AKTUELL SERIE i
+ *           lighthouse/natt-referens.json (o562, 2026-09-29: Contabo↔SSD
+ *           Nodes är EJ jämförbara — 8→4 kärnor, o558 §5.4 — därför domar
+ *           mätaren endast mot sin egen servergeneration; en OSÅDD serie
+ *           seedas av första HELT tysta nattkörningen (lastOK), ALDRIG av
+ *           sond): CLS 0 ×2 (heligt) · LCP ±15 %
  *           per sida · TBT /kalkylator ≤ 450 (ENDAST natt-läge) ·
  *           /superanalys poäng-band ±8 av 73 (tolkning av §7.2:s
  *           "oförändrad ±" — brusband, dokumenterat i o151-protokollet)
@@ -75,6 +81,26 @@ const LAST_VANTA_STEG_MS = 30_000;
 // 64,5→109,5 ms = 1,70x vid TBT 16 413 ⇒ smyglast; > 50 % genomströmning-
 // förändring = metallen var ej konstant under fönstret)
 const KALIB_DRIFT_MAX_KVOT = 1.5;
+
+// ── o562 (s7-u1 2026-09-29): SERIEMEDVETEN FÖRE-referens ────────────────────
+// natt-referens.json bär en referensserie per servergeneration; dom steg 3
+// jämför ENDAST mot aktuell serie. Saknas seriens sidor (osedd) får en helt
+// tyst NATT-körning (lastOK, aldrig sond) skriva sig själv som seriens bas
+// — därefter gäller normal ±15 %/band-dom på rätt serie.
+const SERIEFIL = join(LH_KAT, "natt-referens.json");
+function lasSerie() {
+  try {
+    const j = JSON.parse(readFileSync(SERIEFIL, "utf8"));
+    const namn = typeof j.aktuellSerie === "string" ? j.aktuellSerie : "okand";
+    const s = j.serier?.[namn] ?? {};
+    return { fil: j, namn, status: s.status ?? null, harSidor: !!s.sidor, poangSuperBandCenter: s.poangSuperBandCenter ?? null, sidor: s.sidor ?? null };
+  } catch (e) {
+    console.error(`VARNING (o562): ${SERIEFIL} oläsbar (${String(e).slice(0, 120)}) — serien behandlas som osedd, ingen FÖRE-jämförelse`);
+    return { fil: null, namn: "okand", status: "seriefil oläsbar", harSidor: false, poangSuperBandCenter: null, sidor: null };
+  }
+}
+const serie = lasSerie();
+const SERIE_JAMFOR = `natt-referens-${serie.namn}`;
 
 const rap = { ts: new Date().toISOString(), lage: SOND ? "sond" : "natt", steg: [] };
 
@@ -172,10 +198,10 @@ if (!SOND && !lastAter.tyst) {
   process.exit(2);
 }
 
-// ── Steg 2: kanonisk Lighthouse-körning (JAMFOR mot nattbasen) ─────────────
+// ── Steg 2: kanonisk Lighthouse-körning (JAMFOR mot aktuell serie om seedad) ─
 const lh = await new Promise((res) => {
   const p = spawn("node", ["verktyg/prestanda-lighthouse.mjs", NAMN, "/superanalys", "/kalkylator"], {
-    cwd: ROD, env: { ...process.env, LH_JAMFOR: "o139-fore" },
+    cwd: ROD, env: { ...process.env, LH_JAMFOR: serie.harSidor ? SERIE_JAMFOR : "o139-fore" },
   });
   let ut = "";
   p.stdout.on("data", (d) => (ut += d));
@@ -208,17 +234,71 @@ if (!SOND && !slutTystOK) {
   process.exit(2);
 }
 
-// ── Steg 3: maskinell dom (o139 §7.2, nattfönstret) ────────────────────────
+// ── Steg 3: maskinell dom (o139 §7.2, nattfönstret) — mot AKTUELL SERIE ────
 const efter = JSON.parse(readFileSync(join(LH_KAT, `${NAMN}-sammanfattning.json`), "utf8"));
-const fore = JSON.parse(readFileSync(join(LH_KAT, "o139-fore-sammanfattning.json"), "utf8"));
-const foreSida = Object.fromEntries(fore.sidor.map((s) => [s.sokvag, s]));
+
+// o562: seedning — en OSÅDD serie FÅR etableras av DENNA körning endast om
+// den är en helt tyst nattkörning (0b+1b+2b tysta + kalibdriftlös, aldrig
+// sond) med båda sidorna felmätta. Värdena KOPIERAS till natt-referens.json
+// + en stabil JAMFOR-sammanfattning (per-natt-filerna skrivs över varje
+// natt och kan inte bära referensen).
+const seedTillaten = !SOND && !serie.harSidor && last.tyst && lastAter.tyst && slutTystOK
+  && efter.sidor.every((s) => s.karnmattMs && !s.fel);
+let sejmade = false;
+if (seedTillaten && serie.fil) {
+  const superS = efter.sidor.find((s) => s.sokvag === "/superanalys");
+  serie.fil.serier[serie.namn] = {
+    status: `seedad ${rap.ts} — tyst nattkörning (kalib ${lastSlut.cpuKalibMs} ms, kvot ${kalibKvot}x)`,
+    kalla: `${NAMN}-sammanfattning.json @ ${efter.datum}`,
+    poangSuperBandCenter: superS ? Math.round(superS.poang.prestanda * 100) : null,
+    sidor: Object.fromEntries(efter.sidor.map((s) => [s.sokvag, {
+      poangPrestanda: s.poang.prestanda, FCP: s.karnmattMs.FCP, LCP: s.karnmattMs.LCP,
+      TBT: s.karnmattMs.TBT, CLS: s.karnmattMs.CLS, TTI: s.karnmattMs.TTI, SI: s.karnmattMs.SI,
+    }])),
+  };
+  writeFileSync(SERIEFIL, JSON.stringify(serie.fil, null, 2));
+  writeFileSync(join(LH_KAT, `${SERIE_JAMFOR}-sammanfattning.json`),
+    JSON.stringify({ datum: efter.datum, bas: "http://localhost:3000", namn: SERIE_JAMFOR, sidor: efter.sidor }, null, 2));
+  serie.sidor = serie.fil.serier[serie.namn].sidor;
+  serie.poangSuperBandCenter = serie.fil.serier[serie.namn].poangSuperBandCenter;
+  serie.harSidor = true;
+  sejmade = true;
+}
+rap.steg.push({ steg: "3-referens", serie: serie.namn, harSidor: serie.harSidor, seedTillaten, sejmade, bandCenter: serie.poangSuperBandCenter ?? 73 });
+
+// FÖRE-form: seriens värden → samma form som sammanfattningssidorna
+const foreSida = serie.harSidor
+  ? Object.fromEntries(Object.entries(serie.sidor).map(([sokvag, v]) => [
+      sokvag,
+      { poang: { prestanda: v.poangPrestanda }, karnmattMs: { LCP: v.LCP, TBT: v.TBT, CLS: v.CLS } },
+    ]))
+  : null;
+const bandCenter = serie.poangSuperBandCenter ?? 73;
 const dom = [];
 for (const e of efter.sidor) {
-  const f = foreSida[e.sokvag];
-  if (!f || !e.karnmattMs || e.fel) { dom.push({ sida: e.sokvag, fel: e.fel || "föremätning saknas" }); continue; }
+  const f = foreSida ? foreSida[e.sokvag] : null;
+  if (!e.karnmattMs || e.fel) { dom.push({ sida: e.sokvag, fel: e.fel || "mätning saknas" }); continue; }
+  if (!f) {
+    // osådd serie + ej seedbar (sond eller icke-tyst fönster): fakta utan
+    // FÖRE-jämförelse — ALDRIG jämförelse mot främmande servergeneration (o562)
+    dom.push({
+      sida: e.sokvag, serieFore: `${serie.namn} osådd — ingen FÖRE-jämförelse (o562)`,
+      poangEfter: Math.round(e.poang.prestanda * 100),
+      lcpEfter: e.karnmattMs.LCP, tbtEfter: e.karnmattMs.TBT, clsEfter: e.karnmattMs.CLS,
+      kriterier: {
+        clsNoll: e.karnmattMs.CLS === 0,
+        ...(SOND
+          ? { tbtKalkylator450: `${e.karnmattMs.TBT} (SOND — dagfönster, ej dom enligt o143 §3)` }
+          : e.sokvag === "/kalkylator"
+            ? { tbtKalkylator450: e.karnmattMs.TBT <= TBT_TAK_KALKYLATOR }
+            : {}),
+      },
+    });
+    continue;
+  }
   const lcpDelta = ((e.karnmattMs.LCP - f.karnmattMs.LCP) / f.karnmattMs.LCP) * 100;
   dom.push({
-    sida: e.sokvag,
+    sida: e.sokvag, serieFore: serie.namn, ...(sejmade ? { serieSejadDennaKorning: true } : {}),
     poangFore: Math.round(f.poang.prestanda * 100),
     poangEfter: Math.round(e.poang.prestanda * 100),
     lcpFore: f.karnmattMs.LCP, lcpEfter: e.karnmattMs.LCP, lcpDeltaProc: Math.round(lcpDelta * 10) / 10,
@@ -233,7 +313,7 @@ for (const e of efter.sidor) {
           : {}),
       ...(SOND || e.sokvag !== "/superanalys"
         ? {}
-        : { poangSuperBand: Math.abs(Math.round(e.poang.prestanda * 100) - 73) <= POANG_BAND_SUPER }),
+        : { poangSuperBand: Math.abs(Math.round(e.poang.prestanda * 100) - bandCenter) <= POANG_BAND_SUPER }),
     },
   });
 }
@@ -242,7 +322,7 @@ skriv("körde-klart");
 // tysta (0b, 1b, 2b) OCH kalib driftlös inom taket genom hela fönstret
 const lastOK = SOND ? lastAter.tyst : last.tyst && lastAter.tyst && slutTystOK;
 writeFileSync(join(LH_KAT, `dom-${NAMN}.json`),
-  JSON.stringify({ ...rap, lastOK, dom, sammanfattning: NAMN + "-sammanfattning.json" }, null, 2));
+  JSON.stringify({ ...rap, lastOK, dom, serie: serie.namn, serieSejad: sejmade, sammanfattning: NAMN + "-sammanfattning.json" }, null, 2));
 
 const gron = dom.every((d) => !d.kriterier || Object.values(d.kriterier).every((v) => v === true));
 console.log(JSON.stringify({ lage: rap.lage, gron, dom }, null, 2));

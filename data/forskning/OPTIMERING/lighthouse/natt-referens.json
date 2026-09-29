@@ -1,0 +1,26 @@
+{
+  "format": 1,
+  "skapadAv": "o562 (s7-u1 2026-09-29)",
+  "aktuellSerie": "ssdnodes-4k",
+  "notering": "o558 §5.4: Contabo↔SSD Nodes-TBT är EJ jämförbara (8→4 kärnor, ~2x frekvensklass) — natt-TBT-mätaren (verktyg/natt-tbt-matare.mjs) domar ENDAST mot AKTUELL SERIE. Serien seedas av matarens första HELT TYSTA nattkörning (lastOK: prober 0b/1b/2b tysta + kalib driftlös ≤1,5x) på respektive servergeneration — sondläge seedar ALDRIG (dagfönster). Värdena KOPIERAS hit (per-natt-sammanfattningar skrivs över). poangSuperBandCenter = superanalys-poäng i seriens bas (±8-band, o151 §3-tolkningen). TBT-taket 450 för /kalkylator är o139 §7.2:s ABSOLUTA produkttak — serieoberoende, gäller oavkortat.",
+  "serier": {
+    "contabo-8k": {
+      "status": "arkiverad — prod migrerad ~2026-09-25 (o556 §0)",
+      "kalla": "lighthouse/o139-fore-sammanfattning.json — nattmätt 2026-09-21T06:03Z på Contabo (8 kärnor)",
+      "poangSuperBandCenter": 73,
+      "sidor": {
+        "/superanalys": { "poangPrestanda": 0.73, "FCP": 1853, "LCP": 4355, "TBT": 375, "CLS": 0, "TTI": 4533, "SI": 4204 },
+        "/kalkylator": { "poangPrestanda": 0.64, "FCP": 2025, "LCP": 4812, "TBT": 582, "CLS": 0, "TTI": 4980, "SI": 4131 },
+        "/konfluens": { "poangPrestanda": 0.76, "FCP": 1571, "LCP": 4168, "TBT": 336, "CLS": 0, "TTI": 4487, "SI": 3938 },
+        "/dataset": { "poangPrestanda": 0.74, "FCP": 1722, "LCP": 4316, "TBT": 372, "CLS": 0, "TTI": 4689, "SI": 4008 },
+        "/netnet": { "poangPrestanda": 0.77, "FCP": 1420, "LCP": 4334, "TBT": 321, "CLS": 0, "TTI": 4568, "SI": 2806 }
+      }
+    },
+    "ssdnodes-4k": {
+      "status": "osedd — seedas av första tysta nattkörningen (Xeon Silver 4214, 4 kärnor)",
+      "kalla": null,
+      "poangSuperBandCenter": null,
+      "sidor": null
+    }
+  }
+}

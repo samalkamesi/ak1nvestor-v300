@@ -150,7 +150,11 @@ if (process.env.LH_JAMFOR) {
   console.log(`\nJämförelse mot ${process.env.LH_JAMFOR}:`);
   for (const s of sammanfattningar) {
     const f = fore[s.sokvag];
-    if (!f?.karnmattMs) continue;
+    // o562: guard ÄVEN på aktuell sidas mätvärden — fel-sidor (timeout/
+    // kall Chrome under last) saknar karnmattMs och kraschade tidigare
+    // JAMFOR-utskriften (uncaught TypeError, exit 1) vilket dödade hela
+    // roparkedjan (natt-TBT-mätarens PIPELINEFEL 2026-09-29 ×2).
+    if (!f?.karnmattMs || !s?.karnmattMs) continue;
     const d = (x, y) => (x == null || y == null ? "?" : `${y > x ? "+" : ""}${Math.round(y - x)}`);
     console.log(
       `${s.sokvag}: P ${Math.round(f.poang.prestanda * 100)}→${Math.round(s.poang.prestanda * 100)} · LCP ${f.karnmattMs.LCP}→${s.karnmattMs.LCP} (${d(f.karnmattMs.LCP, s.karnmattMs.LCP)} ms) · TBT ${f.karnmattMs.TBT}→${s.karnmattMs.TBT}`,

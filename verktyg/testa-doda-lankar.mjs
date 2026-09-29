@@ -11,7 +11,7 @@
 //   C friskt läge         → mätvärde levererat, död länk med källor
 //   D filskydd            → befintlig rapport skrivs ALDRIG över
 //   E byggprocess pågår   → avbrott vid pgrep-grind
-//   F deploylås ägs       → avbrott vid fuser-grind (ÄGANDE, ej existens)
+//   F deploylås ägs       → avbrott vid lås-ägandegrinden (/proc-fd, ÄGANDE, ej existens)
 
 import fs from "node:fs";
 import os from "node:os";
@@ -85,7 +85,7 @@ function korVerktyg({ bas, cwd, miljo = {} }) {
         timeout: 60_000,
         env: {
           ...process.env,
-          AK1A_DEPLOY_LAS: miljo.las || miljo.egenLas,
+          AK1A_DEPLOY_LAS: miljo.las || egenLas,
           AK1A_BYGG_MONSTER: miljo.monster || "akt1a-testbyggare-som-aldrig-finns",
         },
       },
@@ -101,6 +101,12 @@ function rapportFiler(cwd) {
 }
 
 const arbete = fs.mkdtempSync(path.join(os.tmpdir(), "testa-doda-lankar-"));
+// Egen låsfil-skillnad (o570): tidigare refererades miljo.egenLas som ALDRIG
+// definierades ⇒ AK1A_DEPLOY_LAS blev undefined ⇒ verktyget föll tillbaka på
+// SKARPA /tmp/ak1a-deploy.lock — sviten var inte isolerad från riktiga
+// deployer (maskerad av fuser-blindheten tills /proc-sonden o570 gjorde
+// grinden ärlig). Nu: svit-egen låsfil som aldrig finns/ägs = fritt fönster.
+const egenLas = path.join(arbete, "svit-egen-deploy-las-som-aldrig-finns.lock");
 console.log(`Fixtures: ${arbete}`);
 
 // --- A: bas ej frisk — hälsogrinden stoppar innan mätvärde ------------------
@@ -185,7 +191,7 @@ console.log(`Fixtures: ${arbete}`);
   await stang(server);
 }
 
-// --- F: deploylåset ÄGS — fuser-grinden stoppar (existens räcker ej) --------
+// --- F: deploylåset ÄGS — lås-ägandegrinden stoppar (existens räcker ej) -----
 {
   const { server, port } = await startaServer((p) => {
     if (p === "/sitemap.xml") return { status: 200, kropp: sitemap(["/"]) };

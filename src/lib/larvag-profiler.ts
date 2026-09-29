@@ -4,8 +4,8 @@
  *
  * Kurstips (klient) och raknaLarvag (server) rankar ur medlemmens progress;
  * profilerna fyller det TREDJE lagret i spår 5: kuraterade lärvägar där
- * STEGEN är fasta och varför-raden är handskriven per steg. Tre profiler,
- * varje steg en VERKIG kurs ur lärvägskartan (333-register) — titel, speltid,
+ * STEGEN är fasta och varför-raden är handskriven per steg. Fem profiler,
+ * varje steg en VERKIG kurs ur lärvägskartan (496-register) — titel, speltid,
  * nivå och fas kräver INTE dubbleras hit: raknaProfil löser dem ur kartan
  * (en källa, en sanning — larvag.ts-mönstret).
  *
@@ -19,6 +19,15 @@
  * 017 — kategorin som ingen profil tidigare täckte) + the-most-important-
  * thing som PROFILMÅL: åtta kurser med varför-rader, hantverkets ordning
  * från svängningens väsen till satsningens storlek.
+ *
+ * VÄRDERINGSVÄGEN (spår 5, s5-u1 omgång 31): FEMTE profilen — sju steg
+ * genom värderingens stomme (VÄRDERING + VÄRDERINGSMETODER, 33 kurser som
+ * ingen profil tidigare täckte): pris mot värde → invärdet → multipelns
+ * anatomi → multipelvalet → vr-10 ENHETSMULTIPLAR (nya kursen, registrets
+ * 496:e — register 495 → 496 med kursregister-synk GRÖN) → DCF → säkerhets-
+ * marginalen som sista ord, + investment-valuation (Damodaran) som
+ * PROFILMÅL. Postmallen "+1 kurs med varför-rader" infriad ordagrant:
+ * vr-10 stegs in som steg 5 med handskriven varför-rad.
  *
  * REN KÄRNA: deps = larvag-karta.ts ENDAST — inget nät, ingen fs, ingen
  * localStorage. SSR-/test-säker, deterministisk (samma indata ⇒ samma svar).
@@ -96,7 +105,7 @@ export type ProfilRad = {
   minuter: number;
 };
 
-// ── Profilerna (kuraterade ur 333-registret — slugs verifierade av synken) ──
+// ── Profilerna (kuraterade ur 496-registret — slugs verifierade av synken) ──
 
 export const LARVAG_PROFILER: readonly LarvagProfilRå[] = [
   {
@@ -248,6 +257,47 @@ export const LARVAG_PROFILER: readonly LarvagProfilRå[] = [
       slug: "the-most-important-thing",
       varför: (klaraSteg) =>
         `${String(klaraSteg)} steg i ryggen — hantverket bär. The Most Important Thing är Howard Marks essäer om just detta: risken är investerandets kärna, och den förstås aldrig en gång för alla. Välkommen till fördjupningen.`,
+    },
+  },
+  {
+    id: "varderingsvagen",
+    titel: "Värderingsvägen — från pris till invärde",
+    kort: "Sju steg från aktiens två tal till kassaflödets ryggrad — värderingsverktygen i pedagogisk ordning, med säkerhetsmarginalen som sista ord.",
+    ikon: "⚖️",
+    steg: [
+      {
+        slug: "vr-05-pris-och-varde",
+        varför: "Värderingen börjar med två tal — kursen och värdet — och den här kursen lär dig första jämförelsen, den som alla andra steg bygger på.",
+      },
+      {
+        slug: "vm-02-intrinsic-value",
+        varför: "Invärdet är motpolen varje kurs kan ställas mot — här lossnar ordet från filosoferna och blir något du själv kan resonera dig fram till.",
+      },
+      {
+        slug: "vr-03-multipelns-anatomi",
+        varför: "Innan du väljer verktyg ska du veta vad det innehåller — kursen öppnar värderingstalet och visar dess inre: tillväxt, avkastning och risk.",
+      },
+      {
+        slug: "vm-03-multipelval",
+        varför: "Verktygslådan är öppen och valet är ditt — kursen lär vilken multipel som bär just den typen av verksamhet, och vilka som bara låter vettiga.",
+      },
+      {
+        slug: "vr-10-enhetsmultiplar",
+        varför: "Vissa bolag mäts i ton, abonnenter och kilowattimmar — här möter värderingen fysiken: bro-kursen mellan sektorns språk och multipelns, med etiketter som visar sig bära olika innehåll.",
+      },
+      {
+        slug: "km-007-dcf",
+        varför: "Den längsta vägen till ett värde: alla framtida kassaflöden, diskonterade till i dag. DCF är värderingskonstens ryggrad — steg för steg, utan trollformler.",
+      },
+      {
+        slug: "km-030-margin-of-safety",
+        varför: "Sista steget är det äldsta: hur stort fel du har råd att ha. Säkerhetsmarginalen är metodens samvete — oavsett vilken väg du räknade dig fram på.",
+      },
+    ],
+    mal: {
+      slug: "investment-valuation",
+      varför: (klaraSteg) =>
+        `${String(klaraSteg)} steg i ryggen — från pris och invärde till kassaflödets ryggrad. Investment Valuation är Damodarans samlade verk: hela värderingens bygge, från enkla multipler till optionsteori, med samma fråga genom allt — vad är något värt, och varför. Välkommen till fördjupningen.`,
     },
   },
 ];

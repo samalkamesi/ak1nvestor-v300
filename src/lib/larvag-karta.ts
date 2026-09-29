@@ -1,10 +1,10 @@
 /**
  * LÄRVÄGSKARTAN — GENERERAD FIL (våg 88): RÖR EJ FÖR HAND.
  * Genererad av scripts/bygg-larvag-karta.ts ur public/deep-courses.json
- * (495 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
+ * (496 kurser) + kurs-access.ts (kraverFas) + kurstips.ts
  * V-spåret (vIndex 0–19, -1 = utanför). Deterministisk: samma indata ⇒
  * samma fil. niva = level-tolkning (0=allmän, 1=Nybörjare,
- * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 453 gratis,
+ * 2=Intermediär, 3=Avancerad). Fas-fördelningen: 454 gratis,
  * 18 Fas 2, 24 Fas 3.
  *
  * Pedagogisk plattform — inte investeringsråd.
@@ -28,26 +28,26 @@ export type LarvagKurs = {
 
 /** Hela kursuniversumet i deep-courses.json-ordning (deterministisk brytning). */
 export const LARVAG_KARTA: readonly LarvagKurs[] = [
-  { slug: "v01-forsaljningstillvaxt", titel: "Försäljningstillväxt", kategori: "TILLVÄXT", niva: 1, kraverFas: 0, vIndex: 0, minuter: 44 },
-  { slug: "v02-arr-tillvaxt", titel: "ARR-tillväxt (återkommande intäkter)", kategori: "TILLVÄXT", niva: 2, kraverFas: 0, vIndex: 1, minuter: 46 },
-  { slug: "v03-intaktsdiversifiering", titel: "Intäktsdiversifiering", kategori: "TILLVÄXT", niva: 1, kraverFas: 0, vIndex: 2, minuter: 43 },
-  { slug: "v04-ps", titel: "P/S (Price-to-Sales)", kategori: "VÄRDERING", niva: 1, kraverFas: 0, vIndex: 3, minuter: 44 },
-  { slug: "v05-pb", titel: "P/B (Price-to-Book)", kategori: "VÄRDERING", niva: 1, kraverFas: 0, vIndex: 4, minuter: 44 },
-  { slug: "v06-ev-ebitda", titel: "EV/EBITDA", kategori: "VÄRDERING", niva: 2, kraverFas: 0, vIndex: 5, minuter: 44 },
-  { slug: "v07-bruttomarginal", titel: "Bruttomarginal", kategori: "LÖNSAMHET", niva: 1, kraverFas: 0, vIndex: 6, minuter: 44 },
-  { slug: "v08-ebitda-marginal", titel: "EBITDA-marginal", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: 7, minuter: 44 },
-  { slug: "v09-roe", titel: "ROE (Return on Equity)", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: 8, minuter: 44 },
-  { slug: "v10-skuldsattningsgrad", titel: "Skuldsättningsgrad", kategori: "STABILITET", niva: 1, kraverFas: 0, vIndex: 9, minuter: 43 },
-  { slug: "v11-likviditet", titel: "Likviditet (Kvick)", kategori: "STABILITET", niva: 1, kraverFas: 0, vIndex: 10, minuter: 43 },
-  { slug: "v12-intaktsstabilitet", titel: "Intäktsstabilitet", kategori: "STABILITET", niva: 2, kraverFas: 0, vIndex: 11, minuter: 43 },
-  { slug: "v13-patent-ip", titel: "Patent & Immateriella rättigheter", kategori: "MOAT", niva: 2, kraverFas: 0, vIndex: 12, minuter: 48 },
-  { slug: "v14-varumarke", titel: "Varumärke & Kundlojalitet", kategori: "MOAT", niva: 2, kraverFas: 0, vIndex: 13, minuter: 48 },
-  { slug: "v15-natverkseffekter", titel: "Nätverkseffekter", kategori: "MOAT", niva: 3, kraverFas: 0, vIndex: 14, minuter: 48 },
-  { slug: "v16-produktlanseringar", titel: "Produktlanseringar", kategori: "KATALYSATOR", niva: 2, kraverFas: 0, vIndex: 15, minuter: 48 },
-  { slug: "v17-avtal-partnerskap", titel: "Avtal & Partnerskap", kategori: "KATALYSATOR", niva: 2, kraverFas: 0, vIndex: 16, minuter: 48 },
-  { slug: "v18-regulatoriska", titel: "Regulatoriska katalysatorer", kategori: "KATALYSATOR", niva: 3, kraverFas: 0, vIndex: 17, minuter: 48 },
-  { slug: "v19-kapitalforbranning", titel: "Kapitalförbränning & Emission-risk", kategori: "RISK", niva: 3, kraverFas: 0, vIndex: 18, minuter: 67 },
-  { slug: "v20-aterekop-egna-aktier", titel: "Återköp av egna aktier", kategori: "KAPITALSTRUKTUR", niva: 2, kraverFas: 0, vIndex: 19, minuter: 47 },
+  { slug: "v01-forsaljningstillvaxt", titel: "Försäljningstillväxt", kategori: "TILLVÄXT", niva: 1, kraverFas: 0, vIndex: 0, minuter: 52 },
+  { slug: "v02-arr-tillvaxt", titel: "ARR-tillväxt (återkommande intäkter)", kategori: "TILLVÄXT", niva: 2, kraverFas: 0, vIndex: 1, minuter: 54 },
+  { slug: "v03-intaktsdiversifiering", titel: "Intäktsdiversifiering", kategori: "TILLVÄXT", niva: 1, kraverFas: 0, vIndex: 2, minuter: 51 },
+  { slug: "v04-ps", titel: "P/S (Price-to-Sales)", kategori: "VÄRDERING", niva: 1, kraverFas: 0, vIndex: 3, minuter: 52 },
+  { slug: "v05-pb", titel: "P/B (Price-to-Book)", kategori: "VÄRDERING", niva: 1, kraverFas: 0, vIndex: 4, minuter: 52 },
+  { slug: "v06-ev-ebitda", titel: "EV/EBITDA", kategori: "VÄRDERING", niva: 2, kraverFas: 0, vIndex: 5, minuter: 52 },
+  { slug: "v07-bruttomarginal", titel: "Bruttomarginal", kategori: "LÖNSAMHET", niva: 1, kraverFas: 0, vIndex: 6, minuter: 52 },
+  { slug: "v08-ebitda-marginal", titel: "EBITDA-marginal", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: 7, minuter: 52 },
+  { slug: "v09-roe", titel: "ROE (Return on Equity)", kategori: "LÖNSAMHET", niva: 2, kraverFas: 0, vIndex: 8, minuter: 52 },
+  { slug: "v10-skuldsattningsgrad", titel: "Skuldsättningsgrad", kategori: "STABILITET", niva: 1, kraverFas: 0, vIndex: 9, minuter: 51 },
+  { slug: "v11-likviditet", titel: "Likviditet (Kvick)", kategori: "STABILITET", niva: 1, kraverFas: 0, vIndex: 10, minuter: 51 },
+  { slug: "v12-intaktsstabilitet", titel: "Intäktsstabilitet", kategori: "STABILITET", niva: 2, kraverFas: 0, vIndex: 11, minuter: 51 },
+  { slug: "v13-patent-ip", titel: "Patent & Immateriella rättigheter", kategori: "MOAT", niva: 2, kraverFas: 0, vIndex: 12, minuter: 56 },
+  { slug: "v14-varumarke", titel: "Varumärke & Kundlojalitet", kategori: "MOAT", niva: 2, kraverFas: 0, vIndex: 13, minuter: 56 },
+  { slug: "v15-natverkseffekter", titel: "Nätverkseffekter", kategori: "MOAT", niva: 3, kraverFas: 0, vIndex: 14, minuter: 56 },
+  { slug: "v16-produktlanseringar", titel: "Produktlanseringar", kategori: "KATALYSATOR", niva: 2, kraverFas: 0, vIndex: 15, minuter: 56 },
+  { slug: "v17-avtal-partnerskap", titel: "Avtal & Partnerskap", kategori: "KATALYSATOR", niva: 2, kraverFas: 0, vIndex: 16, minuter: 56 },
+  { slug: "v18-regulatoriska", titel: "Regulatoriska katalysatorer", kategori: "KATALYSATOR", niva: 3, kraverFas: 0, vIndex: 17, minuter: 56 },
+  { slug: "v19-kapitalforbranning", titel: "Kapitalförbränning & Emission-risk", kategori: "RISK", niva: 3, kraverFas: 0, vIndex: 18, minuter: 75 },
+  { slug: "v20-aterekop-egna-aktier", titel: "Återköp av egna aktier", kategori: "KAPITALSTRUKTUR", niva: 2, kraverFas: 0, vIndex: 19, minuter: 55 },
   { slug: "km-001-bokforingens-grunder", titel: "Bokföringens grunder", kategori: "BOKFÖRING & ÅRSREDOVISNING", niva: 1, kraverFas: 0, vIndex: -1, minuter: 22 },
   { slug: "km-002-forvaltningsberattelsen", titel: "Förvaltningsberättelsen", kategori: "BOKFÖRING & ÅRSREDOVISNING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 18 },
   { slug: "km-003-kassaflodesanalysen", titel: "Kassaflödesanalysen", kategori: "BOKFÖRING & ÅRSREDOVISNING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -468,6 +468,7 @@ export const LARVAG_KARTA: readonly LarvagKurs[] = [
   { slug: "vr-07-terminalvardet", titel: "Terminalvärdet — DCF:s andra halva: det som händer efter prognosisperioden", kategori: "VÄRDERING", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "vr-08-tobins-q", titel: "Tobins Q — marknadsvärdet möter återanskaffningspriset", kategori: "VÄRDERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "vr-09-konglomeratrabatten", titel: "Konglomeratrabatten — när helheten är värd mindre än delarna", kategori: "VÄRDERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
+  { slug: "vr-10-enhetsmultiplar", titel: "Enhetsmultiplar — EV per ton, abonnent och kilowattimme: värderingsfysikens bro", kategori: "VÄRDERING", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ib-01-vad-ar-ett-investmentbolag", titel: "Vad är ett investmentbolag? — bolaget som äger bolag", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 1, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ib-02-substansens-kvalitet", titel: "Substansens kvalitet — att granska vad substanssiffran innehåller", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 2, kraverFas: 0, vIndex: -1, minuter: 24 },
   { slug: "ib-03-forvaltarskapet", titel: "Förvaltarskapet — röstvärde, mandat och den aktiva ägaren", kategori: "PRIVATE EQUITY & INVESTMENTBOLAG", niva: 3, kraverFas: 0, vIndex: -1, minuter: 24 },
@@ -531,4 +532,4 @@ export const LARVAG_KARTA_INDEX: ReadonlyMap<string, number> = new Map(
 );
 
 /** Antal kurser i kartan — paritetsvakt mot deep-courses.json. */
-export const LARVAG_ANTAL_KURSER = 495;
+export const LARVAG_ANTAL_KURSER = 496;

@@ -1,0 +1,148 @@
+{
+  "slug": "vr-10-enhetsmultiplar",
+  "category": "VÄRDERING",
+  "weight": "—",
+  "chapterCount": 6,
+  "totalMinutes": 24,
+  "title": "Enhetsmultiplar — EV per ton, abonnent och kilowattimme: värderingsfysikens bro",
+  "summary": "VÄRDERING-familjens tionde steg — bro-kursen mellan två registerdjup som annars möts för sällan: multipel-världens kurs (vr-01 till vr-09) och sektorfamiljernas fysik (se-18 rederierna, se-20 gruvorna och se-21 kemisektorn räknar redan per ton i sina sektorexempel — men alltid INOM sin sektor, aldrig som metod). Sonden mot 495-registret är entydig: «enhetsmultipl», «EV per ton», «EV per abonnent» och «EV per kilowattimme» har samtliga noll kursägare — tx-06 äger KUNDENS enhetsekonomi (CAC och LTV i TILLVÄXT-familjen), vr-03 multipelns anatomi i allmänhet, vr-08 återanskaffningspriset som kvot — ingen äger frågan när NÄMNAREN i en multipel byts ut mot något man kan räkna, väga eller mäta. Det är denna kursens fält. Tre signaturräkningar bärs igenom, alla på påhittade tal: GRUVANS TON (två gruvor med identisk etikett 2 000 kronor per kapacitetston — Gruva A 10,0 miljoner ton kapacitet till företagsvärde 20 miljarder, Gruva B 12,5 miljoner ton till 25 miljarder — men med uttagningen 90 mot 70 procent blir priset per PRODUCERAD ton 2 222 mot 2 857 kronor, knappt 29 procent skillnad, och med C1-kostnaden 400 mot 450 kronor vid malmpris 600 landar EV/EBITDA på 11,1 mot 19,0: samma etikett, två olika bolag), ABONNENTEN (två operatörer med samma 4 000 kronor per abonnent — men ARPU 60 mot 45 kronor i månaden och churn 1,2 mot 2,0 procent ger väntade livstidsintäkter per abonnent på kring 5 000 mot 2 250 kronor: etiketten döljer att den ena abonnenten bär dubbla framtidsposten) och KILOWATTIMMEN (två kraftparker à 1 gigawatt till 12 miljarder vardera — 12 000 kronor per installerad kilowatt — men med kapacitetsfaktor 40 mot 25 procent blir priset per LEVERERAD kilowattimme 3,42 mot 5,48 kronor i ett normalår, 60 procent skillnad på samma skylt). Röda tråden är att enhetsmultipln översätter sektorns språk till värderingens — och att den, likt varje multipel, tystar precis det viktigaste: vad varje enhet tjänar. Fyra fällor (heterogeniteten, marginalfällan, den döda enheten, överbyggd kapacitet) och tre bryggor (enheten × enhetsmarginal = EBITDA per enhet; installerad kapacitet × byggkostnad = återanskaffningsvärdet — vr-08:s Q per enhet; kundens enhetsekonomi — tx-06) binder kursen till sina grannar. Utbildning i metod — påhittade tal, aldrig råd om placeringar eller positioner.",
+  "minutes": 24,
+  "xp": 50,
+  "level": "Intermediär",
+  "why": "VÄRDERING-familjens nio första steg byggde multipelvärlden inifrån: vr-01 gapet, vr-02 normaliseringen, vr-03 anatomin, vr-04 avkastningens källor, vr-05 pris mot värde, vr-06 jämförelsebolagen, vr-07 terminalvärdet, vr-08 Tobins Q, vr-09 konglomeratrabatten — men samtliga talar vinsternas, böckernas eller substansens språk. Samtidigt talar halva börsen ett annat språk: ton, abonnenter, kilowattimmar, kubikmeter, hektar. Sektorkurserna ANVÄNDER enhetstänkandet varje gång (se-20 räknar per ton i berget, se-21 per ton kväve, am-08 per andel i fonden) men ingen kurs äger METODEN: när är en räknbar enhet en bärande nämnare, vad kräver hon av jämförelsen, och vad döljer hon. Sonden mot 495-registret bekräftar den vita fläcken — «enhetsmultipl» och «EV per ton/abonnent/kWh» har noll kursägare. Kursen ger tre signaturräkningar där identiska etiketter (2 000 kronor per kapacitetston, 4 000 per abonnent, 12 000 per installerad kilowatt) visar sig bära 29, 60 och 100 procent olika innehåll — och lär den fråga som stannar kvar när kursen är klar: vad tjänar en enhet, och vem frågar efter det.",
+  "learn": "Förstå enhetsmultipln som översättning: företagsvärdet delat med en räknbar storhet — kapacitet, produktion eller kunder — och varför sektorer med svängande eller framtida vinster flyr till nämnare man kan väga · Ställa de tre frågorna innan en enhet lånas som nämnare: är enheten homogen och räknbar, hur blir hon intäkt (pris per enhet gånger volym), och hur mycket av kapaciteten blir produktion · Räkna gruvans ton: två gruvor med samma etikett 2 000 kronor per kapacitetston (10,0 miljoner ton till 20 miljarder, 12,5 miljoner ton till 25 miljarder) men uttagning 90 mot 70 procent — 2 222 mot 2 857 kronor per producerad ton, och med C1-kostnad 400 mot 450 vid malmpris 600 kronor blir EV/EBITDA 11,1 mot 19,0 · Räkna abonnenten: samma 4 000 kronor per abonnent (2,5 miljoner abonnenter till 10 miljarder, 1,5 miljoner till 6 miljarder) men ARPU 60 mot 45 kronor i månaden och churn 1,2 mot 2,0 procent — väntad livstid 83 mot 50 månader ger livstidsintäkt kring 5 000 mot 2 250 kronor per abonnent · Räkna kilowattimmen: två parker à 1 gigawatt till 12 miljarder — 12 000 kronor per installerad kilowatt — men kapacitetsfaktor 40 mot 25 procent ger 3 504 mot 2 190 gigawattimmar och priset per levererad kilowattimme 3,42 mot 5,48 kronor · Känna de fyra fällorna: heterogeniteten (ett ton är inte ett ton, en abonnent inte en abonnent), marginalfällan (etiketten tiger om vad enheten tjänar), den döda enheten (teknikskiftet kan avskaffa nämnaren) och överbyggd kapacitet (uppblåsta nämnare ser billiga ut) · Bära de tre bryggorna vidare: enhetspris gånger enhetsmarginal blir EBITDA per enhet och därmed EV/EBITDA; installerad kapacitet gånger byggkostnad blir återanskaffningsvärdet — Tobins Q räknat per enhet (vr-08); och kundens enhetsekonomi med CAC och LTV (tx-06) är samma tanke på andra sidan resultaträkningen",
+  "history": {
+    "origin": "Enhetspriser är äldre än aktiemarknaden själv. Sjöfarten handlade i århundraden med fartyg prissatta per lastdödloton — varje fartyg en räknbar enhet med känd kapacitet — och industrialismens järnvägar värderades per banmil och per lok, bryggerier per hektoliter och sågverk per sålad kubikmeter. Där bokföringen var tunn och verksamningen synlig blev enheten själva räkneverket: vad en maskin kostar att bygga och vad den producerar visste ägaren bättre än vad en aktiekurs sa.",
+    "evolution": "1990-talet gav enhetsmultipln dess storhetsår och dess varnande exempel. Kabel- och telekombranschen prissattes per abonnent: varje uppköpt operatör fick en etikett i kronor per kund, och etiketten steg medan frågan om vad abonnenten tjänade trängdes undan — marginalfällan spelad i stor skala, med sekelskiftets telekomkris som facit. Samma decennium institutionaliserade kraftsektorn pris per installerad megawatt och gruvorna pris per uns guld i marken och per ton kapacitet — sektorer där vinsten svängde för mycket för P/E och där enheten erbjöd det stabilare samtalet.",
+    "modern": "I dag är enhetsmultiplar förstaspråk i alla verksamheter där produktionen är räknbar och vinsten svår: gruvor och skog räknar per ton, kraftperen per megawatt och vind per levererad kilowattimme, telekom och streaming per abonnent, datahallar per installerad megawatt, rederier per dödloton. Regulatoriska tal — tillstånd, anslutningar, lägen — blir själva nämnarna. Kursens läxa är oförändrad sedan sjöfartens dagar: enheten gör sektorn jämförbar med sig själv, och bara med sig själv."
+  },
+  "chapters_list": [
+    { "num": 1, "title": "Kursen per enhet — när verksamheten är räknbar", "minutes": 4 },
+    { "num": 2, "title": "Tre frågor innan du lånar en enhet", "minutes": 4 },
+    { "num": 3, "title": "Gruvans ton — samma prislapp, olika fysik", "minutes": 4 },
+    { "num": 4, "title": "Abonnenten och kilowattimmen — enheter som lever och levererar", "minutes": 4 },
+    { "num": 5, "title": "Fällorna — heterogeniteten, marginalen och den döda enheten", "minutes": 4 },
+    { "num": 6, "title": "Mästerskap — från enhet till invärde", "minutes": 4 }
+  ],
+  "lynchSection": "Peter Lynch tänkte i enheter längre än han tänkte i aktier: försäljning per butik, per kvadratmeter, per policy — verksamheten bröts ner till det lilla som går att räkna på ett kafébricka, och aktien kom sist. Men Lynch höll också den här kursens kärnfråga levande: en butik som tjänar pengar är en enhet värd att äga, och en kedja som köper tillväxt per butik utan att butiken tjänar har bara köpt etiketter. Enhetsmultipln är hans registervåning — med samma krav på att enheten själv ska bära sin ekonomi.",
+  "grahamSection": "Benjamin Graham skulle nicka åt nämnaren och peka på siffran bredvid: en multipel med ton i nämnaren är fortfarande en multipel — den behöver en motpart som heter värde. Den mest graham-ska frågan i kursen är därför återanskaffningspriset per enhet: vad kostar det i dag att bygga samma ton-kapacitet, samma megawatt, samma abonnentnät? Svaret är substansen som sätter golvet när sentimentet pratar — kursens tredje signaturräkning är bara vr-08:s Tobins Q, räknat ner på enhetnivå.",
+  "ak1Section": "I AK1A:s metodik binder vr-10 samman multipelspåret och sektorspåret: vr-03 lär vad en multipel innehåller, vm-03 hur hon väljs, vr-08 hur marknadsvärdet möter återanskaffningspriset — och se-familjen (se-18 rederierna, se-20 gruvorna, se-21 kemisektorn) räknar tonen i sina sektorexempel. vr-10 äger själva brobygget: när sektorns fysik blir värderingens nämnare, och vad som krävs för att jämförelsen ska hålla. I AKM1/AKM2-analysen är enhetstalet sektorns gemensamma valuta — sättet att göra bolag inom samma universum jämförbara innan motorerna tar över. Kursen är utbildning i metod med påhittade tal — inga positioner, inga råd.",
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 4,
+      "title": "Kursen per enhet — när verksamheten är räknbar",
+      "intro": "Vissa bolag är lättare att räkna än andra. Gruvan producerar ton, kraftparken kilowattimmar, operatören abonnenter, sågverket kubikmeter. Denna kurs handlar om vad som händer när den räknebarheten får plats i en värderingsmultipel — och vad som händer med det den tiger om.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En enhetsmultipel är företagsvärdet dividerat med något som kan räknas, vägas eller mätas: enterprise value per ton kapacitet, per abonnent, per installerad kilowatt, per kubikmeter. Det låter enkelt — och det är precis därför verktyget är så vanligt och så farligt. Grunderna äger andra kurser: enterprise value bygger v06 och km-010, multipelns anatomi vr-03, valet mellan multipler vm-03. Detta steg byter inte ut dem — det byter nämnaren. Varför gör någon det? Två skäl återkommer. För det första svänger vinsten: en gruva eller rederi kan posta nära nollvinst i botten av en cykel, och en P/E på oändlighet säger ingenting — medan tonen i berget och lastdödlotonnen på vattnet står kvar som räkneverk. För det andra är vinsten ibland framtida: ett nätbygge eller en kraftpark har kostnader i dag och leveranser i morgon, och enheten är det enda som finns att prata om under byggtiden. I båda fallen söker analysen en STABIL NÄMNARE — och enheten erbjuder sig, glad och räknbar. Kursens tes kommer redan här, som en försiktighetsrest: varje gång nämnaren blir enklare att räkna blir hon också lättare att TRO på. Tonen räknas — men tonen tjänar ingenting av sig själv. Det är skillnaden mellan att mäta en verksamhet och att förstå den, och de kommande tre kapitlen räknar den skillnaden i kronor."
+        },
+        {
+          "type": "definition",
+          "content": "ENHETSMULTIPEL — företagsvärdet (EV) dividerat med en räknbar storhet: kapacitet, produktion eller kunder · KAPACITETSNÄMNARE — vad anläggningen KAN leverera (ton per år, installerad kilowatt) · PRODUKTIONSNÄMNARE — vad hon FAKTISKT levererade (producerade ton, levererade kilowattimmar) · UTTAGNING — produktion dividerat med kapacitet; gapet mellan skylten och verkligheten · ARPU — intäkt per abonnent och månad; churn — andelen som lämnar per månad; tillsammans ger de abonnentens väntade livstid"
+        },
+        {
+          "type": "insight",
+          "content": "En enhetsmultipel är en översättning, inte en lag. Hon översätter sektorns fysik till värderingens språk — och som varje översättning tappar hon det som inte fick följa med: vad varje enhet kostar att framställa och vad hon säljs för."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 4,
+      "title": "Tre frågor innan du lånar en enhet",
+      "intro": "Metoden är inte formlerna utan granskningen av nämnaren. Tre frågor, alltid i samma ordning — och först när samtliga tre har ett svar finns det något att jämföra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "FRÅGA ETT: är enheten homogen och räknbar? Ett ton järnmalm är inte ett ton sågtimmer och inte ett ton kväve — och en abonnent är inte en abonnent: ett postpaid-avtal med bunden marginal är en annan enhet än ett förbetalda kort i en kiosk. När en bransch citerar enhetspriser är homogeniteten ofta en branschinternal överenskommelse — gruvorna räknar ton ROM-malm eller ton färdig koncentrat och alla inom branschen vet vilken; utomståenden vet det inte, och det är där jämförelsen först går snett. FRÅGA TVÅ: hur blir enheten intäkt? Gruvans ton multipliceras med malmpriset, kraftparkens kilowattimme med elpriset, operatörens abonnent med ARPU — månadsintäkten per kund. Utan den vägen från enhet till intäkt är nämnaren bara en storhet, inte en verksamhet. FRÅGA TRE: hur mycket av kapaciteten blir produktion? Skillnaden mellan installerad effekt och levererad energi — kapacitetsfaktorn — är kraftsektorns hela hemlighet, och gruvans uttagning är densamma läxa i berg. En nämnare som räknar kapacitet när verksamheten levererar produktion mäter skylten, inte fabriket. Tre frågor, och bakom dem kursens körtema: svaren på fråga två och tre — pris, volym, uttagning — är precis det som INTE står i enhetsmultipln. Hon visar etiketten; innehållet hämtas alltid någon annanstans."
+        },
+        {
+          "type": "tabell",
+          "content": "DE TRE FRÅGORNA — EXEMPELKOLONN (PÅHITTADE TAL): (1) HOMOGEN? Gruva: ton koncentrat — homogent inom branschens överenskommelse · Operatör: abonnent — homogent först när avtalsform vägs in · (2) VÄG TILL INTÄKT: Gruva: malmpris 600 kronor per ton · Operatör: ARPU 60 kronor per månad = 720 per år · Kraftpark: elpris per levererad kilowattimme · (3) KAPACITET TILL PRODUKTION: Gruva: uttagning 90 eller 70 procent · Kraftpark: kapacitetsfaktor 40 eller 25 procent · RESTEN AV KURSEN: etiketten är given — innehållet räknas i kapitel 3 och 4"
+        },
+        {
+          "type": "insight",
+          "content": "Homogenitet är en överenskommelse, inte en egenskap. Den som inte vet Vilket ton branschen räknar, jämför inte två bolag — hen jämför två olika språk och tror att det är samma samtal."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 4,
+      "title": "Gruvans ton — samma prislapp, olika fysik",
+      "intro": "Kursens första signaturräkning: två fiktiva gruvor med identisk enhetsetikett — och två olika bolag. Alla tal är påhittade; lektionen är aritmetiken.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "GRUVA A har kapaciteten 10,0 miljoner ton per år och företagsvärdet 20 miljarder kronor. GRUVA B har kapaciteten 12,5 miljoner ton och företagsvärdet 25 miljarder. Delat blir det samma etikett: 20 000 miljoner på 10,0 miljoner ton = 2 000 kronor per kapacitetston för A, 25 000 på 12,5 = 2 000 kronor för B. Två likadana prislappar. Sedan börjar fysiken. Gruva A arbetar med uttagningen 90 procent — hon producerar 9,0 miljoner ton — och priset per PRODUCERAD ton blir 20 000 delat med 9,0 = 2 222 kronor. Gruva B, med uttagningen 70 procent, producerar 8,75 miljoner ton: 25 000 delat med 8,75 = 2 857 kronor. Samma etikett på kapaciteten, knappt 29 procent olika pris på det som faktiskt lämnar gruvan (2 857 delat med 2 222 = 1,286). Men värre — eller bättre, för den som räknar — blir det med marginalen, som etiketten aldrig bar: vid malmpriset 600 kronor per ton har Gruva A C1-kostnaden 400 kronor, alltså marginalen 200 kronor per ton, och EBITDA blir 9,0 miljoner ton gånger 200 = 1 800 miljoner kronor — företagsvärdet 20 000 delat med 1 800 ger EV/EBITDA 11,1. Gruva B har C1-kostnaden 450 kronor, marginalen 150, EBITDA 8,75 miljoner ton gånger 150 = 1 312,5 miljoner — och 25 000 delat med 1 312,5 ger EV/EBITDA 19,0. Samma 2 000 kronor per kapacitetston: det ena bolaget handlas till elva års rörelselikvid, det andra till nitton. Etiketten var identisk; uttagning och C1 — båda osynliga i nämnaren — skilde bolagen mer än dubbelt. Så här ser marginalfällan ut inifrån: hon fäller inte den som räknar fel, utan den som räknar för lite."
+        },
+        {
+          "type": "tabell",
+          "content": "GRUVRÄKNINGEN (PÅHITTADE TAL): ETIKETTEN — A: 10,0 Mton kapacitet, EV 20 mdr → 2 000 kr/ton · B: 12,5 Mton, EV 25 mdr → 2 000 kr/ton (IDENTISK) · UTTAGNINGEN — A 90 % → 9,0 Mton → 20 000/9,0 = 2 222 kr per producerad ton · B 70 % → 8,75 Mton → 25 000/8,75 = 2 857 kr — skillnad 2 857/2 222 = 1,286, knappt 29 % · MARGINALEN (malmpris 600) — A: C1 400 → marginal 200/ton → EBITDA 9,0 × 200 = 1 800 Mkr → EV/EBITDA 11,1 · B: C1 450 → marginal 150/ton → EBITDA 8,75 × 150 = 1 312,5 Mkr → EV/EBITDA 19,0 · LÄXAN: två tal (uttagning, C1) som ALDRIG står i enhetsetiketten avgör dubbelvärderingen"
+        },
+        {
+          "type": "insight",
+          "content": "Enhetsmultipln besvarar vad verksamheten KOSTAR per räkneverk — aldrig vad räkverket tjänar. EV/ton och EV/EBITDA skiljer sig åt av exakt två okända: uttagningen och marginalen per enhet. Den som kan de två sistnämnda behöver inte den förra."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 4,
+      "title": "Abonnenten och kilowattimmen — enheter som lever och levererar",
+      "intro": "Andra signaturräkningen, i två världar: enheten som lever (abonnenten) och enheten som levererar (kilowattimmen). Samma mönster som gruvan — identiska etiketter, olika klockor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "OPERATÖR A har 2,5 miljoner abonnenter och företagsvärdet 10 miljarder kronor: 4 000 kronor per abonnent. OPERATÖR B har 1,5 miljoner abonnenter och värdet 6 miljarder: samma 4 000 kronor. Etiketterna är utbytbara — abonnenterna är det inte. Operatör A har ARPU 60 kronor i månaden (720 per år) och churn 1,2 procent i månaden: den väntade livstiden blir 1 delat med 0,012 = 83 månader, knappt sju år, och den väntade livstidsintäkten per abonnent kring 60 gånger 83 = kring 5 000 kronor. Operatör B har ARPU 45 kronor och churn 2,0 procent: livstiden 1 delat med 0,02 = 50 månader, och livstidsintäkten 45 gånger 50 = 2 250 kronor. Samma prislapp per abonnent — men A:s abonnent bär omkring dubbla framtidsposten (5 000 mot 2 250 kronor i väntad intäkt). Formeln är am-08:s och tx-06:s gemensamma arv: en växande lista med abonnenter är en annan tillgång än en stillastående, och en abonnent som stannar 83 månader är en annan enhet än en som stannar 50 — fast båda heter «abonnent» i nämnaren. KRAFTPARKEN räknar samma läxa med en annan klocka. Park A och Park B har båda 1 gigawatt installerad effekt och företagsvärdet 12 miljarder kronor — 12 000 kronor per installerad kilowatt, identiska skyltar. Men med kapacitetsfaktorn 40 procent levererar Park A under ett normalår 1 000 MW gånger 8 760 timmar gånger 0,40 = 3 504 gigawattimmar, medan Park B på 25 procent levererar 2 190 gigawattimmar. Priset per LEVERERAD kilowattimme blir 12 000 miljoner delat med 3 504 miljoner = 3,42 kronor för A och 12 000 delat med 2 190 = 5,48 kronor för B — 60 procent skillnad (5,48/3,42 = 1,60) på två parker med samma byggdagbok och samma etikett. Vindens och solens hela ekonomi bor i den faktorn: likadana namnskyltar, olika väder — och nämnaren som räknar skylten säger inget om himlen."
+        },
+        {
+          "type": "definition",
+          "content": "ARPU — intäkt per abonnent och månad; gånger tolv blir årsintäkten · CHURN — andelen abonnenter som lämnar per månad; 1 delat med churn ger väntad livstid i månader (1,2 % → 83 månader; 2,0 % → 50) · KAPACITETSFAKTOR — levererad energi dividerat med installerad effekt gånger årets alla timmar (8 760); vind och sol lever i gränsland 25–45 procent, vatten och kärnkraft högre · INSTALLERAD EFFEKT — skylten (megawatt); LEVERERAD ENERGI — verkligheten (kilowattimmar)"
+        },
+        {
+          "type": "insight",
+          "content": "Abonnenten har en klocka (livstiden) och kilowattimmen en annan (uttagningen) — men båda är samma fråga: hur mycket verklighet står bakom etiketten? En enhetsmultipel är alltid ett snitt över enheter som inte är lika; frågan är bara hur olika."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 4,
+      "title": "Fällorna — heterogeniteten, marginalen och den döda enheten",
+      "intro": "Fyra fällor, i stigande allvar. De två första har kursen redan räknat i kronor — här får de sina namn, tillsammans med de två som kan avskaffa en nämnare för gott.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "FÄLLA ETT — HETEROGENITETEN: nämnaren låtsas att enheterna är lika, och de är det aldrig helt. Malmhalten skiljer ton från ton (se-20 äger hela berget), avtalsformen skiljer abonnent från abonnent, och en fastläst kund på tre år är en annan enhet än en månadsläsare. Första motgiftet är kapitel två:s fråga ett: veta VILKEN enhet branschen räknar — och andra motgiftet är att bara jämföra inom samma enhetsuniversum. FÄLLA TVÅ — MARGINALFÄLLAN: gruvräkningen visade den i siffror — identiska etiketter, EV/EBITDA 11,1 mot 19,0, skilt av två tal som aldrig står i nämnaren. Förhöjs priset per enhet medan kostnaden per enhet tystas blir multipln ett marknadsföringstal. FÄLLA TRE — DEN DÖDA ENHETEN: nämnaren kan avskaffas. Hyrvideobutikens kvadratmeter dog inte av sämre hylla utan av att enheten byttes ut; minuter per abonnent var en branschs hela räkneverk tills samtal blev flatrate och enheten upplöstes. Teknikskiftet kan alltså träffa NÄMNAREN, inte bara vinsten — en enhetsmultipel bär sin tidsålders datering i sig. FÄLLA FYRA — ÖVERBYGGD KAPACITET: när en bransch bygger snabbare än efterfrågan växer kapacitetsnämnaren, och företagsvärdet per ton eller megawatt KAN se rekordbilligt ut medan orsaken är att halva nämnaren aldrig kommer produceras. Den billiga etiketten är ibland rätt pris på en felbyggd verksamhet — kapacitetsfaktorns spegel: uttagningen under 100 procent är inte engångsföreteelse utan branschöde. Fyra fällor, en gemensnamn: nämnaren är alltid en förenkling, och förenklingar åldras olika bra. Granskningen av nämnaren — kapitel två:s tre frågor — är därför inte introduktion utan metodens kärna, om och om igen."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg i tanken två datahallar med samma etikett 8 miljoner kronor per installerad megawatt: Hall A 50 MW till 400 miljoner, Hall B 50 MW till 400 miljoner. Ge A beläggningsgraden 85 procent och B 40 procent, och räkna priset per faktiskt betjänad megawatt (400/42,5 = 9,4 mot 400/20 = 20,0 miljoner kronor — mer än dubbelt). Lägg därefter på en strömavgift per levererad megawatttimme och en livstid på avtalen, och notera hur etiketten tjänar bara den som känner de tre osynliga talen: beläggning, pris per enhet, enhetens livslängd. Övningen ger inget att placera i — den ger vana att fråga efter det som inte står på prislappen."
+        },
+        {
+          "type": "insight",
+          "content": "De fyra fällorna sorterar sig parvis: heterogeniteten och marginalen gör jämförelsen OLIKA inuti samma nu — den döda enheten och överbyggnaden gör den OLIKA mot framtiden. De två första botas med granskning; de två sista bara med ödmjukhet."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 4,
+      "title": "Mästerskap — från enhet till invärde",
+      "intro": "Sista steget binder samman: enhetsmultipln är inte ett eget värderingssystem utan ett gränssnitt — och tre bryggor för henne tillbaka till världen hon översatte ifrån.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "BRYGGA ETT — till EBITDA: enhetspriset gånger enhetsmarginalen blir rörelseresultatet per enhet, och företagsvärdet delat med samma produkt är EV/EBITDA. Gruvräkningen gick exakt den vägen: 2 222 kronor per producerad ton var etiketten, marginalen 200 kronor per ton gjorde om den till 11,1 år. Enhetsmultipln är alltså EV/EBITDA med ett extra steg — ibland ett tydligare steg, i cyklers botten när EBITDA är noll och tonen står kvar. BRYGGA TVÅ — till substansen: installerad kapacitet gånger dagens byggkostnad per enhet ger återanskaffningsvärdet — vad det skulle kosta att BYGGA om bolaget — och företagsvärdet delat med det värdet är vr-08:s Tobins Q, räknat per enhet. Nätbolag och kraftverk prissätts av den bryggan varje dag: när etiketten hamnar under byggkostnaden per enhet börjar marknaden betala mindre för verkligheten än för ritningen — och tvärtom. BRYGGA TRE — till kunden: tx-06:s enhetsekonomi räknar samma logik från andra hållet: förvärvskostnad per kund mot livstidsvärde per kund. Abonnenträkningen här (5 000 mot 2 250 kronor i väntad intäkt) är livstidsvärldens intäktssida; tx-06 äger kostnadssidan och nyckeltalet mellan dem. Tre bryggor, tre grannkurser — och en gemensam ordning att minnas: enhetsmultiplar jämför INOM ett universum, aldrig mellan. Gruva jämförs med gruva, park med park, operatör med operatör — och den som bär en tonetikett in i en abonnentjämförelse har inte översatt utan bytt samtalsämne. Värderingsresan i den här profilen slutar inte här: nästa steg är kassaflödesvägen — alla enheter, priser och marginaler samlade till framtida flöden och diskonterade till i dag. Enhetsmultipln är fysikens språk; DCF är värdets. Emellan dem — och över allt — står säkerhetsmarginalen, som påminner om att varje nämnare, multipel och modell är en förenkling av ett bolag som lever sitt eget liv. Det är utbildningens sista ord: räkna mycket, tro försiktigt."
+        },
+        {
+          "type": "insight",
+          "content": "Från enhet till invärde går vägen i tre steg: enheten ger volymen, marginalen ger lönsamheten, diskonteringen ger värdet. Enhetsmultipln är första steget — oumbärlig i sektorns språk, otillräcklig som enda svar."
+        }
+      ]
+    }
+  ]
+}

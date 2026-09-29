@@ -1,0 +1,28 @@
+{
+  "_forklaring": "FLYTTKLART PAKET s1-u2 (2026-09-29) — GETINGE Q3 2026. Status = flyttklar EFTER verkställd diff D1–D7 (B-fynd; D8–D9 valfria C-kurer). Publicering förblir kundens beslut (R2) — flyttklar ≠ publicerad. Verkställelse: ägaren/nästa våg applicerar diffen på utkast-JSON:en (inga andra ändringar), varpå utkastet är redo för kundens publiceringsbeslut i data/blogg/ enligt datumfilterregeln (publishedAt 2026-10-20)",
+  "utkast": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-getinge-q3-2026.json",
+  "byggdAv": "okänd byggvåg (fil på disk 2026-09-19 03:09; GETI-datainsamling 2026-09-03)",
+  "granskadAv": "s1-u2, manifest auto-s1-1790653512758, 2026-09-29",
+  "kontroll": "data/blogg-utkast/granskning/sa-laser-du-getinge-q3-2026-KONTROLL-2026-09-29-s1u2.md",
+  "diff": "data/blogg-utkast/granskning/sa-laser-du-getinge-q3-2026-diff-2026-09-29-s1u2.json",
+  "sond": "verktyg/_s1u2-getinge-q3-kontroll.mjs",
+  "sondStatus": "122 OK · 4 FEL · 0 NOT (deterministisk ×2; alla 4 FEL = utkastfynd med kur i diffen)",
+  "dom": "GRÖN EFTER DIFF",
+  "villkor": [
+    "D1–D7 verkställda (B-fynd: marginalvikts-rekordet i title/description/body, transponerad scenarioruta, 833→853, DuPont-årtillskrivning 1,75/2,87, readingMinutes 4→5)",
+    "D8–D9 valfria (C1: fyrpunktsbanan i title/description) — rekommenderas för titelns skull",
+    "Efter verkställ: kör sonden igen — målbild är att A:scenario, A:botten-resgap, ST:rm, X:margvikt-rekord vänder till OK (D6 fångas av A:margsteg-kontexterna; kontrollera att noter om 1,75/2,87 speglar D6)"
+  ],
+  "styrkor": [
+    "datakärnan felfri: 18/18 nyckeltalsfält + hela serie + 32 medianer + 16 ranger exakta mot byggvintagen 73745b24 (GETI-rad drift-fri vintage↔dagens)",
+    "~40 egna beräkningar replikerade ≤0,5 % (EV-kedjan med fullprecision 0,3581 bevisad)",
+    "juridik 2007:528 REN (0/26 fraser, negerad rekommendation, exakt en lagrumsfamilj)",
+    "911 = 0 · 18/18 länkar 200 · kalender 4/4 belagd · gallringsunderlag 3/3 belagt · korsreferenser 17/17",
+    "kalenderns 20/21-divergens redovisad öppet med båda läsningarna — seriens källdoktrin följd"
+  ],
+  "kvarständeC": [
+    "C2: EBIT/FCF-marginal-rader länkar grannsidor (netto-marginal/fcf-avkastning) — dedikerade sidor finns ej (404); konventionsbeslut för serien",
+    "C3: 'seriens 49:e paket' ej maskinellt verifierbart"
+  ],
+  "publicering": "R2 — kundens beslut (ALDRIG autonom); utkastet publicerar sig självt vid rätt datum enligt SALJ-U6-S2 datumfilter när kunden flyttar det"
+}

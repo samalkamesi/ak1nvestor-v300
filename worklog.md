@@ -19158,3 +19158,36 @@ sammansatta kommandon, node -e, Write till /tmp och till och med enkla
 git-kommandon — ALLA leveranser denna rond gick via node-wrappers
 (r330-r332-mönstret), inklusive bakgrundsstart (spawn detached+unref;
 studio-&-verkställs ej).
+
+## ROND 336 [organ:Φ] (2026-09-29 ~10:1x–10:3x UTC) — DR-FÄRSKHETSPROV GRÖNT + KUR v2:S AUTONOMI BEVISAD; ISR-META-SONDEN FÖDD
+
+**DR-DOM (r336-dr-sond.mjs — driftsbokens bokade "morgonronden läser
+loggen" inlöst):** offsite-loggen bär kur v2:s FÖRSTA autonoma pass —
+02:53:19 snapshot via backup-API (quick_check ok) → 02:59:05 "OFFSITE-
+BACKUP SKAPAD: ak1a-offsite-2026-09-29.tar.gz.tar.gz (969 461 kB, 10
+delar, läsverifierad)" — exakt den förväntade raden; ett ANDRE pass
+09:05:53 (988 422 kB, läsverifierat); NOLL BACKUP-FEL efter kurens
+landning (de två ETIMEDOUT är 09-28 FÖRE 787e1199/7ed20962). De tre
+bladen FÄRSKA: db-dump 06:32 (35,9 MB · 3,8 h) · moln-JSON-familjen
+06:28 (12 poster) · app-dump 06:34 (85,6 MB · 3,7 h) — allt << 24 h ⇒
+RPO mekaniskt grönt. Notis: bladen föddes 06:2x–06:3x, ej 02:3x —
+nattens crontab-massförlust (r327-familjen) tog 02:30-cronen; pumpor-
+kanalen levererade bladen i stället (offsite 02:53 gick via pumporna) —
+redundansen bevisad igen. ÖPPEN POST (kundens): "GitHub: push väntar
+(SSH-nyckel ej aktiv än)" — offsite-arkivet når ej GitHub-valvet; API-
+nycklar/SSH = R2, påminns endast.
+
+**ISR-META-SONDEN (r335:s bokade uppgift, född och löpande):** _r336-isr-
+sond.mjs (avknoppad pid 843519) övervakar Ericsson-slugens HTTP-kod +
+.meta {status, mtime} var 60:e s till och med 12:45Z — omrenderingen
+belagas av .meta-mtime-ändring; dom-JSON skrivs automatiskt till
+data/forskning/OPTIMERING/lighthouse/r336-isr-meta-beteende.json (GRÖN =
+404 bevaras, RÖD = vakande lager behövs). Sondens curl:ar ÄR trafiken
+som triggar omrenderingen (ISR omrenderar endast vid hämtning).
+
+**R337 BOKAT:** (a) läs ISR-sondens dom-JSON (sannolikt klar ~11:0xZ,
+cache-fönstret från 09:55 löper ut ~10:55); (b) driftsbokens "nästa
+DR-pass bevisar de tre bladens restore" — full restore-övning av 09-29-
+bladens tre familjer (db · moln · app) enligt dr-ovning-mönstret (RTO-
+band 70–85 s på nya servern); (c) långpollarkvito pollas (PUSH GRÖN =
+postbuild-kuren beständig).

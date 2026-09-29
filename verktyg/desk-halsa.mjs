@@ -20,6 +20,10 @@
 //
 // Kontroller (en rad per kontroll, PASS/FAIL/SKIP):
 //   1. http-landning-401   GET /desk/ UTAN auth => exakt 401 (auth-bommen).
+//   1b. http-hjalp-401     GET /desk/hjalp.html UTAN auth => exakt 401 —
+//                          U18 B4/U19 steg 6b: hjälpsidans väg (nginx-proxy
+//                          till 6080) skall ligga bakom SAMMA bomm; fångar
+//                          att proxy-grenen aldrig tappar auth_basic.
 //   2. systemd-enheter     systemctl is-active zdesk-xvnc zdesk-wm
 //                          zdesk-zcode zdesk-novnc => fyra 'active'.
 //   3. x-geometri          xprop -root _NET_WORKAREA med DISPLAY=:10 =>
@@ -33,8 +37,12 @@
 //   5. http-auth-*         OM miljövariabeln DESK_AUTH='user:pass' är satt:
 //                          GET /desk/ (200 + <title> innehåller
 //                          'ZCode-skrivbordet'), GET /desk/vnc.html (200),
-//                          GET /desk/app/ui.js (200) — med basic auth.
-//                          UTAN DESK_AUTH => SKIP x3. Lösenord GISSAS
+//                          GET /desk/app/ui.js (200), GET /desk/hjalp.html
+//                          (200) — med basic auth. Den fjärde kontrollen är
+//                          U19 steg 6b:s ("/desk/hjalp.html som fjärde
+//                          http-auth-kontroll"): hjälpsidan skall ALLTID
+//                          svara 200 MED auth om 1b stämmer.
+//                          UTAN DESK_AUTH => SKIP x4. Lösenord GISSAS
 //                          ALDRIG, hårdkodas ALDRIG, /etc/nginx/.htdesk
 //                          läses ALDRIG — och DESK_AUTH-värdet loggas
 //                          ALDRIG i utdata.
@@ -46,11 +54,12 @@
 //                          pin (U13V2:s kontrakt är defaults resize=remote;
 //                          U17 A1-klassen), inga trasiga sluttaggar ('./p>').
 //
-// DETERMINISM: allt utom de två HTTP-kontrollgrupperna (1 och 5) är lokala
+// DETERMINISM: allt utom de två HTTP-kontrollgrupperna (1/1b och 5) är lokala
 //   processanrop/filäsningar — deterministiska. HTTP-kontrollerna går via
 //   internet mot https://lab.ak1nvestor.com/ (kundens telefonperspektiv:
 //   nätverksfel/timeout ÄR ett kedjefel och FAILar ärligt; 6 s timeout per
-//   anrop, värstafall ~24 s — under svitens 30 s-tak). Redirecter följs
+//   anrop, sex anrop totalt (1, 1b + fyra auth) => värstafall ~36 s, i
+//   normaldrift ~2 s). Redirecter följs
 //   EJ: kedjan förväntas svara exakt (3xx => FAIL).
 //
 // Arkitekturnotering (mätt 2026-09-28; titel rättad SAMORDNAT med TITEL_MARKE
@@ -157,6 +166,19 @@ async function httpLandningUtanAuth() {
   return { status: 'PASS', detalj: `GET /desk/ utan auth => ${svar.status} (auth-bommen lever)` };
 }
 
+// --- 1b. Hjälpsidan UTAN auth: exakt 401 (proxy-grenen bakom SAMMA bomm) ---
+// U18 B4/U19 steg 6b: /desk/hjalp.html serveras via nginx:s /desk/*-proxy
+// till 6080 — en ANNAN nginx-gren än landningens exakt-match. Tappar den
+// grenen auth_basic ligger hjälpsidans innehåll öppet: kontrollen fångar
+// det (jfr U17 A1-klassen — rätt kopia glömd, serverad väg lämnad orörd).
+async function httpHjalpUtanAuth() {
+  const svar = await hamta('/desk/hjalp.html');
+  if (svar.status !== 401) {
+    return { status: 'FAIL', orsak: `förväntade exakt 401 utan auth, fick ${svar.status} — auth-bommen täcker ej /desk/hjalp.html (proxy-grenen mot 6080 tappat auth_basic?)` };
+  }
+  return { status: 'PASS', detalj: `GET /desk/hjalp.html utan auth => ${svar.status} (proxy-grenen bakom samma bomm)` };
+}
+
 // --- 2. systemd: fyra enheter skall vara 'active' ---
 function systemdEnheter() {
   let ut = '';
@@ -256,7 +278,7 @@ function fonsterMaximering() {
   return { status: 'PASS', detalj: `${kontrollerade} fönster maximerade både VERT och HORZ (${idn.join(', ')})` };
 }
 
-// --- 5. Auth-trion: kräver DESK_AUTH ('user:pass') — annars SKIP x3 ---
+// --- 5. Auth-kontrollerna: kräver DESK_AUTH ('user:pass') — annars SKIP x4 ---
 function skipUtanAuth() {
   return { status: 'SKIP', orsak: 'DESK_AUTH ej satt — auth-kontrollerna kräver användare:lösenord i miljövariabeln (lösenord gissas/hårdkodas ALDRIG, .htdesk läses ALDRIG)' };
 }
@@ -329,22 +351,24 @@ function landningFil() {
 const startTid = Date.now();
 console.log('=== DESK-HÄLSA — /desk-kedjan i EN kontroll ===');
 console.log(`Bas ${BAS_URL} · display ${X_DISPLAY} · web-rot ${WEB_ROT} · ${new Date().toISOString()}`);
-console.log(`Auth-läge: ${process.env.DESK_AUTH ? 'DESK_AUTH satt (auth-trion körs — värdet loggas aldrig)' : 'DESK_AUTH ej satt (auth-trion blir SKIP)'}`);
+console.log(`Auth-läge: ${process.env.DESK_AUTH ? 'DESK_AUTH satt (auth-kontrollerna körs — värdet loggas aldrig)' : 'DESK_AUTH ej satt (auth-kontrollerna blir SKIP)'}`);
 
 const headers = authHeaders();
 
 await kontroll('http-landning-401', httpLandningUtanAuth);
+await kontroll('http-hjalp-401', httpHjalpUtanAuth);
 await kontroll('systemd-enheter', systemdEnheter);
 await kontroll('x-geometri', xGeometri);
 await kontroll('fonstermaximering', fonsterMaximering);
 await kontroll('http-auth-landning', headers ? () => httpAuthLandning(headers) : skipUtanAuth);
 await kontroll('http-auth-vnc-html', headers ? () => httpAuthFil('noVNC-sidan', '/desk/vnc.html') : skipUtanAuth);
 await kontroll('http-auth-ui-js', headers ? () => httpAuthFil('noVNC-appen', '/desk/app/ui.js') : skipUtanAuth);
+await kontroll('http-auth-hjalp-html', headers ? () => httpAuthFil('hjälpsidan', '/desk/hjalp.html') : skipUtanAuth);
 await kontroll('webrot-vnc-html', webrotVncHtml);
 await kontroll('webrot-defaults-json', webrotDefaultsJson);
 await kontroll('landning-fil', landningFil);
 
 const sek = ((Date.now() - startTid) / 1000).toFixed(1);
-console.log(`Summa: ${antalPass} PASS, ${antalFail} FAIL, ${antalSkip} SKIP · ${sek} s (tak 30 s)`);
+console.log(`Summa: ${antalPass} PASS, ${antalFail} FAIL, ${antalSkip} SKIP · ${sek} s (värstafall ~36 s, se DETERMINISM)`);
 console.log(`RESULTAT: ${antalPass}/${antalPass + antalFail} PASS`);
 process.exit(antalFail > 0 ? 1 : 0);

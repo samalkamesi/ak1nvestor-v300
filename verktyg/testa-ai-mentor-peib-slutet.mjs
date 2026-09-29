@@ -122,7 +122,7 @@ const VARIANTER = [
   { fraga: "vad är clawback?", amne: "avgiftsmaskinen" },
   { fraga: "vad är plant läge?", amne: "avgiftsmaskinen" },
   { fraga: "vad är nordisk kurs?", amne: "avgiftsmaskinen" },
-  { fraga: "vad är dividend recap?", amne: "utdelningsrekapitaliseringen" },
+  { fraga: "vad är rekapen?", amne: "utdelningsrekapitaliseringen" },
   { fraga: "vad är utdelningen som lån?", amne: "utdelningsrekapitaliseringen" },
   { fraga: "vad är riskflyttningen?", amne: "utdelningsrekapitaliseringen" },
   { fraga: "vad är nybelåningen?", amne: "utdelningsrekapitaliseringen" },
@@ -136,7 +136,7 @@ VARIANTER.forEach((v, i) => {
 {
   const fragor = ["vad är evighetskapitalet?", "vad är panikrummet?", "vad är tidens tre utfall?",
     "vad är avgiftsmaskinen?", "vad är tröskeln?", "vad är fördelningstrappan?",
-    "vad är en utdelningsrekapitalisering?", "vad är dividend recap?", "vad är riskflyttningen?"];
+    "vad är en utdelningsrekapitalisering?", "vad är rekapen?", "vad är riskflyttningen?"];
   let allaOk = true;
   for (const f of fragor) {
     const a = svaraLokaltPeibSlutet(f, KURSREGISTER);
@@ -224,6 +224,7 @@ VARIANTER.forEach((v, i) => {
     "vad är carry?",               // pe-mekanikens KÄRNORD
     "vad är irr?",                 // pe-mekanikens KÄRNORD (nås här via «irr-magin»)
     "vad är irr-magin?",           // TESTFYND: frågeordet «irr» klyvs ur frasen och fångas av pe-mekanikens enords-kärnord FÖRE detta lager — kärnordet struket här, frasen bärs i TEXT
+    "vad är dividend recap?",      // TESTFYND samma klass: «dividend» klyvs ur frasen och fångas av BASens utdelnings-monster — kärnordet struket här, frasen bärs i TEXT
     "vad är dpi?",                 // pe-mekanikens KÄRNORD
     "vad är fondlivslängden?",     // pe-mekanikens KÄRNORD
     "vad är j-kurvan?",            // pengarstids familj
@@ -283,7 +284,7 @@ VARIANTER.forEach((v, i) => {
   const kanoniska = [
     "vad är evighetskapitalet?", "vad är panikrummet?", "vad är tidens tre utfall?",
     "vad är avgiftsmaskinen?", "vad är tröskeln?", "vad är fördelningstrappan?",
-    "vad är en utdelningsrekapitalisering?", "vad är dividend recap?", "vad är riskflyttningen?",
+    "vad är en utdelningsrekapitalisering?", "vad är rekapen?", "vad är riskflyttningen?",
   ];
   const skuggor = [];
   for (const f of kanoniska) {

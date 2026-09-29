@@ -22,8 +22,8 @@
  *     Källor: pe-02 (vattenfallsägaren) · pe-06 (J-kurvan) · pe-07
  *     (co-invest) · pe-01 (fondformen) · ib-05 (börsbolagets kostnadstrappa
  *     — spegeln) · rk-16 (kontrahentrisken — clawbackens släktskap).
- *   · UTDELNINGSREKAPITALISERINGEN ("vad är dividend recap?/irr-magin?/
- *     nybelåningen?/riskflyttningen?…") — pe-09-utdelningsrekapitaliseringen
+ *   · UTDELNINGSREKAPITALISERINGEN ("vad är en utdelningsrekapitalisering?/
+ *     rekapen?/nybelåningen?/riskflyttningen?…") — pe-09-utdelningsrekapitaliseringen
  *     primär (6 kap). Källor: pe-02 (IRR/DPI-ägaren) · pe-03 (ingående
  *     trappan) · pe-08 (avgiftsplanet) · st-01 (täckningsgraden) · st-02
  *     (stressen) · st-05 (refinansieringsmuren) · ud-08 (extrautdelningarna).
@@ -296,12 +296,15 @@ export const PEIB_SLUTET_MONSTER: FragMonster[] = [
       // Sond rond 2: 0 kollisioner. Gränser i TEXT: «irr»/«dpi»/«moic» →
       // pe-mekaniken (pe-02:s matematik; TESTFYND: «irr-magin» STRUKET
       // som kärnord — frågeordet «irr» klyvs ur frasen och fångas av
-      // pe-mekanikens enords-kärnord FÖRE detta lager i kedjan; lagret
-      // nås via dividend recap/rekapen/nybelåningen/riskflyttningen) ·
+      // pe-mekanikens enords-kärnord FÖRE detta lager i kedjan) ·
+      // «dividend»/«dividender» → basens utdelnings-monster (TESTFYND
+      // samma klass: «dividend recap» STRUKET som kärnord — «dividend»
+      // klyvs ur frasen och fångas av basen FÖRE detta lager) ·
       // «refinansieringsmuren» → st-05 · «covenanter» → ks-05 ·
-      // «extrautdelningar» → ud-08 · stresstalet → st-02.
+      // «extrautdelningar» → ud-08 · stresstalet → st-02. Lagret nås via
+      // utdelningsrekapitaliseringen/rekapen/nybelåningen/riskflyttningen.
       "utdelningsrekapitaliseringen", "rekapitaliseringen", "rekapen",
-      "dividend recap", "nybelåningen",
+      "nybelåningen",
       "riskflyttningen", "dubbelseendet",
       "norra trä", "stenbro",
       "skulden som betalar ägaren", "pengarna före utgången",

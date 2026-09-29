@@ -1,0 +1,45 @@
+{
+  "granskat": "data/blogg-utkast/tillvaxtaktier-sa-analyserar-du-tillvaxtbolag-en.json",
+  "granskadAv": "agentfabrik v207-u3 (manifest v207-saljberedskap-1789640600, 2026-09-29)",
+  "rapport": "tillvaxtaktier-sa-analyserar-du-tillvaxtbolag-en-KONTROLL-2026-09-29-v207u3.md",
+  "bedomning": "FLYTTKLART MED 1 VERKSTÄLLD RÄTTNING — -en speglade originalets C1-kurr ('ligger på tvären med' → 'sits across') i oförändrad form; paketet bär parallellen 'sits in line with' verkställd. Originalets C2+C3 (kapitalförbrukning→kapitalförbränning i description+tags) är MATEKORREKT lösta i -en — översättningen använder 'capital burn' genomgående (korrekt term, kärnlänken /kurser/v19-kapitalforbranning). Mekaniken 15/15 gröna, 104/104 tal i multiset-paritet, 20/20 interna länkar + /dataset HTTP 200. -en bär 0 universums-superlativer (originalets renaste dom) och -en ökar inte den klassen",
+  "anvandning": "Paketet (…-FLYTTKLART-PAKET-2026-09-29-v207u3.json) bär C1p verkställd och publishedAt=null — flyttfärdigt. Originalet bär fortfarande sina oreviderade B1/C1–C4 (läst 2026-09-29): verkställ originalets diff koordinerat så att sv/en inte divergerar. Publicering är kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "C1p",
+      "typ": "byt (VERKSTÄLLT i paketet)",
+      "fil": "tillvaxtaktier-sa-analyserar-du-tillvaxtbolag-en.json",
+      "falt": "body (Profitability-sektionen)",
+      "gammalt": "The gross margin of 47.8 percent (n=11) sits across the universe's median",
+      "nytt": "The gross margin of 47.8 percent (n=11) sits in line with the universe's median",
+      "orsak": "Engelsk parallell till originalets C1 (dom-krävande kurr): siffersant — tillväxtens 47,75 mot universumets 47,77 i samma vintage (skillnad 0,02 pp) — men 'sits across' är lika tvetydig på engelska som 'på tvären med' på svenska (läses 'i motsättning till'); avsedd betydelse är 'i nivå med'. Bonus: den nästan exakta överensstämmelsen är i sig pedagogiskt poängterbar"
+    },
+    {
+      "id": "C4p",
+      "typ": "forslag",
+      "fil": "tillvaxtaktier-sa-analyserar-du-tillvaxtbolag-en.json",
+      "falt": "body (Sources, femte raden)",
+      "gammalt": "- AK1A's company universe — key ratios per company, September 2026; medians with measured companies (n) on [the dataset page](/dataset)",
+      "nytt": "- AK1A's company universe — primary source for all of the guide's medians and per-company figures: key ratios per company, retrieved September 2026 (10 of 11 companies 2026-09-03 via Yahoo Finance + MarketStack, MercadoLibre 2026-09-16); medians with measured companies (n) on [the dataset page](/dataset)",
+      "orsak": "Engelsk parallell till originalets C4: de fyra externa källraderna är tematiska stöd (ingen av guidens tal hämtas ur dem); den talbärande källan står sist utan markering. Förslaget lyfter fram den faktiska källkedjan — valfritt för ägaren. Originalet har C4 overksatt (läst 2026-09-29)"
+    },
+    {
+      "id": "B1-koordinering",
+      "typ": "notis",
+      "fil": "tillvaxtaktier-sa-analyserar-du-tillvaxtbolag.json (ORIGINALET — ej denna fil)",
+      "falt": "readingMinutes",
+      "gammalt": "Originalets B1-dom (2026-09-18): rm 2 → 6 enligt publicerad ~ord/200-praxis (1 200 textrensade ord)",
+      "nytt": "-en bär rm 2 = kodkontraktet round(1 430/600) — GRÖNT enligt -en-familjens normerade dom (fastighetsaktier-en-precedensen 2026-09-24). Seriekonflikten ord/200 vs ord/600 är mallägarens/kodens koordineringsfråga",
+      "orsak": "Samma koordineringsläge som konsumentaktier-B4: -en döms mot exportkontraktet (round(ord/600), räknas om automatiskt vid export); originalets B4-dom väntar på sin ägare"
+    },
+    {
+      "id": "D1p",
+      "typ": "notis",
+      "fil": "tillvaxtaktier-sa-analyserar-du-tillvaxtbolag-en.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-17",
+      "nytt": "null i paketet — publiceringsdag sätts av kunden vid flytt",
+      "orsak": "Värdet är skapandedatum. R2: publicering = kundens beslut"
+    }
+  ]
+}

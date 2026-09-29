@@ -1,0 +1,45 @@
+{
+  "granskat": "data/blogg-utkast/telekomaktier-sa-analyserar-du-telekom-och-mediabolag-en.json",
+  "granskadAv": "agentfabrik v207-u3 (manifest v207-saljberedskap-1789640600, 2026-09-29)",
+  "rapport": "telekomaktier-sa-analyserar-du-telekom-och-mediabolag-en-KONTROLL-2026-09-29-v207u3.md",
+  "bedomning": "FLYTTKLART — 0 blockerande fynd. 15/15 mekaniska kontroller gröna (schema exakt, rm 2 = kontraktet round(1 427/600), 9 rubriker, disclaimer-sista-rad, 911 = 0, rekverb 0, varumärkesgrind 0/26), 73/74 tal i multiset-paritet med det granskade originalet (den ena avvikaren är sondartefakt: '900, 2100' tokeniseras som ett tal — båda talen finns i originalets '900-, 2100- och 2600 MHz-banden'), 14/14 interna länkar HTTP 200. Originalets C1 (riktningsordet 'knappt'→'drygt') är MATEKORREKT löst i -en ('just over five and a half years' — 5,56 år). En D-parallell (Netflix-termen), en D4-parallell (MHz-beteckning) + R2-notis; originalets D3-djuplänk är verifierad DÖD 2026-09-29 (se N2 i rapporten)",
+  "anvandning": "Paketet (…-FLYTTKLART-PAKET-2026-09-29-v207u3.json) bär publishedAt=null och kräver inga body-rättningar — flyttfärdigt som det är. 'forslag'-posterna är koordineringsfrågor med originalet och beslutas av guidens ägare. Publicering är kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "D1p",
+      "typ": "forslag",
+      "fil": "telekomaktier-sa-analyserar-du-telekom-och-mediabolag-en.json",
+      "falt": "body",
+      "gammalt": "Netflix reported over 325 million paying households in the fourth quarter of 2025",
+      "nytt": "Netflix reported over 325 million paid memberships in the fourth quarter of 2025",
+      "orsak": "Engelsk parallell till originalets D1 (rekommenderas av originalets granskare): källans eget mått är 'paid memberships' (Q4-2025 passerade 325 miljoner; Reuters/Variety 2026-01-20) — 'paying households' är Netflix äldre metrikfamilj. Talet är exakt; endast terminologin. Originalet har D1 overksatt (läst 2026-09-29) — verkställ koordinerat sv+en"
+    },
+    {
+      "id": "D4p",
+      "typ": "forslag",
+      "fil": "telekomaktier-sa-analyserar-du-telekom-och-mediabolag-en.json",
+      "falt": "body",
+      "gammalt": "The 2023 auction in the 900, 2100 and 2600 MHz bands brought a further SEK 4.2 billion.",
+      "nytt": "The 2023 auction in the 900 MHz, 2.1 GHz and 2.6 GHz bands brought a further SEK 4.2 billion.",
+      "orsak": "Engelsk parallell till originalets D4: PTS:s egen beteckning är 900 MHz / 2,1 GHz / 2,6 GHz — '900, 2100 and 2600 MHz' kan läsas som tre MHz-band. Talen och beloppet (4,2 mdr, verifierat mot PTS/TT av originalets granskare) är exakta; kosmetisk terminologianpassning"
+    },
+    {
+      "id": "D2p",
+      "typ": "notis",
+      "fil": "telekomaktier-sa-analyserar-du-telekom-och-mediabolag-en.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-17",
+      "nytt": "null i paketet — publiceringsdag sätts av kunden vid flytt",
+      "orsak": "Värdet är skapandedatum. R2: publicering = kundens beslut"
+    },
+    {
+      "id": "N2-djuplank",
+      "typ": "notis",
+      "fil": "telekomaktier-sa-analyserar-du-telekom-och-mediabolag.json (ORIGINALET — ej denna fil)",
+      "falt": "body (Källor)",
+      "gammalt": "Originalets D3-förslag från 2026-09-16: djuplänk https://www.pts.se/radio/auktioner/genomfordna-auktioner/",
+      "nytt": "UPPHÄVT 2026-09-29: URL:en redirectar nu till PTS:s 404-sida (soft-404, kod 200 med slutlig URL pts.se/404) — PTS har omstrukturerat. Rot-länken pts.se lever (200); auktionstalen är verifierade mot PTS/Cision-pressreleaser av originalets granskare. Ny djuplänk efters vid verkställande av D3",
+      "orsak": "Granskarens dödsbevis av ett tidigare förslag: originalets D3 ska INTE verkställas med den gamla URL:en. -en bär rot-länken (levande) och är oberoende av frågan"
+    }
+  ]
+}

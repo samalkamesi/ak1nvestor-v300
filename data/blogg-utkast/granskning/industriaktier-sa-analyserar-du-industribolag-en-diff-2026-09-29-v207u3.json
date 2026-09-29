@@ -1,0 +1,36 @@
+{
+  "granskat": "data/blogg-utkast/industriaktier-sa-analyserar-du-industribolag-en.json",
+  "granskadAv": "agentfabrik v207-u3 (manifest v207-saljberedskap-1789640600, 2026-09-29)",
+  "rapport": "industriaktier-sa-analyserar-du-industribolag-en-KONTROLL-2026-09-29-v207u3.md",
+  "bedomning": "FLYTTKLART — 0 blockerande fynd. 15/15 mekaniska kontroller gröna (schema exakt, rm 2 = kontraktet round(1 424/600), 9 rubriker, disclaimer-sista-rad, 911 = 0, rekverb 0, varumärkesgrind 0/26), 61/61 tal i multiset-paritet med det granskade originalet, 11/11 interna länkar HTTP 200. Originalets B1 (rm 3→2) är MATEKORREKT löst i -en (bär 2); originalets B2 (döda Sandvik-länken) är MATEKORREKT löst i -en — översättningen bär redan www.sandvik.com medan originalet fortfarande bär döda home.sandvik.com (flaggas till originalets ägare, N1). En D-parallell (mätperiod) + R2-notis",
+  "anvandning": "Paketet (…-FLYTTKLART-PAKET-2026-09-29-v207u3.json) bär publishedAt=null och kräver inga body-rättningar — flyttfärdigt som det är. 'forslag'-posten är en koordineringsfråga med originalet och beslutas av guidens ägare. Publicering är kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "C1p",
+      "typ": "forslag",
+      "fil": "industriaktier-sa-analyserar-du-industribolag-en.json",
+      "falt": "body",
+      "gammalt": "and revenue growth at 8.4 percent (raw data 2026-09-15)",
+      "nytt": "and revenue growth (trailing twelve months) at 8.4 percent (raw data 2026-09-15)",
+      "orsak": "Engelsk parallell till originalets C1: rådata bär två tillväxtmått med olika medianer — TTM 8,4 % (utkastets tal, korrekt och vintagelåst) och 5-års-CAGR 4,1 %. Utan mätperiod kan läsaren tro att femårstillväxten är 8,4 %. Datumet 'raw data 2026-09-15' är RÄTT för industrin (till skillnad från konsumentguidens C1) — originalets granskning konstaterade detta. Originalet har C1 overksatt (läst 2026-09-29) — verkställ koordinerat sv+en"
+    },
+    {
+      "id": "C2p",
+      "typ": "notis",
+      "fil": "industriaktier-sa-analyserar-du-industribolag-en.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-17",
+      "nytt": "null i paketet — publiceringsdag sätts av kunden vid flytt",
+      "orsak": "Värdet är skapandedatum. R2: publicering = kundens beslut"
+    },
+    {
+      "id": "N1-originalet",
+      "typ": "notis",
+      "fil": "industriaktier-sa-analyserar-du-industribolag.json (ORIGINALET — ej denna fil)",
+      "falt": "body (Källor)",
+      "gammalt": "Originalet bär fortfarande den döda källänken home.sandvik.com/en/investors (läst 2026-09-29)",
+      "nytt": "-en bär redan den levande formen www.sandvik.com/en/investors — originalets B2-rättning (bevisad 200 med äkta IR-innehåll av originalets granskare 2026-09-17) bör verkställas i originalet. Parallell med fastighetsaktier-fallet: -en matekorrekt där originalet bär felet",
+      "orsak": "Koordineringsflagga till originalets ägare: sv-versionen publiceras aldrig med en DNS-död länk — B2 är originalets enda blockerande kvarvarande rättning ur 2026-09-17-domens 'FLYTTKLAR EFTER TVÅ RÄTTNINGAR'"
+    }
+  ]
+}

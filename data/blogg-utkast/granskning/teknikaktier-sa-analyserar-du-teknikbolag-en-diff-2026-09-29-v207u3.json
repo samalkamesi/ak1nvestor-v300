@@ -1,0 +1,36 @@
+{
+  "granskat": "data/blogg-utkast/teknikaktier-sa-analyserar-du-teknikbolag-en.json",
+  "granskadAv": "agentfabrik v207-u3 (manifest v207-saljberedskap-1789640600, 2026-09-29)",
+  "rapport": "teknikaktier-sa-analyserar-du-teknikbolag-en-KONTROLL-2026-09-29-v207u3.md",
+  "bedomning": "FLYTTKLART — 0 blockerande fynd. 15/15 mekaniska kontroller gröna (schema = exakt BloggExportPost, rm 2 = kontraktet round(1 423/600), 7 rubriker, disclaimer-sista-rad, 911 = 0, rekverb 0, varumärkesgrind 0/26), 83/83 tal i -en-bodyn i multiset-paritet med det granskade svenska originalet, 18/18 interna länkar HTTP 200 mot localhost (12 kurser + 6 live-bloggposter, alla git-oförändrade sedan före utkastets skapande). Originalets C1 (rm 3→2) är MATEKORREKT löst i -en (bär redan 2). Två D-paralleller till originalets D1–D2 + R2-notis",
+  "anvandning": "Paketet (…-FLYTTKLART-PAKET-2026-09-29-v207u3.json) bär publishedAt=null och kräver inga body-rättningar — det är flyttfärdigt som det är. 'forslag'-posterna D1–D2 är koordineringsfrågor med originalet (som ännu bär sina oreviderade former) och beslutas av guidens ägare. Publicering är kundens beslut (R2).",
+  "poster": [
+    {
+      "id": "D1p",
+      "typ": "forslag",
+      "fil": "teknikaktier-sa-analyserar-du-teknikbolag-en.json",
+      "falt": "body",
+      "gammalt": "In AK1A's hundred-company universe, technology has the highest AKM2 median (61 points out of 100) and a wide spread: 37–78, from Sinch to Logitech.",
+      "nytt": "In the cross-table's hundred-company universe (AKM2-enriched 2026-09-04), technology has the highest AKM2 median (61 points out of 100) and a wide spread: 37–78, from Sinch to Logitech.",
+      "orsak": "Engelsk parallell till originalets D1 (rekommenderas starkt av originalets granskare 2026-09-16): talen är exakta mot korstabell-grund.json men kanoniska bolagsunivers.json har vuxit sedan dess och 'AK1A's' utan bestämning kan läsas som den aktuella filen. Publicerade branschmedianer-guiden använder 'korstabellens 100-bolagsuniversum' som normerad term; dateringen gör dessutom 'högst'-påståendet ärligt tidsbundet (marginalen till konsument är 0,5 poäng). Originalet har D1 overksatt (läst 2026-09-29) — verkställ koordinerat sv+en så att speglarna inte divergerar"
+    },
+    {
+      "id": "D2p",
+      "typ": "forslag",
+      "fil": "teknikaktier-sa-analyserar-du-teknikbolag-en.json",
+      "falt": "body",
+      "gammalt": "The universe's technology group spans cloud communications company Sinch and consumer electronics maker Logitech; a neighboring sector adds Truecaller — the same digital business logic under another label.",
+      "nytt": "The universe's technology group spans cloud communications company Sinch and consumer electronics maker Logitech; a neighboring sector adds Truecaller — the same digital business logic under another label. Sinch also shows the band's boundary case: in cloud communications, traffic costs eat the gross margin, well below the software band.",
+      "orsak": "Engelsk parallell till originalets D2: texten placerar Sinch i mjukvaruvärlden direkt efter meningen om brutomarginaler 70–85 procent, men Sinchs egen bruttomarginal i universumet är 18,4 % (CPaaS-trafikkostnader) — utan notis kan läsaren tillämpa bandet på det namngivna exemplet. Originalet har D2 overksatt (läst 2026-09-29)"
+    },
+    {
+      "id": "D3p",
+      "typ": "notis",
+      "fil": "teknikaktier-sa-analyserar-du-teknikbolag-en.json",
+      "falt": "publishedAt",
+      "gammalt": "2026-09-17",
+      "nytt": "null i paketet — publiceringsdag sätts av kunden vid flytt",
+      "orsak": "Värdet är skapandedatum. R2: publicering = kundens beslut; paketet bär null och exportvägen/flytten stämplar publiceringsdagen"
+    }
+  ]
+}

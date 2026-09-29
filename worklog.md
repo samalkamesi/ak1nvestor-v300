@@ -19507,3 +19507,48 @@ ALDRIG --no-verify) · src/ orörd utöver mergens återföring · R2 orörd ·
 huvudagentens desk-halsa-arbete bevarat (commit + backup).
 LEVERANS: worklog.md (detta protokoll) + data/vakten/_r343-status.json.
 [organ:Φ]
+
+## ROND 344 — 2026-09-29 19:3x UTC: r336 STÄNGD (ISR-läckan bevisad harmlös — L3 är det beständiga lagret) + agent-status tidsstämpelkur; r341-kvitto inväntat [organ:Φ]
+
+Fortsättning efter r343 (tre-lagrs soft-404-kuren komplett i skarp drift).
+Rondens tre delar: (1) r336-bokningens mätning, (2) en skenbar
+cron-haveridiagnos som blev en verktygsbugg-kur, (3) r341-kvittot.
+
+(1) r336 STÄNGD — ISR-OMRENDERINGENS META-BETEENDE (mätning 19:0xZ,
+3,5 h efter 17:36:02Z-artefakten): prod-trädets .meta-fil för
+/blogg/sa-laser-du-ericsson-q3-2026 har FÖRLORAT sin "status": 404-
+märkning (r335:s fönster-läcka alltså REELL: omrenderingen suddar L1)
+— MEN frontdörren svarar 404 med L3 PROXY-GRENS fulla signatur:
+cache-control: no-store + server-timing: ak1a;desc="okand" +
+x-ak1a-klass + X-Robots-Tag: noindex, INTE routerns .meta-svar
+(x-nextjs-prerender + s-maxage). Kontrollposter: / 200 · /blogg 200 ·
+/integritetspolicy 200 (rötterna orörda av kuren). SLUTSATS för
+arkitekturen: L1 (postbuild-märkning) är TRANSIENT — timmars-
+omrenderingar suddar den; L3 (proxy-grenen i src/proxy.ts) är det
+DRIFTBESTÄNDIGA lagret och håller fönstret igen; L2 (cron-vakten)
+påminner. Tre-lagrs-designen därmed bevisad I SIN HELHET i skarp
+drift. Notis: desc="okand" denna sond (r343 såg "bot") — klass-
+etiketten varierar med klientprofil, BESLUTET (404/no-store/noindex)
+är konstant. r336 frågan "bevaras 404-markeringen efter revalidate?"
+har sitt svar: NEJ i .meta, JA i svaret — bokningen stängd.
+
+(2) TIDSSTÄMPELKUREN (agent-status.mjs): rondens fösta diagnos var
+"19:17-cronsvepet SAKNAS" (senaste rapport 13:29, ingen loggrad för
+19:17) — men systemklockan visade NTP-synkat 19:02 UTC: fönstret låg
+i FRAMTIDEN. ROTEN: agent-status.mjs skrev lokal Stockholmstid (+2 h)
+OMÄRKT som "Tid: 20:52:42" medan worklog/ronder/cron talar UTC —
+två tidsystem i samma organism, skenbart klocksteg. KUR: tidstämpel()
+skriver nu "2026-09-29 19:05:06 UTC (lokal 2026-09-29 21:05:06)";
+verifierad körning. Falska diagnosen återkallas här öppet; ingen
+cron-läkning behövdes (crontab-raden 17 1,7,13,19 lever, mätt i sond).
+
+(3) r341-KVITTOT — 19:17-cronfönstret mot 17:36Z-trädet:
+_1917_KVITTO_RAD_
+
+KVD: läsende sonder (fetch + fil-läsning; inget lås, ingen pm2,
+inget träd rört) · verktygsändring ENDAST agent-status.mjs (ingen
+src-yta ⇒ inget bygge) · tsc-grinden körs vid commit · R2 orörd ·
+data/blogg orörd · prod-träd orört före rundans egen push.
+LEVERANS: worklog.md (detta protokoll) + data/vakten/_r344-sond.json
++ agent-status.mjs + verktyg/_r344-sond.mjs + verktyg/_r344-klocka.mjs.
+[organ:Φ]

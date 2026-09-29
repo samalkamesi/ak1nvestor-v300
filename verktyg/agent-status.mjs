@@ -33,7 +33,12 @@ async function skal(kommando, args, timeout = 10_000) {
 }
 
 function tidstämpel() {
-  return new Date().toLocaleString("sv-SE", { timeZone: "Europe/Stockholm" });
+  // ROND 344-kur: ronden/worklog talar UTC — förr skrevs Stockholmstid omärkt,
+  // vilket felutlästes som klocksteg (+2 h) och gav en skenbar "missat cron-svep"-
+  // diagnos. UTC först, lokal tid tydligt märkt i parentes.
+  const utc = new Date().toISOString().replace("T", " ").slice(0, 19);
+  const lokal = new Date().toLocaleString("sv-SE", { timeZone: "Europe/Stockholm" });
+  return `${utc} UTC (lokal ${lokal})`;
 }
 
 // ── 1. GIT ─────────────────────────────────────────────────────────────────

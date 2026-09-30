@@ -19804,3 +19804,50 @@ Fabriksagent s1-u2 (granskare). VAL (anspråk disk-först: data/vakten/auto-s1-1
 ## SPÅR 1 s1-u3 (manifest auto-s1-1790796926223, granskningskön 3/3) — 2026-09-30 ~19:45–20:15 lokal: AT&T Q3 GRANSKAT (pivot från m9 #3) — GRÖN GRUND, FLYTTKLAR EFTER RÄTTNINGAR F1–F3; sv-paket + diff [fabrik]
 
 **Fabriksagent s1-u3 (granskare).** PIVOT (öppen, duplikatregeln): m9-utkast #3 levererat ≥4 gånger (m9-familjen 6/6 FLYTTKLAR sedan 09-21) ⇒ FIFO-slotten i fabege-könotisens 10-21-kluster: syskonen u1/u2 tog iberdrola/var-energi (anspråk disk-först lästa FÖRE val) ⇒ **AT&T Q3 2026** (rappdag 21/10, 0 att-filer i granskning/ före arbetet; anspråk auto-s1-1790796926223-s1-u3-ansprak.md). GRANSKNING (allt EGENMÄTT, sond _s1u3-att-q3-kontroll.mjs — utkastläge 140 OK · 0 FEL · 5 NOT, paketläge 157 OK · 0 FEL · 4 NOT, efter SEX ärligt bokförda+rättade v1-sondbuggar: matchAll utan /g · isFinite(null)=true i rangfiltret · USD/MUSD-enhetsblandningar · 21889 skrivet 21.889 · pp-tolerans mot avrundade tal · disclaimer-split på semikolon): KÄRNAN GRÖN — källfält 31/31 mot byggvintage fe3770b8:s 159-posters universum (T-posten fältnivå IDENTISK i dagens 322-träd; Verizon 10/10 i duopol-tabellen; MarketStack-dubbelkällan = postens egen paranoid-not), medianer 16/16 EGENBERÄKNADE med exakta n (universum P/E 20,52 n=150 · netto 13,66 n=159; gren P/E 21,85 n=12 · skuld 1,11 n=14; brutto-gränsfallet 0,49635 exakt → 49,64 halv-upp = textens tal), rang P/E LÄGST av grenens tolv P/E-bärande + brutto #4 av 14, aritmetik ~60 poster (identitet 1,616÷0,1834 = 8,81 = +2,53 % med omvänd väg −2,48 % · absolut 188,1 mdr = +5,8 % med TTM-väg +5,2 % och implicit vinst 20 693 = −5,5 % · TTM-omsättning 128 538 = 125 648×1,023 reproducerbar · PEG-trippel 0,89/1,78/5,4 · EV-kedja 110,0/142,0/252,0 mot fältväg 339,7 = residual −87,7 mdr OMÖJLIGT = telekomgrenens TREDJE paket som bryter i EV-ledet efter Tele2 −90,6 och Telia −121,9 medan FCF-kontrollen håller 10 244 MUSD/5,76 % · rättesatser 1 256/3 769/3,0×/marginalvikt 1,34 · duopolgap brutto 0,27 pp och P/E +52,6 % → "53 procent"), JURIDIK 2007:528 REN (13 rådglossmönster × 3 ytor = 0 · 2 negerade rådformer · EXAKT EN lagrumsfamilj · disclaimer+R2 sist · utbildningsdeklaration i ingress), 911 = 0/6 mönster, struktur grön (H2 13 · title 314 tkn = EXAKT wihlborgs-taket, grönt men gränsvärt · ord 2 365 → rm 4 ✓ · mjuka bindestreck 0 · description 625 = seriepraxis 328–654 · publishedAt 19/10 = två dagar före rappdag, seriepraxis telia/abb/volvo-car), kalender exakt (21/10 officiell nyhet + före börsöppning + telefonkonferens + Q2 22/7; SAP 21/10 ca 22:05; Nokia/SEB 22/10 KÄLLSANNA mot kalender-kommunikation.json). FYND: F1 (VÄSENTLIGT) scenariorutans nedersta rad "Intäkter 121 978" — korrekt 125 648×0,97 = 121 879 (transposition 87↔97) med radens tre celler 27 799/30 238/32 678 → 27 776/30 214/32 651 (v1-cellerna internt konsistenta med felbasen); F2 veckolistan uppräknar 19 namn men texten sade "arton … nittonde" på två ställen → kur nitton/tjugo (Nokia står kvar: kalenderdag 22/10 källsann och nokia-paketet på disk sedan 09-18 = före publiceringstillfället 19/10 — omräkning sannare än strykning); F3 FCF-kontrollens "håller inom en procent relativt" — egen beräkning 5,7635 mot 5,70 = +1,07 % strikt över ⇒ "inom" → "cirka". LEVERANS: KONTROLL + diff + FLYTTKLART-PAKET (kurer tillämpade av _s1u3-att-q3-paket.mjs med EXAKT-EN-TRÄFF-assert per kur; efterverifierat: gamla felsträngar 0 · nya tal omräknade · nycklar intakta · utkastet på disk orört md5 bb880241) i granskning/ med -2026-09-30-s1u3-suffix + KO-rader i BÅDA sammanställningstabellerna (additiva, syskonens rader orörda) + sond + paketbyggare. HTTP-länktest (20 interna) väntar på fritt deploylås — byggarens egen KVD redovisar 20/20 interna 200 (notis kvarstår tills oberoende re-test). KVD: data-only — src/ orörd = INGET bygge · R2 orörd (data/blogg/ orörd, publicering = kundens klick) · skal-kvoten levande (node-kanalen hela vägen; sondbuggarna bokförda i sondens huvud). VIDAREBEFORDRAS till granskningskön: nokia-utkastets publishedAt 10-20 mot kalenderns 22/10 (eget kontrollobjekt när nokia-paketet granskas). Kö efter denna: 22:a-paketen (essity/swedbank/sandvik/atlas-copco/castellum/nokia) → novemberfältet. [fabrik]
+
+
+## ROND 352 [organ:Φ] (2026-09-30 20:2x–20:4xZ) — KORSTABELLSGLIDNINGEN NOLLD: 100 → 322 RADER (B13:s akuta gap 222→0) + O571-VALIDERING PÅGÅR + spårrotation spår 2
+
+**(1) O571-DELBEVIS (pågår):** manuell skarp validering av döda-länkar-externa
+startad 20:23 (full crawl ~50 min — rapporten landar i data/vakten/); full
+04:17-cron-efterdyning bokas till morgonronden. Vänteläget: kaninens vilor
+lever (amazon t.o.m. 10-07, adlibris/bokus t.o.m. 10-06).
+
+**(2) SPÅROTATION (r351 = spår 9 dok → r352 = spår 2 DATASET-DJUP):**
+B13-passningens (09-29) akuta gap "korstabellens glidning 53→95→131→222,
+frusen sedan 09-10, cadans/rop saknas" var EVIGHETSKATALOGENS spår 2 i
+ren form. DIAGNOS: korstabell-grund.json (100 rader, skapad 09-03) byggs
+av python-P6-kedjan ur akm1-/fvag-cacher — och agent-trädet bar exakt 100
+cacher medan universumet vuxit till 322. B13:s "berika-pipelinen stilla"
+förklarad: INGEN har kört kedjan sedan universumticktillväxten. Nyckel fynd:
+bedom_akm1.py läser UNIVERSUMET direkt (inget nätverk) och universumets nya
+poster bär FULLA nyckeltal (ENB/BBVA/TD: 18/18 fält — U-seriens panelarbete).
+
+**(3) KEDJAN KÖRD HELT (60 s, deterministisk):** bedöm_akm1 (322 cacher,
+V19-port-brott dokumenterat: VPLAY-B.ST) → kor-fvag (322, dynamik:
+förbättras 272 · stabilt 280 · försvagas 97 · osatt 5 791) → P6-sammanställ
+(korstabell 322 rader) → kor-akm2-berika (322 med tal; modulfördelning
+saas 33 · tillväxt 52 · cyklisk 95 · allmän 115 · tillgångstung 83 · bank 41;
+skillnad mot AKM1 medel 17,5 · höjda 315 · sänkta 7). VERIFIKATION GRÖN:
+de gamla 100 radernas kärnfält (akm1Totalt · fvagPerHorisont · akm2) är
+OFÖRÄNDRADE (0 ändringar — pipeline deterministisk); 222/222 nya rader med
+akm1-tal (ENB akm1 37,1 · akm2 53). Backup före körning: /tmp/r352-
+korstabell-backup.json. Cacher = gitignorerade byggstenar (därför 0 i
+prod-trädet — korstabellen är den trackade leveransen och självbärande).
+
+**(4) KONSUMENTER + GRÄNS:** korstabellen läses av /api/forskningslage +
+/api/portfolj-forskning + pro-klientvyer via korstabell-data.ts — dataleverans
+utan bygge. ANALYSFABRIKEN (forskningsbiblioteket/{TICKER}.json, idag 22
+analyser) BOKAS som eget steg med granskning av kandidatvillkoren — en 322-
+filsutvidgning av det levande biblioteket släpps inte utan kuratering.
+
+**KVD:** verktyg+data (korstabell-grund.json enda trackade ändring + worklog)
+· src orörd = INGET bygge · R2 orörd (utbildningsdata, aldrig råd) · gamla
+rader bevisat oförändrade · vakten GRÖN vid rondstart · prod 200.
+
+LEVERANS: denna commit — push direkt (datafil); live-sond /api/
+forskningslage efter landning som driftbevis.
+
+NÄSTA I KÖN: (a) analysfabriksutvidgningen (222 nya biblioteksanalyser —
+körbar; granska kandidatvillkoren först); (b) o571-04:17-efterdyning;
+(c) vakttornets nattvarv vid morgonronden.

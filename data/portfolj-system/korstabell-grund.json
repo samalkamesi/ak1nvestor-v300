@@ -3447,6 +3447,7621 @@
    "akm2Moduler": [
     "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
    ]
+  },
+  {
+   "ticker": "TTE.PA",
+   "namn": "TotalEnergies SE",
+   "bransch": "energi",
+   "akm1Totalt": 46.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0,
+    "vardering": 4,
+    "lonsamhet": 2.67,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 66,
+   "akm2Skillnad": 19.4,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "NESTE.HE",
+   "namn": "Neste Oyj",
+   "bransch": "energi",
+   "akm1Totalt": 40.4,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3.33,
+    "lonsamhet": 2,
+    "stabilitet": 3,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 49,
+   "akm2Skillnad": 8.6,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "ORSTED.CO",
+   "namn": "Ørsted A/S",
+   "bransch": "energi",
+   "akm1Totalt": 27.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0,
+    "vardering": 2.33,
+    "lonsamhet": 2,
+    "stabilitet": 2.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5773,
+   "akm1MaxMojligt": 57.7,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 46,
+   "akm2Skillnad": 18.4,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "SPOT",
+   "namn": "Spotify Technology S.A.",
+   "bransch": "kommunikation",
+   "akm1Totalt": 40.2,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 0.67,
+    "lonsamhet": 3,
+    "stabilitet": 3.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 55,
+   "akm2Skillnad": 14.8,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "SKA-B.ST",
+   "namn": "Skanska AB (publ)",
+   "bransch": "industri",
+   "akm1Totalt": 38.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 4,
+    "lonsamhet": 0.67,
+    "stabilitet": 3.33,
+    "moat": 0.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 43,
+   "akm2Skillnad": 4.9,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "EVO.ST",
+   "namn": "Evolution AB (publ)",
+   "bransch": "konsument",
+   "akm1Totalt": 52.8,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 2,
+    "lonsamhet": 4.33,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 75,
+   "akm2Skillnad": 22.2,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "HSBA.L",
+   "namn": "HSBC Holdings plc",
+   "bransch": "finans",
+   "akm1Totalt": 14.8,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 1.67,
+    "lonsamhet": 0.67,
+    "stabilitet": 1.33,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.268,
+   "akm1MaxMojligt": 26.8,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 65,
+   "akm2Skillnad": 50.2,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "TEL.OL",
+   "namn": "Telenor ASA",
+   "bransch": "kommunikation",
+   "akm1Totalt": 50.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3.33,
+    "lonsamhet": 4,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 68,
+   "akm2Skillnad": 17.3,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "DTE.DE",
+   "namn": "Deutsche Telekom AG",
+   "bransch": "kommunikation",
+   "akm1Totalt": 47.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.67,
+    "lonsamhet": 3,
+    "stabilitet": 2.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 62,
+   "akm2Skillnad": 14.8,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "VNA.DE",
+   "namn": "Vonovia SE",
+   "bransch": "fastighet",
+   "akm1Totalt": 41.4,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3,
+    "lonsamhet": 3.67,
+    "stabilitet": 1.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": 0.4402,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 40,
+   "akm2Skillnad": -1.4,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "VOLV-B.ST",
+   "namn": "AB Volvo (publ)",
+   "bransch": "industri",
+   "akm1Totalt": 36.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 2,
+    "stabilitet": 2,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 40,
+   "akm2Skillnad": 3.5,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "EQT.ST",
+   "namn": "EQT AB (publ)",
+   "bransch": "finans",
+   "akm1Totalt": 40.8,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 1,
+    "lonsamhet": 3.67,
+    "stabilitet": 0.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 56,
+   "akm2Skillnad": 15.2,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "AXFO.ST",
+   "namn": "Axfood AB (publ)",
+   "bransch": "konsument",
+   "akm1Totalt": 34.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 1.67,
+    "stabilitet": 2.33,
+    "moat": 0.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 50,
+   "akm2Skillnad": 15.4,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "ROG.SW",
+   "namn": "Roche Holding AG",
+   "bransch": "halso",
+   "akm1Totalt": 45.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 1.67,
+    "lonsamhet": 4.33,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 68,
+   "akm2Skillnad": 22.4,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "NESN.SW",
+   "namn": "Nestlé S.A.",
+   "bransch": "konsument",
+   "akm1Totalt": 41.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 2,
+    "lonsamhet": 3.33,
+    "stabilitet": 2.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 57,
+   "akm2Skillnad": 15.8,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "BAS.DE",
+   "namn": "BASF SE",
+   "bransch": "material",
+   "akm1Totalt": 30.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0,
+    "vardering": 3,
+    "lonsamhet": 0.67,
+    "stabilitet": 2.67,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 38,
+   "akm2Skillnad": 7.3,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "TSM",
+   "namn": "Taiwan Semiconductor Manufacturing (TSMC)",
+   "bransch": "teknik",
+   "akm1Totalt": 44.1,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 0.33,
+    "lonsamhet": 4.33,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 65,
+   "akm2Skillnad": 20.9,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "BHP",
+   "namn": "BHP Group",
+   "bransch": "material",
+   "akm1Totalt": 52.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 4,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 82,
+   "akm2Skillnad": 29.8,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "MELI",
+   "namn": "MercadoLibre",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 43.5,
+   "akm1PerKategori": {
+    "tillvaxt": 1.67,
+    "vardering": 1.33,
+    "lonsamhet": 3,
+    "stabilitet": 2.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 57,
+   "akm2Skillnad": 13.5,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "AMZN",
+   "namn": "Amazon.com, Inc.",
+   "bransch": "teknik",
+   "akm1Totalt": 37.3,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 1.67,
+    "lonsamhet": 3.67,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 49,
+   "akm2Skillnad": 11.7,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "URW.PA",
+   "namn": "Unibail-Rodamco-Westfield SE",
+   "bransch": "fastighet",
+   "akm1Totalt": 45.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3,
+    "lonsamhet": 3,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": 0.1739,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 44,
+   "akm2Skillnad": -1.6,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "PFE",
+   "namn": "Pfizer Inc.",
+   "bransch": "halso",
+   "akm1Totalt": 43.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0,
+    "vardering": 3.33,
+    "lonsamhet": 3,
+    "stabilitet": 2,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 61,
+   "akm2Skillnad": 17.3,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "ABNB",
+   "namn": "Airbnb, Inc.",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 45.4,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 0.67,
+    "lonsamhet": 4,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 59,
+   "akm2Skillnad": 13.6,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "NOVN.SW",
+   "namn": "Novartis AG",
+   "bransch": "halso",
+   "akm1Totalt": 48,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.67,
+    "lonsamhet": 4.33,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 67,
+   "akm2Skillnad": 19,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "V",
+   "namn": "Visa Inc.",
+   "bransch": "finans",
+   "akm1Totalt": 42.5,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 0.33,
+    "lonsamhet": 4.33,
+    "stabilitet": 1.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 63,
+   "akm2Skillnad": 20.5,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "ALV.DE",
+   "namn": "Allianz SE",
+   "bransch": "finans",
+   "akm1Totalt": 44.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.67,
+    "lonsamhet": 2.67,
+    "stabilitet": 1.67,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 67,
+   "akm2Skillnad": 22.7,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "SIE.DE",
+   "namn": "Siemens AG",
+   "bransch": "industri",
+   "akm1Totalt": 41.4,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 2.67,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 51,
+   "akm2Skillnad": 9.6,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "ASML.AS",
+   "namn": "ASML Holding N.V.",
+   "bransch": "teknik",
+   "akm1Totalt": 44.9,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 0.33,
+    "lonsamhet": 4.33,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 57,
+   "akm2Skillnad": 12.1,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "KO",
+   "namn": "The Coca-Cola Company",
+   "bransch": "konsument",
+   "akm1Totalt": 44.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 0.67,
+    "lonsamhet": 4.33,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 60,
+   "akm2Skillnad": 15.9,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "ORCL",
+   "namn": "Oracle Corporation",
+   "bransch": "teknik",
+   "akm1Totalt": 35.7,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 1,
+    "lonsamhet": 4.33,
+    "stabilitet": 2,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 50,
+   "akm2Skillnad": 14.3,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "AIR.PA",
+   "namn": "Airbus SE",
+   "bransch": "industri",
+   "akm1Totalt": 35.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2,
+    "lonsamhet": 2,
+    "stabilitet": 3,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 59,
+   "akm2Skillnad": 23.1,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "RIO",
+   "namn": "Rio Tinto Group",
+   "bransch": "material",
+   "akm1Totalt": 47,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3,
+    "lonsamhet": 3.33,
+    "stabilitet": 3,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 65,
+   "akm2Skillnad": 18,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "SAMPO.HE",
+   "namn": "Sampo Oyj",
+   "bransch": "finans",
+   "akm1Totalt": 44.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3,
+    "lonsamhet": 3.33,
+    "stabilitet": 1.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 58,
+   "akm2Skillnad": 13.7,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "SPG",
+   "namn": "Simon Property Group, Inc.",
+   "bransch": "fastighet",
+   "akm1Totalt": 40.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 0.33,
+    "lonsamhet": 4.33,
+    "stabilitet": 1.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 50,
+   "akm2Skillnad": 9.2,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "PEP",
+   "namn": "PepsiCo, Inc.",
+   "bransch": "konsument",
+   "akm1Totalt": 45.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2,
+    "lonsamhet": 3.67,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 65,
+   "akm2Skillnad": 19.4,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "UBER",
+   "namn": "Uber Technologies, Inc.",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 43.9,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 1.67,
+    "lonsamhet": 3.33,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 62,
+   "akm2Skillnad": 18.1,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "BA",
+   "namn": "The Boeing Company",
+   "bransch": "industri",
+   "akm1Totalt": 22.1,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 1,
+    "lonsamhet": 1.33,
+    "stabilitet": 0.67,
+    "moat": 0.33,
+    "katalysator": 0,
+    "risk": 2
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5979,
+   "akm1MaxMojligt": 59.8,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 31,
+   "akm2Skillnad": 8.9,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "ABBV",
+   "namn": "AbbVie Inc.",
+   "bransch": "halso",
+   "akm1Totalt": 35.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 0.67,
+    "lonsamhet": 3,
+    "stabilitet": 1.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.567,
+   "akm1MaxMojligt": 56.7,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 63,
+   "akm2Skillnad": 27.1,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "MA",
+   "namn": "Mastercard Incorporated",
+   "bransch": "finans",
+   "akm1Totalt": 42.5,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 0.33,
+    "lonsamhet": 4.33,
+    "stabilitet": 1.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 64,
+   "akm2Skillnad": 21.5,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "TM",
+   "namn": "Toyota Motor Corporation",
+   "bransch": "konsument",
+   "akm1Totalt": 31.8,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 4,
+    "lonsamhet": 1.67,
+    "stabilitet": 2.33,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 35,
+   "akm2Skillnad": 3.2,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "HOLN.SW",
+   "namn": "Holcim AG",
+   "bransch": "material",
+   "akm1Totalt": 35.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0,
+    "vardering": 2.67,
+    "lonsamhet": 2,
+    "stabilitet": 2,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 39,
+   "akm2Skillnad": 3.5,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "SOBI.ST",
+   "namn": "Swedish Orphan Biovitrum AB (publ)",
+   "bransch": "halso",
+   "akm1Totalt": 45.6,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 1.67,
+    "lonsamhet": 3,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 63,
+   "akm2Skillnad": 17.4,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "BLK",
+   "namn": "BlackRock, Inc.",
+   "bransch": "finans",
+   "akm1Totalt": 42.1,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 2,
+    "lonsamhet": 3.33,
+    "stabilitet": 1.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 59,
+   "akm2Skillnad": 16.9,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "TRYG.CO",
+   "namn": "Tryg A/S",
+   "bransch": "finans",
+   "akm1Totalt": 38.4,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 2.33,
+    "stabilitet": 1.67,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 68,
+   "akm2Skillnad": 29.6,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "MBG.DE",
+   "namn": "Mercedes-Benz Group AG",
+   "bransch": "konsument",
+   "akm1Totalt": 34.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 4,
+    "lonsamhet": 0.67,
+    "stabilitet": 2.67,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 48,
+   "akm2Skillnad": 13.2,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "BMW.DE",
+   "namn": "Bayerische Motoren Werke Aktiengesellschaft",
+   "bransch": "konsument",
+   "akm1Totalt": 23.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 4,
+    "lonsamhet": 0.67,
+    "stabilitet": 2.33,
+    "moat": 0.33,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "korrigering",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 28,
+   "akm2Skillnad": 4.7,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "BABA",
+   "namn": "Alibaba Group Holding Limited",
+   "bransch": "konsument",
+   "akm1Totalt": 29.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3,
+    "lonsamhet": 1.33,
+    "stabilitet": 3.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 36,
+   "akm2Skillnad": 6.3,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "GRNG-B.ST",
+   "namn": "Gränges AB (publ)",
+   "bransch": "material",
+   "akm1Totalt": 31.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 4,
+    "lonsamhet": 1.33,
+    "stabilitet": 2.33,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 57,
+   "akm2Skillnad": 25.9,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "ATT.ST",
+   "namn": "Attendo AB (publ)",
+   "bransch": "halso",
+   "akm1Totalt": 42.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.33,
+    "lonsamhet": 2.67,
+    "stabilitet": 1.67,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 52,
+   "akm2Skillnad": 9.9,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "TCEHY",
+   "namn": "Tencent Holdings Limited",
+   "bransch": "teknik",
+   "akm1Totalt": 53.2,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 2.67,
+    "lonsamhet": 4,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 69,
+   "akm2Skillnad": 15.8,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "IVSO.ST",
+   "namn": "Invisio AB (publ)",
+   "bransch": "kommunikation",
+   "akm1Totalt": 43.7,
+   "akm1PerKategori": {
+    "tillvaxt": 1.67,
+    "vardering": 0.67,
+    "lonsamhet": 3.33,
+    "stabilitet": 2,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 63,
+   "akm2Skillnad": 19.3,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "CAT",
+   "namn": "Caterpillar Inc.",
+   "bransch": "industri",
+   "akm1Totalt": 36.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1,
+    "lonsamhet": 3.33,
+    "stabilitet": 2,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 60,
+   "akm2Skillnad": 23.3,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "LMT",
+   "namn": "Lockheed Martin Corporation",
+   "bransch": "industri",
+   "akm1Totalt": 34.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2,
+    "lonsamhet": 2,
+    "stabilitet": 2.33,
+    "moat": 0.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 56,
+   "akm2Skillnad": 21.8,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "RY",
+   "namn": "Royal Bank of Canada",
+   "bransch": "finans",
+   "akm1Totalt": 18.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.33,
+    "lonsamhet": 2.33,
+    "stabilitet": 1.33,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.3299,
+   "akm1MaxMojligt": 33,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 55,
+   "akm2Skillnad": 36.4,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "COP",
+   "namn": "ConocoPhillips",
+   "bransch": "energi",
+   "akm1Totalt": 43.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3,
+    "lonsamhet": 3,
+    "stabilitet": 2.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "korrigering",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 61,
+   "akm2Skillnad": 17.1,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "SLB",
+   "namn": "SLB (Schlumberger)",
+   "bransch": "energi",
+   "akm1Totalt": 38.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 2,
+    "stabilitet": 2.67,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 48,
+   "akm2Skillnad": 9.9,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "SUBC.OL",
+   "namn": "Subsea 7 S.A.",
+   "bransch": "energi",
+   "akm1Totalt": 46,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 3.67,
+    "lonsamhet": 2,
+    "stabilitet": 3,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 66,
+   "akm2Skillnad": 20,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "DNO.OL",
+   "namn": "DNO ASA",
+   "bransch": "energi",
+   "akm1Totalt": 49.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 4.33,
+    "lonsamhet": 3,
+    "stabilitet": 1,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 66,
+   "akm2Skillnad": 16.1,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "CNQ",
+   "namn": "Canadian Natural Resources Limited",
+   "bransch": "energi",
+   "akm1Totalt": 48.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 2.67,
+    "lonsamhet": 4.33,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 71,
+   "akm2Skillnad": 22.1,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "005930.KS",
+   "namn": "Samsung Electronics Co., Ltd.",
+   "bransch": "teknik",
+   "akm1Totalt": 54.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3,
+    "lonsamhet": 4.33,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 90,
+   "akm2Skillnad": 35.8,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "ENEA.ST",
+   "namn": "Enea AB (publ)",
+   "bransch": "teknik",
+   "akm1Totalt": 51.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 4.33,
+    "lonsamhet": 2.67,
+    "stabilitet": 3.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 68,
+   "akm2Skillnad": 16.7,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "NOTE.ST",
+   "namn": "NOTE AB (publ)",
+   "bransch": "teknik",
+   "akm1Totalt": 34.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3,
+    "lonsamhet": 1.33,
+    "stabilitet": 2.33,
+    "moat": 0.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 44,
+   "akm2Skillnad": 9.8,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "VIT-B.ST",
+   "namn": "Vitec Software Group AB (publ)",
+   "bransch": "teknik",
+   "akm1Totalt": 35.7,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 3,
+    "lonsamhet": 2.33,
+    "stabilitet": 2.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 53,
+   "akm2Skillnad": 17.3,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "ARM",
+   "namn": "Arm Holdings plc",
+   "bransch": "teknik",
+   "akm1Totalt": 43.3,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 0.33,
+    "lonsamhet": 3,
+    "stabilitet": 3.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 49,
+   "akm2Skillnad": 5.7,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "NTDOY",
+   "namn": "Nintendo Co., Ltd.",
+   "bransch": "kommunikation",
+   "akm1Totalt": 41.6,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 2,
+    "lonsamhet": 3,
+    "stabilitet": 1.67,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 64,
+   "akm2Skillnad": 22.4,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "O",
+   "namn": "Realty Income Corporation",
+   "bransch": "fastighet",
+   "akm1Totalt": 34,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 1.67,
+    "lonsamhet": 3,
+    "stabilitet": 2,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 43,
+   "akm2Skillnad": 9,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "EQIX",
+   "namn": "Equinix, Inc.",
+   "bransch": "fastighet",
+   "akm1Totalt": 30.7,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 0.67,
+    "lonsamhet": 3,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 42,
+   "akm2Skillnad": 11.3,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "PSA",
+   "namn": "Public Storage",
+   "bransch": "fastighet",
+   "akm1Totalt": 41.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 0.33,
+    "lonsamhet": 4,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 53,
+   "akm2Skillnad": 11.8,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "TCS.NS",
+   "namn": "Tata Consultancy Services Limited",
+   "bransch": "teknik",
+   "akm1Totalt": 48.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 3.67,
+    "stabilitet": 3.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 74,
+   "akm2Skillnad": 25.1,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "PBR",
+   "namn": "Petróleo Brasileiro S.A. - Petrobras",
+   "bransch": "energi",
+   "akm1Totalt": 57.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 4.33,
+    "lonsamhet": 4.33,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "korrigering",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 79,
+   "akm2Skillnad": 21.7,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "VALE",
+   "namn": "Vale S.A.",
+   "bransch": "material",
+   "akm1Totalt": 46.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 4,
+    "lonsamhet": 2.33,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 54,
+   "akm2Skillnad": 7.8,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "FCX",
+   "namn": "Freeport-McMoRan Inc.",
+   "bransch": "material",
+   "akm1Totalt": 43.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.67,
+    "lonsamhet": 3.33,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 61,
+   "akm2Skillnad": 17.3,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "KLAR",
+   "namn": "Klarna Group plc",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 24.5,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 1,
+    "lonsamhet": 1,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.4639,
+   "akm1MaxMojligt": 46.4,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 59,
+   "akm2Skillnad": 34.5,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "BOOZT",
+   "namn": "Boozt AB (publ)",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 35.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 1.33,
+    "stabilitet": 3,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 58,
+   "akm2Skillnad": 22.1,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "GMAB",
+   "namn": "Genmab A/S",
+   "bransch": "halso",
+   "akm1Totalt": 49.7,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 2.33,
+    "lonsamhet": 3.67,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 62,
+   "akm2Skillnad": 12.3,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "HLUN.B",
+   "namn": "H. Lundbeck A/S",
+   "bransch": "halso",
+   "akm1Totalt": 55.5,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 4,
+    "lonsamhet": 3.33,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 78,
+   "akm2Skillnad": 22.5,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "AMBU.B",
+   "namn": "Ambu A/S",
+   "bransch": "halso",
+   "akm1Totalt": 42.9,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 2.33,
+    "lonsamhet": 2,
+    "stabilitet": 3.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "impulsvag",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 55,
+   "akm2Skillnad": 12.1,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "BUD",
+   "namn": "Anheuser-Busch InBev SA/NV",
+   "bransch": "konsument",
+   "akm1Totalt": 50.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.33,
+    "lonsamhet": 3.33,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 65,
+   "akm2Skillnad": 14.3,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "NUE",
+   "namn": "Nucor Corporation",
+   "bransch": "material",
+   "akm1Totalt": 35.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3,
+    "lonsamhet": 1.67,
+    "stabilitet": 2.33,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "korrigering",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 59,
+   "akm2Skillnad": 23.7,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "SHW",
+   "namn": "The Sherwin-Williams Company",
+   "bransch": "material",
+   "akm1Totalt": 39,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.33,
+    "lonsamhet": 3.33,
+    "stabilitet": 2,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 59,
+   "akm2Skillnad": 20,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "CF",
+   "namn": "CF Industries Holdings, Inc.",
+   "bransch": "material",
+   "akm1Totalt": 48.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3,
+    "lonsamhet": 4,
+    "stabilitet": 1.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 82,
+   "akm2Skillnad": 33.8,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "MT",
+   "namn": "ArcelorMittal S.A.",
+   "bransch": "material",
+   "akm1Totalt": 28.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3.67,
+    "lonsamhet": 0.33,
+    "stabilitet": 3,
+    "moat": 0.33,
+    "katalysator": 0,
+    "risk": 2
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "korrigering",
+    "medellang": "korrigering",
+    "lang": "osatt",
+    "mega": "korrigering"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 30,
+   "akm2Skillnad": 1.1,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "FMX",
+   "namn": "Fomento Económico Mexicano S.A.B. de C.V.",
+   "bransch": "konsument",
+   "akm1Totalt": 47.2,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 3.67,
+    "lonsamhet": 2.33,
+    "stabilitet": 2.67,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 69,
+   "akm2Skillnad": 21.8,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "EMBJ",
+   "namn": "Embraer S.A.",
+   "bransch": "industri",
+   "akm1Totalt": 40.2,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 3,
+    "lonsamhet": 1.67,
+    "stabilitet": 2.33,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 46,
+   "akm2Skillnad": 5.8,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "ITUB",
+   "namn": "Itaú Unibanco Holding S.A.",
+   "bransch": "finans",
+   "akm1Totalt": 22.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2,
+    "lonsamhet": 2.67,
+    "stabilitet": 1.67,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.3299,
+   "akm1MaxMojligt": 33,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 56,
+   "akm2Skillnad": 33.7,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "ABEV",
+   "namn": "Ambev S.A.",
+   "bransch": "konsument",
+   "akm1Totalt": 54.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.33,
+    "lonsamhet": 4,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 83,
+   "akm2Skillnad": 28.4,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "STMN.SW",
+   "namn": "Straumann Holding AG",
+   "bransch": "halso",
+   "akm1Totalt": 42.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1,
+    "lonsamhet": 3.33,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 64,
+   "akm2Skillnad": 21.9,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "SOON.SW",
+   "namn": "Sonova Holding AG",
+   "bransch": "halso",
+   "akm1Totalt": 44.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.67,
+    "lonsamhet": 3.67,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 64,
+   "akm2Skillnad": 19.9,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "GALE.SW",
+   "namn": "Galenica AG",
+   "bransch": "halso",
+   "akm1Totalt": 32,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3,
+    "lonsamhet": 0.67,
+    "stabilitet": 3,
+    "moat": 0.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 48,
+   "akm2Skillnad": 16,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "ADS.DE",
+   "namn": "adidas AG",
+   "bransch": "konsument",
+   "akm1Totalt": 47.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.33,
+    "lonsamhet": 3,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 67,
+   "akm2Skillnad": 19.2,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "HEN3.DE",
+   "namn": "Henkel AG & Co. KGaA",
+   "bransch": "konsument",
+   "akm1Totalt": 48.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.67,
+    "lonsamhet": 2.67,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 66,
+   "akm2Skillnad": 17.8,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "BEI.DE",
+   "namn": "Beiersdorf AG",
+   "bransch": "konsument",
+   "akm1Totalt": 49.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.67,
+    "lonsamhet": 2.67,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 65,
+   "akm2Skillnad": 15.9,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "VOW3.DE",
+   "namn": "Volkswagen AG",
+   "bransch": "konsument",
+   "akm1Totalt": 31.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 4,
+    "lonsamhet": 0.33,
+    "stabilitet": 2.33,
+    "moat": 0.33,
+    "katalysator": 0,
+    "risk": 2
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "korrigering",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 38,
+   "akm2Skillnad": 6.9,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "8035.T",
+   "namn": "Tokyo Electron Limited",
+   "bransch": "teknik",
+   "akm1Totalt": 39.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 0.33,
+    "lonsamhet": 4,
+    "stabilitet": 2.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 54,
+   "akm2Skillnad": 14.2,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "RACE",
+   "namn": "Ferrari N.V.",
+   "bransch": "konsument",
+   "akm1Totalt": 44.9,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 0.33,
+    "lonsamhet": 4.33,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 59,
+   "akm2Skillnad": 14.1,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "9983.T",
+   "namn": "Fast Retailing Co., Ltd.",
+   "bransch": "konsument",
+   "akm1Totalt": 45.8,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 1,
+    "lonsamhet": 3.67,
+    "stabilitet": 3.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 64,
+   "akm2Skillnad": 18.2,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "GSK.L",
+   "namn": "GSK plc",
+   "bransch": "halso",
+   "akm1Totalt": 54.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3,
+    "lonsamhet": 4.33,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 87,
+   "akm2Skillnad": 32.8,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "ULVR.L",
+   "namn": "Unilever PLC",
+   "bransch": "konsument",
+   "akm1Totalt": 43.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 2,
+    "lonsamhet": 3.67,
+    "stabilitet": 2,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 67,
+   "akm2Skillnad": 23.9,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "FMG.AX",
+   "namn": "Fortescue Ltd",
+   "bransch": "material",
+   "akm1Totalt": 49.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3.67,
+    "lonsamhet": 3.33,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 75,
+   "akm2Skillnad": 25.1,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "NST.AX",
+   "namn": "Northern Star Resources Limited",
+   "bransch": "material",
+   "akm1Totalt": 48,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 2.67,
+    "lonsamhet": 3,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 62,
+   "akm2Skillnad": 14,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "S32.AX",
+   "namn": "South32 Limited",
+   "bransch": "material",
+   "akm1Totalt": 41,
+   "akm1PerKategori": {
+    "tillvaxt": 0,
+    "vardering": 3,
+    "lonsamhet": 2.67,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 55,
+   "akm2Skillnad": 14,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "8306.T",
+   "namn": "Mitsubishi UFJ Financial Group",
+   "bransch": "finans",
+   "akm1Totalt": 20.6,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 1.67,
+    "lonsamhet": 2,
+    "stabilitet": 1,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.3299,
+   "akm1MaxMojligt": 33,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 56,
+   "akm2Skillnad": 35.4,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "BNP.PA",
+   "namn": "BNP Paribas",
+   "bransch": "finans",
+   "akm1Totalt": 21.4,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 2,
+    "stabilitet": 1.67,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.3299,
+   "akm1MaxMojligt": 33,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 60,
+   "akm2Skillnad": 38.6,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "3382.T",
+   "namn": "Seven & i Holdings Co., Ltd.",
+   "bransch": "konsument",
+   "akm1Totalt": 33.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.67,
+    "lonsamhet": 0.67,
+    "stabilitet": 1.67,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 37,
+   "akm2Skillnad": 3.8,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "2914.T",
+   "namn": "Japan Tobacco Inc.",
+   "bransch": "konsument",
+   "akm1Totalt": 52.8,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 3,
+    "lonsamhet": 3.67,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 58,
+   "akm2Skillnad": 5.2,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "4452.T",
+   "namn": "Kao Corporation",
+   "bransch": "konsument",
+   "akm1Totalt": 44.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3,
+    "lonsamhet": 2.33,
+    "stabilitet": 3.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 54,
+   "akm2Skillnad": 9.9,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "HDFCBANK.NS",
+   "namn": "HDFC Bank Limited",
+   "bransch": "finans",
+   "akm1Totalt": 21,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 2,
+    "lonsamhet": 2.33,
+    "stabilitet": 0.33,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.3299,
+   "akm1MaxMojligt": 33,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 44,
+   "akm2Skillnad": 23,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "VWS.CO",
+   "namn": "Vestas Wind Systems A/S",
+   "bransch": "energi",
+   "akm1Totalt": 35.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 2,
+    "stabilitet": 2.33,
+    "moat": 0.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 57,
+   "akm2Skillnad": 21.9,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "8316.T",
+   "namn": "Sumitomo Mitsui Financial Group",
+   "bransch": "finans",
+   "akm1Totalt": 10.7,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 1.67,
+    "lonsamhet": 0,
+    "stabilitet": 0.67,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.268,
+   "akm1MaxMojligt": 26.8,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 55,
+   "akm2Skillnad": 44.3,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "CS.PA",
+   "namn": "AXA SA",
+   "bransch": "finans",
+   "akm1Totalt": 24.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 2.67,
+    "lonsamhet": 1.33,
+    "stabilitet": 1,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.4227,
+   "akm1MaxMojligt": 42.3,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 69,
+   "akm2Skillnad": 44.1,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "WMT",
+   "namn": "Walmart Inc.",
+   "bransch": "konsument",
+   "akm1Totalt": 33.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.67,
+    "lonsamhet": 1.67,
+    "stabilitet": 3,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 54,
+   "akm2Skillnad": 20.2,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "MAERSK-B.CO",
+   "namn": "A.P. Møller - Mærsk A/S",
+   "bransch": "industri",
+   "akm1Totalt": 28,
+   "akm1PerKategori": {
+    "tillvaxt": 0,
+    "vardering": 4.67,
+    "lonsamhet": 1,
+    "stabilitet": 2,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 51,
+   "akm2Skillnad": 23,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "ADYEN.AS",
+   "namn": "Adyen N.V.",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 43.1,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 1.67,
+    "lonsamhet": 4,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "korrigering",
+    "medellang": "korrigering",
+    "lang": "osatt",
+    "mega": "korrigering"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 54,
+   "akm2Skillnad": 10.9,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "SAN.PA",
+   "namn": "Sanofi",
+   "bransch": "halso",
+   "akm1Totalt": 49.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.67,
+    "lonsamhet": 2.67,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 72,
+   "akm2Skillnad": 22.9,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "BA.L",
+   "namn": "BAE Systems plc",
+   "bransch": "industri",
+   "akm1Totalt": 35.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 1.67,
+    "stabilitet": 3,
+    "moat": 0.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 45,
+   "akm2Skillnad": 9.5,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "8411.T",
+   "namn": "Mizuho Financial Group",
+   "bransch": "finans",
+   "akm1Totalt": 21.9,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 2,
+    "lonsamhet": 2.33,
+    "stabilitet": 1.33,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.3299,
+   "akm1MaxMojligt": 33,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 65,
+   "akm2Skillnad": 43.1,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "ACA.PA",
+   "namn": "Crédit Agricole S.A.",
+   "bransch": "finans",
+   "akm1Totalt": 19.4,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 1.67,
+    "stabilitet": 1.33,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.3299,
+   "akm1MaxMojligt": 33,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 40,
+   "akm2Skillnad": 20.6,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "GLE.PA",
+   "namn": "Société Générale S.A.",
+   "bransch": "finans",
+   "akm1Totalt": 21.4,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 2,
+    "stabilitet": 1.67,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.3299,
+   "akm1MaxMojligt": 33,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 56,
+   "akm2Skillnad": 34.6,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "AMUN.PA",
+   "namn": "Amundi S.A.",
+   "bransch": "finans",
+   "akm1Totalt": 45.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.67,
+    "lonsamhet": 2.67,
+    "stabilitet": 1.67,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 58,
+   "akm2Skillnad": 12.2,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "UBSG.SW",
+   "namn": "UBS Group AG",
+   "bransch": "finans",
+   "akm1Totalt": 19.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 2,
+    "stabilitet": 1.33,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.3299,
+   "akm1MaxMojligt": 33,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 53,
+   "akm2Skillnad": 33.2,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "8604.T",
+   "namn": "Nomura Holdings",
+   "bransch": "finans",
+   "akm1Totalt": 32.2,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 2.33,
+    "lonsamhet": 3.33,
+    "stabilitet": 1.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.4639,
+   "akm1MaxMojligt": 46.4,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 61,
+   "akm2Skillnad": 28.8,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "8750.T",
+   "namn": "Daiichi Life Group",
+   "bransch": "finans",
+   "akm1Totalt": 42.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 4.67,
+    "lonsamhet": 1.67,
+    "stabilitet": 1.33,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 72,
+   "akm2Skillnad": 29.1,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "CMCSA",
+   "namn": "Comcast Corporation",
+   "bransch": "kommunikation",
+   "akm1Totalt": 52.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 4.67,
+    "lonsamhet": 2.67,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 70,
+   "akm2Skillnad": 17.8,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "AMT",
+   "namn": "American Tower Corporation",
+   "bransch": "fastighet",
+   "akm1Totalt": 41.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 0.67,
+    "lonsamhet": 4.33,
+    "stabilitet": 1.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 53,
+   "akm2Skillnad": 11.4,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "CRWD",
+   "namn": "CrowdStrike Holdings, Inc.",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 34.8,
+   "akm1PerKategori": {
+    "tillvaxt": 1.67,
+    "vardering": 0,
+    "lonsamhet": 1.33,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "impulsvag",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5979,
+   "akm1MaxMojligt": 59.8,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 63,
+   "akm2Skillnad": 28.2,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "BP.L",
+   "namn": "BP p.l.c.",
+   "bransch": "energi",
+   "akm1Totalt": 40.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 4.33,
+    "lonsamhet": 1.33,
+    "stabilitet": 1.33,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "korrigering",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 58,
+   "akm2Skillnad": 17.8,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "TMUS",
+   "namn": "T-Mobile US, Inc.",
+   "bransch": "kommunikation",
+   "akm1Totalt": 46,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 3.33,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 66,
+   "akm2Skillnad": 20,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "9433.T",
+   "namn": "KDDI Corporation",
+   "bransch": "kommunikation",
+   "akm1Totalt": 44.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3,
+    "lonsamhet": 3,
+    "stabilitet": 2.67,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 67,
+   "akm2Skillnad": 22.1,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "ORA.PA",
+   "namn": "Orange S.A.",
+   "bransch": "kommunikation",
+   "akm1Totalt": 42.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3.33,
+    "lonsamhet": 2.67,
+    "stabilitet": 2.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "basbygge",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 67,
+   "akm2Skillnad": 24.9,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "SAN.MC",
+   "namn": "Banco Santander",
+   "bransch": "finans",
+   "akm1Totalt": 21,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2,
+    "lonsamhet": 2.33,
+    "stabilitet": 1.67,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.3299,
+   "akm1MaxMojligt": 33,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 55,
+   "akm2Skillnad": 34,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "HINDUNILVR.NS",
+   "namn": "Hindustan Unilever",
+   "bransch": "konsument",
+   "akm1Totalt": 37.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 0.33,
+    "lonsamhet": 2.67,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6495,
+   "akm1MaxMojligt": 64.9,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 66,
+   "akm2Skillnad": 28.1,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "OR.PA",
+   "namn": "L'Oréal",
+   "bransch": "konsument",
+   "akm1Totalt": 43.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.33,
+    "lonsamhet": 3.67,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 67,
+   "akm2Skillnad": 23.7,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "000660.KS",
+   "namn": "SK hynix",
+   "bransch": "teknik",
+   "akm1Totalt": 50.3,
+   "akm1PerKategori": {
+    "tillvaxt": 1.33,
+    "vardering": 1.67,
+    "lonsamhet": 4.33,
+    "stabilitet": 1.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 79,
+   "akm2Skillnad": 28.7,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "BCE",
+   "namn": "BCE Inc.",
+   "bransch": "kommunikation",
+   "akm1Totalt": 49.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.67,
+    "lonsamhet": 3.67,
+    "stabilitet": 2.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "basbygge",
+    "kort": "basbygge",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 64,
+   "akm2Skillnad": 14.3,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "9432.T",
+   "namn": "Nippon Telegraph and Telephone",
+   "bransch": "kommunikation",
+   "akm1Totalt": 31.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.67,
+    "lonsamhet": 2,
+    "stabilitet": 2.33,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "basbygge",
+    "medellang": "korrigering",
+    "lang": "osatt",
+    "mega": "korrigering"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 45,
+   "akm2Skillnad": 13.7,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "9434.T",
+   "namn": "SoftBank Corp",
+   "bransch": "kommunikation",
+   "akm1Totalt": 42.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3,
+    "lonsamhet": 2.67,
+    "stabilitet": 2.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "impulsvag",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 58,
+   "akm2Skillnad": 15.1,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "4751.T",
+   "namn": "CyberAgent",
+   "bransch": "kommunikation",
+   "akm1Totalt": 47.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 4,
+    "lonsamhet": 2.33,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 86,
+   "akm2Skillnad": 38.2,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "5401.T",
+   "namn": "Nippon Steel Corporation",
+   "bransch": "material",
+   "akm1Totalt": 25.4,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 4,
+    "lonsamhet": 0.33,
+    "stabilitet": 2.33,
+    "moat": 0.33,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 38,
+   "akm2Skillnad": 12.6,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "RELIANCE.NS",
+   "namn": "Reliance Industries",
+   "bransch": "energi",
+   "akm1Totalt": 40.4,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 3.33,
+    "lonsamhet": 1.33,
+    "stabilitet": 2.67,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 46,
+   "akm2Skillnad": 5.6,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "LSEG.L",
+   "namn": "London Stock Exchange Group",
+   "bransch": "finans",
+   "akm1Totalt": 42.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 3,
+    "stabilitet": 1.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 71,
+   "akm2Skillnad": 28.7,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "RMS.PA",
+   "namn": "Hermès International",
+   "bransch": "konsument",
+   "akm1Totalt": 48.9,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 1,
+    "lonsamhet": 4.33,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 75,
+   "akm2Skillnad": 26.1,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "BN.PA",
+   "namn": "Danone",
+   "bransch": "konsument",
+   "akm1Totalt": 47.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.33,
+    "lonsamhet": 3,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "impulsvag",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 68,
+   "akm2Skillnad": 20.2,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "RI.PA",
+   "namn": "Pernod Ricard",
+   "bransch": "konsument",
+   "akm1Totalt": 47.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 4,
+    "lonsamhet": 3,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "osatt",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 63,
+   "akm2Skillnad": 15.2,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "AI.PA",
+   "namn": "Air Liquide S.A.",
+   "bransch": "material",
+   "akm1Totalt": 42.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.67,
+    "lonsamhet": 3.33,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "korrigering",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 59,
+   "akm2Skillnad": 16.9,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "DSY.PA",
+   "namn": "Dassault Systèmes SE",
+   "bransch": "teknik",
+   "akm1Totalt": 47.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 3.67,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 71,
+   "akm2Skillnad": 23.8,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "CAP.PA",
+   "namn": "Capgemini SE",
+   "bransch": "teknik",
+   "akm1Totalt": 45.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 4.33,
+    "lonsamhet": 2,
+    "stabilitet": 2.33,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 73,
+   "akm2Skillnad": 27.8,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "BARC.L",
+   "namn": "Barclays plc",
+   "bransch": "finans",
+   "akm1Totalt": 21.4,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 2,
+    "stabilitet": 1.67,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.3299,
+   "akm1MaxMojligt": 33,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 53,
+   "akm2Skillnad": 31.6,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "NWG.L",
+   "namn": "NatWest Group plc",
+   "bransch": "finans",
+   "akm1Totalt": 21.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 2.33,
+    "stabilitet": 1.67,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.3299,
+   "akm1MaxMojligt": 33,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 51,
+   "akm2Skillnad": 29.1,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "LLOY.L",
+   "namn": "Lloyds Banking Group plc",
+   "bransch": "finans",
+   "akm1Totalt": 18.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 2,
+    "stabilitet": 0.67,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.3299,
+   "akm1MaxMojligt": 33,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 49,
+   "akm2Skillnad": 30.9,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "4502.T",
+   "namn": "Takeda Pharmaceutical Company Limited",
+   "bransch": "halso",
+   "akm1Totalt": 39.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.67,
+    "lonsamhet": 2.33,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "korrigering",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 59,
+   "akm2Skillnad": 19.8,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "STMPA.PA",
+   "namn": "STMicroelectronics N.V.",
+   "bransch": "teknik",
+   "akm1Totalt": 31.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 2,
+    "lonsamhet": 1.33,
+    "stabilitet": 2.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "korrigering",
+    "medellang": "korrigering",
+    "lang": "osatt",
+    "mega": "korrigering"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 41,
+   "akm2Skillnad": 9.5,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "SOP.PA",
+   "namn": "Sopra Steria Group SA",
+   "bransch": "teknik",
+   "akm1Totalt": 42.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 4.33,
+    "lonsamhet": 1.33,
+    "stabilitet": 3,
+    "moat": 0.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 69,
+   "akm2Skillnad": 26.9,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "SWP.PA",
+   "namn": "Sword Group S.E.",
+   "bransch": "teknik",
+   "akm1Totalt": 47.2,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 3.33,
+    "lonsamhet": 3,
+    "stabilitet": 2,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 78,
+   "akm2Skillnad": 30.8,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "SRT3.DE",
+   "namn": "Sartorius AG",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 34.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.67,
+    "lonsamhet": 2,
+    "stabilitet": 2,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 56,
+   "akm2Skillnad": 21.2,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "HFG.DE",
+   "namn": "HelloFresh SE",
+   "bransch": "tillvaxt",
+   "akm1Totalt": 38.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 1.67,
+    "stabilitet": 2,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6701,
+   "akm1MaxMojligt": 67,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 60,
+   "akm2Skillnad": 21.9,
+   "akm2Moduler": [
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "6301.T",
+   "namn": "Komatsu Ltd.",
+   "bransch": "industri",
+   "akm1Totalt": 45.2,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 3.67,
+    "lonsamhet": 2,
+    "stabilitet": 2.67,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 59,
+   "akm2Skillnad": 13.8,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "1605.T",
+   "namn": "INPEX Corporation",
+   "bransch": "energi",
+   "akm1Totalt": 55.3,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 4.33,
+    "lonsamhet": 3.33,
+    "stabilitet": 2,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 69,
+   "akm2Skillnad": 13.7,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "ENI.MI",
+   "namn": "Eni S.p.A.",
+   "bransch": "energi",
+   "akm1Totalt": 37.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 4,
+    "lonsamhet": 1.33,
+    "stabilitet": 1.67,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "korrigering",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 50,
+   "akm2Skillnad": 12.1,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "TRN.MI",
+   "namn": "Terna S.p.A.",
+   "bransch": "energi",
+   "akm1Totalt": 38.8,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 2.33,
+    "lonsamhet": 3.67,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 48,
+   "akm2Skillnad": 9.2,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "BHARTIARTL.NS",
+   "namn": "Bharti Airtel Limited",
+   "bransch": "kommunikation",
+   "akm1Totalt": 46.8,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 1.33,
+    "lonsamhet": 4,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 66,
+   "akm2Skillnad": 19.2,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "SUNPHARMA.NS",
+   "namn": "Sun Pharmaceutical Industries Limited",
+   "bransch": "halso",
+   "akm1Totalt": 44.5,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 1,
+    "lonsamhet": 3.33,
+    "stabilitet": 3.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 63,
+   "akm2Skillnad": 18.5,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "LT.NS",
+   "namn": "Larsen & Toubro Limited",
+   "bransch": "industri",
+   "akm1Totalt": 43.3,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 2.67,
+    "lonsamhet": 2.33,
+    "stabilitet": 2.67,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 51,
+   "akm2Skillnad": 7.7,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "4661.T",
+   "namn": "Oriental Land Co., Ltd.",
+   "bransch": "konsument",
+   "akm1Totalt": 39.4,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 1.33,
+    "lonsamhet": 3,
+    "stabilitet": 2,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 60,
+   "akm2Skillnad": 20.6,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "6752.T",
+   "namn": "Panasonic Holdings Corporation",
+   "bransch": "teknik",
+   "akm1Totalt": 39.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.33,
+    "lonsamhet": 1.33,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "korrigering",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 55,
+   "akm2Skillnad": 15.4,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "TELUS",
+   "namn": "TELUS Corporation",
+   "bransch": "kommunikation",
+   "akm1Totalt": 42.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3,
+    "lonsamhet": 2,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 59,
+   "akm2Skillnad": 16.5,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "RCI-B",
+   "namn": "Rogers Communications Inc.",
+   "bransch": "kommunikation",
+   "akm1Totalt": 49.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.67,
+    "lonsamhet": 3.33,
+    "stabilitet": 1.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 64,
+   "akm2Skillnad": 14.3,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "NTR",
+   "namn": "Nutrien Ltd.",
+   "bransch": "material",
+   "akm1Totalt": 38.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3.67,
+    "lonsamhet": 1.33,
+    "stabilitet": 2.67,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 61,
+   "akm2Skillnad": 22.2,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "CNR",
+   "namn": "Canadian National Railway Company",
+   "bransch": "industri",
+   "akm1Totalt": 46,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.33,
+    "lonsamhet": 4,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 65,
+   "akm2Skillnad": 19,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "CP",
+   "namn": "Canadian Pacific Kansas City Limited",
+   "bransch": "industri",
+   "akm1Totalt": 40.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2,
+    "lonsamhet": 3,
+    "stabilitet": 2,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 57,
+   "akm2Skillnad": 16.2,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "AEM",
+   "namn": "Agnico Eagle Mines Limited",
+   "bransch": "material",
+   "akm1Totalt": 46,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 2.33,
+    "lonsamhet": 2.67,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 66,
+   "akm2Skillnad": 20,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "ABX",
+   "namn": "Barrick Gold Corporation",
+   "bransch": "material",
+   "akm1Totalt": 52.8,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 3.67,
+    "lonsamhet": 3,
+    "stabilitet": 3.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 74,
+   "akm2Skillnad": 21.2,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "CLN.MC",
+   "namn": "Cellnex Telecom, S.A.",
+   "bransch": "kommunikation",
+   "akm1Totalt": 48.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3,
+    "lonsamhet": 3.67,
+    "stabilitet": 2,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 59,
+   "akm2Skillnad": 10.3,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "REE.MC",
+   "namn": "Redeia Corporación, S.A.",
+   "bransch": "energi",
+   "akm1Totalt": 49.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 3.67,
+    "stabilitet": 2,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 64,
+   "akm2Skillnad": 14.7,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "BT.L",
+   "namn": "BT Group plc",
+   "bransch": "kommunikation",
+   "akm1Totalt": 37.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 4,
+    "lonsamhet": 1.33,
+    "stabilitet": 2.33,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5773,
+   "akm1MaxMojligt": 57.7,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 74,
+   "akm2Skillnad": 36.7,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "MUV2.DE",
+   "namn": "Münchener Rückversicherungs-Gesellschaft AG",
+   "bransch": "finans",
+   "akm1Totalt": 35.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.67,
+    "lonsamhet": 1.33,
+    "stabilitet": 1.67,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5361,
+   "akm1MaxMojligt": 53.6,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 84,
+   "akm2Skillnad": 48.9,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "SHL.DE",
+   "namn": "Siemens Healthineers AG",
+   "bransch": "halso",
+   "akm1Totalt": 42.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 2.33,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 66,
+   "akm2Skillnad": 23.5,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "DHL.DE",
+   "namn": "Deutsche Post AG",
+   "bransch": "industri",
+   "akm1Totalt": 40.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 4,
+    "lonsamhet": 1.67,
+    "stabilitet": 2.33,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5773,
+   "akm1MaxMojligt": 57.7,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 70,
+   "akm2Skillnad": 29.8,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "4063.T",
+   "namn": "Shin-Etsu Chemical Co., Ltd.",
+   "bransch": "material",
+   "akm1Totalt": 45.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.33,
+    "lonsamhet": 2.33,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 63,
+   "akm2Skillnad": 17.4,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "4568.T",
+   "namn": "Daiichi Sankyo Company, Limited",
+   "bransch": "halso",
+   "akm1Totalt": 41.6,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 2.67,
+    "lonsamhet": 1.67,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 58,
+   "akm2Skillnad": 16.4,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "6501.T",
+   "namn": "Hitachi, Ltd.",
+   "bransch": "industri",
+   "akm1Totalt": 34.4,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3,
+    "lonsamhet": 1.33,
+    "stabilitet": 2.67,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5773,
+   "akm1MaxMojligt": 57.7,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 67,
+   "akm2Skillnad": 32.6,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "9531.T",
+   "namn": "Tokyo Gas Co., Ltd.",
+   "bransch": "energi",
+   "akm1Totalt": 34.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 4.33,
+    "lonsamhet": 0.33,
+    "stabilitet": 2.33,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5773,
+   "akm1MaxMojligt": 57.7,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 60,
+   "akm2Skillnad": 25.4,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "EOAN.DE",
+   "namn": "E.ON SE",
+   "bransch": "energi",
+   "akm1Totalt": 39.4,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 4.33,
+    "lonsamhet": 1,
+    "stabilitet": 2.67,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5773,
+   "akm1MaxMojligt": 57.7,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 63,
+   "akm2Skillnad": 23.6,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "FNT.DE",
+   "namn": "freenet AG",
+   "bransch": "kommunikation",
+   "akm1Totalt": 41,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 4,
+    "lonsamhet": 1.67,
+    "stabilitet": 2.67,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5773,
+   "akm1MaxMojligt": 57.7,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 76,
+   "akm2Skillnad": 35,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "AT1.DE",
+   "namn": "Aroundtown SA",
+   "bransch": "fastighet",
+   "akm1Totalt": 45.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3.67,
+    "lonsamhet": 3,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 53,
+   "akm2Skillnad": 7.4,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "HEI.DE",
+   "namn": "Heidelberg Materials AG",
+   "bransch": "material",
+   "akm1Totalt": 49.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.67,
+    "lonsamhet": 2.67,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 71,
+   "akm2Skillnad": 21.9,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "4503.T",
+   "namn": "Astellas Pharma Inc.",
+   "bransch": "halso",
+   "akm1Totalt": 55.9,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 3.67,
+    "lonsamhet": 3.67,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 87,
+   "akm2Skillnad": 31.1,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "DSV.CO",
+   "namn": "DSV A/S",
+   "bransch": "industri",
+   "akm1Totalt": 35.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.33,
+    "lonsamhet": 1.33,
+    "stabilitet": 1.67,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 56,
+   "akm2Skillnad": 20.3,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "RR.L",
+   "namn": "Rolls-Royce Holdings plc",
+   "bransch": "industri",
+   "akm1Totalt": 38.4,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 0.67,
+    "lonsamhet": 3.33,
+    "stabilitet": 2.33,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 62,
+   "akm2Skillnad": 23.6,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "NG.L",
+   "namn": "National Grid plc",
+   "bransch": "energi",
+   "akm1Totalt": 24.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 3,
+    "lonsamhet": 1.67,
+    "stabilitet": 2.67,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "korrigering",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.4845,
+   "akm1MaxMojligt": 48.5,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 40,
+   "akm2Skillnad": 15.3,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "DGE.L",
+   "namn": "Diageo plc",
+   "bransch": "konsument",
+   "akm1Totalt": 47,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 2.67,
+    "lonsamhet": 3.67,
+    "stabilitet": 2.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 72,
+   "akm2Skillnad": 25,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "SGE.L",
+   "namn": "The Sage Group plc",
+   "bransch": "teknik",
+   "akm1Totalt": 43.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.33,
+    "lonsamhet": 4,
+    "stabilitet": 1.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 74,
+   "akm2Skillnad": 30.5,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "SN.L",
+   "namn": "Smith & Nephew plc",
+   "bransch": "halso",
+   "akm1Totalt": 48.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.33,
+    "lonsamhet": 2.67,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 69,
+   "akm2Skillnad": 20.8,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "PSON.L",
+   "namn": "Pearson plc",
+   "bransch": "kommunikation",
+   "akm1Totalt": 43.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 2.67,
+    "lonsamhet": 2.67,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 71,
+   "akm2Skillnad": 27.5,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "ENB",
+   "namn": "Enbridge Inc.",
+   "bransch": "energi",
+   "akm1Totalt": 37.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3,
+    "lonsamhet": 2,
+    "stabilitet": 1.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 53,
+   "akm2Skillnad": 15.9,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "TD",
+   "namn": "The Toronto-Dominion Bank",
+   "bransch": "finans",
+   "akm1Totalt": 19.4,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.67,
+    "lonsamhet": 2.33,
+    "stabilitet": 1.33,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.3299,
+   "akm1MaxMojligt": 33,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 62,
+   "akm2Skillnad": 42.6,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "BBVA.MC",
+   "namn": "Banco Bilbao Vizcaya Argentaria, S.A.",
+   "bransch": "finans",
+   "akm1Totalt": 31.5,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 1.67,
+    "lonsamhet": 2.67,
+    "stabilitet": 1.33,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.4227,
+   "akm1MaxMojligt": 42.3,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 78,
+   "akm2Skillnad": 46.5,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "PUIG.MC",
+   "namn": "Puig Brands, S.A.",
+   "bransch": "konsument",
+   "akm1Totalt": 50.3,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 3.33,
+    "lonsamhet": 3,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 74,
+   "akm2Skillnad": 23.7,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "A3M.MC",
+   "namn": "Atresmedia Corporación de Medios de Comunicación, S.A.",
+   "bransch": "kommunikation",
+   "akm1Totalt": 37.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.33,
+    "lonsamhet": 1,
+    "stabilitet": 3.33,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 61,
+   "akm2Skillnad": 23.3,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "IFX.DE",
+   "namn": "Infineon Technologies AG",
+   "bransch": "teknik",
+   "akm1Totalt": 36.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 1.67,
+    "lonsamhet": 2,
+    "stabilitet": 2.67,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 55,
+   "akm2Skillnad": 18.5,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "SAF.PA",
+   "namn": "Safran S.A.",
+   "bransch": "industri",
+   "akm1Totalt": 42.3,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 1,
+    "lonsamhet": 3.33,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 71,
+   "akm2Skillnad": 28.7,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "EL.PA",
+   "namn": "EssilorLuxottica S.A.",
+   "bransch": "halso",
+   "akm1Totalt": 42.5,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 2.33,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 66,
+   "akm2Skillnad": 23.5,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "ENGI.PA",
+   "namn": "Engie S.A.",
+   "bransch": "energi",
+   "akm1Totalt": 43.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 4,
+    "lonsamhet": 2.33,
+    "stabilitet": 2.67,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 47,
+   "akm2Skillnad": 3.1,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "SGO.PA",
+   "namn": "Compagnie de Saint-Gobain S.A.",
+   "bransch": "material",
+   "akm1Totalt": 43.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 4.33,
+    "lonsamhet": 1.67,
+    "stabilitet": 3,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 68,
+   "akm2Skillnad": 24.1,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "LI.PA",
+   "namn": "Klépierre S.A.",
+   "bransch": "fastighet",
+   "akm1Totalt": 48.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 3.67,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 57,
+   "akm2Skillnad": 8.1,
+   "akm2Moduler": [
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "PUB.PA",
+   "namn": "Publicis Groupe S.A.",
+   "bransch": "kommunikation",
+   "akm1Totalt": 46.8,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.33,
+    "lonsamhet": 2.67,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 77,
+   "akm2Skillnad": 30.2,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "INFY.NS",
+   "namn": "Infosys Limited",
+   "bransch": "teknik",
+   "akm1Totalt": 50.9,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 3,
+    "lonsamhet": 3.33,
+    "stabilitet": 3.33,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 80,
+   "akm2Skillnad": 29.1,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "ICICIBANK.NS",
+   "namn": "ICICI Bank Limited",
+   "bransch": "finans",
+   "akm1Totalt": 21,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 1.67,
+    "lonsamhet": 2.33,
+    "stabilitet": 1.33,
+    "moat": 0,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "osatt",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.3299,
+   "akm1MaxMojligt": 33,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 36,
+   "akm2Skillnad": 15,
+   "akm2Moduler": [
+    "Bank — V21/V28 inaktiva (ROIC/EV meningslöst när låneverksamheten är rörelsen), V05/V10 tonas upp"
+   ]
+  },
+  {
+   "ticker": "ITC.NS",
+   "namn": "ITC Limited",
+   "bransch": "konsument",
+   "akm1Totalt": 47,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 3,
+    "stabilitet": 3,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6495,
+   "akm1MaxMojligt": 64.9,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 74,
+   "akm2Skillnad": 27,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "ONGC.NS",
+   "namn": "Oil and Natural Gas Corporation Limited",
+   "bransch": "energi",
+   "akm1Totalt": 46.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 4.67,
+    "lonsamhet": 1.67,
+    "stabilitet": 2.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "basbygge",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6495,
+   "akm1MaxMojligt": 64.9,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 71,
+   "akm2Skillnad": 24.8,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+   ]
+  },
+  {
+   "ticker": "APOLLOHOSP.NS",
+   "namn": "Apollo Hospitals Enterprise Limited",
+   "bransch": "halso",
+   "akm1Totalt": 39,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 1,
+    "lonsamhet": 2.67,
+    "stabilitet": 2.67,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 57,
+   "akm2Skillnad": 18,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "HAL.NS",
+   "namn": "Hindustan Aeronautics Limited",
+   "bransch": "industri",
+   "akm1Totalt": 43.3,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 0.67,
+    "lonsamhet": 3.67,
+    "stabilitet": 3.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "korrigering",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 62,
+   "akm2Skillnad": 18.7,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "NEE",
+   "namn": "NextEra Energy, Inc.",
+   "bransch": "nyttovalt",
+   "akm1Totalt": 32,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 1.67,
+    "lonsamhet": 3.33,
+    "stabilitet": 1.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 33,
+   "akm2Skillnad": 1,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "DUK",
+   "namn": "Duke Energy Corporation",
+   "bransch": "nyttovalt",
+   "akm1Totalt": 34.4,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 3.33,
+    "stabilitet": 2,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 35,
+   "akm2Skillnad": 0.6,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "SO",
+   "namn": "The Southern Company",
+   "bransch": "nyttovalt",
+   "akm1Totalt": 30.1,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 3,
+    "stabilitet": 1.67,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "basbygge",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 32,
+   "akm2Skillnad": 1.9,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "AEP",
+   "namn": "American Electric Power Company, Inc.",
+   "bransch": "nyttovalt",
+   "akm1Totalt": 29.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 2.67,
+    "stabilitet": 2,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "basbygge",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "rod",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 34,
+   "akm2Skillnad": 4.3,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "EXC",
+   "namn": "Exelon Corporation",
+   "bransch": "nyttovalt",
+   "akm1Totalt": 34.4,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3.33,
+    "lonsamhet": 2.67,
+    "stabilitet": 2.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.6186,
+   "akm1MaxMojligt": 61.9,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 32,
+   "akm2Skillnad": -2.4,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "VIE.PA",
+   "namn": "Veolia Environnement S.A.",
+   "bransch": "industri",
+   "akm1Totalt": 40,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 4,
+    "lonsamhet": 1.67,
+    "stabilitet": 1.33,
+    "moat": 0.67,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "impulsvag",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 33,
+   "akm2Skillnad": -7,
+   "akm2Moduler": [
+    "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)"
+   ]
+  },
+  {
+   "ticker": "BIDU",
+   "namn": "Baidu, Inc.",
+   "bransch": "teknik",
+   "akm1Totalt": 29.9,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.33,
+    "lonsamhet": 1.67,
+    "stabilitet": 3,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 0
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.5773,
+   "akm1MaxMojligt": 57.7,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 36,
+   "akm2Skillnad": 6.1,
+   "akm2Moduler": [
+    "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+   ]
+  },
+  {
+   "ticker": "NTES",
+   "namn": "NetEase, Inc.",
+   "bransch": "konsument",
+   "akm1Totalt": 54.6,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 3,
+    "lonsamhet": 4,
+    "stabilitet": 3.33,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "impulsvag",
+    "medellang": "impulsvag",
+    "lang": "osatt",
+    "mega": "impulsvag"
+   },
+   "fvagDynamik": "forbattras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gron",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 85,
+   "akm2Skillnad": 30.4,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "ELE.MC",
+   "namn": "Endesa, S.A.",
+   "bransch": "nyttovalt",
+   "akm1Totalt": 44.7,
+   "akm1PerKategori": {
+    "tillvaxt": 0.67,
+    "vardering": 2.67,
+    "lonsamhet": 3.67,
+    "stabilitet": 1.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "impulsvag",
+    "kort": "osatt",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 60,
+   "akm2Skillnad": 15.3,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "ENG.MC",
+   "namn": "Enagás, S.A.",
+   "bransch": "nyttovalt",
+   "akm1Totalt": 45.2,
+   "akm1PerKategori": {
+    "tillvaxt": 0.33,
+    "vardering": 2.67,
+    "lonsamhet": 3.33,
+    "stabilitet": 2.67,
+    "moat": 1.33,
+    "katalysator": 0,
+    "risk": 2.5
+   },
+   "fvagPerHorisont": {
+    "mikro": "osatt",
+    "kort": "basbygge",
+    "medellang": "osatt",
+    "lang": "osatt",
+    "mega": "osatt"
+   },
+   "fvagDynamik": "forsvamras",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 47,
+   "akm2Skillnad": 1.8,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
+  },
+  {
+   "ticker": "VER.VI",
+   "namn": "VERBUND AG",
+   "bransch": "nyttovalt",
+   "akm1Totalt": 40.6,
+   "akm1PerKategori": {
+    "tillvaxt": 1,
+    "vardering": 2.67,
+    "lonsamhet": 3,
+    "stabilitet": 1.33,
+    "moat": 1,
+    "katalysator": 0,
+    "risk": 2
+   },
+   "fvagPerHorisont": {
+    "mikro": "korrigering",
+    "kort": "korrigering",
+    "medellang": "basbygge",
+    "lang": "osatt",
+    "mega": "basbygge"
+   },
+   "fvagDynamik": "stabilt",
+   "golvMarginal": null,
+   "portV19": false,
+   "datatackning": 0.7113,
+   "akm1MaxMojligt": 71.1,
+   "status": "gul",
+   "senastKontrollerad": "2026-09-03",
+   "akm2": 45,
+   "akm2Skillnad": 4.4,
+   "akm2Moduler": [
+    "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+   ]
   }
  ],
  "akm2Berikad": "2026-09-04",

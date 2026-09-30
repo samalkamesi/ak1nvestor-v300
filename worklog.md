@@ -19662,3 +19662,62 @@ NÄSTA I KÖN: (a) o571-efterdyning vid nästa 04:17-cron — förväntan
 BLOCKERAD-vila för amazon.com, DOD-larm tysta; (b) BRANDING-spåret (kvar
 från r348); (c) vakttornet-återskapandet (ägarrond, r348 (5)).
 
+## ROND 350 [organ:Φ] (2026-09-30 19:1x–20:0xZ) — ROTSTÄD + VAKTTORNET ÅTERSKAPAT UR EGENA SPÅR — zombiens MODULE_NOT_FOUND-dagar räknade
+
+**(1) ROTSTÄDEN (r350-commit 4d957b79):** 6 döda engångsverktyg städade ur
+verktyg/ (_r312-sond4/5, _r335-soft404sond, _r336-isr-sond, _r337-moln-sond,
+_s5u3o31-synk — referenskontroll: inga cron-/manifest-/verktygsrop; deras
+leveranser bokförda i worklog sedan tidigare) + r350:s egna tmp-sonder.
+Trädet COMMITTAT igen (smutsig yta larmar i prod-synken).
+
+**(2) KÖN GENOMGÅNG:** BRANDING-spåret konstateras AVSLUTAT så långt det får
+autonomt: v191-genomgången → v194 (redirects /pris+/kontakt i next.config,
+verifierad i trädet) → v195 (H1-lyft, STÄNGD på live-bevis 06:01-bygget) →
+v201 (CTA ×3 språk) → v160 (auditens hela P1-P3-lista + baselinjemål ✓;
+medvetna undantag dokumenterade i BRANDING-AUDIT §5). Kvarvarande = R2-paketet
+(garanti-/Fas 3-text på /medlemskap) som VÄNTAR KUND — presenteras vid
+kundkontakt, ALDRIG autonomt. o571-efterdyningen kan först verifieras vid
+imorgon 04:17-cron (nattens gick före kuren; kaninens domänvila bevisad:
+amazon t.o.m. 2026-10-07 05:32Z, adlibris/bokus t.o.m. 10-06).
+
+**(3) VAKTTORNET ÅTERSKAPAT (ägarronden, JÄRN-U3 §8 + r348 (5)):** originalet
+(r332) var untracked och raderades 21:55:42 medan cron-raden levde som zombie.
+Rekonstruktion ur FEM beviskällor (ingen gissning): originalets EGENA sista
+rapport vakttornet.json 21:55:18.407Z bär EXAKT 15 kontroller = A–O med namn+
+detaljformat; cron-loggen ger stdout-formatet "VAKTTORNET: OK (15/15
+kontroller OK)"; larm-loggen ger journalformatet "<iso> ALARM <namn,…>";
+desk-larm.json visar prefixlösa felpar; JÄRN-U3 §2 ger grönskrivnings-ägarskapet
+(vakttornet skriver larm.json GRÖN; paraplyet återinför pågående fynd var
+10:e — ingen kvävning). Trösklar originalet inte bevisar är dokumenterat
+generöst valda (JÄRN-U3 §3:s trötthetsprincip): fabriks-puls 24 h · disk 10 % ·
+ram 1 500 MB · dump 48 h · login-backup larm 72 h (varningstext > 12 h =
+originalets klass) · cert 14 dagar. Protokoll:
+data/forskning/VAKTTORNET-ATERSKAPANDE-r350.md.
+
+**(4) TRE VERIFIERINGSRUNDOR I AGENT-TRÄDET** (4/15 → 12/15 → 13/15, varje
+kur protokollförd): (a) top-level-exit dödade async-kontroller → await före
+exit; (b) pm2-kontrollnamn vs processnamn separerade ("pm2-ak1a" ↔ "ak1a") +
+async-kontroller (HTTP ×5+cert) await:as FÖRE synkrona subprocesser — annars
+blockerar execFileSync event-loopen och äkta 200-svar blir falska timeoutar
+(bevisat); (c) desk-halsa-kontraktet = RESULTAT-RADENS närvaro, inte exit-
+koden (den skriver "RESULTAT: 7/8 PASS" och avslutar ändå exit 1 vid del-FAIL).
+Kvarvarande 2 fel är trädspecifika (fabriks-puls 3 153 min + dump-ENOENT —
+katalogerna lever i prod-trädet där cron kör).
+
+**(5) PUSH-KÖ:** prod-trädet hölls av agentfabrikens PÅGÅENDE Spår 11-omgång
+(3 byggare aktiv 27 min, filer 0–4 min gamla vid sond — Deskvåg bygger om
+desk-halsa.mjs; deras yta respekterad, push avvaktar rent fönster, r335-
+mönstret). Vakttornets prod-debut sker av CRON vid nästa femminutvarv efter
+push; stängningsbevis: cron-logg utan MODULE_NOT_FOUND + färsk puls +
+paraplyvakt GRÖN inom 10 min + larm.json grönskriven om tornet står GRÖNT.
+
+**KVD:** tsc-grinden grön vid commit · src orörd (verktyg+data+worklog) ·
+R2 orörd · prod 200 + vakten GRÖN vid rondstart · skal-kvoten följd (node-
+wrappers vid varje häng; effekten verifierad, aldrig omkörd).
+
+LEVERANS: 4d957b79 (rotstäd) + denna ronds vakttorn-commit — push till prod
+när fabriksomgången frigör trädet.
+
+NÄSTA I KÖN: (a) push + cron-debutbevis för vakttornet; (b) o571-efterdyning
+vid 04:17-cron; (c) paraplyfyndens tystnad efter vakttornets GRÖNA varv.
+

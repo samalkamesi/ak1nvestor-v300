@@ -20136,3 +20136,17 @@ tsc (baslinje 0) · src orörd = INGET bygge · R2 orörd.
 
 NÄSTA I KÖN: v217 cache-headers (read-only sond, krockar inte med
 fabrikens filägarskap) → därefter push-försök när fabriken tystnar.
+
+**v217 LEVERERAD (23:27Z, samma rond):** cache-header-sonden
+(verktyg/_v217-cache-sond.mjs, read-only) mätte /_next/static-chunks +
+css + media på 4 nyckelsidor (/, /kurser, /blogg, /dataset — alla
+HTTP 200): DOM **GRÖN** — 24 mätta resurser (12 unika; 3 woff2-media,
+2 css, js-chunks) bär ALLA Cache-Control max-age=31536000 + immutable
++ ETag + Last-Modified; 0 korta max-age, 0 saknade Cache-Control,
+0 utan ETag. INGEN kur behövs — Next.js standardställning lever
+oskadd genom bygggenerationerna (mätvärde bokfört:
+data/vakten/cache-headers-v217.json). Notis: alla fyra sidor refererar
+identiska chunks (delade layouts) — urtalet 6/sida täcker samtliga
+resursklasser. Spår 7-rotationen avslutad med nollfynd — v218
+(gap-forskning, ombokad ur nummerkrocken med kundordern ZCODE 100x)
+är nästa.

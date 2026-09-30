@@ -19934,3 +19934,46 @@ Fabriksagent s2-u2 (byggare). VAL med TVÅ PIVOTS öppet dokumenterade (anspråk
 ## SPÅR 3 s3-u3 (manifest auto-s3-1790803529407, byggare 3/3) — 2026-09-30: AR31 gruvaktier-ar — första -ar-spegeln av de fem nya originalen [fabrik]
 
 Fabriksagent s3-u3 (byggare 3/3). VAL med klaim disk-först (data/vakten/s3-b29-ar-gruv-ansprak-2026-09-30.md skriven 21:29:01Z FÖRE arbetet): spårets dokumenterade luckordning "-en i B-ordning, därefter -ar" (B24-noten) gav vid inventering två -en-luckor (B32 stål-en, B33 betalning-en) + tre -ar-luckor (B29 gruv, B30 rederi, B31 kemi); Ö17/Ö20/AR2/AR5/AR10-precedensen ⇒ TREDJE lediga objektet = gruv-ar, stål-en/betalning-en lämnades åt syskonens u1/u2-presumtiva slotar (0 klaimfiler från manifestet på disk vid klaim, utdata-loggarna tomma). LEVERANS: AR31 — data/blogg-utkast/gruvaktier-sa-analyserar-du-gruvbolag-ar.json, arabisk spegling av B29 gruvaktier (1 393 ord mot originalets 1 397 — originalets täthet; Ö29 gruv-en läst som termreferens, AR30 som arabisk strukturreferens). Samma tal, formler och korslänkar som originalet: malmhaltsaritmetiken 1.0 % ⇒ 100 ton × 40 $ = 4,000 $ mot 2.0 % ⇒ 50 × 40 = 2,000 $, C1-trappan 4.00 − 1.60/2.80 → marginalerna 2.40/1.20 med hävstångarna 1.67/3.33 och ±10 %-fallen +16.7/+33.3 %, de fem råvarucyklerna (Vale 60.0→35.0 med netto −47.6 %/år, FMG 56.0→40.1 med utdelningarna 6,699→2,529 = −62 %, FCX 42.6→37.1, NST 14.3→37.8 = +23.4 enheter, South32 −173/−203 på nedskrivningar 1,300/604 → vändning 1,087, Boliden 86,437→93,509 = +8.2 % med resultatet 12,410→9,404 = −24.2 %), utbudscykeln 2.00→4.00 = +100 % på sex år mot +8 % produktion → −45 % till 2.20, guldkrediten 0.5 g × 65 $ = 33 av 139 $/ton, reserverna 6.0/0.2 = 30 år, minoritetspedagogiken 12.1/32.2 = 38 %, värderingen P/E 30.72/8.71 forward + 12.43 med FCF-yield 10.3 %. KVD GRÖN 0 FEL/0 VARN, ×2 körningar deterministiskt (verktyg/_s3u3-b29-ar-kvd-gruv.mjs, mallad på u1:s _s3u1-b29-en-kvd-gruv.mjs med AR-klassens språkregler): varumärkesgrind 26 regexer × 3 ytor = 0 · rådverb SV+EN+AR 0 (AR-mönstren اشترِ/بِع/استثمر في هذا/أنصحك/نوصي بشراء) · sökord "أسهم التعدين" i title 37/60 (först) + description 136/155 + H1 + ingress + 2 H2 · ord 1 393/1 200–1 400 efter en trimomgång 1 432→1 393 (trogen komprimering av konnektiva fraser — inga tal/länkar/struktur rörda) · korslänkar 15/15 MULTISET-identiska med B29 mot publicerade ytor (0 mot utkast) · externa URL:er 5/5 identiska + slutstatus 200 live (boliden.com + fcx.com + fortescue.com + stockanalysis.com/stocks/vale + sgu.se/bergsstaten) · aritmetik 28/28 motorräknad · TALPARITET 101/101 multiset-identiska språkmedveten (SV mellanslagstusental/decimalkomma == AR tusentelskomma/punkt; C1+AK1A termartefakter strippade symmetriskt enligt Ö29-precedensen) · H2 8 = originalets · H1 1 · readingMinutes 2 = round(1 393/600) · svenska läckor 0 (egennamnet Bergsstaten + AK1A/South32 vitlistade enligt AR6/AR29-konventionen) · disclaimer arabisk exakt sista rad · publishedAt = leveransdagen 2026-09-30 (AR24–AR30-konventionen) · slug = originalets + -ar. Ren dataleverans: src orörd (inget bygge), data/blogg/ (live-mappen) orörd, R2 orörd, syskonytor orörda (diff på SEO-GUIDER-2026-09.md exakt +1 rad = AR31-raden). Kvar i spåret efter denna: rederi-ar + kemi-ar (B30/B31) samt stål-ar + betalning-ar (B32/B33) när -en-speglarna landat. [fabrik]
+
+
+## ROND 354 [organ:Φ] (2026-09-30 21:44–22:0xZ) — R353-PUSHEN LÄST UR ETT LEVANDE PROD: dubbellås diagnostiserat + löst (MIGRERING-restore + fetch-first-loop); -en-OMGÅNGEN KOMPLETT via fabrikens s3-u1/s3-u2
+
+**LARMET:** r353:s commit-skript landade commit+merge grönt (602aedf7)
+men pushen till prod AVSLOGS: "Working directory has unstaged changes"
+(updateInstead-läget vägrar uppdatera grenen mot ett smutsigt träd).
+
+**ROT 1 — saneringen fanns i TVA EXEMPLAR:** r353-kuren sanerade
+MIGRERING-NY-DATOR.md direkt på disk i prod-trädet UTAN att återställa
+motsvarande git-vy där — pushen bar samma filinnehåll men kollisionen
+working-copy-mot-HEAD väckte låset. KUR: rå-byte-jämförelse (sha256 av
+git show HEAD:fil MOT disk — första jämförelsen falskt NEGATIV av en
+trimning i hash-skriptet; raddiff 159/159 = 0 skillnader avslöjade felet)
+⇒ git restore i prod VID IDENTITET — villkoret mekaniskt, ingen manuell
+"den ser likadan ut".
+
+**ROT 2 — prod är LEVANDE:** efter restore kvarstod avslag, men feltexten
+byt till "fetch first" — fabriksbarnen (s3-u1 stål-en B32, s3-u2
+betalning-en B33) committade i prod under diagnostikfönstret. KUR:
+fetch+merge+push-loop (2 försök) ⇒ PUSH OK, prod-HEAD 356c802f.
+Notera: 5 115 untracked .bygg-kopia-filer + 8 underliga
+citations-tecknade namn i .bygg-kopia — DEPLOY-KOPIAN ÄR EJ GITIGNORERAD;
+oskyldig för pushen (0 kollisioner mot agent-HEAD) men saneringskandidat
+(framtida rond: .gitignore-regel .bygg-kopia/ + namnundersökning).
+
+**BEVIS:** push OK · prod-HEAD 356c802f med r353 + B32 + B33 · MIGRERING
+identisk disk/HEAD (ad6a7c5d…) · 0 untracked-kollisioner (ls-tree-korsning
+5 341 HEAD × 5 124 untracked) · prod 200 (agent-status Grönt läge).
+
+**MILENSTOLPE:notera** — -en-OMGÅNGEN KOMPLETT: samtliga 35 original har
+nu engelska speglar (B32 stål-en + B33 betalning-en landade i detta
+fönster; fabrikens s3-spår återstår med -ar-speglar: rederi/kemi/stål/
+betalning).
+
+**KVD:** ren git-operation + worklog; src orörd = INGET bygge; R2 orörd;
+sondverktygen (_r354-*) städade efter bruk; tsc-grind körd vid commit.
+
+NÄSTA I KÖN: (a) R2-paketet växer: nyckelrotation + garanti-/Fas 3-text
+presenteras för kunden (VÄNTAR KUND — verkställs aldrig autonomt);
+(b) o571-04:17-efterdyning; (c) .gitignore-regel för .bygg-kopia/ +
+citationsnamn-undersökning (r354-fyndet); (d) analysfabriksutvidgningen
+(kuraterat steg — 22 lever idag).

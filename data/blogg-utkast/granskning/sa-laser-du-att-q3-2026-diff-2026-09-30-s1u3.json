@@ -1,0 +1,64 @@
+{
+  "objekt": "sa-laser-du-att-q3-2026",
+  "bolag": "AT&T Inc. (T)",
+  "granskad": "2026-09-30",
+  "granskare": "s1-u3 (manifest auto-s1-1790796926223)",
+  "byggare": "s4-u2, commit fe37b0b8 2026-09-17 16:50",
+  "utkastMd5": "bb8802415ed2b92f6a89f303db640b24",
+  "dom": "GRÖN GRUND → FLYTTKLAR EFTER RÄTTNINGAR F1–F3",
+  "sond": "verktyg/_s1u3-att-q3-kontroll.mjs (utkast 140 OK · 0 FEL · 5 NOT; paket 157 OK · 0 FEL · 4 NOT)",
+  "fynd": [
+    {
+      "id": "F1",
+      "allvarlighet": "VÄSENTLIGT (aritmetikfel)",
+      "plats": "Scenariorutan, nedersta intäktsraden",
+      "fran": "| Intäkter 121 978 | 27 799 | 30 238 | 32 678 |",
+      "till": "| Intäkter 121 879 | 27 776 | 30 214 | 32 651 |",
+      "belagg": "125 648 × 0,97 = 121 878,56 MUSD — v1:s 121 978 är en transposition (87↔97); cellerna 121 878,56 × 0,2279/0,2479/0,2679 = 27 776,2/30 213,7/32 651,3 (v1-cellerna var internt konsistenta med felbasen)"
+    },
+    {
+      "id": "F2",
+      "allvarlighet": "räknekonsistens (2 ställen)",
+      "plats": "Urvalssektionen + Kalender och omgivning",
+      "fran": "Rappveckan 20–23 oktober innehåller med AT&T nitton av seriens läspaket. … arton av seriens läspaket i rappfönstret 20–23 oktober, med AT&T som det nittonde",
+      "till": "Rappveckan 20–23 oktober innehåller med AT&T tjugo av seriens läspaket. … nitton av seriens läspaket i rappfönstret 20–23 oktober, med AT&T som det tjugonde",
+      "belagg": "veckolistan uppräknar 19 namn (ABB/Tele2 20/10; SKF/Handelsbanken/Telia/Iberdrola 21/10; Essity/Swedbank/Sandvik/Atlas Copco/Castellum/Holmen/Yara/Nokia 22/10; Volvo Car/Volvo Group/Saab/SCA/Norsk Hydro 23/10) och samtliga 19 har utkast i serien (nokia-paketet på disk sedan 09-18, före publiceringstillfället 19/10) ⇒ 19 + AT&T = 20; Nokias kalenderdag 22/10 är källsann och namnet står kvar"
+    },
+    {
+      "id": "F3",
+      "allvarlighet": "formulering",
+      "plats": "Datavakten: FCF-kontrollen",
+      "fran": "håller inom en procent relativt",
+      "till": "håller cirka en procent relativt",
+      "belagg": "10 244 ÷ 177 819 = 5,7635 % mot fältets 5,70 = +1,07 % relativt (0,06 procentenheter) — strikt över en procent"
+    }
+  ],
+  "noterUtanKur": [
+    "bruttomedianen 49,64 = halv-upp på exakt 49,635 (159-vintagen) — grönt med seriens avrundningskonvention",
+    "title 314 tkn = exakt wihlborgs-taket (grönt, gränsvärt)",
+    "description 625 tkn — seriepraxis 328–654; OG-taket 155 gäller inte JSON-fältet",
+    "publishedAt 2026-10-19 = två dagar före rappdagen — seriepraxis (telia 10-19 mot 21/10, abb 10-16 mot 20/10)",
+    "TTM-omsättningen 128 538 MUSD = 125 648 × (1 + 2,3 %-fältet) — härledning reproducerbar ur källradens tal",
+    "vidarebefordras: nokia-syskonets publishedAt 10-20 mot kalenderns 22/10 (eget kontrollobjekt)"
+  ],
+  "kallor": {
+    "byggvintage": "bolagsunivers.json @ fe37b0b8 (159 poster; T/VZ fältnivå oförändrad i dagens 322-posters träd)",
+    "kalender": "kvartal/2026-q3/kalender-kommunikation.json (2026-09-15)",
+    "vagvalidering": "data/rapporter/vagvalidering-SENASTE.json (2026-09-04, 12 tickrar, T utanför)"
+  },
+  "juridik": {
+    "lagrumsfamiljer": ["2007:528"],
+    "radglossor": "0 träffar × 3 ytor",
+    "negeradeRadformer": 2,
+    "disclaimerSist": true,
+    "referenser911": 0
+  },
+  "leveransfiler": [
+    "granskning/sa-laser-du-att-q3-2026-KONTROLL-2026-09-30-s1u3.md",
+    "granskning/sa-laser-du-att-q3-2026-diff-2026-09-30-s1u3.json",
+    "granskning/sa-laser-du-att-q3-2026-FLYTTKLART-PAKET-2026-09-30-s1u3.json",
+    "verktyg/_s1u3-att-q3-kontroll.mjs",
+    "verktyg/_s1u3-att-q3-paket.mjs"
+  ],
+  "publicering": "kundens beslut (R2)"
+}

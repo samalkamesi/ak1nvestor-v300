@@ -1,0 +1,91 @@
+{
+  "objekt": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-var-energi-q3-2026.json",
+  "granskare": "s1-u2 manifest auto-s1-1790796926223",
+  "datum": "2026-09-30",
+  "byggvintage": "75d04140 (177-postfilen 2026-09-18 09:52 — textens egna deklarerade källa)",
+  "utkastMd5Fore": "7f7c6e573ca68f357e7235a40d45eb26",
+  "dom": "GRÖN EFTER DIFF — FLYTTKLAR med villkor (publicering = kundens beslut, R2)",
+  "satser": [
+    {
+      "id": "D1a",
+      "klass": "B1-tvingande",
+      "yta": "body — Nyckeltalen/Värdering P/E-rad",
+      "motiv": "Energigrenens P/E-median i 177-filen är 16,5325 (n=18) — 16,05 oreproducerbar i alla kandidatvintager (171/174/177 ger alla 16,53; exkl. VAR 17,02). Följdyta: med 16,53 är P/E 38,4 % under medianen.",
+      "from": "37 procent under branschmedianen 16,05 (n=18)",
+      "to": "38 procent under branschmedianen 16,53 (n=18)"
+    },
+    {
+      "id": "D1b",
+      "klass": "B1-tvingande",
+      "yta": "body — tabellen 'Så står sig bolaget mot branschen'",
+      "motiv": "Samma medianvärde, andra ytan.",
+      "from": "| P/E | 10,18 | 16,05 (n=18) | 21,15 (n=167) |",
+      "to": "| P/E | 10,18 | 16,53 (n=18) | 21,15 (n=167) |"
+    },
+    {
+      "id": "D2",
+      "klass": "B2-tvingande",
+      "yta": "body — Nyckeltalen/Värdering EV/EBIT-rad",
+      "motiv": "Universum-EV/EBIT-medianen i 177-filen är 18,22 (n=168); textens 18,17 är 171/174-vintagernas värde. '12 procent över' förblir korrekt (11,8 %).",
+      "from": "12 procent över universumets 18,17 (n=168)",
+      "to": "12 procent över universumets 18,22 (n=168)"
+    },
+    {
+      "id": "D3a",
+      "klass": "B2-tvingande",
+      "yta": "body — Nyckeltalen/Lönsamhet EBIT-rad",
+      "motiv": "Universum-EBIT-medianen i 177-filen är 21,165 → 21,17 (n=176); 21,11 är 174-vintagens exakta värde. Följdyta: 59,41/21,165 = 180,7 % över → '181 procent'.",
+      "from": "182 procent över universumets 21,11 (n=176)",
+      "to": "181 procent över universumets 21,17 (n=176)"
+    },
+    {
+      "id": "D3b",
+      "klass": "B2-tvingande",
+      "yta": "body — tabellen 'Så står sig bolaget mot branschen'",
+      "motiv": "Samma medianvärde, andra ytan.",
+      "from": "| Rörelsemarginal (EBIT) | 59,41 % | 18,22 % | 21,11 % (n=176) |",
+      "to": "| Rörelsemarginal (EBIT) | 59,41 % | 18,22 % | 21,17 % (n=176) |"
+    },
+    {
+      "id": "D4",
+      "klass": "B2-tvingande",
+      "yta": "body — Nyckeltalen/Värdering FCF-yield-rad",
+      "motiv": "Universum-FCF-yield-medianen i 177-filen är 0,03835 → 3,84 %; textens 3,80 matchar ingen vintage.",
+      "from": "i nivå med universumets 3,80",
+      "to": "i nivå med universumets 3,84"
+    },
+    {
+      "id": "D5a",
+      "klass": "C-tvingande",
+      "yta": "body — Nyckeltalen/Stabilitet skuld-rad",
+      "motiv": "Universum-skuldmedianen i 177-filen är 0,515 → 0,52 (avrundning, ej trunkering).",
+      "from": "och universumets 0,51 (n=162), grenens högsta värde",
+      "to": "och universumets 0,52 (n=162), grenens högsta värde"
+    },
+    {
+      "id": "D5b",
+      "klass": "C-tvingande",
+      "yta": "body — tabellen 'Så står sig bolaget mot branschen'",
+      "motiv": "Samma medianvärde, andra ytan.",
+      "from": "| Skulder per eget kapital | 3,08 | 0,50 | 0,51 (n=162) |",
+      "to": "| Skulder per eget kapital | 3,08 | 0,50 | 0,52 (n=162) |"
+    },
+    {
+      "id": "D6",
+      "klass": "B3-tvingande",
+      "yta": "title",
+      "motiv": "Titeln 334 tkn överskrider taket 314 (syskonmax Kinnevik 313; getinge/fabege-precedensen). V-svansen lever kvar i description och ingress — stryks ur titeln → 268 tkn.",
+      "from": "före netto, och resultatformen som ett V: 936 → 610 → 312 → 785 miljoner dollar",
+      "to": "före netto"
+    },
+    {
+      "id": "D7",
+      "klass": "C-valfri",
+      "yta": "body — Urvalet, Kinnevik-gallran",
+      "motiv": "Kinneviks omsättningsserie är 0/936/23/0 Mkr = två exakta nollor + ett år på 23 Mkr; 'nollor tre av fyra år' tekniskt oprecis.",
+      "from": "en omsättningsserie med nollor tre av fyra år",
+      "to": "en omsättningsserie med noll eller nästan noll tre av fyra år"
+    }
+  ],
+  "unikhetsverifikation": "Alla from-strängar maskinellt unika i utkastet (1 träff vardera) — verifierad 2026-09-30 före paketgenerering."
+}

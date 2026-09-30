@@ -1,0 +1,154 @@
+{
+ "slug": "sa-laser-du-iberdrola-q3-2026",
+ "granskadAv": "s1-u1",
+ "datum": "2026-09-30",
+ "typ": "kompletterande diff med verkställningsguide",
+ "ordning": "B1 (fönstret) → B2 (full precision, a→l i textordning) → C1 stavfel → C2 rm → C3 P/B-premie → C4 spann",
+ "poster": [
+  {
+   "id": "B1a",
+   "klass": "B",
+   "yta": "body/Praktiskt",
+   "från": "13 läspaket över fyra dagar",
+   "till": "14 läspaket över fyra dagar",
+   "motiv": "Telia Q3-paketet (rappdag 21/10 enligt Telias officiella kalender) byggdes 2026-09-29, efter detta pakets 2026-09-16 — fönstret 20–23 oktober är 14 läspaket (2+4+5+3); telia-granskningens C4-kur fastställde samma tal"
+  },
+  {
+   "id": "B1b",
+   "klass": "B",
+   "yta": "body/Praktiskt",
+   "från": "SKF, Handelsbanken och Iberdrola den 21:a",
+   "till": "SKF, Handelsbanken, Iberdrola och Telia den 21:a",
+   "motiv": "21 oktober har FYRA paket (SKF, Handelsbanken, Iberdrola, Telia) — telia-paketets C4-kur: 2+4+5+3 = 14"
+  },
+  {
+   "id": "B2a",
+   "klass": "B",
+   "yta": "body/Källkritik",
+   "från": "ta P/B 2,54, dividera med ROE 0,1002",
+   "till": "ta P/B 2,536, dividera med ROE 0,1002",
+   "motiv": "2,536 ÷ 0,1002 = 25,31 (textens resultat); visat 2,54 ger 25,35 — F2-klassen"
+  },
+  {
+   "id": "B2b",
+   "klass": "B",
+   "yta": "body/Källkritik",
+   "från": "Källans eget P/E-tal är 24,8.",
+   "till": "Källans eget P/E-tal är 24,842.",
+   "motiv": "gapet 1,9 procent gäller mot 24,842 (25,31/24,842 = 1,019); mot visat 24,8 blir det 2,1"
+  },
+  {
+   "id": "B2c",
+   "klass": "B",
+   "yta": "body/Källkritik",
+   "från": "Omvänt: 24,8 multiplicerat med 0,1002",
+   "till": "Omvänt: 24,842 multiplicerat med 0,1002",
+   "motiv": "24,842 × 0,1002 = 2,489 → 2,49 (textens resultat); visat 24,8 ger 2,48"
+  },
+  {
+   "id": "B2d",
+   "klass": "B",
+   "yta": "body/Källkritik",
+   "från": "P/E-fältet 24,8 multiplicerat med årsresultatet 6 285",
+   "till": "P/E-fältet 24,842 multiplicerat med årsresultatet 6 285",
+   "motiv": "24,842 × 6 285 M€ = 156,13 mdr → textens 156,1; visat 24,8 ger 155,9"
+  },
+  {
+   "id": "B2e",
+   "klass": "B",
+   "yta": "body/Värdering",
+   "från": "FCF-marginalen 5,8 procent gånger intäkterna",
+   "till": "FCF-marginalen 5,76 procent gånger intäkterna",
+   "motiv": "fältet 0,0576 × 45 547 = 2 623 M€ (textens resultat); visat 5,8 % ger 2 642 — Fabege F2: redovisa fältets precision i räknesatsen"
+  },
+  {
+   "id": "B2f",
+   "klass": "B",
+   "yta": "body/Övning C",
+   "från": "P/E 24,8 delat med 1,0705",
+   "till": "P/E 24,842 delat med 1,0705",
+   "motiv": "24,842 ÷ 1,0705 = 23,21 (textens resultat); visat 24,8 ger 23,17"
+  },
+  {
+   "id": "B2g",
+   "klass": "B",
+   "yta": "body/Källkritik (EV-steg 1)",
+   "från": "börsvärdet 131,0 delat med P/B 2,54",
+   "till": "börsvärdet 130,96 delat med P/B 2,536",
+   "motiv": "130,96 ÷ 2,536 = 51,64 → 51,6 och skuld 51,66 → 51,7 (textens båda steg); visat 131,0/2,54 ger 51,57 → skuld 51,6 ≠ 51,7"
+  },
+  {
+   "id": "B2h",
+   "klass": "B",
+   "yta": "källrad/identitet",
+   "från": "2,54 ÷ 0,1002 = 25,31 mot källans P/E 24,8; differens 1,9 procent; omvänt 24,8 × 0,1002 = 2,49",
+   "till": "2,536 ÷ 0,1002 = 25,31 mot källans P/E 24,842; differens 1,9 procent; omvänt 24,842 × 0,1002 = 2,49",
+   "motiv": "källradens identitetssats med full precision (samma kur som B2a–c)"
+  },
+  {
+   "id": "B2i",
+   "klass": "B",
+   "yta": "källrad/absolutkontroll",
+   "från": "Absolutkontroll: 24,8 × 6 285 M€",
+   "till": "Absolutkontroll: 24,842 × 6 285 M€",
+   "motiv": "samma kur som B2d"
+  },
+  {
+   "id": "B2j",
+   "klass": "B",
+   "yta": "källrad/PEG",
+   "från": "implicit tillväxt ur fältet 24,8 ÷ 3,02 = 8,23 procent",
+   "till": "implicit tillväxt ur fältet 24,842 ÷ 3,02 = 8,23 procent",
+   "motiv": "24,842 ÷ 3,02 = 8,23; visat 24,8 ger 8,21"
+  },
+  {
+   "id": "B2k",
+   "klass": "B",
+   "yta": "källrad/FCF",
+   "från": "FCF-kontroll: 5,8 % × 45 547",
+   "till": "FCF-kontroll: 5,76 % × 45 547",
+   "motiv": "samma kur som B2e"
+  },
+  {
+   "id": "B2l",
+   "klass": "B",
+   "yta": "källrad/EV-kedja",
+   "från": "EK 131,0 ÷ 2,54 = 51,6",
+   "till": "EK 130,96 ÷ 2,536 = 51,6",
+   "motiv": "samma kur som B2g"
+  },
+  {
+   "id": "C1",
+   "klass": "C",
+   "yta": "body/Övning C",
+   "från": "inte en handssignal",
+   "till": "inte en handelssignal",
+   "motiv": "stavfel \"handssignal\" → \"handelssignal\" (wihlborgs-B3:s exakta felklass)"
+  },
+  {
+   "id": "C2",
+   "klass": "C",
+   "yta": "fält/readingMinutes",
+   "från": 5,
+   "till": 6,
+   "motiv": "släktets ordräkning (match(/\\S+/g)) ger 3 353 ord efter kurerna → round(ord/600) = 6 (fabege F6-precedensen; byggarens 3 067 var en alfanum-tokenräkning)"
+  },
+  {
+   "id": "C3",
+   "klass": "C",
+   "yta": "body/Värdering",
+   "från": "Strax över branschmedianen 2,27 (11 procent)",
+   "till": "Strax över branschmedianen 2,27 (12 procent)",
+   "motiv": "2,536 ÷ 2,27 = 1,117 → 11,7 procent avrundat 12 (trunkeringen till 11 lämnar fel siffra)"
+  },
+  {
+   "id": "C4",
+   "klass": "C",
+   "yta": "body/Stabilitet",
+   "från": "energigrenens spann är universumets bredaste",
+   "till": "energigrenens spann är ett av universumets bredaste",
+   "motiv": "byggvintagen: industrins spann är bredare på båda mått (absolut 7,88 mot energins 2,92; kvot 282× mot 19× pga nollskuldsbolag) — energi är bland de bredaste"
+  }
+ ],
+ "efterverifiering": "ALLA PASS"
+}

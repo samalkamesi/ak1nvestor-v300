@@ -4,12 +4,12 @@ AK1A Research Lab · pedagogisk forskning — **ALDRIG investeringsråd**.
 
 ## 1. Sammanfattning
 
-- **100 bolag** bedömda (AKM1 V01–V20) och vågklassade (FVagAnalys); saknade underlagsfiler: 0.
-- **Medelpoäng 39,6 / 100**, median 41,9, span 6,6–58,1.
-- **Statusfördelning (D1, skalad efter datatäckning):** grön 7 · gul 76 · röd 17 · osatt 0. Med pass 1:s ursprungliga fasta trösklar (grön ≥ 70, gul 55–69) var fördelningen grön 0 · gul 2 · röd 98 — se D1-rapporten (`data/rapporter/d1-datatackning-2026-09-03.md`).
+- **322 bolag** bedömda (AKM1 V01–V20) och vågklassade (FVagAnalys); saknade underlagsfiler: 0.
+- **Medelpoäng 40,0 / 100**, median 42,1, span 6,6–58,1.
+- **Statusfördelning (D1, skalad efter datatäckning):** grön 31 · gul 248 · röd 43 · osatt 0. Med pass 1:s ursprungliga fasta trösklar (grön ≥ 70, gul 55–69) var fördelningen grön 0 · gul 6 · röd 316 — se D1-rapporten (`data/rapporter/d1-datatackning-2026-09-03.md`).
 - **Port-brott (V19 kassatäckning < 12 mån):** 1 bolag — VPLAY-B.ST.
-- **Beräkningsbara variabler:** 11 av 20 (V01, V04, V05, V06, V07, V08, V09, V10, V12, V14, V19) — resterande 9 är osatta för samtliga bolag i pass 1 (V02, V03, V11, V13, V15, V16, V17, V18, V20).
-- **Strukturell tak-effekt:** 28,9 % av vikten vilar på variabler som saknar data för alla bolag — det teoretiska maximala totalpoängtalet är därför ≈ 71,1 i pass 1. Gröna nivån (≥ 70) är med pass-1-data i praktiken ouppnåelig; detta är ett **datakvalitetsfynd**, inte en bedömning av bolagen.
+- **Beräkningsbara variabler:** 11 av 20 (V01, V04, V05, V06, V07, V08, V09, V10, V12, V14, V19) — resterande 0 är osatta för samtliga bolag i pass 1 ().
+- **Strukturell tak-effekt:** 0,0 % av vikten vilar på variabler som saknar data för alla bolag — det teoretiska maximala totalpoängtalet är därför ≈ 100,0 i pass 1. Gröna nivån (≥ 70) är med pass-1-data i praktiken ouppnåelig; detta är ett **datakvalitetsfynd**, inte en bedömning av bolagen.
 
 ## 2. Formel och vikter (dokumentation)
 
@@ -33,24 +33,24 @@ då uthållighet ej kan verifieras), V19 klippfunktion. Övriga linjära band.
 | # | Ticker | Bolag | Bransch | AKM1 | Kategorier (tillv/värd/löns/stab/moat/kat/risk) | Dynamik | Status |
 |---|--------|-------|---------|------|------------------|---------|--------|
 | 1 | INDU-C.ST | AB Industrivärden (publ) | industri | 58,1 | 1,3/3,7/4,3/1,7/1,3/0,0/2,5 | stabilt | gron |
-| 2 | NEM | Newmont Corporation | material | 55,1 | 1,3/2,3/4,3/2,3/1,3/0,0/2,5 | forbattras | gron |
-| 3 | INVE-B.ST | Investor AB (publ) | finans | 54,0 | 1,3/3,7/4,3/0,0/1,3/0,0/2,5 | osatt | gron |
-| 4 | NHY.OL | Norsk Hydro ASA | material | 53,4 | 0,7/4,7/3,0/2,7/1,0/0,0/2,5 | stabilt | gron |
-| 5 | NOVO-B.CO | Novo Nordisk A/S | halso | 52,8 | 1,3/2,0/4,3/2,3/1,3/0,0/2,5 | forbattras | gron |
-| 6 | T | AT&T Inc. | kommunikation | 52,0 | 0,7/3,7/3,7/2,7/1,3/0,0/2,5 | stabilt | gron |
-| 7 | LOGN.SW | Logitech International S.A. | teknik | 50,3 | 0,7/2,7/3,7/3,0/1,0/0,0/2,5 | forbattras | gron |
-| 8 | META | Meta Platforms, Inc. | kommunikation | 49,7 | 1,0/1,3/4,3/3,0/1,3/0,0/2,5 | forbattras | gul |
-| 9 | BSX | Boston Scientific Corporation | halso | 49,3 | 1,0/2,7/3,3/3,0/1,3/0,0/2,5 | forbattras | gul |
-| 10 | MC.PA | LVMH Moët Hennessy - Louis Vuitton, Société Européenne | konsument | 49,1 | 0,7/3,0/3,3/2,7/1,3/0,0/2,5 | stabilt | gul |
+| 2 | PBR | Petróleo Brasileiro S.A. - Petrobras | energi | 57,3 | 0,3/4,3/4,3/2,7/1,3/0,0/2,5 | forsvamras | gron |
+| 3 | 4503.T | Astellas Pharma Inc. | halso | 55,9 | 1,0/3,7/3,7/3,0/1,3/0,0/2,5 | forbattras | gron |
+| 4 | HLUN.B | H. Lundbeck A/S | halso | 55,5 | 1,0/4,0/3,3/3,0/1,3/0,0/2,5 | forbattras | gron |
+| 5 | 1605.T | INPEX Corporation | energi | 55,3 | 1,0/4,3/3,3/2,0/1,3/0,0/2,5 | forbattras | gron |
+| 6 | NEM | Newmont Corporation | material | 55,1 | 1,3/2,3/4,3/2,3/1,3/0,0/2,5 | forbattras | gron |
+| 7 | ABEV | Ambev S.A. | konsument | 54,6 | 0,7/3,3/4,0/3,0/1,3/0,0/2,5 | forbattras | gron |
+| 8 | NTES | NetEase, Inc. | konsument | 54,6 | 0,7/3,0/4,0/3,3/1,3/0,0/2,5 | forbattras | gron |
+| 9 | 005930.KS | Samsung Electronics Co., Ltd. | teknik | 54,2 | 0,7/3,0/4,3/2,7/1,3/0,0/2,5 | forbattras | gron |
+| 10 | GSK.L | GSK plc | halso | 54,2 | 0,7/3,0/4,3/2,7/1,3/0,0/2,5 | forbattras | gron |
 
 ## 4. Botten-5 (lägst AKM1-total)
 
 | # | Ticker | Bolag | Bransch | AKM1 | Lägsta poäng (alltid-osatta variabler exkluderade) | Status |
 |---|--------|-------|---------|------|--------------------------|--------|
-| — | SWED-A.ST | Swedbank AB (publ) | finans | 19,8 | V07:0p, V10:0p, V19:0p, V04:1p, V06:1p, V14:1p | rod |
-| — | NDA-SE.ST | Nordea Bank Abp | finans | 19,0 | V05:0p, V07:0p, V10:0p, V19:0p, V04:1p, V06:1p | rod |
-| — | VPLAY-B.ST | Viaplay Group AB (publ) | kommunikation | 18,6 | V04:0p, V07:0p, V09:0p, V19:0p, V08:1p, V10:1p | rod |
+| — | LLOY.L | Lloyds Banking Group plc | finans | 18,1 | V06:0p, V07:0p, V10:0p, V14:0p, V19:0p, V09:1p | gul |
 | — | ELUX-B.ST | AB Electrolux (publ) | konsument | 17,9 | V04:0p, V06:0p, V07:0p, V08:0p, V09:0p, V01:1p | rod |
+| — | HSBA.L | HSBC Holdings plc | finans | 14,8 | V06:0p, V07:0p, V08:0p, V10:0p, V14:0p, V19:0p | gul |
+| — | 8316.T | Sumitomo Mitsui Financial Group | finans | 10,7 | V06:0p, V07:0p, V08:0p, V09:0p, V10:0p, V14:0p | rod |
 | — | PSNY | Polestar Automotive Holding UK PLC | tillvaxt | 6,6 | V04:0p, V05:0p, V06:0p, V07:0p, V08:0p, V09:0p | rod |
 
 ## 5. Null-fördelning per variabel (osatta av 100 bolag)
@@ -58,29 +58,29 @@ då uthållighet ej kan verifieras), V19 klippfunktion. Övriga linjära band.
 | Variabel | Namn | Vikt % | Osatta | Beräkningsbara |
 |----------|------|--------|--------|----------------|
 | V01 | Försäljningstillväxt | 8,0 | 0 | 100 |
-| V02 | ARR-tillväxt | 4,0 | 100 | 0 |
-| V03 | Intäktsdiversifiering | 3,0 | 100 | 0 |
-| V04 | P/S | 4,0 | 8 | 92 |
-| V05 | P/B | 4,0 | 2 | 98 |
-| V06 | EV/EBITDA | 11,0 | 6 | 94 |
-| V07 | Bruttomarginal | 10,0 | 0 | 100 |
-| V08 | EBITDA-marginal | 6,0 | 0 | 100 |
-| V09 | ROE | 6,0 | 3 | 97 |
-| V10 | Skuldsättningsgrad | 4,0 | 12 | 88 |
-| V11 | Likviditet | 4,0 | 100 | 0 |
+| V02 | ARR-tillväxt | 4,0 | 322 | -222 |
+| V03 | Intäktsdiversifiering | 3,0 | 322 | -222 |
+| V04 | P/S | 4,0 | 13 | 87 |
+| V05 | P/B | 4,0 | 3 | 97 |
+| V06 | EV/EBITDA | 11,0 | 29 | 71 |
+| V07 | Bruttomarginal | 10,0 | 27 | 73 |
+| V08 | EBITDA-marginal | 6,0 | 2 | 98 |
+| V09 | ROE | 6,0 | 7 | 93 |
+| V10 | Skuldsättningsgrad | 4,0 | 44 | 56 |
+| V11 | Likviditet | 4,0 | 322 | -222 |
 | V12 | Intäktsstabilitet | 4,0 | 10 | 90 |
-| V13 | Patent & IP | 4,0 | 100 | 0 |
-| V14 | Varumärke & kundlojalitet | 3,0 | 0 | 100 |
-| V15 | Nätverkseffekter | 3,0 | 100 | 0 |
-| V16 | Produktlanseringar | 2,0 | 100 | 0 |
-| V17 | Avtal & partnerskap | 2,0 | 100 | 0 |
-| V18 | Regulatoriska katalysatorer | 2,0 | 100 | 0 |
-| V19 | Kassatäckning — nyemissionsrisk | 9,0 | 13 | 87 |
-| V20 | Återköp av egna aktier | 4,0 | 100 | 0 |
+| V13 | Patent & IP | 4,0 | 322 | -222 |
+| V14 | Varumärke & kundlojalitet | 3,0 | 27 | 73 |
+| V15 | Nätverkseffekter | 3,0 | 322 | -222 |
+| V16 | Produktlanseringar | 2,0 | 322 | -222 |
+| V17 | Avtal & partnerskap | 2,0 | 322 | -222 |
+| V18 | Regulatoriska katalysatorer | 2,0 | 322 | -222 |
+| V19 | Kassatäckning — nyemissionsrisk | 9,0 | 54 | 46 |
+| V20 | Återköp av egna aktier | 4,0 | 322 | -222 |
 
 Alltid osatta (pass 1): V02 ARR, V03 diversifiering, V11 kvick-likviditet, V13 patent,
 V15 nätverkseffekter, V16–V18 katalysatorer, V20 återköp — tillsammans
-28,0 viktenheter av 97. Detta matchar P1:s
+0,0 viktenheter av 97. Detta matchar P1:s
 kända begränsningar (manifest.json): källorna saknar ARR, segmentdata,
 balansräkningshistorik, återköpsbelopp och aktieantalshistorik.
 
@@ -90,8 +90,8 @@ balansräkningshistorik, återköpsbelopp och aktieantalshistorik.
 
 ## 7. Fundamental vågbild (FVag — kort kommentar)
 
-Sammanvägd dynamik över bolagen: förbättras 38 ·
-stabilt 39 · försvagas 16 ·
+Sammanvägd dynamik över bolagen: förbättras 171 ·
+stabilt 97 · försvagas 47 ·
 osatt 7. Med pass 1:s fyra räkenskapsår kan fundamental-vagmotorns
 fönsterkrav (kort ≥ 4, medellång ≥ 5, lång ≥ 6 punkter) bara uppfyllas för
 omsättningsseriens mikro-fönster — perHorisont är därför huvudsakligen ”osatt”, vilket

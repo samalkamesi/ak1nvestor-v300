@@ -428,6 +428,14 @@
       "titel": "kvalitetsvåg: bolagssidornas syskonlänks-kontrakt (o559:s namngivna grannpost) — kartläggning av /bolag/[slug]:s samtliga länkytor + W1-kur (analyser/forskningsbiblioteket växer utan deploy ⇒ ISR-revalidate länkar byggfrusna mål — byggdSidaFinns-grind) + W3-kur (syskonBolag ledger-fallback ⇒ .next-grind) + bevakningssvit; döda-länkar-fyndens domkedja lämnad som notis till s8-u1/o570",
       "ts": 1790681216774,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o571",
+      "agare": "huvud-r349",
+      "manifest": null,
+      "titel": "oprovat val",
+      "ts": 1790745370583,
+      "status": "reserverat"
     }
   ]
 }

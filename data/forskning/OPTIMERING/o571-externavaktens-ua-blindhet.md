@@ -85,7 +85,19 @@ levereras som kod till prod-trädet där cronen (04:17) ropar den.
 data/vakten/doda-lankar-externa-2026-09-30-insamling-045150.json` (den gröna
 återinsamlingen — 04:51-fönstret, driftAndel 0,2 %; den 04:17-insamlingen är
 driftmärkt och återupptas aldrig, o47 §2). Körs från prod-trädet så vilofilen
-(Adlibris/Bokus) respekteras. Resultat bokförs i worklog r349.
+(Adlibris/Bokus) respekteras.
+
+**Resultat 05:32 UTC (rapport
+data/vakten/doda-lankar-externa-2026-09-30-053235.json, exit 0, 13 s):**
+DÖDA 0 (förra rapporten: 7) · OUPPNÅBARA 0 · SERVERFEL 0 (förra: 95) ·
+BLOCKERADE 311 (vägg 107 = tidigare 5 väggar + Amazons 102; vila 204 =
+Adlibris/Bokus). Amazons kanin svarade 503 på ALLA tre vägarna denna gång
+(fältsonden 05:17 fick läsar-GET 200 — försvaret varierar med tid/salva,
+vilket är precis fallet klipp+vila är byggda för): domänklipp loggad med
+"kanin bot-motstånd (503 även för besökar-UA)", 101 förfrågningar återsparade,
+7-dagarsvila skriven — nattens cron (imorgon 04:17) klassar Amazon
+BLOCKERAD-vila med NOLL förfrågningar: inga fler falska dödslarm från den
+domänen förrän vilan löper ut och kaninen provar igen (o570-lagdromantiken).
 
 ## 6. FYND BOKFÖRDA (inte kurerade här)
 

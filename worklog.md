@@ -19615,3 +19615,50 @@ paraplyvakten stabil; (b) BRANDING-spåret (strategiska skiftets prioritet
 1 — BRANDING-AUDIT-2026-09.md läses nästa rond); (c) vakttornet-återskapandet
 (ägarrond, se (5)).
 
+## ROND 349 — 2026-09-30 05:4x UTC: DÖDA-LÄNKAR-EXTERNA-LARMET KURAT I ROTTEN (o571) — 7 falska Amazon-dödsdomar; vakten lärde sig besökarens sanning; validering GRÖN 0/0/0 [organ:Φ]
+
+**(1) LARMET**: automatiskt 04:17 — 7 bevisat döda (4xx) + 0 ouppnåbara.
+Rapporten (prod): samtliga 7 = amazon.com/s?k=-söklänkar från /kallor; samma
+domän bar dessutom 95 SERVERFEL. Spåret: /kallor genererar tre köplänkar per
+bok ur bokkanon (Bokus+Adlibris i o570-vila) = 102 Amazon-mål; o570 noterade
+"amazon 102 OK" dagen före.
+
+**(2) DIAGNOS (fältsonden, 3 förfrågningar — samma måttstock som kaninen)**:
+HEAD med vakt-UA 503 · GET med vakt-UA 503 · **GET med läsar-UA 200** —
+Amazon nekar robot-IDENTITETEN, inte länken: målen lever för besökare. Roten
+satt i INSTRUMENTET: valideraMal:s GET-omprov bar vakt-UA, och klassificera()
+dömde varje 4xx utom 401/403/429 som DOD — 405-på-GET är botvägg, inte
+länkdöd. KÄLLORNA RÖRDES EJ (larmets ordalydelse "rätta källorna i data/"
+avvikes motiverat, protokoll o571 §4: att ta bort 102 fungerande bokköpslänkar
+för att blidka ett defekt mått had skadat produkten).
+
+**(3) KUR (o571, tre lager i verktyg/doda-lankar-externa.mjs)**: läsar-omprov
+(≥400 kvarstår efter HEAD+vakt-GET ⇒ EN GET med läsar-UA; 2xx/3xx ⇒ OK; äkta
+404 ⇒ DOD kvar; vägran 401/403/429 respekteras — o570: Adlibris/Bokus-429
+gällde även läsare) · kanin-klipp vid bestående bot-motstånd (405/502/503/504
+även för läsare ⇒ klipp+vila, kaninen BLOCKERAD-vagg ALDRIG DOD) · dynamisk
+klipprapportering (kaninens faktiska status/typ, ej hårdkodat 429/rate).
+
+**(4) BEVIS**: node --check OK · självdokumentation 7/7 (nytt amazon-fall) ·
+svit 73/73 PASS 0 FAIL med NYA fallen S (UA-vägg läks ⇒ OK) och T (bot-
+motstånd ⇒ klipp, syskon 0 förfrågningar) · gamla A–R opåverkade ·
+**SKARP VALIDERING GRÖN** (exit 0, 13 s): DÖDA 0 (var 7) · SERVERFEL 0
+(var 95) · OUPPNÅBARA 0; Amazon-kaninen 503 på alla tre vägna denna gång →
+domänklipp "kanin bot-motstånd" med 101 återsparade förfrågningar + 7-
+dagarsvila → nattens cron klassar Amazon BLOCKERAD-vila (noll förfrågningar,
+noll falska larm) tills kaninen provar igen efter vilan. Rapportfil:
+data/vakten/doda-lankar-externa-2026-09-30-053235.json (prod).
+
+**KVD**: tsc-grinden grön vid commit · src orörd (verktyg+data) · R2 orörd ·
+/kallor och data/blogg orörda · prod-push verifierad (LASAR_UA i prod-trädet,
+valideringen kördes med prod-koden) · tmp-sonder städade via node (skalet
+hängde upprepade gånger — KUR-följt: verifiering istället för omkörring).
+
+LEVERANS: 408df9cd (o571: verktyg+svit+protokoll) + denna worklogcommit —
+pushade till prod. Protokoll: data/forskning/OPTIMERING/
+o571-externavaktens-ua-blindhet.md (reservation huvud-r349 under flock).
+
+NÄSTA I KÖN: (a) o571-efterdyning vid nästa 04:17-cron — förväntan
+BLOCKERAD-vila för amazon.com, DOD-larm tysta; (b) BRANDING-spåret (kvar
+från r348); (c) vakttornet-återskapandet (ägarrond, r348 (5)).
+

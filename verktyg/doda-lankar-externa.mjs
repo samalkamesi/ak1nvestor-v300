@@ -15,8 +15,11 @@
 // Klassificering (externa döda är inte vårt fel men vårt anseende — därför
 // skiljer vakten BEVISAT döda från sådant som inte kan maskinverifieras):
 //   OK          200–399 efter omdirigeringar
-//   BLOCKERAD   401/403/429 eller bot-motstånd — kan ej maskinverifieras
-//   DOD         404/410 och övriga 4xx — bevisat död länk
+//   BLOCKERAD   401/403/429 eller bestående bot-motstånd (o571) — kan ej
+//               maskinverifieras: värd nekar OCKSÅ besökar-UA (kanin ⇒ klipp)
+//   DOD         404/410 och övriga 4xx SOM BESTÅR för besökar-UA (o571:
+//               läsar-omprov — amazon.com nekade robot-UA men tjänade
+//               besökare; 102 boklänkar falskt dömda, 7 som DOD, 2026-09-30)
 //   SERVERFEL   5xx kvarstår efter omtryck — troligen transient
 //   OUPPNABAR   DNS-fel/anslutningsvägran/timeout — domänfel är stark
 //               dödsignal, långsamhet är det inte (felkod redovisas)
@@ -148,7 +151,19 @@ const DOMANER_PARALLELLT = 4;
 const TIDSGRANS_MS = 15_000;
 const TAK_SIDOR = 5000;
 const TAK_URL = 1500;
+// o571: svarsklasser som (då de består även för besökar-UA) är bot-motstånd,
+// inte länkdöd — kaninmål med dessa svar klipper domänen (o570 lager 2
+// generaliserat från enbart 429).
+const BOT_MOTSTAND = [405, 502, 503, 504];
 const USER_AGENT = "ak1a-doda-lankar-externa/1.0 (+länkvakten; kontakta hej@ak1nvestor.com)";
+// Läsar-UA (o571): används ENDAST som sista omprov när en värd nekat
+// vakt-identiteten — besökarens sanning avgör om länken lever (bevis:
+// amazon.com 2026-09-30: vakt-HEAD 503, vakt-GET 503, läsar-GET 200).
+// Ärligheten bor i ordningen: vi identifierar oss i varje förfrågan tills
+// värden nekar — först då frågar vi som besökaren gör (öppet dokumenterat
+// här och i protokoll o571).
+const LASAR_UA =
+  "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36";
 
 const PUBLIK_DOMAN = "lab.ak1nvestor.com"; // absolut skrivna egna länkar = interna, redan mätt av verktyg/doda-lankar.mjs
 const HOPP_OVER_PREFIX = ["/studio", "/admin", "/api/", "/logga-ut"]; // sessionstyrda ytor, ej anonym-crawlbara
@@ -375,7 +390,7 @@ async function samlaExterna() {
 
 // --- extern validering -------------------------------------------------------
 
-async function sond(url, metod) {
+async function sond(url, metod, lasarUa = false) {
   const kontroll = new AbortController();
   const tid = setTimeout(() => kontroll.abort(), TIDSGRANS_MS);
   try {
@@ -383,7 +398,7 @@ async function sond(url, metod) {
       method: metod,
       redirect: "follow",
       signal: kontroll.signal,
-      headers: { "user-agent": USER_AGENT, accept: "*/*" },
+      headers: { "user-agent": lasarUa ? LASAR_UA : USER_AGENT, accept: lasarUa ? "text/html,*/*" : "*/*" },
     });
     const status = svar.status;
     const slutlig = svar.url;
@@ -429,6 +444,19 @@ async function valideraMal(mal) {
   if (r.status >= 400 && r.status < 500 && r.status !== 401 && r.status !== 429) {
     const r2 = await sond(mal, "GET");
     if (r2.status !== 0) r = r2; // GET-nätverksfel behåller HEAD-domens klass
+  }
+  // o571 LÄSAR-OMPROV: vissa värdar nekar robot-IDENTITETEN men tjänar
+  // besökare (bevisat: amazon.com 2026-09-30 — vakt-HEAD 503, vakt-GET 503,
+  // läsar-GET 200; 102 bokköpslänkar på /kallor falskt dömda, 7 som DOD).
+  // Kvarstående >=400 EFTER HEAD+GET ⇒ EN läsar-GET: besökarens svar är
+  // länkens sanning. Vägran-status (401/403/429) respekteras — ingen omprov:
+  // väggar och rate-gränser gäller besökare likaväl (o570: Adlibris/Bokus
+  // gav 429 även för webbläsar-UA). Körs FÖRE 5xx-omtrycket: ett UA-block
+  // (503) läks då utan 8 s-paus; ett äkta transient 5xx når omtrycket som
+  // förr.
+  if (r.status >= 400 && r.status !== 401 && r.status !== 403 && r.status !== 429) {
+    const r2 = await sond(mal, "GET", true);
+    if (r2.status !== 0) r = r2; // läkar-GET lyckas (2xx/3xx) ⇒ OK; äkta 404 ⇒ DOD kvar
   }
   if (r.status >= 500) {
     await new Promise((losa) => setTimeout(losa, 8000));
@@ -521,13 +549,14 @@ async function valideraAlla(sett, progress) {
     let klippt = false;
     for (const [i, m] of mal.entries()) {
       if (klippt) {
+        const post = klipp.get(d);
         rapportera(d, m, {
           klass: "BLOCKERAD",
-          status: 429,
+          status: post?.klippStatus ?? 429,
           slutlig: m.url,
-          fel: "domänklippt — kaninmålet svarade 429 två gånger (HEAD+GET), övriga mål ej förfrågade",
+          fel: post?.klippFel ?? "domänklippt — kaninmålet svarade 429 två gånger (HEAD+GET), övriga mål ej förfrågade",
           retryAfter: null,
-          blockeradTyp: "rate",
+          blockeradTyp: post?.blockeradTyp ?? "rate",
         });
         gjorda++;
         continue;
@@ -547,11 +576,38 @@ async function valideraAlla(sett, progress) {
         }
         if (v.status === 429 && !TVINGAD) {
           klippt = true;
-          const post = { tills: Date.now() + DOMAN_VILA_MS, orsak: "kanin 429 ×2 (HEAD+GET)", sedan: new Date().toISOString() };
+          const post = {
+            tills: Date.now() + DOMAN_VILA_MS,
+            orsak: "kanin 429 ×2 (HEAD+GET)",
+            sedan: new Date().toISOString(),
+            blockeradTyp: "rate",
+            klippStatus: 429,
+            klippFel: "domänklippt — kaninmålet svarade 429 två gånger (HEAD+GET), övriga mål ej förfrågade",
+          };
           klipp.set(d, post);
           vila[d] = post;
           logg("doman-klipp", { doman: d, atersparadeForfragningar: mal.length - 1, vilaMs: DOMAN_VILA_MS });
         }
+      }
+      // KANIN BOT-MOTSTÅND (o571): valideraMal har redan provat HEAD + vakt-GET
+      // + läsar-GET. Består 405/5xx ÄVEN för besökar-UA är domänen sur på oss
+      // (bot-motstånd — inte länkdöd): klipp direkt, övriga mål utan förfråg-
+      // ningar, 7-dagarsvila. Kaninen klassas BLOCKERAD/vagg — aldrig DOD:
+      // ett vägran-svar bevisar inte att resursen saknas.
+      if (i === 0 && !klippt && BOT_MOTSTAND.includes(v.status) && !TVINGAD) {
+        klippt = true;
+        const post = {
+          tills: Date.now() + DOMAN_VILA_MS,
+          orsak: `kanin bot-motstånd (${v.status} även för besökar-UA)`,
+          sedan: new Date().toISOString(),
+          blockeradTyp: "vagg",
+          klippStatus: v.status,
+          klippFel: `domänklippt — kaninmålet svarade bot-motstånd (${v.status}) även för besökar-UA, övriga mål ej förfrågade`,
+        };
+        klipp.set(d, post);
+        vila[d] = post;
+        v = { klass: "BLOCKERAD", status: v.status, slutlig: m.url, fel: `bot-motstånd ${v.status} — värd nekar även besökar-UA (kanin)`, retryAfter: null, blockeradTyp: "vagg" };
+        logg("doman-klipp", { doman: d, atersparadeForfragningar: mal.length - 1, vilaMs: DOMAN_VILA_MS, orsak: post.orsak });
       }
       rapportera(d, m, v);
       gjorda++;
@@ -595,6 +651,15 @@ async function sjalvtest() {
             res.writeHead(200, { "content-type": "text/html" });
           }
           res.end();
+        } else if (req.url === "/ua-vagg") {
+          // amazon-mönstret (o571): robot-identiteten nekas (405) men
+          // besökar-UA tjänas sidan — HEAD+GET med vakt-UA döms, läsar-GET läker.
+          if ((req.headers["user-agent"] || "").includes("Mozilla")) {
+            res.writeHead(200, { "content-type": "text/html" });
+          } else {
+            res.writeHead(405);
+          }
+          res.end();
         } else if (req.url === "/flyttad") {
           res.writeHead(301, { location: "/ok" });
           res.end();
@@ -623,6 +688,7 @@ async function sjalvtest() {
     { namn: "301→200 följs", url: `${bas}/flyttad`, vantad: "OK" },
     { namn: "404 = DOD (GET bekräftar)", url: `${bas}/finns-ej`, vantad: "DOD" },
     { namn: "HEAD-404 men GET-200 = OK (imy-fallet)", url: `${bas}/head-fel`, vantad: "OK" },
+    { namn: "405 för vakt-UA men 200 för läsare = OK (amazon-fallet)", url: `${bas}/ua-vagg`, vantad: "OK" },
     { namn: "5xx kvarstår = SERVERFEL", url: `${bas}/fel`, vantad: "SERVERFEL" },
     { namn: "anslutningsvägran = OUPPNABAR", url: `http://127.0.0.1:${dodPort}/x`, vantad: "OUPPNABAR" },
   ];

@@ -32,6 +32,10 @@
 //                           förfrågningar
 //   R retry-after-läkning  → kanin 429 + retry-after: 0 ⇒ GET-omprovning läker
 //                           ⇒ ingen klipp, hela domänen OK
+//   S UA-vägg läks (o571)  → 503 för vakt-UA men 200 för läsare ⇒ OK, aldrig
+//                           DOD (amazon.com-fallet 2026-09-30)
+//   T bot-motstånd klipper → 405 för ALLA identiteter ⇒ kanin-klipp, övriga
+//                           mål BLOCKERAD-vagg utan förfrågningar, vila
 
 import fs from "node:fs";
 import os from "node:os";
@@ -68,7 +72,7 @@ function startaServer(router) {
   return new Promise((losa) => {
     const server = http.createServer((req, res) => {
       const u = new URL(req.url, "http://x");
-      const svar = router ? router(u.pathname) : undefined;
+      const svar = router ? router(u.pathname, req) : undefined;
       res.writeHead(svar?.status || 404, { "content-type": "text/html", ...(svar?.headers || {}) });
       res.end(svar?.kropp ?? "");
     });
@@ -527,6 +531,84 @@ console.log(`Fixtures: ${arbete}`);
   rapport("R3", "kanin-omprovningen loggades", /kanin-429/.test(r.stderr || ""), "");
   rapport("R4", "retry-after: 0 ⇒ ingen klipplogg, ingen vilofil", !/doman-klipp/.test(r.stderr || "") && !fs.existsSync(vilaFil), "");
   rapport("R5", "kaninen 2 förfrågningar (HEAD+GET), syskonet 1", traff["/r-a"] === 2 && traff["/r-b"] === 1, JSON.stringify(traff));
+  await stang(malServer.server);
+  await stang(server);
+}
+
+// --- S: UA-VÄGG LÄKS AV LÄSAR-GET (o571) — värd nekar robot-identiteten
+//        (503) men tjänar besökar-UA (200): mål som skulle dömts DOD/
+//        SERVERFEL klassas OK — besökarens sanning. Levande motstycke:
+//        amazon.com 2026-09-30 (vakt-HEAD 503, vakt-GET 503, läsar-GET 200).
+//        Ingen klipp, ingen vila — domänen är frisk, bara vår UA nekas. ----
+{
+  const traff = {};
+  const malServer = await startaServer((p, req) => {
+    if (p.startsWith("/s-")) {
+      traff[p] = (traff[p] || 0) + 1;
+      const arLasare = (req.headers["user-agent"] || "").includes("Mozilla");
+      return { status: arLasare ? 200 : 503, kropp: "" };
+    }
+    return { status: 404, kropp: "" };
+  });
+  const { server, port } = await startaServer((p) => {
+    if (p === "/sitemap.xml") return { status: 200, kropp: sitemap(["/s"]) };
+    if (p === "/s") {
+      return {
+        status: 200,
+        kropp: textSida(`<a href="http://127.0.0.1:${malServer.port}/s-a">a</a><a href="http://127.0.0.1:${malServer.port}/s-b">b</a>`),
+      };
+    }
+    return { status: 200, kropp: textSida("") };
+  });
+  const cwd = fs.mkdtempSync(path.join(arbete, "s-"));
+  const vilaFil = path.join(cwd, "vila-test.json");
+  const r = await korVerktyg({ bas: `http://127.0.0.1:${port}`, cwd, miljo: { takt: "10", vilaFil } });
+  rapport("S1", "mätvärde levererat (kod 0)", r.kod === 0, `kod=${r.kod}`);
+  const f = vaktenFiler(cwd);
+  const j = lasJson(cwd, f.fynd[0]);
+  rapport("S2", "båda målen OK — ingen DOD trots 503 för vakt-UA", j?.perKlass?.OK === 2 && (j?.perKlass?.DOD || 0) === 0 && (j?.perKlass?.SERVERFEL || 0) === 0, JSON.stringify(j?.perKlass));
+  rapport("S3", "varje mål exakt 2 förfrågningar (vakt-HEAD + läsar-GET)", traff["/s-a"] === 2 && traff["/s-b"] === 2, JSON.stringify(traff));
+  rapport("S4", "läkt UA-vägg ⇒ ingen klipp, ingen vilofil", !/doman-klipp/.test(r.stderr || "") && !fs.existsSync(vilaFil), "");
+  await stang(malServer.server);
+  await stang(server);
+}
+
+// --- T: BOT-MOTSTÅND BESTÅR ÄVEN FÖR LÄSAREN (o571) — kaninmålet svarar
+//        405 för ALLA identiteter (HEAD + vakt-GET + läsar-GET) ⇒ domän-
+//        klipp: övriga mål BLOCKERAD-vagg med NOLL förfrågningar, 7-dagars-
+//        vila. Kaninen klassas aldrig DOD — ett vägran-svar bevisar inte
+//        att resursen saknas. ------------------------------------------------
+{
+  const traff = {};
+  const malServer = await startaServer((p) => {
+    if (p.startsWith("/t-")) {
+      traff[p] = (traff[p] || 0) + 1;
+      return { status: 405, kropp: "" };
+    }
+    return { status: 404, kropp: "" };
+  });
+  const { server, port } = await startaServer((p) => {
+    if (p === "/sitemap.xml") return { status: 200, kropp: sitemap(["/t"]) };
+    if (p === "/t") {
+      return {
+        status: 200,
+        kropp: textSida(`<a href="http://127.0.0.1:${malServer.port}/t-a">a</a><a href="http://127.0.0.1:${malServer.port}/t-b">b</a><a href="http://127.0.0.1:${malServer.port}/t-c">c</a>`),
+      };
+    }
+    return { status: 200, kropp: textSida("") };
+  });
+  const cwd = fs.mkdtempSync(path.join(arbete, "t-"));
+  const vilaFil = path.join(cwd, "vila-test.json");
+  const r = await korVerktyg({ bas: `http://127.0.0.1:${port}`, cwd, miljo: { takt: "10", vilaFil, vilaMs: "604800000" } });
+  rapport("T1", "mätvärde levererat (kod 0) trots klippt domän", r.kod === 0, `kod=${r.kod}`);
+  const f = vaktenFiler(cwd);
+  const j = lasJson(cwd, f.fynd[0]);
+  rapport("T2", "alla 3 mål BLOCKERAD-vagg, INGEN DOD (vägran ≠ död)", j?.perKlass?.BLOCKERAD === 3 && (j?.perKlass?.DOD || 0) === 0, JSON.stringify(j?.perKlass));
+  rapport("T3", "klippta mål bärs bot-motstånds-förklaring", (j?.fynd?.blockerade || []).every((b) => /bot-motstånd|domänklippt/.test(b.fel || "")) && (j?.fynd?.blockerade || []).every((b) => b.blockeradTyp === "vagg"), JSON.stringify((j?.fynd?.blockerade || []).map((b) => b.blockeradTyp)));
+  rapport("T4", "kaninen exakt 3 förfrågningar (HEAD + vakt-GET + läsar-GET), klippta 0", traff["/t-a"] === 3 && (traff["/t-b"] || 0) === 0 && (traff["/t-c"] || 0) === 0, JSON.stringify(traff));
+  const vila = fs.existsSync(vilaFil) ? JSON.parse(fs.readFileSync(vilaFil, "utf8")) : {};
+  rapport("T5", "domänen skrevs in i vilofilen med bot-motstånds-orsak", vila["127.0.0.1"]?.tills > Date.now() && /bot-motstånd/.test(vila["127.0.0.1"]?.orsak || ""), JSON.stringify(vila["127.0.0.1"] || null));
+  rapport("T6", "stdout redovisar vägg-typ + domän i vila", /vägg 3/.test(r.stdout || "") && /domäner i vila: 127\.0\.0\.1/.test(r.stdout || ""), "");
   await stang(malServer.server);
   await stang(server);
 }

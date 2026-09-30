@@ -19977,3 +19977,37 @@ presenteras för kunden (VÄNTAR KUND — verkställs aldrig autonomt);
 (b) o571-04:17-efterdyning; (c) .gitignore-regel för .bygg-kopia/ +
 citationsnamn-undersökning (r354-fyndet); (d) analysfabriksutvidgningen
 (kuraterat steg — 22 lever idag).
+
+
+## ROND 355 [organ:Φ] (2026-09-30 22:0x–22:1xZ) — VACCINET LANDAT: .bygg-kopia/ gitignorerad (5 115 → 0 synliga) + r354:s CITATIONSHYPOTES NEDLAGD (quotePath, inte namnbugg)
+
+**VAD:** r354:s fynd förverkligat — `.bygg-kopia/` (prod-synkens
+nolldowntime-arkivkopia: npm ci + bygge sker i kopian medan pm2 lever
+ur huvudträdet, verktyg/prod-synk.mjs:1054) stod som 5 115 untracked
+filer i prod-trädet utan gitignore-skydd. Vaccin: regeln `.bygg-kopia/`
+i .gitignore (filens etablerade stil med motivering — samma klass som
+data/cache våg 121: ytsmuts som blockerar updateInstead-pushar och
+riskerar oavsiktlig tracking vid `git add -A`).
+
+**RÄTTNING AV r354-NOTIS (ärlig protokollföring):** r354:s "8 underliga
+citations-tecknade namn + namnundersökning" var en FELHYPOTES —
+ls-files citerar icke-ASCII-sökvägar (core.quotePath, standard): de 8+
+var helt vanliga svenska filnamn (b3-rådgivardashboard.md ·
+p6-akm1-bedömning-…md · upload/AKM1 …guide.pptx m.fl.; totalt 15
+icke-ASCII-namn i kopian). Ingen skriptbugg, inget skräp att städa —
+diagnosen avslutad, gitignore-regeln täcker allt.
+
+**SIDONOTIS:** .bygg-kopia bär också en kopia av upload/ (kunduppladd-
+ningar, i roten gitignorerad) — kopieringen skedde innan kopian blev
+avfallskatalog; regeln täcker den, och .bygg-kopia självläker vid
+prod-synkens nästa ombygge.
+
+**BEVIS:** .gitignore-regeln committad + pushad (push-loop mot levande
+prod); effekt i prod: `git status --short` visar ej längre .bygg-kopia.
+
+**KVD:** .gitignore + worklog = config/data, src orörd = INGET bygge;
+R2 orörd; sonden _r355-citat.mjs städad efter bruk.
+
+NÄSTA I KÖN: (a) R2-paketet (VÄNTAR KUND); (b) o571-04:17-efterdyning;
+(c) analysfabriksutvidgningen (kuraterat); (d) evighetskatalogens spår
+roteras vid nästa rond om kön är tom.

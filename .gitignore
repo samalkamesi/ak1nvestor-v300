@@ -11,6 +11,14 @@ node_modules
 # leverans; uppräkningen läckte .next-test3 (1,5 GB ospårad ytsmuts
 # 2026-09-28). Vaccin: testa-prod-synk-nolldowntime.mjs kontroll 25.
 /.next-*/
+
+# r354 (2026-09-30): prod-synkens arkivkopia .bygg-kopia/ (nolldowntime:
+# npm ci + bygge sker I KOPIAN medan pm2 lever ur huvudträdet) — 5 115
+# untracked filer i prod (källkopia + .next-ny; node_modules täcks redan
+# av globala regeln) som vid en slarvig `git add -A` skulle committa ett
+# helt bygge. Samma klass som data/cache våg 121: ytsmuts som blockerar
+# updateInstead-pushar och riskerar oavsiktlig tracking. Runtime, aldrig leverans.
+.bygg-kopia/
 /out/
 
 # production

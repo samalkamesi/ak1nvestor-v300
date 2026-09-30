@@ -20011,3 +20011,47 @@ R2 orörd; sonden _r355-citat.mjs städad efter bruk.
 NÄSTA I KÖN: (a) R2-paketet (VÄNTAR KUND); (b) o571-04:17-efterdyning;
 (c) analysfabriksutvidgningen (kuraterat); (d) evighetskatalogens spår
 roteras vid nästa rond om kön är tom.
+
+
+## ROND 357 [organ:Φ] (2026-09-30 22:1x–22:4xZ) — O571-EFTERDYNINGEN SLUTFÖRD GRÖN: fyndlagen kompletta (falsklarm bevisat ×2), 09-29-glappet förklarat (r328:s crontab-massförlust), inga öppna trådar kvar
+
+**UPPDRAGET (bokat sedan r351):** kontrollera 04:17-cronen
+(doda-lankar-externa) mot r351:s förväntan "BLOCKERAD-vila amazon,
+DOD-larm tysta".
+
+**FYND 1 — nattens FYND-larm var FALSKT och REDAN KURAT (r349):**
+cron-loggen (prod) visar 2026-09-30T0417 FYND-larm — 7 amazon-länkar
+dömda DOD på 405. Verifiering NU med GET + läsar-UA: **200 × 7 av 7**
+(länkarna lever). Kuren fanns redan i r349 (408df9cd, landade före
+r352): läsar-GET-omprov + BOT_MOTSTAND inkl. 405 + kanin-klipp till
+7-dagars domänvila. Skarp återmätning 05:32Z med kurerat verktyg
+BEVISAD i rapporten -053235.json: **perKlass BLOCKERAD 311 · OK 28 ·
+DOD 0 · OUPPNÅBARA 0 · SERVERFEL 0** — amazon i vilofil med "503 även
+för besökar-UA" (tidsbegränsad till 10-01 05:32, korrekt avklingande).
+
+**FYND 2 — 09-29-glappet i cron-loggen FÖRKLARAT:** ingen 04:17-rad för
+09-29 (loggen hoppar 09-28 → 09-30). Serverns reboot var 09-28 01:05
+(förklarar ej). Roten = r328:s dokumenterade CRONTAB-MASSFÖRLUST: en
+desk-installatör ersatte crontaben med 2 rader efter 28/9 16:12Z;
+återställd 09-29 förmiddag (gränsnittsvaktens 07:46Z-kvitto). Vilt
+fönster: 28/9 16:12 → 29/9 ~07:00 = 04:17-körningen 09-29 uteblev.
+Redan vaccinerat: v212 crontab-installera.mjs (append-aldrig-ersätt) +
+r331:s fabriksregel ALDRIG crontab direkt. Ingen ny åtgärd behövs.
+
+**FYND 3 — 21:08-insamlingens 25 FEL-sidor är TRANSIENTA:** samtliga
+/en//ar/-kurssidor som FEL-markades vid 21:08-insamlingen (i agent-
+trädet) svarar **200 × 25 live** NU — speglingsartefakter under pågående
+ombygge, ingen äkta död. (Samma dom som r353:s notering.)
+
+**SLUTSATS:** o571-efterdyningen komplett — alla förväntade och oväntade
+observabler förklarade, noll öppna trådar. DOD-larmen tysta (de som
+kommit var falska + kurerade i roten). Systemet levererar: cron kör,
+vakten mäter, kuren helar, vilan klingar av.
+
+**KVD:** read-only verifiering (loggar/rapporter/filer lästa, inga
+skrivningar i prod) + worklog · src orörd = INGET bygge · R2 orörd ·
+sond _r357-dod.mjs städad efter bruk · tsc-grind körd vid commit.
+
+NÄSTA I KÖN: (a) R2-paketet (VÄNTAR KUND — presenteras i sessionsslut);
+(b) analysfabriksutvidgningen (kuraterat — kandidatvillkoren granskas
+först); (c) evighetskatalogens spårrotation om kön tunnar.

@@ -9461,6 +9461,10 @@ export function StudioChat({ hem }: { hem: () => void }) {
   const prickFärg =
     live === "live" ? "bg-[#3FB950]" : live === "demo" ? "bg-[#D29922]" : "bg-[#F85149]";
   const prickText = live === "live" ? "LIVE" : live === "demo" ? "DEMO" : "NED";
+  /** Headerns modull-indikator — aktiv sessions modell först, sedan det
+   * globala valet, serverns standard, och sista utvägen zai/glm-5.3. */
+  const aktivModellId =
+    aktivTabb?.kontext?.modell || valdModell || serverStandard?.modell || "zai/glm-5.3";
 
   // Kontextberäkning: protokollets ÄRLIGA contextWindow är taket.
   const kontextTak =
@@ -9808,6 +9812,28 @@ export function StudioChat({ hem }: { hem: () => void }) {
               {aktivTabb?.status || statusText}
             </p>
           </div>
+          {/* Modull-indikator — aktiv modul i monospace-badge (ZCode-paritet:
+              modul-id syns i headern). Dold under 640 px för platsens skull. */}
+          <span
+            title={`Modul: ${aktivModellId}`}
+            className="hidden shrink-0 rounded border border-[#30363D] bg-[#161B22] px-1.5 py-0.5 font-mono text-[10px] leading-tight text-[#8B949E] sm:inline-block"
+          >
+            {aktivModellId}
+          </span>
+          {/* SSE-status-indikator — ● Aktiv när agenten strömmar, ○ Väntar
+              annars (samma källa som skicka/stoppa-knappen: strömmarHuvud). */}
+          <span
+            role="status"
+            aria-live="polite"
+            aria-label={`${strömmarHuvud ? "Aktiv" : "Väntar"}: ${statusText}`}
+            title={strömmarHuvud ? "Agenten svarar — strömmen är aktiv" : "Väntar på fråga"}
+            className={cn(
+              "mr-1 hidden shrink-0 text-[10px] font-semibold leading-tight sm:inline",
+              strömmarHuvud ? "text-[#3FB950]" : "text-[#8B949E]",
+            )}
+          >
+            {strömmarHuvud ? "● Aktiv" : "○ Väntar"}
+          </span>
           {/* VÅG 91 A3d: autonomi-signal — mål-motorn arbetar i bakgrunden. */}
           {autonomiAktiv && (
             <span
@@ -9819,7 +9845,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
             </span>
           )}
           <span
-            className={cn("mr-1 h-2 w-2 shrink-0 animate-pulse rounded-full md:hidden", prickFärg)}
+            className={cn("mr-1 h-2 w-2 shrink-0 animate-pulse rounded-full sm:hidden", prickFärg)}
             role="status"
             aria-label={`${prickText}: ${statusText}`}
             title={`${prickText} — ${statusText}`}
@@ -10227,20 +10253,25 @@ export function StudioChat({ hem }: { hem: () => void }) {
                           if (el) meddelandeRefs.current.set(m.id, el);
                           else meddelandeRefs.current.delete(m.id);
                         }}
-                        className="studio-fade-in py-4"
+                        className="studio-fade-in flex justify-end py-4"
                       >
-                        {/* DU-etikett + ren text (ingen bakgrund). */}
-                        <p className="mb-1.5 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
+                        {/* Högerställd användarkolumn med accent-bubbla —
+                            frågor höger, agentens svar vänster (mobil-chatt-
+                            paritet); ref sitter kvar på blocket för tur-hopp. */}
+                        <div className="min-w-0 max-w-[85%] sm:max-w-[78%]">
+                        <p className="mb-1.5 flex items-center justify-end gap-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#8B949E]">
                           <span className="flex h-4 w-4 items-center justify-center rounded-sm border border-[#30363D] font-mono text-[8px] font-bold text-[#8B949E]" aria-hidden>
                             D
                           </span>
                           DU
                         </p>
+                        <div className="rounded-xl border border-[#58A6FF]/30 bg-[#58A6FF]/15 px-3.5 py-2.5">
                         <p className="whitespace-pre-wrap break-words text-[15px] leading-relaxed text-[#E6EDF3] sm:text-sm">
                           {sokFras.trim()
                             ? markeraVanlig(m.text, sokFras.trim(), aktivTräff?.meddelandeId === m.id ? aktivTräff.forekomst : -1)
                             : m.text}
                         </p>
+                        </div>
                         {/* Bifogade + textrefererade bilder → miniatyrer (64px).
                             VÅG 92 B3: bilage-progress — "Laddar upp bilaga…"
                             (spinner) tills POST /stream svarat, därefter
@@ -10297,6 +10328,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                             )}
                           </p>
                         )}
+                        </div>
                       </div>
                     ) : (
                       <div
@@ -11309,7 +11341,7 @@ export function StudioChat({ hem }: { hem: () => void }) {
                     disabled={(!prompt.trim() && klistrade.length === 0) || live === "ned"}
                     title={`Skicka (${aktivaGenvagar.skicka})`}
                     aria-label="Skicka"
-                    className="flex h-[52px] w-12 shrink-0 items-center justify-center rounded-md bg-[#238636] p-0 text-white transition-colors hover:bg-[#2EA043] disabled:opacity-40 sm:h-11 sm:w-12"
+                    className="flex h-[52px] w-12 shrink-0 items-center justify-center rounded-md bg-[#58A6FF] p-0 text-[#0D1117] transition-colors hover:bg-[#79B8FF] disabled:opacity-40 sm:h-11 sm:w-12"
                   >
                     <ArrowRight className="h-5 w-5" />
                   </button>

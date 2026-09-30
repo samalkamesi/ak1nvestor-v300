@@ -20095,3 +20095,44 @@ Fabriksagent s4-u1 (KVARTALSRAPPORTSERIEN). VAL MED KLAIM DISK-FÖRST FÖRE SÖK
 ## SPÅR 4 s4-u3 (byggare 3/3) — 2026-09-30 ~21:5x–22:5x UTC: ASM INTERNATIONAL Q3-LÄSPAKET — teknikgrenens elfte, seriens 90:e, kvartalskedjan som stänger på öret med två sanningar i IFRS-rummet [fabrik]
 
 Fabriksagent s4-u3 (KVARTALSRAPPORTSERIEN). VAL MED KLAIM DISK-FÖRST FÖRE SÖKVERIFIERING (META-läxan; data/vakten/klaim-s4u3-asm-q3-2026.md, skriven ~21:5x): FIFO bland BÄRANDE efter gallrorna — PCELL 22/10 och VPLAY 22/10 (bägge bolagsutlysta) gallras på vinstmultipel-null med negativ lönsamhet (Billerud/Prologis-precedensen: utan vinstmultipel blir identitetstestet omöjligt; gallran gäller tills datan botas), PSNY allt-null, Billerud/Öresund/Fresenius/ITX/WBD/GE redan gallrade av serien ⇒ ASM.AS 27/10 = tidigaste bärande, före CP 28/10 och XOM 30/10 (bägge panel-estimerade) — och ASML-paketets egen kö-notis "ASM International 27/10 (MarketScreener-källa)" infriad med bättre källa. Syskonläget renodlat: u1 Tesla (deras klaim + KO-rad bokför "tre skilda objekt, noll kollision"), u2 Öresund 10/09. IDENTITETSPEDAGOGIK som egen sektion: ASM International ≠ ASML (lithografi, eget paket) ≠ ASMPT (back-end, Hongkong — ASM äger ~25 %, tillkännagav 2/11 2025 avsikt sälja ~9 pp) — tre bolag, två prefix, läs tickern. LEVERANS: data/blogg-utkast/kvartal/2026-q3/sa-laser-du-asm-international-q3-2026.json (2 864 ord, rm 5; teknikgrenens 11:e, seriens 90:e på disk — Tesla 89:e, Öresund 88:e) + byggmotor verktyg/_s4u3-asm-byggdata.mjs (ABORT-grindar) + KVD verktyg/_s4u3-asm-kvd.mjs + 2 kirurgiska KO-rader (detalj + slug) i GRANSKNINGSKO-SAMMANSTALLNING.md. DATUMKLASS HÖJD till BOLAGSBEKRÄFTAT: asm.com/calendar "Quarterly results Q3 2026" tis 27/10 2026 kl 18:00 CET (sökverifierad 2026-09-30; Investing.com + Ideal-Investisseur instämmer; fjolår Q3 28/10 2025; Q2-rutinen = rapport tisdag kväll, samtal onsdag 15:00). PRIMÄRDATA: pressreleaser ordagrant via GlobeNewswire (Q2-26, Q1-26, Q4/FY-25 — komplett kvartalstabell Q4-24→Q2-26 med orders, guider, utdelning 3,25/3,00, återköp 150 avslutat 15/9, orderdisciplinens nedläggning, Kina >30 %, minne 16 %, spares +18 % cc, 2027-spannet 3,7–4,6 mdr "över toppen", Q3-guide 1 100 ±5 % cc, H2 >+20 % mot H1) + universumrad ASM.AS 2026-09-03 (Yahoo+MarketStack) + ASMPT-PR 2025-11-02. TRE SIGNATURNUMMER: (1) SJU KVARTAL, TVÅ SANNINGAR — FY-2025-kedjan −28,9+202,4+384,1+166,1 = 723,7 M€ EXAKT fältets årsresultat (oms-gap −0,003 %), TTM 1 074,1 mot P/E-basen 1 069,2 (0,46 %) med nettomarginal 31,93 % EXAKT — men IFRS-rummet bär Q3-25-blåsningen 384,1 (just. 206,2) och Q1-25-fallgropen −28,9 (just. 191,9): P/E 35,67 mot justerat 41,70, EPS 21,95/18,69 på aktieantalet 48,9 M (mcap/kurs, deklarerad härledning — PR:erna saknar EPS); (2) KASSAN I SPEGELN — EV 35 577 (35,075 × EBIT-TTM 1 014,3) UNDER mcap 38 139 ⇒ nettokassa ~2 562 M€ = 6,7 % av mcap = 52,4 €/aktie, ROE-gåtan löst (nettomarginal 5:a/33, ROE 16:e — kassan kapar; skuld/EK 0,02 nummer 2/33 som spegelbild), återbörd 159,0+150 = 28,8 % av TTM/33,8 % av justerat; (3) ORDERMÖRKRET — orderredovisningen nedlagd från Q1-26 (sista: Q3-25 636,8 b2b 0,80, Q4-25 802,8 b2b 1,15), fyra proxyer rangordnade hårdast→mjukast (guide-aritmetiken H1 1 865,6 × 1,2 ⇒ FY ≥ 4 104,3 / 2027-spannet / reservdelsstuben +18 % / Kinasvängen), Q4-25-dippen som läxa: −12,7 % QoQ och −13,7 % YoY men +5,8 % ÖVER guidens topp 660. Därtur scenarioruta 9 celler (3 960/4 104/4 260 × 24/27/30 %, mittruta P/E 34,4 mot fältet 35,67; axlar medvetet valda utan halvtal = deterministisk avrundning), multiplövning mot teknik-medianerna (P/E 1,65×, netto 1,95×, prognos 1,45×), PEG-konventionens avrundningsgap deklarerat (1,17 mot fält 1,15), femårs-på-fyra-år-notisen, valutavindarna +22/−60, GAA/1,4 nm-piloterna H2-26. KVD GRÖN 129 PASS 0 FEL ×2 deterministiska körningar (verktyg/_s4u3-asm-kvd.mjs: struktur 12 H2/disclaimer exakt/CJK 0, universumparitet 26 fält LIVE, PR-paritet 51 tal, aritmetik ~55 poster oberoende omräknade inkl 9/9 scenarieceller, medianer/rang 12 mått LIVE ur teknik n=33, juridik exakt ett lagrum 2007:528 2 kap 5 § + rådfraser 0, interna länkar 18 mot aspektregistret 26 slugar + /bolag/asm-as i publicerad-cache, externa markdown-länkar 0). VACCINATION: processen rättade ETT äkta paketfel FÖRE grönt (motorns serievärde 3 173,3 mot källans 3 173,2 — FY-kedjan hade stängt mot fel referens) plus FYRA egna kontrollbuggar med motivrader i skriptet: mcap-enheten mdr/M€ (KVD läste 38,139 som miljoner), U+00A0-tusentalsnormalisering i textsök (sv-SE-formateringens icke-brytbara mellanslag i BÅDA riktningarna), typografiskt minus i toleransparsningen, halvtalsavrundning i scenariecellkedjan (3 950×0,27 = 1 066,5 där Math.round och r1 skiljde sig — axeln bytt till halvfria tal). Datavakten redovisar enkelkällor öppet: kurs 779,40 är åtta veckor gammal (2026-09-03-vindan), ROIC-proxy och PEG-nämnaren enligt källans egna noteringar, ASM saknar analysfil/vågvalideringsdom (TMUS-precedensen). Utkast i data/blogg-utkast/, data/blogg/ (live) orörd, src orörd = inget bygge, R2 orörd (publicering = kundens beslut). Kö vidare: CP 28/10 (est), XOM 30/10 (est), novemberfältet (NTR 4/11, Sinch 5/11, Enel 11/11); Billerud/PCELL/VPLAY återaktiveras när 22/10-rapporterna botar underlagen. [fabrik]
+
+## ROND 359 [organ:Φ] (2026-09-30 23:0x–23:2xZ) — v215+v215b LEVERERADE: helsprovets falska RAD-rader kuras i roten, provet 0 RAD 0 GUL 12 GRÖN från båda träden
+
+**v215 (rond 358:s bokning, verkställd):** swap-raden felklassade
+"enhet saknas" som RAD — domtabell inlagd i organism-halsa.mjs (swap
+aktiv = GRÖN; saknas + ≥4 000 MB tillgängligt = GRÖN informationell;
+1 500–3 999 = GUL; <1 500 = RAD), överridningar AK1A_HALSA_SWAPON/
+_FREE/_LOGG för hermetisk svit (o87: diagnostik märks, tmp aldrig
+skarpt). Bevis: r358:s RAD på frisk 62 GB-maskin med 51,5 GB tillgängligt.
+
+**v215b (fynd under verifieringen — samma klassfel, djupare rot):**
+manuellt helsprov från ARBETSYTAN domade 5 falska RAD (hjärtslag/
+styrelserond/gränssnittsvakt "loggen saknas", organ-registret SAKNAS,
+kostnad-logg) — men daemonerna skriver sina vitala loggar i PROD-trädet
+(hjärtat slog 6 min före provet, ronden 25 min, vakten 184 min — alla
+inom fönstren). Kuren: VAKT_KANDIDATER [AK1A_HALSA_VAKT-överridning,
+eget träd först (cron-fallet ROT=prod oförändrat), prod-trädet som
+fallback] + vaktFil() på alla läsställen; kostnad-loggens detalj sade
+"telemetri på plats" även vid RAD — nu sanningen. VERIFIERING: före
+5 RAD 0 GUL 7 GRÖN → efter 0 RAD 0 GUL 12 GRÖN.
+
+**ÖVRIGT I LEVERANSEN:** sessionens node-wrappers landas (_huvud-prodsond/
+diffsond/bygglage/vanta-bygg/analysfabrik-* + _kundmal-bolag404 +
+_r357/_r358-kanalerna + _v215-loggsond/pusha) — SKAL-KVOTEN: studio-
+skalet hänger på &&-kedjor/env-prefix/loops/heredoc (fem häng denna
+session), node-kanalen är bärbären. Commit bbbc6a8d [organ:Φ], tsc-
+grind passerad (baslinje 0).
+
+**LÄGE ANNARS:** fabriken KÖR kundordern "V216: ZCODE 100x — exakt
+visuell paritet med ZCode Desktop" (manifest v216-zcode-100x-1789710000,
+1/4 klart: u3 zcode-klient.tsx på 1 206 s; u1/u2/u4 återstår) — deras
+prod-träds-commits race:ar pushen (två avvisningar "fetch first"/"non-
+fast-forward") push väntar tills omgången tystnar, trädet hålls
+committat lokalt. ROND 358:s "v216 GAP-FORSKNING" bokas om till v218
+(nummerkrock med kundordern).
+
+**KVD:** helsprov före/efter med bevisrader · node --check · pre-commit
+tsc (baslinje 0) · src orörd = INGET bygge · R2 orörd.
+
+NÄSTA I KÖN: v217 cache-headers (read-only sond, krockar inte med
+fabrikens filägarskap) → därefter push-försök när fabriken tystnar.

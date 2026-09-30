@@ -638,3 +638,14 @@ Nästa i kön (händelsestyrda): nattens G2/G5-kvitton 02:30–06:27 UTC 29/9 (7
 | v215 BOKAD (spår 8) | HELSPROVETS SWAP-RAD KURAS: särskilj "swap-enhet saknas" (OK/INFORMATIONELL vid riklig RAM) från "swap-tryck/pågående swap-out" (äkta RAD); tröskel dokumenterad i provet; hermetiskt test med båda fallen | nästa rond |
 | v216 BOKAD (spår 9) | GAP-FORSKNING v2: zcode 3.11.2-24 releasenoteringar + kallkods-kapitelens olästa §-rekommendationer → tillför NYA poster till ZCODE-GAP-REGISTER (registret uttömt 36/36 — regel 3 kräver ny forskning för nästa evolution); ranka V/A direkt | därefter |
 | v217 BOKAD (spår 7) | STATISKA TILLGÅNGARS CACHE-HEADERS: granska Cache-Control/ETag på /_next/static-chunks + media på 4 nyckelsidor (/, /kurser, /blogg, /dataset) — mätvärde bokförs, kur om korta headers på långlivade hash-resurser | rotation |
+
+
+## ROND 359 [organ:Φ] (2026-09-30 23:2xZ) — v215 LEVERERAD + v215b-fyndet; v216-numret togs av kundordern ZCODE 100x
+
+| Post | Innehåll | Status |
+|---|---|---|
+| v215 | Helsprovets swap-rad: domtabell (enhet saknas ≠ RAD vid ≥4 000 MB tillgängligt; GUL 1 500–3 999; RAD <1 500) + hermetiska överridningar AK1A_HALSA_SWAPON/_FREE/_LOGG | ✓ LEVERERAD r359 (bbbc6a8d) — bevis: r358:s RAD på 51,5 GB tillgängligt; provet GRÖN med motivering |
+| v215b (fynd under v215) | ROT-klassfelet: manuellt helsprov från arbetsytan domade 5 falska RAD (vitala loggar bor i prod-trädet, provet läste eget träd) — VAKT_KANDIDATER med prod-fallback + vaktFil() på alla läsställen; kostnad-loggens detalj sannad | ✓ LEVERERAD r359 — före 5 RAD 0 GUL 7 GRÖN → efter 0 RAD 0 GUL 12 GRÖN |
+| v216 (GAP-FORSKNING) | rund 358:s bokning | ☂ OMBOKAD till v218 — numret togs av kundordern "V216: ZCODE 100x" (fabriksmanifest v216-zcode-100x-1789710000 pågår, 1/4 klart) |
+| v216 ZCODE 100x | Kundorder: exakt visuell paritet med ZCode Desktop ("exakt samma i telefon som denna") — 4 byggare hos agentfabriken | PÅGÅR (fabrikens ägo; prod-push races — mina landningar väntar tills omgången tystnar) |
+| v217 | Cache-header-granskning (/, /kurser, /blogg, /dataset): Cache-Control/ETag på /_next/static + media | PÅGÅR r359 (read-only sond) |

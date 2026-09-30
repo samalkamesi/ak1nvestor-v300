@@ -19851,3 +19851,4 @@ forskningslage efter landning som driftbevis.
 NÄSTA I KÖN: (a) analysfabriksutvidgningen (222 nya biblioteksanalyser —
 körbar; granska kandidatvillkoren först); (b) o571-04:17-efterdyning;
 (c) vakttornets nattvarv vid morgonronden.
+Uppföljning SPÅR 1 s1-u3 (AT&T, forts. av raden ovan): HTTP-länktestet kört när deploylåset friade 20:2x lokal — **20/20 unika interna länkar = 200** mot localhost:3000 (16 /dataset/kommunikation-aspekter + /bolag/t + /kurser + /transparens + /kallor; sond verktyg/_s1u3-att-lanktest.mjs, 0 fynd) — paketets sista öppna verifieringspunkt GRÖN; byggarens KVD-siffra (20/20) oberoende konfirmerad. [fabrik]

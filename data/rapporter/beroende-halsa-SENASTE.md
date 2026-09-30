@@ -1,8 +1,18 @@
-# Beroendehälsa — 2026-09-29T11:30:34.197Z
+# Beroendehälsa — 2026-09-30T05:37:47.828Z
 
-**0 sårbarheter (critical 0 · high 0 · moderate 0 · low 0) · 4 uppdateringar inom deklarerat intervall · 9 major-steg.**
+**1 sårbarheter (critical 0 · high 1 · moderate 0 · low 0) · 4 uppdateringar inom deklarerat intervall · 9 major-steg.**
 
 Vakten mäter — installation ägs av prod-synken under deploy-låset.
+
+## Sårbarheter
+
+- **[high] brace-expansion** — **fix inom intervall** (prod-synk: `npm install <paket>` räcker)
+  - brace-expansion: Quadratic-time expansion of the `{a},b}` rewrite causes CPU denial of service (<1.1.21) — https://github.com/advisories/GHSA-q2hr-2g5m-vwhr
+  - brace-expansion: Quadratic-time expansion of the `{a},b}` rewrite causes CPU denial of service (>=4.0.0 <5.0.12) — https://github.com/advisories/GHSA-q2hr-2g5m-vwhr
+  - brace-expansion: DoS via uncontrolled recursion on nested brace groups causing stack exhaustion (<1.1.20) — https://github.com/advisories/GHSA-qhr7-859c-m2p7
+  - brace-expansion: DoS via uncontrolled recursion on nested brace groups causing stack exhaustion (>=4.0.0 <5.0.11) — https://github.com/advisories/GHSA-qhr7-859c-m2p7
+  - brace-expansion: DoS via uncontrolled recursion in parseCommaParts causing stack exhaustion (<1.1.19) — https://github.com/advisories/GHSA-6j4f-fj2g-mc7p
+  - brace-expansion: DoS via uncontrolled recursion in parseCommaParts causing stack exhaustion (>=4.0.0 <5.0.10) — https://github.com/advisories/GHSA-6j4f-fj2g-mc7p
 
 ## Uppdateringar inom deklarerat intervall (låg risk)
 
@@ -15,8 +25,8 @@ Vakten mäter — installation ägs av prod-synken under deploy-låset.
 
 - @tanstack/react-table: 8.21.3 → latest 9.2.4 (major)
 - eslint: 9.39.5 → latest 10.11.0 (major)
-- framer-motion: 12.43.0 → latest 13.4.5 (major)
-- lucide-react: 0.563.0 → latest 1.48.0 (major)
+- framer-motion: 12.43.0 → latest 13.4.6 (major)
+- lucide-react: 0.563.0 → latest 1.49.0 (major)
 - react-day-picker: 9.14.0 → latest 10.0.1 (major)
 - react-resizable-panels: 3.0.6 → latest 4.14.1 (major)
 - recharts: 2.15.4 → latest 3.10.1 (major)

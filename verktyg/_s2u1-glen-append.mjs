@@ -11,7 +11,7 @@
  *    (+statistics +financials +balance-sheet +cash-flow-statement), S&P GMI.
  */
 import { readFileSync, writeFileSync } from "node:fs";
-import { execSync } from "node:child_process";
+import { execSync, execFileSync } from "node:child_process";
 
 const FIL = "data/portfolj-system/bolagsunivers.json";
 const u = JSON.parse(readFileSync(FIL, "utf8"));
@@ -240,5 +240,6 @@ const mattorEfter = matta(tb1);
 console.log(`  Storbritannien|material-matta: ${mattorEfter["Storbritannien|material"] ?? 0} (tröskel 5 för landsida — ej nådd)`);
 
 console.log("\nmd5 före/efter:");
-console.log(execSync(`git hash-object ${FIL}`).toString().trim());
+// Mimosa-härdning (o59): array-form utan skal — FIL är filscope-konstant.
+console.log(execFileSync("git", ["hash-object", FIL]).toString().trim());
 console.log("APPEND KLAR: GLEN.L — universum " + u.length + "→" + tb1.length);

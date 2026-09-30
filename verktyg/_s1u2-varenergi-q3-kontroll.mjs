@@ -5,7 +5,7 @@
 // (texten deklarerar 177-postfilen 2026-09-18 = 75d04140), aritmetik, medianer/rang,
 // juridik 2007:528 (varumarke.json + rådmönster + lagrumsfamiljer), 911, interna +
 // externa länkar, struktur, kalender, gallring, korsreferenser.
-import { execSync } from 'node:child_process';
+import { execSync, execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import http from 'node:http';
 
@@ -24,7 +24,8 @@ const pct = (a, b) => Math.abs(a - b) / Math.abs(b) * 100;
 // ── Universum: dagens fil + byggvintage 75d04140 (textens "samma 177-postfil") ──
 const dagens = JSON.parse(fs.readFileSync(`${ROT}/data/portfolj-system/bolagsunivers.json`, 'utf8'));
 const VINT_HASH = '75d04140';
-const vintageRaw = execSync(`git show ${VINT_HASH}:data/portfolj-system/bolagsunivers.json`, { cwd: ROT, maxBuffer: 64 * 1024 * 1024 }).toString('utf8');
+// Mimosa-härdning (o59): array-form utan skal — VINT_HASH är filscope-konstant.
+const vintageRaw = execFileSync('git', ['show', `${VINT_HASH}:data/portfolj-system/bolagsunivers.json`], { cwd: ROT, maxBuffer: 64 * 1024 * 1024 }).toString('utf8');
 const vintage = JSON.parse(vintageRaw);
 O('V01', `byggvintage ${VINT_HASH} inläst: ${vintage.length} poster (texten deklarerar 177-postfil)`);
 const V = vintage.find(p => p.ticker === 'VAR.OL');

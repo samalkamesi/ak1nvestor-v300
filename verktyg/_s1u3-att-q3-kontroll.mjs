@@ -8,7 +8,7 @@
 //   node verktyg/_s1u3-att-q3-kontroll.mjs            → granskar UTKASTET
 //   node verktyg/_s1u3-att-q3-kontroll.mjs paket      → granskar /tmp/att-paket.json (kurer)
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
-import { execSync } from 'node:child_process';
+import { execSync, execFileSync } from 'node:child_process';
 
 const LAGE = process.argv[2] === 'paket' ? 'paket' : 'utkast';
 const ROT = '/home/ak1a/AK1';
@@ -284,7 +284,8 @@ if (LAGE === 'paket') {
   const json = JSON.stringify(u);
   pass('PAKET JSON giltig + nycklar intakta', ['slug', 'title', 'description', 'pillar', 'author', 'publishedAt', 'readingMinutes', 'tags', 'body'].every(k => k in u));
   // utkastet på disk orört (granskaren skriver ej andras filer)
-  const md5 = execSync(`md5sum ${ROT}/data/blogg-utkast/kvartal/2026-q3/sa-laser-du-att-q3-2026.json`, { encoding: 'utf8' }).split(' ')[0];
+  // Mimosa-härdning (o59): array-form utan skal — ROT är filscope-konstant.
+  const md5 = execFileSync('md5sum', [`${ROT}/data/blogg-utkast/kvartal/2026-q3/sa-laser-du-att-q3-2026.json`], { encoding: 'utf8' }).split(' ')[0];
   pass('PAKET utkastet på disk orört (md5 bb880241…)', md5 === 'bb8802415ed2b92f6a89f303db640b24', md5);
 }
 

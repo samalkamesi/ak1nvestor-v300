@@ -4,6 +4,8 @@ import { readFileSync, existsSync } from "node:fs";
 
 const GAMMAL_BUILD = "ZG-84L6-upvHIt0jR7VUf";
 const LOCK = "/tmp/ak1a-deploy.lock";
+// PROD_URL (versal modulkonstant): fast compile-tidsvärden — Mimosa v1.4.
+const PROD_URL = "https://lab.ak1nvestor.com";
 const vila = (ms) => new Promise((r) => setTimeout(r, ms));
 const start = Date.now();
 
@@ -17,7 +19,7 @@ while (Date.now() - start < 8.5 * 60_000) {
     await vila(5_000); // ge pm2 sekunder att landa efter dubbelbytet
 
     const stat = async (p) => {
-      try { const r = await fetch("https://lab.ak1nvestor.com" + p, { redirect: "manual" }); return r.status; }
+      try { const r = await fetch(new URL(p, PROD_URL), { redirect: "manual" }); return r.status; }
       catch { return "FEL"; }
     };
     console.log("GET /:", await stat("/"));

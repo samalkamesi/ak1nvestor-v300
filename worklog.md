@@ -20175,3 +20175,28 @@ speglar fortfarande 3.11.2-24 — omskanning ingår i 37:s validering).
 Sondverktyg: _v218-versionsond/-changelog/-releaser (node, API-vägar).
 Noll kollision med fabrikens ZCODE 100x (inga visuella poster).
 v219 bokad: post 37 i vågat fönster NÄR fabriken + push-tåget tystnat.
+
+**MIMOSA-KUR (23:5xZ, rondens fjärde leverans):** prod-trädets
+kvalitetsrapport (29/9 07:02) bar GUL med 3 CHILD_PROC_INTERP-fynd i
+_r312-sond4/5 — sonderna sedan dess BORTSTÄDADE från disk (fynden är
+ett dygn gamla spår, nästa 07:02-körning självläker). Men en färsk
+manuell full-scan mot ARBETSTRÄDET hittade FYRA LEVANDE fynd av samma
+klass som ALLA hade kurat samma kväll (o59-doktrinen: execFileSync-
+array / new URL-vittne): _huvud-vanta-bygg.mjs (SSRF_INTERPOLERAD_FETCH
+→ PROD_URL-versalkonstant + new URL(p, PROD_URL)) + tre fabrikskontroller
+(_s1u2-varenergi-q3-kontroll execSync git show → execFileSync-array;
+_s1u3-att-q3-kontroll md5sum → array; _s2u1-glen-append git hash-object
+→ array). VERIFIERING: mimosa-paritet --doman . → **1741 filer 0 fynd
+GRÖN** (före: 4 fynd). Fyra node --check gröna. Utan kuren hade
+prod-synken dragit fynden till prod och morgondagens 07:02-vaktkörning
+dömt GUL igen — baslinjen hålls mekaniskt.
+
+**PUSHEN LANDAD:** fetch+merge med EXPLICIT prod/develop-referens löste
+FETCH_HEAD-paradoxen (merge-base-diagnos: 757db069; "Already up to date"
+var fel ledning) — merge 3ffcd084 tog in fabrikens hela ZCODE 100x-
+leverans (ZCODE-UI-KARTA.md 543 r + tema-block-med-offsets.txt 997 r +
+mobil-PNG + zcode-klient.tsx +1069 r + zcode-markdown.tsx 426 r) och
+pushen gick igenom; prod-synken BYGGER från 76aa130c under flock med pm2
+levande (nolldowntime v182); mina fyra commits (bbbc6a8d → 60d6feaf)
+innehåller ingen byggprodukt (verktyg + markdown) — pågående bygg
+räcker, nästa synk-puls plockar diffen.

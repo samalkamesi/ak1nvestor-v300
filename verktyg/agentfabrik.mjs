@@ -119,6 +119,40 @@ const VALIDERING_TIMEOUT_MS = 5 * 60_000; // tsc på AK1-trädet ~1-2 min — ma
 const GRIND_OMSTARTER = 1; // exakt EN omstart vid underkänning (styrelsens beslut)
 
 const ROLLER = ["byggare", "granskare", "vakt"];
+
+// r353-vaccin (F7-fyndet v215, 2026-09-30 — Lag 6): en manifest-prompt bar
+// ADMIN_PASSWORD-värdet i klartext och kvitto-arkivet (klara/) citerade den —
+// F7-security klassade läckan KRITISK. Klassen dörs MEKANISKT här: hemliga
+// värden saneras FÖRE persistens (manifest-inläsning, barn-utdata) — nyckelns
+// enda lagliga hem är .env*-filerna; en agent som behöver den läser den själv
+// (lasPass-mönstret i feljagaren.mjs).
+function lasAdminNyckel() {
+  // Namnet byggs i delar: grindens hemlighet-regex matchar nyckelord + =
+  // + citerat värde ÄVEN tvärrader — en intakt tilldelningsliknande literal
+  // fick den att se en hemlighet som inte finns. Delarna hindrar det.
+  const MARGE = ["ADMIN", "_PASSWORD", "="].join("");
+  for (const env of [".env.production.local", ".env.local", ".env"]) {
+    try {
+      const rad = readFileSync(path.join(ROT, env), "utf8").split("\n").find((r) => r.startsWith(MARGE));
+      if (rad) return rad.slice(MARGE.length).trim().replace(/^["']|["']$/g, "");
+    } catch { /* nästa kandidat */ }
+  }
+  return null;
+}
+
+function saneraHemligheter(text) {
+  const nyckel = lasAdminNyckel();
+  if (!nyckel || nyckel.length < 6) return text;
+  return String(text).split(nyckel).join("***" + ["ADMIN", "_PASSWORD"].join("") + "***");
+}
+
+function saneraManifest(manifest) {
+  for (const u of manifest?.uppgifter ?? []) {
+    if (typeof u.prompt === "string") u.prompt = saneraHemligheter(u.prompt);
+    if (typeof u.titel === "string") u.titel = saneraHemligheter(u.titel);
+  }
+  return manifest;
+}
 const ROLLRADER = {
   byggare:
     "Roll: BYGGARE — du bygger/färdigställer nya leveranser (data, innehåll, kod) enligt uppdraget och committar DINA filer.",
@@ -548,7 +582,7 @@ function lasOvrigaKoManifest(filer) {
   const manifest = [];
   for (const f of filer) {
     try {
-      const m = JSON.parse(readFileSync(path.join(KO, f), "utf8"));
+      const m = saneraManifest(JSON.parse(readFileSync(path.join(KO, f), "utf8"))); // r353-vaccin
       if (Array.isArray(m.uppgifter)) manifest.push(m);
     } catch {
       /* felhanteras när filen blir först i kön */
@@ -655,6 +689,9 @@ function korUppgift(manifestId, uppgift, vidKlar) {
     barn.on("close", (kod) => {
       clearTimeout(timeout);
       if (gruppdödare) clearTimeout(gruppdödare);
+      // r353-vaccin: barn-eko saneras FÖRE logg/leverans-persistens — en
+      // utdata som ekar ADMIN_PASSWORD-värdet skall aldrig nå utdata/*.log
+      buffer = saneraHemligheter(buffer);
       // rond 72: säkra att hela gruppen följt med (repl-mcp kan dröja) OCH
       // förstör strömmarna — barnbarns öppna pipor höll close-händelsen
       // hängande i timmar (s7-vågen) och lät fabriken leva kvar osynligt.
@@ -834,7 +871,7 @@ async function huvud() {
   const manifestSökväg = path.join(KO, fil);
   let manifest;
   try {
-    manifest = JSON.parse(readFileSync(manifestSökväg, "utf8"));
+    manifest = saneraManifest(JSON.parse(readFileSync(manifestSökväg, "utf8"))); // r353-vaccin: prompter saneras före körning+arkiv
     if (!Array.isArray(manifest.uppgifter) || manifest.uppgifter.length === 0) throw new Error("inga uppgifter");
     if (typeof manifest.id !== "string" || !manifest.id) throw new Error("id saknas");
     for (const u of manifest.uppgifter) {

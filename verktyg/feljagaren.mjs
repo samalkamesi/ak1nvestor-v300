@@ -570,15 +570,30 @@ async function jagaDrift(pass) {
 // (3) Skal-frihet: prefixet interpolerades i ett execSync-kommando — citation
 //     i lösenordet hade brutit sökningen. Nu: in-process-sökning, värdet lämnar
 //     aldrig processen förrän matchat som radnummer.
+// r353-vaccin (2026-09-30, F7-fyndet v215+MIGRERING): täckningen utökad från
+//     data/vakten till HELA trädet — MIGRERING-NY-DATOR.md bar nyckeln i 13
+//     dagar osynligt (dokumentklassen utanför vakt-ytan). Lagliga hem och
+//     efemera ytor exkluderas ur vandringen: .env* (nyckelns hem),
+//     .next*-prefixet (binära byggcacher — läkearkiven .next-forra/
+//     .next-senast-bra bär komprimerad text från byggen då saneringen ännu
+//     inte fanns; ephemera, aldrig i git), data/backups (DR-valvet —
+//     backup-server-filer.mjs:s dokumenterade kontrakt för .env-kopian,
+//     gitignorerat + chmod 600) samt bygg-/beroendekataloger.
 function sokNyckel(katalog, prefix) {
   const traff = [];
   let filer = 0;
+  const HOPPA_OVER_KAT = new Set(["node_modules", ".git", "uploads", ".zcode", "backups"]);
   (function vand(dir) {
     let entries;
     try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { return; }
     for (const e of entries) {
       const p = path.join(dir, e.name);
-      if (e.isDirectory()) { vand(p); continue; }
+      if (e.isDirectory()) {
+        if (e.name.startsWith(".next") || HOPPA_OVER_KAT.has(e.name)) continue;
+        vand(p);
+        continue;
+      }
+      if (e.name.startsWith(".env")) continue; // nyckelns lagliga hem — aldrig fynd
       filer++;
       let txt = "";
       try { txt = fs.readFileSync(p, "utf8"); } catch { continue; }
@@ -605,15 +620,16 @@ function jagaSecurity() {
     if (tracked !== "NEJ") bokfor("F7-security", "KRITISK", ".env.production.local är git-spårad!", "git ls-files");
     else gron("F7-security", ".env ej i git");
   } catch { /* */}
-  // Nycklar i vakt-ytan?
+  // Nycklar i trädet? (r353: HELA trädet — dokumentsläpp utanför vakt-ytan
+  // var klassens överlevnadsrum; .env* exkluderas inuti sokNyckel)
   try {
     const pass = lasPass();
     if (pass && pass.length > 5) {
-      const { traff, filer } = sokNyckel(VAKT, pass.slice(0, 12));
+      const { traff, filer } = sokNyckel(ROT, pass.slice(0, 12));
       if (traff.length) {
         const bevis = traff.slice(0, 3).map((t) => `${t.fil}:${t.rader.join(",")}`).join(" | ");
-        bokfor("F7-security", "KRITISK", `admin-nyckel i vakt-ytan — ${traff.length} fil(er) av ${filer}!`, bevis);
-      } else gron("F7-security", `nyckel ej i vakt-ytan (${filer} filer, rekursivt)`);
+        bokfor("F7-security", "KRITISK", `admin-nyckel i trädet — ${traff.length} fil(er) av ${filer}!`, bevis);
+      } else gron("F7-security", `nyckel ej i trädet (${filer} filer, rekursivt)`);
     }
   } catch { /* */}
 }

@@ -8,7 +8,7 @@
 ### 1. Öppna studion i webbläsaren (fungerar direkt — inget behövs)
 ```
 URL:      https://lab.ak1nvestor.com/studio
-Lösenord: AK1A-b47a45d1f1ab
+Lösenord: “satt i .env.production.local — ADMIN_PASSWORD”
 ```
 Agenten lever på servern och minns ALLT. Tråden, målet, 119 innehållsposter, hela organisationen.
 
@@ -28,8 +28,8 @@ git clone ssh://ak1a@5.189.162.162/home/ak1a/AK1
 
 | Tjänst | URL | Inloggning |
 |---|---|---|
-| Studio (AI-chatten) | lab.ak1nvestor.com/studio | AK1A-b47a45d1f1ab |
-| Admin-panel | lab.ak1nvestor.com/admin | AK1A-b47a45d1f1ab |
+| Studio (AI-chatten) | lab.ak1nvestor.com/studio | “satt i .env.production.local — ADMIN_PASSWORD” |
+| Admin-panel | lab.ak1nvestor.com/admin | “satt i .env.production.local — ADMIN_PASSWORD” |
 | Redaktör (blogg) | lab.ak1nvestor.com | 12d2d550486cdc5e55d111be |
 | Chat-terminal | lab.ak1nvestor.com/chat | ak1a / AK1A-Lund422-Eken25 |
 | SSH till server | ssh -i C:\Users\Public\ak1a-contabo-key ak1a@5.189.162.162 | (nyckelfil) |
@@ -93,7 +93,7 @@ git push
 ```
 Jag har en AK1A Research Lab som lever på Contabo-servern
 5.189.162.162. Klonad repo finns på [sökväg]. Studion lever
-på https://lab.ak1nvestor.com/studio (lösenord AK1A-b47a45d1f1ab).
+på https://lab.ak1nvestor.com/studio (lösenord “satt i .env.production.local — ADMIN_PASSWORD”).
 Organismen — agentfabriken, mål-loopen, alla pumpor — kör på
 servern 24/7. Jag vill fortsätta bygga härifrån.
 ```

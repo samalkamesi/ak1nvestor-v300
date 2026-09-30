@@ -19852,3 +19852,69 @@ NÄSTA I KÖN: (a) analysfabriksutvidgningen (222 nya biblioteksanalyser —
 körbar; granska kandidatvillkoren först); (b) o571-04:17-efterdyning;
 (c) vakttornets nattvarv vid morgonronden.
 Uppföljning SPÅR 1 s1-u3 (AT&T, forts. av raden ovan): HTTP-länktestet kört när deploylåset friade 20:2x lokal — **20/20 unika interna länkar = 200** mot localhost:3000 (16 /dataset/kommunikation-aspekter + /bolag/t + /kurser + /transparens + /kallor; sond verktyg/_s1u3-att-lanktest.mjs, 0 fynd) — paketets sista öppna verifieringspunkt GRÖN; byggarens KVD-siffra (20/20) oberoende konfirmerad. [fabrik]
+
+
+## ROND 353 [organ:Φ] (2026-09-30 20:5x–21:3xZ) — FELJÄGARFYNN F7 LÄKT I ROTTEN: admin-nyckel i 9 förekomster sanerad + klassvaccin i två verktyg (Lag 1+2+6)
+
+**LARMET:** FYNN två rop (20:34 + 20:49) — "F7-security: admin-nyckel i
+vakt-ytan — 1 fil(er) av 6143/6147!" Bevis: feljakt-fynd.jsonl pekade klara/
+v215-zcode-lookalike-mega-1789700000.json:29 — fabrikens ARKIVERADE manifest
+vars prompt-fält bar ADMIN_PASSWORD-värdet i klartext.
+
+**ROT-ANALYS (Lag 2, tre lager):** (1) KÄLLAN: agenter skriver nyckelvärden
+inline — två oberoende instanser: MIGRERING-NY-DATOR.md (09-17, f2f814d3 —
+kundens inloggningsuppgifter i klartext för datorbytet, 4 rader) och
+v215-manifestets prompt (09-30). (2) PERSISTENSEN: agentfabriken flyttar
+ko/-manifestet ordagrant till klara/-arkivet + barn-utdata loggas rått —
+läckan evarcherade. (3) DETEKTORNS BLINDA FLÄCK: F7 skannade ENDAST
+data/vakten — MIGRERING-dokumentet (utanför vakt-ytan) bar nyckeln i 13
+DAGAR osynligt; hela trädet kartlades med F7:s egen lasPass+sökmönster
+(maskerat — värdet lämnade aldrig processerna, s8-härdningens kontrakt).
+
+**KUR (mekaniskt, 9 förekomster → 0):** MIGRERING-NY-DATOR.md sanerad i
+BÅDA träden (4+4 → platshållare "satt i .env.production.local") · v215-
+kvittot sanerat (1) · .bygg-kopia:s MIGRERING-kopia sanerad (4, prod) ·
+DR-valvet data/backups/server-env-backup: chmod 644→600 (ROOT: chmod-koden
+finns sedan s10-u3:s 09-16-kurer men filen är från 09-09 och skrevs aldrig
+om — koden rätt, filen ärvde öppet läge; DR-kontraktet i övrigt HELT:
+tar-arkiven exkluderar data/backups, valvet är gitignorerat).
+
+**VACCIN (Lag 6, klassen dör mekaniskt):**
+(1) FELJÄGAREN: sokNyckel-täckningen data/vakten → HELA trädet
+(dokumentklassen var klassens överlevnadsrum) med lagliga hem/efemera ytor
+exkluderade: .env* · .next*-prefix (läkearkiven .next-forra/.next-senast-
+bra bär komprimerad build-cache från tiden före saneringen — ephemera,
+aldrig i git, dokumenterat) · data/backups (DR-valvets dokumenterade
+kontrakt) · node_modules/.git/uploads/.zcode.
+(2) AGENTFABRIKEN: saneraHemligheter() — ADMIN_PASSWORD-värdet (läst ur
+.env enligt lasPass-mönstret) maskeras till ***ADMIN_PASSWORD*** i TRE
+punkter: manifest-inläsning (ko/) · barn-utdata-före-persistens (utdata/
+*.log + LEVERANS-rad) · lasOvrigaKoManifest. En framtida prompt eller
+barn-eko som bär nyckeln kan ALDRIG nå arkivet.
+
+**BEVIS (Lag 1):** node --check OK ×2 · sanerings-eldprov GRÖN ·
+slutverifikation med F7:s nya söklogik: prod-trädet [] · agent-trädet []
+(0 träffar) · valv-läge 600. F7:s nästa 15-min-jagt (pumpor) kör mot
+prod-trädet — den sanerade disken ger GRÖN direkt; vaccin-koden landar
+med pushen (F7:s gamma kod ser endast data/vakten — också grönt).
+
+**R2-NOTIS TILL KUNDEN (bokförs, verkställs ALDRIG autonomt):** nyckeln
+finns i GIT-HISTORIEN (f2f814d3, 09-17 → ev. GitHub-spegel + server-arkiv-
+bundles). Disk-ytan är nu ren men historiken bär den för alltid — ENDA
+fulla kur = ROTATION av ADMIN_PASSWORD i .env.production.local (kundens
+veto enligt STYRELSE-REGELVERKET §6; tills rotation: läckan är stängd på
+alla aktiva ytor).
+
+**KVD:** verktyg+data (MIGRERING + feljagaren + agentfabriken + worklog) ·
+src orörd = INGET bygge · R2-respekterad (rotation = kundens) · kvitto-
+filen/valvet/byggkopian = gitignorerade ytor (endast disk) · tsc-grind körd
+vid commit.
+
+LEVERANS: denna commit — push direkt; .bygg-kopian självläks vid nästa
+prod-synk (kopierar ur sanerade trädet).
+
+NÄSTA I KÖN: (a) R2-paketet växer: nyckelrotation presenteras för kunden
+(tillsammans med garanti-/Fas 3-texten); (b) o571-04:17-efterdyning;
+(c) analysfabriksutvidgningen (fortfarande kuraterat); (d) validerings-
+processens slutrapport (21:08-insamlingen visade transienta spegel-FEL —
+live-kontroll 200 ×5, inget fynd).

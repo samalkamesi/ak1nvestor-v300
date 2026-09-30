@@ -627,3 +627,14 @@ Nästa i kön (händelsestyrda): nattens G2/G5-kvitton 02:30–06:27 UTC 29/9 (7
 | r340 BOKAD | Bygg under flock när pushkön landat + DRIFTBEVIS: framtids-slug ⇒ 404 MED Server-Timing-signatur (proxy-vägen, ej .meta), kontrollpost + publicerat inlägg ⇒ 200, prod 200 | nästa iteration |
 | r341 BOKAD | Vaktkvitto 13:17-cronsvepet (180 kombinationer mot aktuellt träd) + systemkoll: cron-vaktens loggfönster (första */10-varven) | efter r340 |
 | r342 BOKAD | S7-familjens emottag: o562/o563/o564-domerna när deras eftervakter landar (adoptera dom-JSON:er enligt deras commit-meddelanden) | löpande |
+
+
+## ROND 358 [organ:Φ] (2026-09-30 22:43) — RAD-dom: friskt; kön refillad ur evighetskatalogen (3 vågor, spårrotation 8→9→7)
+
+| Post | Innehåll | Status |
+|---|---|---|
+| RAD-raden (swap) | Helsprovets swap-kontroll felklassar "ingen swap-enhet" (0 kB total) som RAD — mätning vid ronden: 51 499 MB available, swap 0/0, deploy-bygg pågår friskt under flock-lås (prod 200 hela tiden). INGET resursproblem — provets klasslogik är felet | DOM: FRISKT · kur bokas |
+| analysfabriksutvidgningen | r352:s köpost — LEVERERAD av huvudsessionen (72961fcc: 222 analyser) | ✓ STÄNGD |
+| v215 BOKAD (spår 8) | HELSPROVETS SWAP-RAD KURAS: särskilj "swap-enhet saknas" (OK/INFORMATIONELL vid riklig RAM) från "swap-tryck/pågående swap-out" (äkta RAD); tröskel dokumenterad i provet; hermetiskt test med båda fallen | nästa rond |
+| v216 BOKAD (spår 9) | GAP-FORSKNING v2: zcode 3.11.2-24 releasenoteringar + kallkods-kapitelens olästa §-rekommendationer → tillför NYA poster till ZCODE-GAP-REGISTER (registret uttömt 36/36 — regel 3 kräver ny forskning för nästa evolution); ranka V/A direkt | därefter |
+| v217 BOKAD (spår 7) | STATISKA TILLGÅNGARS CACHE-HEADERS: granska Cache-Control/ETag på /_next/static-chunks + media på 4 nyckelsidor (/, /kurser, /blogg, /dataset) — mätvärde bokförs, kur om korta headers på långlivade hash-resurser | rotation |

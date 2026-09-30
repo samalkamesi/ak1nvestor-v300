@@ -20055,3 +20055,36 @@ sond _r357-dod.mjs städad efter bruk · tsc-grind körd vid commit.
 NÄSTA I KÖN: (a) R2-paketet (VÄNTAR KUND — presenteras i sessionsslut);
 (b) analysfabriksutvidgningen (kuraterat — kandidatvillkoren granskas
 först); (c) evighetskatalogens spårrotation om kön tunnar.
+
+
+## ROND 358 [organ:Φ] (2026-09-30 22:43–22:5xZ) — STYRELSEROND: RAD-domad FRISKT (provfel, ej resurs), deploy bevittnad levande, kön refillad 3 vågor (v215-v217)
+
+**RAD-RADEN (högsta prioritet):** helsprovets "1 RAD — swap" domades
+med mätning: `free -m` visar 51 499 MB available · swap 0 total/0 used
+(servern HAR ingen swap-enhet). Inget resursproblem — provet felklassar
+frånvarande swap-enhet som RAD. Samtidigt bevittatades pulsvaktens
+"trasig-bygg"-varv vara ett LEVANDE deploy: prod-synk (PID 2361374,
+21:57) håller flock-låset (PID 2376509, 22:16) med git archive →
+npm ci → NEXT_DIST_DIR=.next-ny-build i .bygg-kopia + två fabriksbarn
+(spår 4, kvartalsrapporter) — sajten **200 genom hela bygget**
+(nolldowntime-kontraktet verkar). Kur bokas som v215.
+
+**EVOLUTIONEN:** 28 commits sedan förra ronden (huvudsessionens
+analysfabriksutvidgning LEVERERAD 72961fcc — r352:s köpost STÄNGD;
+fabrikens s3-u1/s3-u2/s3-u3 + s4-familjen levererar löpande). Inga döda,
+inga födda — organismen stabil.
+
+**BESLUT (PIPELINE-KO refyllnad enligt evighetsmotorn punkt 8 —
+registret uttömt 36/36, katalogens aktiva spår 8/9/7 roterade):**
+- v215 HELSPROVETS SWAP-RAD (spår 8): särskilj "enhet saknas" från
+  "swap-tryck" — dagens RAD-dom var falsk.
+- v216 GAP-FORSKNING v2 (spår 9): zcode 3.11.2-24 releasenoteringar +
+  olästa kallkods-§ → nya poster till ZCODE-GAP-REGISTER.
+- v217 CACHE-HEADER-GRANSKNING (spår 7): statiska tillgångars
+  Cache-Control/ETag på 4 nyckelsidor; mätvärde bokförs.
+
+**KVD:** PIPELINE-KO + worklog + beslutsminne = dataleverans · src orörd
+= INGET bygge · R2 orörd (R2-paketet presenteras för kunden i
+sessionsslut, verkställs aldrig autonomt) · tsc-grind körd vid commit.
+
+NÄSTA I KÖN: v215 → v216 → v217 enligt ovan; R2-paketet väntar kund.

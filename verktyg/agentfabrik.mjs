@@ -100,7 +100,11 @@ const KATALOG = path.join(ROT, "data", "infra", "evighetskatalog.md");
 const SPAR_STATE = path.join(ROTT, "spar.json");
 const AUTO_PAUS = path.join(ROTT, "AUTO-PAUS");
 
-const PARALLELL_TAK = 3; // 12 = RAM-döden (bevisat); 3 = bevisat säkert
+// R358 (2026-09-30, kundorder "maxa allt"): 3→10 på SSD Nodes 60 GiB. "12 =
+// RAM-döden" gällde Contabo 8 GB (5,2 GB top). Här: 50 GiB MemAvailable, ett
+// barn ~0,5 GB aktivt ⇒ 10 barn ≈ 5-8 GB topp; RAM-vakten (RAM_TAK_MB nedan)
+// vägrar ändå ny omgång under 1,5 GB ledigt — dubbel säkerhet.
+const PARALLELL_TAK = 10;
 const RAM_TAK_MB = 1500; // vägra ny omgång under detta MemAvailable
 const RAM_KEDJA_MB = 2200; // (c) auto-kedjning: nästa omgång direkt ÖVER detta
 const AUTO_TAK_MS = 30 * 60_000; // (a) max ett auto-manifest per 30 min

@@ -1,7 +1,26 @@
 "use client";
 
 import * as React from "react";
-import { ArrowDown, Loader2, Plus, SendHorizonal, ShieldAlert } from "lucide-react";
+import {
+  ArrowDown,
+  CheckCircle2,
+  ChevronRight,
+  FilePen,
+  FileText,
+  FolderSearch,
+  Globe,
+  Link2,
+  ListChecks,
+  Loader2,
+  Plus,
+  RotateCcw,
+  Search,
+  SendHorizonal,
+  ShieldAlert,
+  Terminal,
+  Wrench,
+  XCircle,
+} from "lucide-react";
 
 import { adminHeaders, adminJsonHeaders, loggaIn, sparaAdminLosenord } from "@/lib/admin-klient";
 import type {
@@ -41,16 +60,30 @@ import type {
  *
  * STRÖMMEN: POST /api/studio/stream → SSE — ett `data:`-event i taget
  * (samma reader/`\n\n`-mönster som studio-chat; ": ping"-heartbeaps
- * hoppar över). delta(text) bygger svaret live; verktyg/status/modell_status
- * driver en tunn statusrad; kontext uppdaterar %-mätaren; klart sätter
- * hela svaret; fel blir en röd rad — kundens text lägger sig TILLBAKA i
- * rutan vid avslag (R6: tappa aldrig kundens text). Interaktioner
+ * hoppar över). delta(text) bygger svaret live; verktyg_kort/verktyg_input
+ * (V83 B1-kartläggningen av tool.updated/model.streaming) bygger TOOL-
+ * INDIKATORER — kollapsade rader mellan meddelandena (ikon + verktygsnamn
+ * + argument-summary, spinner under körning, bock/kryss vid mål, klick =
+ * detaljer) precis som Desktop-appens komprimerade kort; kontext
+ * uppdaterar %-mätaren; klart sätter hela svaret; fel blir en röd rad
+ * MED retry-knapp när prompten aldrig kom iväg — kundens text lägger sig
+ * TILLBAKA i rutan vid avslag (R6: tappa aldrig kundens text). Interaktioner
  * (VÅG 83 B2: permission/fråga) renderas som ett kompakt kort ovanför
  * composern — besvaras det ej svarar transportens 30 s-default, men
  * kunden SKALL kunna godkänna från en-trycks-ytan (agenten annars stannar).
  *
+ * LOADING + LAYOUT (fabriksuppdraget 2026-09-30): "AK1A tänker…"-rad med
+ * puls-ikon medan svaret väntar; meddelandena bär avatar-initialer (D för
+ * dig, A för agenten) + tidsstämplar (HH:MM, endast live-poster — historiken
+ * bär ingen tid, då visas ärligt ingen); luft mellan meddelandena (användar-
+ * bubbla med rundade hörn, assistent på ren yta); composern är ett lyftet
+ * kort med skugga och fokus-ring. Skicka-knappen är disabled när rutan är
+ * tom och byter till spinner under sändning.
+ *
  * 30 s-poll (VÅG 87 H1, pausad när fliken är dold eller en ström kör)
- * håller vyn sann: mål-loopens autonoma arbete syns utan att kunden gör något.
+ * håller vyn sann: mål-loopens autonoma arbete syns utan att kunden gör
+ * något. Pollen ersätter vyn med journalens sanning — live-toolkort och
+ * tidsstämplar lever bara i strömmande vy, nästa prompt bygger nya.
  *
  * Pedagogisk plattform — inte investeringsråd.
  */
@@ -64,10 +97,41 @@ type ZEvent =
   | { typ: "kontext"; kontext: StudioKontext | null }
   | { typ: "ändringar"; filer: unknown[] };
 
-/** Chattens vy-post — "fel" är lokala/systemrader (röda), aldrig historik. */
+/**
+ * Verktygskortets vy-form — merge:as live ur verktyg_kort-/verktyg_input-
+ * eventen (samma fält som transportens StudioVerktygSteg-kedja plus
+ * liveInput från argument-deltan).
+ */
+interface VerktygVy {
+  id: string;
+  namn: string;
+  steg: "planerad" | "startar" | "kör" | "resultat" | "fel";
+  /** Argument som JSON-sträng, truncat av transporten. */
+  argument?: string;
+  beskrivning?: string;
+  /** Resultatet som text, truncat. */
+  resultat?: string;
+  /** Felmeddelande (kind error) — raden renderas röd. */
+  fel?: string;
+  /** Kind result bär duration (ms). */
+  varaktighetMs?: number;
+  /** Kind progress: elapsedMs + stdout/stderr-svans. */
+  framsteg?: { elapsedMs?: number; utdata?: string };
+  /** Agenten skriver argumenten JUST NU (verktyg_input-delta, partiell). */
+  liveInput?: string;
+}
+
+/** Chattens vy-post — "fel" är lokala/systemrader (röda), aldrig historik;
+ *  "verktyg" är en tool-indikatorrad mellan meddelandena. */
 interface VyPost {
-  roll: "user" | "assistant" | "fel";
+  roll: "user" | "assistant" | "fel" | "verktyg";
   text: string;
+  /** Live-tidsstämpel — historikposter bär ingen, då visas ingen (ärligt). */
+  ts?: number;
+  /** roll === "verktyg": kortet som strömmen bygger. */
+  verktyg?: VerktygVy;
+  /** roll === "fel": prompten som ALDRIG kom iväg — retry-knappen skickar om den. */
+  retryPrompt?: string;
 }
 
 /** Kontextradens vy (StudioKontext → två tal). */
@@ -91,6 +155,8 @@ interface StreamSidaload {
   live?: boolean;
   fel?: string;
 }
+
+// ── Rena hjälpfunktioner ─────────────────────────────────────────────────────
 
 /** Kontext → vy-tal (ogiltiga värden ⇒ null = dölj mätaren). */
 function kontextVy(k: StudioKontext | null | undefined): KontextVy | null {
@@ -123,6 +189,131 @@ function posterUr(data: StreamSidaload, tradLage: boolean): { poster: VyPost[]; 
   return { poster, kapad: false };
 }
 
+/** Tidsstämpel HH:MM (sv-SE) — vy-posternas lokala klocka. */
+function tidText(ts: number): string {
+  return new Date(ts).toLocaleTimeString("sv-SE", { hour: "2-digit", minute: "2-digit" });
+}
+
+/** Formattera millisekunder läsbart (1234 → "1,2 s"; 456 → "456 ms"). */
+function msText(ms: number): string {
+  if (ms >= 1000) return (ms / 1000).toFixed(1).replace(".", ",") + " s";
+  return Math.round(ms) + " ms";
+}
+
+/** Verktygsikon per namn — samma karta som studio-chatts verktygskort. */
+function verktygsIkon(namn: string): React.ReactNode {
+  const n = namn.toLowerCase();
+  if (n === "bash" || n.includes("terminal")) return <Terminal className="h-3.5 w-3.5 shrink-0 text-[#8B949E]" />;
+  if (n.startsWith("read")) return <FileText className="h-3.5 w-3.5 shrink-0 text-[#8B949E]" />;
+  if (n.startsWith("write") || n === "edit" || n === "multiedit" || n.includes("notebook")) {
+    return <FilePen className="h-3.5 w-3.5 shrink-0 text-[#8B949E]" />;
+  }
+  if (n.includes("grep")) return <Search className="h-3.5 w-3.5 shrink-0 text-[#8B949E]" />;
+  if (n.includes("glob")) return <FolderSearch className="h-3.5 w-3.5 shrink-0 text-[#8B949E]" />;
+  if (n.includes("todo")) return <ListChecks className="h-3.5 w-3.5 shrink-0 text-[#8B949E]" />;
+  if (n.includes("websearch")) return <Globe className="h-3.5 w-3.5 shrink-0 text-[#8B949E]" />;
+  if (n.includes("webfetch") || n.includes("fetch")) return <Link2 className="h-3.5 w-3.5 shrink-0 text-[#8B949E]" />;
+  return <Wrench className="h-3.5 w-3.5 shrink-0 text-[#8B949E]" />;
+}
+
+/**
+ * Kortrubrik av argumenten: plockar det mest läsbara fältet ur JSON:en —
+ * "Bash: ls uploads/", "Read: src/lib/…", "Grep: finans*". Faller på
+ * liveInput (partiell JSON ⇒ rå första raden) och sist beskrivning.
+ */
+function kortRubrik(v: VerktygVy): string {
+  const ra = v.argument ?? v.liveInput;
+  if (ra) {
+    try {
+      const p = JSON.parse(ra) as Record<string, unknown>;
+      for (const nyckel of ["command", "file_path", "path", "pattern", "url", "query", "prompt", "description"]) {
+        const varde = p[nyckel];
+        if (typeof varde === "string" && varde) {
+          return `${v.namn}: ${varde.length > 64 ? varde.slice(0, 64) + "…" : varde}`;
+        }
+      }
+    } catch {
+      /* rå/partiell text — första raden nedan */
+    }
+    const forsta = ra.split("\n")[0];
+    if (forsta) return `${v.namn}: ${forsta.length > 64 ? forsta.slice(0, 64) + "…" : forsta}`;
+  }
+  if (v.beskrivning) return `${v.namn}: ${v.beskrivning.slice(0, 64)}`;
+  return v.namn;
+}
+
+// ── Tool-indikatorn (kollapsad rad mellan meddelandena, expandera för detaljer) ──
+
+/**
+ * Verktygsraden — Desktop-känslans komprimerade kort: ikon + rubrik +
+ * status (spinner under körning, bock vid resultat, kryss vid fel) +
+ * varaktighet när protokollet bär den. Klick växlar detaljvyn (argument,
+ * resultat, fel, live-utdata) i monospace.
+ */
+function VerktygsRad({ kort, oppen, visa }: { kort: VerktygVy; oppen: boolean; visa: () => void }) {
+  const detaljer =
+    (kort.argument || kort.liveInput || kort.resultat || kort.fel || kort.framsteg?.utdata) ?? null;
+  return (
+    <div className="my-1 pl-[calc(1rem+28px+10px)] pr-4">
+      <button
+        onClick={visa}
+        aria-expanded={oppen}
+        className={`flex w-full items-center gap-2 rounded-lg border px-2.5 py-1.5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#58A6FF]/50 ${
+          kort.steg === "fel" ? "border-[#DA3633]/40 bg-[#DA3633]/10" : "border-[#21262D] bg-[#161B22]/70"
+        }`}
+      >
+        {verktygsIkon(kort.namn)}
+        <span className="min-w-0 flex-1 truncate font-mono text-[11px] text-[#8B949E]">
+          {kortRubrik(kort)}
+        </span>
+        {kort.varaktighetMs ? (
+          <span className="shrink-0 font-mono text-[10px] text-[#6E7681]">{msText(kort.varaktighetMs)}</span>
+        ) : null}
+        {kort.steg === "fel" ? (
+          <XCircle className="h-3.5 w-3.5 shrink-0 text-[#F85149]" />
+        ) : kort.steg === "resultat" ? (
+          <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[#3FB950]" />
+        ) : (
+          <Loader2 className="h-3.5 w-3.5 shrink-0 animate-spin text-[#D29922]" />
+        )}
+        {detaljer ? (
+          <ChevronRight
+            className={`h-3.5 w-3.5 shrink-0 text-[#6E7681] transition-transform ${oppen ? "rotate-90" : ""}`}
+          />
+        ) : null}
+      </button>
+      {oppen && detaljer ? (
+        <div className="mt-1 space-y-1.5 rounded-lg border border-[#21262D] bg-[#010409] p-2">
+          {kort.argument || kort.liveInput ? (
+            <DetaljBlock etikett="Argument" text={kort.argument ?? kort.liveInput ?? ""} />
+          ) : null}
+          {kort.framsteg?.utdata ? <DetaljBlock etikett="Live" text={kort.framsteg.utdata} /> : null}
+          {kort.resultat ? <DetaljBlock etikett="Resultat" text={kort.resultat} /> : null}
+          {kort.fel ? <DetaljBlock etikett="Fel" text={kort.fel} rod /> : null}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+/** Monospace-detaljblock i det expanderade verktygskortet. */
+function DetaljBlock({ etikett, text, rod }: { etikett: string; text: string; rod?: boolean }) {
+  return (
+    <div>
+      <p className={`text-[10px] font-semibold tracking-wide ${rod ? "text-[#F85149]" : "text-[#6E7681]"}`}>
+        {etikett.toUpperCase()}
+      </p>
+      <pre
+        className={`mt-0.5 max-h-40 overflow-auto whitespace-pre-wrap break-words font-mono text-[11px] leading-relaxed ${
+          rod ? "text-[#F85149]" : "text-[#8B949E]"
+        }`}
+      >
+        {text}
+      </pre>
+    </div>
+  );
+}
+
 // ── Komponenten ──────────────────────────────────────────────────────────────
 
 export default function ZcodeKlient() {
@@ -150,6 +341,8 @@ export default function ZcodeKlient() {
   const [vantar, setVantar] = React.useState<StudioInteraktion | null>(null);
   const [svarsText, setSvarsText] = React.useState("");
   const [vidBotten, setVidBotten] = React.useState(true);
+  /** Expanderade verktygskort (kort-id) — kollapsade är standard. */
+  const [oppnaKort, setOppnaKort] = React.useState<Set<string>>(() => new Set());
 
   const chattRef = React.useRef<HTMLDivElement | null>(null);
   const rutaRef = React.useRef<HTMLTextAreaElement | null>(null);
@@ -161,6 +354,16 @@ export default function ZcodeKlient() {
     if (el && vidBottenRef.current) el.scrollTop = el.scrollHeight;
   }, [poster, status, tankar]);
 
+  /** Kort-expansion: klick på raden växlar detaljläget (per kort-id). */
+  const togglaKort = React.useCallback((id: string) => {
+    setOppnaKort((s) => {
+      const nya = new Set(s);
+      if (nya.has(id)) nya.delete(id);
+      else nya.add(id);
+      return nya;
+    });
+  }, []);
+
   // ── Auto-connect: mount ⇒ sessionskontroll + senast aktiva session ────────
 
   const lasIn = React.useCallback(async () => {
@@ -171,7 +374,7 @@ export default function ZcodeKlient() {
         return;
       }
       let data = (await res.json()) as StreamSidaload;
-      // VÅG 87 H1: senast aktiva session (annan än default) ⇒ sideload av DEN —
+      // VÅG 87 H1: senast aktiva session (annan än default) ⇒ sidoload av DEN —
       // kunden återkommer rakt in i samtalet som lever, utan ett enda klick.
       if (data.senastAktivSessionId && data.senastAktivSessionId !== data.sessionId) {
         try {
@@ -309,16 +512,37 @@ export default function ZcodeKlient() {
 
     /** Bygg/ersätt den strömmande assistant-posten — ren härledning ur vyn:
      *  sista posten är "assistant" ⇒ delta fortsätter den, annars föds den
-     *  (user-posten stod sist när strömmen började). Ingen yttre flagga. */
+     *  (user-posten eller verktygsraderna stod sist när strömmen började).
+     *  Ingen yttre flagga. */
     const tryckSvans = (t: string) => {
       setPoster((p) => {
         const kopia = [...p];
         const sist = kopia.length - 1;
         if (sist >= 0 && kopia[sist].roll === "assistant") {
-          kopia[sist] = { roll: "assistant", text: t };
+          kopia[sist] = { roll: "assistant", text: t, ts: kopia[sist].ts };
         } else {
-          kopia.push({ roll: "assistant", text: t });
+          kopia.push({ roll: "assistant", text: t, ts: Date.now() });
         }
+        return kopia;
+      });
+    };
+
+    /** Merge:a ett verktyg_kort-event i vy-posterna (upsert per kort-id —
+     *  samma mönster som studio-chatts uppdateraKort: saknas kortet föds
+     *  en planerad platshållare som följande event fyller). */
+    const koraKort = (
+      id: string,
+      ror: (bef: VerktygVy) => VerktygVy,
+    ) => {
+      setPoster((p) => {
+        const ix = p.findIndex((post) => post.roll === "verktyg" && post.verktyg?.id === id);
+        if (ix < 0) {
+          return [...p, { roll: "verktyg", text: "", verktyg: ror({ id, namn: "Verktyg", steg: "planerad" }) }];
+        }
+        const bef = p[ix].verktyg;
+        if (!bef) return p;
+        const kopia = [...p];
+        kopia[ix] = { roll: "verktyg", text: "", verktyg: ror(bef) };
         return kopia;
       });
     };
@@ -363,13 +587,36 @@ export default function ZcodeKlient() {
             }
             break;
           case "verktyg":
+            // Legacy-signal (start/slut) — statusradens puls; de rika korten
+            // kommer via verktyg_kort nedan.
             setStatus(event.händelse === "start" ? `Kör ${event.namn}…` : "");
             break;
           case "verktyg_kort":
-            if (event.namn && (event.steg === "planerad" || event.steg === "startar" || event.steg === "kör")) {
-              setStatus(`Kör ${event.namn}…`);
-            } else if (event.steg === "fel" && event.namn) {
-              setStatus(`${event.namn} misslyckades`);
+            // Tool-indikatorn: kortet BÄR sin egen status (spinner/bock/
+            // kryss + varaktighet) — statusraden dukas av för att inte dubblera.
+            if (event.id) {
+              koraKort(event.id, (bef) => ({
+                ...bef,
+                namn: event.namn ?? bef.namn,
+                steg: event.steg ?? bef.steg,
+                argument: event.argument ?? bef.argument,
+                beskrivning: event.beskrivning ?? bef.beskrivning,
+                resultat: event.resultat ?? bef.resultat,
+                fel: event.fel ?? bef.fel,
+                varaktighetMs: event.varaktighetMs ?? bef.varaktighetMs,
+                framsteg: event.framsteg ?? bef.framsteg,
+              }));
+              setStatus("");
+            }
+            break;
+          case "verktyg_input":
+            // Agenten skriver argumenten LIVE — delta läggs på kortets
+            // liveInput (rubriken följer med i realtid).
+            if (event.id) {
+              koraKort(event.id, (bef) => ({
+                ...bef,
+                liveInput: (bef.liveInput ?? "") + event.text,
+              }));
             }
             break;
           case "runda":
@@ -395,7 +642,7 @@ export default function ZcodeKlient() {
             setTankar("");
             break;
           case "fel":
-            setPoster((p) => [...p, { roll: "fel", text: event.meddelande }]);
+            setPoster((p) => [...p, { roll: "fel", text: event.meddelande, ts: Date.now() }]);
             break;
           default:
             // ändringar/meddelande_id/mal_* — panelfri vy struntar i dem.
@@ -407,13 +654,13 @@ export default function ZcodeKlient() {
 
   // ── Skicka (prompt → SSE; kundens text förloras ALDRIG, R6) ───────────────
 
-  const skicka = async () => {
-    const prompt = text.trim();
+  const skicka = async (explicit?: string) => {
+    const prompt = (explicit ?? text).trim();
     if (!prompt || sander) return;
     setText("");
     const el = rutaRef.current;
     if (el) el.style.height = "auto"; // rutan återföder sin vilohöjd
-    setPoster((p) => [...p, { roll: "user", text: prompt }]);
+    setPoster((p) => [...p, { roll: "user", text: prompt, ts: Date.now() }]);
     setSander(true);
     setStatus("Skickar…");
     setTankar("");
@@ -438,7 +685,13 @@ export default function ZcodeKlient() {
         else setText(prompt);
         setPoster((p) => [
           ...p,
-          { roll: "fel", text: data?.fel ?? `Chatten kunde ej nås (${res.status}).` },
+          {
+            roll: "fel",
+            text: data?.fel ?? `Chatten kunde ej nås (${res.status}).`,
+            ts: Date.now(),
+            // Prompten kom ALDRIG fram — retry-knappen skickar om den ordagrant.
+            retryPrompt: prompt,
+          },
         ]);
         if (res.status === 401 || res.status === 403) setLage("las");
         return;
@@ -447,11 +700,13 @@ export default function ZcodeKlient() {
     } catch {
       // Nätverksfel EFTER sändning: arbetet kan leva vidare server-side (VÅG 91
       // A1c) — pollen tar hem svaret; texten ligger kvar tryggt i journalen.
+      // Ingen retry-knapp här: om-skickning skulle dubbelgöra prompten.
       setPoster((p) => [
         ...p,
         {
           roll: "fel",
           text: "Anslutningen bröts — meddelandet skickades och svaret syns här strax (uppdateras av sig själv).",
+          ts: Date.now(),
         },
       ]);
     } finally {
@@ -459,6 +714,14 @@ export default function ZcodeKlient() {
       setStatus("");
       setTankar("");
     }
+  };
+
+  /** Retry på en fallen prompt — bara när ingen ström kör; rutan tömms endast
+   *  om kunden lämnat den fallna texten orörd (påbörjad ny text respekteras). */
+  const provaIgen = (prompt: string) => {
+    if (sander) return;
+    if (text.trim() === prompt) setText("");
+    void skicka(prompt);
   };
 
   // ── Interaktionssvar (permission/fråga → protokollet) ────────────────────
@@ -536,6 +799,15 @@ export default function ZcodeKlient() {
   const kontextProcent =
     kontext !== null && kontext.window > 0 ? Math.round((kontext.used / kontext.window) * 100) : null;
 
+  /** "AK1A tänker…"-raden: visas medan en ström kör och INGA svarsposter
+   *  fötts än (user/första tomma assistant sist). Verktygsradernas spinnare
+   *  och interaktionskortet är sina egna signaler — då döljs raden. */
+  const sistPost = poster[poster.length - 1];
+  const visaTankarRad =
+    sander &&
+    !vantar &&
+    (!sistPost || sistPost.roll === "user" || (sistPost.roll === "assistant" && !sistPost.text));
+
   return (
     <div className="flex h-dvh flex-col overflow-hidden overscroll-none bg-[#0D1117] text-[#E6EDF3]">
       {/* Header — tunn, safe-area-topp: märke + status + Ny chatt. Inget mer. */}
@@ -577,7 +849,7 @@ export default function ZcodeKlient() {
         }}
         className="relative flex-1 overflow-y-auto overscroll-contain bg-[#0D1117]"
       >
-        {poster.length === 0 ? (
+        {poster.length === 0 && !visaTankarRad ? (
           <div className="flex h-full items-center justify-center px-6">
             <p className="max-w-sm text-center text-sm leading-relaxed text-[#8B949E]">
               {nyckelVantar
@@ -586,40 +858,103 @@ export default function ZcodeKlient() {
             </p>
           </div>
         ) : (
-          <div>
+          <div className="py-2">
             {kapat ? (
               <p className="px-4 pb-1 pt-3 text-center text-[11px] text-[#8B949E]">
                 Visar de {MAX_VY_POSTER} senaste meddelandena — hela tråden lever i studion.
               </p>
             ) : null}
-            {poster.map((post, i) => (
-            <div
-              key={`${i}-${post.roll}`}
-              className="studio-fade-in border-b border-[#21262D]/70 px-4 py-3"
-            >
-              <p
-                className={`text-[11px] font-semibold tracking-wide ${
-                  post.roll === "user"
-                    ? "text-[#58A6FF]"
-                    : post.roll === "assistant"
-                      ? "text-[#3FB950]"
-                      : "text-[#F85149]"
-                }`}
-              >
-                {post.roll === "user" ? "DU" : post.roll === "assistant" ? "AK1A" : "FEL"}
-              </p>
-              <p
-                className={`mt-1 whitespace-pre-wrap break-words text-[14px] leading-relaxed ${
-                  post.roll === "fel" ? "text-[#F85149]" : "text-[#E6EDF3]"
-                }`}
-              >
-                {post.text}
-                {sander && post.roll === "assistant" && i === poster.length - 1 ? (
-                  <span className="ml-0.5 animate-pulse text-[#58A6FF]">▊</span>
-                ) : null}
-              </p>
-            </div>
-            ))}
+            {poster.map((post, i) =>
+              post.roll === "verktyg" && post.verktyg ? (
+                <VerktygsRad
+                  key={`${i}-${post.verktyg.id}`}
+                  kort={post.verktyg}
+                  oppen={oppnaKort.has(post.verktyg.id)}
+                  visa={() => togglaKort(post.verktyg?.id ?? "")}
+                />
+              ) : (
+                <div
+                  key={`${i}-${post.roll}`}
+                  className="studio-fade-in flex gap-2.5 px-4 py-2.5"
+                >
+                  {/* Avatar — D för dig, A för agenten, ! för systemfel. */}
+                  <span
+                    aria-hidden
+                    className={`flex h-7 w-7 shrink-0 select-none items-center justify-center rounded-full text-[11px] font-bold text-white ${
+                      post.roll === "user"
+                        ? "bg-[#1F6FEB]"
+                        : post.roll === "assistant"
+                          ? "bg-[#238636]"
+                          : "bg-[#DA3633]"
+                    }`}
+                  >
+                    {post.roll === "user" ? "D" : post.roll === "assistant" ? "A" : "!"}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="flex items-baseline gap-2">
+                      <span
+                        className={`text-[11px] font-semibold tracking-wide ${
+                          post.roll === "user"
+                            ? "text-[#58A6FF]"
+                            : post.roll === "assistant"
+                              ? "text-[#3FB950]"
+                              : "text-[#F85149]"
+                        }`}
+                      >
+                        {post.roll === "user" ? "DU" : post.roll === "assistant" ? "AK1A" : "FEL"}
+                      </span>
+                      {post.ts ? (
+                        <span className="text-[10px] tabular-nums text-[#6E7681]">{tidText(post.ts)}</span>
+                      ) : null}
+                    </p>
+                    <div
+                      className={`mt-1 ${
+                        post.roll === "user"
+                          ? "rounded-2xl rounded-tl-md border border-[#21262D] bg-[#161B22] px-3.5 py-2.5"
+                          : ""
+                      }`}
+                    >
+                      <p
+                        className={`whitespace-pre-wrap break-words text-[14px] leading-relaxed ${
+                          post.roll === "fel" ? "text-[#F85149]" : "text-[#E6EDF3]"
+                        }`}
+                      >
+                        {post.text}
+                        {sander && post.roll === "assistant" && i === poster.length - 1 ? (
+                          <span className="ml-0.5 animate-pulse text-[#58A6FF]">▊</span>
+                        ) : null}
+                      </p>
+                    </div>
+                    {post.roll === "fel" && post.retryPrompt ? (
+                      <button
+                        onClick={() => {
+                          const p = post.retryPrompt;
+                          if (p) provaIgen(p);
+                        }}
+                        disabled={sander}
+                        className="mt-2 inline-flex items-center gap-1.5 rounded-lg border border-[#DA3633]/50 px-2.5 py-1.5 text-[11px] font-medium text-[#F85149] disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#58A6FF]/50"
+                      >
+                        <RotateCcw className="h-3.5 w-3.5" />
+                        Försök igen
+                      </button>
+                    ) : null}
+                  </div>
+                </div>
+              ),
+            )}
+
+            {/* Loading-state — agenten arbetar men har inget svar att visa än. */}
+            {visaTankarRad ? (
+              <div className="studio-fade-in flex items-center gap-2.5 px-4 py-2.5" aria-live="polite">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#238636]/20">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#3FB950] opacity-60" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[#3FB950]" />
+                  </span>
+                </span>
+                <span className="text-[12px] text-[#8B949E]">AK1A tänker…</span>
+              </div>
+            ) : null}
           </div>
         )}
 
@@ -723,8 +1058,9 @@ export default function ZcodeKlient() {
         </div>
       ) : null}
 
-      {/* Composer — safe-area-botten, Enter skickar, Skift+Enter = ny rad. */}
-      <footer className="studio-safe-bottom shrink-0 border-t border-[#30363D] bg-[#010409] px-2 pt-2 pb-2">
+      {/* Composer — safe-area-botten, lyftet kort med skugga, Enter skickar,
+          Skift+Enter = ny rad. Skicka-knappen: disabled tom + spinner sänder. */}
+      <footer className="studio-safe-bottom shrink-0 bg-[#010409] px-2 pt-2 pb-2">
         {tankar ? (
           <p className="mx-1 mb-1 truncate text-[11px] italic text-[#8B949E]">{tankar}</p>
         ) : null}
@@ -734,7 +1070,7 @@ export default function ZcodeKlient() {
             {status}
           </p>
         ) : null}
-        <div className="flex items-end gap-2">
+        <div className="flex items-end gap-1.5 rounded-2xl border border-[#30363D] bg-[#0D1117] p-1.5 shadow-[0_4px_20px_rgba(1,4,9,0.6)] focus-within:border-[#58A6FF]/50">
           <textarea
             ref={rutaRef}
             value={text}
@@ -753,13 +1089,13 @@ export default function ZcodeKlient() {
                 void skicka();
               }
             }}
-            className="max-h-40 min-h-[44px] flex-1 resize-none rounded-xl border border-[#30363D] bg-[#0D1117] px-3.5 py-2.5 text-[15px] leading-relaxed text-[#E6EDF3] outline-none placeholder:text-[#6E7681] focus-visible:ring-2 focus-visible:ring-[#58A6FF]/50"
+            className="max-h-40 min-h-[44px] flex-1 resize-none border-0 bg-transparent px-3 py-2.5 text-[15px] leading-relaxed text-[#E6EDF3] outline-none placeholder:text-[#6E7681]"
           />
           <button
             onClick={() => void skicka()}
             disabled={sander || !text.trim()}
-            aria-label="Skicka"
-            className="flex h-[44px] w-[44px] shrink-0 items-center justify-center rounded-xl bg-[#238636] text-white disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#58A6FF]/50"
+            aria-label={sander ? "Skickar…" : "Skicka"}
+            className="flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-xl bg-[#238636] text-white disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#58A6FF]/50"
           >
             {sander ? <Loader2 className="h-5 w-5 animate-spin" /> : <SendHorizonal className="h-5 w-5" />}
           </button>

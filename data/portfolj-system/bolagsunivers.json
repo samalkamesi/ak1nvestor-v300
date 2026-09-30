@@ -29639,5 +29639,104 @@
         550230000
       ]
     }
+  },
+  {
+    "ticker": "GLEN.L",
+    "namn": "Glencore plc",
+    "bransch": "material",
+    "land": "Storbritannien",
+    "valuta": "GBX",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-09-30",
+        "url": "https://stockanalysis.com/quote/lon/GLEN/ (+ /statistics/ + /financials/ + /financials/balance-sheet/ + /financials/cash-flow-statement/)",
+        "paranoid": "LSE-primärnotering (lon-vägen bar full panel — NG.L/RR.L/LLOY.L-precedenserna), S&P Global Market Intelligence-underlag (semi-annual-synk), sidor pålästa 2026-09-30 med kurs 555,20 GBX intraday 17:03 GMT: pris i PENCE (BP.L-konventionen; £5,552) · aktier 11,737 mdr · mcap 64,76 mdr GBP (replik 5,552×11,737 = 65,17, 0,6 % — avrundat aktieantal); FÖNSTERDUALITETEN dokumenterad: overview/statistics bär TTM ca Sep-25-basen (intäkter 229,55 mdr USD · netto 4,09 ⇒ P/E 16,26 · EBIT-marg 2,39 % · EV/EBIT 13,68 · EV/E 22,68 med EV-internt-repliken 92,71÷4,09 = 22,67 EXAKT) medan financials-sidorna bär TTM Jun-26 (intäkter 304 569 · netto 5 423 ⇒ beräknad färsk P/E 11,9 som kontrast-not — Veolia-klassen 'statistics = annan bas, avvikelsen dokumenterad', S&P:s halvårssynk); EV-identiteten mcap 64,76 + skuld 34,47 − kassa 2,82 = 96,41 mot källans EV 92,71 ⇒ −3,70 mdr bär minoritets-/pensionsjusteringar (källans EV-fält bärs); P/B 2,33 = mcap÷EK 27,75 (källans statistics-EK; balance-sheet Total Common Equity FY25 38,86 ⇒ replik på den basen 1,67 — fältet bärs, fönster-/definitionsavvikelsen dokumenterad); skuld/EK 1,24 = 34,47÷27,75 EXAKT (balance-sheet-skulden 42,1 FY25/45,7 TTM = samma fönsterskillnad, dokumenterad); prognosTillväxt +33,94 % implicit ur trailing 16,26/fwd 12,14 (ASML/Veolia-normaliseringsgapklassen; källans EGEN 3-års EPS-prognos +45,53 %/år som kontrast-not); PEG 0,66 källans fält (spårvägen pe÷prognos = 0,48 dokumenterad); brutto 3,40 % · EBIT 2,39 % · netto 1,78 % (= 4,09÷229,55 EXAKT) · FCF n/a i statistics ⇒ fcfMarginal beräknad på källans TTM-kolumner −1 343÷304 569 = −0,44 %, fcfYield −1,56 % källans fält (replik −1,01÷64,76 EXAKT); ROE 16,04 % · ROIC 8,15 % mot WACC 6,89 % ⇒ +1,26 pp (svagt positivt); räntetäckning 2,17; Piotroski 6 · Altman 2,78; utdelning FY2025 1,192 mdr USD payout 29,26 % + återköp 1,992 mdr (buyback-yield 0,94 %/härled 3,22 %) · ex-div 2026-08-27 · dividend 0,13 (2,29 %); insiders 12,81 % (Glasenberg-arvets storägare kvar); beta 0,52; 52-v 332,20–707,20 GBX; analytiker Buy 644,00 GBX (20 st — värderingsnot, ej rekommendation); nästa rapp 2026-10-29; ASX-andranotering GLC beräknad 2026-10-14 (nyhetsnot); 140 000 anställda; grundat 1974; branschfältet material = källans Sector Materials/Industry Other Industrial Metals & Mining; land Storbritannien = PRIMÄRNOTINGENS land (LSE; huvudkontor Baar/registrerat Jersey dokumenterat — SHEL-noteringsland-konventionen); FY kalenderår; SERIERNAS signatur: handlarhusets volymprofil — bruttomarginaler 6,11/10,75/4,95/2,72/2,47 % (universumets materialgren bär gruvoir 40–90 %; GLEN 2–11 % = marketing-modellens köp-och-sälj-marginal) med moat-FÄLTEN FYLDA (medel 5,40 % spread 8,28 pp — 5-årig bruttovinstserie finns, BASF-klassen); netto −1 634 MUSD FY2024 = förlustår MITTEN i serien (koboltprisras + juridiska nedskrivningar; Enagás-klassen — CAGR definierad, endpoint 4 974→363 båda positiva) ⇒ resCAGR −48,02 %/år bär cykeln 2022-topp → 2025-botten, dokumenterat; FCF 5 242/9 482/6 552/4 444/−290 med TTM Jun-26 −1 343 (capexupptrappning 3,6→6,8 mdr); EK-serien bär totalt EK inkl minoritet (Veolia-konventionen)"
+      }
+    ],
+    "hamtat": "2026-09-30",
+    "pris": 555.2,
+    "marknadsKapitalMdr": 64.76,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0499,
+      "resultatCAGR5ar": -0.4802,
+      "omsattningTillvaxtTTM": 0.2304,
+      "prognosTillvaxt": 0.3394
+    },
+    "lonksamhet": {
+      "roe": 0.1604,
+      "roic": 0.0815,
+      "bruttoMarginal": 0.034,
+      "ebitMarginal": 0.0239,
+      "nettoMarginal": 0.0178,
+      "fcfMarginal": -0.0044
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 1.24,
+      "rantaTackning": 2.17,
+      "fcfPositivaSenaste5": 4,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": 1.192,
+      "andelUtestande": null,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 5.4,
+      "bruttoMarginalSpread5ar": 8.28,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 16.26,
+      "pb": 2.33,
+      "evEbit": 13.68,
+      "peg": 0.66,
+      "fcfYield": -0.0156,
+      "egenKapitalMultipl": 2.33
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        203751000000,
+        255984000000,
+        217829000000,
+        230944000000,
+        247535000000
+      ],
+      "resultat": [
+        4974000000,
+        17320000000,
+        4280000000,
+        -1634000000,
+        363000000
+      ],
+      "egetKapital": [
+        36917000000,
+        45219000000,
+        38237000000,
+        35660000000,
+        33606000000
+      ],
+      "fcf": [
+        5242000000,
+        9482000000,
+        6552000000,
+        4444000000,
+        -290000000
+      ]
+    }
   }
 ]

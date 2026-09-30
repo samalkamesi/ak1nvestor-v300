@@ -19704,22 +19704,37 @@ koden (den skriver "RESULTAT: 7/8 PASS" och avslutar ändå exit 1 vid del-FAIL)
 Kvarvarande 2 fel är trädspecifika (fabriks-puls 3 153 min + dump-ENOENT —
 katalogerna lever i prod-trädet där cron kör).
 
-**(5) PUSH-KÖ:** prod-trädet hölls av agentfabrikens PÅGÅENDE Spår 11-omgång
-(3 byggare aktiv 27 min, filer 0–4 min gamla vid sond — Deskvåg bygger om
-desk-halsa.mjs; deras yta respekterad, push avvaktar rent fönster, r335-
-mönstret). Vakttornets prod-debut sker av CRON vid nästa femminutvarv efter
-push; stängningsbevis: cron-logg utan MODULE_NOT_FOUND + färsk puls +
-paraplyvakt GRÖN inom 10 min + larm.json grönskriven om tornet står GRÖNT.
+**(5) PUSH + DEBUT SAMMA KVÄLL (stängt):** första pushen köade bakom
+fabrikens Spår 11-omgång; när deras leveranser landat (DESK-U27/U28/U29 +
+ombyggd desk-halsa.mjs 8/8 PASS) avvisades pushen non-fast-forward —
+r348-mönstret: fetch + merge --no-ff (ba09474b) + push GRÖN. **Vakttornets
+cron-debut 19:55:02Z: GRÖN 15/15** (första helgröna sedan 21:55 igår;
+cron-logg ALARM 9/15 × 2 → GRON 15/15, INGEN MODULE_NOT_FOUND mer; de två
+trädspecifika felen läktes exakt som förutspått: fabriks-puls 20 min · dump
+17 h) · **larm.json GRÖNSKRIVEN på BÅDA desk-ytorna** (0 rader — zombiens
+sex gamla + paraplyets utdöda fynd rensade). **BONUSFYND:** paraplyets
+cron-rad var ALDRIG installerad (JÄRN-U3 §6 "sessionens bord" blev aldrig
+verkställt — paraplyvakt-cron.log fanns inte; rapporten stannade 23:02
+igår). Verkställt ~19:58Z enligt §6:s exakta rader (append + verifiering);
+**paraplyets cron-debut 20:00:03Z: GRÖN 9/9** (cron-rader ×3 · pulsen 4 min
+· filerna ×4). Kedjan vakttornet → paraplyet → mallen är nu JÄRN-U3:s
+självläkande slutenhet med ALLA lager i drift. Läxa protokollförd:
+"SESSIONENS BORD"-poster i fabriksprotokoll måste bokföras som pipeline-post
+direkt — annars dör installationssteg tyst (paraplyet levde 21 h oinstallerat).
 
 **KVD:** tsc-grinden grön vid commit · src orörd (verktyg+data+worklog) ·
 R2 orörd · prod 200 + vakten GRÖN vid rondstart · skal-kvoten följd (node-
-wrappers vid varje häng; effekten verifierad, aldrig omkörd).
+wrappers vid varje häng; effekten verifierad, aldrig omkörd) · crontab-
+ändringen append-only enligt §6 med omläsningsverifikation.
 
-LEVERANS: 4d957b79 (rotstäd) + denna ronds vakttorn-commit — push till prod
-när fabriksomgången frigör trädet.
+LEVERANS: 4d957b79 (rotstäd) + ad5a4490 (vakttornet) + ba09474b (merge) +
+denna slutbokföring — allt pushat till prod; vakttornets och paraplyets
+debuter cron-bevisade GRÖNA.
 
-NÄSTA I KÖN: (a) push + cron-debutbevis för vakttornet; (b) o571-efterdyning
-vid 04:17-cron; (c) paraplyfyndens tystnad efter vakttornets GRÖNA varv.
+NÄSTA I KÖN: (a) o571-efterdyning vid imorgon 04:17-cron (förväntan:
+BLOCKERAD-vila amazon, DOD-larm tysta); (b) R2-paketet branding (garanti-/
+Fas 3-text /medlemskap) — presenteras för kunden vid nästa kontakt;
+(c) evighetskatalogens spår om kön tunnar.
 
 
 ## SPÅR 11 s11-u1 (manifest auto-s11-1790794523042, byggare 1/3) — 2026-09-30 19:05–19:35 UTC: DESK-U27 DESK-ENTRÉN — hälsans falsklarm mot EN-TRYCKS-direktentrén kurerat, bevakningen STÄRKT (3 delkontrakt), trippelkollisionen löst med noll duplikat [fabrik]

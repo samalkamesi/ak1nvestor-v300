@@ -68,24 +68,45 @@ fabriks-puls 3 153 min (fabriken lever i PROD-trädets katalog — manifest
 skrivet 19:28 samma kväll) och supabase-dump ENOENT (backupskatalogen finns
 bara i prod-trädet).
 
-## Deploy + debutbevis (vägen till stängd våg)
+## Deploy + debutbevis (STÄNGT — verkställt samma kväll)
 
-1. Commit till develop (tsc-grinden passerar — verktygsfil, src orörd).
-2. `git push prod develop` när prod-trädet är fritt (fabricens pågående
-   Spår 11-omgång höll det smutsigt vid r350-start 19:12–19:3x).
-3. Debuten sker av CRON i prod-trädet vid nästa */5-varv.
-4. Stängningsbevis: (a) vakttornet-cron.log bär OK/ALARM-rad UTAN
-   MODULE_NOT_FOUND; (b) prod-trädets data/vakten/vakttornet.json färsk
-   (paraplyets 12-min-tröskel); (c) paraplyvakt.json GRÖN inom 10 min;
-   (d) desk-ytornas larm.json grönskriven om tornet står GRÖNT.
+1. Commit ad5a4490 till develop (tsc-grinden passerad — verktygsfil, src orörd).
+2. `git push prod develop`: första försöket köade bakom agentfabrikens Spår
+   11-omgång (smutsigt prod-träd), andra avvisades non-fast-forward när deras
+   leveranser landat — r348-mönstret följt: fetch + merge --no-ff (ba09474b,
+   fabrikens DESK-U27/U28/U29 + ombyggda desk-halsa.mjs 8/8 PASS mergades in)
+   + push GRÖN.
+3. **CRON-DEBUT BEVISAD 19:55:02Z: vakttornets rapport GRÖN 15/15** — första
+   helgröna sedan originalet dog; cron-loggen visar övergången
+   ALARM (9/15) × 2 → GRON (15/15) och INGEN MODULE_NOT_FOUND-rad mer;
+   trädspecifika felen läktes i prod exakt som förutspått (fabriks-puls
+   20 min · supabase-dump 17 h · desk-halsa RESULTAT-rad).
+4. **Larm.json GRÖNSKRIVEN på BÅDA desk-ytorna** (0 fel-rader) — zombiens
+   sex gamla rader + paraplyets utdöda fynd rensade av tornets ägande.
+
+## BONUSFYND + KUR: paraplyets cron-rad var ALDRIG installerad
+
+Debut-verifieringen avslöjade att paraplyvakt.json:s senaste rapport var
+2026-09-29T23:02 — paraplyet hade ALDRIG körts via cron (paraplyvakt-cron.log
+fanns inte alls). Roten: JÄRN-U3 §6 markerade installationen "SESSIONENS
+BORD (görs INTE av fabriksagenten)" — och det steget blev aldrig verkställt
+av sessionen som tog emot leveransen. Verkställt nu (r350, 2026-09-30 ~19:58Z):
+append-installation enligt §6:s exakta rader (1 aktiv rad, verifierad med
+omläsning; mallen /home/ak1a/crontab-v332-mall bär raden och återinstallerar
+den vid framtida läkningar). **Paraplyets cron-debut 20:00:03Z: GRÖN 9/9**
+(cron-rader ×3 OK · pulsen 4 min · filerna ×4 OK) — kedjan
+vakttornet → paraplyet → mallen är nu den självläkande slutenhet JÄRN-U3
+designade, äntligen med ALLA tre lager i drift.
 
 ## Öppna beroenden
 
-- **desk-halsa.mjs pågår**: desk-agentens Spår 11-våg bygger om den i
-  prod-trädet (M vid r350-start). Vakttornets kontroll F kör PROD-trädets
-  version — följer deras leverans automatiskt (cron-rop, ingen koppling).
-- **Crontab-raden** behöver INTE återinstalleras — zombien lever (raden
-  finns; bara filen saknades — paraplyet vittnar).
+- **desk-halsa.mjs**: fabrikens Spår 11 (DESK-U27/U28/U29) byggde om den —
+  mergad i ba09474b, 8/8 PASS enligt deras kvitto; vakttornets kontroll F
+  kör den versionen (RESULTAT-kontraktet OK i debuten).
+- **Läxa protokollförd**: "SESSIONENS BORD"-poster i fabriksprotokoll MÅSTE
+  bokföras som pipeline-post omedelbart — annars dör installationssteg tyst
+  (paraplyet levde 21 h oinstallerat; ingen vakt hade upptäckt det —
+  meta-paradoxen vakade bara tack vare vakttornets debut-verifikation).
 
 *Källa: r350, 2026-09-30 19:1x–19:4x UTC, huvudagenten (ägarrond enligt
 JÄRN-U3 §8 + r348 (5)). Verktyg: vakttornet.mjs med full headers dokumentation.*

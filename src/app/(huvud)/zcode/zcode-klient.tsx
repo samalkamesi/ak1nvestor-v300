@@ -30,6 +30,8 @@ import type {
   StudioKontext,
 } from "@/lib/studio/studio-transport";
 
+import { ZcodeMarkdown } from "./zcode-markdown";
+
 /**
  * ZCODE-KLIENT — EN-TRYCKS-INGÅNGEN till agentchatten (kunddirektivet
  * "komma in med ett tryck", 2026-09-30). Samma bro och samma protokoll som
@@ -79,6 +81,13 @@ import type {
  * bubbla med rundade hörn, assistent på ren yta); composern är ett lyftet
  * kort med skugga och fokus-ring. Skicka-knappen är disabled när rutan är
  * tom och byter till spinner under sändning.
+ *
+ * MARKDOWN (fabriksuppdrag 2026-09-30): agent-svar (roll=assistant)
+ * renderas som markdown via zcode-markdown.tsx — kodblock med språk-
+ * etikett, syntaxfärger (js/ts/py/bash) och kopiera-knapp, rubriker,
+ * listor, länkar (ny flik), fet/kursiv och inline-kod med accent-bakgrund.
+ * Användarens EGNA ord och felrader förblir ren text — chatten ekar
+ * alltid exakt det kunden skrev.
  *
  * 30 s-poll (VÅG 87 H1, pausad när fliken är dold eller en ström kör)
  * håller vyn sann: mål-loopens autonoma arbete syns utan att kunden gör
@@ -914,16 +923,22 @@ export default function ZcodeKlient() {
                           : ""
                       }`}
                     >
-                      <p
-                        className={`whitespace-pre-wrap break-words text-[14px] leading-relaxed ${
-                          post.roll === "fel" ? "text-[#F85149]" : "text-[#E6EDF3]"
-                        }`}
-                      >
-                        {post.text}
-                        {sander && post.roll === "assistant" && i === poster.length - 1 ? (
-                          <span className="ml-0.5 animate-pulse text-[#58A6FF]">▊</span>
-                        ) : null}
-                      </p>
+                      {post.roll === "assistant" ? (
+                        <div className="text-[14px] leading-relaxed">
+                          <ZcodeMarkdown text={post.text} />
+                          {sander && i === poster.length - 1 ? (
+                            <span className="ml-0.5 animate-pulse text-[#58A6FF]">▊</span>
+                          ) : null}
+                        </div>
+                      ) : (
+                        <p
+                          className={`whitespace-pre-wrap break-words text-[14px] leading-relaxed ${
+                            post.roll === "fel" ? "text-[#F85149]" : "text-[#E6EDF3]"
+                          }`}
+                        >
+                          {post.text}
+                        </p>
+                      )}
                     </div>
                     {post.roll === "fel" && post.retryPrompt ? (
                       <button

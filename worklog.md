@@ -20150,3 +20150,28 @@ identiska chunks (delade layouts) — urtalet 6/sida täcker samtliga
 resursklasser. Spår 7-rotationen avslutad med nollfynd — v218
 (gap-forskning, ombokad ur nummerkrocken med kundordern ZCODE 100x)
 är nästa.
+
+**v218 LEVERERAD (23:4xZ, samma rond): GAP-FORSKNING v2 — registret
+återfött på ett VERSIONSFYND:** ZCODE-GAP-REGISTER trodde "npm latest =
+3.11.2-24 — vi KÖR senaste" men versionsonden visar **3.14.4-30,
+publicerad 2026-09-30** (fyra minor-steg på 19 dagar: 3.11.2-25 ·
+3.12.3-26 · 3.14.0/1/3-27/28 · 3.14.4-29/30). Releasenoteringarna
+hämtade via GitHub API (kingsword09/zcode-cli, 35 releaser, node-kanal
+efter WebFetch/npm-skalhäng — fabriken lastar servern) ⇒ SEX NYA POSTER
+(37-42) tillförda och V/A-rankade direkt:
+- **37 RUNTIME-UPPGRADERING (V5/A3, högst kvot 1,67):** SQLite-
+  contention lagat TVÅ gånger (PR 163 delad skrivcontention + PR 177
+  bounded recovery), subagent-återställning via native session queries
+  (178), standalone/host app-server-auth (180), Desktop 3.14-stöd —
+  vår app-server delar db.sqlite (trådens sanningsägare) med
+  barnprocesser; lagorna bär studions stabilitet.
+- 38 streaming utan upprepade historikläsningar (V3/A2), 39 köade
+  utkast redigera/retry (V3/A3), 40 workflow runs inspektera/återställa
+  (V4/A5 forskningstyngd), 41 Provider Registry ~/.zcode/v2/
+  provider_config.json (V3/A4, beroende av 37), 42 modell-resume
+  kontrollpost (V3/A1).
+Källsektionen sannad (kallkoden = 18 dok i prod-trädet, bundeln
+speglar fortfarande 3.11.2-24 — omskanning ingår i 37:s validering).
+Sondverktyg: _v218-versionsond/-changelog/-releaser (node, API-vägar).
+Noll kollision med fabrikens ZCODE 100x (inga visuella poster).
+v219 bokad: post 37 i vågat fönster NÄR fabriken + push-tåget tystnat.

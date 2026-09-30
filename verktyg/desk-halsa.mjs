@@ -19,13 +19,30 @@
 //   för telefon-portrait ~390 px).
 //
 // Kontroller (en rad per kontroll, PASS/FAIL/SKIP):
-//   1. http-landning-401   GET /desk/ UTAN auth => exakt 401 (auth-bommen).
+//   1. http-desk-entree    Desk-entréerna UTAN auth (DESK-U26): /desk/ =>
+//                          302 autoconnect-direktentré, /desk/start => 401
+//                          (landningens hem), /desk/h/vnc.html => 401
+//                          (ström-målet). Ersätter http-landning-401 som bar
+//                          det gamla kontraktet ("exakt /desk/ => 401") och
+//                          falsklarmade varje körning sedan EN-TRYCKS-
+//                          direktentrén (nginx return-satsen, r350-eran).
 //   1b. http-hjalp-401     GET /desk/hjalp.html UTAN auth => exakt 401 —
 //                          U18 B4/U19 steg 6b: hjälpsidans väg (nginx-proxy
 //                          till 6080) skall ligga bakom SAMMA bomm; fångar
 //                          att proxy-grenen aldrig tappar auth_basic.
 //   2. systemd-enheter     systemctl is-active zdesk-xvnc zdesk-wm
-//                          zdesk-zcode zdesk-novnc => fyra 'active'.
+//                          zdesk-zcode zdesk-novnc => fyra 'active', + sedan
+//                          DESK-U28 landskapets ALLTID-PÅ-basenheter
+//                          zdesk-xvnc-land zdesk-wm-land zdesk-novnc-land
+//                          => sju 'active' totalt. Grund: direktentréns
+//                          (kontroll 1) 302-mål streamar :11 — landskapets
+//                          basenheter är kundvägens ryggrad och växlarens
+//                          egna kontrakt säger "xvnc/wm/novnc på båda
+//                          skärmarna lever alltid" (zdesk-vaxlare.service).
+//                          APP-enheten zdesk-zcode-land bevakas MEDVETET EJ
+//                          här: den startas/stoppas av växlaren per ingång
+//                          och är avstängd per design — sviten härdkodar
+//                          aldrig epokens app-policy (r311-lärdomen).
 //   3. x-geometri          xprop -root _NET_WORKAREA med DISPLAY=:10 =>
 //                          arbetsytan exakt 1024x576 (r305-kontraktet:
 //                          snabbhetsorderns framebuffer, se svitens huvud).
@@ -50,24 +67,27 @@
 //                          defaults.json är giltig JSON (JSON.parse).
 //   7. landning-fil        /var/www/desk/index.html (fs): title innehåller
 //                          TITEL_MARKE (samma markör som kontroll 5a —
-//                          SAMORDNAT par sedan U23), INGEN 'resize=scale'-
-//                          pin (U13V2:s kontrakt är defaults resize=remote;
-//                          U17 A1-klassen), inga trasiga sluttaggar ('./p>').
+//                          SAMORDNAT par sedan U23), inga trasiga sluttaggar
+//                          ('./p>'). resize=scale på knapparna är KUNDVÄGEN
+//                          sedan R318+R327 (STYRELSESLUT 2026-09-29) —
+//                          bevakas INTE längre som fel.
 //
 // DETERMINISM: allt utom de två HTTP-kontrollgrupperna (1/1b och 5) är lokala
 //   processanrop/filäsningar — deterministiska. HTTP-kontrollerna går via
 //   internet mot https://lab.ak1nvestor.com/ (kundens telefonperspektiv:
 //   nätverksfel/timeout ÄR ett kedjefel och FAILar ärligt; 6 s timeout per
-//   anrop, sex anrop totalt (1, 1b + fyra auth) => värstafall ~36 s, i
-//   normaldrift ~2 s). Redirecter följs
-//   EJ: kedjan förväntas svara exakt (3xx => FAIL).
+//   anrop, åtta anrop totalt (1: tre delkontrakt, 1b + fyra auth) =>
+//   värstafall ~48 s, i normaldrift ~2 s). Redirecter följs EJ: varje led
+//   förväntas svara exakt — kontroll 1 är den ENDA som förväntar en 3xx
+//   (302-direktentrén är själva kontraktet den bevakar, DESK-U26).
 //
-// Arkitekturnotering (mätt 2026-09-28; titel rättad SAMORDNAT med TITEL_MARKE
-// 2026-09-29, DESK-U23): landningssidan på exakt /desk/
-//   serveras av nginx ur /var/www/desk/index.html (title 'AK1A Lab —
-//   ZCode-skrivbordet'); prefixet /desk/* proxyas till websockify vars
-//   /desk/vnc.html har title 'noVNC'. Title-kontrollen (5a) gäller därför
-//   LANDNINGEN, inte noVNC-sidan.
+// Arkitekturnotering (mätt 2026-09-28; uppdaterad 2026-09-30 DESK-U26 efter
+// EN-TRYCKS-direktivet): exakt /desk/ + /desk är 302-direktentré rakt till
+//   strömmen (autoconnect); LANDNINGEN serveras av nginx ur
+//   /var/www/desk/index.html (title 'AK1A Lab — ZCode-skrivbordet') på
+//   /desk/start; prefixet /desk/* proxyas till websockify vars /desk/vnc.html
+//   har title 'noVNC'. Title-kontrollen (5a) gäller LANDNINGEN på
+//   /desk/start, inte noVNC-sidan.
 //
 // Utdata: en rad per kontroll + sista raden EXAKT 'RESULTAT: N/M PASS'
 //   (N = PASS, M = PASS+FAIL; SKIP räknas ej i M). Exit 0 endast om inget
@@ -81,7 +101,10 @@ import { statSync, readFileSync } from 'node:fs';
 import https from 'node:https';
 
 const BAS_URL = 'https://lab.ak1nvestor.com';
-const ENHETER = ['zdesk-xvnc', 'zdesk-wm', 'zdesk-zcode', 'zdesk-novnc'];
+// DESK-U28: -land-basenheterna är direktentréns (302-målets) ryggrad —
+// växlarkontraktet "xvnc/wm/novnc lever alltid på båda skärmarna".
+const ENHETER = ['zdesk-xvnc', 'zdesk-wm', 'zdesk-zcode', 'zdesk-novnc',
+                 'zdesk-xvnc-land', 'zdesk-wm-land', 'zdesk-novnc-land'];
 const X_DISPLAY = ':10';
 const BREDD = 1024;
 const HOJD = 576;
@@ -140,7 +163,7 @@ function hamta(sokvag, headers = {}) {
           if (byte <= KROPP_MAX_BYTE) bitar.push(bit);
           else req.destroy();
         });
-        res.on('end', () => resolve({ status: res.statusCode, kropp: Buffer.concat(bitar).toString('utf8') }));
+        res.on('end', () => resolve({ status: res.statusCode, headers: res.headers, kropp: Buffer.concat(bitar).toString('utf8') }));
         res.on('error', (fel) => reject(new Error(`läsfel i svar (${sokvag}): ${fel.message}`)));
       },
     );
@@ -157,13 +180,40 @@ function authHeaders() {
   return { Authorization: `Basic ${Buffer.from(auth, 'utf8').toString('base64')}` };
 }
 
-// --- 1. Landning UTAN auth: exakt 401 (basic auth-bommen i nginx) ---
-async function httpLandningUtanAuth() {
-  const svar = await hamta('/desk/');
-  if (svar.status !== 401) {
-    return { status: 'FAIL', orsak: `förväntade exakt 401 utan auth, fick ${svar.status} — basic auth-bommen på exakt /desk/ är botten eller förändrad` };
+// --- 1. Desk-entréerna UTAN auth (DESK-U26, 2026-09-30) ---
+// EN-TRYCKS-kunddirektivet ändrade serveringslogiken (nginx ak1a-konfen,
+// rad 21-28): exakt /desk/ + /desk är NU 302-direktentré rakt till strömmen
+// (autoconnect=true — kundens "komma in med ett tryck"), landningssidan
+// lever på /desk/start bakom sin EGEN bomm, och ström-målet ligger bakom
+// proxy-grenens bomm. Kontrollen ersätter 'http-landning-401' (som bar det
+// gamla "exakt /desk/ => 401"-kontraktet och falsklarmade varje körning
+// sedan direktentrén) och bevakar alla TRE delkontrakt:
+//   (a) /desk/ => exakt 302 + Location börjar /desk/h/vnc.html med
+//       autoconnect=true (fångar svävning som lägger tillbaka landningen
+//       på entrén eller tappar autoconnect ur direktvägen),
+//   (b) /desk/start => exakt 401 (landningens hem får ALDRIG ligga öppet),
+//   (c) /desk/h/vnc.html => exakt 401 (ström-målet bakom 302:ns slut).
+async function httpDeskEntree() {
+  const direkt = await hamta('/desk/');
+  if (direkt.status !== 302) {
+    return { status: 'FAIL', orsak: `förväntade 302-direktentrén utan auth, fick ${direkt.status} — nginx /desk/-blocket förändrad (landningens hem är /desk/start sedan EN-TRYCKS-entrén)` };
   }
-  return { status: 'PASS', detalj: `GET /desk/ utan auth => ${svar.status} (auth-bommen lever)` };
+  const loc = (direkt.headers && direkt.headers.location) || '';
+  // nginx gör relativ return-URI absolut i Location-headern — normalisera
+  // innan kontraktsjämförelsen så båda formerna är giltiga.
+  const locSokvag = loc.replace(/^https?:\/\/[^/]+/i, '');
+  if (!locSokvag.startsWith('/desk/h/vnc.html') || !locSokvag.includes('autoconnect=true')) {
+    return { status: 'FAIL', orsak: `/desk/-redirecten avviker från direktentré-kontraktet: "${loc}"` };
+  }
+  const start = await hamta('/desk/start');
+  if (start.status !== 401) {
+    return { status: 'FAIL', orsak: `GET /desk/start utan auth => ${start.status} (förväntat 401) — landningens hem ligger utanför bommen` };
+  }
+  const mal = await hamta('/desk/h/vnc.html');
+  if (mal.status !== 401) {
+    return { status: 'FAIL', orsak: `GET /desk/h/vnc.html utan auth => ${mal.status} (förväntat 401) — ström-målet bakom direktentrén tappat auth_basic` };
+  }
+  return { status: 'PASS', detalj: `/desk/ => 302 autoconnect-direktentré · /desk/start => 401 (landningens hem) · målet => 401 (strömmen bakom bommen)` };
 }
 
 // --- 1b. Hjälpsidan UTAN auth: exakt 401 (proxy-grenen bakom SAMMA bomm) ---
@@ -179,7 +229,7 @@ async function httpHjalpUtanAuth() {
   return { status: 'PASS', detalj: `GET /desk/hjalp.html utan auth => ${svar.status} (proxy-grenen bakom samma bomm)` };
 }
 
-// --- 2. systemd: fyra enheter skall vara 'active' ---
+// --- 2. systemd: porträttets fyra + landskapets tre basenheter, 'active' ---
 function systemdEnheter() {
   let ut = '';
   try {
@@ -196,9 +246,9 @@ function systemdEnheter() {
   const par = ENHETER.map((e, i) => [e, rader[i] || '(inget svar)']);
   const inaktiva = par.filter(([, s]) => s !== 'active');
   if (rader.length !== ENHETER.length || inaktiva.length > 0) {
-    return { status: 'FAIL', orsak: `förväntade fyra 'active', fick: ${par.map(([e, s]) => `${e}=${s}`).join(', ')}` };
+    return { status: 'FAIL', orsak: `förväntade ${ENHETER.length} 'active', fick: ${par.map(([e, s]) => `${e}=${s}`).join(', ')}` };
   }
-  return { status: 'PASS', detalj: `fyra enheter active (${ENHETER.join(', ')})` };
+  return { status: 'PASS', detalj: `${ENHETER.length} enheter active (${ENHETER.join(', ')})` };
 }
 
 // --- 3. X-geometri: arbetsytan skall matcha Xvnc-processens EGEN -geometry ---
@@ -284,16 +334,18 @@ function skipUtanAuth() {
 }
 
 async function httpAuthLandning(headers) {
-  const svar = await hamta('/desk/', headers);
+  // DESK-U26: landningens serverade hem är /desk/start sedan EN-TRYCKS-
+  // direktentrén tog /desk/ (302 styrs av nginx return, oberoende av auth).
+  const svar = await hamta('/desk/start', headers);
   if (svar.status !== 200) {
-    return { status: 'FAIL', orsak: `GET /desk/ med auth: förväntade 200, fick ${svar.status}` };
+    return { status: 'FAIL', orsak: `GET /desk/start med auth: förväntade 200, fick ${svar.status}` };
   }
   const m = svar.kropp.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
   const titel = m ? m[1].replace(/\s+/g, ' ').trim() : '(ingen title-tagg)';
   if (!titel.includes(TITEL_MARKE)) {
     return { status: 'FAIL', orsak: `landningens title är "${titel}" — innehåller ej "${TITEL_MARKE}"` };
   }
-  return { status: 'PASS', detalj: `GET /desk/ med auth => 200, title "${titel}"` };
+  return { status: 'PASS', detalj: `GET /desk/start med auth => 200, title "${titel}"` };
 }
 
 async function httpAuthFil(namn, sokvag) {
@@ -348,7 +400,7 @@ function landningFil() {
   if (raw.includes('./p>')) {
     return { status: 'FAIL', orsak: 'landningen innehåller en trasig sluttagg "./p>" (DESK-U23 fynd B)' };
   }
-  return { status: 'PASS', detalj: `title "${titel}" + ingen scale-pin + inga trasiga sluttaggar` };
+  return { status: 'PASS', detalj: `title "${titel}" + inga trasiga sluttaggar (scale-pin = kundväg enl R327)` };
 }
 
 // --- Huvudflöde ---
@@ -359,7 +411,7 @@ console.log(`Auth-läge: ${process.env.DESK_AUTH ? 'DESK_AUTH satt (auth-kontrol
 
 const headers = authHeaders();
 
-await kontroll('http-landning-401', httpLandningUtanAuth);
+await kontroll('http-desk-entree', httpDeskEntree);
 await kontroll('http-hjalp-401', httpHjalpUtanAuth);
 await kontroll('systemd-enheter', systemdEnheter);
 await kontroll('x-geometri', xGeometri);
@@ -373,6 +425,6 @@ await kontroll('webrot-defaults-json', webrotDefaultsJson);
 await kontroll('landning-fil', landningFil);
 
 const sek = ((Date.now() - startTid) / 1000).toFixed(1);
-console.log(`Summa: ${antalPass} PASS, ${antalFail} FAIL, ${antalSkip} SKIP · ${sek} s (värstafall ~36 s, se DETERMINISM)`);
+console.log(`Summa: ${antalPass} PASS, ${antalFail} FAIL, ${antalSkip} SKIP · ${sek} s (värstafall ~48 s, se DETERMINISM)`);
 console.log(`RESULTAT: ${antalPass}/${antalPass + antalFail} PASS`);
 process.exit(antalFail > 0 ? 1 : 0);

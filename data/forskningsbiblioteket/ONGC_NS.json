@@ -1,0 +1,189 @@
+{
+ "schema": "analysfabrik-v1",
+ "ticker": "ONGC.NS",
+ "namn": "Oil and Natural Gas Corporation Limited",
+ "bransch": "energi",
+ "land": "Indien",
+ "valuta": "INR",
+ "versionsdatum": "2026-09-30",
+ "underlagSenastKontrollerad": "2026-09-03",
+ "genereradAv": "verktyg/kor-analysfabrik.mjs (våg 56 bygg-B + våg 57 D2 akm2-block)",
+ "urval": {
+  "regel": "kandidatregeln v1: portV19=false OCH (grön OCH täckning≥0,60 ELLER gul OCH täckning≥0,70 OCH AKM1/max≥0,65) — STYRELSE-analysbibliotek §2.1",
+  "status": "gron",
+  "statusEtikett": "grön (låg täckning)",
+  "relativAkm1": 0.7119,
+  "datatackning": 0.6495,
+  "portV19": false,
+  "varning": "grön rad under 70 % täckning (65,0 %) — etiketterad \"grön (låg täckning)\""
+ },
+ "rankPoang": 0.7687,
+ "akm1": {
+  "totalt": 46.2,
+  "maxMojligt": 64.9,
+  "relativ": 0.7119,
+  "perKategori": {
+   "tillvaxt": 0.67,
+   "vardering": 4.67,
+   "lonsamhet": 1.67,
+   "stabilitet": 2.33,
+   "moat": 1,
+   "katalysator": 0,
+   "risk": 2.5
+  },
+  "starkast": "vardering",
+  "svagast": "katalysator",
+  "osattaVariabler": [
+   "V02",
+   "V03",
+   "V09",
+   "V11",
+   "V13",
+   "V15",
+   "V16",
+   "V17",
+   "V18",
+   "V20"
+  ],
+  "antalOsatta": 10,
+  "topp3Motiveringar": [
+   {
+    "variabel": "V04",
+    "namn": "P/S",
+    "poang": 5,
+    "motivering": "P/S 0,43x härlett som P/E 6,9 × vinstmarginal 6,2 % (identitet, valutasäker) → linjär band 5/5"
+   },
+   {
+    "variabel": "V05",
+    "namn": "P/B",
+    "poang": 5,
+    "motivering": "P/B 0,73x → linjär band 5/5"
+   },
+   {
+    "variabel": "V19",
+    "namn": "Kassatäckning — nyemissionsrisk",
+    "poang": 5,
+    "motivering": "FCF-marginal 9,6 % positiv → 5/5 (självfinansierande enligt r2 V19-tabellen; burn-rate ej beräknad av P1 då kassaflödet är positivt)"
+   }
+  ],
+  "botten3Motiveringar": [
+   {
+    "variabel": "V08",
+    "namn": "EBITDA-marginal",
+    "poang": 2,
+    "motivering": "EBIT-marginal 7,8 % som NEDRE-GRÄNS-proxy för EBITDA-marginal → linjär band 2/5"
+   },
+   {
+    "variabel": "V01",
+    "namn": "Försäljningstillväxt",
+    "poang": 2,
+    "motivering": "Försäljningstillväxt 5,5 % [5-års CAGR (4-årsbas): 5,5 %] → goldilocks-kurva 2/5"
+   },
+   {
+    "variabel": "V14",
+    "namn": "Varumärke",
+    "poang": 3,
+    "motivering": "SUBJEKTIV grovpoäng 3/4-tak: bruttomarginal 35,3 % som prissättningsmakt-proxy (5-årsaggregat saknas i pass 1; korrelerar med V07)"
+   }
+  ]
+ },
+ "akm2": {
+  "totalt": 71,
+  "skillnad": 24.8,
+  "viktprofil": "akm2-2026",
+  "modellVersion": "AKM2.2026.09",
+  "band": "osatt",
+  "portAktiv": false,
+  "aktivaModuler": [
+   {
+    "modulId": "cyklisk",
+    "orsak": "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "variabler": [
+     "V21",
+     "V24",
+     "V28"
+    ],
+    "poang": {
+     "V21": 2,
+     "V24": 3,
+     "V28": 5
+    }
+   },
+   {
+    "modulId": "tillgangstung",
+    "orsak": "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)",
+    "variabler": [
+     "V21",
+     "V24",
+     "V28"
+    ],
+    "poang": {
+     "V21": 2,
+     "V24": 3,
+     "V28": 5
+    }
+   }
+  ],
+  "modulVariablerSatta": [
+   "V21",
+   "V24",
+   "V28"
+  ],
+  "modulVariablerOsatta": [
+   "V22",
+   "V23",
+   "V25",
+   "V26",
+   "V27"
+  ],
+  "dynamikPaverkan": "Dynamiklagret (lager 3) var inte aktiverat i denna beräkning — kompositen är en ren fundamental syntes utan vågmodulering (neutral degradering, aldrig gissning). Den fundamentala dynamiken redovisas separat i korstabellens FVag-kolumn och påverkar inte kompositen.",
+  "omfordelningText": "Profil \"akm2-2026\" omfördelar vikt vid saknad data (BESLUT §2 — aldrig straffa osatt): 18 av 28 profilvariabler saknar underlag (V02, V03, V04, V06, V08, V09, V11, V13, V14, V15, V16, V17, V18, V22, V23, V25, V26, V27) och deras sammanlagda vikt har omfördelats proportionellt till de 10 aktiva variablerna.",
+  "osakerhetNote": "13 av 20 kärnvariabler är osatta (andel 65 %) — modellen gissar aldrig: osatt ger 0 poäng och vikten omfördelas (BESLUT §2). Dynamik ej aktivt — ren fundamental syntes.",
+  "radModuler": [
+   "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+   "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+  ],
+  "kalla": "data/cache/akm2-ONGC_NS.json (verktyg/kor-akm2-berika.mjs, våg 57 D2) — raknaAKM2 med automatiska moduler ur modulregistret + viktprofil akm2-2026"
+ },
+ "vaglage": {
+  "perHorisont": {
+   "mikro": "basbygge",
+   "kort": "basbygge",
+   "medellang": "osatt",
+   "lang": "osatt",
+   "mega": "osatt"
+  },
+  "fvagDynamik": "forbattras",
+  "tolkning": "Klassade horisonter: mikro basbygge, kort basbygge — övriga 3 osatt (tidsserier saknas i källorna). 3 av 20 variabler har klassbar vågdata; dynamiken är forbattras."
+ },
+ "konfluens": null,
+ "golv": {
+  "typ": "osatt",
+  "marginal": null,
+  "not": "golvMarginal är null i korstabellen — värdegolvdata (NCAV/NAV) levereras inte av källorna ännu (känt, dokumenterat i manifestet)."
+ },
+ "risker": [
+  "10 av 20 AKM1-variabler är osatta i underlaget (V02, V03, V09, V11, V13, V15, V16, V17, V18, V20) — analysen bygger på 10 mätta variabler, inte hela modellen.",
+  "Likviditet (V11) osatt — balansräkningsdata saknas i källorna, likviditetsrisken kan inte bedömas.",
+  "Låg datatackning: 65,0 % under biblioteksgolvet 70 % — grön-statusen vilar på D1:s 60 %-regel och varningsetiketten är satt.",
+  "Automatiskt underlag: en 1-sidig översikt ur 20 variabler — beslutsdjupet (scenarier, Monte Carlo, vågmatris) tillverkas endast i grundarens manuella analys."
+ ],
+ "falsifiering": [
+  "V19 kassatäckning < 12 mån inom 2 kvartal falsifierar grön (låg täckning)-statusen — portV19 aktiveras och raden blir röd enligt korstabellens D1-regel.",
+  "fvagDynamik → \"försvagas\" i nästa korstabellkörning falsifierar urvalsgrunden — kandidaturen omprövas omgående (dynamiken är forbattras i dagens underlag).",
+  "datatackning < 0,6 i nästa leverans falsifierar statusgrunden — grön kräver ≥ 60 % (D1), det publika biblioteket ≥ 70 %; ONGC.NS ligger på 65,0 % i dag.",
+  "V04 P/S över 5× i nästa mätning falsifierar tesen för värdering — AKM1-profilens starkaste ben (V04 P/S, 5/5 p i dag).",
+  "relativ AKM1 under 0,70 i nästa mätning falsifierar grön-statusen (→ gul enligt D1) — idag 71,2 %."
+ ],
+ "lasMer": {
+  "bloggSlug": null,
+  "kurser": [
+   "v04-ps",
+   "v05-pb",
+   "v19-kapitalforbranning"
+  ],
+  "analysSida": "/forskningsbiblioteket/ONGC.NS"
+ },
+ "etikett": "Automatiskt forskningsunderlag — ej grundarens 99-sidorsanalys",
+ "disclaimer": "Forskningsunderlag — ej rådgivning. Pedagogisk forskning, aldrig investeringsrådgivning (lagen 2007:528)."
+}

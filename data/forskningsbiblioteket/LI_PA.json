@@ -1,0 +1,174 @@
+{
+ "schema": "analysfabrik-v1",
+ "ticker": "LI.PA",
+ "namn": "Klépierre S.A.",
+ "bransch": "fastighet",
+ "land": "Frankrike",
+ "valuta": "EUR",
+ "versionsdatum": "2026-09-30",
+ "underlagSenastKontrollerad": "2026-09-03",
+ "genereradAv": "verktyg/kor-analysfabrik.mjs (våg 56 bygg-B + våg 57 D2 akm2-block)",
+ "urval": {
+  "regel": "kandidatregeln v1: portV19=false OCH (grön OCH täckning≥0,60 ELLER gul OCH täckning≥0,70 OCH AKM1/max≥0,65) — STYRELSE-analysbibliotek §2.1",
+  "status": "gul",
+  "statusEtikett": "gul",
+  "relativAkm1": 0.6878,
+  "datatackning": 0.7113,
+  "portV19": false,
+  "varning": null
+ },
+ "rankPoang": 0.7654,
+ "akm1": {
+  "totalt": 48.9,
+  "maxMojligt": 71.1,
+  "relativ": 0.6878,
+  "perKategori": {
+   "tillvaxt": 0.67,
+   "vardering": 2.67,
+   "lonsamhet": 3.67,
+   "stabilitet": 3,
+   "moat": 1.33,
+   "katalysator": 0,
+   "risk": 2.5
+  },
+  "starkast": "lonsamhet",
+  "svagast": "katalysator",
+  "osattaVariabler": [
+   "V02",
+   "V03",
+   "V11",
+   "V13",
+   "V15",
+   "V16",
+   "V17",
+   "V18",
+   "V20"
+  ],
+  "antalOsatta": 9,
+  "topp3Motiveringar": [
+   {
+    "variabel": "V05",
+    "namn": "P/B",
+    "poang": 5,
+    "motivering": "P/B 0,89x → linjär band 5/5"
+   },
+   {
+    "variabel": "V08",
+    "namn": "EBITDA-marginal",
+    "poang": 5,
+    "motivering": "EBIT-marginal 64,8 % som NEDRE-GRÄNS-proxy för EBITDA-marginal → linjär band 5/5"
+   },
+   {
+    "variabel": "V12",
+    "namn": "Intäktsstabilitet",
+    "poang": 5,
+    "motivering": "Intäktsvolatilitet σ(yoy) 4,9 % → stabilitetsband 5/5 (4-årig serie — kort underlag, noteras)"
+   }
+  ],
+  "botten3Motiveringar": [
+   {
+    "variabel": "V04",
+    "namn": "P/S",
+    "poang": 1,
+    "motivering": "P/S 5,93x härlett som P/E 7,6 × vinstmarginal 78,2 % (identitet, valutasäker) → linjär band 1/5"
+   },
+   {
+    "variabel": "V09",
+    "namn": "ROE",
+    "poang": 2,
+    "motivering": "ROE 13,7 % → konkav kurva 2/5"
+   },
+   {
+    "variabel": "V06",
+    "namn": "EV/EBITDA",
+    "poang": 2,
+    "motivering": "EV/EBIT 17,8x som NEDRE-GRÄNS-proxy för EV/EBITDA (EV/EBIT ≥ EV/EBITDA) → konvex kurva 2/5"
+   }
+  ]
+ },
+ "akm2": {
+  "totalt": 57,
+  "skillnad": 8.1,
+  "viktprofil": "akm2-2026",
+  "modellVersion": "AKM2.2026.09",
+  "band": "osatt",
+  "portAktiv": false,
+  "aktivaModuler": [
+   {
+    "modulId": "tillgangstung",
+    "orsak": "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)",
+    "variabler": [
+     "V21",
+     "V24",
+     "V28"
+    ],
+    "poang": {
+     "V21": 2,
+     "V24": 2,
+     "V28": 2
+    }
+   }
+  ],
+  "modulVariablerSatta": [
+   "V21",
+   "V24",
+   "V28"
+  ],
+  "modulVariablerOsatta": [
+   "V22",
+   "V23",
+   "V25",
+   "V26",
+   "V27"
+  ],
+  "dynamikPaverkan": "Dynamiklagret (lager 3) var inte aktiverat i denna beräkning — kompositen är en ren fundamental syntes utan vågmodulering (neutral degradering, aldrig gissning). Den fundamentala dynamiken redovisas separat i korstabellens FVag-kolumn och påverkar inte kompositen.",
+  "omfordelningText": "Profil \"akm2-2026\" omfördelar vikt vid saknad data (BESLUT §2 — aldrig straffa osatt): 18 av 28 profilvariabler saknar underlag (V02, V03, V04, V06, V08, V11, V13, V14, V15, V16, V17, V18, V19, V22, V23, V25, V26, V27) och deras sammanlagda vikt har omfördelats proportionellt till de 10 aktiva variablerna.",
+  "osakerhetNote": "13 av 20 kärnvariabler är osatta (andel 65 %) — modellen gissar aldrig: osatt ger 0 poäng och vikten omfördelas (BESLUT §2). Dynamik ej aktivt — ren fundamental syntes.",
+  "radModuler": [
+   "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+  ],
+  "kalla": "data/cache/akm2-LI_PA.json (verktyg/kor-akm2-berika.mjs, våg 57 D2) — raknaAKM2 med automatiska moduler ur modulregistret + viktprofil akm2-2026"
+ },
+ "vaglage": {
+  "perHorisont": {
+   "mikro": "osatt",
+   "kort": "osatt",
+   "medellang": "osatt",
+   "lang": "osatt",
+   "mega": "osatt"
+  },
+  "fvagDynamik": "forbattras",
+  "tolkning": "Fundamentala vågor ej klassade på aggregatnivå: FVag-motorn kräver tidsserier (omsättning, marginaler, värderingsmultipler över tid) som underlaget saknar — \"osatt\" är osatt, motorn gissar aldrig. Endast 1 av 20 variabler har klassbar vågdata; dynamiken (forbattras) är det enda vågspåret."
+ },
+ "konfluens": null,
+ "golv": {
+  "typ": "osatt",
+  "marginal": null,
+  "not": "golvMarginal är null i korstabellen — värdegolvdata (NCAV/NAV) levereras inte av källorna ännu (känt, dokumenterat i manifestet)."
+ },
+ "risker": [
+  "9 av 20 AKM1-variabler är osatta i underlaget (V02, V03, V11, V13, V15, V16, V17, V18, V20) — analysen bygger på 11 mätta variabler, inte hela modellen.",
+  "Likviditet (V11) osatt — balansräkningsdata saknas i källorna, likviditetsrisken kan inte bedömas.",
+  "Räntekänslighet: fastighetsvärdena bakom NAV-proxyn sjunker med stigande avkastningskrav — golvet rör på sig.",
+  "Gul status: AKM1 68,8 % av max — mellanskiktet; en svag mätning till flyttar raden mot rött.",
+  "Automatiskt underlag: en 1-sidig översikt ur 20 variabler — beslutsdjupet (scenarier, Monte Carlo, vågmatris) tillverkas endast i grundarens manuella analys."
+ ],
+ "falsifiering": [
+  "V19 kassatäckning < 12 mån inom 2 kvartal falsifierar gul-statusen — portV19 aktiveras och raden blir röd enligt korstabellens D1-regel.",
+  "fvagDynamik → \"försvagas\" i nästa korstabellkörning falsifierar urvalsgrunden — kandidaturen omprövas omgående (dynamiken är forbattras i dagens underlag).",
+  "datatackning < 0,6 i nästa leverans falsifierar statusgrunden — grön kräver ≥ 60 % (D1), det publika biblioteket ≥ 70 %; LI.PA ligger på 71,1 % i dag.",
+  "V05 P/B över 3× i nästa mätning falsifierar tesen för lönsamhet — AKM1-profilens starkaste ben (V05 P/B, 5/5 p i dag).",
+  "relativ AKM1 under 0,50 i nästa mätning falsifierar gul-statusen (→ röd enligt D1) — idag 68,8 %."
+ ],
+ "lasMer": {
+  "bloggSlug": null,
+  "kurser": [
+   "v05-pb",
+   "v08-ebitda-marginal",
+   "v12-intaktsstabilitet"
+  ],
+  "analysSida": "/forskningsbiblioteket/LI.PA"
+ },
+ "etikett": "Automatiskt forskningsunderlag — ej grundarens 99-sidorsanalys",
+ "disclaimer": "Forskningsunderlag — ej rådgivning. Pedagogisk forskning, aldrig investeringsrådgivning (lagen 2007:528)."
+}

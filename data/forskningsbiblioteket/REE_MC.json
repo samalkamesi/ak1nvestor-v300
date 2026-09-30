@@ -1,0 +1,188 @@
+{
+ "schema": "analysfabrik-v1",
+ "ticker": "REE.MC",
+ "namn": "Redeia Corporación, S.A.",
+ "bransch": "energi",
+ "land": "Spanien",
+ "valuta": "EUR",
+ "versionsdatum": "2026-09-30",
+ "underlagSenastKontrollerad": "2026-09-03",
+ "genereradAv": "verktyg/kor-analysfabrik.mjs (våg 56 bygg-B + våg 57 D2 akm2-block)",
+ "urval": {
+  "regel": "kandidatregeln v1: portV19=false OCH (grön OCH täckning≥0,60 ELLER gul OCH täckning≥0,70 OCH AKM1/max≥0,65) — STYRELSE-analysbibliotek §2.1",
+  "status": "gul",
+  "statusEtikett": "gul",
+  "relativAkm1": 0.6934,
+  "datatackning": 0.7113,
+  "portV19": false,
+  "varning": null
+ },
+ "rankPoang": 0.6746,
+ "akm1": {
+  "totalt": 49.3,
+  "maxMojligt": 71.1,
+  "relativ": 0.6934,
+  "perKategori": {
+   "tillvaxt": 0.67,
+   "vardering": 2.67,
+   "lonsamhet": 3.67,
+   "stabilitet": 2,
+   "moat": 1.33,
+   "katalysator": 0,
+   "risk": 2.5
+  },
+  "starkast": "lonsamhet",
+  "svagast": "katalysator",
+  "osattaVariabler": [
+   "V02",
+   "V03",
+   "V11",
+   "V13",
+   "V15",
+   "V16",
+   "V17",
+   "V18",
+   "V20"
+  ],
+  "antalOsatta": 9,
+  "topp3Motiveringar": [
+   {
+    "variabel": "V08",
+    "namn": "EBITDA-marginal",
+    "poang": 5,
+    "motivering": "EBIT-marginal 42,2 % som NEDRE-GRÄNS-proxy för EBITDA-marginal → linjär band 5/5"
+   },
+   {
+    "variabel": "V19",
+    "namn": "Kassatäckning — nyemissionsrisk",
+    "poang": 5,
+    "motivering": "FCF-marginal 17,1 % positiv → 5/5 (självfinansierande enligt r2 V19-tabellen; burn-rate ej beräknad av P1 då kassaflödet är positivt)"
+   },
+   {
+    "variabel": "V06",
+    "namn": "EV/EBITDA",
+    "poang": 4,
+    "motivering": "EV/EBIT 8,8x som NEDRE-GRÄNS-proxy för EV/EBITDA (EV/EBIT ≥ EV/EBITDA) → konvex kurva 4/5"
+   }
+  ],
+  "botten3Motiveringar": [
+   {
+    "variabel": "V04",
+    "namn": "P/S",
+    "poang": 1,
+    "motivering": "P/S 6,88x härlett som P/E 18,1 × vinstmarginal 38,1 % (identitet, valutasäker) → linjär band 1/5"
+   },
+   {
+    "variabel": "V10",
+    "namn": "Skuldsättningsgrad",
+    "poang": 2,
+    "motivering": "Skuld/eget kapital 1,58 → linjär band 2/5 (lägre är bättre)"
+   },
+   {
+    "variabel": "V09",
+    "namn": "ROE",
+    "poang": 2,
+    "motivering": "ROE 12,5 % → konkav kurva 2/5"
+   }
+  ]
+ },
+ "akm2": {
+  "totalt": 64,
+  "skillnad": 14.7,
+  "viktprofil": "akm2-2026",
+  "modellVersion": "AKM2.2026.09",
+  "band": "osatt",
+  "portAktiv": false,
+  "aktivaModuler": [
+   {
+    "modulId": "cyklisk",
+    "orsak": "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "variabler": [
+     "V21",
+     "V24",
+     "V28"
+    ],
+    "poang": {
+     "V21": 1,
+     "V24": 2,
+     "V28": 5
+    }
+   },
+   {
+    "modulId": "tillgangstung",
+    "orsak": "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)",
+    "variabler": [
+     "V21",
+     "V24",
+     "V28"
+    ],
+    "poang": {
+     "V21": 1,
+     "V24": 2,
+     "V28": 5
+    }
+   }
+  ],
+  "modulVariablerSatta": [
+   "V21",
+   "V24",
+   "V28"
+  ],
+  "modulVariablerOsatta": [
+   "V22",
+   "V23",
+   "V25",
+   "V26",
+   "V27"
+  ],
+  "dynamikPaverkan": "Dynamiklagret (lager 3) var inte aktiverat i denna beräkning — kompositen är en ren fundamental syntes utan vågmodulering (neutral degradering, aldrig gissning). Den fundamentala dynamiken redovisas separat i korstabellens FVag-kolumn och påverkar inte kompositen.",
+  "omfordelningText": "Profil \"akm2-2026\" omfördelar vikt vid saknad data (BESLUT §2 — aldrig straffa osatt): 17 av 28 profilvariabler saknar underlag (V02, V03, V04, V06, V08, V11, V13, V14, V15, V16, V17, V18, V22, V23, V25, V26, V27) och deras sammanlagda vikt har omfördelats proportionellt till de 11 aktiva variablerna.",
+  "osakerhetNote": "12 av 20 kärnvariabler är osatta (andel 60 %) — modellen gissar aldrig: osatt ger 0 poäng och vikten omfördelas (BESLUT §2). Dynamik ej aktivt — ren fundamental syntes.",
+  "radModuler": [
+   "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+   "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+  ],
+  "kalla": "data/cache/akm2-REE_MC.json (verktyg/kor-akm2-berika.mjs, våg 57 D2) — raknaAKM2 med automatiska moduler ur modulregistret + viktprofil akm2-2026"
+ },
+ "vaglage": {
+  "perHorisont": {
+   "mikro": "osatt",
+   "kort": "osatt",
+   "medellang": "osatt",
+   "lang": "osatt",
+   "mega": "osatt"
+  },
+  "fvagDynamik": "stabilt",
+  "tolkning": "Fundamentala vågor ej klassade på aggregatnivå: FVag-motorn kräver tidsserier (omsättning, marginaler, värderingsmultipler över tid) som underlaget saknar — \"osatt\" är osatt, motorn gissar aldrig. Endast 2 av 20 variabler har klassbar vågdata; dynamiken (stabilt) är det enda vågspåret."
+ },
+ "konfluens": null,
+ "golv": {
+  "typ": "osatt",
+  "marginal": null,
+  "not": "golvMarginal är null i korstabellen — värdegolvdata (NCAV/NAV) levereras inte av källorna ännu (känt, dokumenterat i manifestet)."
+ },
+ "risker": [
+  "9 av 20 AKM1-variabler är osatta i underlaget (V02, V03, V11, V13, V15, V16, V17, V18, V20) — analysen bygger på 11 mätta variabler, inte hela modellen.",
+  "Likviditet (V11) osatt — balansräkningsdata saknas i källorna, likviditetsrisken kan inte bedömas.",
+  "Gul status: AKM1 69,3 % av max — mellanskiktet; en svag mätning till flyttar raden mot rött.",
+  "Automatiskt underlag: en 1-sidig översikt ur 20 variabler — beslutsdjupet (scenarier, Monte Carlo, vågmatris) tillverkas endast i grundarens manuella analys."
+ ],
+ "falsifiering": [
+  "V19 kassatäckning < 12 mån inom 2 kvartal falsifierar gul-statusen — portV19 aktiveras och raden blir röd enligt korstabellens D1-regel.",
+  "fvagDynamik → \"försvagas\" i nästa korstabellkörning falsifierar urvalsgrunden — kandidaturen omprövas omgående (dynamiken är stabilt i dagens underlag).",
+  "datatackning < 0,6 i nästa leverans falsifierar statusgrunden — grön kräver ≥ 60 % (D1), det publika biblioteket ≥ 70 %; REE.MC ligger på 71,1 % i dag.",
+  "V08 EBITDA-marginalen under 10 % i nästa årsredovisning falsifierar tesen för lönsamhet — AKM1-profilens starkaste ben (V08 EBITDA-marginal, 5/5 p i dag).",
+  "relativ AKM1 under 0,50 i nästa mätning falsifierar gul-statusen (→ röd enligt D1) — idag 69,3 %."
+ ],
+ "lasMer": {
+  "bloggSlug": null,
+  "kurser": [
+   "v08-ebitda-marginal",
+   "v19-kapitalforbranning",
+   "v06-ev-ebitda"
+  ],
+  "analysSida": "/forskningsbiblioteket/REE.MC"
+ },
+ "etikett": "Automatiskt forskningsunderlag — ej grundarens 99-sidorsanalys",
+ "disclaimer": "Forskningsunderlag — ej rådgivning. Pedagogisk forskning, aldrig investeringsrådgivning (lagen 2007:528)."
+}

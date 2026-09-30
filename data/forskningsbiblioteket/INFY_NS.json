@@ -1,0 +1,184 @@
+{
+ "schema": "analysfabrik-v1",
+ "ticker": "INFY.NS",
+ "namn": "Infosys Limited",
+ "bransch": "teknik",
+ "land": "Indien",
+ "valuta": "INR",
+ "versionsdatum": "2026-09-30",
+ "underlagSenastKontrollerad": "2026-09-03",
+ "genereradAv": "verktyg/kor-analysfabrik.mjs (våg 56 bygg-B + våg 57 D2 akm2-block)",
+ "urval": {
+  "regel": "kandidatregeln v1: portV19=false OCH (grön OCH täckning≥0,60 ELLER gul OCH täckning≥0,70 OCH AKM1/max≥0,65) — STYRELSE-analysbibliotek §2.1",
+  "status": "gron",
+  "statusEtikett": "grön",
+  "relativAkm1": 0.7159,
+  "datatackning": 0.7113,
+  "portV19": false,
+  "varning": null
+ },
+ "rankPoang": 0.7819,
+ "akm1": {
+  "totalt": 50.9,
+  "maxMojligt": 71.1,
+  "relativ": 0.7159,
+  "perKategori": {
+   "tillvaxt": 1,
+   "vardering": 3,
+   "lonsamhet": 3.33,
+   "stabilitet": 3.33,
+   "moat": 0.67,
+   "katalysator": 0,
+   "risk": 2.5
+  },
+  "starkast": "lonsamhet",
+  "svagast": "katalysator",
+  "osattaVariabler": [
+   "V02",
+   "V03",
+   "V11",
+   "V13",
+   "V15",
+   "V16",
+   "V17",
+   "V18",
+   "V20"
+  ],
+  "antalOsatta": 9,
+  "topp3Motiveringar": [
+   {
+    "variabel": "V10",
+    "namn": "Skuldsättningsgrad",
+    "poang": 5,
+    "motivering": "Skuld/eget kapital 0,1 → linjär band 5/5 (lägre är bättre)"
+   },
+   {
+    "variabel": "V12",
+    "namn": "Intäktsstabilitet",
+    "poang": 5,
+    "motivering": "Intäktsvolatilitet σ(yoy) 2,4 % → stabilitetsband 5/5 (4-årig serie — kort underlag, noteras)"
+   },
+   {
+    "variabel": "V19",
+    "namn": "Kassatäckning — nyemissionsrisk",
+    "poang": 5,
+    "motivering": "FCF-marginal 18,4 % positiv → 5/5 (självfinansierande enligt r2 V19-tabellen; burn-rate ej beräknad av P1 då kassaflödet är positivt)"
+   }
+  ],
+  "botten3Motiveringar": [
+   {
+    "variabel": "V14",
+    "namn": "Varumärke",
+    "poang": 2,
+    "motivering": "SUBJEKTIV grovpoäng 2/4-tak: bruttomarginal 29,7 % som prissättningsmakt-proxy (5-årsaggregat saknas i pass 1; korrelerar med V07)"
+   },
+   {
+    "variabel": "V07",
+    "namn": "Bruttomarginal",
+    "poang": 2,
+    "motivering": "Bruttomarginal 29,7 % → konkav kurva 2/5"
+   },
+   {
+    "variabel": "V05",
+    "namn": "P/B",
+    "poang": 2,
+    "motivering": "P/B 4,49x → linjär band 2/5 (Grahams ≥1,5-varning på egenkapitalmultipln är aktiverad)"
+   }
+  ]
+ },
+ "akm2": {
+  "totalt": 80,
+  "skillnad": 29.1,
+  "viktprofil": "akm2-2026",
+  "modellVersion": "AKM2.2026.09",
+  "band": "osatt",
+  "portAktiv": false,
+  "aktivaModuler": [
+   {
+    "modulId": "saas",
+    "orsak": "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "variabler": [
+     "V21",
+     "V22"
+    ],
+    "poang": {
+     "V21": 5,
+     "V22": 5
+    }
+   },
+   {
+    "modulId": "tillvaxt",
+    "orsak": "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna",
+    "variabler": [
+     "V22",
+     "V28"
+    ],
+    "poang": {
+     "V22": 5,
+     "V28": 5
+    }
+   }
+  ],
+  "modulVariablerSatta": [
+   "V21",
+   "V22",
+   "V28"
+  ],
+  "modulVariablerOsatta": [
+   "V23",
+   "V24",
+   "V25",
+   "V26",
+   "V27"
+  ],
+  "dynamikPaverkan": "Dynamiklagret (lager 3) var inte aktiverat i denna beräkning — kompositen är en ren fundamental syntes utan vågmodulering (neutral degradering, aldrig gissning). Den fundamentala dynamiken redovisas separat i korstabellens FVag-kolumn och påverkar inte kompositen.",
+  "omfordelningText": "Profil \"akm2-2026\" omfördelar vikt vid saknad data (BESLUT §2 — aldrig straffa osatt): 17 av 28 profilvariabler saknar underlag (V02, V03, V04, V06, V08, V11, V13, V14, V15, V16, V17, V18, V23, V24, V25, V26, V27) och deras sammanlagda vikt har omfördelats proportionellt till de 11 aktiva variablerna.",
+  "osakerhetNote": "12 av 20 kärnvariabler är osatta (andel 60 %) — modellen gissar aldrig: osatt ger 0 poäng och vikten omfördelas (BESLUT §2). Dynamik ej aktivt — ren fundamental syntes.",
+  "radModuler": [
+   "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+   "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+  ],
+  "kalla": "data/cache/akm2-INFY_NS.json (verktyg/kor-akm2-berika.mjs, våg 57 D2) — raknaAKM2 med automatiska moduler ur modulregistret + viktprofil akm2-2026"
+ },
+ "vaglage": {
+  "perHorisont": {
+   "mikro": "osatt",
+   "kort": "impulsvag",
+   "medellang": "osatt",
+   "lang": "osatt",
+   "mega": "osatt"
+  },
+  "fvagDynamik": "forbattras",
+  "tolkning": "Klassade horisonter: kort impulsvag — övriga 4 osatt (tidsserier saknas i källorna). 2 av 20 variabler har klassbar vågdata; dynamiken är forbattras."
+ },
+ "konfluens": null,
+ "golv": {
+  "typ": "osatt",
+  "marginal": null,
+  "not": "golvMarginal är null i korstabellen — värdegolvdata (NCAV/NAV) levereras inte av källorna ännu (känt, dokumenterat i manifestet)."
+ },
+ "risker": [
+  "9 av 20 AKM1-variabler är osatta i underlaget (V02, V03, V11, V13, V15, V16, V17, V18, V20) — analysen bygger på 11 mätta variabler, inte hela modellen.",
+  "Värderingsrisk: V05 P/B 2/5 p — högt betalt värderingsläge relativt bokfört kapital.",
+  "Likviditet (V11) osatt — balansräkningsdata saknas i källorna, likviditetsrisken kan inte bedömas.",
+  "Automatiskt underlag: en 1-sidig översikt ur 20 variabler — beslutsdjupet (scenarier, Monte Carlo, vågmatris) tillverkas endast i grundarens manuella analys."
+ ],
+ "falsifiering": [
+  "V19 kassatäckning < 12 mån inom 2 kvartal falsifierar grön-statusen — portV19 aktiveras och raden blir röd enligt korstabellens D1-regel.",
+  "fvagDynamik → \"försvagas\" i nästa korstabellkörning falsifierar urvalsgrunden — kandidaturen omprövas omgående (dynamiken är forbattras i dagens underlag).",
+  "datatackning < 0,6 i nästa leverans falsifierar statusgrunden — grön kräver ≥ 60 % (D1), det publika biblioteket ≥ 70 %; INFY.NS ligger på 71,1 % i dag.",
+  "V10 skuldsättningsgraden över 1,5 i nästa balansräkning falsifierar tesen för lönsamhet — AKM1-profilens starkaste ben (V10 Skuldsättningsgrad, 5/5 p i dag).",
+  "relativ AKM1 under 0,70 i nästa mätning falsifierar grön-statusen (→ gul enligt D1) — idag 71,6 %."
+ ],
+ "lasMer": {
+  "bloggSlug": null,
+  "kurser": [
+   "v10-skuldsattningsgrad",
+   "v12-intaktsstabilitet",
+   "v19-kapitalforbranning"
+  ],
+  "analysSida": "/forskningsbiblioteket/INFY.NS"
+ },
+ "etikett": "Automatiskt forskningsunderlag — ej grundarens 99-sidorsanalys",
+ "disclaimer": "Forskningsunderlag — ej rådgivning. Pedagogisk forskning, aldrig investeringsrådgivning (lagen 2007:528)."
+}

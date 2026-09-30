@@ -5,7 +5,7 @@
  "bransch": "tillvaxt",
  "land": "Sverige",
  "valuta": "SEK",
- "versionsdatum": "2026-09-04",
+ "versionsdatum": "2026-09-30",
  "underlagSenastKontrollerad": "2026-09-03",
  "genereradAv": "verktyg/kor-analysfabrik.mjs (våg 56 bygg-B + våg 57 D2 akm2-block)",
  "urval": {
@@ -159,7 +159,7 @@
   "relativ AKM1 under 0,50 i nästa mätning falsifierar gul-statusen (→ röd enligt D1) — idag 66,4 %."
  ],
  "lasMer": {
-  "bloggSlug": "analys-truecaller-2026",
+  "bloggSlug": null,
   "kurser": [
    "v10-skuldsattningsgrad",
    "v12-intaktsstabilitet",

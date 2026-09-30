@@ -1,0 +1,185 @@
+{
+ "schema": "analysfabrik-v1",
+ "ticker": "RIO",
+ "namn": "Rio Tinto Group",
+ "bransch": "material",
+ "land": "Australien",
+ "valuta": "USD",
+ "versionsdatum": "2026-09-30",
+ "underlagSenastKontrollerad": "2026-09-03",
+ "genereradAv": "verktyg/kor-analysfabrik.mjs (våg 56 bygg-B + våg 57 D2 akm2-block)",
+ "urval": {
+  "regel": "kandidatregeln v1: portV19=false OCH (grön OCH täckning≥0,60 ELLER gul OCH täckning≥0,70 OCH AKM1/max≥0,65) — STYRELSE-analysbibliotek §2.1",
+  "status": "gul",
+  "statusEtikett": "gul",
+  "relativAkm1": 0.661,
+  "datatackning": 0.7113,
+  "portV19": false,
+  "varning": null
+ },
+ "rankPoang": 0.5144,
+ "akm1": {
+  "totalt": 47,
+  "maxMojligt": 71.1,
+  "relativ": 0.661,
+  "perKategori": {
+   "tillvaxt": 0.67,
+   "vardering": 3,
+   "lonsamhet": 3.33,
+   "stabilitet": 3,
+   "moat": 0.67,
+   "katalysator": 0,
+   "risk": 2.5
+  },
+  "starkast": "lonsamhet",
+  "svagast": "katalysator",
+  "osattaVariabler": [
+   "V02",
+   "V03",
+   "V11",
+   "V13",
+   "V15",
+   "V16",
+   "V17",
+   "V18",
+   "V20"
+  ],
+  "antalOsatta": 9,
+  "topp3Motiveringar": [
+   {
+    "variabel": "V08",
+    "namn": "EBITDA-marginal",
+    "poang": 5,
+    "motivering": "EBIT-marginal 26,7 % som NEDRE-GRÄNS-proxy för EBITDA-marginal → linjär band 5/5"
+   },
+   {
+    "variabel": "V12",
+    "namn": "Intäktsstabilitet",
+    "poang": 5,
+    "motivering": "Intäktsvolatilitet σ(yoy) 4,4 % → stabilitetsband 5/5 (4-årig serie — kort underlag, noteras)"
+   },
+   {
+    "variabel": "V19",
+    "namn": "Kassatäckning — nyemissionsrisk",
+    "poang": 5,
+    "motivering": "FCF-marginal 9,0 % positiv → 5/5 (självfinansierande enligt r2 V19-tabellen; burn-rate ej beräknad av P1 då kassaflödet är positivt)"
+   }
+  ],
+  "botten3Motiveringar": [
+   {
+    "variabel": "V14",
+    "namn": "Varumärke",
+    "poang": 2,
+    "motivering": "SUBJEKTIV grovpoäng 2/4-tak: bruttomarginal 29,8 % som prissättningsmakt-proxy (5-årsaggregat saknas i pass 1; korrelerar med V07)"
+   },
+   {
+    "variabel": "V07",
+    "namn": "Bruttomarginal",
+    "poang": 2,
+    "motivering": "Bruttomarginal 29,8 % → konkav kurva 2/5"
+   },
+   {
+    "variabel": "V01",
+    "namn": "Försäljningstillväxt",
+    "poang": 2,
+    "motivering": "Försäljningstillväxt 1,2 % [5-års CAGR (4-årsbas): 1,2 %] → goldilocks-kurva 2/5"
+   }
+  ]
+ },
+ "akm2": {
+  "totalt": 65,
+  "skillnad": 18,
+  "viktprofil": "akm2-2026",
+  "modellVersion": "AKM2.2026.09",
+  "band": "osatt",
+  "portAktiv": false,
+  "aktivaModuler": [
+   {
+    "modulId": "cyklisk",
+    "orsak": "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+    "variabler": [
+     "V21",
+     "V28"
+    ],
+    "poang": {
+     "V21": 3,
+     "V28": 4
+    }
+   },
+   {
+    "modulId": "tillgangstung",
+    "orsak": "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)",
+    "variabler": [
+     "V21",
+     "V28"
+    ],
+    "poang": {
+     "V21": 3,
+     "V28": 4
+    }
+   }
+  ],
+  "modulVariablerSatta": [
+   "V21",
+   "V28"
+  ],
+  "modulVariablerOsatta": [
+   "V22",
+   "V23",
+   "V24",
+   "V25",
+   "V26",
+   "V27"
+  ],
+  "dynamikPaverkan": "Dynamiklagret (lager 3) var inte aktiverat i denna beräkning — kompositen är en ren fundamental syntes utan vågmodulering (neutral degradering, aldrig gissning). Den fundamentala dynamiken redovisas separat i korstabellens FVag-kolumn och påverkar inte kompositen.",
+  "omfordelningText": "Profil \"akm2-2026\" omfördelar vikt vid saknad data (BESLUT §2 — aldrig straffa osatt): 20 av 28 profilvariabler saknar underlag (V02, V03, V04, V06, V08, V11, V13, V14, V15, V16, V17, V18, V19, V20, V22, V23, V24, V25, V26, V27) och deras sammanlagda vikt har omfördelats proportionellt till de 8 aktiva variablerna.",
+  "osakerhetNote": "14 av 20 kärnvariabler är osatta (andel 70 %) — modellen gissar aldrig: osatt ger 0 poäng och vikten omfördelas (BESLUT §2). Dynamik ej aktivt — ren fundamental syntes.",
+  "radModuler": [
+   "Cyklisk — normaliseringsnot: läs nivåer genom cykelläge (topp överdriver V21/V28, tråg prövar V24)",
+   "Tillgångstung — golv-koppling: NCAV/reim-värdet läsas mot kapitalproduktivitet (V21) och kapitalcykel (V26)"
+  ],
+  "kalla": "data/cache/akm2-RIO.json (verktyg/kor-akm2-berika.mjs, våg 57 D2) — raknaAKM2 med automatiska moduler ur modulregistret + viktprofil akm2-2026"
+ },
+ "vaglage": {
+  "perHorisont": {
+   "mikro": "osatt",
+   "kort": "osatt",
+   "medellang": "osatt",
+   "lang": "osatt",
+   "mega": "osatt"
+  },
+  "fvagDynamik": "forsvamras",
+  "tolkning": "Fundamentala vågor ej klassade på aggregatnivå: FVag-motorn kräver tidsserier (omsättning, marginaler, värderingsmultipler över tid) som underlaget saknar — \"osatt\" är osatt, motorn gissar aldrig. Endast 2 av 20 variabler har klassbar vågdata; dynamiken (forsvamras) är det enda vågspåret."
+ },
+ "konfluens": null,
+ "golv": {
+  "typ": "osatt",
+  "marginal": null,
+  "not": "golvMarginal är null i korstabellen — värdegolvdata (NCAV/NAV) levereras inte av källorna ännu (känt, dokumenterat i manifestet)."
+ },
+ "risker": [
+  "9 av 20 AKM1-variabler är osatta i underlaget (V02, V03, V11, V13, V15, V16, V17, V18, V20) — analysen bygger på 11 mätta variabler, inte hela modellen.",
+  "Likviditet (V11) osatt — balansräkningsdata saknas i källorna, likviditetsrisken kan inte bedömas.",
+  "Gul status: AKM1 66,1 % av max — mellanskiktet; en svag mätning till flyttar raden mot rött.",
+  "Räntetäckning osatt — räntekostnad saknas för senaste räkenskapsåret (notering i bolagsuniverset); skuldbördans kostnadssida är inte mätt.",
+  "Automatiskt underlag: en 1-sidig översikt ur 20 variabler — beslutsdjupet (scenarier, Monte Carlo, vågmatris) tillverkas endast i grundarens manuella analys."
+ ],
+ "falsifiering": [
+  "V19 kassatäckning < 12 mån inom 2 kvartal falsifierar gul-statusen — portV19 aktiveras och raden blir röd enligt korstabellens D1-regel.",
+  "fvagDynamik → \"försvagas\" i nästa korstabellkörning falsifierar urvalsgrunden — kandidaturen omprövas omgående (dynamiken är forsvamras i dagens underlag).",
+  "datatackning < 0,6 i nästa leverans falsifierar statusgrunden — grön kräver ≥ 60 % (D1), det publika biblioteket ≥ 70 %; RIO ligger på 71,1 % i dag.",
+  "V08 EBITDA-marginalen under 10 % i nästa årsredovisning falsifierar tesen för lönsamhet — AKM1-profilens starkaste ben (V08 EBITDA-marginal, 5/5 p i dag).",
+  "relativ AKM1 under 0,50 i nästa mätning falsifierar gul-statusen (→ röd enligt D1) — idag 66,1 %."
+ ],
+ "lasMer": {
+  "bloggSlug": null,
+  "kurser": [
+   "v08-ebitda-marginal",
+   "v12-intaktsstabilitet",
+   "v19-kapitalforbranning"
+  ],
+  "analysSida": "/forskningsbiblioteket/RIO"
+ },
+ "etikett": "Automatiskt forskningsunderlag — ej grundarens 99-sidorsanalys",
+ "disclaimer": "Forskningsunderlag — ej rådgivning. Pedagogisk forskning, aldrig investeringsrådgivning (lagen 2007:528)."
+}

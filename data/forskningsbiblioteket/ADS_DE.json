@@ -1,0 +1,176 @@
+{
+ "schema": "analysfabrik-v1",
+ "ticker": "ADS.DE",
+ "namn": "adidas AG",
+ "bransch": "konsument",
+ "land": "Tyskland",
+ "valuta": "EUR",
+ "versionsdatum": "2026-09-30",
+ "underlagSenastKontrollerad": "2026-09-03",
+ "genereradAv": "verktyg/kor-analysfabrik.mjs (våg 56 bygg-B + våg 57 D2 akm2-block)",
+ "urval": {
+  "regel": "kandidatregeln v1: portV19=false OCH (grön OCH täckning≥0,60 ELLER gul OCH täckning≥0,70 OCH AKM1/max≥0,65) — STYRELSE-analysbibliotek §2.1",
+  "status": "gul",
+  "statusEtikett": "gul",
+  "relativAkm1": 0.6723,
+  "datatackning": 0.7113,
+  "portV19": false,
+  "varning": null
+ },
+ "rankPoang": 0.7563,
+ "akm1": {
+  "totalt": 47.8,
+  "maxMojligt": 71.1,
+  "relativ": 0.6723,
+  "perKategori": {
+   "tillvaxt": 0.67,
+   "vardering": 3.33,
+   "lonsamhet": 3,
+   "stabilitet": 2.33,
+   "moat": 1.33,
+   "katalysator": 0,
+   "risk": 2.5
+  },
+  "starkast": "vardering",
+  "svagast": "katalysator",
+  "osattaVariabler": [
+   "V02",
+   "V03",
+   "V11",
+   "V13",
+   "V15",
+   "V16",
+   "V17",
+   "V18",
+   "V20"
+  ],
+  "antalOsatta": 9,
+  "topp3Motiveringar": [
+   {
+    "variabel": "V04",
+    "namn": "P/S",
+    "poang": 5,
+    "motivering": "P/S 0,97x härlett som P/E 18,3 × vinstmarginal 5,3 % (identitet, valutasäker) → linjär band 5/5"
+   },
+   {
+    "variabel": "V19",
+    "namn": "Kassatäckning — nyemissionsrisk",
+    "poang": 5,
+    "motivering": "FCF-marginal 7,4 % positiv → 5/5 (självfinansierande enligt r2 V19-tabellen; burn-rate ej beräknad av P1 då kassaflödet är positivt)"
+   },
+   {
+    "variabel": "V07",
+    "namn": "Bruttomarginal",
+    "poang": 4,
+    "motivering": "Bruttomarginal 51,6 % → konkav kurva 4/5"
+   }
+  ],
+  "botten3Motiveringar": [
+   {
+    "variabel": "V08",
+    "namn": "EBITDA-marginal",
+    "poang": 2,
+    "motivering": "EBIT-marginal 8,4 % som NEDRE-GRÄNS-proxy för EBITDA-marginal → linjär band 2/5"
+   },
+   {
+    "variabel": "V05",
+    "namn": "P/B",
+    "poang": 2,
+    "motivering": "P/B 3,9x → linjär band 2/5 (Grahams ≥1,5-varning på egenkapitalmultipln är aktiverad)"
+   },
+   {
+    "variabel": "V01",
+    "namn": "Försäljningstillväxt",
+    "poang": 2,
+    "motivering": "Försäljningstillväxt 4,0 % [5-års CAGR (4-årsbas): 4,0 %] → goldilocks-kurva 2/5"
+   }
+  ]
+ },
+ "akm2": {
+  "totalt": 67,
+  "skillnad": 19.2,
+  "viktprofil": "akm2-2026",
+  "modellVersion": "AKM2.2026.09",
+  "band": "osatt",
+  "portAktiv": false,
+  "aktivaModuler": [
+   {
+    "modulId": "allman",
+    "orsak": "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)",
+    "variabler": [
+     "V21",
+     "V22",
+     "V24",
+     "V28"
+    ],
+    "poang": {
+     "V21": 3,
+     "V22": 4,
+     "V24": 4,
+     "V28": 3
+    }
+   }
+  ],
+  "modulVariablerSatta": [
+   "V21",
+   "V22",
+   "V24",
+   "V28"
+  ],
+  "modulVariablerOsatta": [
+   "V23",
+   "V25",
+   "V26",
+   "V27"
+  ],
+  "dynamikPaverkan": "Dynamiklagret (lager 3) var inte aktiverat i denna beräkning — kompositen är en ren fundamental syntes utan vågmodulering (neutral degradering, aldrig gissning). Den fundamentala dynamiken redovisas separat i korstabellens FVag-kolumn och påverkar inte kompositen.",
+  "omfordelningText": "Profil \"akm2-2026\" omfördelar vikt vid saknad data (BESLUT §2 — aldrig straffa osatt): 18 av 28 profilvariabler saknar underlag (V02, V03, V04, V06, V08, V11, V13, V14, V15, V16, V17, V18, V19, V20, V23, V25, V26, V27) och deras sammanlagda vikt har omfördelats proportionellt till de 10 aktiva variablerna.",
+  "osakerhetNote": "14 av 20 kärnvariabler är osatta (andel 70 %) — modellen gissar aldrig: osatt ger 0 poäng och vikten omfördelas (BESLUT §2). Dynamik ej aktivt — ren fundamental syntes.",
+  "radModuler": [
+   "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+  ],
+  "kalla": "data/cache/akm2-ADS_DE.json (verktyg/kor-akm2-berika.mjs, våg 57 D2) — raknaAKM2 med automatiska moduler ur modulregistret + viktprofil akm2-2026"
+ },
+ "vaglage": {
+  "perHorisont": {
+   "mikro": "osatt",
+   "kort": "osatt",
+   "medellang": "osatt",
+   "lang": "osatt",
+   "mega": "osatt"
+  },
+  "fvagDynamik": "forbattras",
+  "tolkning": "Fundamentala vågor ej klassade på aggregatnivå: FVag-motorn kräver tidsserier (omsättning, marginaler, värderingsmultipler över tid) som underlaget saknar — \"osatt\" är osatt, motorn gissar aldrig. Endast 2 av 20 variabler har klassbar vågdata; dynamiken (forbattras) är det enda vågspåret."
+ },
+ "konfluens": null,
+ "golv": {
+  "typ": "osatt",
+  "marginal": null,
+  "not": "golvMarginal är null i korstabellen — värdegolvdata (NCAV/NAV) levereras inte av källorna ännu (känt, dokumenterat i manifestet)."
+ },
+ "risker": [
+  "9 av 20 AKM1-variabler är osatta i underlaget (V02, V03, V11, V13, V15, V16, V17, V18, V20) — analysen bygger på 11 mätta variabler, inte hela modellen.",
+  "Värderingsrisk: V05 P/B 2/5 p — högt betalt värderingsläge relativt bokfört kapital.",
+  "Likviditet (V11) osatt — balansräkningsdata saknas i källorna, likviditetsrisken kan inte bedömas.",
+  "Gul status: AKM1 67,2 % av max — mellanskiktet; en svag mätning till flyttar raden mot rött.",
+  "Automatiskt underlag: en 1-sidig översikt ur 20 variabler — beslutsdjupet (scenarier, Monte Carlo, vågmatris) tillverkas endast i grundarens manuella analys."
+ ],
+ "falsifiering": [
+  "V19 kassatäckning < 12 mån inom 2 kvartal falsifierar gul-statusen — portV19 aktiveras och raden blir röd enligt korstabellens D1-regel.",
+  "fvagDynamik → \"försvagas\" i nästa korstabellkörning falsifierar urvalsgrunden — kandidaturen omprövas omgående (dynamiken är forbattras i dagens underlag).",
+  "datatackning < 0,6 i nästa leverans falsifierar statusgrunden — grön kräver ≥ 60 % (D1), det publika biblioteket ≥ 70 %; ADS.DE ligger på 71,1 % i dag.",
+  "V04 P/S över 5× i nästa mätning falsifierar tesen för värdering — AKM1-profilens starkaste ben (V04 P/S, 5/5 p i dag).",
+  "relativ AKM1 under 0,50 i nästa mätning falsifierar gul-statusen (→ röd enligt D1) — idag 67,2 %."
+ ],
+ "lasMer": {
+  "bloggSlug": null,
+  "kurser": [
+   "v04-ps",
+   "v19-kapitalforbranning",
+   "v07-bruttomarginal"
+  ],
+  "analysSida": "/forskningsbiblioteket/ADS.DE"
+ },
+ "etikett": "Automatiskt forskningsunderlag — ej grundarens 99-sidorsanalys",
+ "disclaimer": "Forskningsunderlag — ej rådgivning. Pedagogisk forskning, aldrig investeringsrådgivning (lagen 2007:528)."
+}

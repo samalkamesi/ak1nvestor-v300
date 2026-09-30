@@ -1,0 +1,176 @@
+{
+ "schema": "analysfabrik-v1",
+ "ticker": "PUIG.MC",
+ "namn": "Puig Brands, S.A.",
+ "bransch": "konsument",
+ "land": "Spanien",
+ "valuta": "EUR",
+ "versionsdatum": "2026-09-30",
+ "underlagSenastKontrollerad": "2026-09-03",
+ "genereradAv": "verktyg/kor-analysfabrik.mjs (våg 56 bygg-B + våg 57 D2 akm2-block)",
+ "urval": {
+  "regel": "kandidatregeln v1: portV19=false OCH (grön OCH täckning≥0,60 ELLER gul OCH täckning≥0,70 OCH AKM1/max≥0,65) — STYRELSE-analysbibliotek §2.1",
+  "status": "gron",
+  "statusEtikett": "grön",
+  "relativAkm1": 0.7075,
+  "datatackning": 0.7113,
+  "portV19": false,
+  "varning": null
+ },
+ "rankPoang": 0.777,
+ "akm1": {
+  "totalt": 50.3,
+  "maxMojligt": 71.1,
+  "relativ": 0.7075,
+  "perKategori": {
+   "tillvaxt": 1,
+   "vardering": 3.33,
+   "lonsamhet": 3,
+   "stabilitet": 2.67,
+   "moat": 1.33,
+   "katalysator": 0,
+   "risk": 2.5
+  },
+  "starkast": "vardering",
+  "svagast": "katalysator",
+  "osattaVariabler": [
+   "V02",
+   "V03",
+   "V11",
+   "V13",
+   "V15",
+   "V16",
+   "V17",
+   "V18",
+   "V20"
+  ],
+  "antalOsatta": 9,
+  "topp3Motiveringar": [
+   {
+    "variabel": "V19",
+    "namn": "Kassatäckning — nyemissionsrisk",
+    "poang": 5,
+    "motivering": "FCF-marginal 11,5 % positiv → 5/5 (självfinansierande enligt r2 V19-tabellen; burn-rate ej beräknad av P1 då kassaflödet är positivt)"
+   },
+   {
+    "variabel": "V04",
+    "namn": "P/S",
+    "poang": 4,
+    "motivering": "P/S 1,96x härlett som P/E 17,2 × vinstmarginal 11,4 % (identitet, valutasäker) → linjär band 4/5"
+   },
+   {
+    "variabel": "V07",
+    "namn": "Bruttomarginal",
+    "poang": 4,
+    "motivering": "Bruttomarginal 75,0 % → konkav kurva 4/5 (5 kräver >70 % hållet 3+ år — bruttovinstserie saknas i pass 1, tak 4)"
+   }
+  ],
+  "botten3Motiveringar": [
+   {
+    "variabel": "V09",
+    "namn": "ROE",
+    "poang": 2,
+    "motivering": "ROE 15,6 % → konkav kurva 2/5"
+   },
+   {
+    "variabel": "V08",
+    "namn": "EBITDA-marginal",
+    "poang": 3,
+    "motivering": "EBIT-marginal 16,6 % som NEDRE-GRÄNS-proxy för EBITDA-marginal → linjär band 3/5"
+   },
+   {
+    "variabel": "V06",
+    "namn": "EV/EBITDA",
+    "poang": 3,
+    "motivering": "EV/EBIT 13,0x som NEDRE-GRÄNS-proxy för EV/EBITDA (EV/EBIT ≥ EV/EBITDA) → konvex kurva 3/5"
+   }
+  ]
+ },
+ "akm2": {
+  "totalt": 74,
+  "skillnad": 23.7,
+  "viktprofil": "akm2-2026",
+  "modellVersion": "AKM2.2026.09",
+  "band": "osatt",
+  "portAktiv": false,
+  "aktivaModuler": [
+   {
+    "modulId": "allman",
+    "orsak": "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)",
+    "variabler": [
+     "V21",
+     "V22",
+     "V24",
+     "V25",
+     "V28"
+    ],
+    "poang": {
+     "V21": 3,
+     "V22": 3,
+     "V24": 5,
+     "V25": 5,
+     "V28": 3
+    }
+   }
+  ],
+  "modulVariablerSatta": [
+   "V21",
+   "V22",
+   "V24",
+   "V25",
+   "V28"
+  ],
+  "modulVariablerOsatta": [
+   "V23",
+   "V26",
+   "V27"
+  ],
+  "dynamikPaverkan": "Dynamiklagret (lager 3) var inte aktiverat i denna beräkning — kompositen är en ren fundamental syntes utan vågmodulering (neutral degradering, aldrig gissning). Den fundamentala dynamiken redovisas separat i korstabellens FVag-kolumn och påverkar inte kompositen.",
+  "omfordelningText": "Profil \"akm2-2026\" omfördelar vikt vid saknad data (BESLUT §2 — aldrig straffa osatt): 15 av 28 profilvariabler saknar underlag (V02, V03, V04, V06, V08, V11, V13, V14, V15, V16, V17, V18, V23, V26, V27) och deras sammanlagda vikt har omfördelats proportionellt till de 13 aktiva variablerna.",
+  "osakerhetNote": "12 av 20 kärnvariabler är osatta (andel 60 %) — modellen gissar aldrig: osatt ger 0 poäng och vikten omfördelas (BESLUT §2). Dynamik ej aktivt — ren fundamental syntes.",
+  "radModuler": [
+   "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+  ],
+  "kalla": "data/cache/akm2-PUIG_MC.json (verktyg/kor-akm2-berika.mjs, våg 57 D2) — raknaAKM2 med automatiska moduler ur modulregistret + viktprofil akm2-2026"
+ },
+ "vaglage": {
+  "perHorisont": {
+   "mikro": "impulsvag",
+   "kort": "impulsvag",
+   "medellang": "osatt",
+   "lang": "osatt",
+   "mega": "osatt"
+  },
+  "fvagDynamik": "forbattras",
+  "tolkning": "Klassade horisonter: mikro impulsvag, kort impulsvag — övriga 3 osatt (tidsserier saknas i källorna). 2 av 20 variabler har klassbar vågdata; dynamiken är forbattras."
+ },
+ "konfluens": null,
+ "golv": {
+  "typ": "osatt",
+  "marginal": null,
+  "not": "golvMarginal är null i korstabellen — värdegolvdata (NCAV/NAV) levereras inte av källorna ännu (känt, dokumenterat i manifestet)."
+ },
+ "risker": [
+  "9 av 20 AKM1-variabler är osatta i underlaget (V02, V03, V11, V13, V15, V16, V17, V18, V20) — analysen bygger på 11 mätta variabler, inte hela modellen.",
+  "Likviditet (V11) osatt — balansräkningsdata saknas i källorna, likviditetsrisken kan inte bedömas.",
+  "Automatiskt underlag: en 1-sidig översikt ur 20 variabler — beslutsdjupet (scenarier, Monte Carlo, vågmatris) tillverkas endast i grundarens manuella analys."
+ ],
+ "falsifiering": [
+  "V19 kassatäckning < 12 mån inom 2 kvartal falsifierar grön-statusen — portV19 aktiveras och raden blir röd enligt korstabellens D1-regel.",
+  "fvagDynamik → \"försvagas\" i nästa korstabellkörning falsifierar urvalsgrunden — kandidaturen omprövas omgående (dynamiken är forbattras i dagens underlag).",
+  "datatackning < 0,6 i nästa leverans falsifierar statusgrunden — grön kräver ≥ 60 % (D1), det publika biblioteket ≥ 70 %; PUIG.MC ligger på 71,1 % i dag.",
+  "V19 kassatäckning under 12 månader inom 2 kvartal falsifierar tesen för värdering — AKM1-profilens starkaste ben (V19 Kassatäckning — nyemissionsrisk, 5/5 p i dag).",
+  "relativ AKM1 under 0,70 i nästa mätning falsifierar grön-statusen (→ gul enligt D1) — idag 70,7 %."
+ ],
+ "lasMer": {
+  "bloggSlug": null,
+  "kurser": [
+   "v19-kapitalforbranning",
+   "v04-ps",
+   "v07-bruttomarginal"
+  ],
+  "analysSida": "/forskningsbiblioteket/PUIG.MC"
+ },
+ "etikett": "Automatiskt forskningsunderlag — ej grundarens 99-sidorsanalys",
+ "disclaimer": "Forskningsunderlag — ej rådgivning. Pedagogisk forskning, aldrig investeringsrådgivning (lagen 2007:528)."
+}

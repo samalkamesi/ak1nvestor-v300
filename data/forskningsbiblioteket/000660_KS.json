@@ -1,0 +1,188 @@
+{
+ "schema": "analysfabrik-v1",
+ "ticker": "000660.KS",
+ "namn": "SK hynix",
+ "bransch": "teknik",
+ "land": "Sydkorea",
+ "valuta": "KRW",
+ "versionsdatum": "2026-09-30",
+ "underlagSenastKontrollerad": "2026-09-03",
+ "genereradAv": "verktyg/kor-analysfabrik.mjs (våg 56 bygg-B + våg 57 D2 akm2-block)",
+ "urval": {
+  "regel": "kandidatregeln v1: portV19=false OCH (grön OCH täckning≥0,60 ELLER gul OCH täckning≥0,70 OCH AKM1/max≥0,65) — STYRELSE-analysbibliotek §2.1",
+  "status": "gron",
+  "statusEtikett": "grön",
+  "relativAkm1": 0.7075,
+  "datatackning": 0.7113,
+  "portV19": false,
+  "varning": null
+ },
+ "rankPoang": 0.777,
+ "akm1": {
+  "totalt": 50.3,
+  "maxMojligt": 71.1,
+  "relativ": 0.7075,
+  "perKategori": {
+   "tillvaxt": 1.33,
+   "vardering": 1.67,
+   "lonsamhet": 4.33,
+   "stabilitet": 1.67,
+   "moat": 1.33,
+   "katalysator": 0,
+   "risk": 2.5
+  },
+  "starkast": "lonsamhet",
+  "svagast": "katalysator",
+  "osattaVariabler": [
+   "V02",
+   "V03",
+   "V11",
+   "V13",
+   "V15",
+   "V16",
+   "V17",
+   "V18",
+   "V20"
+  ],
+  "antalOsatta": 9,
+  "topp3Motiveringar": [
+   {
+    "variabel": "V08",
+    "namn": "EBITDA-marginal",
+    "poang": 5,
+    "motivering": "EBIT-marginal 68,0 % som NEDRE-GRÄNS-proxy för EBITDA-marginal → linjär band 5/5"
+   },
+   {
+    "variabel": "V10",
+    "namn": "Skuldsättningsgrad",
+    "poang": 5,
+    "motivering": "Skuld/eget kapital 0,08 → linjär band 5/5 (lägre är bättre)"
+   },
+   {
+    "variabel": "V19",
+    "namn": "Kassatäckning — nyemissionsrisk",
+    "poang": 5,
+    "motivering": "FCF-marginal 48,5 % positiv → 5/5 (självfinansierande enligt r2 V19-tabellen; burn-rate ej beräknad av P1 då kassaflödet är positivt)"
+   }
+  ],
+  "botten3Motiveringar": [
+   {
+    "variabel": "V12",
+    "namn": "Intäktsstabilitet",
+    "poang": 0,
+    "motivering": "Intäktsvolatilitet σ(yoy) 48,3 % → stabilitetsband 0/5 (4-årig serie — kort underlag, noteras)"
+   },
+   {
+    "variabel": "V05",
+    "namn": "P/B",
+    "poang": 1,
+    "motivering": "P/B 5,15x → linjär band 1/5 (Grahams ≥1,5-varning på egenkapitalmultipln är aktiverad)"
+   },
+   {
+    "variabel": "V04",
+    "namn": "P/S",
+    "poang": 1,
+    "motivering": "P/S 6,99x härlett som P/E 8,2 × vinstmarginal 85,6 % (identitet, valutasäker) → linjär band 1/5"
+   }
+  ]
+ },
+ "akm2": {
+  "totalt": 79,
+  "skillnad": 28.7,
+  "viktprofil": "akm2-2026",
+  "modellVersion": "AKM2.2026.09",
+  "band": "osatt",
+  "portAktiv": false,
+  "aktivaModuler": [
+   {
+    "modulId": "saas",
+    "orsak": "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+    "variabler": [
+     "V21",
+     "V22",
+     "V25"
+    ],
+    "poang": {
+     "V21": 5,
+     "V22": 4,
+     "V25": 5
+    }
+   },
+   {
+    "modulId": "tillvaxt",
+    "orsak": "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna",
+    "variabler": [
+     "V22",
+     "V25",
+     "V28"
+    ],
+    "poang": {
+     "V22": 4,
+     "V25": 5,
+     "V28": 4
+    }
+   }
+  ],
+  "modulVariablerSatta": [
+   "V21",
+   "V22",
+   "V25",
+   "V28"
+  ],
+  "modulVariablerOsatta": [
+   "V23",
+   "V24",
+   "V26",
+   "V27"
+  ],
+  "dynamikPaverkan": "Dynamiklagret (lager 3) var inte aktiverat i denna beräkning — kompositen är en ren fundamental syntes utan vågmodulering (neutral degradering, aldrig gissning). Den fundamentala dynamiken redovisas separat i korstabellens FVag-kolumn och påverkar inte kompositen.",
+  "omfordelningText": "Profil \"akm2-2026\" omfördelar vikt vid saknad data (BESLUT §2 — aldrig straffa osatt): 17 av 28 profilvariabler saknar underlag (V02, V03, V04, V06, V08, V11, V13, V14, V15, V16, V17, V18, V19, V23, V24, V26, V27) och deras sammanlagda vikt har omfördelats proportionellt till de 11 aktiva variablerna.",
+  "osakerhetNote": "13 av 20 kärnvariabler är osatta (andel 65 %) — modellen gissar aldrig: osatt ger 0 poäng och vikten omfördelas (BESLUT §2). Dynamik ej aktivt — ren fundamental syntes.",
+  "radModuler": [
+   "SaaS — prenumerationsmodell (V02-adapter i kärnan bär ARR-toningen)",
+   "Tillväxt — V25/V19 betoning: utspädning och nyemissionsrisk är huvudriskerna"
+  ],
+  "kalla": "data/cache/akm2-000660_KS.json (verktyg/kor-akm2-berika.mjs, våg 57 D2) — raknaAKM2 med automatiska moduler ur modulregistret + viktprofil akm2-2026"
+ },
+ "vaglage": {
+  "perHorisont": {
+   "mikro": "impulsvag",
+   "kort": "impulsvag",
+   "medellang": "impulsvag",
+   "lang": "osatt",
+   "mega": "impulsvag"
+  },
+  "fvagDynamik": "forbattras",
+  "tolkning": "Klassade horisonter: mikro impulsvag, kort impulsvag, medellang impulsvag, mega impulsvag — övriga 1 osatt (tidsserier saknas i källorna). 4 av 20 variabler har klassbar vågdata; dynamiken är forbattras."
+ },
+ "konfluens": null,
+ "golv": {
+  "typ": "osatt",
+  "marginal": null,
+  "not": "golvMarginal är null i korstabellen — värdegolvdata (NCAV/NAV) levereras inte av källorna ännu (känt, dokumenterat i manifestet)."
+ },
+ "risker": [
+  "9 av 20 AKM1-variabler är osatta i underlaget (V02, V03, V11, V13, V15, V16, V17, V18, V20) — analysen bygger på 11 mätta variabler, inte hela modellen.",
+  "Värderingsrisk: V05 P/B 1/5 p — högt betalt värderingsläge relativt bokfört kapital.",
+  "Likviditet (V11) osatt — balansräkningsdata saknas i källorna, likviditetsrisken kan inte bedömas.",
+  "Automatiskt underlag: en 1-sidig översikt ur 20 variabler — beslutsdjupet (scenarier, Monte Carlo, vågmatris) tillverkas endast i grundarens manuella analys."
+ ],
+ "falsifiering": [
+  "V19 kassatäckning < 12 mån inom 2 kvartal falsifierar grön-statusen — portV19 aktiveras och raden blir röd enligt korstabellens D1-regel.",
+  "fvagDynamik → \"försvagas\" i nästa korstabellkörning falsifierar urvalsgrunden — kandidaturen omprövas omgående (dynamiken är forbattras i dagens underlag).",
+  "datatackning < 0,6 i nästa leverans falsifierar statusgrunden — grön kräver ≥ 60 % (D1), det publika biblioteket ≥ 70 %; 000660.KS ligger på 71,1 % i dag.",
+  "V08 EBITDA-marginalen under 10 % i nästa årsredovisning falsifierar tesen för lönsamhet — AKM1-profilens starkaste ben (V08 EBITDA-marginal, 5/5 p i dag).",
+  "relativ AKM1 under 0,70 i nästa mätning falsifierar grön-statusen (→ gul enligt D1) — idag 70,7 %."
+ ],
+ "lasMer": {
+  "bloggSlug": null,
+  "kurser": [
+   "v08-ebitda-marginal",
+   "v10-skuldsattningsgrad",
+   "v19-kapitalforbranning"
+  ],
+  "analysSida": "/forskningsbiblioteket/000660.KS"
+ },
+ "etikett": "Automatiskt forskningsunderlag — ej grundarens 99-sidorsanalys",
+ "disclaimer": "Forskningsunderlag — ej rådgivning. Pedagogisk forskning, aldrig investeringsrådgivning (lagen 2007:528)."
+}

@@ -1,0 +1,176 @@
+{
+ "schema": "analysfabrik-v1",
+ "ticker": "4503.T",
+ "namn": "Astellas Pharma Inc.",
+ "bransch": "halso",
+ "land": "Japan",
+ "valuta": "JPY",
+ "versionsdatum": "2026-09-30",
+ "underlagSenastKontrollerad": "2026-09-03",
+ "genereradAv": "verktyg/kor-analysfabrik.mjs (våg 56 bygg-B + våg 57 D2 akm2-block)",
+ "urval": {
+  "regel": "kandidatregeln v1: portV19=false OCH (grön OCH täckning≥0,60 ELLER gul OCH täckning≥0,70 OCH AKM1/max≥0,65) — STYRELSE-analysbibliotek §2.1",
+  "status": "gron",
+  "statusEtikett": "grön",
+  "relativAkm1": 0.7862,
+  "datatackning": 0.7113,
+  "portV19": false,
+  "varning": null
+ },
+ "rankPoang": 0.8233,
+ "akm1": {
+  "totalt": 55.9,
+  "maxMojligt": 71.1,
+  "relativ": 0.7862,
+  "perKategori": {
+   "tillvaxt": 1,
+   "vardering": 3.67,
+   "lonsamhet": 3.67,
+   "stabilitet": 3,
+   "moat": 1.33,
+   "katalysator": 0,
+   "risk": 2.5
+  },
+  "starkast": "vardering",
+  "svagast": "katalysator",
+  "osattaVariabler": [
+   "V02",
+   "V03",
+   "V11",
+   "V13",
+   "V15",
+   "V16",
+   "V17",
+   "V18",
+   "V20"
+  ],
+  "antalOsatta": 9,
+  "topp3Motiveringar": [
+   {
+    "variabel": "V10",
+    "namn": "Skuldsättningsgrad",
+    "poang": 5,
+    "motivering": "Skuld/eget kapital 0,3 → linjär band 5/5 (lägre är bättre)"
+   },
+   {
+    "variabel": "V19",
+    "namn": "Kassatäckning — nyemissionsrisk",
+    "poang": 5,
+    "motivering": "FCF-marginal 23,5 % positiv → 5/5 (självfinansierande enligt r2 V19-tabellen; burn-rate ej beräknad av P1 då kassaflödet är positivt)"
+   },
+   {
+    "variabel": "V04",
+    "namn": "P/S",
+    "poang": 4,
+    "motivering": "P/S 1,87x härlett som P/E 11,6 × vinstmarginal 16,0 % (identitet, valutasäker) → linjär band 4/5"
+   }
+  ],
+  "botten3Motiveringar": [
+   {
+    "variabel": "V09",
+    "namn": "ROE",
+    "poang": 3,
+    "motivering": "ROE 21,3 % → konkav kurva 3/5"
+   },
+   {
+    "variabel": "V05",
+    "namn": "P/B",
+    "poang": 3,
+    "motivering": "P/B 2,18x → linjär band 3/5 (Grahams ≥1,5-varning på egenkapitalmultipln är aktiverad)"
+   },
+   {
+    "variabel": "V01",
+    "namn": "Försäljningstillväxt",
+    "poang": 3,
+    "motivering": "Försäljningstillväxt 12,1 % [5-års CAGR (4-årsbas): 12,1 %] → goldilocks-kurva 3/5"
+   }
+  ]
+ },
+ "akm2": {
+  "totalt": 87,
+  "skillnad": 31.1,
+  "viktprofil": "akm2-2026",
+  "modellVersion": "AKM2.2026.09",
+  "band": "osatt",
+  "portAktiv": false,
+  "aktivaModuler": [
+   {
+    "modulId": "allman",
+    "orsak": "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)",
+    "variabler": [
+     "V21",
+     "V22",
+     "V24",
+     "V25",
+     "V28"
+    ],
+    "poang": {
+     "V21": 4,
+     "V22": 5,
+     "V24": 5,
+     "V25": 5,
+     "V28": 5
+    }
+   }
+  ],
+  "modulVariablerSatta": [
+   "V21",
+   "V22",
+   "V24",
+   "V25",
+   "V28"
+  ],
+  "modulVariablerOsatta": [
+   "V23",
+   "V26",
+   "V27"
+  ],
+  "dynamikPaverkan": "Dynamiklagret (lager 3) var inte aktiverat i denna beräkning — kompositen är en ren fundamental syntes utan vågmodulering (neutral degradering, aldrig gissning). Den fundamentala dynamiken redovisas separat i korstabellens FVag-kolumn och påverkar inte kompositen.",
+  "omfordelningText": "Profil \"akm2-2026\" omfördelar vikt vid saknad data (BESLUT §2 — aldrig straffa osatt): 15 av 28 profilvariabler saknar underlag (V02, V03, V04, V06, V08, V11, V13, V14, V15, V16, V17, V18, V23, V26, V27) och deras sammanlagda vikt har omfördelats proportionellt till de 13 aktiva variablerna.",
+  "osakerhetNote": "12 av 20 kärnvariabler är osatta (andel 60 %) — modellen gissar aldrig: osatt ger 0 poäng och vikten omfördelas (BESLUT §2). Dynamik ej aktivt — ren fundamental syntes.",
+  "radModuler": [
+   "Allmän — samtliga kärnvariabler aktiva (fallback utan branschfamilj)"
+  ],
+  "kalla": "data/cache/akm2-4503_T.json (verktyg/kor-akm2-berika.mjs, våg 57 D2) — raknaAKM2 med automatiska moduler ur modulregistret + viktprofil akm2-2026"
+ },
+ "vaglage": {
+  "perHorisont": {
+   "mikro": "impulsvag",
+   "kort": "osatt",
+   "medellang": "osatt",
+   "lang": "osatt",
+   "mega": "osatt"
+  },
+  "fvagDynamik": "forbattras",
+  "tolkning": "Klassade horisonter: mikro impulsvag — övriga 4 osatt (tidsserier saknas i källorna). 2 av 20 variabler har klassbar vågdata; dynamiken är forbattras."
+ },
+ "konfluens": null,
+ "golv": {
+  "typ": "osatt",
+  "marginal": null,
+  "not": "golvMarginal är null i korstabellen — värdegolvdata (NCAV/NAV) levereras inte av källorna ännu (känt, dokumenterat i manifestet)."
+ },
+ "risker": [
+  "9 av 20 AKM1-variabler är osatta i underlaget (V02, V03, V11, V13, V15, V16, V17, V18, V20) — analysen bygger på 11 mätta variabler, inte hela modellen.",
+  "Likviditet (V11) osatt — balansräkningsdata saknas i källorna, likviditetsrisken kan inte bedömas.",
+  "Automatiskt underlag: en 1-sidig översikt ur 20 variabler — beslutsdjupet (scenarier, Monte Carlo, vågmatris) tillverkas endast i grundarens manuella analys."
+ ],
+ "falsifiering": [
+  "V19 kassatäckning < 12 mån inom 2 kvartal falsifierar grön-statusen — portV19 aktiveras och raden blir röd enligt korstabellens D1-regel.",
+  "fvagDynamik → \"försvagas\" i nästa korstabellkörning falsifierar urvalsgrunden — kandidaturen omprövas omgående (dynamiken är forbattras i dagens underlag).",
+  "datatackning < 0,6 i nästa leverans falsifierar statusgrunden — grön kräver ≥ 60 % (D1), det publika biblioteket ≥ 70 %; 4503.T ligger på 71,1 % i dag.",
+  "V10 skuldsättningsgraden över 1,5 i nästa balansräkning falsifierar tesen för värdering — AKM1-profilens starkaste ben (V10 Skuldsättningsgrad, 5/5 p i dag).",
+  "relativ AKM1 under 0,70 i nästa mätning falsifierar grön-statusen (→ gul enligt D1) — idag 78,6 %."
+ ],
+ "lasMer": {
+  "bloggSlug": null,
+  "kurser": [
+   "v10-skuldsattningsgrad",
+   "v19-kapitalforbranning",
+   "v04-ps"
+  ],
+  "analysSida": "/forskningsbiblioteket/4503.T"
+ },
+ "etikett": "Automatiskt forskningsunderlag — ej grundarens 99-sidorsanalys",
+ "disclaimer": "Forskningsunderlag — ej rådgivning. Pedagogisk forskning, aldrig investeringsrådgivning (lagen 2007:528)."
+}

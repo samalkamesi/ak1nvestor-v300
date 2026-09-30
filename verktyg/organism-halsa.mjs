@@ -21,6 +21,18 @@ import fileURLToPathShim from "node:url";
 const ROT = path.resolve(path.dirname(fileURLToPathShim.fileURLToPath(import.meta.url)), "..");
 const VAKT = path.join(ROT, "data", "vakten");
 
+// v215b: de vitala loggarna skrivs av daemonerna (pumpor + cron) i
+// PROD-trädet — agent-trädet är arbetsytan och äger dem inte. När provet
+// körs manuellt från arbetsytan (ROT=agent) fanns därför inga loggar och
+// fem friska vägar domades RAD (bevis 2026-09-30 23:06: hjärta slog i
+// prod 6 min tidigare). Läs alltid eget träd först (cron-fallet ROT=prod
+// är oförändrat), fall annars tillbaka på prod-trädet. AK1A_HALSA_VAKT:
+// svitens överridning (hermetiskt, o87-doktrinen).
+const VAKT_KANDIDATER = [process.env.AK1A_HALSA_VAKT, VAKT, "/home/ak1a/AK1/data/vakten"].filter(Boolean);
+const vaktFil = (namn) =>
+  VAKT_KANDIDATER.map((k) => path.join(k, namn)).find((p) => fs.existsSync(p)) ??
+  path.join(VAKT_KANDIDATER[0], namn);
+
 const nu = Date.now();
 const rader = [];
 
@@ -58,10 +70,10 @@ try {
 
 // 2) Pump-loggarnas färskhet
 const forvantade = [
-  ["hjärtslag", path.join(VAKT, "hjartslag.log"), 16 * 60_000],
-  ["styrelserond", path.join(VAKT, "styrelse-rond.log"), 3.6 * 3600_000],
-  ["gränssnittsvakt", path.join(VAKT, "senaste-korning.txt"), 6.5 * 3600_000],
-  ["prod-synk-logg", path.join(VAKT, "prod-synk.log"), 24 * 3600_000],
+  ["hjärtslag", vaktFil("hjartslag.log"), 16 * 60_000],
+  ["styrelserond", vaktFil("styrelse-rond.log"), 3.6 * 3600_000],
+  ["gränssnittsvakt", vaktFil("senaste-korning.txt"), 6.5 * 3600_000],
+  ["prod-synk-logg", vaktFil("prod-synk.log"), 24 * 3600_000],
 ];
 for (const [namn, fil, gransMs] of forvantade) {
   const a = alder(fil);
@@ -137,27 +149,49 @@ try {
 
 // 4) Systemets vitalvärden: swap, disk, minne
 try {
-  const swapon = execFileSync("swapon", ["--show"], { encoding: "utf8" });
-  kolla("swap", /swap/i.test(swapon) ? true : false, swapon.trim() ? "aktiv" : "SAKNAS — OOM-risk vid byggen");
+  // v215: swap-radens klassfel kuras — "enhet saknas" är INTE RAD i sig.
+  // Risken med saknad swap är OOM vid byggen, och den bärs av TILLGÄNGLIGT
+  // minne, inte av enhetens frånvaro. Domtabell:
+  //   swap aktiv                     → GRÖN (kärnans ventil finns)
+  //   swap saknas + ≥ 4 000 MB tillg → GRÖN informationell (byggen bufferade)
+  //   swap saknas + 1 500–3 999 MB   → GUL (byggfönster riskabla)
+  //   swap saknas + < 1 500 MB       → RAD (äkta OOM-risk)
+  // Bevis 2026-09-30 r358: RAD på frisk 62 GB-maskin med 51,5 GB
+  // tillgängligt — klassfelet drev ingen åtgärd men ekade i varje rond.
+  // AK1A_HALSA_SWAPON/_FREE/_LOGG: svitens överridningar (hermetiskt).
+  const lasSystem = (cmd, args, envNamn) =>
+    process.env[envNamn] !== undefined ? process.env[envNamn] : execFileSync(cmd, args, { encoding: "utf8" });
+  const free = lasSystem("free", ["-m"], "AK1A_HALSA_FREE");
+  const tillganglig = parseInt((free.match(/Mem:\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+(\d+)/) || [])[1] ?? "0", 10);
+  const swapon = lasSystem("swapon", ["--show"], "AK1A_HALSA_SWAPON");
+  if (/swap/i.test(swapon)) {
+    kolla("swap", true, "aktiv");
+  } else if (tillganglig >= 4000) {
+    kolla("swap", true, `enhet saknas — ${Math.round((tillganglig / 1024) * 10) / 10} GB tillgängligt bufferar byggen (v215)`);
+  } else if (tillganglig >= 1500) {
+    kolla("swap", "gul", `enhet saknas och ${tillganglig} MB tillgängligt — byggfönster riskabla (v215)`);
+  } else {
+    kolla("swap", false, `SAKNAS — OOM-risk vid byggen (${tillganglig} MB kvar)`);
+  }
   const df = execFileSync("df", ["-h", "/"], { encoding: "utf8" });
   const procent = parseInt((df.match(/(\d+)%/g) || ["0%"]).pop(), 10);
   kolla("disk", procent < 85 ? true : procent < 93 ? "gul" : false, `${procent}% använd`);
-  const free = execFileSync("free", ["-m"], { encoding: "utf8" });
-  const tillganglig = parseInt((free.match(/Mem:\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+(\d+)/) || [])[1] ?? "0", 10);
   kolla("minne", tillganglig > 800 ? true : tillganglig > 300 ? "gul" : false, `${tillganglig} MB tillgängligt`);
 } catch (e) {
   kolla("systemvitala", false, String(e).slice(0, 50));
 }
 
 // 5) Evolutionens datum: registret + kostnad + beslut
-const regAlder = alder(path.join(VAKT, "organ-registret.json"));
+const regAlder = alder(vaktFil("organ-registret.json"));
 kolla(
   "organ-registret",
   regAlder !== null && regAlder < 4 * 3600_000 ? true : regAlder !== null ? "gul" : false,
   regAlder !== null ? `uppdaterat ${Math.round(regAlder / 60000)} min sedan` : "SAKNAS",
 );
-kolla("kostnad-logg", alder(path.join(VAKT, "kostnad-log.json")) !== null, "telemetri på plats");
-kolla("beslutsminne", alder(path.join(VAKT, "beslutsminne.jsonl")) !== null, "långtidsminne på plats");
+// v215b: detaljraden sades "telemetri på plats" även vid RAD — nu sanning.
+const kostnadFinns = alder(vaktFil("kostnad-log.json")) !== null;
+kolla("kostnad-logg", kostnadFinns, kostnadFinns ? "telemetri på plats" : "SAKNAS");
+kolla("beslutsminne", alder(vaktFil("beslutsminne.jsonl")) !== null, "långtidsminne på plats");
 
 // ── Rapport ────────────────────────────────────────────────────────────────
 const rad = rader.filter((r) => r.status === "RAD");
@@ -166,6 +200,9 @@ const samman = `HELSPROV: ${rad.length} RAD, ${gul.length} GUL, ${rader.length -
 console.log(samman);
 for (const r of rader) console.log(`  ${r.status.padEnd(4)} ${r.namn.padEnd(16)} ${r.detalj}`);
 try {
-  fs.appendFileSync(path.join(VAKT, "organism-halsa.log"), `${new Date().toISOString().slice(0, 19)} ${samman}\n`);
+  // AK1A_HALSA_LOGG: svitens överridning — testkörningar dagbokförs i tmp,
+  // aldrig i skarpa organism-halsa.log (o87-doktrinen: diagnostik märks).
+  const loggVag = process.env.AK1A_HALSA_LOGG || path.join(VAKT, "organism-halsa.log");
+  fs.appendFileSync(loggVag, `${new Date().toISOString().slice(0, 19)} ${samman}\n`);
 } catch { /* logg får vänta */ }
 process.exit(rad.length > 0 ? 1 : 0);

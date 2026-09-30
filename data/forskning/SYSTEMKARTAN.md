@@ -7878,3 +7878,44 @@ Tre system valda före start (anspråk disk-först 12:34Z): B7 (passning 09-21 =
 **Snitt:** 7,4 oförändrat (u2:s redovisade 325/44 inkl E43/E44 — gäller den återförda kedjan, se sektionsnotisen; inga scoreändringar denna dokvåg).
 
 KVD: data-only — src/ orörd = INGET bygge · R2 orörd · data/blogg/ orörd · crontab ENDAST LÄST · svitkörningar läsande (22/0 + 57/57 + 32/0 + 50/0, exit 0 ×4) · prod-sonder läs-endast · deployfönstret respekterat (noll pm2/lås-ingrepp) · syskonytor orörda · egna mått tidsstämplade 12:34–13:17Z UTC · commit med pathspec + -F-fil.
+
+## UPPDATERING 2026-09-30 (dokvåg r351 — ÖVERVAKNINGSSKIKTET dokumenterat: fem levande vakter + läkekällan; hela kedjan GRÖN samma kväll som vakttornets återuppståndelse)
+
+**VARFÖR denna sektion:** kartans senaste passning (09-29, B7+B9+B13) föregick
+övervakningsskiktets födelse samma kväll — sitvakten (r331), vakttornet (r332),
+JÄRN-U1–U3-vågorna och r350:s återuppståndelse är alla ODOKUMENTERADE i kartan.
+Egenmätt mot verkligheten 2026-09-30 20:0xZ (cron-rader, rapport-json, loggar,
+fil-existens, live-HTTP):
+
+| System | Byggd/ursprung | Cron | Läge (mätt) | Bevis |
+|---|---|---|---|---|
+| SITVAKTEN | r331 09-29; skript UTANFÖR repot (/home/ak1a/sitvakt — reset-säker placering, JÄRN-U3 §1:s lärdom) | var 2:a | **LEVER** | cron-rad aktiv (crontab -l); loggar ENBART vid åtgärd (R331-kontraktet — åtgärdsjournal, ej puls); vakas av paraplyets (a)+(c) |
+| VAKTTORNET | r332 09-29 ~14:35 → untracked, RADERAT 21:55:42 av trädåterställningen (kraschvaktens kollateral) → **ÅTERSKAPAT r350 09-30 (ad5a4490) ur fem beviskällor** — originalets egen sista rapport bar exakta 15 kontrollerna (A–O) | var 5:e | **LEVER · GRÖN 15/15** | debut 19:55:02Z + 20:05:03Z (vakttornet.json); cron-logg "VAKTTORNET: GRON (15/15 kontroller OK)"; INGEN MODULE_NOT_FOUND mer (zombien död); kontroller: HTTP ×5 loopback · desk-halsa (RESULTAT-radskontrakt) · pm2 ×3 · fabriks-puls · disk · ram · supabase-dump · login-backup · cert |
+| PARAPLYVAKTEN | JÄRN-U3 09-29 (fabrik); **cron-raden GLÖMDES vid leveransen** ("sessionens bord" §6 blev aldrig verkställt — 21 h oinstallerad, rapport stannad 23:02) → installerad r350 19:58Z enligt §6:s exakta append-rader | var 10:e | **LEVER · GRÖN 9/9** | debut 20:00:03Z (paraplyvakt.json: cron-rader ×3 · pulsen 4 min · filerna ×4); kron-logg lever; LÄKNING: saknade cron-rader återinstalleras ur mallen (append av block — okända rader röras aldrig) |
+| KRASCHVAKTEN | verktyg/kraschvakt.mjs (JÄRN-U1-eran; trädåterställningar + räddningsbyggen) | event-/deploydriven | **LEVER** | fil på disk (paraplyets fil-kontroll GRÖN); driftbevis 09-29: "DEPLOY PÅGÅR (låset upptaget): räddning avvaktar" + PM2-RESTART vid 05:56-incidenten; OOM-klasserna i audit-loggen (next_lakt_ur_backup 28 · deploy_revert 1 m.fl.) |
+| DESK-LÄKAREN | /home/ak1a/desk-lakare (pre-JÄRN) | var 30:e | **LEVER** | cron-rad aktiv; ~/desk-halsa.log; hälsan den vårdar = desk-halsa.mjs (ombyggd av fabrikens Spår 11: U27 direktentré-kontrakt + U28 landskapskedjan 8/8 PASS, 09-30) |
+| CRONTAB-MALLEN | JÄRN-U3 §4+§7: /home/ak1a/crontab-v332-mall i hemkatalogen (trädkatastrofer når ej hemkatalogen) + FULL bilaga i protokollet (återskapbar ur repot) | — (läkekälla) | **LEVER** | fil på disk; paraplyet läker ur den; mallen läker paraplyet självt (den självläkande slutenheten) |
+
+**KEDJAN (kundens "vem vakar vaktarna?" — fullt verkställd i drift):**
+vakttornet (app+ekosystem A–O, var 5:e, GRÖNSKRIVER /desk/larm.json — båda
+ytorna, prefixlösa rader) → paraplyvakten (vaktarnas vakt: cron-rader + pulsen
+12-min + vaktfilerna; skriver ENDAST vid egna fynd, prefix "paraplyvakt: ";
+läker cron-rader) → crontab-mallen (läkekällan). Ett levande larm kan aldrig
+kvävas mer än en 10-min-cykel (paraplyet återinför sina rader varje varv det
+har fynd). Desk-larmkanalen: /var/www/desk/larm.json + /home/ak1a/desk-web/
+larm.json (skrivMorkerVagLarm-kontraktet, JÄRN-U1 — merge+dedupe, båda
+identiska; 09-30 20:0xZ: GRÖN 0 rader).
+
+**LÄXOR bokförda (JÄRN-U3-protokollen + VAKTTORNET-ATERSKAPANDE-r350.md):**
+(1) "SESSIONENS BORD"-poster i fabriksprotokoll MÅSTE bokföras som pipeline-
+post direkt — annars dör installationssteg tyst (paraplyets 21 h). (2) untracked
+verktygsfiler = zombierisk (vakttornets 21:55-död) — committa vaktkod FÖRE
+cron-installation. (3) execFileSync blockerar event-loopen: async-kontroller
+await:as FÖRE synkrona subprocesser (r350:s verifieringsrunda 2).
+
+**Protokoll:** data/forskning/JARN-U3-PARAPLY.md (kontrakt+bilaga) ·
+data/forskning/VAKTTORNET-ATERSKAPANDE-r350.md (rekonstruktionsbevis+trösklar).
+
+KVD (r351 dokvåg): read-only mätning (crontab ENDAST LÄST; rapport/logg-filer
+lästa) · data-only commit · src orörd = INGET bygge · R2 orörd · egna mått
+tidsstämplade 20:0xZ UTC.

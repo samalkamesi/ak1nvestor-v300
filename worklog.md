@@ -19744,3 +19744,52 @@ Fabriksagent s11-u1 (byggare, spår 11 DESK A-Ö). ANSPRÅK FÖRE ingrepp 19:08 
 Fabriksagent s11-u3 (byggare, spår 11 DESK A-Ö). ANSPRÅK 19:11 + koordinationsuppdatering 19:15 (data/vakten/auto-s11-1790794523042-u3-ansprak.md). KOLLISIONEN LÖST: valde först GAP 1+2 (U24 §6 rek 1) med färdig capture-intercept-design — hittade "AK1A (DESK-U26)"-rader i ui.js 19:12 (u2 live) + u2:s anspråk 19:06 + u1:s koordinationsnot 19:20 ⇒ ställde ned ui.js/hjalp/ytor HELT (lost-update-klassen U23-efterordet), byggde istället vidare på u1:s inbjudan: "-land-basenheter ovanpå min U27-version". FYND A: direktentréns 302-mål = LANDSKAP :11 men hälsan bevakade bara porträttets 4 enheter — KUR: ENHETER 4→7 (xvnc/wm/novnc-land = växlarens ALLTID-PÅ-kontrakt), dynamisk PASS-rad (r311-lärdomen), APP-enheten zcode-land MEDVETET obevakad (växlar-styrd policy) — beslutet BEVISADES inom timmen: 8/8 PASS genom hela fynd B. FYND B (kundkritiskt): zdesk-zcode-land död sedan 11:46 (SIGBUS core-dump efter 7h56m) = EN-TRYCKS-målet TOM ström i 7,5 h medan växlaren (designad app-startare) legat död sedan 29/9 14:55; min vitlistade återstart 19:12 blottade KRASCHLOOP (NRestarts 8 på 8 min, ~75 s-cykel, endast 10x10-hjälparfönster 0x600001 på :11, inget huvudfönster, SIGTERM-klass) ⇒ STOPPAD 19:2x (samma vitlista: start/stop zdesk-zcode-land explicita nopasswd-rader) — loop-churn (~1,2 GB/cykel + FAILED SU-journalspam) avslutad, porträttappens kundsession verifierad levande före/under/efter; kraschroten ÄRLIGT öppen (lås-på-delad-.zcode-hypotes; morgonens 8h-samexistens = motbevis-not) → rot-kö R12 med tre vägval för entré-målet. FYND C: ExecStartPost su-bugg (pam "could not identify password" varje start — startzoom-land har ALDRIG körts) → rot-kö R13. FYND D: landningens :106-nyp-rad "zoomar appens text" var FALSK sedan u2:s kur live 19:12 (serverad via BÅDA brockarna, addPinchZoomHandlers 2 träffar) → ny sann Tips-rad (titel-marker + taggintegritet bevarade, hälsans kontroll 7 grön). BEVIS: desk-halsa 7/8 (FÖRE, gamla kontraktet) → 8/8 PASS · 4 auth-SKIP — STABILT även efter app-stoppet; node --check OK; curl 302→/desk/h/vnc.html?autoconnect + 401×3 (start/h-mål/hjalp) + 200×2 (6080/6081); sha256 kvitton i protokollet (index 46b1edad…→edec961e…, svit 5b5b971a…→28233ea5…). ROT-KÖ: R12 entré-målets design (landskap-kraschloop vs porträtt-frisk vs väck-växlaren), R13 su-buggen, R14 växlar-döden + 10-min-startspammen i dess logg. KVD: src orörd · R2 orörd · data/blogg orörd · /etc+/usr lästa aldrig rörda (EXAKT två vitlistade sudo-kommandon: start+stop zcode-land) · core/vendor/defaults orörda · ui.js/hjalp/vnc=u2:s yta orörd av mig · DESK_AUTH aldrig rörd · zcode-vhostens nyckel citeras ALDRIG. Protokoll: data/forskning/DESK-U28-LANDSKAPSKEDJAN.md. LEVERANS: verktyg/desk-halsa.mjs (additivt ovanpå u1:s U27), /var/www/desk/index.html (på plats, utanför git — hash-kvitto), data/forskning/DESK-U28-LANDSKAPSKEDJAN.md, worklog.md (denna rad). [fabrik]
 
 Fabriksagent s11-u2 (byggare, spår 11, manifest auto-s11-1790794523042). VAL (anspråk 19:04: data/vakten/auto-s11-1790794523042-u2-ansprak.md): U24-BERÖRINGSGAP GAP 1+2 — kundens värsta smärta "kan ej förstora bilder" (nyp = Ctrl+hjul I fjärriappen som Electron ignorerar = ingenting händer). KUR HELT I AK1A-YTORNA: gesturehandler dispatchar sina CustomEvents på canvas UTAN bubbles (gesturehandler.js:484-485) men capture-fasen genomlöper ALLTID förfäderna (focus-mönstret) och rfb.js:s gestlyssnare sitter på canvas i TARGET-fas (rfb.js:604-607) ⇒ ny addPinchZoomHandlers/handlePinchGesture i app/ui.js: document-capture på gesturestart/move/end, stopPropagation ENDAST för detail.type==='pinch' (onetap/twotap/threetap/drag/longpress/twodrag passerar oskaddade; musens äkta Ctrl+hjul går via wheel-vägen rfb.js:599), stegning av VIEW_ZOOM_STEPS via log-kvot NYP_STEG_FAKTOR 1.15 (ett steg per ~15 % fingeravstånd, clamp 0.85–1.6, återanvänder saveViewZoom/applyViewZoom/showViewZoomStatus — nyp och +/−-knappar delar trappa, minne per orientering och statusrad) — core/+vendor/ SHA-IDENTISKA FÖRE==EFTER (563a8c84…/c04b67fd… — manifestregeln mekaniskt hållen, strukturtest D1-D3). DOKUMENTATION SYNKAD: hjalp.html varningskortet "nypa inte med två fingrar" → "Nypa med två fingrar — ja tack!" + nyp-rad först i "för litet"-kortet (Ctrl+0-rådet kvar); vnc.html-tooltips nämner gesten; båda webbrockarna serverar LIVE utan omstart (6080 porträtt + 6081 landskap = EN-TRYCKS-302:ns mål, gemensam web-rot — nya texterna bevisade i utsvaven). AKUTFÅNGST under FÖRE-körningen: desk-halsa 7/8 (FAIL http-landning-401 — /desk/ svarar 302 sedan r350 05:33) ⇒ lakaren missläkte och startade om kundens Zcode i onödan var 30:e minut (2 ggr 18:30+19:00, ~/desk-halsa.log) — u2 larmade 19:08 via desk-larmkanalen (JÄRN-U1-kontraktet, båda ytorna identiska); 19:11 löste syskonet det (desk-halsa kontrakt 1 omskrivet till direktentré-kontraktet: /desk/=>302+autoconnect, /desk/start=>401, strömmålet=>401 — 8/8 PASS, omstarterna upphör 19:30) ⇒ u2:s larmrad RÄTTAD BORT (övriga larmrader orörda), rot-kö R12 DRAS TILLBAKA (302:an = kundens EN-TRYCKS-direktiv R318+R327, "scale-pin = kundväg", inget fel). KOLLISIONSHISTORIK ärligt bokförd: u1 (19:05) OCH u3 (19:00/19:15) valde samma GAP 1+2 med samma idé — u2 vann disk-tävlingen 19:08-19:14; samtliga anspråksfiler uppdaterade med sha-kvitton (ui.js e84a466d…, hjalp fdb75905…, vnc 63f10946…) så syskonen bygger vidare i stället för skriver om; protokollnummer U26 var taget (u1) ⇒ detta = DESK-U29. BEVIS: strukturtest verktyg/testa-desk-nyp-vyzoom.mjs 16/16 PASS (koppling, endast-pinch, trappåteranvändning+clamp, core-orördhet+dispatch-kontrakt, hjälpsynk, panelsynk, stegfaktor) · node --check ×2 · curl 6080/6081 200 med nya texterna · https 401 ×2 utan auth · desk-halsa 8/8 EFTER (syskonets version; u2:s kontroller identiska FÖRE/EFTER) · tsc 0 fel (src orörd; verktyg+data+protokoll i gitten, desk-web-koden på plats enligt D3 — U2B/U22-mönstret). KVD: R2 orörd · data/blogg orörd · /etc+/usr lästa aldrig skrivna · defaults/mandatory orörda · kundens X-session orörd (inga RFB-ingrepp) · inga omstarter. ÖPPET: riktigt telefonprov av gestkänslan (läxa r318/r327 — strukturtest bevisar kontrakten, inte fingrarna); GAP 3/5/6 oförändrade; U24 GAP 4 = protokollsgräns. LEVERANS: desk-web-kod på plats (ui.js+hjalp.html+vnc.html, sha ovan) + verktyg/testa-desk-nyp-vyzoom.mjs + data/forskning/DESK-U29-NYPVYZOOM.md + anspråksfil + denna worklog-rad. [fabrik]
+
+
+## ROND 351 [organ:Φ] (2026-09-30 20:0x–20:2xZ) — PORTALVERIFIERING FÖRNYAD + O571-TYSTNAD + ÖVERVAKNINGSSKIKTET DOKUMENTERAT I SYSTEMKARTAN (dokvåg spår 9)
+
+**(1) STÄD-COMMITENS KÖ:** 40d90da6 (r350:s tmp-städ) avvisades av fabrikens
+s1u2-Värme Energi-omgång som höll prod-trädet med staged filer vid
+rondstart — köar hos nästa rent fönster (prod-synkens :x7-poll levererar
+vid rent läge; noll produktionspåverkan, endast två tmp-filers radering).
+Prod-topp vid rondstart: fabrikens 32abb2f9 (IBERDROLA Q3-granskning GRÖN
+efter 18 rättningar).
+
+**(2) PORTALVERIFIERING FÖRNYAD (standby-orderns portal-del):** rond 228:s
+slutsats står sig — våg 102 FINNS EJ (föråldrad referens), portal-spåret
+slutlevererat våg 121. FRISKT STICKPROV 20:12Z: startsida 200 · portal.tsx
+lever i src · /api/medlem/portfolj svarar 200 {"inloggad":false} utan auth
+— rond 228:s "401-förväntan" var förenklad: GET är DOKUMENTERAT tyst
+gästsvar (route.ts rad 21: "200 {inloggad:false} — TYST, aldrig 401-text"),
+401-grinden sitter på POST (rad 108). Ingen medlemsspecifik data läcks
+(kroppen bevisar). Portalkravet UPPFYLLT — korrigerad förväntan noterad
+för framtida stickprov.
+
+**(3) O571-EFTERDYNINGENS FÖRLOPP:** ingen ny döda-länk-rapport sedan
+r349:s skarpa validering 05:32 (tystnad råder — larmet är av); kaninens
+domänvila lever (amazon t.o.m. 2026-10-07 05:32Z, adlibris/bokus t.o.m.
+10-06). Full efterdyning (förväntan BLOCKERAD-vila amazon + DOD 0) görs vid
+imorgon 04:17-cron — nattens körning föregick kuren och gäller ej.
+
+**(4) DOKVÅG SPÅR 9 (evighetskatalogen; rotation — r350 arbetade spår 8,
+fabriken äger spår 1-granskningskön):** SYSTEMKARTAN saknade HELA
+övervakningsskiktet (senaste passning 09-29 föregick dess födelse). Ny
+sektion appendad med egenmätta lägen 20:0xZ: SITVAKTEN (r331, var 2:a,
+utanför repot) · VAKTTORNET (r332→r350, var 5:e, GRÖN 15/15) ·
+PARAPLYVAKTEN (JÄRN-U3, var 10:e, GRÖN 9/9 EFTER r350:s installation av
+den 21 h glömda cron-raden) · KRASCHVAKTEN (deploydriven, driftbevisad) ·
+DESK-LÄKAREN (var 30:e) · CRONTAB-MALLEN (läkekällan utanför repot,
+återskapbar ur JÄRN-U3 §7-bilagan) + kedjedokumentation (grönskrivnings-
+ägarskap, ingen larmkvävning mer än en cykel) + tre bokförda läxor
+(sessionens-bord-poster, untracked-zombierisk, event-loop-blockering).
+
+**KVD:** read-only mätning (crontab ENDAST läst) · data-only commit (karta +
+worklog) · src orörd = INGET bygge · R2 orörd · vakten GRÖN + prod 200 +
+motorer 107/0/0 vid rondstart · skal-kvoten följd (node-wrappers).
+
+LEVERANS: denna commit (SYSTEMKARTAN + worklog) — push med fetch+merge om
+fabrikens nya prod-commits kräver det; 40d90da6 åker med i samma push.
+
+NÄSTA I KÖN: (a) o571-efterdyning vid 04:17-cron; (b) vakttornets första
+natt-varv granskas vid morgonronden (kontroll F mot fabrikens ombyggda
+desk-halsa); (c) spårrotation enligt evighetskatalogen.

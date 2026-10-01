@@ -9,6 +9,7 @@ import { HonestyTag } from "./primitives";
 import { VarumarkesLogo } from "./varumarkes-logo";
 import { Button } from "@/components/ui/button";
 import { useSprak } from "./sprak-leverantor";
+import { SIFFROR } from "@/lib/siffror";
 
 // Sociala ikonraden (VÅG 1a): renderas ENDAST för ifyllda profil-URL:er —
 // tom platshållare (K1 ej levererad) ger ingen rad alls, aldrig döda länkar.
@@ -236,7 +237,7 @@ export function Footer() {
           <div>
             <span className="font-semibold text-foreground">KURSER</span>
             <br />
-            300+ moduler i 27 kategorier {/* ur public/deep-courses.json via siffror.ts */}
+            {SIFFROR.kurser} moduler i 27 kategorier {/* v224: antalet ur guldkällan (siffror.ts) — "300+" åldrades i tysthet medan registret växte till 507; kategoriantalet 27 verifierat 2026-10-01 */}
           </div>
           <div>
             <span className="font-semibold text-foreground">ANALYSER</span>

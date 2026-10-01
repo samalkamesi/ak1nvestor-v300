@@ -20553,3 +20553,13 @@ hårdkodade kurstal i src (333:orna är historisk fas-text i ordlistan).
 **SEKVENS:** ändringen committas i kön och landar via prod-synkens NÄSTA
 byggcykel (pågående ombygg från 0fa7eeef rullar under låset — ingen
 tvingad build, ingen race); gränsnittsvakts-verifiering efter deploy.
+
+**FYND 2 SAMMA KLASS — FOOTERN:** "300+ moduler i 27 kategorier" var
+hårdkodad trots kommentaren "via siffror.ts" (kommentaren LöG — texten
+åldrades i tysthet till 200+ kurser understyrd medan registret växte till
+507). KUR: {SIFFROR.kurser} moduler i 27 kategorier — kategoriantalet
+VERIFIERAT mot registret (exakt 27 unika; räknare _v224-kategorier.mjs)
+och lämnas hårdkodat (design-nivå, ändras sällan); kurstalet ur guldkällan
+kan aldrig åldras igen. KONTROLL: "507 moduler" = +2 tecken bredvid
+"300+ moduler" i en smal xs-grid-rad — gränsnittsvakten verifierar efter
+deploy. TSC GRÖN 0 fel.

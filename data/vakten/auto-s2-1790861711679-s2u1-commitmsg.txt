@@ -1,0 +1,35 @@
+studio: auto s2-u1 dataset-djup +1 CELLTRION 068270.KS — Sydkorea|hälso 0→1 = landets andra gren (omg33-könotisen löst); universum 333→334 vid återleveransen + llms-ärvläckan LÄKT (Dataset-sektionen 311→334, 11 branscher, nyttovalt-raderna tillagda, servad LIVE) [fabrik]
+
+Val med anspråk disk-först 14:16Z (syskonens 14:14/14:17 lästa — disjunkta celler;
+kollisionskontroll 0 träffar; Kina 4→5 lämnat orört = dataägarens koordinater).
+Källa: StockAnalysis krx/068270 fem ytor curl-html ordagrant 2026-10-01 (S&P GMI;
+PT-fallgropen fångad — kurs 183 600 KRW triangulerad tre vägar); Yahoo 429 ×3 ⇒
+v173-enkällsprotokoll dokumenterat. Aritmetikgrind 48/48 GRÖN FÖRE skrivning
+(första körningen 47/48 med ett eigenfel kurerat): EV-identiteten med minoritet
+EXAKT 0,009 % · P/E-replik 0,005 % · P/TBV EXAKT · fem marginalrepliker EXAKTA ·
+20 seriefönster absoluta EXAKTA.
+
+Signaturtal: skuldvandringen 744→3 867 mdr KRW (5,2×; lånefinansierad
+återköpsmotor) · Healthcare-fusionens goodwill-hopp 35→11 430 mdr · FY2022
+vinst/kassa-gapet (FCF −110 mdr mittan netto +538 hölls) · FY2024-vändningen
+3,7× medan bruttomarginalen 45,21→61,86 %.
+
+Lost update mot min leverans öppet bokförd och mekaniskt läkt: u3:s 14:37Z-append
+byggde på trädet före min rad (min 331:a raderades); idempotent omkörning på
+diskens faktiska 333-träd → 334 prefix-bitidentisk + läs-tillbaka ×2; u3:s rader
+orörda (deras ägo). Ärvfyndet: llms Dataset-sektionen bar 311/2026-09-25 medan
+sajten publicerat 328+ — HELREGEN 334-läget med 23 rader, 11 branscher, de två
+saknade nyttovalt-raderna; total P/E 19,7 (n=321) · CAGR 6,8 % (n=283).
+
+KVD: läckagevakt v98 GRÖN 0 träffar (334+334 i 1 762 utdatafiler) · kontraktstest
+190 sidkontroller/0 FEL/30 kända varningar · tsc 0 projektbinär (src orörd =
+data-vägen, INGET bygge) · prod 200 ×7 (localhost + HTTPS) · R2 orörd ·
+data/blogg/ orörd · syskonytor orörda. Protokoll:
+data/forskning/S2-U1-CELLTRION-SYDKOREA-HALSO-UTOKNING-OMG34.md
+
+LEVERANS: data/portfolj-system/bolagsunivers.json, public/llms.txt,
+data/forskning/S2-U1-CELLTRION-SYDKOREA-HALSO-UTOKNING-OMG34.md,
+data/vakten/auto-s2-1790861711679-s2-u1-ansprak.md,
+data/vakten/auto-s2-1790861711679-s2u1-radata.md,
+verktyg/_s2u1o34-aritmetikgrind.mjs, verktyg/_s2u1o34-append.mjs,
+verktyg/_s2u1o34-llms.mjs, worklog.md

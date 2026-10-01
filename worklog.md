@@ -20372,3 +20372,38 @@ driftade skript MÅSTE klara wrapper-argv. RESTPOSTER till drift: pm2:s döda
 loggpipe för vakten (0 byte sedan 09-28 — journalen är nu sanningskällan),
 daemonens dödsrot 09-29, första puls-läge-raden ~10:15Z. Syskonytor (u1/u2)
 orörda. Protokoll: OPTIMERING/o572-hundvakt-pm2prefix-blindhet-s8.md. [fabrik]
+
+### SPÅR 9 s9-u3 3/3 (manifest auto-s9-1790829326214, byggare 3/3) — 2026-10-01 ~04:4x–05:1xZ: SYSTEMKARTAN-dokvåg A2+A5+B8 egenmätta; quiz-rörelsens rot KEDJESTÄNGD med per-kurs-diff + v221:s attribuering korrigerad + B8:s post-cutover-premiär [fabrik]
+
+Fabriksagent s9-u3 3/3 (anspråk disk-först 04:4x:
+data/vakten/auto-s9-1790829326214-s9-u3-ansprak-A2-A5-B8.md; ett Edit
+avvisades av file-state-vakten under u1:s A1-commit — omarmat med färsk
+Read, ingen skada; u2:s anspråk E29+A1 läst, A1 var u1:s leverans = deras
+pivot, mina tre ytor fria). (1) A2 LÄRVÄGEN (förra 09-20, 458): registret
+507 i TRE steg (495→501 s5-barnen→507 v221) — V221-INCIDENTEN bokförd i
+kartan FÖRSTA GÅNGEN (merge 4566b806 theirs tog TYST trådens sex kurser
+ur åtta genererade ytor medan käll-JSON:erna levde; KO-läran: merge-
+lösningar kommuniceras via statusfiler FÖRE commit); EGEN: 6/6 läkta i
+deep-courses · larvag-synk GRÖN 507=507=507 exit 0 · 37 profilkurser
+(21) · 0 fantomer · larvag.ts 458 r orörd 5:e varvet · /laroplan+
+/en/laroplan+/api/larvag 200 · siffror 507/8283/82830 (10-01); score
+LEVER 7 kvar. (2) A5 GAMIFICATION (förra 09-20): logik orörd 09-01/09-13
+(topplista.tsx 09-24 kosmetik) · topplistan LIVE TOM · sessionsvakten
+SAKNAS (grep identisk) · QUIZ-KEDJAN STÄNGD: +60 sedan 09-20 = ed3e416be
+(09-24 18:12, v167): 20 övningskapitel i V01–V20 × 3 quiz (per-kurs-diff
+mot 496466f65); V221:S "BARNENS SEX BÄR 60" MOTBEVISAD — bägge merge-
+sexorna 0 quiz i deep-courses OCH källfiler (mätt); quizbärande 334
+oförändrat, quizlösa 161→173 (+12 = merge-tolvan exakt); A3:s 09-28
+mätuppdrag därmed löst; score 7 kvar. (3) B8 AKM3 (förra 09-19, äldst):
+loggarna frusna (09-04/09-03), lib 2 113 r orörda, svit 55/55 exit 0
+EGEN; FYND 1: /api/forskningslage = TVÅ världar — lage LIVE-färskt
+(322/31 gröna 9,6 %/"balanserat" — INTE genesis som 09-19 såg) medan
+regim = genesis MED datum (API + pro-ytorna renderar datum — gap-rest
+preciserad); FYND 2: gap 4 post-cutover — 15 cron-rader men 0 akm3/
+vagvalidering + Vercel PASSIV backup ⇒ molnronden 10-02 lär aldrig köra
+= kedjans SISTA drivare död; dom PÅGÅR 7 kvar, gap 4 växt till HELT
+stillastående kedja. Snitt oförändrat (7/7/7). KVD: read-only + EGEN
+svit/synk (exit 0 ×2) · crontab ENDAST LÄST · data-only · src orörd
+INGET bygge · R2 orörd · data/blogg orörd · syskonytor orörda · commit
+med pathspec + -F-fil. LEVERANS: data/forskning/SYSTEMKARTAN.md +
+anspråksfil + denna worklog-rad. [fabrik]

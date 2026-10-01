@@ -61,12 +61,17 @@ try {
   logga("G3 kunde ej läsas: " + String(e).slice(0, 60));
 }
 
-// G4: aktuell version = förväntad gamla
+// G4: aktuell version = förväntad gamla (zcode --version, fallback npm ls -g)
 let aktuell = "(okänd)";
 try {
   aktuell = kör("nuvarande version", "zcode", ["--version"], 30_000).split(/\s+/).pop() ?? aktuell;
-} catch {
-  try { aktuell = kör("npm ls -g", "npm", ["ls", "-g", NAMN], 60_000); } catch { /* okänd */ }
+} catch { /* binären kanske saknas i PATH — prova npm-nivån */ }
+if (!aktuell.includes(GAMMAL) && !aktuell.includes(NY)) {
+  try {
+    const lsUt = kör("npm ls -g", "npm", ["ls", "-g", NAMN], 60_000);
+    const m = lsUt.match(new RegExp(NAMN.replace(/-/g, "\\-") + "@(\\S+)"));
+    aktuell = m ? m[1] : aktuell + " (npm-läsning utan träff)";
+  } catch { /* förblir okänd */ }
 }
 if (!aktuell.includes(GAMMAL)) {
   logga(`ABORT G4 — aktuell version "${aktuell}" ≠ förväntad ${GAMMAL} (redan uppgraderad? kontrollera manuellt)`);

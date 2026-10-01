@@ -20216,5 +20216,8 @@ version = förväntad) + rollback-pin (npm install -g zcode-app-cli@
 sond efteråt; TORRKÖRD med korrekt abort (fabriken kör nya omgången
 auto-s5-1790811909094 = evighetsmotorns spår 5 lärvägar — inga
 kollisioner med mina ytor; deploy-låset lever; G4:s versionsläsning
-behöver npm ls-fallback — noterad). Körning sker först när grinderna
-öppnar (fönsterregel: fabrik tyst + bygg tyst + helst nattlugn).
+fick npm ls-fallback IMPLEMENTERAD men läser ändå "(okänd)" — zcode-
+binären lever ej i sessionens PATH; abort förblir säker default, äkta
+versionen kontrolleras i app-serverns miljö vid körningstillfället).
+Körning sker först när grinderna öppnar (fönsterregel: fabrik tyst +
+bygg tyst + helst nattlugn).

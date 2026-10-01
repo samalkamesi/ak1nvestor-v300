@@ -20200,3 +20200,21 @@ pushen gick igenom; prod-synken BYGGER från 76aa130c under flock med pm2
 levande (nolldowntime v182); mina fyra commits (bbbc6a8d → 60d6feaf)
 innehåller ingen byggprodukt (verktyg + markdown) — pågående bygg
 räcker, nästa synk-puls plockar diffen.
+
+**BYGGBEVAKNING + v219-FÖRBEREDELSE (00:0x–00:2xZ):** första
+byggtåget från 76aa130f/76aa130c misslyckades (23:59:06 byggfel —
+.next återställd ur läkebackup, pm2 serverade senast gröna hela tiden;
+ombygge nästa poll enligt protokollet). Pågående tåg har KOMPILERAT
+grönt (13,6 min, /tmp/synk-build.log) och står i TypeScript-steget —
+sannolik felrot för det första: TS-stegets last med cpus:1 under
+fabriksbarn + session. Under bevakningen förbereddes v219 (register-
+post 37, runtime-uppgradering 3.11.2-24 → 3.14.4-30): skript
+verktyg/_v219-runtime-uppgradering.mjs med FYRA ABORT-GRINDAR
+(G1 fabriken tyst · G2 inget deploy-lås · G3 målstatus info · G4
+version = förväntad) + rollback-pin (npm install -g zcode-app-cli@
+3.11.2-24 + pm2 restart) + db.sqlite-skuggkopia FÖRE allt + stream-
+sond efteråt; TORRKÖRD med korrekt abort (fabriken kör nya omgången
+auto-s5-1790811909094 = evighetsmotorns spår 5 lärvägar — inga
+kollisioner med mina ytor; deploy-låset lever; G4:s versionsläsning
+behöver npm ls-fallback — noterad). Körning sker först när grinderna
+öppnar (fönsterregel: fabrik tyst + bygg tyst + helst nattlugn).

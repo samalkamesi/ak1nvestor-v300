@@ -1,4 +1,4 @@
-# Beroendehälsa — 2026-09-30T05:37:47.828Z
+# Beroendehälsa — 2026-10-01T05:37:50.275Z
 
 **1 sårbarheter (critical 0 · high 1 · moderate 0 · low 0) · 4 uppdateringar inom deklarerat intervall · 9 major-steg.**
 
@@ -16,8 +16,8 @@ Vakten mäter — installation ägs av prod-synken under deploy-låset.
 
 ## Uppdateringar inom deklarerat intervall (låg risk)
 
-- eslint-config-next: 16.3.6 → 16.3.7 (patch) — latest 16.3.7
-- next: 16.3.6 → 16.3.7 (patch) — latest 16.3.7
+- eslint-config-next: 16.3.6 → 16.3.8 (patch) — latest 16.3.8
+- next: 16.3.6 → 16.3.8 (patch) — latest 16.3.8
 - next-intl: 4.14.7 → 4.14.8 (patch) — latest 4.14.8
 - sharp: 0.35.4 → 0.35.5 (patch) — latest 0.35.5
 
@@ -27,7 +27,7 @@ Vakten mäter — installation ägs av prod-synken under deploy-låset.
 - eslint: 9.39.5 → latest 10.11.0 (major)
 - framer-motion: 12.43.0 → latest 13.4.6 (major)
 - lucide-react: 0.563.0 → latest 1.49.0 (major)
-- react-day-picker: 9.14.0 → latest 10.0.1 (major)
+- react-day-picker: 9.14.0 → latest 10.0.2 (major)
 - react-resizable-panels: 3.0.6 → latest 4.14.1 (major)
 - recharts: 2.15.4 → latest 3.10.1 (major)
 - typescript: 5.9.3 → latest 7.0.2 (major)

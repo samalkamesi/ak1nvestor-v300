@@ -1,0 +1,1 @@
+studio: [organ:Φ] iteration 2 worklog — versionssanningen (3.11.2-22 bevisad via processond, åtta versioner efter) + prefix-fällan (npm_config_prefix=/usr override:ar npmrc — tyst-död fångad före skada) bokförda; G4 torrkörd GRÖN; byggståget friskt (TS klar, render pågår); fyra commits väntar push tills fabrikens s5-barn rensat prod-ytan

@@ -12,6 +12,9 @@
  *     regex LÅNGT före att de når bash-strängen i korSynk
  *   · loop-skydd: 3 misslyckade för exakt (paket, version) = död post;
  *     versionbyte i köfilen nollar räkningen; ok-kvitto = klar
+ *   · v220: tak på AKTIVA poster (kapAktivPatchPlan EFTER kvittofiltrering)
+ *     — kvitterad historik konsumerar inget tak; sanitetsgräns på råa rader
+ *     mot buggskrivna köfiler (de SENASTE läses)
  *   · patch-fel blockerar aldrig kodleverans (misslyckad install ⇒
  *     fortsätt) testas indirekt: felposter plockas bort ur planen men
  *     genererar ALDRIG undantag
@@ -25,6 +28,7 @@ import {
   lasPatchKo,
   lasPatchKvitton,
   aktivPatchPlan,
+  kapAktivPatchPlan,
   skrivPatchKvitto,
   bedomByggMisslyckande,
   bevaraByggLoggar,
@@ -98,7 +102,33 @@ kolla("null som känt-uppsättning = ingen paketfiltrering (explicit läge)", la
 const manga = Array.from({ length: 17 }, (_, i) => ({ paket: `p${i}`, version: "1.0.0" }));
 writeFileSync(koFil, JSON.stringify(manga));
 const ko2 = lasPatchKo(koFil, null);
-kolla("tak 15 poster (o124) + felpåminnelse", ko2.poster.length === 15 && ko2.fel.some((f) => f.includes("för många")));
+kolla("v220: INGET tak på unika filposter — 17 läses hela (historik äter inget tak)", ko2.poster.length === 17 && !ko2.fel.some((f) => f.includes("för många")));
+const kap17 = kapAktivPatchPlan(aktivPatchPlan(ko2, []));
+kolla("v220: tak 15 på AKTIVA poster + felpåminnelse", kap17.poster.length === 15 && kap17.fel.some((f) => f.includes("för många AKTIVA")));
+kolla("v220: aktiv plan ≤ tak lämnas orörd (0 fel)", (() => { const r = kapAktivPatchPlan(aktivPatchPlan(ko2, []).slice(0, 15)); return r.poster.length === 15 && r.fel.length === 0; })());
+
+// v220 mikro-repro av den SKARPA svältningsbuggen (2026-09-29/30): köfil
+// med 15 kvitterade poster + 1 NY post sist = 16 unika. o124-koden kapade
+// unika > 15 FÖRE kvittofiltrering ⇒ den nya posten svälts tyst (noll
+// försök, noll larm — eslint-config-next@16.3.7 i prod just nu). Kuren
+// låter historiken passera fritt: planen = endast den nya posten.
+const kvittoFilSvalt = path.join(TMP, "svalt-kvitton.jsonl");
+const svaltKoRader = [
+  ...Array.from({ length: 15 }, (_, i) => ({ paket: `hist-${i}`, version: "1.0.0" })),
+  { paket: "ny-patch", version: "2.0.0" },
+];
+writeFileSync(koFil, JSON.stringify(svaltKoRader));
+for (let i = 0; i < 15; i++) skrivPatchKvitto(kvittoFilSvalt, { paket: `hist-${i}`, version: "1.0.0" }, "ok", "historik");
+const svaltPlan = kapAktivPatchPlan(aktivPatchPlan(lasPatchKo(koFil, null), lasPatchKvitton(kvittoFilSvalt)));
+kolla("v220: 15 kvitterade + 1 ny = planen bär DEN NYA (svältningen kurad)", svaltPlan.poster.length === 1 && svaltPlan.poster[0].paket === "ny-patch" && svaltPlan.fel.length === 0);
+
+// v220: sanitetsgränsen mot buggskrivna köfiler — de SENASTE 1 000 raderna läses
+const spok = Array.from({ length: 1001 }, (_, i) => ({ paket: `spok-${i}`, version: "1.0.0" }));
+writeFileSync(koFil, JSON.stringify(spok));
+const spokKo = lasPatchKo(koFil, null);
+kolla("sanitetsgräns: 1 001 rader → 1 000 poster + fel rapporteras", spokKo.poster.length === 1000 && spokKo.fel.some((f) => f.includes("sanitetsgränsen")));
+kolla("sanitetsgränsen behåller de SENASTE (spok-0 borta, spok-1000 kvar)", !spokKo.poster.some((p) => p.paket === "spok-0") && spokKo.poster.some((p) => p.paket === "spok-1000"));
+writeFileSync(koFil, JSON.stringify(manga)); // återställ fixture för kommande block
 
 console.log("== kvitton: roundtrip + aktivPatchPlan ==");
 writeFileSync(koFil, JSON.stringify([

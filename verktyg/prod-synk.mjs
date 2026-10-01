@@ -702,7 +702,8 @@ export function synkaArbetsyta(yta, rot) {
 //     tillför ALDRIG nya (leveranskedjeskydd, fail-closed: oläsbar
 //     package.json = tomt känt-uppsättning = allt vägras)
 //   · exakt version (inga ^~/ranges — determinism i kvittona)
-//   · max 10 poster; dedup: senaste raden per paket vinner
+//   · tak på AKTIVA poster (v220): dedup — senaste raden per paket vinner;
+//     kvitterad historik (ok/3-misslyckade) konsumerar INTE taket
 //   · kvitto per försök i data/vakten/patch-kvitton.jsonl (runtime,
 //     untracked — överlever `git checkout -- .`); ok kvitteras FÖRST
 //     efter deploy + HTTPS 200 + lock-commit; 3 misslyckade för exakt
@@ -712,10 +713,18 @@ export function synkaArbetsyta(yta, rot) {
 //     lock ⇒ locken återställs FÖRE revert-vägen så ombygget sker på
 //     bevisat fungerande grund
 
-// Tak 15 sedan o124: filen är KVITTERAD HISTORIK (o106 §5 — synken tömmer
-// den aldrig) och växer en omgång per leverans; 10 strax efter omgång 4
-// blockerade omgång 5. 15 = 10 historik + hel nästa omgång på ~5 poster.
+// Tak 15 på AKTIVA poster sedan v220 (2026-10-01). o124:s tak räknades på
+// unika paket i FILEN — men filen är KVITTERAD HISTORIK (o106 §5 — synken
+// tömmer den aldrig) som växer ~1 rad per leverans, så historien åt taket
+// och post #16 (eslint-config-next@16.3.7, bokförd 2026-09-29) svältes
+// TYST: kapad före aktivPatchPlan ⇒ aldrig försökt, aldrig larmad, medan
+// puls-ekot "för många poster (16 > 15)" ropade i varje synk utan ägare.
+// Kuren: taket flyttas EFTER kvittofiltreringen (kapAktivPatchPlan) —
+// kvitterad historik konsumerar inget tak. PATCH_MAX_RADER = yttre
+// sanitetsgräns mot buggskrivna köfiler: normal tillväxt ~1 rad/leverans,
+// 1 000 rader ≈ åratal — Endast patologiska filer når den.
 const PATCH_MAX_POSTER = 15;
+const PATCH_MAX_RADER = 1000;
 const PATCH_MAX_FORSOK = 3;
 const RE_PATCH_PAKET = /^(@[a-z0-9-~][a-z0-9-._~]*\/)?[a-z0-9-._~]+$/;
 const RE_PATCH_VERSION = /^\d+\.\d+\.\d+(-[a-z0-9.+-]+)?$/;
@@ -753,6 +762,10 @@ export function lasPatchKo(filvag, kandaPaket) {
     ute.fel.push("köfilen måste vara en JSON-array av {paket, version}");
     return ute;
   }
+  if (rader.length > PATCH_MAX_RADER) {
+    ute.fel.push(`köfilen bär ${rader.length} rader > sanitetsgränsen ${PATCH_MAX_RADER} — endast de ${PATCH_MAX_RADER} SENASTE läses (buggskriven fil misstänkt)`);
+    rader = rader.slice(-PATCH_MAX_RADER); // de äldsta radarna är föråldrad/supersederad historik
+  }
   const senaste = new Map();
   for (const r of rader) {
     const t = tulkPatchPost(r);
@@ -767,10 +780,8 @@ export function lasPatchKo(filvag, kandaPaket) {
     senaste.set(t.paket, t.version);
   }
   ute.poster = [...senaste].map(([paket, version]) => ({ paket, version }));
-  if (ute.poster.length > PATCH_MAX_POSTER) {
-    ute.fel.push(`för många poster (${ute.poster.length} > ${PATCH_MAX_POSTER}) — endast de första ${PATCH_MAX_POSTER} används`);
-    ute.poster = ute.poster.slice(0, PATCH_MAX_POSTER);
-  }
+  // v220: INGET tak här — unika paket i filen är mest kvitterad historik;
+  // taket på AKTIVA poster sker i kapAktivPatchPlan hos anroparen.
   return ute;
 }
 
@@ -807,6 +818,20 @@ export function aktivPatchPlan(ko, kvitton) {
     if (relevanta.some((k) => k.resultat === "ok")) return false;
     return relevanta.filter((k) => k.resultat === "misslyckad").length < PATCH_MAX_FORSOK;
   });
+}
+
+/**
+ * v220-kur: tak på AKTIVA poster — appliceras EFTER aktivPatchPlan så att
+ * kvitterad historik (ok-kvitton + 3-misslyckade döda poster) konsumerar
+ * INGET tak. Återlämnar {poster, fel}; fel bär påminnelsen när taket slår
+ * till (synken loggar den — aldrig tyst död).
+ */
+export function kapAktivPatchPlan(plan, max = PATCH_MAX_POSTER) {
+  if (!Array.isArray(plan) || plan.length <= max) return { poster: Array.isArray(plan) ? plan : [], fel: [] };
+  return {
+    poster: plan.slice(0, max),
+    fel: [`för många AKTIVA poster (${plan.length} > ${max}) — endast de första ${max} installeras denna omgång`],
+  };
 }
 
 /** Appendera kvittorad (runtime-fil) — true vid framgång. */
@@ -1299,10 +1324,14 @@ async function korSynk() {
     ]);
   } catch { /* tomt set ovan vägrar köposter — rätt fall vid trasig package.json */ }
   const patchKo = lasPatchKo(patchFil, kandaPaket);
-  if (patchKo.fel.length) {
-    logga(`PATCH-KÖ: ${patchKo.fel.length} ogiltig(a) post(er) hoppades över — ${patchKo.fel.join(" · ").slice(0, 300)}`);
+  // v220: taket på AKTIVA poster (kapAktivPatchPlan) — kvitterad historik
+  // i köfilen konsumerar inget tak; den svultna post #16-klassen (o124)
+  // får sitt försök så snart den inte längre är kapad.
+  const patchKapad = kapAktivPatchPlan(aktivPatchPlan(patchKo, lasPatchKvitton(kvittoFil)));
+  if (patchKo.fel.length || patchKapad.fel.length) {
+    logga(`PATCH-KÖ: ${patchKo.fel.length + patchKapad.fel.length} ogiltig(a)/takslagen(e) post(er) — ${[...patchKo.fel, ...patchKapad.fel].join(" · ").slice(0, 300)}`);
   }
-  const patchPlan = aktivPatchPlan(patchKo, lasPatchKvitton(kvittoFil));
+  const patchPlan = patchKapad.poster;
   if (lokal === senaste && patchPlan.length === 0) return; // inget nytt — tyst (99 % av runsen)
 
   if (patchPlan.length) {

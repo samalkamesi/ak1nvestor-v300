@@ -12,7 +12,7 @@ const logga = (s) => {
 
 const steg = [
   ["fetch", ["fetch", "prod"]],
-  ["merge", ["merge", "--no-edit", "-m", "merge: prod -> develop — v215 (fabriksbarn cce1e314 inhämtat)", "FETCH_HEAD"]],
+  ["merge", ["merge", "--no-edit", "-m", "merge: prod -> develop — r359 (fabrikens zcode-100x-commits inhämtade)", "FETCH_HEAD"]],
   ["push", ["push", "prod", "develop"]],
 ];
 

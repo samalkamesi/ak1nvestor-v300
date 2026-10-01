@@ -39,11 +39,18 @@ if (aktiva.length > 0) {
   abort = true;
 } else logga("G1 OK — fabriken tyst");
 
-// G2: inget pågående bygg — flock-låset får EJ finnas (ledig = lås borta)
-if (fs.existsSync("/tmp/ak1a-deploy.lock")) {
-  logga("ABORT G2 — deploy-låset lever (bygg pågår)");
+// G2: inget pågående bygg — flock-låset får EJ hållas. VAKT (v221): låsFILEN lever
+// kvar på disken för alltid (flock är rådgivande, filen skapad 2026-09-28) —
+// existsSync-vakten aborterade i VARJE framtida fönster. Rätt test: flock -n.
+let g2Ledig = false;
+try {
+  execFileSync("flock", ["-n", "/tmp/ak1a-deploy.lock", "true"], { timeout: 5000 });
+  g2Ledig = true;
+} catch { /* upptaget */ }
+if (!g2Ledig) {
+  logga("ABORT G2 — deploy-låset hålls (bygg pågår)");
   abort = true;
-} else logga("G2 OK — inget bygg låser");
+} else logga("G2 OK — låset hålls ej (flock -n grönt)");
 
 // G3: målstatus — pausad eller tyst iteration = säkrast
 try {

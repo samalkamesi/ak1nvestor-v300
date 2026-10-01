@@ -24,6 +24,7 @@ import {
   lasRader,
   kopplaGronTillEpisoder,
   oversattKraschvaktRader,
+  oversattPulsvaktRader,
   lasKvalitetsrapportTs,
   bedomKvalitetsrapport,
   markeraAvstannade,
@@ -324,6 +325,66 @@ koll(23, "klassordningens outokersäkerhet: RÄDDNING/ORT-RECLAIM/ÅTERSTÄLLD f
   assert.equal(o.senasteRadTs, "2026-09-20T10:15:00.000Z"); // alla klasser är också puls
 });
 
+// ═══ FALL 24–27: källa 4 (v227 — pulsvaktens kant-klass, nginx-döden 2026-10-01) ═══
+// Fixturbyggare: pulsvakt-larm.log:s JSON-schema {ts,niva,kalla,detalj}.
+const puls = (ts, niva, kalla, detalj = "x") => JSON.stringify({ ts, niva, kalla, detalj });
+
+koll(24, "översättning: kalla=extern+hogprio ⇒ larm, extern-aterstall ⇒ grön, övriga hoppas men räknas + är puls", () => {
+  const o = oversattPulsvaktRader([
+    puls("2026-10-01T06:28:17.529Z", "hogprio", "extern", "extern-svar inget (ECONNREFUSED)"),
+    puls("2026-10-01T06:42:44.383Z", "fel", "lokal", "framside-svar inget"),
+    puls("2026-10-01T06:43:54.598Z", "info", "aterstall", "app svarar igen"),
+    puls("2026-10-01T06:50:21.291Z", "hogprio", "extern", "extern-svar inget (ECONNREFUSED)"),
+    puls("2026-10-01T06:52:00.000Z", "info", "extern-aterstall", "extern svarar igen"),
+    "skräprad utan JSON",
+  ].join("\n"));
+  assert.equal(o.raderTotalt, 5); // skräpraden hopas, räknas ej
+  assert.deepEqual(
+    o.rader.map((r) => `${r.niva}:${r.omrade}`),
+    ["larm:extern", "larm:extern", "gron:extern"]
+  );
+  assert.equal(o.senasteRadTs, "2026-10-01T06:52:00.000Z"); // sista giltiga raden = pulsen
+});
+
+koll(25, "kant-episod byggs av extern-larmen och stängs av extern-aterstall med ärlig varaktighet", () => {
+  const o = oversattPulsvaktRader([
+    puls("2026-10-01T06:28:17.529Z", "hogprio", "extern"),
+    puls("2026-10-01T06:50:21.291Z", "hogprio", "extern"),
+    puls("2026-10-01T07:05:00.000Z", "info", "extern-aterstall"),
+  ].join("\n"));
+  const e = byggEpisoder(o.rader);
+  kopplaGronTillEpisoder(e, o.rader);
+  assert.equal(e.aktiva.length, 0);
+  assert.equal(e.klara.length, 1);
+  assert.equal(e.klara[0].upprepningar, 2);
+  assert.equal(e.klara[0].gronTs, "2026-10-01T07:05:00.000Z");
+  const b = bedomEpisod(e.klara[0], Z("2026-10-01T08:00:00.000Z"));
+  assert.equal(b.varaktighetMin, 37); // 06:28→07:05, inte fram till nu
+});
+
+koll(26, "NEGATIVKONTROLL 06:43-fallet: app-nivåns aterstall stänger INTE kant-episoden (får ej vara grön i källan)", () => {
+  const o = oversattPulsvaktRader([
+    puls("2026-10-01T06:28:17.529Z", "hogprio", "extern"),
+    puls("2026-10-01T06:43:54.598Z", "info", "aterstall", "app svarar igen efter 1 fel i rad"),
+    puls("2026-10-01T06:50:21.291Z", "hogprio", "extern"),
+  ].join("\n"));
+  const e = byggEpisoder(o.rader);
+  assert.equal(e.aktiva.length, 1);
+  assert.equal(e.aktiva[0].upprepningar, 2); // larmet 06:50 landar i SAMMA episod — app-grönen rörde den ej
+});
+
+koll(27, "källans smalhet: annan kallas hogprio (lasfil/felrad) blir INTE larm — app-nivån ägs av kraschvaktskällan", () => {
+  const o = oversattPulsvaktRader([
+    puls("2026-10-01T06:29:00.000Z", "hogprio", "lasfil", "enskild-instans-låset kunde inte sättas"),
+    puls("2026-10-01T06:33:00.000Z", "hogprio", "felrad", "3 misslyckade kontroller i rad"),
+    puls("2026-10-01T06:40:00.000Z", "hogprio", "extern"),
+  ].join("\n"));
+  assert.deepEqual(o.rader.map((r) => r.omrade), ["extern"]);
+  const e = byggEpisoder(o.rader);
+  assert.equal(e.aktiva.length, 1);
+  assert.equal(e.aktiva[0].nyckel.split("|")[1], "extern");
+});
+
 // ═══ SAMMANFATTNING ═══
-console.log(`\n${pass}/23 PASS${misslyckade.length ? ` · MISSLYCKADE: ${misslyckade.join(", ")}` : " (ALLA PASS)"}`);
+console.log(`\n${pass}/27 PASS${misslyckade.length ? ` · MISSLYCKADE: ${misslyckade.join(", ")}` : " (ALLA PASS)"}`);
 process.exit(misslyckade.length === 0 ? 0 : 1);

@@ -6,11 +6,14 @@ import { readFileSync } from 'node:fs';
 
 const LOGG = '/home/ak1a/AK1/data/vakten/prod-synk.log';
 const MARKOR = '/home/ak1a/AK1/data/vakten/senaste-deployad.txt';
-const MAL_HASH = '62bd7657';
+// Mål-hashar: kurens bokföringscommit + svitcommiten (pushad under bygget —
+// buntslagsrace-vakten kan ha tvingat ombyggde från den senare)
+const MAL_HASHAR = ['62bd7657', '05605b55'];
 const START = Date.now();
 const TAK_MS = 75 * 60_000;
 
 const andraLinjer = new Set(); // redan rapporterade nyckelrader
+let senasteDeployadRapporterad = '';
 
 while (Date.now() - START < TAK_MS) {
   let text = '';
@@ -32,7 +35,7 @@ while (Date.now() - START < TAK_MS) {
 
   // Avgörande GRÖNT: KUR A-linjen eller DEPLOYAD-markör i mål-hash
   const kantGron = rader.find((r) => r.includes('INGET rollback (v227'));
-  const deployad = rader.filter((r) => r.includes('DEPLOYAD automatiskt') || r.includes('DEPLOYAD (patch-kö')).pop();
+  const deployad = rader.filter((r) => (r.includes('DEPLOYAD automatiskt') || r.includes('DEPLOYAD (patch-kö')) && r > '2026-10-01T07:31').pop();
   let markor = '';
   try {
     markor = readFileSync(MARKOR, 'utf8').trim();
@@ -41,11 +44,12 @@ while (Date.now() - START < TAK_MS) {
   if (kantGron) {
     console.log(`\nAVGÖRANDE (KUR A aktiv): ${kantGron.slice(0, 160)}`);
   }
-  if (deployad) {
+  if (deployad && deployad !== senasteDeployadRapporterad) {
+    senasteDeployadRapporterad = deployad;
     console.log(`\nDEPLOYAD-RAD: ${deployad.slice(0, 160)}`);
   }
-  if (markor.startsWith(MAL_HASH)) {
-    console.log(`\nMARKÖR = ${MAL_HASH} — LOOPEN BRUTEN, deploy i mål.`);
+  if (MAL_HASHAR.some((h) => markor.startsWith(h))) {
+    console.log(`\nMARKÖR = ${markor.slice(0, 8)} — LOOPEN BRUTEN, deploy i mål.`);
     console.log(`UTFALL: GRÖNT efter ${Math.round((Date.now() - START) / 60000)} min`);
     process.exit(0);
   }

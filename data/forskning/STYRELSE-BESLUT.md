@@ -422,3 +422,11 @@ Varje möte protokollförs här (våg 91 A2): datum + fråga, rollsummeringar, b
   9. Granska paywall-texter mot 'gratis för alltid'-beslutet samt förbjud kronor/avkastning i profilens tillväxtspråk — evolution mäter kalibrering, streaks och passerade rapporter.
   10. Publika evolutionssiffror hålls identifierarfria med smågruppsregeln (≥10) dokumenterad per yta.
 - **Mötes-id:** styrelse-muaf4odf-3bajj2
+
+## 2026-10-01 07:5x — DRIFTBESLUT (organ Φ, v227-kantdöden): nginx kräver kundens root — ingen privilegieeskalering, kurar på egen sida, kundkommando bokfört
+
+- **Status:** BESLUTAT OCH VERKSTÄLLT (autonom drift, R2 ej aktuellt)
+- **Beslut:** Vid nginx-döden 06:24 (unattended-upgrades/openssl; omstart kräver root) beslutas: (1) ALDRIG gå utanför sudo-vitlistan eller söka privilegieeskalering — vitlistans smalhet är kundens säkerhetsdesign; (2) kura det som är vårt: deployloopen (domare = appen på loopback, commit ab65fd01) och larmblindheten (källa 4 i eskaleringen, aktiv KRITISK episod bevisad 07:50); (3) kundens exakta kommando (sudo systemctl start nginx + curl-verifiering) bokförs i DRIFTSBOKEN och sessionsrapporten — tråden är permanent så kunden ser det när kanalen åter öppnas.
+- **Motivering:** Kontot saknar sudo på SSD Nodes (v190-härdning, medveten); portar <1024 och root-låsta cert gör userspace-nginx omöjlig; DNS-flipp till Vercel vore R2 (domän) och onödigt — kärnan (app, data, DR) lever hela tiden, endast kanten är död. Att vänta på kundens root är den enda hedervärda vägen; under tiden ska maskineriet varken förvärra (deployloopen — kurerad) eller tiga (larmen — synliggjorda).
+- **Roller:** ORDFORANDE: beslut ovan; TEKNIK: kurarna korrekta och levererade (ab65fd01 + 62bd7657 + 05605b55); SAKERHET: ingen eskalering utanför vitlistan, certen olästa, /etc /usr orörda; JURIDIK: ingen R2-yta rörd (ingen domän/pris/nyckel); TILLVAXT: kundpåverkan kommunicerad i permanent tråd + DRIFTSBOK.
+- **Åtgärder:** 1. Kundens root-start av nginx (bokförd DRIFTSBOKEN 2026-10-01-posten). 2. ROT-KÖ: needrestart autoläge (root). 3. Eftermätning: deploy i mål med APP-domaren (väntare aktiv).

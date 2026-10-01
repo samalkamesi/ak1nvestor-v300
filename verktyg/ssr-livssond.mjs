@@ -12,15 +12,19 @@
 //
 // MÄTFÖNSTER-GRIND FÖRE MÄTVÄRDE (o55 §2:s kontrakt, buret in i kvalitets-
 // vakten — "bär över vid behov" infrias här):
-//   (a) deploylåset ÄGS av någon — fuser = öppna fd:n, ALDRIG filens
-//       existens (flock lämnar filen kvar mellan deploys);
+//   (a) deploylåset ÄGS av någon — /proc-fd = öppna fd:n, ALDRIG filens
+//       existens (flock lämnar filen kvar mellan deploys; o574: /proc-läsning
+//       i stället för fuser — psmisc saknas på SSD Nodes, o570:s fynd);
 //   (b) bygg/install-process — pgrep -f mot HELA mönster
 //       ("next build,npm ci --no-audit": sekvenserna finns bara i äkta
 //       anrop — pm2 bär "next start", fabriksprompter blott "npm ci"),
 //       med SLÄKT-EXKLUDERING: den egna processkedjan (jag + föräldrar)
 //       matchas ALDRIG — live-bevis 2026-09-18: en sondpipeline där själva
 //       kontrollkommandot bar mönstertexten gav sig själv som träff
-//       (o55:s F2-klass hos OBSERVATÖREN; exkluderingen dödar den klassen);
+//       (o55:s F2-klass hos OBSERVATÖREN; exkluderingen dödar den klassen)
+//       — och sedan o574 ÄVEN KEDJANS BARN: skal som forkar pipe-grenar
+//       bär en mikrosekund FÖRÄLDERNS cmdline (ändras först vid exec) och
+//       kan självmatcha; en äkta deploy är aldrig barn till vaktens kedja;
 //   (c) träff ⇒ MANUELL "OMÄTT" — vakten ger ALDRIG tyst PASS och ALDRIG
 //       artefakt-FEL (driftfönster bokförs ärligt, o47/o55-doktrinen).
 //
@@ -39,7 +43,7 @@
 //   AK1A_DEPLOY_LAS          sökväg till deploylåset (standard /tmp/ak1a-deploy.lock)
 //   AK1A_BYGG_MONSTER        kommaseparerade HELA pgrep-mönster
 import { spawnSync } from "node:child_process";
-import { existsSync, openSync, readFileSync } from "node:fs";
+import { readdirSync, readFileSync, readlinkSync, realpathSync } from "node:fs";
 
 export const STANDARD_RUTTER = ["/", "/kurser", "/analyser", "/blogg", "/labb", "/en", "/ar"];
 const STANDARD_TIDSGRANS_MS = 20_000;
@@ -69,14 +73,41 @@ function minSlakt() {
 }
 
 function lasHollare(deployLas) {
-  if (!existsSync(deployLas)) return null;
-  // fuser listar PID:er med filen ÖPPNAD på stdout (filnamnet går till
-  // stderr vid -v; utan flaggor endast PID:er). Exit 1 = ingen hållare;
-  // verktyg saknas = samma bedömning som "ingen hållare" (försiktigt NEJ,
-  // aldrig falskt grindstopp — resten av grindarna + tolkningen skyddar).
-  const sub = spawnSync("fuser", [deployLas], { encoding: "utf8", timeout: 10_000 });
-  if (sub.error || sub.status !== 0) return null;
-  const pids = (sub.stdout || "").split(/\s+/).filter((p) => /^\d+$/.test(p));
+  // o574: fuser (psmisc) SAKNAS på SSD Nodes-servern (Contabo-fött verktyg)
+  // — fd-ägandet läses i stället direkt ur /proc: en flock-hållare bär ALLTID
+  // en öppen fd mot låsfilen, exakt den sanning fuser lämnade (o570:s mönster
+  // ur båda länkvakterna). ALDRIG en egen flock-probe här: den skulle själv
+  // ta låset en mikrosekund och kan få en ÄKTA deploys non-blocking acquire
+  // att fela. readdir/readlink/stat öppnar ingen fd mot låsfilen — sonden kan
+  // aldrig se sig själv.
+  let lasSokvag;
+  try {
+    lasSokvag = realpathSync(deployLas);
+  } catch {
+    return null; // filen finns ej = ingen kan hålla den
+  }
+  const pids = [];
+  for (const pid of readdirSync("/proc")) {
+    if (!/^\d+$/.test(pid)) continue;
+    let fds;
+    try {
+      fds = readdirSync(`/proc/${pid}/fd`);
+    } catch {
+      continue; // andra användare/processzoner — fuser hade samma gräns
+    }
+    for (const fd of fds) {
+      let mal;
+      try {
+        mal = readlinkSync(`/proc/${pid}/fd/${fd}`);
+      } catch {
+        continue;
+      }
+      if (mal === lasSokvag) {
+        pids.push(pid);
+        break;
+      }
+    }
+  }
   return pids.length > 0 ? pids.join(",") : null;
 }
 
@@ -89,7 +120,25 @@ function lasByggprocess(monster) {
       .split(/\s+/)
       .filter((p) => /^\d+$/.test(p))
       .map(Number)
-      .filter((p) => !slakt.has(p));
+      .filter((p) => {
+        if (slakt.has(p)) return false; // o55 F2: kedjan själv är aldrig byggprocess
+        // o574: kedjans EGENA BARN är det heller aldrig — ett skal som forkar
+        // pipe-grenar lämnar kortlivade barn som vid fångsttillfället bär
+        // FÖRÄLDERNS cmdline (ändras först vid exec) och därmed även ett
+        // självbärande mönster; bevisat med /proc-ögonvittne (fork-barn
+        // PID+1, snapshot-cmdline, matchande pgrep). En ÄKTA byggprocess är
+        // alltid barn till SIN cron/synk-familj — aldrig till denna kedja.
+        let ppid = 0;
+        try {
+          const stat = readFileSync(`/proc/${p}/stat`, "utf8");
+          const slut = stat.lastIndexOf(")");
+          const m = slut >= 0 ? stat.slice(slut + 2).match(/^\S+ (\d+)/) : null;
+          ppid = m ? Number(m[1]) : 0;
+        } catch {
+          return false; // processen hann dö efter pgrep — ingen levande byggprocess
+        }
+        return !slakt.has(ppid);
+      });
     if (frammande.length > 0) return { monster: monsterStr, pids: frammande.join(",") };
   }
   return null;
@@ -137,7 +186,7 @@ export async function sektionSsrLivssond() {
       fil: deployLas,
       plats: "-",
       ord: "deployfönster",
-      kontext: `låset ÄGS av PID ${hollare} (fuser = öppna fd:n) — pågående deploy; SSR OMÄTT denna körning, omkör vakten när fönstret stängts`,
+      kontext: `låset ÄGS av PID ${hollare} (/proc-fd = öppna fd:n) — pågående deploy; SSR OMÄTT denna körning, omkör vakten när fönstret stängts`,
     });
     info.push(`mätfönster-grind: deploylåset ägs av PID ${hollare} — SSR OMÄTT (o55 §2: aldrig mätvärde i deployfönster)`);
     return { namn, fel, manuella, info };

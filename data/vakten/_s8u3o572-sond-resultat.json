@@ -1,0 +1,18 @@
+{
+  "protokoll": "o572",
+  "sond": "_s8u3o572-hundvakt-sond.mjs",
+  "ts": "2026-10-01T04:06:53.245Z",
+  "loggFil": "/home/ak1a/.pm2/logs/ak1a-pumpor-out.log",
+  "raderILasfonstret": 1154,
+  "raderPrefixlosa": 0,
+  "raderPm2Prefixerade": 1152,
+  "fore": {
+    "senasteRadTs": null,
+    "tystnadMs": null
+  },
+  "efter": {
+    "senasteRadTs": "2026-10-01T04:06:25.000Z",
+    "tystnadMs": 28245
+  },
+  "dom": "BEVISAT: v192-parsern BLIND (null) på den skarpa loggen; o572-parsern hittar pulsen — utan kuren ingen omstart vid framtida frysning"
+}

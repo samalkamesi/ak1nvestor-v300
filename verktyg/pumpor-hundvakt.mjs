@@ -1,7 +1,19 @@
 #!/usr/bin/env node
 /**
- * PUMPOR-HUNDVAKTEN (v192, r287 2026-09-28) — extern pulsvakt åt daemonen
+ * PUMPOR-HUNDVAKTEN (v193, o572 2026-10-01) — extern pulsvakt åt daemonen
  * =====================================================================
+ * o572 K1 (mätblindhet 1): sedan daemonens stop+start 2026-09-30 18:54
+ * bär loggen pm2-tidsprefix ("2026-09-30T18:54:52: …") på i princip ALLA
+ * rader (empiri: 1 154 av 1 155 i svansfönstret). v192:s pulsparser var
+ * ^-ankrad mot prefixlös "HH:MM:SS " ⇒ senaste = null ⇒ "aldrig omstart
+ * utan positivt tystnadsbevis" ⇒ vakten 100 % BLIND (sond 03:22 bevisade
+ * pulsen 1,4 s gammal som v192 aldrig kunde se). KUR: parsern tolkar ÄVEN
+ * pm2-ISO-prefix — fullständigt datum ger direkt ts utan midnattsgissning;
+ * prefixlös HH:MM:SS behåller sin logik; blandade svansar täcks.
+ * o572 K2 (mätblindhet 2): vakten kunde vara DÖD i det tysta (egna
+ * pm2-loggar 0 byte sedan start 09-28, journal saknades helt — levnaden
+ * var obevisbar). KUR: journalrad "vakten-startad" vid driftstart +
+ * "puls-läge" var 6:e h — levnadsbevis på DISK, oberoende av stdout-pipan.
  * BAKGRUND (r285:s fynd): pumpor-daemonen frös intermittent i block
  * (03:22:30→03:27:00, 03:29:30→03:39:20) med pm2 "online"/0 omstarter,
  * state S + wchan ep_poll och INGA barn — konsekvensen var missade
@@ -43,29 +55,80 @@ export const TYSTNAD_MS = 180_000; // > 3 min tyst logg = frysning
 export const OMSTART_MIN_MS = 600_000; // minst 10 min mellan omstarter
 export const MAX_OMSTART_I_FÖLJD = 2; // därefter eskalering
 export const ESKALERINGSBACKOFF_MS = 3_600_000; // 1 h paus av auto-omstart
+export const LEVNADS_PULS_MS = 6 * 3_600_000; // o572 K2: puls-läge var 6:e h
 const LOGGFÖNSTER_BYTE = 65_536; // läser bara loggens svans — filen kan växa
 const TIDSRAD_RE = /^(\d{2}):(\d{2}):(\d{2}) /; // daemonens logga(): HH:MM:SS (UTC)
+// o572 K1: pm2 --time-prefix ("2026-10-01T04:02:22: …") — fraktional tillåten
+const PM2_TIDSRAD_RE = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.\d+)?:/;
 
 /**
- * Ren parser: nyaste tidsstämpeln i daemonloggs-rader (HH:MM:SS, UTC, utan
- * datum). Midnattsövergång: en tolkad tid i framtiden (> nu + 2 min) tillhör
- * gårdagen. Ogiltiga rader ignoreras. Returnerar Date ELLER null (tom/ogen).
+ * Ren parser: nyaste tidsstämpeln i daemonloggs-rader. Två format (o572 K1):
+ *   1. pm2-ISO-prefix "YYYY-MM-DDTHH:MM:SS:" — fullständigt datum ger direkt
+ *      ts (Date.UTC), ingen midnattsgissning behövs.
+ *   2. Prefixlös "HH:MM:SS " (daemonens logga()) — midnattsövergång: en
+ *      tolkad tid i framtiden (> nu + 2 min) tillhör gårdagen.
+ * Ogiltiga rader ignoreras. Returnerar Date ELLER null (tom/ogen).
  */
 export function beraknaSenasteRadTs(rader, nu) {
   let senaste = null;
   for (const rad of rader) {
-    const m = TIDSRAD_RE.exec(rad);
-    if (!m) continue;
-    const [, h, mi, s] = m;
-    if (+h > 23 || +mi > 59 || +s > 59) continue;
-    let ts = new Date(nu);
-    ts.setUTCHours(+h, +mi, +s, 0);
-    if (ts.getTime() - nu.getTime() > 120_000) {
-      ts = new Date(ts.getTime() - 86_400_000); // raden var från igår
+    let ts = null;
+    const p = PM2_TIDSRAD_RE.exec(rad);
+    if (p) {
+      const [, ar, man, dag, h, mi, s] = p;
+      if (+man >= 1 && +man <= 12 && +dag >= 1 && +dag <= 31 && +h <= 23 && +mi <= 59 && +s <= 59) {
+        ts = new Date(Date.UTC(+ar, +man - 1, +dag, +h, +mi, +s));
+      }
+    } else {
+      const m = TIDSRAD_RE.exec(rad);
+      if (m) {
+        const [, h, mi, s] = m;
+        if (+h > 23 || +mi > 59 || +s > 59) continue;
+        ts = new Date(nu);
+        ts.setUTCHours(+h, +mi, +s, 0);
+        if (ts.getTime() - nu.getTime() > 120_000) {
+          ts = new Date(ts.getTime() - 86_400_000); // raden var från igår
+        }
+      }
     }
-    if (!senaste || ts.getTime() > senaste.getTime()) senaste = ts;
+    if (ts && (!senaste || ts.getTime() > senaste.getTime())) senaste = ts;
   }
   return senaste;
+}
+
+/** Gemensam journalutskrift (data/vakten/pumpor-hundvakt.jsonl) — o572 K2. */
+export async function skrivJournal(obj) {
+  await appendFile(path.join(ROT, "data/vakten/pumpor-hundvakt.jsonl"), JSON.stringify(obj) + "\n");
+}
+
+/**
+ * o572 K2 — levnadsbevis på disk, oberoende av stdout-pipan (vakten kan vara
+ * DÖD i det tysta när pm2-loggarna är 0 byte). starta() en gång vid
+ * driftstart; puls() periodiskt — bär senaste tolkade logg-ts + tystnad,
+ * dvs samma öga som kolla() men utan omstartsbefogenhet.
+ */
+export function byggLevnadsjournal({ nu = () => new Date(), lasRader, journal = skrivJournal } = {}) {
+  return {
+    starta: async (detalj = {}) => {
+      await journal({ ts: nu().toISOString(), händelse: "vakten-startad", ...detalj });
+    },
+    puls: async () => {
+      const t = nu();
+      let senaste = null;
+      try {
+        senaste = beraknaSenasteRadTs(await lasRader(), t);
+      } catch {
+        // läsfel skall inte döda levnadsbeviset — puls-raden journalas ändå
+      }
+      await journal({
+        ts: t.toISOString(),
+        händelse: "puls-läge",
+        senasteLoggrad: senaste ? senaste.toISOString() : null,
+        tystnadMs: senaste ? t.getTime() - senaste.getTime() : null,
+      });
+      return senaste;
+    },
+  };
 }
 
 /**
@@ -75,7 +138,7 @@ export function beraknaSenasteRadTs(rader, nu) {
 export function byggHundvakt({
   nu = () => new Date(),
   lasRader, // async () => string[]  (daemonloggens svans)
-  journal = async (obj) => { await appendFile(path.join(ROT, "data/vakten/pumpor-hundvakt.jsonl"), JSON.stringify(obj) + "\n"); },
+  journal = skrivJournal,
   omstart = (klar) => {
     const b = spawn("pm2", ["restart", "ak1a-pumpor"], { cwd: ROT, stdio: "ignore" });
     b.on("error", (e) => klar(false, String(e)));
@@ -187,16 +250,41 @@ export async function lasDaemonloggsRader(fil) {
   }
 }
 
+/**
+ * o572 (tredje blindheten — main-detektionen): under pm2 är process.argv[1]
+ * = pm2:s wrapper (lib/ProcessContainerFork.js), INTE skriptet — cmdline
+ * ljuger via process.title. v192:s argv[1]-jämförelse var därför FALSK i
+ * pm2-drift ⇒ main-blocket hoppades över ⇒ vakten var en zombi (pm2
+ * "online", IPC-kanalen höll processen vid liv, noll koll-ronder sedan
+ * 09-28 — utlogg 0 byte, journal saknades). Ren funktion: sann om argv[1]
+ * ÄR modulen (manuell körning) ELLER pm2:s pm_exec_path matchar modulens
+ * egen sökväg (pm2 fork-drift; pm_exec_path sätts per app av pm2).
+ */
+export function arMainProcess({ argv1, env = process.env, modulUrl }) {
+  if (!argv1 || !modulUrl) return false;
+  try {
+    if (pathToFileURL(argv1).href === modulUrl) return true;
+    return Boolean(env.pm_id && env.pm_exec_path && pathToFileURL(env.pm_exec_path).href === modulUrl);
+  } catch {
+    return false; // ogiltig sökväg i argv/pm_exec_path är aldrig main
+  }
+}
+
 // ── driftstart (endast när filen körs direkt, inte vid testimport) ───────────
-const arHuvudprogram =
-  process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+const arHuvudprogram = arMainProcess({ argv1: process.argv[1], modulUrl: import.meta.url });
 
 if (arHuvudprogram) {
   const PUMPOR_LOGG = process.env.AK1A_PUMPOR_LOGG ?? "/home/ak1a/.pm2/logs/ak1a-pumpor-out.log";
-  const vakt = byggHundvakt({ lasRader: () => lasDaemonloggsRader(PUMPOR_LOGG) });
-  console.log(`PUMPOR-HUNDVAKTEN (v192) startar — bevakar ${PUMPOR_LOGG} · tystnadtröskel ${TYSTNAD_MS / 1000} s · koll var ${KOLL_INTERVALL_MS / 1000} s`);
+  const lasRader = () => lasDaemonloggsRader(PUMPOR_LOGG);
+  const vakt = byggHundvakt({ lasRader });
+  const levnad = byggLevnadsjournal({ lasRader }); // o572 K2
+  await levnad.starta({ version: "o572", tystnadTröskelS: TYSTNAD_MS / 1000, drift: process.env.pm_id ? `pm2:${process.env.pm_id}` : "manuell" }).catch(() => {});
+  console.log(`PUMPOR-HUNDVAKTEN (v193/o572) startar — bevakar ${PUMPOR_LOGG} · tystnadtröskel ${TYSTNAD_MS / 1000} s · koll var ${KOLL_INTERVALL_MS / 1000} s`);
   const puls = setInterval(() => {
     vakt.kolla().catch((e) => console.error(`hundvakt-kolla fel (tål): ${String(e).slice(0, 200)}`));
   }, KOLL_INTERVALL_MS);
+  setInterval(() => {
+    levnad.puls().catch((e) => console.error(`hundvakt-puls fel (tål): ${String(e).slice(0, 200)}`));
+  }, LEVNADS_PULS_MS);
   await vakt.kolla().catch(() => {});
 }

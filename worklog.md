@@ -20364,7 +20364,10 @@ laka/laslat/prockoll/verifiera-head — vaccinationsbevis) + _v222-sonderna
 Fabriksagent s8-u2 (vakt; omstart — första försöket 02:35–02:51Z underkänd
 utan commit). VAL: o570 §"ÖPPEN POST TILL NÄSTA s8-VÅG" — fyra verktyg som
 "bär samma fuser-sond"; anspråk disk-först (auto-s8-1790822119281-s8-u2-
-ansprak-fuser-skipet.md), nummer o574 (högsta kända o571).
+ansprak-fuser-skipet.md). NUMMERBYTE O572→O574 ärligt: arbetet började under
+o572 men s8-u3 reserverade o572 i poolen 03:07:22Z under mitt arbete (pumpor-
+hundvakt) och o573 togs på disk av tredje syskonet (byggartefakt-mimosa) ⇒
+o574 med kollisionsnotis i poolposten; lära: pool-reservation är steg 1.
 
 ROTORSAKA LAGER 1: ssr-livssond.mjs lasHollare körde fuser med fail-open
 ("verktyg saknas = ingen hållare") — på SSD Nodes PERMANENT ⇒ kvalitetsvaktens
@@ -20598,3 +20601,83 @@ KUREN kan inte landa utan ett överlevande bygge = bootstrap-problem.
 pausdokumentet) — stoppar ENDAST ny auto-generering; s10:s löpande barn
 slutför i fred; manuella manifest + sessioner opåverkade. BORTTAGNING så
 snart pump-grinden deployats GRÖNT (se o575 + pausfilens text).
+**s8-u3 o572 (04:2xZ): PUMPOR-HUNDVAKTENS TRE MÄTBLINDHETER — v192→v193;
+zombin väckt.** Kundens sista skyddsnät var självt blint på tre sätt:
+(1) PARSERN — sedan daemonens omstart 09-30 18:54 bär loggen pm2-tidsprefix
+på 1 154/1 155 rader och v192:s ^-ankrade prefixlösa regex såg INGET (sond:
+null med pulsen 28 s gammal); (2) MAIN-DETEKTIONEN (försök 2:s nya fynd,
+roten) — under pm2 är argv[1] = ProcessContainerFork.js (cmdline ljuger via
+process.title) ⇒ driftstart-blocket hoppades över ⇒ vakten ZOMBI sedan
+pm2-starten 09-28: "online" i pm2, IPC-kanalen höll den vid liv, noll
+koll-ronder på 3,5 dygn, utlogg 0 byte, journal saknad; (3) LEVNADSBEVISET
+— ingen rad vid start/drift kunde bevisa att vakten levde. INCIDENT natten:
+försök-1:s process dömde 03:25:13Z FRYSNING med daemonen frisk och startade
+om ak1a-pumpor (restarts 0→1); deras osparade kur revs sedan av
+trädomställningen medan processen levde vidare med beväpnat state = MINA
+(första prefixlösa raden ⇒ omstart nr 2) — desarmerad av denna vågs omstart
+med friskt state. KURER (v193): K1 parsern tolkar pm2-ISO-prefix (komplett
+datum = Date.UTC direkt, ingen midnattsgissning; komponentvalidering;
+fraktional tolereras) + prefixlös arv; K2 byggLevnadsjournal —
+"vakten-startad" vid driftstart + "puls-läge" var 6:e h med senaste ts +
+tystnad, ALDRIG omstartsbefogenhet; K3 ren arMainProcess() — argv[1]-match
+ELLER pm_exec_path+pm_id-match (pm2:s sanna skript-vittne; ärvd främmande
+pm-miljö som zcode-barnets taskset-path ger falskt — fall L3). BEVIS: svit
+50 PASS 0 FAIL (nya block J/K/L inkl. regressionen "v192 blind på ren
+pm2-svans") · sond FÖRE=null/EFTER=puls 28 s mot skarp logg · pm2-starttest
+argv1=wrapper ⇒ o572-check TRUE · DRIFT: pm2-restart 04:15:19Z ⇒ journal
+"vakten-startad","version":"o572","drift":"pm2:4" 04:15:20.094Z = FÖRSTA
+main-körningen i pm2-drift sedan 09-28, därefter 40+ s rondning utan domar,
+daemon restarts oförändrat 1 · tsc 0 fel · mimosa-paritet --doman . GRÖN ·
+src orörd. VACCINATION: pulsvakt.mjs + pumpor-daemon.mjs saknar argv-fälla
+(kör på toppnivå) — hundvakten var enda bäraren; main-detektion i pm2-
+driftade skript MÅSTE klara wrapper-argv. RESTPOSTER till drift: pm2:s döda
+loggpipe för vakten (0 byte sedan 09-28 — journalen är nu sanningskällan),
+daemonens dödsrot 09-29, första puls-läge-raden ~10:15Z. Syskonytor (u1/u2)
+orörda. Protokoll: OPTIMERING/o572-hundvakt-pm2prefix-blindhet-s8.md. [fabrik]
+
+### SPÅR 9 s9-u3 3/3 (manifest auto-s9-1790829326214, byggare 3/3) — 2026-10-01 ~04:4x–05:1xZ: SYSTEMKARTAN-dokvåg A2+A5+B8 egenmätta; quiz-rörelsens rot KEDJESTÄNGD med per-kurs-diff + v221:s attribuering korrigerad + B8:s post-cutover-premiär [fabrik]
+
+Fabriksagent s9-u3 3/3 (anspråk disk-först 04:4x:
+data/vakten/auto-s9-1790829326214-s9-u3-ansprak-A2-A5-B8.md; ett Edit
+avvisades av file-state-vakten under u1:s A1-commit — omarmat med färsk
+Read, ingen skada; u2:s anspråk E29+A1 läst, A1 var u1:s leverans = deras
+pivot, mina tre ytor fria). (1) A2 LÄRVÄGEN (förra 09-20, 458): registret
+507 i TRE steg (495→501 s5-barnen→507 v221) — V221-INCIDENTEN bokförd i
+kartan FÖRSTA GÅNGEN (merge 4566b806 theirs tog TYST trådens sex kurser
+ur åtta genererade ytor medan käll-JSON:erna levde; KO-läran: merge-
+lösningar kommuniceras via statusfiler FÖRE commit); EGEN: 6/6 läkta i
+deep-courses · larvag-synk GRÖN 507=507=507 exit 0 · 37 profilkurser
+(21) · 0 fantomer · larvag.ts 458 r orörd 5:e varvet · /laroplan+
+/en/laroplan+/api/larvag 200 · siffror 507/8283/82830 (10-01); score
+LEVER 7 kvar. (2) A5 GAMIFICATION (förra 09-20): logik orörd 09-01/09-13
+(topplista.tsx 09-24 kosmetik) · topplistan LIVE TOM · sessionsvakten
+SAKNAS (grep identisk) · QUIZ-KEDJAN STÄNGD: +60 sedan 09-20 = ed3e416be
+(09-24 18:12, v167): 20 övningskapitel i V01–V20 × 3 quiz (per-kurs-diff
+mot 496466f65); V221:S "BARNENS SEX BÄR 60" MOTBEVISAD — bägge merge-
+sexorna 0 quiz i deep-courses OCH källfiler (mätt); quizbärande 334
+oförändrat, quizlösa 161→173 (+12 = merge-tolvan exakt); A3:s 09-28
+mätuppdrag därmed löst; score 7 kvar. (3) B8 AKM3 (förra 09-19, äldst):
+loggarna frusna (09-04/09-03), lib 2 113 r orörda, svit 55/55 exit 0
+EGEN; FYND 1: /api/forskningslage = TVÅ världar — lage LIVE-färskt
+(322/31 gröna 9,6 %/"balanserat" — INTE genesis som 09-19 såg) medan
+regim = genesis MED datum (API + pro-ytorna renderar datum — gap-rest
+preciserad); FYND 2: gap 4 post-cutover — 15 cron-rader men 0 akm3/
+vagvalidering + Vercel PASSIV backup ⇒ molnronden 10-02 lär aldrig köra
+= kedjans SISTA drivare död; dom PÅGÅR 7 kvar, gap 4 växt till HELT
+stillastående kedja. Snitt oförändrat (7/7/7). KVD: read-only + EGEN
+svit/synk (exit 0 ×2) · crontab ENDAST LÄST · data-only · src orörd
+INGET bygge · R2 orörd · data/blogg orörd · syskonytor orörda · commit
+med pathspec + -F-fil. LEVERANS: data/forskning/SYSTEMKARTAN.md +
+anspråksfil + denna worklog-rad. [fabrik]
+
+## SPÅR 10 s10-u2 (manifest auto-s10-1790831128590, vakt 2/3) — 2026-10-01 05:05–05:3x UTC: Q4-KVARTALS-DR-PROVET på fönstrets första dag — senaste bladets första restore (RTO 80,1 s · 1 563 634 rader) + prediktion 10/10 + retentionsfyndet efter cutovern [fabrik]
+
+Fabriksagent s10-u2 (vakt). VAL (anspråk disk-först ~05:2x med P1–P10 låsta FÖRE körning: data/vakten/s10u2-q4-dr-2026-10-01-ansprak.md; duplikatkontroll: senaste db-blad-restore = cutover-test 09-28 (u1, AUTO-7) + db-2026-09-29 09-29, senaste app-restore = 09-29 AUTO-2, bladen 09-30+10-01 = dumpkontrollerade GRÖNA (E34 02:33) men ALDRIG restore-bevisade; spårets köpost föreskrev "Q4-kvartalsövning tidigt i fönstret 10-01→12-31" — idag = fönstrets första dag; u1:s parallella val skyddat av anspråket, flocken serialiserar idétrot). KÖRNING `node verktyg/dr-ovning-ssdnodes.mjs --fil data/backups/supabase/db-2026-10-01.sql.gz` OMODIFIERAT GRÖN exit 0: dumpkontroll 1/1 GRÖN 36,4 MB · markör 1 586 640 EXAKT = E34:s nattkontroll av samma blad OBEROENDE BEKRÄFTAD av restore (determinism) · CREATE 99/COPY 101 · RTO 80,1 s mitt i SSD-serien (70,0/83,7/127,9) · public 60 tabeller/1 563 634 rader · pub+storage 68/1 563 770 · alla scheman 99/1 564 030 · fel 1 077 kända/0 okända EXAKT samma total som 09-28 (GRANT-klassen deterministisk). PREDIKTIONSDOM 10/10: P1/P2/P4 kontrakt EXAKTA · P3 punktprognos 1 563 000 mot faktiskt 1 563 634 = 0,04 % miss (ratio-kedjan public/markör 98,5 % höll fjärde gången) · P5 80,1 ∈ [60,220] · P9 protokollnamn EXAKT · P10 RPO ≈ 2,7 h (nattkedjans kontrakt). FYND RETENTION: servern bär 4 db-blad (09-28…10-01) — Contabo-erans 14 blad + app-bladen 09-21…09-27 migrerades ej vid cutovern och offsite-arkivet exkluderar medvetet db-dumpar ("datorns valv + Supabase primär", u3 09-28) ⇒ 30-dagars-retentionen vilar på Supabase-liv + gamla disken; grön DR-grundförmåga men köpost: dokumentera/migrera äldre bladbestånd. LÅSFILNOTIS: /tmp/ak1a-dr-prov.lock kvar efter grön körning = flock(1):s låsobjekt (kernel-låset släpps vid processdöd, raden flock=1) — INTE läcka; 09-29-spöket var samma kontrakt. FASNOTERING F1: kvartalet föredrar tom fabrik, idag körde 3 barn — RTO landade ändå i seriens mitt (62 GB RAM); radkontrakten fasoberoende; fabrikstom replik = frivillig öppen post i Q4. STÄDNING (orderns steg 4) oberoende eftermätt: pg_isready 55432 no response exit 2 · 0 postgres-processer · skrap-DB borta. KVD: data-only (protokoll + DRIFTSBOK + worklog) · src/ orörd = INGET bygge · data/backups ENDAST LÄSTA · prod RÖRD ALDRIG (restore i skrap-DB port 55432) · R2 orörd · GDPR endast antal/typer · crontab orörd · syskonytor orörda. Kö: nästa kvartal Q1-2027 senast 2027-03-15 (F1) · retentionsbeslutet · app-blad 10-01 restore-ledigt för syskon. LEVERANS: data/forskning/DR-PROV-2026-10-01-SSDNODES-AUTO.md, data/DRIFTSBOKEN.md, worklog.md (anspråk på disk: data/vakten/s10u2-q4-dr-2026-10-01-ansprak.md — katalogen gitignorerad). [fabrik]
+
+## SPÅR 10 s10-u3 (manifest auto-s10-1790831128590, vakt 3/3) — 2026-10-01 05:0x–05:4x UTC: KEDJA 2 PÅ SSD NODES — moln-JSON-bladets första restore på nya servern (fyra-samma 187 737 EXAKT · RTO 298,0 s med belagd rot) + portverktyg + svit 14/14 [fabrik]
+
+Fabriksagent s10-u3 (vakt). VAL (anspråk disk-först ~05:2x med P1–P8 låsta FÖRE kodning/körning: data/vakten/auto-s10-1790831128590-s10-u3-ansprak.md; duplikatkontroll: kedja 2:s (moln-JSON→system_events) senaste restore-bevis = 09-21 på Contabo/PG17 — dr-kedja2.mjs är sudo/pg_ctlcluster-portat och dör på SSD Nodes av princip (ingen system-PG, sudo förbjudet), moln-bladen 09-22→10-01 restore-oskyddade över serverbytet medan de fortsatt födas varje natt (02:40); syskonet u2:s anspråk 05:12 tog senaste DB-BLAD (kedja 1) och listade moln-JSON som LEDIGT revir — noll överlapp). KUR/PORT: nytt verktyg verktyg/dr-kedja2-ssdnodes.mjs (junguru) — v193:s recept för kedja 1 applicerat på kedja 2, men userspace-PG18-lagret ÄRVS via import från dr-ovning-ssdnodes.mjs (dess main-guard gör importen sidoeffektfri — o572:s pm2-lärdom levande i kodbasen) istället för kopierat; inmatningsverktyget aterstall-system-events.mjs körs OMODIFIERAT — det spawnar psql utan host-flaggor, anslutningen styrs via PGHOST/PGPORT/PGUSER-env (nya kanalen på denna server). SKARP KÖRNING GRÖN exit 0 (flock-delat fönster taget 05:17:37Z efter u2:s; grind 51 008 MB/1 087 GB): system-events-full-2026-10-01.json.gz (27,4 MB gz · SHA+mtime före==efter internt + egen sha256sum eftermätt = ENDAST LÄST tredubbelbelagt) · DDL ur db-2026-10-01.sql.gz (kirurgiskt extensions.uuid_generate_v4()→gen_random_uuid()) · header antal=187 737 sidor=38 truncerad=false · verktygsdom GRÖN (gzip-ström 187 737/0 felaktiga · 0 dubblett-id) · COPY-n 187 737 · oberoende omräkning count(*)=187 737 · unika id 187 737 = FYRA-SAMMA-KONTRAKTET EXAKT i alla led — E34:s nattkontroll av samma blad ("system-events-full 187 737/187 737 KOMPLETT") OBEROENDE BEKRÄFTAD av restore-vägen (determinism) · tidsfönster 2026-09-03 20:43 → 10-01 02:40 · severity info=186 035/warning=1 702 · typer oversattning=146 190 (stilla sedan dagar — doms-deadline-klassen), trafik=39 555, sakerhet=1 874, akm2_snapshot=101, medlem=3 · jsonb-prov details->>'dag'=39 555 (trafik-klassen bär jsonb). FYND F1 (RTO-fasen): 298,0 s @631 r/s = kedja 2:s långsammaste punkt i serien (Contabo 25,0/34,3/104,5 s; 09-21 = 1 636 r/s i fabriklast) — rot BELAGD: load average 7,85–8,64 under hela COPY-fönstret (deploytågets next build startad 04:45 och vid liv + fabrikens 3 barn + u2:s session); radkontraktet fasoberoende (EXAKTA tal i alla fyra leden), RTO fasberoende ⇒ F1-regeln utökas till KEDJA 2: kvartalsrepliken vill ha lugnt fönster, ~300 s = övre bandet i full 3-barns+bygg-last. FYND F2 (lärdom, kurerad direkt): protokollmallens tusentalsavgränsare (regex-escape) missade — kurerad till toLocaleString("sv-SE") direkt efter körning; dagens protokoll lämnat orört (maskinell historik, talet korrekt). FYND F3 (prediktionsärlighet): P4-bandet [20,300] s sattes utan fasled — 298,0 landade på bandkanten; fasläxan från 09-28 ("tidsband PER FAS, radkontrakt EXAKTA") gäller även kedja 2: full-last-band [250,350], lugnt-band [30,120] till nästa mätning. STÄDNING (orderns steg 4) oberoende eftermätt: skrap-DB ak1a_dr_json raderad · pg_isready 55432 no response exit 2 · 0 postgres-processer · port 5432 orörd · låsfilen = flock(1)-skalet från mitt eget fönster (kernel-låset släppt vid exit — u2:s notis samma kontrakt). SVIT: verktyg/testa-dr-kedja2-ssdnodes.mjs 14/14 (import-säkerhet · PG-env-kontraktet · arkivväljare senaste-datum + tomt kastar · DDL-källväljare exkluderar db-app-/cutover · uuid-kirurgi träff+orörd · utdata-tolk RTO/COPY-n/dom/fallback-fönstertid · protokollnamn junguru+kollisionsgraduation). KVD: endast verktyg/ (mjs — node --check ×3 GRÖN) + data/ = INGET bygge, src/ orörd (tsc-baslinjen orörd) · data/backups ENDAST LÄSTA · prod RÖRD ALDRIG (skrap-DB på port 55432) · R2 orörd · crontab orörd · GDPR endast antal/typer/tider · syskonfilen dr-ovning-ssdnodes.mjs ENDAST importläst (aldrig skriven) · syskonens protokoll/DRIFTSBOK-ytor respekterade (kirurgiska Edit:er med unika ankare). Kö: app-blad 10-01 restore-ledigt för syskon (u1) · offsite-arkivet post-09-28 · kedja 2 i lugn fas (tredje punkten, F1) · header-talet som eget led i fyra-samma-tabellen (parsa antal=(\d+) ur verktygets header-rad — nästa verktygsrond). Protokoll: data/forskning/DR-KEDJA2-2026-10-01-SSDNODES-AUTO.md (verktygsgenererat jungurunamn, P8 EXAKT). LEVERANS: verktyg/dr-kedja2-ssdnodes.mjs, verktyg/testa-dr-kedja2-ssdnodes.mjs, data/forskning/DR-KEDJA2-2026-10-01-SSDNODES-AUTO.md, data/DRIFTSBOKEN.md, worklog.md (anspråk på disk: data/vakten/auto-s10-1790831128590-s10-u3-ansprak.md — katalogen gitignorerad). [fabrik]
+
+## SPÅR 10 s10-u1 (manifest auto-s10-1790831128590, vakt 1/3) — 2026-10-01 05:2x–06:0x UTC: DR-ÖVNING DB-BLAD 09-30 — serverns db-retention NU FULLSTÄNDIGT RESTORE-BEVISAD (4/4 blad · RTO 184,8 s · prediktion 10/11 · retentionsmatrisen stänger s10-u2:s köpost) [fabrik]
+
+Fabriksagent s10-u1 (vakt). VAL (anspråk disk-först ~05:2x med P1–P11 låsta FÖRE körning: data/vakten/s10u1-dr-2026-09-30-blad-ansprak.md; duplikatkontroll: grep db-2026-09-30 i data/forskning/DR-*.md = 0 — bladet dumpkontrollerat GRÖN av E34-nattkedjan men ALDRIG restore-bevisat; s10-u2:s anspråk listade det som ledigt; syskon-u3:s köpost "app-blad 10-01 ledigt för u1" läst MEN db-09-30 valdes: sista hålet i db-bladbeståndet + retentionsköposten att stänga — app-blad 10-01 lämnas kvar i kö): node verktyg/dr-ovning-ssdnodes.mjs --fil data/backups/supabase/db-2026-09-30.sql.gz (verktyg OMODIFIERAT, syskonläran). RESULTAT GRÖN exit 0: dumpkontroll GRÖN 36,0 MB · 1 566 745 rader · CREATE 99/COPY 101 · restore RTO 184,8 s (seriens högsta; rot = u3:s kedja-2-fönster 05:0x–05:4x överlappade + fabrik — radkontrakt fasoberoende) · public 60 tabeller/1 543 838 rader · pub+storage 68/1 543 974 · alla 99/1 544 234 · felrader 1 077 kända/0 okända (tredje EXAKTA 1 077 — GRANT-determinismen) · städning OBEROENDE eftermätt (pg_isready no response exit 2 · 0 postgres-processer · dropdb når ej server · dump orörd mtime 09-30 02:31 · låsfil flock=1-kontraktet). PREDIKTIONSDOM 10/11: EXAKTA P2/P4/P6/P9 (radkontrakt + protokollnamn) · inom band P1 markör 1 566 745/P5 RTO/P7 städning/P10 RPO 27,0 h/P11 nyckeltabeller · MISS P3 public under bandgolvet (1 543 838 < 1 545 000; punkt 0,62 %) = FYND: public-tillväxten är BATCHIG (09-29→09-30 endast +689 rader) medan COPY-markören följde jämna dygnsdiffen på EN RAD (1 526 960+2×19 893=1 566 746 mot faktiskt 1 566 745) — framtida P3 ska härledas ur markör−public-diff (22 907; spann 22 710–23 006), ej ur tillväxtserien. RETENTIONSMATRIS bokförd i DRIFTSBOKEN: 4/4 db-blad på servern restore-bevisade (09-28 cutover-test · 09-29 · 09-30 DENNA · 10-01 s10-u2) = s10-u2:s köpost "dokumentera bladbeståndet" STÄNGD; Contabo-ärvt (14 db-blad 09-11…09-24 + app 09-21…09-27) lever ej på servern, offsite utan db-dumpar (medveten hållning dokumenterad). KVD: data-only · src/ orörd = INGET bygge (tsc orörd) · data/backups ENDAST LÄSTA · prod RÖRD ALDRIG (skrap-DB port 55432) · R2 orörd · crontab orörd · GDPR endast antal/typer/tider · syskonytor respekterade (dr-kedja2-filerna + deras protokoll orörda; DRIFTSBOKEN/worklog = kirurgiska Edit:er med unika ankare efter omläsning vid kollision). Kö: app-blad 10-01 restore · fabrikstom Q4-replik (frivillig) · nästa kvartalsprov Q1-2027 senast 2027-03-15. Protokoll: data/forskning/DR-PROV-2026-10-01-SSDNODES-AUTO-2.md (maskinellt, P9 EXAKT). LEVERANS: data/forskning/DR-PROV-2026-10-01-SSDNODES-AUTO-2.md, data/DRIFTSBOKEN.md, worklog.md (anspråk på disk: data/vakten/s10u1-dr-2026-09-30-blad-ansprak.md — katalogen gitignorerad). [fabrik]

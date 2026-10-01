@@ -80,6 +80,18 @@
 // aldrig leveranskod, körs aldrig i drift) och lämnas hädanefter alltid
 // utanför. Levande kod undantas fortfarande ALDRIG.
 //
+// v1.8 — DUBBELBYTE-ARTEFAKTERNA node_modules-forra/.next-forra (v228,
+// 2026-10-01): prod-synkens gröna stallningsdeploy byter atomärt (mv
+// node_modules node_modules-forra — dubbelbyte-raden i prod-synk.mjs) och
+// städar -forra-kopiorna vid NÄSTA gröna stallningsfönster. Buntslagsrace-
+// serien 09-30→10-01 lämnade node_modules-forra på disk med filversioner
+// från bytestidpunkten — och kvalitetsvaktens 07:02 full-scan dömde GUL
+// (2 high: puppeteer execSync + next-auth fetch i DÖDA bibliotekskopior)
+// på exakt o572:s .bygg-kopia-klass. Båda namnen lämnas hädanefter alltid
+// utanför — samma artefaktklass som .next/node_modules: byggprodukter som
+// aldrig körs i drift (pm2 startar från node_modules, aldrig -forra).
+// Levande kod undantas fortfarande ALDRIG.
+//
 // Användning:
 //   node verktyg/mimosa-paritet.mjs [--katalog VÄG] [--doman REGEX]
 //                                    [--hoppa-over REGEX] [--json UTFIL] [--tyst]
@@ -135,8 +147,10 @@ function lsRekursivt(dir) {
   for (const namn of readdirSync(dir)) {
     // .mimosa är spegling, node_modules/.next/.git lämnas alltid utanför;
     // .bygg-kopia är prod-synkens stallningsartefakt (v1.7/o572 — bär
-    // arkivtidens filversioner mellan fallna fönster, aldrig leveranskod)
-    if ([".git", "node_modules", ".next", ".mimosa", "dist", ".vercel", ".bygg-kopia"].includes(namn)) continue;
+    // arkivtidens filversioner mellan fallna fönster, aldrig leveranskod);
+    // node_modules-forra/.next-forra är dubbelbytets -forra-kopior (v1.8 —
+    // städas av nästa gröna stallningsdeploy, dömer aldrig GUL på disk)
+    if ([".git", "node_modules", ".next", ".mimosa", "dist", ".vercel", ".bygg-kopia", "node_modules-forra", ".next-forra"].includes(namn)) continue;
     const hel = join(dir, namn);
     const info = statSync(hel);
     if (info.isDirectory()) ut.push(...lsRekursivt(hel));

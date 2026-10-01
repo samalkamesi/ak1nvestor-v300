@@ -4,7 +4,7 @@
 // Skrivskyddat: läser package.json/package-lock.json, ropar npm view.
 import fs from "node:fs";
 import path from "node:path";
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 
 const ROT = "/home/ak1a/agent/ak1";
 const NAMN = process.argv[2] || "brace-expansion";
@@ -49,11 +49,14 @@ console.log(JSON.stringify(svar, null, 2));
 const kandidater = NAMN === "brace-expansion" ? ["1.1.21", "5.0.12"] : [];
 if (kandidater.length) {
   try {
-    const ut = execSync(`npm view ${NAMN} versions --json`, {
+    // v228: arrayform — NAMN är argv-styrt, skal-interpolering var ett
+    // berättigat CHILD_PROC_INTERP-fynd (mimosa full-scan 10-01)
+    const ut = execFileSync("npm", ["view", NAMN, "versions", "--json"], {
       cwd: ROT,
       timeout: 45000,
       maxBuffer: 8 * 1024 * 1024,
-    }).toString();
+      encoding: "utf8",
+    });
     const versioner = JSON.parse(ut);
     const finns = Object.fromEntries(kandidater.map((k) => [k, versioner.includes(k)]));
     console.log("REGISTRY=" + JSON.stringify({ kandidater: finns, senaste: versioner.slice(-6) }));

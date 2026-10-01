@@ -233,6 +233,33 @@ const poster4 = rapport4.rapportPoster ?? [];
 test("v1.7: .bygg-kopia undantas (0 rader från kopian, endast 1 skannad fil)", !poster4.some((p) => p.fil.includes(".bygg-kopia")) && rapport4.skannadeFiler === 1);
 test("v1.7-avgränsning: samma mönster i levande verktygskod flaggas fortfarande", exit4 === 1 && fynden4.some((p) => p.klass === "CHILD_PROC_INTERP" && p.fil.endsWith("verktyg-test/farlig-exec.mjs")));
 
+// ── v1.8: dubbelbytets -forra-kopior lämnas alltid utanför ──────────────────
+// Fixture: samma farliga mönster i node_modules-forra + .next-forra — döda
+// artefaktkopior SKALL ignoreras (kvalitetsvakten dömde GUL 10-01 på
+// puppeteer/next-auth i just en sådan kopia), levande kod flaggas kvar.
+skapa(
+  "node_modules-forra/verktyg-test/farlig-exec.mjs",
+  'import { execSync } from "node:child_process";\nexport function stada(fil) { execSync(`git checkout -- ${fil}`); }\n',
+);
+skapa(
+  ".next-forra/verktyg-test/farlig-fetch.mjs",
+  'export async function hamta(u) { return fetch(`${u}/signout`); }\n',
+);
+let exit5 = -1;
+try {
+  execFileSync("node", [verktyg, "--katalog", rot, "--doman", "(^|/)verktyg-test/", "--json", join(rot, "resultat5.json"), "--tyst"], {
+    encoding: "utf8",
+  });
+  exit5 = 0;
+} catch (e) {
+  exit5 = e.status ?? -1;
+}
+const rapport5 = JSON.parse(readFileSync(join(rot, "resultat5.json"), "utf8"));
+const fynden5 = rapport5.fyndPoster ?? [];
+const poster5 = rapport5.rapportPoster ?? [];
+test("v1.8: node_modules-forra/.next-forra undantas (0 rader från kopiorna, endast 1 skannad fil)", !poster5.some((p) => p.fil.includes("-forra")) && rapport5.skannadeFiler === 1);
+test("v1.8-avgränsning: levande verktygskod flaggas fortfarande", exit5 === 1 && fynden5.some((p) => p.klass === "CHILD_PROC_INTERP" && p.fil.endsWith("verktyg-test/farlig-exec.mjs")));
+
 rmSync(rot, { recursive: true, force: true });
 console.log(misslyckade === 0 ? "ALLA PASS" : `${misslyckade} FAIL`);
 process.exit(misslyckade === 0 ? 0 : 1);

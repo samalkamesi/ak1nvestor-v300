@@ -7157,3 +7157,56 @@ förbättrar). Första skivan levererad:
   bokföring + push i väntar-fönstret, deployvakt mot senaste-deployad ≠
   22df62aa + vaktkörning GRÖN. Lärdom: räddnings-byte utan markör = larm-
   fönster fram till nästa omdeploy (markör/vakttolerans = nästa våg).
+
+## KVARTALS-DR-PROV Q4 2026 (s10-u2, manifest auto-s10-1790831128590, 2026-10-01 — GODKÄNT, fönstrets första dag)
+
+Fullständigt protokoll: `data/forskning/DR-PROV-2026-10-01-SSDNODES-AUTO.md`
+(maskinellt). Anrop: `node verktyg/dr-ovning-ssdnodes.mjs --fil
+data/backups/supabase/db-2026-10-01.sql.gz` (verktyg OMODIFIERAT, syskonläran).
+Spårets köpost (s10-u1 09-28) föreskrev "Q4-kvartalsövning tidigt i fönstret
+10-01→12-31" — avklarat på fönstrets första dag.
+
+Kärntal:
+
+- **Dumpkontroll 1/1 GRÖN**: db-2026-10-01.sql.gz · 36,4 MB · **1 586 640
+  rader** · CREATE 99/COPY 101 · pg_dump 18.6 — E34-nattkedjans 02:33-kontroll
+  av samma blad oberoende bekräftad av restore (markörtalet EXAKT).
+- **RTO 80,1 s** — mitt i SSD-Nodes-serien (70,0 kväll · 83,7 natt · 127,9
+  09-29), trots fabrik 3 barn aktiv (F1-ärlighet: se fasnotering nedan).
+- **Felrader 1 077 kända / 0 okända** — EXAKT samma total som 09-28:
+  Supabase-GRANT-klassen är deterministisk, inga nya felklasser.
+- **Mätning**: public 60 tabeller / **1 563 634 rader** (public+storage
+  68/1 563 770 · alla scheman 99/1 564 030).
+- **Städning oberoende eftermätt**: pg_isready 55432 → no response (exit 2) ·
+  0 postgres-processer · skrap-DB borta · kernel-lås släppt.
+- **RPO-avstånd ≈ 2,7 h** (blad fött 02:33, restore 05:12) — nattkedjans
+  02:30-kontrakt hållet.
+- **Prediktioner 10/10** (anspråk disk-först FÖRE körning,
+  data/vakten/s10u2-q4-dr-2026-10-01-ansprak.md): markör/markörkontrakt/
+  tabellkontrakt EXAKTA · public punktprognos 1 563 000 mot faktiskt
+  1 563 634 = **0,04 % miss** (ratio-kedjan public/markör 98,5 % höll) ·
+  RTO 80,1 ∈ [60,220] · protokollnamn EXAKT.
+
+Serie (db-blad, public-rader): v98 09-11: 1 187 291 (20,0 s) · Q3 09-26:
+1 464 567 (14,3 s) · 09-28: 1 504 250 (70,0/83,7 s) · 09-29: 1 543 149
+(127,9 s) · **Q4 10-01: 1 563 634 (80,1 s)**.
+
+FYND — RETENTIONSDJUPET EFTER CUTOVERN: servern bär endast 4 db-blad
+(09-28…10-01, äldsta 3 d) + 3 app-blad + cutover-test. Contabo-erans 14 blad
+(09-11…09-24) och app-bladen 09-21…09-27 migrerades EJ, och offsite-arkivet
+innehåller medvetet INTE db-dumparna ("datorns valv + Supabase primär",
+u3 09-28). 30-dagars-retentionen vilar alltså på Supabase-livet + gamla
+serverns disk. Grönt för DR-grundförmågan (4 dagars fönster + full Supabase),
+men köpost till spåret: dokumentera eller migrera det äldre bladbeståndet.
+
+FASNOTERING (F1): kvartalsregeln föredrar TOM fabrik; idag körde fabriken
+3 barn (denna omgång). RTO 80,1 s landade ändå i seriens mitt (62 GB RAM
+absorberar lasten — bevisat u1 09-28). Radkontrakten är fasoberoende och
+EXAKTA. Fabrikstom replik inom Q4-fönstret = frivillig öppen post.
+
+LÅSFILNOTIS: /tmp/ak1a-dr-prov.lock lämnas kvar efter grön körning — det är
+flock(1):s låsobjekt (kernel-låset släpps vid processdöd; raden "flock=1"
+märker yttre-flock-läge). INTE läcka; 09-29 10:32-"spöket" var samma
+kontrakt. Nästa körning flock:ar direkt på den lediga inoden.
+
+Nästa kvartalsprov: **Q1-2027, senast 2027-03-15** (F1-försiktighet kvarstår).

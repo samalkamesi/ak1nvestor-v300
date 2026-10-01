@@ -42,7 +42,7 @@
  *      vakten ger ALDRIG tyst PASS).
  *  12. SSR-livssond (o64) — probar deterministiska sentinellrutter (o47:s
  *      exakta 500-rötter: / /kurser /analyser /blogg /labb /en /ar) på
- *      loopback. Mätfönster-grind FÖRE mätvärde (o55 §2: fuser-ÄGANDE av
+ *      loopback. Mätfönster-grind FÖRE mätvärde (o55 §2: /proc-fd-ÄGANDE av
  *      deploylåset + pgrep HELA byggmönster MED släktexkludering — den egna
  *      processkedjan kan aldrig bli "byggprocess", o55 F2-klassen död även
  *      hos observatören). 5xx-svar = FEL (o47-klassen: servern svarar =
@@ -608,7 +608,12 @@ function sektionKursdata() {
 // r290: /bygg = vaxthus-hyresgästportal (src/app/(vaxthus)/bygg) — om
 // hyresgästsajter ska indexeras under lab-domänen är ett ÖPPET designbeslut
 // (v191/domänfrågan); vakten ska inte tvinga fram det via GUL.
-const SITEMAP_EXKLUDERA = new Set(["/admin", "/pro", "/rapporter", "/logga-in", "/studio", "/bygg"]);
+// o573 (s8-u1, v180): /zcode = EN-TRYCKS-INGÅNGEN (kunddirektivet 2026-09-30)
+// — layouten bär robots { index: false, follow: false } och en noindex-sida
+// får ALDRIG listas i sitemap (Search Console-felklassen "Submitted URL
+// marked 'noindex'"; samma princip som /pro-blocket i sitemap.ts). Vakten
+// kräver sitemap-täckning endast för indexerbara rutter.
+const SITEMAP_EXKLUDERA = new Set(["/admin", "/pro", "/rapporter", "/logga-in", "/studio", "/bygg", "/zcode"]);
 
 function sektionSitemap() {
   const fel = [];

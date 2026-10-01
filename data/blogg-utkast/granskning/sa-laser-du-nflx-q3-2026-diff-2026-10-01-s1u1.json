@@ -1,0 +1,139 @@
+{
+  "objekt": "sa-laser-du-nflx-q3-2026",
+  "utkast": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-nflx-q3-2026.json",
+  "utkastMd5": "1695fd0fbfeb13cf149123b651fc84dc",
+  "utkastOrort": true,
+  "granskare": "s1-u1, manifest auto-s1-1790858103968 (2026-10-01)",
+  "paket": "data/blogg-utkast/granskning/sa-laser-du-nflx-q3-2026-FLYTTKLART-PAKET-2026-10-01-s1u1.json",
+  "paketMd5": "1737721d92eb500138f8d680f41d4983",
+  "generator": "verktyg/_s1u1-nflx-q3-paket.mjs (EXAKT-EN-TRÄFF per sats, dubbelkört deterministisk)",
+  "kallaVintage": "git d7eae3bc8 — data/portfolj-system/bolagsunivers.json md5 6e540c8753d28f8b905a2aab9f15b29d (textens egna deklarerade)",
+  "primarkalla": "Netflix Q2 2026 Shareholder Letter (s22.q4cdn.com, HTTP 200, omläst 2026-10-01)",
+  "antalSatser": 12,
+  "satser": [
+    {
+      "id": "D1",
+      "klass": "B — talfel mot primärkällan",
+      "yta": "body (källkritiken, engångsposten)",
+      "gammal": "52 miljoner i Q2 och 45 miljoner för hela första halvåret 2025",
+      "ny": "52 miljoner i Q2 och 91 miljoner för hela första halvåret 2025",
+      "belagg": "brevets resultaträkning: räntor och övriga intäkter H1-25 = 90 529 tkr ≈ 91 MUSD; 45 är hälften av brevtalet (halveringsslupp)"
+    },
+    {
+      "id": "D2",
+      "klass": "B — fel bolagsattribution",
+      "yta": "body (Så står sig bolaget mot branschen)",
+      "gammal": "Meta bär grenens högsta P/B — reklamens två världar där Netflix annonsmotor precis startat sin dubblering",
+      "ny": "Spotify bär grenens högsta P/B (11,9 mot Netflix 11,4) och Meta grenens högsta EBIT-marginal — reklamens två världar, där Netflix annonsmotor precis startat sin dubblering",
+      "belagg": "vintagen d7eae3bc8: P/B-trappan SPOT 11,940 · NFLX 11,425 · IVSO.ST 9,030 · META 5,783 — Meta är FJÄRDE; däremot bär Meta EBIT-marginaltoppen 34,8 % (textens egen rad 'näst högst bakom bara Meta' förblir sann)"
+    },
+    {
+      "id": "D3",
+      "klass": "B — imprecision mot primärkällan",
+      "yta": "body (återköpsmaskinen)",
+      "gammal": "och styrelsen har auktoriserat 27,1 miljarder till",
+      "ny": "och kvar i auktoriseringarna står 27,1 miljarder till",
+      "belagg": "brevet: styrelsen auktoriserade +25,0 mdr i april på toppen av 6,8 kvarvarande; 27,1 = total kvarvarande kapacitet — title/description ('auktoriserat kvar') var redan korrekta, endast bodyn conflatede"
+    },
+    {
+      "id": "D4a",
+      "klass": "C — precisionsfel i samlad parentes",
+      "yta": "body (nyckeltalsavsnittets parentes)",
+      "gammal": "beräknade ur samma universumfil, 21–22 mätvärden per mått",
+      "ny": "beräknade ur samma universumfil, 17–23 mätvärden per mått — tabellen redovisar n för varje mått",
+      "belagg": "egenräknat ur vintagen: n per mått = 21/23/23/17/23/23/23/23/23/23/23/22 — spann 17–23; tabellens per-mått-n är samtliga korrekta, endast parentesens sammanfattning fel"
+    },
+    {
+      "id": "D4b",
+      "klass": "C — samma rättning, källraden (bindestrecksyta)",
+      "yta": "body (Källor, sista punkten)",
+      "gammal": "med 21-22 mätvärden per mått",
+      "ny": "med 17-23 mätvärden per mått",
+      "belagg": "samma som D4a; källraden stavade spannet med bindestreck"
+    },
+    {
+      "id": "D5a",
+      "klass": "C — formuleringsexakthet (AT&T F3-klassen)",
+      "yta": "body (källkritikens rubrik)",
+      "gammal": "och engångsposten som flyttar P/E fem steg",
+      "ny": "och engångsposten som flyttar P/E nästan fem steg",
+      "belagg": "steget är 30,07 − 25,38 = 4,69 multiplar — 'fem steg' utan 'nästan' överdriver"
+    },
+    {
+      "id": "D5b",
+      "klass": "C — formuleringsexakthet + versal-artefakt",
+      "yta": "body (källkritiken, engångsposten)",
+      "gammal": "fem hela multiplar på en enda balansradsPOST",
+      "ny": "nästan fem multiplar på en enda balansradspost",
+      "belagg": "4,69 multiplar + 'balansradsPOST' är en redigeringsartefakt (versaler)"
+    },
+    {
+      "id": "D7",
+      "klass": "C — källblödning, engelska i svensk löptext",
+      "yta": "body (ingressen)",
+      "gammal": "världens största strömmingtjänst, approaching en miljard tittare enligt bolaget självt",
+      "ny": "världens största strömmingtjänst, nära nog en miljard tittare enligt bolaget självt",
+      "belagg": "brevets eget '(approaching 1B people)' läckte in ordagrant; svenskt skrivsätt i svensk serie"
+    },
+    {
+      "id": "D8",
+      "klass": "C — citatprecision",
+      "yta": "body (urvalsavsnittet, P&G-gallran)",
+      "gammal": "med motiveringen \"20/10 rent tredjepartsestimat + kommunikationgrenen rikligt täckt\"",
+      "ny": "med motiveringen \"20/10, tredjepartsestimat med fönster — serien levererar inte på rena estimat, och kommunikationgrenen är sedan länge rikligt täckt\"",
+      "belagg": "sa-laser-du-pg-q3-2026.json:s gallra-text ordagrant; utkastet hade parafras i citattecken"
+    },
+    {
+      "id": "D9",
+      "klass": "C — aktualitet vid publicering",
+      "yta": "body (urvalsavsnittet, datumklasserna)",
+      "gammal": "ASM International 27/10 är MarketScreener-källa",
+      "ny": "ASM International 27/10 var vid byggtiden MarketScreener-källa, bolagsbekräftad 30/9 via asm.coms kalender",
+      "belagg": "ASM-paketet (byggt 09-30) belägger bolagets egen kalender asm.com 'Quarterly results Q3 2026' 27 okt 18:00 CET — påståendet var sant vid byggtiden 09-22 men inaktuellt vid publicering 20/10"
+    },
+    {
+      "id": "D10",
+      "klass": "C — språk",
+      "yta": "body (branschsammanställningen)",
+      "gammal": "balansräkningen är telik men inte tele-tung",
+      "ny": "balansräkningen är tele-lik men inte tele-tung",
+      "belagg": "'telik' är ingen svensk bildning; paraformen 'tele-lik' bärande bilden"
+    },
+    {
+      "id": "D11",
+      "klass": "B — omvänd valutariktning",
+      "yta": "body (kvartalskedjan, regionmotorerna)",
+      "gammal": "valutan drog i Latinamerika och hjälpte i Asien",
+      "ny": "valutan hjälpte i Latinamerika och drog i Asien",
+      "belagg": "brevets regiontabell: LATAM +21 % rapporterat mot +16 % valutaneutralt (valutan HJÄLPTE ~5 pp) · APAC +16 % mot +18 % (valutan DRAG ~2 pp) — utkastet hade riktningen omvänd"
+    }
+  ],
+  "vidarebefordras": [
+    {
+      "id": "V1",
+      "yta": "data/blogg-utkast/kvartal/2026-q3/kalender-kommunikation.json (ANNANS fil — lämnas orörd av granskaren)",
+      "fynd": "NFLX-posten klassar 2026-10-20 som 'estimat … obekräftat' (hämtat 2026-09-15) trots bolagets utlysning 2026-09-14",
+      "foreslagenPatch": "klass → bolagsbekräftat; notera → 'utlysning 2026-09-14: kommuné ~13:01 PT, intervju 13:45 PT; källa ir.netflix.net (granskad av s1-u1 2026-10-01)'",
+      "mottagare": "nästa byggare/kalenderägare (Stora Enso-precedensen: bolagskällan äger)"
+    },
+    {
+      "id": "V2",
+      "yta": "brev-/sökbelagda tal ej maskinellt omverifierade i denna granskning",
+      "fynd": "Q2-marginalguiden 32,6 (ur Q1-brevet), 'EPS 0,79 väntat' (CNBC/Reuters-sök), IR-widgeten 75,42 den 17/9, splitdatumen (PR Newswire/Morningstar-sök) — samtliga internt konsistenta och källrade, men lätta från denna sessions primärkälla",
+      "mottagare": "vid publicering: ()-kontroll mot ir.netflix.net enligt paketets egen checklista"
+    }
+  ],
+  "efterverifiering": {
+    "gamlaFelstrangarKvar": 0,
+    "nyaStrangarPaplatser": true,
+    "varumarkefraser": 0,
+    "911": 0,
+    "lagrumsfamiljer": ["2007:528"],
+    "titleTecken": 298,
+    "titleTak": 314,
+    "ord": 2825,
+    "readingMinutesBeraknad": 5,
+    "readingMinutesFil": 5,
+    "invarianterOforande": ["slug", "title", "description", "publishedAt", "readingMinutes", "tags", "pillar", "author"]
+  }
+}

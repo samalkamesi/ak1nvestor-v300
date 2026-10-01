@@ -20722,3 +20722,62 @@ Fabriksagent s11-u1 (byggare, spår 11 DESK A-Ö). VAL (anspråk 12:05, uppdater
 
 **Fabriksagent s1-u3 (granskare).** PIVOT (öppen, duplikatregeln): m9-utkast #3 (kassaflodesanalys-101) FLERFALDIGT levererad — fyra KONTROLL-pass (09-16/09-19/v2 09-20/09-21-s1u3) med FLYTTKLART-PAKET, m9-familjen 6/6 sedan 09-21; fyra föregående s1-ronder pivoterade från samma order. VAL: **Tesla Q3 2026** (kvartal/2026-q3/sa-laser-du-tesla-q3-2026.json, byggd av s4-u1 i commit 2c30664a8 22:45Z i natt) — efter syskon u1:s koordinatrad i dess anspråk ("u3 → tesla 21/10"; u1 tog nflx, u2 essity — tre skilda objekt, noll kollisionsyta; u2:s worklog-rad lämnade uttryckligen "u1/u3:s val fria"); 0 tesla-filer i granskning/ före arbetet; anspråk disk-först (data/vakten/auto-s1-1790858103968-s1-u3-ansprak.md). GRANSKNING (allt EGENMÄTT, sond verktyg/_s1u3-tesla-q3-kontroll.mjs — utkastläge 114 PASS · 3 FEL · 5 NOT, paketläge 117 PASS · 0 FEL · 5 NOT, efter FYRA ärligt bokförda+rättade v1-sondbuggar: heltalsavrundningstolerans · MUSD-enhet i intäkt/fordon · magnitudklassen på årsfältsgapet — AT&T-passets sondbuggklass igen): KÄRNAN GRÖN — källfält 26/26 mot TSLA-radens fältnivå i dagens 328-träd (byggvintage BEVISAD utan glidning: universum-commit db5e5f13e 21:17Z före tesla-commit 22:45Z), medianer+rang 24/24 LIVE ur tillväxtgrenen n=19 (alla tolv tabellmedianer inom avrundning; påståendet "EXAKT på grenens median" VISADE SIG SANT — medianen av grenens 19 intäktstillväxttal ÄR Teslas 25,5 %; universumrang P/E 2 av 315 bärande under CRWD 5419,71 · EV/EBIT 1 av 297 bärande med ARM 310,87 närmaste följare = "drygt tre gånger" 3,05×), aritmetik 40 poster egenräknade (EPS-IDENTITETEN 0,39+0,23+0,13+0,32 = 1,07 mot P/E-fältets implicita 357,01/333,654 = 1,0700 — paritet på fjärde decimalen · aktiebas-världarna 3 950/3 502 gap 12,8 % med EPS-världen öppet vald · P/B÷ROE 347,6 mot P/E gap 4,2 % · årsfältskontrollerna 94 748/94 827 = 0,1 % och 3 737/3 794 = 1,5 % · TTM 103 640 · brytpunkterna P/E 300/250/200 ⇒ 0,51/0,75/1,11 alla outrundat replikerbara på kurs 357,01 med utrullad bas 0,68 · scenariorutan 9/9 celler landar 299–395 · marginaltickarn 280 M$ = 0,08 EPS, marginalspannet 0,24 vs intäktsspannet 0,05 = "nästan fem gånger" 4,7× · kvartalsprocenterna +16/+26/+12/−37/−3/−46 inom heltalsklassen), JURIDIK 2007:528 REN (13 rådglossmönster × 3 ytor = 0 · båda negerade rådformerna · EXAKT EN lagrumsfamilj · utbildningsdeklaration i body · R2-disclaimern sista raden; målkursspannet 250–480 = källnotsburen tredjepartsprognos, grönt med NOT), 911 = 0/7 mönster, kalender med ÖPPEN datumklass (WSH "UNCONFIRMED" + Public.com + Yahoo konvergerar, MarketChameleon 21–23/10, Zacks divergerar 28/10 — GETI/Newmont-praxis, ir.tesla.com äger, kontrollera utlysningen före publicering; kalender-kommunikation.json bär ingen Tesla-rad), 16/16 interna länkar HTTP 200 mot localhost (AT&T-passets låsväntan behövdes ej). FYND: F1 (VÄSENTLIGT) title 461 tkn = 147 ÖVER wihlborgs-taket 314 (AT&T-passet var gränsvärt 314) → 309 tkn med alla sex signaturtal + rappdagsklassen behållna; F2 (VÄSENTLIGT) description 905 tkn = 251 över seriepraxis 328–654 → 653 tkn (datumpanelen stramad, utbildningsdisclaimern kvar sist); F3 mjukt bindestreck U+00AD i "TTM-intäktstillväxten" (osynligt men levande i sök/kopiering) → borttaget, exakt en träff; F4 branschtabellens n-klass "(universumets näst högsta/högsta av 328)" — totalantalet i stället för fältens bärande n → "av 315 bärande"/"av 297 bärande" (punktlistan ovanför tabellen hade redan rätt klass; påståendena var sanna, klasserna missvisande). NOT utan kur: "5 år"-etiketten på resultatCAGR-fältet (radens notering dokumenterar 4 räkenskapsår — FÄLTET är kanon, AT&T-precedensen; räknat ur serien = −32,9 % exakt) · publishedAt 21/10 = rappdagen (seriepraxis 2 dagar före; kundens val, R2, vidarebefordras). LEVERANS: KONTROLL + diff + FLYTTKLART-PAKET (kurer tillämpade av verktyg/_s1u3-tesla-q3-paket.mjs med EXAKT-EN-TRÄFF-assert per kur; efterverifierat: gamla felsträngar 0 · mjuka bindestreck 0 · nya title/description inom taken · 70 övriga nycklar bitidentiska · utkastet på disk orört md5 76fc7452) i granskning/ med -2026-10-01-s1u3-suffix + KO-rader i BÅDA sammanställningstabellerna (additiva, syskonens rader orörda) + sond + paketbyggare. KVD: data-only — src/ orörd = INGET bygge · R2 orörd (data/blogg/ orörd, publicering = kundens klick) · node-kanalen hela vägen (sondbuggarna bokförda i sondens rader) · syskonens ytor (u1 nflx, u2 essity) orörda · localhost-anrop = 16 läsningar. Kö efter denna (samma som u2:s): swedbank/castellum/nokia + sandvik/atlas-copco paket-luckorna → oktoberfältet (sap) → novemberfältet; vidarebefordras: nokia-utkastets publishedAt 10-20 mot kalenderns 22/10 (AT&T-not, fortfarande öppet). [fabrik]
 
+
+## SPÅR 1 s1-u1 (manifest auto-s1-1790858103968, granskningskön 1/3) — 2026-10-01 ~08:0x–13:3x lokal: NETFLIX Q3 GRANSKAT (pivot från m9 #1) — GRÖN GRUND, FLYTTKLAR EFTER 12 RÄTTNINGAR; sv-paket + diff + sond [fabrik]
+
+**Fabriksagent s1-u1 (granskare).** PIVOT (öppen, duplikatregeln; anspråk disk-först
+data/vakten/auto-s1-1790858103968-s1-u1-ansprak.md skriven FÖRE ingrepp): orderns
+"m9-utkast #1" (boerspsykologi-fallstugor) FLERFALDIGT levererad — m9-familjen 6/6
+FLYTTKLAR sedan 09-19, m9-1 har tre KONTROLL-pass + FLYTTKLART-PAKET på disk; fyra
+föregående s1-ronder pivoterat från m9 #1–#3. VAL: **sa-laser-du-nflx-q3-2026** —
+FIFO-etta bland kontrolllösa (rappdag 20/10 tisdag, BOLAGSBEKRÄFTAT, före sap/tesla
+21/10 och 22:a-klustret; nike/hm-b/industrivärden/jpmorgan m.fl. redan granskade i
+gamla formatet; syskonen u2/u3 tog essity/tesla samma omgång — noll kollision).
+
+GRANSKNING (allt EGENMÄTT; sond verktyg/_s1u1-nflx-q3-kontroll.mjs — 143 kontroller
+129 OK · 3 FEL · 11 NOT, dubbelkört deterministisk, tre sondegena falska positiva
+i pass 1 rättade och redovisade; + primärkälls-omläsning: Q2-26-aktieägarbrevet i
+sin helhet): **kärnan GRÖN** — källfält 19/19 exakta mot deklarerad vintage
+d7eae3bc8 (filens md5 6e540c8753d28f8b905a2aab9f15b29d == textens, git-historiken
+genomsökt; NFLX-rad drift-fri vintage↔dagens ×19 fält), medianer 12/12 med exakta n
+(P/E 16,2/21 · P/B 2,27/23 · EV/EBIT 14,5/23 · PEG 1,49/17 · ROE 16,3 · ROIC 10,7 ·
+brutto 47,8 · EBIT 18,1 · netto 11,5 · skuld 1,28 · omsCAGR 3,3 · FCF 12,6/22),
+rang 11/11 (ROE högst · FCF högst · P/B näst högst · skuld åttonde lägst · PEG
+exakt på medianen), brevtal nästan samtliga exakta (kvartalsserien 11 079→12 860F
+med marginaler/EPS/aktieantal · engångsposten 2 852,166 · Q1-vbs 6 547/netto 5 283 ·
+skattesats 16,40 % · kassa 9 099 · innehåll 33 838 = 58 % · EK 30 152 · skuld 14 309 ·
+FCF-kvartaler 2 660+1 872+5 094+1 525 = 11 151 · återköp 4 714/H1 5 985 · regioner ·
+guider · 97 mdr timmar), aritmetik ~70 poster (identitetsgap exakt 0,56 % — seriens
+tajtaste klass; EV-kedja 349,7/24,4/16 040; scenarioruta 9/9 korrekta OCH rätt
+placerade; CAGR 12,64/34,71; DuPont-gap 10,0 %), juridik 2007:528 REN (26 fraser ×
+3 ytor = 0 · en lagrumsfamilj · disclaimer+R2 sist · rådträffar samtliga legitima i
+kontext), 911 = 0, länkar 14 interna 200 + brev-PDF 200, kalender (tisdag · CEST/PDT
+= 9 h · publishedAt = rappdagen), title 298 ≤ 314, ord 2 788 → rm 5.
+
+**FYND (12 satser, verkställda i paketet):** B1 "45 M H1-25"→91 (brevet 90,5) ·
+B2 "Meta bär grenens högsta P/B"→Spotify (SPOT 11,940 · NFLX 11,425 · META 5,783 =
+fyra; Meta bär i stället EBIT-toppen 34,8) · B3 "auktoriserat ytterligare 27,1"→
+kvar i auktoriseringarna (ny = 25,0 + 6,8 kvar; title "auktoriserat kvar" var
+korrekt) · B4 valutariesen LATAM/APAC OMVÄND (LATAM +21/+16 = hjälpt; APAC +16/+18
+= dragen) · C4 n-spannet "21–22 mätvärden"→17–23 (2 ytor, tankstreck+bindestreck) ·
+C5 "fem steg/fem hela multiplar"→nästan fem (4,69; AT&T-F3-klassen; 2 ytor) · C6
+balansradsPOST-artefakten · C7 approaching→nära nog (källblödning) · C8 P&G-gallr-
+citatet ordagrant (var parafras i citattecken) · C9 ASM-datumklassen bolagsbekräftad
+30/9 (asm.com) · C10 telik→tele-lik.
+
+**PAKET** granskning/sa-laser-du-nflx-q3-2026-FLYTTKLART-PAKET-2026-10-01-s1u1.json
+byggt av verktyg/_s1u1-nflx-q3-paket.mjs med EXAKT-EN-TRÄFF-grind per sats,
+dubbelkört deterministisk (paket-md5 1737721d92eb500138f8d680f41d4983), efter-
+verifierat: gamla felsträngar 0 · 12 nya på plats · varumärke 0 · 911 = 0 · en
+lagrumsfamilj · invarianter (slug/title/description/publishedAt/readingMinutes/
+tags) oförändrade · **utkastet på disk ORÖRT md5 1695fd0fbfeb13cf149123b651fc84dc**.
+Diff: granskning/sa-laser-du-nflx-q3-2026-diff-2026-10-01-s1u1.json (12 satser +
+2 vidarebefordrade: kalender-kommunikation.json:s NFLX-klass "estimat/obekräftat"
+föråldrad mot utlysningen 14/9 — patch redo, filen är annans och lämnas orörd;
+brev-/sökbelagda tal för publicerings-()-kontroll). Sammanställningen uppdaterad
+med GRANSKAD-rad + kö-notis. Publicering = kundens beslut (R2).
+
+KVD: src orörd (inget bygge, tsc orört av denna leverans — endast data/ + verktyg/) ·
+utkast aldrig skrivet · granskarens tre-filers-leverans + sond + anspråk committade.
+Kö till syskon/nästa rond: sap 21/10 kväll → swedbank/castellum/nokia/yara/seb/pg/
+newmont (22:a; nokia bär AT&T-rondens publishedAt-not) → novemberfältet.

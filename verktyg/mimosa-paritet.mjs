@@ -67,6 +67,19 @@
 // nivån vore falsk larmkultur för författarskrivna literaler, men tystnad
 // dolde form-glidningen. Mätbar kur = arrayform, träffen försvinner.
 //
+// v1.7 — BYGGARTEFAKT-EXKLUDERING (.bygg-kopia, o572 2026-10-01): prod-
+// synkens stallningsfönster bygger i en arkivkopia (git archive HEAD →
+// .bygg-kopia/, gitignorerad, återskapad av varje fönsters första rad och
+// städad i gröna fönster). Ett FALLIT fönster lämnar kopian på disk — och
+// hon bär då FILVERSIONER FRÅN ARKIVTIDPUNKTENS HEAD, äldre än senaste
+// kurerna. Beviset som öppnade klassen: kopian från 2026-09-30 23:32:48
+// (före r359-mimosa-kuren 23:5x) bar tre okurerade CHILD_PROC_INTERP-filer
+// medan live-trädet var grönt — kvalitetsvaktens full-scan (--doman .,
+// skannar disken) skulle döma GUL vid 07:02 på en DÖD artefakt trots kurat
+// träd. Kopian är samma artefaktklass som .next/node_modules (byggprodukter,
+// aldrig leveranskod, körs aldrig i drift) och lämnas hädanefter alltid
+// utanför. Levande kod undantas fortfarande ALDRIG.
+//
 // Användning:
 //   node verktyg/mimosa-paritet.mjs [--katalog VÄG] [--doman REGEX]
 //                                    [--hoppa-over REGEX] [--json UTFIL] [--tyst]
@@ -120,8 +133,10 @@ for (const a of args) {
 function lsRekursivt(dir) {
   const ut = [];
   for (const namn of readdirSync(dir)) {
-    // .mimosa är spegling, node_modules/.next/.git lämnas alltid utanför
-    if ([".git", "node_modules", ".next", ".mimosa", "dist", ".vercel"].includes(namn)) continue;
+    // .mimosa är spegling, node_modules/.next/.git lämnas alltid utanför;
+    // .bygg-kopia är prod-synkens stallningsartefakt (v1.7/o572 — bär
+    // arkivtidens filversioner mellan fallna fönster, aldrig leveranskod)
+    if ([".git", "node_modules", ".next", ".mimosa", "dist", ".vercel", ".bygg-kopia"].includes(namn)) continue;
     const hel = join(dir, namn);
     const info = statSync(hel);
     if (info.isDirectory()) ut.push(...lsRekursivt(hel));

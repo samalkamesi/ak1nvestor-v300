@@ -210,6 +210,29 @@ try {
 const rapport3 = JSON.parse(readFileSync(join(rot, "resultat3.json"), "utf8"));
 test("--hoppa-over: fixture-fil undantas → 0 fynd, 0 skannade, exit 0", exit3 === 0 && rapport3.skannadeFiler === 0 && (rapport3.fyndPoster ?? []).length === 0);
 
+// ── v1.7: .bygg-kopia (prod-synkens stallningsartefakt) lämnas alltid utanför ─
+// Fixture: samma farliga mönster i kopian som i verktyg-test — kopian SKALL
+// ignoreras (kvalitetsvakten --doman . dömer aldrig GUL på en byggartefakt),
+// verktygskoden SKALL fortfarande flaggas (exkluderingen öppnar ingen lucka).
+skapa(
+  ".bygg-kopia/verktyg-test/farlig-exec.mjs",
+  'import { execSync } from "node:child_process";\nexport function stada(fil) { execSync(`git checkout -- ${fil}`); }\n',
+);
+let exit4 = -1;
+try {
+  execFileSync("node", [verktyg, "--katalog", rot, "--doman", "(^|/)verktyg-test/", "--json", join(rot, "resultat4.json"), "--tyst"], {
+    encoding: "utf8",
+  });
+  exit4 = 0;
+} catch (e) {
+  exit4 = e.status ?? -1;
+}
+const rapport4 = JSON.parse(readFileSync(join(rot, "resultat4.json"), "utf8"));
+const fynden4 = rapport4.fyndPoster ?? [];
+const poster4 = rapport4.rapportPoster ?? [];
+test("v1.7: .bygg-kopia undantas (0 rader från kopian, endast 1 skannad fil)", !poster4.some((p) => p.fil.includes(".bygg-kopia")) && rapport4.skannadeFiler === 1);
+test("v1.7-avgränsning: samma mönster i levande verktygskod flaggas fortfarande", exit4 === 1 && fynden4.some((p) => p.klass === "CHILD_PROC_INTERP" && p.fil.endsWith("verktyg-test/farlig-exec.mjs")));
+
 rmSync(rot, { recursive: true, force: true });
 console.log(misslyckade === 0 ? "ALLA PASS" : `${misslyckade} FAIL`);
 process.exit(misslyckade === 0 ? 0 : 1);

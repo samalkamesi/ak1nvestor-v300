@@ -42,7 +42,7 @@
  *      vakten ger ALDRIG tyst PASS).
  *  12. SSR-livssond (o64) — probar deterministiska sentinellrutter (o47:s
  *      exakta 500-rötter: / /kurser /analyser /blogg /labb /en /ar) på
- *      loopback. Mätfönster-grind FÖRE mätvärde (o55 §2: fuser-ÄGANDE av
+ *      loopback. Mätfönster-grind FÖRE mätvärde (o55 §2: /proc-fd-ÄGANDE av
  *      deploylåset + pgrep HELA byggmönster MED släktexkludering — den egna
  *      processkedjan kan aldrig bli "byggprocess", o55 F2-klassen död även
  *      hos observatören). 5xx-svar = FEL (o47-klassen: servern svarar =
@@ -608,10 +608,15 @@ function sektionKursdata() {
 // r290: /bygg = vaxthus-hyresgästportal (src/app/(vaxthus)/bygg) — om
 // hyresgästsajter ska indexeras under lab-domänen är ett ÖPPET designbeslut
 // (v191/domänfrågan); vakten ska inte tvinga fram det via GUL.
-// v222 (Φ): /zcode = en-trycks-ingången till agentchatten (v216, kundens
-// "komma in med ett tryck") — layouten sätter robots noindex/nofollow
-// ("privat chatsida — ALDRIG indexerad"). Att pusha in den i sitemap vore
-// "Submitted URL marked 'noindex'"-klassen (samma skäl som /studio-spärren).
+// v222 (Φ) + o573 (s8-u1, v180) — DUBBELLEVERANS av samma roträttsbeslut
+// (andra händelsen efter v221:s ko-incident; denna gång utan kollision):
+// /zcode = EN-TRYCKS-INGÅNGEN till agentchatten (kundens "komma in med ett
+// tryck", 2026-09-30) — layouten bär robots { index: false, follow: false }
+// ("privat chatsida — ALDRIG indexerad") och en noindex-sida får ALDRIG
+// listas i sitemap (Search Console-felklassen "Submitted URL marked
+// 'noindex'"; samma princip som /pro-blocket i sitemap.ts och /studio-
+// spärren VÅG 81). Vakten kräver sitemap-täckning endast för indexerbara
+// rutter.
 const SITEMAP_EXKLUDERA = new Set(["/admin", "/pro", "/rapporter", "/logga-in", "/studio", "/bygg", "/zcode"]);
 
 function sektionSitemap() {

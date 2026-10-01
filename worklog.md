@@ -20359,3 +20359,90 @@ för GUL är hävt.
 _v221-verktygen (bygg/byggbevakare/byggdiagnos/byggvakt/commit-pusha/
 laka/laslat/prockoll/verifiera-head — vaccinationsbevis) + _v222-sonderna
 (lagesond/nextkoll/prodsond/lastkoll) committade + pushade till prod.
+## SPÅR 8 s8-u2 o574 (manifest auto-s8-1790822119281, vakt 2/3, omstart) — 2026-10-01 02:5x–03:2x UTC: VAKTENS /PROC-SOND — fuser-blindheten kurad i SSR-livssonden + synkpalen; NYTT FYND: o55 F2:s sista hål = kedjans egna fork-barn (fork-before-exec-cmdline) [fabrik]
+
+Fabriksagent s8-u2 (vakt; omstart — första försöket 02:35–02:51Z underkänd
+utan commit). VAL: o570 §"ÖPPEN POST TILL NÄSTA s8-VÅG" — fyra verktyg som
+"bär samma fuser-sond"; anspråk disk-först (auto-s8-1790822119281-s8-u2-
+ansprak-fuser-skipet.md), nummer o574 (högsta kända o571).
+
+ROTORSAKA LAGER 1: ssr-livssond.mjs lasHollare körde fuser med fail-open
+("verktyg saknas = ingen hållare") — på SSD Nodes PERMANENT ⇒ kvalitetsvaktens
+(07:02-cron) deploylås-öga TYST BLIND sedan serverbytet. FÖRE-BEVIS i eget
+instrument: sviten 22 PASS/3 FAIL, fallen 6a/6b/6c — sviten håller själv
+låsfilen öppen men lasHollare ser ingen; grinden öppnar och probar mitt i
+"deployfönstret".
+
+ROTORSAKA LAGER 2 (nytt fynd): efter /proc-kuren blev istället 8a/8b RÖDA
+(stabilt ×3, matchande PID = svit-PID+1). /proc-ÖGONVITTNE (pollare 40 Hz)
+fångade skeendet: zcode-bashens `-c`-cmdline bär hela kommandot (matchar
+filnamnsmönster — släktfiltret täcker den), MEN skal-forkade pipe-grenar bär
+mikrosekunderna mellan fork och exec fortfarande FÖRÄLDERNS cmdline — ett
+SYSKON till sviten som pgrep gripper; släkt-uppåt-filtret ser den inte.
+Klass: o55 F2 (observatörens egna) sista hål; timing-känslig ⇒ flaky
+(PASS i redirect-form, FAIL i pipe-form).
+
+KURER: (1) lasHollare → /proc-fd-sond (o570:s mönster ordagrant: realpath +
+/proc/*/fd-readlink, ALDRIG egen flock-probe, sonden kan inte se sig själv);
+(2) lasByggprocess-exkluderingen utvidgad: PPID i släkten ⇒ kedjans egna
+barn är aldrig en äkta byggprocess (äkta deploy är barn till SIN cron/synk-
+familj); död process (proc-läsning fail) ⇒ ingen levande byggprocess;
+(3) _r325-synkpal.mjs fuser-raden → /proc-sond i ren JS (fusrade förut bara
+"command not found"; visar nu "ägare (fd i /proc): PID …"); (4) dok-sanning:
+kvalitetsvakt.mjs:45 + svitens rader 12/139/143 fuser → /proc-fd.
+
+SVITENS OMDISIGN: fall 7:s "främmande byggprocess" var simulrad som BARN AV
+SVITEN — over-realistisk och dödad av ppid-exkluderingen; nu BARNBARN via
+mellan-node (bash aldrig mellanled: exec-ersätter enkla kommandon, svitens
+tidigare metodfynd). NYTT fall 8c: eget fork-barn med mönstret i cmdline ⇒
+INTE byggfönster — testar kuren direkt.
+
+BEVIS: EFTER 26 PASS/0 FAIL/0 SKIP i BÅDA skaformerna (pipe + redirect, exit
+0) · node --check ×4 · SKARPT ELDPROV mot riktiga låset med read-fd ENDAST
+(aldrig flock): {"fore":"ingen","under":"<egen PID>","efter":"ingen","dom":
+"PASS"} · synkpalen levande: låsfil 0 byte sedan 09-28 (flock lämnar kvar —
+doktrinen bestyrkt) + "(fd-ägare: ingen — /proc-sond o574)" · KVD: tsc 0 fel
+projektbinär · mimosa-paritet --doman . GRÖN 0 fynd · src orörd = INGET
+bygge · R2 orörd · data/blogg orörd · syskonytor orörda.
+
+SIDO-FYND O570-FELPOST: rapport-intag-karantan.mjs bär INGEN fuser-sond —
+dess grep-träffar är det svenska ordet "refusera" (falsk positiv i o570:s
+klasscanon); filens enda subprocess = PDF-tolk. Kvalitetsvakten bär sonden
+delegerat via import — kurerad, dok uppdaterad. Lärdom: grep på korta token
+behöver ordgräns-filter.
+
+RESTPOSTER: (1) EFTER-deploy-kvitto — nästa deployfönster skall 07:02-vakten
+doma SSR OMÄTT med PID ur /proc-sonden (första live-beviset på det läkta
+ögat i cron-drift); (2) o570:s engångsfiler _s8u1o570-*.txt i verktyg/ =
+o141-hygien-klass; (3) fall 5c såg ett FAIL under hård /proc-last =
+timeout-artefakt, instrumentets tak (o161 F1-läran), ingen kur; (4) fall 8:s
+monster = svitens filnamn — konstanten följer vid namnbyte.
+
+Protokoll: OPTIMERING/o574-vaktens-proc-sond-forkhal-s8.md. [fabrik]
+
+**s8-u1 v180/o573 (03:2xZ): BYGGARTEFAKT-KUREN — .bygg-kopia + /zcode,
+GUL→GRÖN bevisad.** Natten efter r359:s mimosa-kur (1741 filer/0 fynd)
+mätte samma kommando 3449 filer/3 fynd — samtliga i prod-synkens
+stallningsartefakt `.bygg-kopia/` (arkiverad 23:32:48, alltså FÖRE r359:s
+kur 23:5x; designen lämnar kopian kvar vid fallna fönster). Kvalitets-
+vakten (pumpor r108, 07:02 varje dag) skannar DISKEN med `--doman .` —
+nästa rapport hade dömts GUL på en död artefakt trots kurat träd, medan
+prod-synkens 02:57-rad samtidigt läste den STALE 29/9-rapporten (dess
+_r312-fynd borta sedan dagar): två GUL-källor, olika "rötter". KURER:
+(1) mimosa-paritet v1.7 — `.bygg-kopia` i artefakt-exkluderingslistan
+jämte .next/node_modules (aldrig leveranskod, körs aldrig, gitignorerad);
+(2) två regressionstester (kopia ignoreras + samma farliga mönster i
+levande verktygskod flaggas fortfarande = ingen lucka); (3) rm -rf av
+kopians 2,5 GB (synken stod i VÄNTAR-FABRIK; varje stallnings-/patch-
+fönster börjar med egen rm + git archive HEAD = återskapad färsk ur kurat
+HEAD); (4) bonus: `/zcode` i kvalitetsvaktens SITEMAP_EXKLUDERA — EN-
+TRYCKS-INGÅNGEN (v216) bär robots index:false/follow:false och en
+noindex-sida får ALDRIG listas i sitemap (Search Console-felklassen,
+samma princip som /pro-blocket); vakten falskt-positive:de i sektion 7.
+BEVIS: mimosa-svit 31/31 PASS · kvalitetsvakt-mimosa-kontrakt 12/12 PASS
+· full vaktkörning 03:16:47Z = ANTAL FEL 0 | MANUELLA 0 | **GRÖN**
+(typbaslinjen körde tsc internt = 0 fel; mimosa full-scan 2041 filer
+0 fynd). src/ orörd — ingen deploy behövs. Protokoll o573 (o574 togs
+av s8-u3 mitt i — deras kvalitetsvakt-kommentarrad följde med i min
+commit med notis; deras funktionsändring bor i ssr-livssond.mjs som
+EJ följer med). [fabrik]

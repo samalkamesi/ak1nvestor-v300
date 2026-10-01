@@ -48,7 +48,7 @@
  * i DISS källa (append svarar=true) — episoder byggs PER KÄLLA så att
  * en källas grön aldrig trollbinder en annans larm.
  *
- * Källor (v2):
+ * Källor (v2 + v227):
  *   data/vakten/konfig-larm.jsonl        — jsonl, källa 1 (append-only)
  *   data/vakten/kraschvakt.log           — textjournal, källa 2:
  *     grön:  RÄDDNING KLAR · PM2-RESTART LÄKTE
@@ -58,6 +58,10 @@
  *     neutrala rader (kooldown/TRANSIENT/DEPLOY PÅGÅR/…) deltar ej i
  *     episodbildning men DERAS ts är pulsen för avstannad-detekten.
  *   data/rapporter/kvalitetsrapport-SENASTE.md — källa 3: "**Genererad:**"
+ *   data/vakten/pulsvakt-larm.log       — källa 4 (v227): JSON-rader,
+ *     grön: kalla=extern-aterstall · larm: kalla=extern + niva=hogprio
+ *     (kant-klassen nginx/cert/DNS — kräver root, ägs av kundens sudo-
+ *     kanal; app-nivåns rader deltar EJ, se oversattPulsvaktRader)
  *     -radens ålder ⟶ mätblindhetsnivåer.
  *   data/vakten/larm-eskalering.json     — lägesfil (skrivs om hel; för
  *     ronder/människor/framtid: pulsvakt)
@@ -92,6 +96,7 @@ const ROT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const KALLA = path.join(ROT, "data", "vakten", "konfig-larm.jsonl");
 const KALLA_KRASCH = path.join(ROT, "data", "vakten", "kraschvakt.log");
 const KALLA_KVAL = path.join(ROT, "data", "rapporter", "kvalitetsrapport-SENASTE.md");
+const KALLA_PULS = path.join(ROT, "data", "vakten", "pulsvakt-larm.log");
 const LAGESFIL = path.join(ROT, "data", "vakten", "larm-eskalering.json");
 
 const NIVA_ETIKETT = { 0: "OK", 1: "VARNING", 2: "ESKALERING", 3: "KRITISK" };
@@ -223,6 +228,47 @@ export function oversattKraschvaktRader(text) {
         rader.push({ ts: m[1], niva, typ: "kraschvakt", omrade: klass, medd: klass });
         break;
       }
+    }
+  }
+  return { rader, senasteRadTs, raderTotalt };
+}
+
+/**
+ * Översätter pulsvakt-larm.log (JSON-rader {ts,niva,kalla,detalj}) till
+ * normrader — KÄLLA 4 (v227). Rot-belagt 2026-10-01: nginx dog 06:24
+ * (unattended-upgrades uppgraderade libssl3t64; omstart kräver root) och
+ * pulsvaktens hogprio-"extern"-larm låg i sin logg 5+ gånger utan att
+ * NÅGON mekanism reagerade — exakt o26:s blindhetsklass: vaktnät som
+ * ingen läser. Källan är medvetet SMAL: endast kant-klassen — kalla
+ * "extern" (hogprio) ⇒ larm, kalla "extern-aterstall" ⇒ grön. App-nivåns
+ * hicka ägs av kraschvaktskällan + omstartsmaskineriet, och eftersom en
+ * grön rad stänger ALLA episoder i källan (byggEpisoder-kontraktet) får
+ * app-nivåns "aterstall" ALDRIG vara grön här — den skulle stänga en
+ * levande kant-episod (06:43-fallet samma morgon: app-aterstall mitt i
+ * en öppen nginx-episod). Fingeravtrycket per klass är konstant
+ * (medd = kalla), krasch-vägens princip: detaljerna äger journalen,
+ * klassen äger eskaleringen. SenasteRadTs = SISTA parsade raden (även
+ * icke-översatta: alla pulsvakt-rader är vaktpulsen vid en aktiv episod).
+ */
+export function oversattPulsvaktRader(text) {
+  const rader = [];
+  let senasteRadTs = null;
+  let raderTotalt = 0;
+  for (const rad of String(text ?? "").split("\n")) {
+    if (!rad.trim()) continue;
+    let obj;
+    try {
+      obj = JSON.parse(rad);
+    } catch {
+      continue; // skräprad — journalen får ha ärr
+    }
+    if (!obj || typeof obj.ts !== "string" || Number.isNaN(Date.parse(obj.ts))) continue;
+    raderTotalt += 1;
+    senasteRadTs = obj.ts;
+    if (obj.kalla === "extern" && obj.niva === "hogprio") {
+      rader.push({ ts: obj.ts, niva: "larm", typ: "pulsvakt", omrade: "extern", medd: "extern" });
+    } else if (obj.kalla === "extern-aterstall") {
+      rader.push({ ts: obj.ts, niva: "gron", typ: "pulsvakt", omrade: "extern", medd: "extern-aterstall" });
     }
   }
   return { rader, senasteRadTs, raderTotalt };
@@ -372,12 +418,33 @@ function huvud() {
   // Källa 3: kvalitetsrapportens ålder (v2).
   const kvalitet = bedomKvalitetsrapport(lasKvalitetsrapportTs(KALLA_KVAL), nuMs, granser);
 
+  // Källa 4: pulsvakt-larm.log — kant-klassen (v227).
+  let pulsText = "";
+  try {
+    pulsText = fs.readFileSync(KALLA_PULS, "utf8");
+  } catch {
+    /* vakten kan vara nyinstallerad — tomt är sant, inte fel */
+  }
+  const puls = oversattPulsvaktRader(pulsText);
+  const pulsEpisoder = byggEpisoder(puls.rader);
+  kopplaGronTillEpisoder(pulsEpisoder, puls.rader);
+  const pulsAktiva = markeraAvstannade(
+    pulsEpisoder.aktiva.map((e) => bedomEpisod(e, nuMs, granser)),
+    puls.senasteRadTs,
+    nuMs,
+    granser
+  ).sort((a, b) => b.niva - a.niva || b.varaktighetMin - a.varaktighetMin);
+  const pulsKlara = pulsEpisoder.klara
+    .map((e) => bedomEpisod(e, nuMs, granser))
+    .sort((a, b) => b.varaktighetMin - a.varaktighetMin);
+
   const lag = {
     genererad: new Date(nuMs).toISOString(),
     kallor: {
       konfigLarm: "data/vakten/konfig-larm.jsonl",
       kraschvakt: "data/vakten/kraschvakt.log",
       kvalitetsrapport: "data/rapporter/kvalitetsrapport-SENASTE.md",
+      pulsvaktLarm: "data/vakten/pulsvakt-larm.log",
     },
     granser,
     sammanfattning: {
@@ -391,6 +458,9 @@ function huvud() {
       kraschvaktRader: oversatt.raderTotalt,
       kraschvaktEpisoderAktiva: kraschAktiva.length,
       kraschvaktAvstannade: kraschAktiva.filter((e) => e.avstannad).length,
+      pulsvaktRader: puls.raderTotalt,
+      pulsvaktEpisoderAktiva: pulsAktiva.length,
+      pulsvaktAvstannade: pulsAktiva.filter((e) => e.avstannad).length,
       kvalitetsrapportAlderTim: kvalitet.alderTim,
     },
     aktiva,
@@ -401,6 +471,12 @@ function huvud() {
       senasteRadTs: oversatt.senasteRadTs,
       episoderAktiva: kraschAktiva,
       historikSenaste: kraschKlara.filter((e) => e.historik).slice(0, 10),
+    },
+    pulsvakt: {
+      raderTotalt: puls.raderTotalt,
+      senasteRadTs: puls.senasteRadTs,
+      episoderAktiva: pulsAktiva,
+      historikSenaste: pulsKlara.filter((e) => e.historik).slice(0, 10),
     },
     kvalitetsrapport: kvalitet,
   };
@@ -419,13 +495,21 @@ function huvud() {
         console.log(`[LARM-ESKALERING] NIVÅ ${e.niva} ${e.etikett} (KRASCHVAKT) — ${String(e.nyckel).split("|")[1]} · ${e.upprepningar} larm · aktiv i ${e.varaktighetMin} min (sedan ${e.forstaTs})`);
       }
     }
+    for (const e of pulsAktiva) {
+      if (e.avstannad) {
+        console.log(`[LARM-ESKALERING] NIVÅ ${e.niva} ${e.etikett} (PULSVAKT/KANT) — ${String(e.nyckel).split("|")[1]} · episoden utan loggrörelse i ${e.avstannadMin ?? "?"} min — vakten kan ha dött mitt i kant-avbrottet (appkoll påkallad)`);
+      } else if (e.niva >= 1) {
+        console.log(`[LARM-ESKALERING] NIVÅ ${e.niva} ${e.etikett} (PULSVAKT/KANT) — ${String(e.nyckel).split("|")[1]} · ${e.upprepningar} larm · aktiv i ${e.varaktighetMin} min (sedan ${e.forstaTs}) — kanten (nginx/cert/DNS) kräver root: kundens sudo-kanal`);
+      }
+    }
     if (kvalitet.niva >= 1) {
       console.log(`[LARM-ESKALERING] NIVÅ ${kvalitet.niva} ${kvalitet.etikett} (KVALITETSRAPPORT) — ${kvalitet.orsak}`);
     }
     const his = lag.historikSenaste.length;
     const kraschHis = lag.kraschvakt.historikSenaste.length;
+    const pulsHis = lag.pulsvakt.historikSenaste.length;
     console.log(
-      `[larm-eskalering] ${aktiva.length} aktiv(a) episod(er) varav ${lag.sammanfattning.aktivaEskaleringar} över tröskel · journal ${lag.sammanfattning.rader} rader · senaste rad ${tysthet.minSedan ?? "?"} min sedan · kraschvakt ${oversatt.raderTotalt} rader / ${kraschAktiva.length} aktiv(a) varav ${lag.sammanfattning.kraschvaktAvstannade} avstannad(e) · kvalitetsrapport ${kvalitet.alderTim ?? "?"} h · historik ${his}+${kraschHis} läxa(or)`
+      `[larm-eskalering] ${aktiva.length} aktiv(a) episod(er) varav ${lag.sammanfattning.aktivaEskaleringar} över tröskel · journal ${lag.sammanfattning.rader} rader · senaste rad ${tysthet.minSedan ?? "?"} min sedan · kraschvakt ${oversatt.raderTotalt} rader / ${kraschAktiva.length} aktiv(a) varav ${lag.sammanfattning.kraschvaktAvstannade} avstannad(e) · pulsvakt ${puls.raderTotalt} rader / ${pulsAktiva.length} aktiv(a) varav ${lag.sammanfattning.pulsvaktAvstannade} avstannad(e) · kvalitetsrapport ${kvalitet.alderTim ?? "?"} h · historik ${his}+${kraschHis}+${pulsHis} läxa(or)`
     );
   }
   if (!flaggor.torr) {

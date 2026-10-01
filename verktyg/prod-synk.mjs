@@ -516,6 +516,31 @@ async function httpsOk() {
   return false;
 }
 
+/** V227 — BYTETS DOMARE ÄR APPEN, INTE KANTEN.
+ *  Root-belagt 2026-10-01: unattended-upgrades stoppade nginx 06:24
+ *  (openssl-libssl3t64; omstart kräver root — sudo-vitlistan täcker ej
+ *  nginx). Fyra GRÖNA deployer rullades då tillbaka i en evig loop
+ *  (bygg → byte → HTTPS RÖD → rollback → ombygg) fast appen svarade 200
+ *  på loopback hela tiden. Kurren: deploy-grindens dom efter bytet är
+ *  APPEN på localhost (samme 200+"AK1A-kontrakt som httpsOk); kanten
+ *  (nginx/cert/DNS) bevakas som icke-fatal notis nedan + av pulsvaktens
+ *  hogprio-larm, som äger den klassen (kräver root — aldrig rollback). */
+async function appOk() {
+  for (let i = 1; i <= 4; i++) {
+    try {
+      const r = await fetch("http://localhost:3000/", {
+        headers: { Host: "lab.ak1nvestor.com", "User-Agent": "ak1a-prod-synk" },
+        redirect: "manual",
+        signal: AbortSignal.timeout(20_000),
+      });
+      const t = await r.text();
+      if (r.status === 200 && t.includes("AK1A")) return true;
+    } catch { /* försök igen */ }
+    await new Promise((s) => setTimeout(s, 8000));
+  }
+  return false;
+}
+
 // ---------------------------------------------------------------------------
 // AGENTARBETSYTA-SYNKENS FÖRSVAR (o43; påbörjad s8-u1/o33 2026-09-16,
 // clobber-strandad, färdigställd 2026-09-17): worklog.md är en append-ledger
@@ -1841,7 +1866,22 @@ async function korSynk() {
       return;
     }
     await new Promise((s) => setTimeout(s, 6000));
-    if (await httpsOk()) {
+    if (await appOk()) {
+      // V227: kanten är ej bytets ansvar — men en röd kant ska ALDRIG dö
+      // tyst (nginx-döden 2026-10-01: fyra gröna deployer rullades i onödan
+      // innan kuren). Icke-fatal notis + audit-rad; pulsvaktens hogprio-
+      // larm äger eskaleringen, rollback äger den ALDRIG.
+      if (!(await httpsOk())) {
+        logga(
+          "KANT RÖD (extern HTTPS) men APP GRÖN på loopback — INGET rollback (v227: bytets domare är appen; nginx/cert/DNS ägs av pulsvakt/root) — deploy bokförs",
+        );
+        skrivAudit(
+          "prod-synk",
+          "deploy_app_gron_kant_rot",
+          "nolldowntime",
+          "extern HTTPS röd men loopback grön efter byte — nginx/cert/DNS-klass, medvetet inget rollback (v227)",
+        );
+      }
       // PATCH-KÖNS BOKFÖRING (o46): committa den patchade locken FÖRE
       // DEPLOYAD-markören — annars ser nästa poll kvitto-commiten som ny
       // kod och bygger om i onödan. ok-kvitton skrivs ENDAST när commiten
@@ -1954,9 +1994,11 @@ async function korSynk() {
         logga("AGENTARBETSYTA-SYNK MISSLYCKADES (" + forklaraGitFel(e) + ") — åtgärda nästa rond");
       }
     } else {
-      // V182: rött HTTPS efter bytet ⇒ TILLBAKARULLNING PÅ SEKUNDER —
-      // gamla (bevisat gröna) läget åter på plats + restart; HEAD orörd
-      // och DEPLOYAD-markören oskriven ⇒ nytt försök nästa poll.
+      // V182+V227: röd APP på loopback efter bytet ⇒ TILLBAKARULLNING PÅ
+      // SEKUNDER — gamla (bevisat gröna) läget åter på plats + restart;
+      // HEAD orörd och DEPLOYAD-markören oskriven ⇒ nytt försök nästa
+      // poll. (V227: domaren är APPEN — en röd kant trigger ALDRIG denna
+      // gren längre, den noteras ovan i stället.)
       const rollback = "mv .next .next-ny-kass && mv .next-forra .next && pm2 restart ak1a";
       const rollbackOk = await new Promise((lyckas) => {
         const barn = spawn("bash", ["-c", `exec flock -n /tmp/ak1a-deploy.lock bash -c ${JSON.stringify(rollback)}`], { cwd: ROT, stdio: "ignore", detached: false });

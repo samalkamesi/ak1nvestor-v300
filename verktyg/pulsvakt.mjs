@@ -98,6 +98,10 @@ const st = {
   autoAvstangd: false,
   varv: 0,
   sokVantarDeploy: false,
+  // (c) extern-kollens felseri — driver gröna stängningsraden när kanten
+  // åter svarar (v227: episoden i larm-eskaleringen källa 4 ska kunna
+  // STÄNGAS; utan raden förblir varje kant-avbrott en spökepisod).
+  externFelvarv: 0,
   // (d) statiskt kontraktstest — läs-yta: statusfilens statiskStatus/statiskSenasteFel
   statiskStatus: "ej-matt",
   statiskSenasteFel: null,
@@ -137,6 +141,7 @@ function skrivStatus(falt) {
           lever: true,
           felIRad: st.felrad,
           sokVantarDeploy: st.sokVantarDeploy,
+          externFelvarv: st.externFelvarv,
           autoOmstandAvstangd: st.autoAvstangd,
           varv: st.varv,
           statiskStatus: st.statiskStatus,
@@ -404,8 +409,21 @@ async function kontrollvarv(externOckså) {
   }
 
   // ── Externt fel (c): kan ej åtgärdas utan sudo → högprio direkt ─────────
-  if (externOckså && !c.ok) {
-    larma("hogprio", "extern", c.text);
+  // v227: felserien räknas och stängs med en GRÖN rad när kanten svarar
+  // igen — larm-eskaleringen (källa 4) bygger episoder på just dessa rader
+  // och en episod utan stängning lever för alltid (spökepisod-klassen).
+  if (externOckså) {
+    if (!c.ok) {
+      st.externFelvarv += 1;
+      larma("hogprio", "extern", c.text);
+    } else if (st.externFelvarv > 0) {
+      larma(
+        "info",
+        "extern-aterstall",
+        `extern svarar igen (200) efter ${st.externFelvarv} felvarv — kant-episoden stängs (v227)`,
+      );
+      st.externFelvarv = 0;
+    }
   }
 
   // ── (d) Statiskt kontraktstest: HTML:ens egna tillgångar ────────────────

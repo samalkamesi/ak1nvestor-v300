@@ -20476,3 +20476,38 @@ barn committat och ytan renar.
 5. **v219-FÖNSTRET (bokning kvarstår):** runtime-uppgraderingen väntar
 fabrik-tyst + ledigt deploy-lås. Korrekt ordning: deploy-bygget landar →
 fabriken s8 avslutar → fönstersond → v219 med G1–G4-grindarna.
+
+## VÅG 223 (2026-10-01 04:2xZ, hjärtslagsrond [organ:Φ]) — BUNTSLAGSRACE-ANALYSEN + koordinationsgapet dokumenterat
+
+**UTLÖSARE (hjärtslag 04:2x):** prod-synkens rad 04:19:55Z — "BUNTSLAGS-
+RACE: trädet flyttade under bygget (b55660a4 → df893563) — byte avbryts,
+ombygg nästa poll": fabrikens s8-u2-barn committade mittemot deploy-bygget
+som hungrig deploy startat med fabriken igång (03:24-undantaget). HELA
+52-minutersbygget på ombyggs-kö; am-10 fortfarande 404; push-kön bakom
+ombygget.
+
+**FYND — tre race på ett dygn, samma rot:** (1) v221:s ko-incident (två
+sessioner, samma merge, 01:54), (2) zcode-dubbelleveransen (03:0x–03:2x),
+(3) buntslagsracet (04:19). Rot: prod-trädet har ≥3 samtidiga skrivare
+(huvudsessioner, fabriksbarn, prod-synk) utan gemensam byggfönster-semafor —
+kollisionerna upptäcks av git-spärrarna EFTERÅT (säkert men dyrt: merge-
+cykler + ombyggs-cykler).
+
+**LEVERANS — O575-BUNTSLAGSRACE-ANALYSEN**
+(data/forskning/OPTIMERING/o575-buntslagsrace-analys.md): händelsetabell
+med kostnader, nulägets skydd (updateInstead-spärr + buntslagskontroll +
+V235-sekvens — alla bevisat säkra), riskbilden (hungrig deploy + aktiv
+fabrik = race-ruta; nästa 12-manifest kan ge flera race i rad) och TRE
+lösningar: R (prod-synken väntar FABRIK-TYST efter abort i stället för
+blott nästa poll — liten ändring i EGEN fil), K (generaliserad v221-regel:
+INTENT-statusfil före commit), NI (acceptera kostnaden — motargumenterat
+med kunddirektivet "dagar ska ta mindre än timmar"). Rekommenderad ordning:
+v224 = R-lösningen (minskar även v219-fönstrets egna race-risk) → v219
+fortsatt gated. INGEN kod ändrad i maskineriet — fabrik + synk aktiva i
+sina filer; noten är dataleverans.
+
+**FABRIKSLÄGET VID RONDEN:** s8-u1 + s8-u2 KLARA (2/3, försök 2; s8-u2
+levererade o574 /proc-sond-kuren + efterkvitto e6a98254 med ÄKTA deploy-
+fönster-bevis — deras sond såg bygget som fuser aldrig kunnat se), s8-u3
+på sista stretch (28+ min, hundvakts-filer i ytan). Långpollaren lever
+(32 min av 60) och pushar v222-leveransen när ytan renar.

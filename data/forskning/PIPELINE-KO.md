@@ -665,3 +665,13 @@ Nästa i kön (händelsestyrda): nattens G2/G5-kvitton 02:30–06:27 UTC 29/9 (7
 | deep-courses-notis | 21,3 MB JSON (41–45 s under last 11) — diagnos: hämtas HELA endast av ADMIN-panel + crawlers; kunder via /api/kurs/[slug] | ✓ AVSKRIVEN som kundproblem; notis: förkomprimering om AI-crawlertrafik växer |
 | v222-push | Rundleveransen (worklog + verktyg) köad bakom fabrikens prod-yta | ⟳ LÅNGPOLLARE _v222-langpollare.mjs (fast-forward-disciplin, merge-abort-vid-konflikt) |
 | v219 BOKAD | Runtime-uppgradering (oförändrad bokning) | VÄNTAR — ordning: deploy-bygget (rullar sedan 03:27 i JÄRN-U1-ställning) → fabriken s8 avslutar → fönstersond → v219 med G1–G4 |
+
+
+## ROND v223 [organ:Φ] (2026-10-01 04:2xZ, hjärtslag) — buntslagsrace-analys + kön omrokaderad: v224 (R-lösningen) före v219
+
+| Post | Innehåll | Status |
+|---|---|---|
+| buntslagsracet | prod-synk avbröt dubbelbytet 04:19:55Z (trädet flyttade under bygget: s8-u2:s commit mittemot hungrig deploy) — 52-min bygg på ombyggskö | ✓ ROTANALYSERAD — o575-buntslagsrace-analys.md (tre race/dygn, samma rot: tre skrivare utan byggfönster-semafor) |
+| v224 BOKAD | R-LÖSNINGEN: prod-synken väntar FABRIK-TYST efter buntslags-abort (idag: blott nästa poll = ombygget kan starta rakt in i nästa barn-commit) — liten ändring i egen fil verktyg/prod-synk.mjs; fönsterkrav: fabrik tyst + lås fritt; KVD: tsc 0 + torrkörning med simulerad abort-logg | NÄSTA (före v219 — minskar dess fönsterrisk) |
+| v219 BOKAD | Runtime-uppgradering 3.11.2→3.14.4 (oförändrad) | VÄNTAR — nu EFTER v224; fortfarande: fabrik-tyst + ledigt lås + G1–G4 |
+| v222-push | Långpollaren (32/60 min vid rondens slut) | ⟳ LEVER — pushar ccac7fbd+d8cb2c25(+v223) när prod-ytan renar; merge-abort-vid-konflikt |

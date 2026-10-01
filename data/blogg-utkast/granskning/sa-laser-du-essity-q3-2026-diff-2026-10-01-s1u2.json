@@ -1,0 +1,88 @@
+{
+ "objekt": "data/blogg-utkast/kvartal/2026-q3/sa-laser-du-essity-q3-2026.json",
+ "granskare": "s1-u2 manifest auto-s1-1790858103968",
+ "datum": "2026-10-01",
+ "byggvintage": "9839c5304 (120-postfilen 2026-09-16 01:44 — byggarens deklarerade medianunderlag; ESSITY-fälten identiska i dagens 328-träd)",
+ "utkastMd5Fore": "c0272d3df25e6ab33f2e26a7d02731cb",
+ "dom": "GRÖN EFTER DIFF — FLYTTKLART (publicering = kundens beslut, R2)",
+ "sond": "verktyg/_s1u2-essity-kontroll.mjs (93 OK · 8 FEL · 3 NOT — FEL:en = denna diffs satser)",
+ "satser": [
+  {
+   "id": "D1",
+   "klass": "F1-väsentlig",
+   "yta": "body — Vågvalideringens öppna kvitto",
+   "motiv": "Hel-basbygge-profilen delas av FYRA bolag i vågvalideringens universum (ESSITY-B, ERIC-B, AZN, SKF-B — samtliga fyra dömda horisonter bar basbygge); bestämd singular 'universumets renodlade basbygge-fall' antyder falsk unikhet. Essitys belagda superlativ är minst rörelse: missrymd över tröskeln 12,3 pp (2,1+5,1+5,1) mot AZN 61,2 · ERIC-B 60,3 · SKF-B 385,7.",
+   "from": "Essity är universumets renodlade basbygge-fall: samtliga fyra dömda horisonter bar klassen basbygge, och kvittot blev därefter",
+   "to": "Essity är ett av universumets fyra hel-basbygge-bolag (med Ericsson, AstraZeneca och SKF) men det med minst rörelse i klassen: samtliga fyra dömda horisonter bar klassen basbygge, och kvittot blev därefter"
+  },
+  {
+   "id": "D2",
+   "klass": "F1-väsentlig",
+   "yta": "body — Praktiskt inför 22 oktober (sista stycket)",
+   "motiv": "Samma falska unikhet på andra ytan; superlativen ersätts med den belagda (minsta rörelserna).",
+   "from": "Essity går in där med universumets renaste basbygge-profil",
+   "to": "Essity går in där med en hel-basbygge-profil och klassens minsta rörelser"
+  },
+  {
+   "id": "D3",
+   "klass": "F1-väsentlig",
+   "yta": "description",
+   "motiv": "Samma falska unikhet på metaytan.",
+   "from": "en träff och tre missar i universumets renaste basbygge-profil",
+   "to": "en träff och tre missar i en hel-basbygge-profil med klassens minsta rörelser"
+  },
+  {
+   "id": "D4",
+   "klass": "F2-tvingande",
+   "yta": "body — Övning B, marginalvikts-formelns jämförelserad",
+   "motiv": "Textens egen utskrivna formel (marginalvikt = 1 ÷ (3 × marginalnivån)) ger för textens egna bankmarginaler 50–54 %: 1/(3×0,50) = 0,667 … 1/(3×0,54) = 0,617 — 'vikten 0,5' håller inte mot någon av dem (intäktsratten '1,5–1,6 gånger' = 3×m är formelviktens invers och stämmer).",
+   "from": "Bankerna (50–54): vikten 0,5 — alltså intäktsratten tyngst, 1,5–1,6 gånger.",
+   "to": "Bankerna (50–54): vikten 0,6–0,67 — alltså intäktsratten tyngst, 1,5–1,6 gånger."
+  },
+  {
+   "id": "D5",
+   "klass": "C1-språk",
+   "yta": "body — Övning C, sista meningen",
+   "motiv": "'handssignal' är felstavning av 'handelssignal' — wihlborgs-B3/iberdrola-C1-felklassen (tredje förekomsten i serien).",
+   "from": "aldrig en handssignal.",
+   "to": "aldrig en handelssignal."
+  },
+  {
+   "id": "D6",
+   "klass": "C2-språk",
+   "yta": "body — Övning A, tredje meningen",
+   "motiv": "'dubbelt Eckliga' är inget svenskt ord.",
+   "from": "Träningsfrågorna är dubbelt Eckliga just för att serien svänger",
+   "to": "Träningsfrågorna är dubbelt kluriga just för att serien svänger"
+  },
+  {
+   "id": "D7",
+   "klass": "C3-språk",
+   "yta": "body — Nyckeltalen/Lönsamhet ROIC-rad",
+   "motiv": "Två grammatikbrott i en mening: '(olik bankerna)' → '(till skillnad från bankerna)' och 'men bära med' → 'men bär med sig'.",
+   "from": "Måttet är meningsfullt här (olik bankerna) men bära med källans not:",
+   "to": "Måttet är meningsfullt här (till skillnad från bankerna) men bär med sig källans not:"
+  },
+  {
+   "id": "D8",
+   "klass": "B1-metadata",
+   "yta": "metadata.publishedAt",
+   "motiv": "Kalenderkällans rappdag är 2026-10-22 (officiell IR-kalender via kalender-konsument.json; bodyns egen rappdagsrad 22 oktober) — 2026-10-20 är två dagar fel. Syskonkontraktet: Vår Energi-paketet bär sin rappdag som publishedAt.",
+   "from": "2026-10-20",
+   "to": "2026-10-22"
+  },
+  {
+   "id": "D9",
+   "klass": "B2-metadata",
+   "yta": "metadata.readingMinutes",
+   "motiv": "600-ordskontraktet (fabege-F6): round(2 789/600) = 5, inte 6. Byggaren deklarerade själv 2 789 ord; Efter satserna förblir kontraktet 5 (≈2 802 ord).",
+   "from": "6",
+   "to": "5"
+  }
+ ],
+ "noter": [
+  "M13 drift: dagens 328-postfil ger konsument pe-median 19,713 (n=43) och universum 19,429 (n=315) — utkastet deklarerar öppet vintage 2026-09-16 (120-bolagsfilen); nya medianer tas vid nästa underlagsrefresh, inget utkastfel.",
+  "A10: tröskel-±6 bär tre gånger, konsistent med m9-6-konstanten.",
+  "P3: 'med sju paket i böcken' — serieägarens stilval, lämnas."
+ ]
+}

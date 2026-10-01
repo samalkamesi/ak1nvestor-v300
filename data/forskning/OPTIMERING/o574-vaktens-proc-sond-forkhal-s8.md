@@ -98,8 +98,12 @@ FAIL i pipe-form, tre gånger i rad.
   2542300/03/05 + "next build" PID 2542369 — sviten domade korrekt
   MANUELL/OMÄTT i ca 16 fall; fuser såg ALDRIG detta på SSD Nodes) och landade
   committen via `git commit -F`-mönstret (pre-commit-hooken kör tsc mekaniskt
-  = typgrind härdad). 26/0-omkörning i fritt fönster + mimosa-omkörning
-  lämnas som EFTER-kvitto — kvitto-posten below §6 utökas (tredje punkten).
+  = typgrind härdad). EFTERKVITTO LANDAT (04:2xZ, fritt fönster — deploytåget
+  släppte låset 04:20:40Z): sviten omkörd av omstart 3 i BÅDA skaformerna —
+  pipe: 26 PASS / 0 FAIL / 0 SKIP · redirect: 26 PASS / 0 FAIL / 0 SKIP
+  (exit 0 båda) — försök 2:s tal omoberoende bekräftade. Mimosa-omkörning
+  lever kvar som restpost (kurens exekveringsyta KRYMPT: spawn fuser borta,
+  ren JS /proc-läsning in — ingen ny exekveringsklass togs till).
 - **Skarpt eldprov** mot det RIKTIGA låset
   (`/tmp/_s8u2o574-skarp-eldprov.mjs`): read-fd ENDAST (ALDRIG flock —
   deployläget heligt): `{"fore":"ingen","under":"2528817","efter":"ingen",

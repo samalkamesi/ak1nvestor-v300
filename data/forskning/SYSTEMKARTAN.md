@@ -2691,7 +2691,7 @@ i sviten själv (en --hoppa-over-rad) så CLI-kanon blir mindre avgörande.
 
 | # | System | Grupp | Läge | Score | Topp-gap |
 |---|--------|-------|------|-------|----------|
-| A1 | Kursplattformen (495 kurser, quiz, XP, case) | Utbildning | LEVER | 8 | 09-24 (s9-u2): 495 EGENMÄTT i fem led (siffror · deep-courses · sok-index · **larvag-synk GRÖN 495=495=495**) medan registerglidningen PAUSAD (495 stabilt 3 dygn, sista s5 496466f6 09-22); quiz-frågan ROTBESVARAD: chapters[].quiz EGEN = 8 223 EXAKT (generatorn korrekt), 161 kurser quizlösa = samtliga s5-tillop — strategi, ej fel; ytkod = v160-finslip enbart (SektionsCta/kurser-chip), kärnan orörd; gap 1 återmätt 0 sviter; /kurser · /laroplan · /labb 200; bokmaster 105 disk/103 räknade |
+| A1 | Kursplattformen (507 kurser, quiz, XP, case) | Utbildning | LEVER | 8 | 10-01 (s9-u1): 507 EGENMÄTT i sex led (siffror · deep · sok-index · karta 547 r · larvag-synk GRÖN EGEN 507=507=507 · 0 fantomer) efter nattens TRESPÅRSLEVERANS — v167 atomära kapitel 09-24 18:12 (quiz 8 283/XP 82 830; medQuiz 334 oförändrat bevisar kapitel-ej-kurser) + barnens sex 826267256 + v221-läkningen 91bf24c56 av merge-theirs-förlusten (trådens sex tyst plockade ur åtta genererade filer medan käll-JSON:erna levde = tyst-död-klass, KO-incident, läkt via kanonisk pipeline); quizlösa 161→173, alla tolv nya 0 quiz EGEN i BÅDA ändar (v221:s "barnens sex bär 60" = felformulering, +60 är v167:s); PROD-KLYFTA EGEN (E31-klassen): BUILD_ID 00:13 FÖRE leveranserna, startsida 501-tal, trådens kurs 200/barnets 404 = .next ur trådens disk-läge — 507-paritet väntar nästa gröna deploy; ytan rörd av v178 chip-WCAG-kur + v207-u4; fas 18+24 · kanon 102/96 · bokmaster 105/103 · labb 201 oförändrade; kärnan kodstilla 09-07; gap 1 återmätt 0 sviter |
 | A2 | Lärvägen + läroplanen | Utbildning | LEVER | 7 | 09-20 (s9-u3): registret 458 (+38 på 2 dygn från 420; s5-vågorna kontinuerliga, rebas-commit 8f8ca693 efter prod-synkens trädrensning); synk EGEN GRÖN 458=458=458 · 21 profiler · 0 fantomer; kärnan larvag.ts 458 r orörd sedan v99 (wc -l exakt; metodnotis: split-räkning ger +1 utan avslutande nyrad); karta 497 r; /laroplan + /en/laroplan + /api/larvag 200; regressionssvit + E2E-inloggning saknas fortfarande |
 | A3 | AI-Mentorn (89 deterministiska svarsmotorer + modellager) | Utbildning | LEVER | 9 | 09-28 (s9-u3): kedjan 314 PASS/0 FAIL EGEN (kontroll H: **89 motorer/229 monsters**, disjunkta id ×89; +16 motorer på 7 dygn sedan 09-21 — s6-fabrikens 09-28-vågor årsreview+ägarslut+faktorfäder, kategoristängningar PORTFÖLJHANTERING 15/15 + PE/IB 17/17 delad med syskon + FAMILJIEKONTORET tredje ägarformen); E01 GRÖN **495/495 fält-för-fält EGEN** (bas 26/0; rebaken höll genom 476→495); **94 sviter** · 88 fragor-filer + basen (ls); SIDOFYND: quiz **8 283** (+60 mot 09-24:s "EXAKT 8 223" — A1/A5/E32:s frusna tal åldras); dataset-medianer okopplade; E2E mot levande medlems-API återstår |
 | A4 | Daglig träning (dagens pass, veckoplan, kunskapsflöde) | Utbildning | LEVER | 7 | 0 egna sviter (återmätt 09-19); determinismen TREDJE verifieringen: offline-hash = prod-svar exakt samma dag (09-19 SWED-A.ST); hashen kan repetera dagar (09-19+09-20 båda SWED-A.ST — dagsurval, ej rotationsgaranti); kodstilla sedan 09-16; dagens quiz betjänar frusna quiz-beståndet (8 223 sedan 09-15) |
@@ -3569,7 +3569,38 @@ disk-först-precedensen gäller) · commit med pathspec + -F-fil. [fabrik]
 
 # A. UTBILDNINGENS KÄRNA
 
-## A1. Kursplattformen — LEVER — 8/10 *(uppdaterad 2026-09-24)*
+## A1. Kursplattformen — LEVER — 8/10 *(uppdaterad 2026-10-01)*
+
+*Uppdatering 2026-10-01 (dokvåg s9-u1, manifest auto-s9-1790829326214):
+registerklyftan sprungen — talen 495→**507** EGENMÄTT i sex led (siffror.json
+· deep-courses 507 nycklar · sok-index.kurser 507 · karta 507 poster ·
+larvag-synk EGEN KÖRNING GRÖN 507=507=507 · 0 fantomer · exit 0) efter
+nattens TRESPÅRSLEVERANS: (1) v167 atomär integration 09-24 18:12 — 20
+övningskapitel i EXISTERANDE kurser = quiz 8 223→**8 283** (+60) · XP
+82 230→**82 830**; medQuiz 334→334 OFÖRÄNDRAT bevisar att +60 sitter i
+redan-quizbärande kurser (kapitel, ej kurser — 20×3); (2) barnens sex
+kurser 826267256 10-01 01:39; (3) v221-läkningen 91bf24c56 02:02 — merge
+4566b806:s theirs-lösning hade TYST plockat utvecklingstrådens sex kurser
+ur de åtta genererade filerna medan käll-JSON:erna levde kvar i
+kurser-tillagg (tyst-död-klass; KO-incident: två sessioner löste samma
+merge parallellt) — läkt via kanonisk pipeline, dagens mtime 02:03 på
+samtliga fyra genererade måttfiler. QUIZ-KLARLAGT: quizlösa kurser
+161→**173** (34 %) — alla tolv nya bär 0 quiz EGEN I BÅDA ÄNDAR (källfil
++ deep = inget leveransgap); v221-commitens "barnens sex bär 60" är en
+FELFORMULERING — +60 är v167:s kapitelquiz. PROD-KLYFTA EGEN MÄTT
+(E31:s deploy-klyfte-klass): .next BUILD_ID 10-01 00:13 = FÖRE alla tre
+leveranserna; startsidan bär 501-talet (ej 507), trådens kurs
+/kurser/ud-10-ex-dagens-mekanik **200** men barnets
+/kurser/am-10-insynslistan **404** = .next byggdes ur trådens disk-läge
+(495 + trådens sex) — full 507-paritet med barnens sex live väntar nästa
+gröna deploy (ägare: prod-synken). /kurser · /laroplan · /labb 200 ×3
+EGEN loopback; fas 18+24 · kanon 102/96 · bokmaster 105 disk/103 räknade
+(kosmetisk kvarstår) · /labb 201 case — allt oförändrat; kärnan
+kurs-access 274 r kodstilla sedan 09-07 medan A1-YTAN rörs av kundsynlig
+finslip: v178 ny-chip-WCAG-kuren (39625f98f 09-26, kontrast 1,61→8,6:1)
++ v207-u4 konverteringsresan (09-29) + content.ts 847185f81 09-29
+(bloggens datumfilter, A1-filen men C15-kapabilitet). Dom LEVER 8 —
+E33/B14-precedensen (datatillväxt, gap orörda).*
 
 *Uppdatering 2026-09-24 (dokvåg s9-u2, manifest auto-s9-1790257516357):
 nattens köpost "(2) A1/C18/E32 bär 495-talet + quiz-frågan" fullgjord —
@@ -3635,9 +3666,9 @@ o47:s felgren ÅTER, r58-kuren greppte ej) medan läkningen är RAM-blockerad
 onåbar för kunden tills synkens nästa bygge landar; statiskt / 200. Gap 1
 oförändrat (kurs-access-testsvit: 0 träffar i verktyg/, mätt).*
 
-- **Vad:** Plattformens ryggrad: 495 kurser × 3 språk (deep-courses.json,
-  103 bokmaster-kurser + egna), 8 223 quizfrågor (82 230 XP; 161 av kurserna
-  quizlösa — s5-tillopen 09-15→09-21), 201 analyscase
+- **Vad:** Plattformens ryggrad: 507 kurser × 3 språk (deep-courses.json,
+  103 bokmaster-kurser + egna), 8 283 quizfrågor (82 830 XP; 173 av kurserna
+  quizlösa — s5-tillopen 09-15→09-21 + v221:s tolv 10-01), 201 analyscase
   (/labb), kurs-access i tre nivåer (gratis-Fas 1 för alltid, 18 Fas 2- och
   24 Fas 3-kurser bakom ansökan), XP/stjärnor per kurssteg.
 - **Nyckelfiler:** src/lib/content.ts (199 r), src/lib/kurs-access.ts (274 r,
@@ -7919,3 +7950,53 @@ data/forskning/VAKTTORNET-ATERSKAPANDE-r350.md (rekonstruktionsbevis+trösklar).
 KVD (r351 dokvåg): read-only mätning (crontab ENDAST LÄST; rapport/logg-filer
 lästa) · data-only commit · src orörd = INGET bygge · R2 orörd · egna mått
 tidsstämplade 20:0xZ UTC.
+
+## UPPDATERING 2026-10-01 (dokvåg s9-u1, manifest auto-s9-1790829326214 — A1 Kursplattformen diffad mot verkligheten; nattens trespårsleverans 495→507 + v221:s merge-theirs-läkning + en EGENMÄTT prod-klyfta)
+
+**VARFÖR denna sektion:** kartans senaste A1-passning (09-24, s9-u2) mätte
+495/8 223 — sedan dess tre leveranser på fem dagar utan att kartan följt
+med: v167 (09-24 18:12, EFTER passningens mätning samma dag), barnens sex
+kurser (10-01 01:39) och v221-läkningen av merge-theirs-förlusten (10-01
+02:02, med KO-incident bokförd i commit 91bf24c56 men inte i kartan).
+Egenmätt mot verkligheten 10-01 ~04:4xZ (JSON-läsningar · git show · EGEN
+larvag-synk-körning · loopback-HTTP):
+
+| Mått | Kartan (09-24) | Verkligheten (10-01 EGEN) | Bevis |
+|---|---|---|---|
+| Kurser | 495 | **507** | siffror.json 507 · deep 507 nycklar · sok-index.kurser 507 · karta 507 poster (547 r) · **larvag-synk GRÖN 507=507=507 EGEN körning, 0 fantomer, exit 0** |
+| Quiz/XP | 8 223 / 82 230 | **8 283 / 82 830** | EGEN chapters[].quiz-räkning = siffror.json exakt |
+| Quizlösa kurser | 161 | **173** (34 %) | alla tolv nya bär 0 quiz EGEN i BÅDA ändar (källfil kurser-tillagg + deep) |
+| Fas 2/3 · kanon · bokmaster · labb | 18+24 · 102/96 · 105/103 · 201 | **oförändrade** | siffror.json + ls + data/export |
+| Kärnkod | kurs-access 274 r (09-07) | **kodstilla 24 d** (09-07 fortfarande senaste) | git log src/lib/kurs-access.ts |
+| A1-yta | v160-finslip | **+ v178 ny-chip-WCAG-kur** (39625f98f 09-26, 1,61→8,6:1) **+ v207-u4 konverteringsresan** (09-29) | git log kurser/** |
+| Prod | — | **KLYFTA: .next BUILD_ID 00:13 FÖRE tre leveranser; startsida 501-tal; /kurser/ud-10-ex-dagens-mekanik 200 men /kurser/am-10-insynslistan 404** | loopback EGEN; .next bär trådens disk-läge (495+trådens sex) — 507-paritet väntar nästa gröna deploy (E31:s klass, ägare prod-synken) |
+
+**QUIZ-RÄTTELSEN (kartans precisionsuppgift):** v221-commitens "barnens
+sex bär 60" är en FELFORMULERING — EGEN räkning i båda ändar visar 0 quiz
+för alla sex barnkurser (källfil OCH deep, kapiteln saknar quiz-fält);
++60-quizen är v167:s 20 atomära övningskapitel (09-24 18:12) i redan-
+quizbärande kurser — medQuiz 334→334 OFÖRÄNDRAT är mekanismbeviset
+(kapitel i gamla kurser, ej nya kurser med quiz). Unionens 8 283 är ändå
+korrekt bokfört i siffror.json.
+
+**TIDSLINJEN bakom 507 (allt git-verifierat):** v167 ed3e416be 09-24
+18:12 (+60 quiz, kurser 495) → 53543fcf 10-01 00:27 (trådens sex kurser,
+495→501 i utvecklingstråden) → 826267256 01:39 (barnens sex, →507) →
+merge 4566b806 01:54 (theirs-lösning tyst plockade trådens sex ur åtta
+genererade filer medan käll-JSON:erna levde kvar i kurser-tillagg =
+tyst-död-klass; KO-incident: två sessioner löste samma merge parallellt)
+→ 91bf24c56 02:02 v221-läkningen (register-rader ur 53543fcf + lagg-
+till-kurs ×6 + bygg-larvag-karta + kor-sokindex + kor-speglar + rakna-
+siffror + llms 501→507 ×2) = dagens 507-läge; de fyra genererade
+måttfilerna bär alla mtime 02:03.
+
+**Dom:** LEVER 8/10 OFÖRÄNDRAD — datatillväxt + kundvärdesleverans utan
+kapabilitetsrörelse (E33/B14-precedensen), prod-klyftan ägs av prod-synken
+(E31:s klass, inte A1:s gaplista), merge-theirs är processläxa (bokförd
+av v221: "merge-lösningar kommuniceras via statusfiler FÖRE commit").
+Gap 1–4 oförändrade (kurs-access-svit fortfarande 0 träffar återmätt).
+
+KVD (s9-u1): read-only mätning + EGEN verifieringskörning larvag-synk
+(exit 0, verktygets egen bevisfil) · data-only commit (SYSTEMKARTAN) ·
+src orörd = INGET bygge · R2 orörd · tsc obehövs (ingen kod berörd) ·
+egna mått tidsstämplade 04:4x–04:5xZ UTC.

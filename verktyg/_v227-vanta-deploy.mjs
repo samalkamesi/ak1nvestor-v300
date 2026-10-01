@@ -6,9 +6,9 @@ import { readFileSync } from 'node:fs';
 
 const LOGG = '/home/ak1a/AK1/data/vakten/prod-synk.log';
 const MARKOR = '/home/ak1a/AK1/data/vakten/senaste-deployad.txt';
-// Mål-hashar: kurens bokföringscommit + svitcommiten (pushad under bygget —
-// buntslagsrace-vakten kan ha tvingat ombyggde från den senare)
-const MAL_HASHAR = ['62bd7657', '05605b55'];
+// Mål-hashar: kurens bokföringscommit + svitcommiten + kompletteringen
+// (pusharna mitt i byggena tvingade ombyggen — buntslagsläran)
+const MAL_HASHAR = ['62bd7657', '05605b55', 'edf578aa'];
 const START = Date.now();
 const TAK_MS = 75 * 60_000;
 

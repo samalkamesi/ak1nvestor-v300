@@ -30424,5 +30424,411 @@
         1356000000
       ]
     }
+  },
+  {
+    "ticker": "HO.PA",
+    "namn": "Thales S.A.",
+    "bransch": "industri",
+    "land": "Frankrike",
+    "valuta": "EUR",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-10-01",
+        "url": "https://stockanalysis.com/quote/epa/HO/ (+ /statistics/ + /financials/ + /financials/balance-sheet/ + /financials/cash-flow-statement/)",
+        "paranoid": "EPA-PRIMÄRNOTING i EUR (S&P GMI-underlag; SA-html ordagrant via curl — sammanfattningslagret kasseras, s2u2-metodfynd omg33; kanon: verktyg/_s2u3o34-kanon.mjs): kurs 224,40 EUR (översiktens huvudtal; dagens spannr 223,70–227,10; källans Price Target-fält 293,32 (+30,71 %) är ANALYSKURS ej handelskurs — s2u2-fällan förtjänstfullt fångad igen), mcap 46,13 mdr EUR (aktiebas 205,46 M; replik 224,40×0,20546 = 46,107 = 0,05 % band), EPS TTM 7,26, P/E 30,93 (replik 224,40/7,26 = 30,909 = 0,07 % band; mcap/netto 46,13/1,496 = 30,84 — fältets bas är EPS-vägen), fwd P/E 19,33 ⇒ prognosTillväxt +60,01 % implicit, PEG 0,52 = 30,93/60,01 mallens konvention (källans PEG-fält 0,80 på deras EPS-tillväxtsbas — redovisad), P/B 5,75 = 46,13/8,007 EK-total EXAKT (BVPS-fältet 38,97 ger 5,76 — raden bär mcap/EK-vägen), EV 46,66 mdr = mcap 46,13 + skuld 5,575 − kassa 5,056 + minoritet 0,011 = 46,66 EV-IDENTITETEN EXAKT, EV/EBIT 18,22 källans fält (replik 46,66/2,373 = 19,67 — källans bredare EBIT-bas 2,563, spannet dokumenterat) · EV/EBITDA 13,28 · EV/Sales 2,04 · EV/FCF 11,66 · EV/Earnings 31,19, D/E 0,70 = 5,575/8,007 EXAKT · räntetäckning 10,59 · Debt/EBITDA 1,68 · Debt/FCF 1,39, ROE 19,35 % källans fält · ROA 3,76 · ROIC 22,76 mot WACC 4,74 = +18,02 pp (cellens bredaste värdeskapningsgap — låg kapitalbindning + statliga kontrakt) · ROCE 17,49, marginaler TTM: brutto 26,86 % = 6,130/22,821 EXAKT · EBIT 10,40 % = 2,373/22,821 EXAKT · netto 6,55 % = 1,496/22,821 EXAKT · FCF 17,54 % = 4,003/22,821 EXAKT — FY23 FY22 FY21 alla fyra repliker exakt på kolumnbas, FCF-IDENTITETEN: OCF 4,685 − capex 0,6828 = 4,002 (källans FCF-rad 4,003 — avrundning), fcfYield 8,68 % = 4,003/46,13 EXAKT, FCF-M 17,54 > netto-M 6,55 (båda EXAKTA — orderförskottens kassalogik: kunderna finansierar tillverkningen), utdelning 3,90 EUR/år (1,74 %), DPS-trappan 2,56→2,94→3,40→3,70→3,90 (FY21→25: +52 % på fyra år, källans Dividend Per Share-rad), betald TTM 801,3 M = 3,90×205,46 M EXAKT (payout 53,6 % av netto), återköp −43,7 M TTM, aktiebas 212,92→205,46 M FY21→25 (−3,5 %), insiders 0,02 % · institutioner 19,68 % (källans fält — franska statens APE-block utanför källans insiderdefinition), float 89,73 M, beta 0,12 (5Y), 52-v 212,60–279,30 med kursen −15,57 % på 52v UNDER MA50 245,07 och MA200 243,13, RSI 34,61 (kursens motcykel mot orderbokens tillväxt — kvartilpedagogikens kontrastfall; källans tal), analytiker Köp med PT 293,32, 84,958 anställda (källans rev/anställd 277,923 — replik 22,821 mdr/84,958 = 268,6k, källans bas dokumenterad; vinst/anställd 18,217), skatt 325,2 M / eff. 18,12 % (patentbox-Struktur), ORDERBOKEN källans backlog-fält: 34,744→40,957→45,251→50,602→53,323 M€ FY21→25 (+53 % på fyra år; TTM-kolumnen bär inte backlog — senaste året FY25 redovisas) = 2,41× FY25-omsättningen, segment TTM: Defence 12,969 (56,8 % av omsättningen) + Aerospace 5,930 + Cyber & Digital 3,787 + Other 134 = 22,820 (huvudtal 22,821, diff 1 = avrundning), TBV −2,482 M (goodwill 8,644 + immateriella 1,845 — förvärvs和历史), netto-skuld −519 M (FY23 −4,354 — skuldnedgången på fyra år), working capital −4,530 M (orderförskotts-maskinen: obförd intäkt 12,480 M), TTM-PERIODETIKETTERNA: fi-ytans Current-kolumn bär 'Oct 1, 2026' medan bs/cf-ytorna bär 'TTM Jun 30, 2026' (källans etiketter ordagrant — värdena konsekventa mellan ytor: ov rev-ttm 22,82B = fi 22,821), kalenderårsbokslut (Dec 31), nästa rapport 2026-10-23 (källans Est. Earnings-datum)"
+      }
+    ],
+    "hamtat": "2026-10-01",
+    "pris": 224.4,
+    "marknadsKapitalMdr": 46.13,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.0813,
+      "resultatCAGR5ar": 0.1137,
+      "omsattningTillvaxtTTM": 0.0309,
+      "prognosTillvaxt": 0.6001
+    },
+    "lonksamhet": {
+      "roe": 0.1935,
+      "roic": 0.2276,
+      "bruttoMarginal": 0.2686,
+      "ebitMarginal": 0.104,
+      "nettoMarginal": 0.0655,
+      "fcfMarginal": 0.1754
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.7,
+      "rantaTackning": 10.59,
+      "fcfPositivaSenaste5": 5,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": 0
+    },
+    "aterkop": {
+      "senasteArMdr": 0.8013,
+      "andelUtestande": 0.0002,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.2574,
+      "bruttoMarginalSpread5ar": 0.0153,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 30.93,
+      "pb": 5.75,
+      "evEbit": 18.22,
+      "peg": 0.52,
+      "fcfYield": 0.0868,
+      "egenKapitalMultipl": 5.75
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        16192000000,
+        17569000000,
+        18428000000,
+        20577000000,
+        22136000000
+      ],
+      "resultat": [
+        1089000000,
+        1121000000,
+        1023000000,
+        1420000000,
+        1675000000
+      ],
+      "egetKapital": [
+        6719000000,
+        7382000000,
+        6969000000,
+        7558000000,
+        7988000000
+      ],
+      "fcf": [
+        2452000000,
+        2525000000,
+        1056000000,
+        2098000000,
+        2635000000
+      ]
+    },
+    "notering": "cellmotiverad trio (Frankrike/industri 5→6: syskonen u2:s Schneider+Legrand samma manifestomgång nådde mattan 5 — mina +3 tar cellen till 8; Airbus flygkroppen + Safran motorerna + Veolia kretsloppet + Schneider/Legrand elektrifieringen (syskon) + Thales försvarselektroniken = SEX industriella arketyper i EN cell); FÖRSVARSANDELN 56,8 % (Defence 12,969 av 22,821 TTM) med ORDERBOKEN 53,3 mdr = 2,41× årsomsättningen (källans backlog-serie +53 % på fyra år) som signaturtal — låg beta 0,12 och working capital −4,53 mdr (obförd intäkt 12,48 mdr) visar statliga kontrakts kapitallogik: kunderna betalar i förskott; FCF-M 17,54 > netto-M 6,55 (båda EXAKTA) — orderförskotten gör kassan före bokslutet; ROIC-gap +18,02 pp (WACC 4,74) cellens bredaste; bruttomarginal-trappan fem raka stigande 24,91→26,44 % (moat-medel 25,74, spread 1,53 pp); DPS +52 % på fyra år; netto-skuld −519 M efter FY23:s −4,354 (nedbyggd); TBV −2,48 mdr (goodwell-tung); kursen −15,6 % 52v UNDER båda MA medan orderboken växer — värderingskvartilernas pedagogik; kollisionskontroll primär+sekundär GRÖN (HO/HO.PA+namn+URL); EPA/EUR (AIR.PA-precedensen); kalenderårsbokslut; RAPPDAG 2026-10-23 (källans datum); alla repliker i paranoid (StockAnalysis EPA 2026-10-01)"
+  },
+  {
+    "ticker": "AM.PA",
+    "namn": "Dassault Aviation société anonyme",
+    "bransch": "industri",
+    "land": "Frankrike",
+    "valuta": "EUR",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-10-01",
+        "url": "https://stockanalysis.com/quote/epa/AM/ (+ /statistics/ + /financials/ + /financials/balance-sheet/ + /financials/cash-flow-statement/)",
+        "paranoid": "EPA-PRIMÄRNOTING i EUR (S&P GMI-underlag; SA-html ordagrant via curl, kanon _s2u3o34-kanon.mjs): kurs 282,80 EUR (översiktens huvudtal; dagens spannr 282,20–290,40; källans Price Target-fält 360,65 (+27,53 %) är ANALYSKURS ej handelskurs), mcap 21,88 mdr EUR (aktiebas 77,05 M; replik 282,80×0,07705 = 21,788 = 0,42 % band), EPS TTM 12,93, P/E 21,97 (replik 282,80/12,93 = 21,87 = 0,45 % band), fwd P/E 16,55 ⇒ prognosTillväxt +32,75 % implicit, PEG 0,67 = 21,97/32,75 mallens konvention (källans PEG-fält 0,97 på deras 3-årsbas — redovisad), P/B 3,33 = 21,88/6,561 EXAKT, NETTKASSAN — bolagets signatur: kassa 10,115 mdr mot skuld 0,201 = netto +9,914 mdr = 127,60 EUR/aktie = 45,1 % av kursen (källans Net Cash-fält; källans per-aktie-fält 128,67 på sin bas — dokumenterad), EV 11,97 mdr = mcap 21,88 + 0,201 − 10,115 + minoritet 0,006 = 11,972 EV-IDENTITETEN EXAKT — kassan halverar företagsvärdet (EV/EBIT 10,18 · EV/EBITDA 8,65 · EV/Sales 1,35 · EV/FCF 8,96 · EV/Earnings 11,92 — EV-familjen på den-netto-basen), D/E 0,03 = 0,201/6,561 · räntetäckning 128,33 (kassan bär ränta — universumets klass) · Debt/EBITDA 0,20, ROE 15,74 % · ROIC 7,33 mot WACC 6,50 = +0,83 pp (trångt — 10-mdr-kassan drar ner avkastningen på investerat kapital; fcfYield 6,11 % visar helheten) · ROCE 11,46, marginaler TTM: brutto 33,91 % = 3,016/8,895 EXAKT · EBIT 8,67 % = 0,771/8,895 EXAKT · netto 11,29 % = 1,005/8,895 EXAKT · FCF 15,03 % = 1,337/8,895 EXAKT, FCF-IDENTITETEN OCF 1,461 − capex 0,125 = 1,336 (källans rad 1,337 — avrundning), fcfYield 6,11 % = 1,337/21,88 EXAKT, NETTO-M 11,29 > EBIT-M 8,67 (pretax-M 14,68 — ränteinkomsterna på kassan är den andra fabriken: pretax 1,31 mdr mot EBIT 0,77), segment TTM: Defense Export 4,126 + Falcon 2,891 + Defense France 1,712 + Other 210 = 8,939 = källans Revenue (Total) EXAKT (huvudtal 8,895 = elimineringsbas), Rafale-exportens flöde: Defense Export 4,549 FY21 → 1,512 FY23 (mellan/toppar) → 4,126 TTM (nya kontrakt), FY23 OCF −672,61 M (avanceringsflödet vänder — intjänat utan kassa) mot FY22 +5,110 (FCF-M 69,83 % — avancetoppen): FCF-serien 1,490→4,935→−1,018→1,535→1,683 (berg-och-dalbana med fyra positiva av fem), fyra raka positiva nettoår 693→924→977 + TTM 1,005, ORDERBOKEN källans backlog-fält: 20,762→35,008→38,508→43,224→46,596 M€ FY21→25 = 6,14× FY25-omsättningen (Rafale-kontraktens berg — cellens högsta backlog-täckning; TTM-kolumnen bär ej backlog), utdelning 4,78 EUR/år (1,69 %), DPS-trappan 2,49→3,00→3,37→4,72→4,78 FY21→25, betald TTM 370,77 M (replik 4,78×77,05 = 368,3 = 0,7 % band), återköp −337,05 M TTM, aktiebas 83,18→77,05 M (−7,4 %), insiders 0,30 % · institutioner 9,52 % · float 16,58 M av 77,05 M = 21,5 % (familjeholding-konstruktionen: huvudägarens block utanför float — källans fält), beta 0,42, under MA50 295,64 och MA200 306,01, RSI 43,72, analytiker Köp, 14,573 anställda (rev/anställd 610,357 källans fält — replik 8,895 mdr/14,573 = 610,4k EXAKT, cellens högsta produktivitet), skatt 302,89 M / eff. 23,19 %, TBV +6,338 M, kalenderårsbokslut, nästa rapport 2026-10-16 (källans Est. Earnings-datum)"
+      }
+    ],
+    "hamtat": "2026-10-01",
+    "pris": 282.8,
+    "marknadsKapitalMdr": 21.88,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.00857,
+      "resultatCAGR5ar": 0.1273,
+      "omsattningTillvaxtTTM": 0.1747,
+      "prognosTillvaxt": 0.3275
+    },
+    "lonksamhet": {
+      "roe": 0.1574,
+      "roic": 0.0733,
+      "bruttoMarginal": 0.3391,
+      "ebitMarginal": 0.0867,
+      "nettoMarginal": 0.1129,
+      "fcfMarginal": 0.1503
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.03,
+      "rantaTackning": 128.33,
+      "fcfPositivaSenaste5": 4,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": 0
+    },
+    "aterkop": {
+      "senasteArMdr": 0.3708,
+      "andelUtestande": 0.003,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.3593,
+      "bruttoMarginalSpread5ar": 0.0667,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 21.97,
+      "pb": 3.33,
+      "evEbit": 10.18,
+      "peg": 0.67,
+      "fcfYield": 0.0611,
+      "egenKapitalMultipl": 3.33
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        7318000000,
+        7067000000,
+        4964000000,
+        6401000000,
+        7572000000
+      ],
+      "resultat": [
+        605390000,
+        716230000,
+        693400000,
+        923820000,
+        977390000
+      ],
+      "egetKapital": [
+        5300000000,
+        6006000000,
+        5742000000,
+        6332000000,
+        6656000000
+      ],
+      "fcf": [
+        1490000000,
+        4935000000,
+        -1018000000,
+        1535000000,
+        1683000000
+      ]
+    },
+    "notering": "cellmotiverad trio (Frankrike/industri 6→7 av 8): Thales försvarselektronik + Dassault STRIDSFLYGET (Rafale) + Alstom tågen — tre offentlig-kund-arketyper; NETTKASSAN 9,914 mdr EUR = 127,60 EUR/aktie = 45 % av kursen som signaturtal (Rafale-avanceringsforfinskottningen: kunderna betalar kontraktet i förskott — working capital-maskinen i sin renaste form; EV 11,97 mot mcap 21,88: kassan halverar företagsvärdet, EV/EBIT 10,18 mot P/E 21,97 — basisvalets pedagogik); ORDERBOKEN 46,596 mdr = 6,14× årsomsättningen (cellens högsta täckning); NETTO-M 11,29 > EBIT-M 8,67 — räntenetto på kassan är den andra fabriken; FY23:s NEGATIVA OCF −673 M mot FY22:s +5,110 (FCF-M 69,8 %) dokumenterar avanceringsflödets timing — intjänt ≠ inkasserat samma år; float 21,5 % (familjeholding-blocket), rev/anställd 610k = cellens högsta produktivitet (14,6 tusen anställda mot Thales 85/Alstom 88 tusen); moat-spread 6,67 pp (Falcon-jetens mot Rafale-ordernas blandning); kollisionskontroll GRÖN (AM/AM.PA+namn); EPA/EUR; kalenderårsbokslut; RAPPDAG 2026-10-16; alla repliker i paranoid (StockAnalysis EPA 2026-10-01)"
+  },
+  {
+    "ticker": "ALO.PA",
+    "namn": "Alstom S.A.",
+    "bransch": "industri",
+    "land": "Frankrike",
+    "valuta": "EUR",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-10-01",
+        "url": "https://stockanalysis.com/quote/epa/ALO/ (+ /statistics/ + /financials/ + /financials/balance-sheet/ + /financials/cash-flow-statement/)",
+        "paranoid": "EPA-PRIMÄRNOTING i EUR (S&P GMI-underlag; SA-html ordagrant via curl, kanon _s2u3o34-kanon.mjs): BOKFÖRINGSÅRET april–mars (BHP-precedensen: universumets andra brutet räkenskapsår — årsetikett = slutår, FY2026 = apr 2025–mar 2026; SA-kolumner Mar '22→Mar '26 + Current), kurs 15,32 EUR (översiktens huvudtal; dagens spannr 14,62–15,44; källans Price Target-fält 21,10 (+37,73 %) är ANALYSKURS ej handelskurs), källans mcap-bas = föregående close 14,96: mcap 6,92 mdr = 14,96×462,62 M EXAKT (0,07 % band mot replik; dagskursen 15,32 i pris-fältet — källans beräkningsbasis dokumenterad), EPS FY26 0,60, P/E 24,93 = 14,96/0,60 EXAKT (källans bas), fwd P/E 8,87 ⇒ prognosTillväxt +181,1 % implicit — VÄNDNINGSÅRET (Sartorius-klassen: trailing-talet bukar på årets låga EPS, marknaden prissätter ~1,73 EUR nästa år), PEG 0,14 = 24,93/181,1 mallens konvention (källans PEG-fält 0,39 på deras 3-års EPS-prognos +24,10 % — redovisad), P/B 0,64 = 6,92/10,784 EXAKT (Shareholders' Equity med minoritet; Total Common 10,663 ger 0,649 — spannet dokumenterat) = SUBSTANSRABATT 36 %, EV 8,30 mdr = mcap 6,92 + skuld 3,555 − kassa 2,297 + minoritet 0,121 = 8,299 EV-IDENTITETEN EXAKT, EV/EBIT 9,78 · EV/EBITDA 5,46 · EV/Sales 0,43 · EV/FCF 25,61 · EV/Earnings 29,63, D/E 0,33 = 3,555/10,663 EXAKT · räntetäckning 7,73 · Debt/EBITDA 2,66, netto-skuld −1,258 mdr (FY24 −3,679 — HALVERAD på två år: emissionen + FCF-vändningen), ROE 3,41 % · ROIC 3,57 mot WACC 7,19 = −3,62 pp (NEGATIVT värdeskapningsgap — integrationens arv, dokumenterat ärligt; ROCE 4,53), marginaler FY26: brutto 12,27 % = 2,352/19,171 EXAKT · EBIT 3,47 % = 0,665/19,171 EXAKT · netto 1,46 % = 0,280/19,171 EXAKT på attributable-basen (källans st-yta bär 1,69 % på konsolierat 324 M — basdualiteten dokumenterad, raden bär fi/attributable-konventionen) · FCF 1,69 % = 0,324/19,171 EXAKT, FCF-IDENTITETEN OCF 891 − capex 567 = 324 EXAKT, fcfYield 4,68 % = 0,324/6,92 EXAKT, TTM-KOLUMNEN = FY2026 IDENTISK (fi Current 19,171 = FY26 19,171 — året slutet mar 2026; källans Current-etikett 'Oct 1, 2026' är sidans etikett, värdena är FY26), resultatserien −581→−132→−309→+138→+280 M€ FY22→FY26 (Bombardier Transportation-integrationens förlustår → vändning; FY24-dippen = avskrivningar/böter-klassen) — RESULTAT-CAGR NULL (negativ start FY22, BASF-klassen), omsättningen 15,471→19,171 rakt växande (CAGR +5,50 %/år), FCF-serien −1,005→+175→−567→+490→+324 (3 av 5 positiva), ORDERBOKEN källans backlog-fält: 81,013→87,387→91,900→94,960→104,412 M€ FY22→26 = 5,45× FY26-omsättningen (TGV- och signalorderboken — cellens största backlog i absoluta tal), UTDELNINGEN ÅTERFÖDD: DPS 0,25 EUR deklarerad FY26 (källans fi DPS-rad, första på åratal) — betalt under året endast 44 M (betalningsslippet: deklarationstidpunkt mot utbetalning nästa räkenskapsår, dokumenterat; aterkop-fältet bär det BETALDA 44 M), aktiebas 373,39→462,03 M (+23,7 % FY22→FY26 — nyemissionerSenaste5ar = 1: rättighetsemissionen hösten 2023 + konvertibeln löpte in; utspädningen är balansräkningens pris), insiders 0,00 % · institutioner 60,44 % · float 337,42 M, beta 1,06 (trions enda över 1), 52-v 14,48–30,23 med kursen −30,79 % på 52v NÄRA BOTTEN under MA50 15,92 och MA200 20,14, RSI 47,82, analytiker Hold med PT 21,10, 87,832 anställda (rev/anställd 218,269 källans fält — replik 19,171 mdr/87,832 = 218,4k EXAKT), skatt 199,0 M / eff. 35,35 %, TBV-dualiteten källans egna fält: TBV-total +386 M mot TBVPS −0,79 (källans interna basblandning — redovisad som not, raden bär inget av dem; goodwill-tung Bombardier-balans som läkt från −3,077 M FY22), geografi FY26: Europa ex Frankrike 8,101 + Americas 3,226 + Asien/Stillahav 2,551 + Afrika/ME/CA 1,784 = 15,662 (Frankrike-benet resten ≈ 3,509), nästa rapport 2026-11-17 (källans Earnings Date)"
+      }
+    ],
+    "hamtat": "2026-10-01",
+    "pris": 15.32,
+    "marknadsKapitalMdr": 6.92,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.055,
+      "resultatCAGR5ar": null,
+      "omsattningTillvaxtTTM": 0.0369,
+      "prognosTillvaxt": 1.8106
+    },
+    "lonksamhet": {
+      "roe": 0.0341,
+      "roic": 0.0357,
+      "bruttoMarginal": 0.1227,
+      "ebitMarginal": 0.0347,
+      "nettoMarginal": 0.0146,
+      "fcfMarginal": 0.0169
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.33,
+      "rantaTackning": 7.73,
+      "fcfPositivaSenaste5": 3,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": 1
+    },
+    "aterkop": {
+      "senasteArMdr": 0.044,
+      "andelUtestande": 0,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.1207,
+      "bruttoMarginalSpread5ar": 0.0141,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 24.93,
+      "pb": 0.64,
+      "evEbit": 9.78,
+      "peg": 0.14,
+      "fcfYield": 0.0468,
+      "egenKapitalMultipl": 0.64
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "omsattning": [
+        15471000000,
+        16507000000,
+        17619000000,
+        18489000000,
+        19171000000
+      ],
+      "resultat": [
+        -581000000,
+        -132000000,
+        -309000000,
+        138000000,
+        280000000
+      ],
+      "egetKapital": [
+        8911000000,
+        8997000000,
+        8672000000,
+        10464000000,
+        10663000000
+      ],
+      "fcf": [
+        -1005000000,
+        175000000,
+        -567000000,
+        490000000,
+        324000000
+      ]
+    },
+    "notering": "cellmotiverad trio (Frankrike/industri 7→8): Thales elektronik + Dassault stridsflyg + Alstom TÅGEN — järnvägens vändningsexempel; VÄNDNINGSÅRET som signatur: P/E 24,93 mot fwd 8,87 (prognos +181 %) med resultatserien −581→+280 M€ (negativ start ⇒ resCAGR NULL, BASF-klassen) — trailing-multipeln straffar bottenåret, forward-talet prissätter normaliseringen (Sartorius-precedensen); ORDERBOKEN 104,412 mdr = 5,45× årsomsättningen (cellens STÖRSTA i absoluta tal — järnvägens backlog-natur); P/B 0,64 = substansrabatt 36 % mot ROIC-gap −3,62 pp (negativt — integrationens arv dokumenterat ärligt); netto-skuld halverad −3,679→−1,258 på två år; aktiebasen +23,7 % (nyemission 2023 + konvertibel — utspädningen dokumenterad, nyemissionerSenaste5ar=1); UTDELNINGEN ÅTERFÖDD 0,25 EUR (deklarerad FY26, 44 M betalt under året — betalningsslip dokumenterat); BOKFÖRINGSÅRET april–mars med årsetikett = slutår (BHP-precedenten, universumets andra brutna året); TBV-dualitet i källans egna fält redovisad; kollisionskontroll GRÖN (ALO/ALO.PA+namn); EPA/EUR; RAPPDAG 2026-11-17; alla repliker i paranoid (StockAnalysis EPA 2026-10-01)"
+  },
+  {
+    "ticker": "068270.KS",
+    "namn": "Celltrion, Inc.",
+    "bransch": "halso",
+    "land": "Sydkorea",
+    "valuta": "KRW",
+    "kallor": [
+      {
+        "namn": "StockAnalysis",
+        "hamtat": "2026-10-01",
+        "url": "https://stockanalysis.com/quote/krx/068270/ (+ /statistics/ + /financials/ + /financials/balance-sheet/ + /financials/cash-flow-statement/)",
+        "paranoid": "KRX-PRIMÄRNOTING i KRW (krx-vägen bevisad av 005930-precedensen; S&P Global Market Intelligence-underlag; SA-html ordagrant via curl 2026-10-01 14:16Z — s2u2-metodfyndet: sammanfattningslagret kasseras): kurs 183 600 KRW (översiktens huvudtal i kursformat; PT-FALGROPEN dokumenterad: Price Target-raden bär 267 786,94 (+45,85 %) som vid första anblick liknar en kurs — triangulering tre vägar: mcap/aktier 41,94T/228,43 M = 183 779 (0,10 % band) · P/E×EPS 26,84×6 840,22 = 183 583,7 (0,009 %) · day's range 178 200–184 200 + prev close 177 700 innesluter; under MA50 186 142 och MA200 188 910), mcap 41,94T KRW, aktiebas 228,43 M statistics (FILING-basen 240 M — splittran dokumenterad; split Jun 4 2026 forward 1:1,05; aktiebas −1,80 %/år), STATISTICS: P/E 26,84 = 183 600/6 840,22 replik 0,005 % · fwd 29,59 (⇒ prognosTillväxt −9,29 % implicit — fwd ÖVER trailing: marknaden prissatter NEDATGÅENDE EPS efter TTM-toppåret +220,3 %; källans 3-års EPS-prognos +24,94 %/år som kontrast-not — spannet är biosimilar-konkurrensens prissättning), PEG 1,07 (källans bas 25,08 % ≈ EPS-prognosen 24,94 — dokumenterad), P/B 2,32 = mcap/EK-total 41,94T/18,048T (källans bas; replik 2,3238) · P/TBV 7,85 = pris/(TBV/aktiebas) 183 600/23 377,6 replik EXAKT 0,04 % — tre baser dokumenterade: PB på total-EK, P/TBV på TBV/nuvarande aktier, BVPS-fältet 74 595,25 på common-EK/filing-aktier (17 902 769/240 EXAKT 0,001 %), EV 44,69T med IDENTITETEN mcap 41,94 + skuld 3,8667 − kassa 1,2582 + minoritet 0,1454 = 44,694 EXAKT 0,009 % (ENI-konventionen), EV/EBIT 29,13 källans fält (replik på EV-identiteten 28,91 — 0,75 % källspridning dokumenterad), EV/Earnings 28,36 replik EXAKT, EV/EBITDA 24,46 · EV/Sales 9,13 · EV/FCF 54,30, D/E 0,21 = 3 866 738/18 048 160 = 0,2142 (tjödecimalsfältet) · räntetäckning 16,46 · Debt/EBITDA 2,10 · current 1,36 · quick 0,68, ROE 9,11 % källans fält (replik netto/EK-slut 8,73 % — källans medel-EK-bas, spannet dokumenterat; fältet bärs) · ROA 4,37 · ROIC 6,65 % mot WACC 5,60 = +1,05 pp (trångt positivt — CAPM-strukturens klass) · ROCE 8,31, marginaler TTM: brutto 61,86 % = 3 029 878/4 897 805 EXAKT · EBIT 31,56 % EXAKT · netto 32,18 % EXAKT · FCF 16,80 % EXAKT — FCF 823 072 = OCF 995 898 − capex 172 827 EXAKT, fcfYield 1,96 % = 823 072/41,94T, utdelning 714,29 KRW/år (0,39 %) · payout 10,65 % (källans bas; DPS/EPS-replik 10,44 % — aktiebas-världarnas splittran dokumenterad) · FCF-payout 19,82 % · buyback 1,80 % ⇒ shareholder yield 2,19 %, insiders 4,84 % · institutioner 20,05 % · float 151,10 M, skatt 214 760 M / 11,96 % (Koreas skattereduktion för bioteknik), beta 0,30 (5Y) · 52v +7,60 % (158 500–239 048) · RSI 51,70, Altman 5,13 · Piotroski 5, analytiker Buy PT 267 786,94 (+45,85 %) av 22 · rev-prognos 3 år +19,02 %/år, anställda 2 956 (rev/anställd 1,66 mdr KRW · vinst/anställd 533 M), FY kalenderår · nästa rapport 2026-11-13 (SA:s est.-fält), FY-SERIER (M KRW): rev 1 893 401→2 283 967→2 176 432→3 557 304→4 162 495 (+21,77 %/år 2021→25; TTM 4 897 805 = +17,66 % mot FY2025 mallens bas — källans eget TTM/TTM-fält +30,64 % dokumenterad), netto 579 465→537 836→535 648→422 692→1 029 613 (+15,45 %/år; TTM 1 576 119 — FY2024-botten 422 692 med EBIT-marginal 13,83 % är VÄNDNINGEN: TTM-netto 3,7× bottenåret på bruttomarginalens resa 45,21→61,86 %), EPS 3 472,89→3 258,27→3 273,16→1 786,67→4 438,10 (TTM 6 840,22), bruttomarginaler 57,44→45,21→48,33→47,27→59,27 (TTM 61,86 — spread 14,06 pp = prisklipps- och portföljmognadens båge, moat-fälten fyllda), EK-total 4 050 375→4 274 204→17 125 794→17 580 062→17 352 530 (FY2023-KVANTHOPPET = Celltrion Healthcare-fusionens konsolidering: goodwill 35 159→11 429 619 M, tillgångar 5,9T→20,0T — balansen femfjärdedelades, TBV-andelen sjönk), skuld 744 356→3 866 738 (5,2×; netto +475 545→−2 608 571 — SKULDVANDRINGEN: LT-utfärdande FY2025 3 386 234 MOT återköp 908 401 = LÅNEFINANSIERAD ÅTERKÖPSMOTOR), kassa 1 219 901→1 258 167, OCF 911 159→…→995 898 (FY2022-källcellen '863,53' trasig dokumenterad — identiteten FCF+capex = 864 stödjer), capex 63 379→172 827, FCF 847 780→−110 305→327 112→766 812→537 827 (TTM 823 072; FY2022 det negativa året: OCF-torka + inventariebygget 616 352→2 940 521 = 4,8× pandemi-antikroppsproduktionens nedmontering), utdelning betald 3,78→102 451→51 664→103 604→153 764 (TTM 167 847), återköp 39 126→908 401 (TTM 532 649)"
+      },
+      {
+        "namn": "Yahoo Finance (chart-API)",
+        "hamtat": "2026-10-01",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/068270.KS?range=5d&interval=1d",
+        "paranoid": "paranoid kurskoll FÖRSÖKT ×3 (14:16Z query1, 14:19Z query2, 14:22Z query1): 'Too Many Requests' — 429-frekvensspärren, v173-klassens dokumenterade enhällsprotokoll mot S&P GMI. Kompenserad med intern triangulering (mcap/aktier 0,10 %-band · P/E×EPS 0,009 %-band · range-konsistens) — tre oberoende vägar innesluter huvudkursen 183 600 KRW"
+      }
+    ],
+    "hamtat": "2026-10-01",
+    "pris": 183600,
+    "marknadsKapitalMdr": 41940,
+    "tillvaxt": {
+      "omsattningCAGR5ar": 0.217,
+      "resultatCAGR5ar": 0.1545,
+      "omsattningTillvaxtTTM": 0.1766,
+      "prognosTillvaxt": -0.0929
+    },
+    "lonksamhet": {
+      "roe": 0.0911,
+      "roic": 0.0665,
+      "bruttoMarginal": 0.6186,
+      "ebitMarginal": 0.3156,
+      "nettoMarginal": 0.3218,
+      "fcfMarginal": 0.168
+    },
+    "stabilitet": {
+      "skuldEgenkapital": 0.21,
+      "rantaTackning": 16.46,
+      "fcfPositivaSenaste5": 4,
+      "kassaManaderBurnRate": null,
+      "nyemissionerSenaste5ar": null
+    },
+    "aterkop": {
+      "senasteArMdr": 153.764,
+      "andelUtestande": 0.0484,
+      "insiderkopSenaste6man": null
+    },
+    "moat": {
+      "bruttoMarginalMedel5ar": 0.515,
+      "bruttoMarginalSpread5ar": 0.1406,
+      "roeMedel5ar": null
+    },
+    "vardering": {
+      "pe": 26.84,
+      "pb": 2.32,
+      "evEbit": 29.13,
+      "peg": 1.07,
+      "fcfYield": 0.0196,
+      "egenKapitalMultipl": 2.32
+    },
+    "golv": {
+      "typ": "osatt",
+      "vardePerAktie": null,
+      "marginal": null
+    },
+    "serier": {
+      "ar": [
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "omsattning": [
+        1893401000000,
+        2283967000000,
+        2176432000000,
+        3557304000000,
+        4162495000000
+      ],
+      "resultat": [
+        579465000000,
+        537836000000,
+        535648000000,
+        422692000000,
+        1029613000000
+      ],
+      "egetKapital": [
+        4050375000000,
+        4274204000000,
+        17125794000000,
+        17580062000000,
+        17352530000000
+      ],
+      "fcf": [
+        847780000000,
+        -110305000000,
+        327112000000,
+        766812000000,
+        537827000000
+      ]
+    },
+    "notering": "universumets FÖRSTA Sydkorea/häLSO-rad och landets ANDRA gren (Samsung+SK hynix = teknik; hälsans 33 rader saknade hela KRX-världen) — könotisen från omg33:s u3 löst: 'Sydkorea 2 KRX-vägen bevisad ×1'; ARKETYPEN BIOSIMILAR-PIONJÄREN: grundat 2002 i Incheon (allmän faktakunskap, NTT-precedensen), världens största rena biosimilar-tillverkare (Remsima/CT-P13 — världens första monoklonala antikropps-biosimilar) = 'molekylen efter patentet' som pedagogisk motpol till originator-jättarna: lägre pris, lägre risk, lägre marginal — OCH TVÅ OMVÄNDA SIGNATURER MOT ORIGINATOR-LÄROMEDLEN: (1) bruttomarginalens RESA 45,21→61,86 % är uppåtgående medan originatorernas är platt hög — biosimilar-mognaden (portföljen i prisklipps- och konkurrensbalans) Är moat-historien, spread 14,06 pp dokumenterad; (2) FÖRLUSTÅRET FY2022 FCF −110 305 M KRW medan NETTOT hölls 537 836 — pandemi-antikroppsproduktionens nedmontering bands i KASSAFLÖDET (inventarier 616→2 941 Mdkr = 4,8×) inte i resultaträkningen: OCF-torka som vinstår (5/5 positiva nettoår mot 4/5 FCF-år — vinst/kassa-gapets läroboksexempel); FY2023-KVANTHOPPET: Celltrion Healthcare-fusionen (goodwill 35→11 430 Mdkr, tillgångar 5,9→20,0 T) — köpdiffusen blev 2/3 av substansen (P/TBV 7,85 mot P/B 2,32: substansen är köpta rättigheter, ej maskiner); SKULDVANDRINGEN 744 356→3 866 738 M KRW (5,2×) med netto +475→−2 609: LT-utfärdandet FY2025 3 386 234 i samma rör som återköpen 908 401 — LÅNEFINANSIERAD ÅTERKÖPSMOTOR (aktiebas −1,8 %/år, räntetäckning 16,46 bär trycket) medan kapex bara 172 827: balansväxeln mot aktiägaravkastning (shareholder yield 2,19 %); VÄNDNINGEN FY2024: netto-botten 422 692 (EBIT-marginal 13,83 %) → TTM 1 576 119 = 3,7× på två år — och marknadens svar: fwd P/E 29,59 ÖVER trailing 26,84 (prognosTillväxt −9,29 % prissatt) medan källans analytikerpanel Buy 22 st PT +45,85 %: KONSOLIDERINGENS TWO-ROOM — kortsiktigt fallande EPS mot långsiktig expansionsprognos (rev-prognos +19,02 %/år), dokumenterat utan slutsats; TTM-tillväxt-notisen: +17,66 % mallens TTM/FY-bas mot källans +30,64 % TTM/TTM (båda dokumenterade); skatten 11,96 % (bioteknik-reduktion); 52-v +7,60 % under MA50+MA200; ex-div Dec 29 2025; rapport i KRW, räkenskapsår kalenderår; nästa rapport 2026-11-13"
   }
 ]

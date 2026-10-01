@@ -11,7 +11,8 @@ import fs from "node:fs";
 const KORA = process.argv.includes("--kora");
 const NAMN = "zcode-app-cli";
 const NY = "3.14.4-30";
-const GAMMAL = "3.11.2-24";
+// Bevisat installerad 2026-10-01: 3.11.2-22 (registret trodde -24; korrigerat).
+const GAMMAL = "3.11.2-22";
 const LOGG = "/tmp/v219-uppgradering.log";
 fs.writeFileSync(LOGG, `v219 ${new Date().toISOString()} kora=${KORA}\n`);
 const logga = (s) => { fs.appendFileSync(LOGG, s + "\n"); console.log(s); };
@@ -61,17 +62,17 @@ try {
   logga("G3 kunde ej läsas: " + String(e).slice(0, 60));
 }
 
-// G4: aktuell version = förväntad gamla (zcode --version, fallback npm ls -g)
+// G4: aktuell version = förväntad gamla. Läsväg (bevisad 2026-10-01):
+// app-servern kör /home/ak1a/.npm-global/bin/zcode — installationens
+// package.json är sanningen (PATH-npm ser den ej: användarprefix).
+const NPM_GLOBAL = "/home/ak1a/.npm-global/lib/node_modules";
 let aktuell = "(okänd)";
 try {
-  aktuell = kör("nuvarande version", "zcode", ["--version"], 30_000).split(/\s+/).pop() ?? aktuell;
-} catch { /* binären kanske saknas i PATH — prova npm-nivån */ }
-if (!aktuell.includes(GAMMAL) && !aktuell.includes(NY)) {
+  aktuell = JSON.parse(fs.readFileSync(`${NPM_GLOBAL}/${NAMN}/package.json`, "utf8")).version ?? aktuell;
+} catch {
   try {
-    const lsUt = kör("npm ls -g", "npm", ["ls", "-g", NAMN], 60_000);
-    const m = lsUt.match(new RegExp(NAMN.replace(/-/g, "\\-") + "@(\\S+)"));
-    aktuell = m ? m[1] : aktuell + " (npm-läsning utan träff)";
-  } catch { /* förblir okänd */ }
+    aktuell = kör("nuvarande version", "zcode", ["--version"], 30_000).split(/\s+/).pop() ?? aktuell;
+  } catch { /* förblir okänd — abort är säker default */ }
 }
 if (!aktuell.includes(GAMMAL)) {
   logga(`ABORT G4 — aktuell version "${aktuell}" ≠ förväntad ${GAMMAL} (redan uppgraderad? kontrollera manuellt)`);
@@ -88,8 +89,15 @@ if (abort) {
 }
 
 // ── UTFÖRANDE ──
+// VARNING (bevisad 2026-10-01): sessionens miljö bär npm_config_prefix=/usr
+// som ÖVERRIDER ~/.npmrc — utan explicit prefix hade installationen hamnat
+// i /usr medan app-servern (i .npm-global) fortsatt köra gamla versionen
+// (tyst död). Alltid --prefix + env-disabled override nedan.
+const NPM_PREFIX = "/home/ak1a/.npm-global";
+const NPM_ENV = { ...process.env, npm_config_prefix: NPM_PREFIX };
+
 // Steg 1: säkerhetspin (rollback = exakt detta kommando)
-logga("\nROLLBACK-PIN: npm install -g " + NAMN + "@" + GAMMAL + " && pm2 restart ak1a-pumpor");
+logga("\nROLLBACK-PIN: npm_config_prefix=" + NPM_PREFIX + " npm install -g " + NAMN + "@" + GAMMAL + " && pm2 restart ak1a-pumpor");
 
 // Steg 2: databasens skugga (db.sqlite är helig — kopia före allt)
 const db = process.env.HOME + "/.zcode/cli/db/db.sqlite";
@@ -98,11 +106,20 @@ if (fs.existsSync(db)) {
   logga("db.sqlite-kopia tagen");
 } else logga("VARNING: " + db + " saknas — trådens sanningsägare borde finnas");
 
-// Steg 3: uppgradera (array-form, Mimosa-härdad)
-kör("installera", "npm", ["install", "-g", `${NAMN}@${NY}`], 600_000);
+// Steg 3: uppgradera (array-form, Mimosa-härdad; prefix explicit)
+const installerat = execFileSync(
+  "npm",
+  ["install", "-g", "--prefix", NPM_PREFIX, `${NAMN}@${NY}`],
+  { encoding: "utf8", timeout: 600_000, env: NPM_ENV },
+);
+logga("installera: " + installerat.trim().slice(0, 300));
 
-// Steg 4: verifiera version
-const efter = kör("ny version", "zcode", ["--version"], 30_000);
+// Steg 4: verifiera version (package.json = sanningen, PATH-oberoende)
+let efter = "(läsfel)";
+try {
+  efter = JSON.parse(fs.readFileSync(`${NPM_PREFIX}/lib/node_modules/${NAMN}/package.json`, "utf8")).version ?? efter;
+} catch { /* kvar som läsfel */ }
+logga("ny version: " + efter);
 if (!efter.includes(NY)) {
   logga("VERSIONSFEL — kör rollback-pinnen ovan!");
   process.exit(1);

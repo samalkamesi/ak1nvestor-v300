@@ -45,7 +45,11 @@ import type { PrenumerationNiva } from "@/lib/prenumeration";
  * defaults + hydrerings-guard (skeleton under första renderingen).
  */
 
-const LAROPLAN_TOTAL = 307; // Uppdaterad 2026-09-01: totalt antal kurser i deep-courses.json
+// v223 (Φ): nämnaren ur GULDKÄLLAN (siffror.ts — genereras av rakna-siffror
+// efter varje kurstillägg). Det hårdkodade 307:an (2026-09-01) åldrades i
+// tysthet medan registret växte till 507: medlemmen såg "X av 307 kurser"
+// och en för hög procent — chat-widgetens "ur guldkällan"-mönster följs.
+const LAROPLAN_TOTAL = SIFFROR.kurser;
 
 /**
  * Fas 2-tröskelns XP-mål (VÅG 63 O2 #3): fas2Upplast() öppnar vid nivå 25,

@@ -20529,3 +20529,27 @@ på sista stretch (28+ min, hundvakts-filer i ytan). Långpollaren lever
    före ny omgång/manifest-plock; "vantar-deploy" + exit 0; ~30-min
    överlappsfördröjning accepterad) — implementeras i tystt fönster med
    torrkörning, EJ midnattskirurgi på levande maskineri.
+
+## VÅG 224 (2026-10-01 04:5xZ, hjärtslagsrond [organ:Φ]) — FINSLIPNING: den föråldrade läroplansnämnaren (307 → guldkällan)
+
+**FYND (finslipningsspåret, strategisk prioritet 2):** min-sida.tsx
+hårdkodade LAROPLAN_TOTAL = 307 ("Uppdaterad 2026-09-01") medan registret
+växt till 507 — medlemmens dashboard visade "X av 307 kurser" och en FÖR
+HÖG procent (nämnaren 200 kurser för liten). Klass: föråldrade tal i
+kopy — men vaktrutinen (sektion 10) ser den inte (den fångar tal i
+textsträngar, inte hårdkodade konstant-nämnare).
+
+**KUR (husets eget mönster):** LAROPLAN_TOTAL = SIFFROR.kurser (siffror.ts,
+genereras av rakna-siffror efter varje kurstillägg — samma "ur guldkällan"-
+mönster som chat-widgeten) — talet kan aldrig åldras igen. VERIFIERAT:
+tsc GRÖN 0 fel · SIFFROR redan importerad i filen · 507 har samma
+teckenbredd som 307 (noll layoutrisk för telefon-först-kunden).
+
+**KONTROLL AV GRANNARNA (sökning efter fler i klassen):** V_KURSER_TOTAL
+= 20 i min-sida.tsx + dashfraga.ts är KORREKT (V-spåret är 20/20 av
+design — bevisat mot registret: exakt 20 v-slugs av 507). inga andra
+hårdkodade kurstal i src (333:orna är historisk fas-text i ordlistan).
+
+**SEKVENS:** ändringen committas i kön och landar via prod-synkens NÄSTA
+byggcykel (pågående ombygg från 0fa7eeef rullar under låset — ingen
+tvingad build, ingen race); gränsnittsvakts-verifiering efter deploy.

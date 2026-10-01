@@ -10,7 +10,7 @@ const MARKOR = '/home/ak1a/AK1/data/vakten/senaste-deployad.txt';
 // (pusharna mitt i byggena tvingade ombyggen — buntslagsläran)
 const MAL_HASHAR = ['62bd7657', '05605b55', 'edf578aa'];
 const START = Date.now();
-const TAK_MS = 75 * 60_000;
+const TAK_MS = 130 * 60_000; // två fulla cykler (race-abort + final) med marginal
 
 const andraLinjer = new Set(); // redan rapporterade nyckelrader
 let senasteDeployadRapporterad = '';

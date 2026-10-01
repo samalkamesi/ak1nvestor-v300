@@ -608,7 +608,11 @@ function sektionKursdata() {
 // r290: /bygg = vaxthus-hyresgästportal (src/app/(vaxthus)/bygg) — om
 // hyresgästsajter ska indexeras under lab-domänen är ett ÖPPET designbeslut
 // (v191/domänfrågan); vakten ska inte tvinga fram det via GUL.
-const SITEMAP_EXKLUDERA = new Set(["/admin", "/pro", "/rapporter", "/logga-in", "/studio", "/bygg"]);
+// v222 (Φ): /zcode = en-trycks-ingången till agentchatten (v216, kundens
+// "komma in med ett tryck") — layouten sätter robots noindex/nofollow
+// ("privat chatsida — ALDRIG indexerad"). Att pusha in den i sitemap vore
+// "Submitted URL marked 'noindex'"-klassen (samma skäl som /studio-spärren).
+const SITEMAP_EXKLUDERA = new Set(["/admin", "/pro", "/rapporter", "/logga-in", "/studio", "/bygg", "/zcode"]);
 
 function sektionSitemap() {
   const fel = [];

@@ -20243,7 +20243,119 @@ verka (worst case: dubbla installationer). Kuren i skriptet:
 läser package.json PATH-oberoende.
 
 **G4 TORRKÖRD GRÖN:** "G4 OK — kör 3.11.2-22". G1/G2 stängda korrekt
-(fabrik auto-s5 pågår; deploy-lås lever). Iteration 2→3 (målmotorn
+(fabrik auto-s5 pågår; deploy-låset lever). Iteration 2→3 (målmotorn
 arbetar). Byggståget friskt: TypeScript KLAR 9,2 min (det steget dödade
 förra tåget), render pågår. Commits: 0b25c487 + 6b0f3fcb + d659f4e8
 (väntar push tills fabrikens barn rensat prod-ytan).
+
+## VÅG 221 (2026-10-01 01:24–02:3xZ) — TRÄD-ÅTERFÖRINGEN LANDAD: 266 commits till prod, 507-kursunionen, ko-incident + läkning
+
+**UTGÅNGSLÄGE (lagesond 01:26):** fabrik tyst (statuskatalogen tom —
+s5-omgången färdig), flock LEDIG, inga byggprocesser, pm2 allt online,
+prod 200 → FÖNSTRET ÖPPET för både push och v219.
+
+**FYND 1 — PUSH-BLOCKADENS ROT:** `git push prod develop` avvisad
+("Working directory has unstaged changes" = updateInstead vägrar smutsig
+yta): prod-ytan bar fabrikens s5-leverans OCOMMITTAD — sex lärvägs-
+kurser (am-10, bk-10, kt-12, mt-10, st-09, vm-12) + KURSREGISTER-rader
++ regenererad karta/public-filer. KUR (trädägarens prod-commit
+82626725 via node-kanal): add + commit -F — kvalitetsgrinden PASSERAD
+(tsc inkrementellt grönt, speglar-vakten nöjd: speglar-slugar i samma
+commit). Leveransen bokförd, prod-ytan ren.
+
+**FYND 2 — PROD-LINJEN LEVER:** fetch visar prod/develop på d76a3db2
+= organ:Z:s r359-notis (data/forskning/r359-notis.md): "live-artefakten
+saknar zcode-rutten sedan 23:01Z (404); orsakband: 22:16-fönstret
+byggde från sjuk byggväg → artefakt utan zcode → falskt grön snapshot;
+agenter sviker just nu (Turn failed ~40s)" — förklarar sessionens
+30s-skalhäng (inte bara skalfällan: runtime-sjukan). Ombygg på
+känd-good triggad av notisen.
+
+**FYND 3 — FETCH_HEAD-PARADOXEN (r359-mönstret igen):** merge
+FETCH_HEAD → "Already up to date" men push non-fast-forward. Diagnos:
+merge-base aa2f35eb; develop bar 265 commits (09-30:s vågor: mimosa-
+kur, v216, sex egna kurser, src 57 filer +6261 r inkl proxy.ts) som
+prod-linjen saknade. KUR: merge EXPLICIT mot prod/develop-referens.
+
+**FYND 4 — KONFLIKTKARTAN:** sex genererade filer + register + karta i
+konflikt; slugdiff-diagnos (ENOBUFS-kurd med maxBuffer 64 MB):
+develop-sexan (ud-10, bk-09, mt-09, kt-11, vr-10, pe-09) mot prod-
+sexan (am-10, bk-10, kt-12, mt-10, st-09, vm-12); 495 gemensamma
+bitidentiska ⇒ LÖSNING = UNION 507 via kanoniska pipeline (lagg-till-
+kurs ×6 serieordning → bygg-larvag-karta 507 · gratis 465 · V-spår
+20/20 → kor-sokindex 121 kB → kor-speglar 507+94 → rakna-siffror 8283
+quiz/82830 XP → llms-tal-regen 501→507). llms-konfliktblocken var
+TAL-diffs (8223 vs 8283 quiz) — deterministiskt lösta av rakna-siffror.
+
+**FYND 5 — KO-INCIDENTEN (två sessioner, SAMMA merge):** min färdiga
+507-lösning (tsc grön) stod på disken när en PARALLELL session
+01:54:54 committade 4566b806 med checkout --theirs-lösningen (501)
+— skrev över mina filer MITT I min körning och plockade TYST bort
+utvecklingstrådens sex kurser ur ALLA genererade register medan
+käll-JSON:erna levde kvar (tyst-död-klass). BEVIS: _v221-merge-msg.txt
+(inte min fil) + HEAD-diagnos (501, ud-10 SAKNAS ur karta/register).
+**LÄKNINGEN (_v221-laka.mjs, atomisk körning):** register-rader
+hämtade ur 53543fcf (före-merge-historian) + pipeline igen + tsc GRÖN
++ commit 91bf24c5 + **PUSH LANDAD (4566b806..91bf24c5): prod har nu
+ALLA 266 commits — "före prod: 0" för första gången sedan cutovern.**
+REGEL FRAMÅT: merge-lösningar kommuniceras via statusfil FÖRE commit
+(koordinering, inte tur).
+
+**v219 G2-BUGG FIXAD:** existsSync("/tmp/ak1a-deploy.lock") testade
+filens EXISTENS — men flock-låsfilen lever kvar på disken FÖR ALLTID
+(flock är rådgivande; filen skapad 09-28). G2 hade aborterat i varje
+framtida fönster = v219 aldrig körbar. KUR: flock -n-test (försöker
+ta låset; misslyckas = upptaget). Skriptet klarar körning när fönstret
+öppnar igen.
+
+**BYGGET (02:04→):** npm ci + next build + pm2 restart under flock
+från 91bf24c5 (prod-ytans nya kod: 266 commits inkl src 57 filer).
+[Resultat bokförs när tåget är framme — se nästa sektion.]
+
+## VÅG 222 (2026-10-01 03:0x–03:2xZ) — [organ:Φ] byggutfallet bokfört · prod frisk · kvalitetsvakten GRÖN 13/13
+
+**BYGGUTFALLET AVGJORT (v221-tåget):** skriptet loggade ALDRIG mer än
+sin start-rad (02:04:27) — sessionen som ägde det avslutades och barn-
+trädet dog. MEN en byggkedja löpte 02:25→02:50 (v221-byggvaktens vittne:
+4→8 byggprocesser, BUILD_ID OOdsVUsEVAB42REylfKRf) och en PARALLELL
+session parkerade resultatet som `.next-bak-0304` (02:34) + återställde
+känd-goda `.next` (32w7o1IgPsRlzMiyVZNh4, byggt 00:13 ur develop-linjen)
++ pm2-omstart 02:52. Prod serverar ALLTSÅ känd-good-app + datan på disk
+(HEAD 91bf24c5 = 507-unionen). Den nya koden (266 commits, src 57 filer)
+väntar fortfarande på sitt deploy-bygge — prod-synkens ägo när fabrikens
+kö tystnar. INGRIPANDEN: jag rörde inte .next (v221:s ko-incident-regel:
+parallell session äger byte+verifiering just nu — smutsiga sonderings-
+verktyg ssr-livssond/mimosa-paritet + .next-bak-0304-namnet vittnar).
+
+**PROD-HÄLSA MÄTT (_v222-lagesond/prodsond):** / = 200 ·
+zcode-rutten /api/studio/stream = 401 (LEVANDE och korrekt auktoriserad —
+r359-notisens 404 är LÄKT) · /kurser/ud-10-ex-dagens-mekanik = 200
+(utvecklingstrådens sex kurser serveras — 00:13-bygget kommer ur develop-
+linjen) · /kurser/am-10-insynslistan = 404 (fabrikens sex väntar på
+deploy-bygget; käll-JSON + KURSREGISTER lever i HEAD = ingen förlust,
+ bara ej byggd ännu) · deploy-låset LEDIGT · minne 54 GB fritt.
+
+**LASTEN 10–11 FÖRKLARAD:** parallell sessions kvalitetstest
+(testa-kvalitetsvakt-ssr500.mjs, topp 2525 % CPU) + fabrikens auto-s8-
+retry (tre barn underkända försök 1: LEVERANS-rad saknas + HEAD oförändrad;
+omstart aktiv, anspåksfiler i data/vakten). deep-courses.json-mätningen
+(21,3 MB · 41–45 s) var förorenad av den lasten — storleken är dock reell
+och bokförd för PRESTANDASPÅRET (ej v221-regression; växer med kurs-
+tillväxten, 42 kB/kurs).
+
+**KVALITETSVAKTEN GRÖN — 0 FEL (omkörning 03:19):** rapportens enda
+fynd (sektion 7: "/zcode saknas i sitemap") var FEL KLASS: /zcode är
+v216:s en-trycks-ingång till agentchatten (kunddirektivet "komma in med
+ett tryck") och dess layout sätter MEDVETET robots noindex/nofollow —
+"privat chatsida — ALDRIG indexerad; robotarnas plats är de pedagogiska
+sidorna". Rätten: vaktens SITEMAP_EXKLUDERA-lista bredvid syskonet /studio
+(VÅG 81-precedensen), INTE sitemap-tillägg — det vore Search Consoles
+"Submitted URL marked 'noindex'"-fälla (samma skäl som /pro-spärren V86).
+Omkörning: 13/13 PASS (även tsc-baslinjen 0 fel, motorvalidering 107/0/0,
+SSR-livssond, mimosa-paritet) — status GRÖN, prod-synkens deploy-stopp
+för GUL är hävt.
+
+**RONDELEVERANS:** kvalitetsvakt.mjs (zcode-exkludering) + worklog +
+_v221-verktygen (bygg/byggbevakare/byggdiagnos/byggvakt/commit-pusha/
+laka/laslat/prockoll/verifiera-head — vaccinationsbevis) + _v222-sonderna
+(lagesond/nextkoll/prodsond/lastkoll) committade + pushade till prod.

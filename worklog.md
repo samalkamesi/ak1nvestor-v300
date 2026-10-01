@@ -20446,3 +20446,33 @@ BEVIS: mimosa-svit 31/31 PASS · kvalitetsvakt-mimosa-kontrakt 12/12 PASS
 av s8-u3 mitt i — deras kvalitetsvakt-kommentarrad följde med i min
 commit med notis; deras funktionsändring bor i ssr-livssond.mjs som
 EJ följer med). [fabrik]
+
+### VÅG 222 — RONDENS EFTERHÄNDELSER (03:2x–03:5xZ, organ:Φ)
+
+1. **DUBBELLEVERANSEN:** min push mot prod avvisades — fabrikens auto-s8-u1
+hade LEVERERAT (b55660a4) SAMMA zcode-rätta (+/zcode-noindex i SITEMAP_
+EXKLUDERA; GUL→GRÖN) plus byggartefaktkuren o573. Merge ccac7fbd förenade
+sidorna — konflikt ENDAST i kommentartexten (kodraden identisk); löst med
+dubbelleverans-bokföring i koden. Koordstatusfil skriven FÖRE merge
+(data/vakten/v222-merge-status.md) — v221-regeln följd. Systematiknot:
+vaktrapporten är gemensam ingång, oberoende vågor kan lösa samma rot;
+kollisionsytan är kommentarer (ofarlig) så länge KODRADERNA är identiska.
+2. **GRÄNSSNITTSVAKTEN 0 FYND** (svepet 01:39:44): status ok, alla
+kombinationer rena — "vakten till 0 fynd" kvitterat på BÅDA fronterna
+(kvalitetsvakten GRÖN 13/13 genom egen omkörning + gränssnittsvakten ok).
+3. **deep-courses.json-diagnos (avskrivet som kundproblem):** filen
+(21,3 MB) hämtas HELA endast av ADMIN-ekosystempanelen (internt) och
+crawlers — kundernas kursytor går via per-kurs-API:t /api/kurs/[slug]
+(deep-courses-data.ts). 42-s-serveringen mättes under last 11 (parallell
+sessions ssr500-test, 25 kärnor). NOTIS för prestandaspåret: vid växande
+AI-crawler-trafik kan förkomprimerad variant övervägas — ingen kur nu.
+4. **DEPLOY-BYGGET RULLAR:** prod-synk startade 03:27:25 BYGG FRÅN
+b55660a4 i JÄRN-U1-ställning (.bygg-kopia + patchad node_modules DÄR;
+TSC-GRIND GRÖN i ställningen; prod-ytans .next orörd till dubbelbytet).
+Min merge är tooling-only — byggets appinnehåll opåverkat; v222-leveransen
+pushas av långpollaren (_v222-langpollare.mjs: fast-forward-disciplin,
+merge-abort-vid-konflikt, aldrig konflikterigt träd) när fabrikens s8-u3-
+barn committat och ytan renar.
+5. **v219-FÖNSTRET (bokning kvarstår):** runtime-uppgraderingen väntar
+fabrik-tyst + ledigt deploy-lås. Korrekt ordning: deploy-bygget landar →
+fabriken s8 avslutar → fönstersond → v219 med G1–G4-grindarna.

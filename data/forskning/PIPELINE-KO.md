@@ -653,3 +653,15 @@ Nästa i kön (händelsestyrda): nattens G2/G5-kvitton 02:30–06:27 UTC 29/9 (7
 | v219 BOKAD | Post 37 (högsta V/A-kvot): runtime-uppgradering 3.11.2-24 → 3.14.4-30 i vågat fönster — kontrollera FÖRST fabrikens ZCODE 100x är klar + inget byggpågår; sedan npm i -g + pm2-omstart app-server + tråd-persistens-verifiering + scenariotest 7/7 + rollback-pin | efter att v216-zcode-100x landat + v215-pushen gått igenom |
 | mimosa-kur | Fyra levande fynd i arbetsträdet härdade (vanta-bygg fetch-konkat + tre execSync-kontroller) | ✓ LEVERERAD r359 (1a620879) — 1741 filer 0 fynd GRÖN; prod-rapportens 3 gamla fynd självläker vid 07:02 |
 | v216 ZCODE 100x | Kundorder: visuell paritet — 4/4 klara, merge 3ffcd084 tog in allt, prod-synken bygger | ✓ FABRIKSLEVERANS MOTTAGEN r359 — driftbevis (prod 200 + zcode-yta) verifieras efter byggtåget |
+
+
+## ROND v222 [organ:Φ] (2026-10-01 03:0x–03:5xZ) — byggutfallet bokfört · dubbelleverans förenad · båda vakterna GRÖN
+
+| Post | Innehåll | Status |
+|---|---|---|
+| v221-byggutfall | v221-tågets öde avgjort: skriptet dog med sin session men byggkedjan 02:25→02:50 (BUILD_ID OOds…) parkerades av parallell session som .next-bak-0304; prod serverar känd-good (32w…, 00:13) + data på disk (HEAD 91bf24c5, 507-unionen); zcode-rutten 401 = LÄKT (r359:s 404 borta); am-10 404 = fabrikens sex väntar deploy-bygget (ingen förlust — källa lever i HEAD) | ✓ BOKFÖRD i worklog v222 |
+| kvalitetsvakt-zcode | Rapportens enda GUL-fel ("/zcode saknas i sitemap") = FEL KLASS: /zcode är noindex-chatt-ingång (v216) → SITEMAP_EXKLUDERA, inte sitemap | ✓ LEVERERAD — DUBBELLEVERANS: v222 (890de2d5) + fabrik s8-u1 (b55660a4) samma roträttsbeslut; merge ccac7fbd förenade (konflikt endast i kommentar); GRÖN 13/13 bevisad med full omkörning 03:19 |
+| gränsnittsvakten | Standby-mål "vakten till 0 fynd" | ✓ KVITTERAD — svepet 01:39:44: status ok, 0 fynd, alla kombinationer rena |
+| deep-courses-notis | 21,3 MB JSON (41–45 s under last 11) — diagnos: hämtas HELA endast av ADMIN-panel + crawlers; kunder via /api/kurs/[slug] | ✓ AVSKRIVEN som kundproblem; notis: förkomprimering om AI-crawlertrafik växer |
+| v222-push | Rundleveransen (worklog + verktyg) köad bakom fabrikens prod-yta | ⟳ LÅNGPOLLARE _v222-langpollare.mjs (fast-forward-disciplin, merge-abort-vid-konflikt) |
+| v219 BOKAD | Runtime-uppgradering (oförändrad bokning) | VÄNTAR — ordning: deploy-bygget (rullar sedan 03:27 i JÄRN-U1-ställning) → fabriken s8 avslutar → fönstersond → v219 med G1–G4 |

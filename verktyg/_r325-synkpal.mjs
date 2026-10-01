@@ -18,7 +18,26 @@ const pm2Namn = [...pm2Alla.matchAll(/"name":"([^"]+)"/g)].map(m => m[1]).join('
 const nextNy = fs.existsSync(`${AK1}/.next-ny`)
   ? kort(`ls -la --time-style=full-iso ${AK1}/.next-ny/ 2>/dev/null | head -6; stat -c '%y' ${AK1}/.next-ny/BUILD_ID 2>/dev/null || echo '(inget BUILD_ID i .next-ny)'`).ut
   : '(.next-ny finns EJ)';
-const deployLock = kort(`ls -la /tmp/ak1a-deploy.lock 2>/dev/null; fuser -v /tmp/ak1a-deploy.lock 2>&1 | head -3`).ut;
+// o574: fuser (psmisc) saknas på SSD Nodes — fd-ägandet läses ur /proc i
+// stället (o570:s mönster): en flock-hållare bär alltid en öppen fd mot
+// låsfilen. readdir/readlink/stat öppnar ingen fd — sonden ser aldrig sig själv.
+function lasHollare(lasFil) {
+  let sokvag;
+  try { sokvag = fs.realpathSync(lasFil); } catch { return null; }
+  const pids = [];
+  for (const pid of fs.readdirSync('/proc')) {
+    if (!/^\d+$/.test(pid)) continue;
+    let fds; try { fds = fs.readdirSync(`/proc/${pid}/fd`); } catch { continue; }
+    for (const fd of fds) {
+      let mal; try { mal = fs.readlinkSync(`/proc/${pid}/fd/${fd}`); } catch { continue; }
+      if (mal === sokvag) { pids.push(pid); break; }
+    }
+  }
+  return pids.length > 0 ? pids.join(',') : null;
+}
+const lasAgare = lasHollare('/tmp/ak1a-deploy.lock');
+const deployLock = kort(`ls -la /tmp/ak1a-deploy.lock 2>/dev/null`).ut
+  + (lasAgare ? `\nägare (fd i /proc): PID ${lasAgare}` : '\n(fd-ägare: ingen — /proc-sond o574)');
 const cronFull = kort(`crontab -l 2>&1 | head -20`).ut;
 const buildLogTail = kort(`ls -t ${AK1}/data/vakten/*.log 2>/dev/null | head -5`).ut;
 

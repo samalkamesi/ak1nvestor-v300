@@ -9,7 +9,7 @@
 //   3  server nere      — nätfel överallt ⇒ MANUELL (omätning), 0 fel
 //   4  4xx-sentinell    ⇒ MANUELL med rutten namngiven
 //   5  timeout          ⇒ MANUELL (omätbar, aldrig fel)
-//   6  låsgrind         — deploylås ÄGS (fuser) ⇒ MANUELL FÖRE prob, OMÄTT
+//   6  låsgrind         — deploylås ÄGS (/proc-fd, o574) ⇒ MANUELL FÖRE prob, OMÄTT
 //   7  bygggrind        — främmande process med HELT mönster ⇒ MANUELL
 //   8  släktexkludering — mönster som matchar EGEN processkedjan ⇒ INGEN
 //                          grind (o55 F2-klassen hos observatören, död 2026-09-18)
@@ -136,11 +136,11 @@ const DOD_PORT = "http://127.0.0.1:1"; // port 1 = inget lyssnar (connection ref
   const arbete = fs.mkdtempSync(path.join(os.tmpdir(), "ssrsond6-"));
   const lasFil = path.join(arbete, "deploy.lock");
   fs.writeFileSync(lasFil, "");
-  const fd = fs.openSync(lasFil, "r+"); // håll fd öppen = ÄGARE (fuser ser oss)
+  const fd = fs.openSync(lasFil, "r+"); // håll fd öppen = ÄGARE (/proc-fd ser oss, o574)
   const s = await medEnv({ AK1A_SSR_SOND_BAS: DOD_PORT, AK1A_SSR_SOND_RUTTER: "/,/kurser", AK1A_DEPLOY_LAS: lasFil }, () => sektionSsrLivssond());
   rapport("6a", "lås med ägare ⇒ MANUELL deployfönster", (s.manuella ?? []).length === 1 && s.manuella[0].ord === "deployfönster", JSON.stringify(s.manuella));
   rapport("6b", "grinden FÖRE mätvärde (ingen prob)", !(s.info ?? []).some((i) => i.includes("sentinellrutter mot")) && (s.info ?? []).some((i) => i.includes("OMÄTT")), JSON.stringify(s.info));
-  rapport("6c", "lås-ÄGANDE = fuser, inte existens (PID namnges)", (s.manuella ?? [])[0]?.kontext.includes(String(process.pid)), `väntade PID ${process.pid} i kontexten`);
+  rapport("6c", "lås-ÄGANDE = /proc-fd, inte existens (PID namnges)", (s.manuella ?? [])[0]?.kontext.includes(String(process.pid)), `väntade PID ${process.pid} i kontexten`);
   fs.closeSync(fd);
   // och när fd släpps: samma fil, ingen ägare ⇒ grinden öppnar (existens räcker ej)
   const s2 = await medEnv({ AK1A_SSR_SOND_BAS: DOD_PORT, AK1A_SSR_SOND_RUTTER: "/kurser", AK1A_DEPLOY_LAS: lasFil }, () => sektionSsrLivssond());
@@ -151,25 +151,41 @@ const DOD_PORT = "http://127.0.0.1:1"; // port 1 = inget lyssnar (connection ref
 // ── 7: bygggrind — FRÄMMANDE process med HELT mönster ⇒ MANUELL ────────────
 {
   const markor = `ssrsond7-${process.pid}-${Date.now()}`;
-  // node-barn (ALDRIG "bash -c 'sleep …'": bash exec-ersätter sig själv med
-  // enkla kommandon ⇒ markören försvinner ur cmdlinen — metodfynd i sviten)
-  const barn = spawn(process.execPath, ["-e", `console.log("${markor}"); setTimeout(() => {}, 8000)`]);
-  await new Promise((losa) => setTimeout(losa, 250)); // låt barnet födas
+  // o574: markören körs som BARNBARN (mellan-node) — realistisk topologi:
+  // en äkta byggprocess (next build under prod-synkens skal) är aldrig barn
+  // till vaktens EGEN kedja, och ppid-exkluderingen dödar egna-barn-klassen
+  // (fork-before-exec-fönstret); mellan-noden står UTANFÖR släkt-uppåt-kedjan
+  // ⇒ markör-barnet räknas främmande. ALDRIG bash som mellanled: bash exec-
+  // ersätter enkla kommandon ⇒ markören tillbakarullas i PID/cmdline
+  // (svitens tidigare metodfynd, bevisat 2026-09-18).
+  const inre = `console.log("${markor}"); setTimeout(() => {}, 6000)`;
+  const mellan = spawn(process.execPath, ["-e", `const { spawn } = require("child_process"); const b = spawn(process.execPath, ["-e", ${JSON.stringify(inre)}]); process.on("SIGTERM", () => { b.kill("SIGKILL"); process.exit(0); }); setTimeout(() => {}, 8000)`]);
+  await new Promise((losa) => setTimeout(losa, 500)); // låt barnbarnet födas
   const s = await medEnv({ AK1A_SSR_SOND_BAS: DOD_PORT, AK1A_SSR_SOND_RUTTER: "/kurser", AK1A_BYGG_MONSTER: markor }, () => sektionSsrLivssond());
   rapport("7a", "främmande mönsterprocess ⇒ MANUELL byggfönster", (s.manuella ?? []).length === 1 && s.manuella[0].ord === "byggfönster", JSON.stringify(s.manuella));
   rapport("7b", "grinden FÖRE mätvärde (OMÄTT)", (s.info ?? []).some((i) => i.includes("OMÄTT")) && !(s.info ?? []).some((i) => i.includes("sentinellrutter mot")), JSON.stringify(s.info));
-  barn.kill("SIGKILL");
+  mellan.kill("SIGTERM");
 }
 
 // ── 8: släktexkludering — mönster som matchar EGNA kedjan ⇒ INGEN grind ────
 // (live-beviset 2026-09-18: en sondpipeline bar själva mönstertexten i sitt
-// argv och fick SIG SJÄLV som "byggprocess" — o55 F2 hos observatören)
+// argv och fick SIG SJÄLV som "byggprocess" — o55 F2 hos observatören;
+// o574 utvidgar till kedjans BARN: skal-pipe-grenar bär förälderns cmdline
+// mikrosekunderna mellan fork och exec)
 {
   const fx = await startaServer(() => ({ status: 200 }));
   // "testa-kvalitetsvakt-ssr500" finns i DENNA svits egna argv + föräldrars
   const s = await medEnv({ AK1A_SSR_SOND_BAS: `http://127.0.0.1:${fx.port}`, AK1A_SSR_SOND_RUTTER: "/kurser", AK1A_BYGG_MONSTER: "testa-kvalitetsvakt-ssr500" }, () => sektionSsrLivssond());
   rapport("8a", "egnmönster ⇒ INTE byggfönster", !(s.manuella ?? []).some((m) => m.ord === "byggfönster"), JSON.stringify(s.manuella));
   rapport("8b", "egnmönster ⇒ prob genomförd och PASS", (s.fel ?? []).length === 0 && (s.manuella ?? []).length === 0 && (s.info ?? []).some((i) => i.includes("1/1 sentineller levande")), JSON.stringify(s.info));
+  // 8c (o574): EGENA fork-barn med mönstret i cmdlinen (exakt topologin för
+  // skal-pipe-grenar i fork-before-exec-fönstret, bevisat med /proc-ögonvittne)
+  // ⇒ ppid ligger i kedjan ⇒ INTE byggfönster, prob genomförd
+  const forkbarn = spawn(process.execPath, ["-e", `console.log("fork testa-kvalitetsvakt-ssr500"); setTimeout(() => {}, 5000)`]);
+  await new Promise((losa) => setTimeout(losa, 300)); // låt barnet födas
+  const s3 = await medEnv({ AK1A_SSR_SOND_BAS: `http://127.0.0.1:${fx.port}`, AK1A_SSR_SOND_RUTTER: "/kurser", AK1A_BYGG_MONSTER: "testa-kvalitetsvakt-ssr500" }, () => sektionSsrLivssond());
+  rapport("8c", "fork-barn i egen kedja ⇒ INTE byggfönster (prob genomförd)", (s3.fel ?? []).length === 0 && !(s3.manuella ?? []).some((m) => m.ord === "byggfönster") && (s3.info ?? []).some((i) => i.includes("1/1 sentineller levande")), JSON.stringify(s3.manuella));
+  forkbarn.kill("SIGKILL");
   await stang(fx);
 }
 

@@ -20253,7 +20253,10 @@ förra tåget), render pågår. Commits: 0b25c487 + 6b0f3fcb + d659f4e8
 Fabriksagent s8-u2 (vakt; omstart — första försöket 02:35–02:51Z underkänd
 utan commit). VAL: o570 §"ÖPPEN POST TILL NÄSTA s8-VÅG" — fyra verktyg som
 "bär samma fuser-sond"; anspråk disk-först (auto-s8-1790822119281-s8-u2-
-ansprak-fuser-skipet.md), nummer o574 (högsta kända o571).
+ansprak-fuser-skipet.md). NUMMERBYTE O572→O574 ärligt: arbetet började under
+o572 men s8-u3 reserverade o572 i poolen 03:07:22Z under mitt arbete (pumpor-
+hundvakt) och o573 togs på disk av tredje syskonet (byggartefakt-mimosa) ⇒
+o574 med kollisionsnotis i poolposten; lära: pool-reservation är steg 1.
 
 ROTORSAKA LAGER 1: ssr-livssond.mjs lasHollare körde fuser med fail-open
 ("verktyg saknas = ingen hållare") — på SSD Nodes PERMANENT ⇒ kvalitetsvaktens

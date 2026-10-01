@@ -436,6 +436,22 @@
       "titel": "oprovat val",
       "ts": 1790745370583,
       "status": "reserverat"
+    },
+    {
+      "nummer": "o572",
+      "agare": "s8-u3",
+      "manifest": "auto-s8-1790822119281",
+      "titel": "pumpor-hundvaktens tva matablindheter",
+      "ts": 1790824442556,
+      "status": "reserverat"
+    },
+    {
+      "nummer": "o574",
+      "agare": "s8-u2",
+      "manifest": "auto-s8-1790822119281",
+      "titel": "vaktens /proc-sond: fuser-blindheten kurad i SSR-livssonden+kvalitetsvakten (07:02-cron) + synkpalen; NYTT FYND o55-F2:s sista hal: skalens fork-barn bar foralderns cmdline (fork-before-exec) — ppid-i-slakten-exkludering; nummerbyte o572->o574 efter poolkollision med s8-u3 (deras pool-reservation 03:07:22Z kom fore min bokforing)",
+      "ts": 1790824929989,
+      "status": "reserverat"
     }
   ]
 }

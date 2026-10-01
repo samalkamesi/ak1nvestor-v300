@@ -7301,3 +7301,64 @@ Contabo-erans 14 db-blad (09-11…09-24) + app-bladen 09-21…09-27 migrerades
 ej vid cutovern och offsite-arkivet innehåller medvetet inte db-dumpar —
 30-dagarsmålet vilar på Supabase-livet + gamla serverns disk (oförändrad
 hållning; nu dokumenterad = köposten stängd).
+
+## 2026-10-01 06:24–pågående — KANT-AVBROTT: nginx avled (unattended-upgrades/openssl); omstart kräver kundens root (v227)
+
+**SYMTOM** (sessionstart 06:52Z): https://lab.ak1nvestor.com → ECONNREFUSED
+(exit 7) på 80+443 · appen pm2 `ak1a` LEV hela tiden (localhost:3000 → 200
++ "AK1A") · 0 nginx-processer · error.log 0 B (ren avstängning, inga fel).
+
+**ROT (belagd i maskinloggar):** unattended-upgrades körde 06:23:49–06:25:48
+(libssl3t64 + openssl 3.5.5-1ubuntu3.5→.6, därefter libheif/libauthen-sasl;
+`/var/log/apt/history.log` + dpkg.log). Tjänster som länkar openssl skulle
+startas om — nginx stoppades men kom ALDRIG tillbaka (Ubuntu-läget: needrestart
+eller postinst-restart fullbordades inte; journal ej läsbar utan root).
+Sista nginx-trafik 06:24 (access.log mtime), pulsvaktens första
+hogprio-extern-larm 06:28:17 — fyra minuters detektion, bevisad vakt.
+
+**KANAL-BEGRENSNING (omedveten tills vidare):** kontot ak1a har INTE sudo
+på SSD Nodes (medveten härdning, v190/FAS A) — sudoers-vitlistan
+(`/etc/sudoers.d/zdesk-lakare` + `zdesk-vaxlare`) täcker ENDAST
+zdesk-enheter. nginx binder 80/443 (ip_unprivileged_port_start=1024) och
+certen är root-låsta (EACCES) ⇒ userspace-nginx omöjlig. Ingen
+privilegieeskalering får/försöks (vitlistans smalhet är designen).
+
+**FÖLJDSKADOR som kurerades samma ronder (v227, commit ab65fd01):**
+1. **Evig deploy-loop:** prod-synkens bytesverifiering var EXTERN HTTPS
+   ⇒ varje grön deploy rullades tillbaka (06:42:45 första TILLBAKARULLNINGEN,
+   ombyggd 06:47, patch-stallning klar 07:05 …). KUR: domaren är nu APPEN
+   (`appOk()` — localhost:3000, Host-rubrik, 200+"AK1A"); röd kant = icke-fatal
+   notis (loggrad + audit `deploy_app_gron_kant_rot`), rollback triggas
+   ALDRIG av kanten längre. Pushad till prod 07:31Z (c27885d4→ab65fd01);
+   första ny-kodspoll 07:37.
+2. **Döva vaktlarm:** pulsvaktens hogprio "extern"-larm (5+ bara i morse)
+   nådde INGEN eskalering — larm-eskaleringen läste 3 källor, ej
+   pulsvakt-larm.log (o26:s blindhetsklass: vaktnät ingen läser). KUR:
+   KÄLLA 4 `oversattPulsvaktRader` (kalla=extern+hogprio ⇒ larm,
+   kalla=extern-aterstall ⇒ grön) + pulsvakt.mjs skriver nu gröna
+   stängningsrader (externFelvarv-serie). Verifierat mot prod:s riktiga
+   logg: 5 000 rader → 145 larm → 1 aktiv episod nivå 3. Känd artefakt:
+   episoden visar "sedan 09-20" (gamla koden skrev aldrig grönt; loggen
+   rsyncades med från Contabo) — framåt stängs episoder korrekt.
+3. **App-blip 06:42** (framsida ECONNREFUSED + 500-chunks) var
+   TILLBAKARULLNINGENS pm2-restart, inte appfel — pulsvaktens omstart 15
+   läkte 06:43:54; statiskt kontrakt GRÖNT 06:43:57.
+
+**KUNDENS ÅTGÄRD (root krävs — Termius-SSH eller arbetsstationens root-nyckel):**
+```
+sudo systemctl start nginx          # alternativt: restart
+curl -sI https://lab.ak1nvestor.com/   # väntat: HTTP/2 200
+```
+Efter detta: pulsvakten skriver `extern-aterstall` (grön rad, episoden
+stängs i eskaleringen) vid nästa extern-varv (≈10 min).
+
+**ROT-KÖ (root, förebyggande):** sätt needrestart i autoläge (eller
+ motsvarande) så unattended-upgrades själva startar om tjänster de
+ uppgraderat — annars upprepas klassen vid nästa openssl/libssl-batch:
+ `sudo sed -i 's/^#$nrconf{restart}.*/$nrconf{restart} = '"'"'a'"'"';/i'
+ /etc/needrestart/needrestart.conf` eller motsvarande + `sudo needrestart -r a`.
+
+**PÅVERKAN:** kundens tre chattvägar genom domänen (/studio, /chat, /desk)
+döda under fönstret — Termius-SSH levande. Appen + alla data + DR-spår
+opåverkade (skiljetecknet mot Contabo-epokens incidenter: kärna levande,
+kant död). Uppetid app: ~100 % (blip 06:42–06:43 = rollback-omstarten).

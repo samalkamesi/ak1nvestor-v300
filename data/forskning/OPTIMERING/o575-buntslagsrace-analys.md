@@ -69,3 +69,31 @@ bygg mittemot = exakt den klass R-lösningen stänger).
 **Bevislänkar:** prod-synk.logg 04:19:55Z (abort-raden) · factory-status
 auto-s8 (klara 2/3 vid abort-tidpunkten) · worklog v222 §dubbelleveransen ·
 worklog v221 §ko-incidenten.
+
+## ROND v223 TILLÄGG (04:3xZ) — djupläsning förfinar bilden: R delvis redundant, PUMP-GRINDEN är den skarpa fixen
+
+Källläsning av verktyg/prod-synk.mjs (V235-blocket) + verktyg/agentfabrik.mjs
+(omgångsloopen) ger tre korrigeringar av analysen ovan:
+
+1. **R-lösningen är DELVIS REDUNDANT:** väntespärren `.synk-fabriksvant`
+   nollställs när fabriken vilar OCH när det hungriga bygget startar — efter
+   en buntslags-abort med fabriken fortfarande aktiv återARMAR sig alltså
+   30-min-väntan mekaniskt vid nästa poll (nya poll: vanteStart = nu ⇒
+   VÄNTAR-FABRIK igen). Hålet jag trodde fanns (ombygg rakt in i nästa
+   barn-commit) stängs redan — SÅ LÄNGE manifestet är aktivt.
+2. **Kvällens exakta race kan ingen pump-grind stoppa:** s8-u2:s barn
+   startade FÖRE det hungriga bygget; endast barnens 25-min-tak binder den
+   klassen (s8-u2 levererade efter ~25–30 min). Kvarvarande äkta hål =
+   PUMPSIDAN: agentfabriken kan föda NYA omgångar/barn MITT i ett löpande
+   byggfönster (RAM-vakten mäter minne, aldrig byggfönstret).
+3. **Skärpt v224 — PUMP-GRIND i agentfabrik.mjs:** vid varje NY omgång
+   (omgångsloopen, före splice) OCH vid manifest-plock: flock -n-test på
+   /tmp/ak1a-deploy.lock ⇒ UPPTAGET ⇒ status "vantar-deploy" + exit 0
+   (nästa :x5-rop återupptar; klara uppgifter körs aldrig om). Känd
+   avvägning: överlappar ett aktivt manifest med ett byggfönster väntar
+   fabriken ut låset medan prod-synkens V235-väntare räknar mot sitt 30-min-
+   tak ⇒ garanterad ~30-min-fördröjning i överlapp (accepterat: sekvens,
+   aldrig kapplöpning — samma filosofi som V235; svält-korgen finns kvar).
+   Implementeras i TYSTT FÖNSTER med torrkörning (simulerat lås + status-
+   assertion); EJ som midnattskirurgi medan deploy/queue rullar.
+

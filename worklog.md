@@ -20511,3 +20511,21 @@ levererade o574 /proc-sond-kuren + efterkvitto e6a98254 med ÄKTA deploy-
 fönster-bevis — deras sond såg bygget som fuser aldrig kunnat se), s8-u3
 på sista stretch (28+ min, hundvakts-filer i ytan). Långpollaren lever
 (32 min av 60) och pushar v222-leveransen när ytan renar.
+
+**RONDENS FORTSÄTTNING (04:2x–04:4xZ) — tre beslut i sekvens:**
+1. **LÅNGPOLLAREN STOPPAD AVSEN 04:28:** ytan renade vid 04:27 och pollaren
+   började merge+push — men deploy-låset var UPPTAGET (ombygget rullade):
+   en push hade orsakat NäSTA buntslagsrace (exakt o575-klassen). Dödad
+   via TaskStop; dess merge-försök lämnade inga spår (trädet rent, ingen
+   MERGE_HEAD). NY ORDNING: deploy-verdiket först (passiv bevakare
+   _v223-byggbevakare.mjs, ingen push/merge), därefter merge+push för hand.
+2. **FABRIKEN KLAR 3/3** (s8-u3 o572: pumpor-hundvakten var ZOMBI sedan
+   09-28 under pm2 — argv-fällan; väckt med 50-PASS-svit). Prod-ytan ren,
+   HEAD 0fa7eeef.
+3. **o575 FÖRFINAT (djupläsning):** R-lösningen delvis redundant (V235:s
+   väntespärr återarmas mekaniskt efter abort); kvällens exakta race
+   (barn startade FÖRE bygget) binder endast av 25-min-taket; äkta hålet =
+   PUMPSIDAN. v224 omformulerad: PUMP-GRIND i agentfabrik.mjs (flock-test
+   före ny omgång/manifest-plock; "vantar-deploy" + exit 0; ~30-min
+   överlappsfördröjning accepterad) — implementeras i tystt fönster med
+   torrkörning, EJ midnattskirurgi på levande maskineri.

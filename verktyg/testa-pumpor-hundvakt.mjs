@@ -14,7 +14,7 @@
 //
 // Körs: node verktyg/testa-pumpor-hundvakt.mjs  (exit 0 = alla PASS)
 
-import { byggHundvakt, beraknaSenasteRadTs } from "./pumpor-hundvakt.mjs";
+import { byggHundvakt, byggLevnadsjournal, beraknaSenasteRadTs, arMainProcess } from "./pumpor-hundvakt.mjs";
 
 let pass = 0;
 let fail = 0;
@@ -165,6 +165,90 @@ function töm() {
   await h.vakt.kolla();
   const ogiltiga = h.journalRader.filter((r) => typeof r.ts !== "string" || Number.isNaN(Date.parse(r.ts)));
   kontroll("I1 samtliga journalrader bär giltig ts", ogiltiga.length === 0);
+}
+
+// ── J: o572 K1 — pm2-ISO-prefix tolkas (v192:s ^-ankrade regex var blind) ───
+{
+  const nu = new Date(NU0); // 2026-09-28T05:30:00Z
+  kontroll("J1 pm2-prefixrad tolkas med komplett datum",
+    beraknaSenasteRadTs(["2026-09-28T05:29:00: ▶ automation-motor"], nu)?.getTime() === NU0 - 60_000);
+  kontroll("J2 blandad svans — nyaste pm2-raden vinner",
+    beraknaSenasteRadTs(["05:10:00 ▶ a", "2026-09-28T05:28:30: ▶ b", "05:19:00 ▶ c"], nu)?.getTime() === NU0 - 90_000);
+  kontroll("J3 blandad svans — nyaste prefixlösa raden vinner",
+    beraknaSenasteRadTs(["2026-09-28T05:04:00: ▶ a", "05:29:00 ▶ b"], nu)?.getTime() === NU0 - 60_000);
+  // komplett datum ⇒ ingen midnattsgissning behövs (igår blir igår av sig självt)
+  const midnatt2 = new Date(Date.UTC(2026, 8, 28, 0, 1, 0));
+  kontroll("J4 pm2-rad från igår korrekt utan gissning",
+    beraknaSenasteRadTs(["2026-09-27T23:59:00: ▶ automation-motor"], midnatt2)?.getTime() === midnatt2.getTime() - 2 * 60_000);
+  kontroll("J5 ogiltigt pm2-datum ignoreras", beraknaSenasteRadTs(["2026-13-99T25:99:99: x"], nu) === null);
+  kontroll("J6 pm2-fraktional tolereras",
+    beraknaSenasteRadTs(["2026-09-28T05:29:59.123: ▶ automation-motor"], nu)?.getTime() === NU0 - 1_000);
+  // REGRESSIONSVAKT (o572:s kärna): en svans med ENBART pm2-prefixerade rader —
+  // v192:s regex (replikerad ordagrant) ser INGET, o572-parsern ser pulsen.
+  const skarpSvans = ["2026-09-28T05:29:45: 05:29:45 ▶ automation-motor", "2026-09-28T05:29:59: 05:29:59 ▶ vaxthus-chatt"];
+  const V192_RE = /^(\d{2}):(\d{2}):(\d{2}) /;
+  kontroll("J7 v192-regexen blind på ren pm2-svans (före-läget bevarat)", skarpSvans.every((r) => !V192_RE.test(r)));
+  kontroll("J8 o572-parsern hittar pulsen där v192 är blind",
+    beraknaSenasteRadTs(skarpSvans, nu)?.getTime() === NU0 - 1_000);
+  // och genom hela vakten: pm2-svans + färsk puls ⇒ ingen omstart, ingen journal
+  const h = töm();
+  h.settRader(skarpSvans);
+  await h.vakt.kolla();
+  kontroll("J9 pm2-puls genom kolla() ⇒ ingen frysning-dom", h.journalRader.length === 0 && h.omstarter.length === 0);
+}
+
+// ── K: o572 K2 — levnadsjournalen (bevis på disk, oberoende av stdout) ──────
+{
+  const journalRader = [];
+  let rader = ["2026-09-28T05:29:45: 05:29:45 ▶ automation-motor"];
+  let lasFel = null;
+  const t0 = NU0;
+  const levnad = byggLevnadsjournal({
+    nu: () => new Date(t0),
+    lasRader: async () => { if (lasFel) throw lasFel; return rader; },
+    journal: async (o) => journalRader.push(o),
+  });
+  await levnad.starta({ version: "o572" });
+  kontroll("K1 starta journalar vakten-startad med version",
+    journalRader.some((r) => r.händelse === "vakten-startad" && r.version === "o572" && !Number.isNaN(Date.parse(r.ts))));
+  const senaste = await levnad.puls();
+  const pulsRad = journalRader.find((r) => r.händelse === "puls-läge");
+  kontroll("K2 puls bär senasteLoggrad + tystnad från KURERADE parsern",
+    Boolean(pulsRad) && senaste?.getTime() === t0 - 15_000 && pulsRad.tystnadMs === 15_000,
+    `fick ${JSON.stringify(pulsRad)}`);
+  lasFel = new Error("ENOENT");
+  await levnad.puls();
+  const pulsRader = journalRader.filter((r) => r.händelse === "puls-läge");
+  kontroll("K3 puls vid läsfel journalas ändå (levnadsbeviset lever)",
+    pulsRader.length === 2 && pulsRader[1].senasteLoggrad === null && pulsRader[1].tystnadMs === null);
+  kontroll("K4 levnadsjournalen har ALDRIG omstartsbefogenhet",
+    !journalRader.some((r) => r.händelse?.startsWith("omstart")));
+}
+
+// ── L: o572 — main-detektionen överlever pm2:s wrapper-argv ──────────────────
+{
+  const modulUrl = "file:///home/ak1a/AK1/verktyg/pumpor-hundvakt.mjs";
+  kontroll("L1 manuell körning: argv[1] = modulen ⇒ main",
+    arMainProcess({ argv1: "/home/ak1a/AK1/verktyg/pumpor-hundvakt.mjs", env: {}, modulUrl }) === true);
+  kontroll("L2 pm2-drift: argv[1] = wrapper men pm_exec_path = modulen ⇒ main",
+    arMainProcess({
+      argv1: "/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js",
+      env: { pm_id: "4", pm_exec_path: "/home/ak1a/AK1/verktyg/pumpor-hundvakt.mjs" },
+      modulUrl,
+    }) === true);
+  kontroll("L3 testimport: främmande pm_exec_path (ärvd pm2-miljö) ⇒ INTE main",
+    arMainProcess({
+      argv1: "/home/ak1a/AK1/verktyg/testa-pumpor-hundvakt.mjs",
+      env: { pm_id: "6", pm_exec_path: "/usr/bin/taskset" },
+      modulUrl,
+    }) === false);
+  kontroll("L4 pm_exec_path utan pm_id (förfalskningsväg) ⇒ INTE main",
+    arMainProcess({
+      argv1: "/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js",
+      env: { pm_exec_path: "/home/ak1a/AK1/verktyg/pumpor-hundvakt.mjs" },
+      modulUrl,
+    }) === false);
+  kontroll("L5 ogiltig sökväg kastar inte", arMainProcess({ argv1: "\0ogiltig", env: {}, modulUrl }) === false);
 }
 
 // ── rapport ──────────────────────────────────────────────────────────────────

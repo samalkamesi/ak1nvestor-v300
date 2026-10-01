@@ -20338,3 +20338,37 @@ BEVIS: mimosa-svit 31/31 PASS · kvalitetsvakt-mimosa-kontrakt 12/12 PASS
 av s8-u3 mitt i — deras kvalitetsvakt-kommentarrad följde med i min
 commit med notis; deras funktionsändring bor i ssr-livssond.mjs som
 EJ följer med). [fabrik]
+
+**s8-u3 o572 (04:2xZ): PUMPOR-HUNDVAKTENS TRE MÄTBLINDHETER — v192→v193;
+zombin väckt.** Kundens sista skyddsnät var självt blint på tre sätt:
+(1) PARSERN — sedan daemonens omstart 09-30 18:54 bär loggen pm2-tidsprefix
+på 1 154/1 155 rader och v192:s ^-ankrade prefixlösa regex såg INGET (sond:
+null med pulsen 28 s gammal); (2) MAIN-DETEKTIONEN (försök 2:s nya fynd,
+roten) — under pm2 är argv[1] = ProcessContainerFork.js (cmdline ljuger via
+process.title) ⇒ driftstart-blocket hoppades över ⇒ vakten ZOMBI sedan
+pm2-starten 09-28: "online" i pm2, IPC-kanalen höll den vid liv, noll
+koll-ronder på 3,5 dygn, utlogg 0 byte, journal saknad; (3) LEVNADSBEVISET
+— ingen rad vid start/drift kunde bevisa att vakten levde. INCIDENT natten:
+försök-1:s process dömde 03:25:13Z FRYSNING med daemonen frisk och startade
+om ak1a-pumpor (restarts 0→1); deras osparade kur revs sedan av
+trädomställningen medan processen levde vidare med beväpnat state = MINA
+(första prefixlösa raden ⇒ omstart nr 2) — desarmerad av denna vågs omstart
+med friskt state. KURER (v193): K1 parsern tolkar pm2-ISO-prefix (komplett
+datum = Date.UTC direkt, ingen midnattsgissning; komponentvalidering;
+fraktional tolereras) + prefixlös arv; K2 byggLevnadsjournal —
+"vakten-startad" vid driftstart + "puls-läge" var 6:e h med senaste ts +
+tystnad, ALDRIG omstartsbefogenhet; K3 ren arMainProcess() — argv[1]-match
+ELLER pm_exec_path+pm_id-match (pm2:s sanna skript-vittne; ärvd främmande
+pm-miljö som zcode-barnets taskset-path ger falskt — fall L3). BEVIS: svit
+50 PASS 0 FAIL (nya block J/K/L inkl. regressionen "v192 blind på ren
+pm2-svans") · sond FÖRE=null/EFTER=puls 28 s mot skarp logg · pm2-starttest
+argv1=wrapper ⇒ o572-check TRUE · DRIFT: pm2-restart 04:15:19Z ⇒ journal
+"vakten-startad","version":"o572","drift":"pm2:4" 04:15:20.094Z = FÖRSTA
+main-körningen i pm2-drift sedan 09-28, därefter 40+ s rondning utan domar,
+daemon restarts oförändrat 1 · tsc 0 fel · mimosa-paritet --doman . GRÖN ·
+src orörd. VACCINATION: pulsvakt.mjs + pumpor-daemon.mjs saknar argv-fälla
+(kör på toppnivå) — hundvakten var enda bäraren; main-detektion i pm2-
+driftade skript MÅSTE klara wrapper-argv. RESTPOSTER till drift: pm2:s döda
+loggpipe för vakten (0 byte sedan 09-28 — journalen är nu sanningskällan),
+daemonens dödsrot 09-29, första puls-läge-raden ~10:15Z. Syskonytor (u1/u2)
+orörda. Protokoll: OPTIMERING/o572-hundvakt-pm2prefix-blindhet-s8.md. [fabrik]

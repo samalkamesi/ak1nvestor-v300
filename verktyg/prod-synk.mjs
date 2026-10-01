@@ -182,8 +182,15 @@ export function lasAktivaFabriksManifest(statusKatalog) {
     try {
       const j = JSON.parse(fs.readFileSync(path.join(statusKatalog, fil), "utf8"));
       if (typeof j === "object" && j !== null && j.status === "klar") continue;
+      // V225 (o575 — PUMP-GRINDEN): "vantar-deploy" = fabriken pausar MEDVETET
+      // för ett löpande byggfönster (deploy-grinden i agentfabrik.mjs) — inga
+      // barn lever i läget, statusfilen skrivs endast vid pauspunkterna efter
+      // att alla barn stängt. Att räkna den som aktiv vore ett konstlat 30-min-
+      // dödläge (V235-väntare + hungrig deploy); att INTE räkna den ger den
+      // önskade sekvensen: synken bygger fritt, fabriken återupptar vid :x5.
+      if (typeof j === "object" && j !== null && j.status === "vantar-deploy") continue;
       ute.aktiva++;
-      ute.ids.push(typeof j?.id === "string" ? j.id : fil);
+      ute.ids.push(typeof j?.id === "string" ? j?.id : fil);
     } catch { /* ogiltig fil — fabriken äter sitt eget fel */ }
   }
   return ute;

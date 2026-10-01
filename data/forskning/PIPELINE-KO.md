@@ -673,5 +673,16 @@ Nästa i kön (händelsestyrda): nattens G2/G5-kvitton 02:30–06:27 UTC 29/9 (7
 |---|---|---|
 | buntslagsracet | prod-synk avbröt dubbelbytet 04:19:55Z (trädet flyttade under bygget: s8-u2:s commit mittemot hungrig deploy) — 52-min bygg på ombyggskö | ✓ ROTANALYSERAD — o575-buntslagsrace-analys.md (tre race/dygn, samma rot: tre skrivare utan byggfönster-semafor) |
 | v224 BOKAD | R-LÖSNINGEN: prod-synken väntar FABRIK-TYST efter buntslags-abort (idag: blott nästa poll = ombygget kan starta rakt in i nästa barn-commit) — liten ändring i egen fil verktyg/prod-synk.mjs; fönsterkrav: fabrik tyst + lås fritt; KVD: tsc 0 + torrkörning med simulerad abort-logg | SKARPAD 04:3x — djupläsning: R delvis redundant (väntespärren återarmas mekaniskt); v224 = PUMP-GRIND i agentfabrik.mjs (flock-test före ny omgång + manifest-plock; "vantar-deploy" + exit 0; ~30-min överlappsfördröjning accepterad) — se o575-tillägget; implementeras i tystt fönster med torrkörning |
+
+
+## ROND v225 [organ:Φ] (2026-10-01 05:0x–05:3xZ) — PUMP-GRINDEN LEVERERAD (7/7 kontrakt) + latent spöklåsbugg kurad + race-loopen brutit med AUTO-PAUS
+
+| Post | Innehåll | Status |
+|---|---|---|
+| pump-grinden (f.d. v224-posten) | agentfabrik.mjs: deployFonsterOppet-grind på punkt A (före omgångsloopen) + B (loophuvudet); prod-synk.mjs: "vantar-deploy" = ej aktiv i lasAktivaFabriksManifest (dödlägesfri sekvens) | ✓ LEVERERAD I TRÄDET — kontraktstest 7 PASS/0 FAIL (testa-agentfabrik-deploygrind.mjs, hermetiskt tmp-lås); landar i prod via push, driftbevis efter deploy |
+| import-vakt + spöklåsbugg | agentfabrik.mjs körde huvud() vid import (oavsiktlig manifestplock 05:14:38Z); pausvägarnas process.exit lämnade LOCK-spöke ≤35 min (finally körs aldrig vid exit) | ✓ KURAD — o43-mönstrets arDirektProgram-vakt + exit-hook (renameSync i 'exit'); torrkörningens LOCK.fri-kvitto på disk |
+| race #2 + brytaren | BUNTSLAGSRACE 05:24:30 (auto-s10-u2:s Q4-DR-commit mittemot ombygget) — fjärde racet på ett dygn, loopen bevisad på riktigt | ✓ BRUTEN — AUTO-PAUS satt i prod (runtime-fil; stoppar ENDAST ny auto-generering; s10:s barn slutför i fred); TAS BORT när grinden deployats GRÖNT |
+| v224 (finslipning) | 307-nämnaren + footerns "300+" — kurade mot guldkällan | ✓ LEVERERAD (commits 469c7da0 + fe9ce890) |
+| v219 BOKAD | Runtime-uppgradering | VÄNTAR — bakom: push av kön → deploy med pump-grind → GRÖN → AUTO-PAUS bort → därefter fönstersond |
 | v219 BOKAD | Runtime-uppgradering 3.11.2→3.14.4 (oförändrad) | VÄNTAR — nu EFTER v224; fortfarande: fabrik-tyst + ledigt lås + G1–G4 |
 | v222-push | Långpollaren (32/60 min vid rondens slut) | ⟳ LEVER — pushar ccac7fbd+d8cb2c25(+v223) när prod-ytan renar; merge-abort-vid-konflikt |

@@ -20563,3 +20563,38 @@ och lämnas hårdkodat (design-nivå, ändras sällan); kurstalet ur guldkällan
 kan aldrig åldras igen. KONTROLL: "507 moduler" = +2 tecken bredvid
 "300+ moduler" i en smal xs-grid-rad — gränsnittsvakten verifierar efter
 deploy. TSC GRÖN 0 fel.
+
+## VÅG 225 (2026-10-01 05:0x–05:3xZ, hjärtslagsrond [organ:Φ]) — PUMP-GRINDEN LEVERERAD + RACE-LOOPENS BRYTARE SATT
+
+**LEVERANS (o575:s skärpta plan, i arbetsytan — prod:s kopior får den via push):**
+1. **verktyg/agentfabrik.mjs — deploy-grinden:** deployFonsterOppet()
+   (flock -n-probe, ENOENT = fail-open) på TVÅ punkter: (A) före
+   omgångsloopen och (B) i loophuvudet — deploy-låset hållet ⇒ status
+   "vantar-deploy" + exit 0; inga nya barn startas mitt i byggfönstret.
+2. **verktyg/prod-synk.mjs — dödlägesfri sekvens:** lasAktivaFabriksManifest
+   räknar "vantar-deploy" som EJ aktiv (inga barn lever i läget — status
+   skrivs endast vid pauspunkter efter att barnen stängt) ⇒ synken bygger
+   direkt, fabriken återupptar vid :x5 när fönstret öppnar.
+3. **IMPORT-VAKT (o43-mönstret):** agentfabrik.mjs körde huvud() vid VARJE
+   import (bevisat 05:14:38Z — kontraktstestet plockade oavsiktligt ett köat
+   manifest och dog i registerhärdningen). Nu körs huvud() endast som
+   direkt program; importer är rena.
+4. **LATENT BUGG KURAD:** pausvägarnas process.exit(0) hoppar över finally
+   ⇒ LOCK-katalogen blev spöke i ≤35 min medan :x5-ropen avvisades —
+   "nästa rop återupptar" var FALSKT sedan början. KUR: exit-hook
+   (synkron renameSync i 'exit') + finally som idempotent extraskydd.
+
+**BEVIS:** kontraktstest testa-agentfabrik-deploygrind.mjs = 7 PASS / 0
+FAIL · node --check båda · torrkörning direkt program: kom förbi vakten,
+bearbetade planen, LOCK.fri-kvitto på disk (inget nytt spöke) · spöket
+från import-olyckan skrotat (ROT modulrelativ — prod orörd av olyckan).
+
+**RACE #2 + BRYTAREN:** medan grinden byggdes landade BUNTSLAGSRACE #2
+(05:24:30, 0fa7eeef → 1f226734): evighetsmotorns auto-s10-u2 (Q4-DR-provet)
+commitade mitt i ombygget — racet bevisar hål exakt (pumpsidan). Loopen
+(auto-manifest × hungrig deploy × ~50 min abort) kan upprepas i evighet;
+KUREN kan inte landa utan ett överlevande bygge = bootstrap-problem.
+**BRYTARE SATT:** AUTO-PAUS i prod (runtime-fil med full motivering i
+pausdokumentet) — stoppar ENDAST ny auto-generering; s10:s löpande barn
+slutför i fred; manuella manifest + sessioner opåverkade. BORTTAGNING så
+snart pump-grinden deployats GRÖNT (se o575 + pausfilens text).

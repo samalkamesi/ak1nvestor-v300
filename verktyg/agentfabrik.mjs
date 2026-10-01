@@ -216,6 +216,33 @@ function gitTopp() {
   }
 }
 
+// ---------------------------------------------------------------------------
+// V225 (o575 — PUMP-GRINDEN): prod-synkens byggfönster och fabrikens barn är
+// två skribenter i SAMMA träd. Bevisat 2026-10-01 04:19:55Z (buntslagsracet):
+// fabrikens barn committade mittemot det hungriga deploy-bygget — bytet
+// avbröts korrekt (V187-vakten) men HELA 52-minutersbygget gick till
+// ombyggs-kön. Grunden: RAM-vakten mäter minne, ALDRIG byggfönstret —
+// fabriken kunde föda nya barn mitt i ett löpande bygge. KUR: före varje
+// NY omgång (och före manifestplock med väntande uppgifter) testas
+// deploy-låset; upptaget ⇒ status "vantar-deploy" + exit 0 — nästa :x5-rop
+// återupptar (klara uppgifter körs aldrig om). prod-synkens
+// lasAktivaFabriksManifest räknar "vantar-deploy" som INTE aktiv (inga
+// barn lever i det läget) ⇒ synken bygger direkt, fabriken väntar ut
+// låset: sekvens utan 30-min-dödläge och utan race. Kontraktstest:
+// verktyg/testa-agentfabrik-deploygrind.mjs
+// ---------------------------------------------------------------------------
+/** Sant när deploy-låset är LEDIGT (flock -n lyckas). Fail-open vid ogiltig
+ *  miljö (flock saknas ⇒ öppet — grinden får ALDRIG svälta fabriken; race-
+ *  förebyggande är den, buntslagsrace-domaren är kvarsäkringen). */
+export function deployFonsterOppet(lasFil = "/tmp/ak1a-deploy.lock") {
+  try {
+    execFileSync("flock", ["-n", lasFil, "-c", "true"], { timeout: 5000 });
+    return true; // låset togs och släpptes omedelbart = fritt byggfönster
+  } catch (e) {
+    return e?.code === "ENOENT" ? true : false; // ENOENT = flock saknas (öppet); annars upptaget
+  }
+}
+
 /**
  * ROND 175: global processläsare — rond 170:s dubbelalstringsskydd anropade
  * lasProcesser() som endast fanns som LOKAL läsPs() i städaFöräldralösaZcode
@@ -813,6 +840,22 @@ function släppLås() {
   }
 }
 
+// V225 (bevisat 05:14–05:19Z): huvud():s PAUSVÄGAR (vantar-barn/-ram/-deploy)
+// anropar process.exit(0) — och finally-blocket kör ALDRIG vid process.exit.
+// Följden: varje paus lämnade LOCK-katalogen kvar som spöke i upp till 35 min
+// (åldersbrytaren), under vilka varje :x5-rop avvisades med "annan fabrik
+// håller låset" — löftena "nästa rop återupptar" var FALSKA. Kuren: exit-
+// hooken (synkron renameSync är tillåten i 'exit') — låset släpps vid VARJE
+// process-avslut oavsett väg; finally behålls som extra skydd (idempotent).
+let slappLasetViaHook = false;
+function registreraExitHook() {
+  process.on("exit", () => {
+    if (slappLasetViaHook) return;
+    slappLasetViaHook = true;
+    släppLås();
+  });
+}
+
 // ── huvud ────────────────────────────────────────────────────────────────────
 
 async function huvud() {
@@ -999,8 +1042,22 @@ async function huvud() {
     status.status = "vantar-barn";
     status.kvar = köade.map((u) => u.id);
     skrivStatus(manifest, status);
-    logga(`registerhärdning: ${främmande.length} främmande fabriksbarn lever — omgången väntar (dubbelalstring förbjuden)`);
+    logga(`registerhärdning: ${främmande.length} främmande fabriksbarn lever — omgången väntar (dubbelalstring förbjudet)`);
     process.exit(0); // finally släpper låset; :x5-ropet återupptar
+  }
+
+  // V225 (o575 — PUMP-GRINDEN, punkt A): deploy-låset hållet ⇒ inga NYA barn
+  // mitt i byggfönstret (buntslagsrace-klassen). "vantar-deploy" räknas av
+  // prod-synkens lasAktivaFabriksManifest som EJ aktiv (inga barn lever i
+  // läget) ⇒ synken bygger direkt och fabriken återupptar vid nästa :x5-rop
+  // när fönstret är fritt — sekvens, aldrig kapplöpning, utan 30-min-dödläge.
+  if (köade.length > 0 && !deployFonsterOppet()) {
+    status.status = "vantar-deploy";
+    status.kvar = köade.map((u) => u.id);
+    skrivStatus(manifest, status);
+    logga(`deploy-grind: byggfönstret upptaget (/tmp/ak1a-deploy.lock) — omgången väntar (kvar: ${köade.length}); :x5-ropet återupptar när fönstret öppnar`);
+    loggrad({ händelse: "deploy-grind", manifest: manifest.id, kvar: köade.length });
+    process.exit(0); // finally släpper låset; inga barn startade
   }
 
   // (d) bokförings-gränssnittet mot korUppgiftMedGrind — per uppgift +
@@ -1036,6 +1093,17 @@ async function huvud() {
       skrivStatus(manifest, status);
       loggrad({ händelse: "ram-vakt", manifest: manifest.id, ram, kvar: köade.length });
       process.exit(0); // finally släpper låset; nästa fabriksrop återupptar
+    }
+    // V225 (o575 — PUMP-GRINDEN, punkt B): kedjade manifest (12-uppgifters-
+    // visionen) ska inte föda sin NäSTA omgång mitt i ett deploy-bygg som
+    // startade EFTER punkt A — samma paus, samma återupptagning.
+    if (!deployFonsterOppet()) {
+      logga(`deploy-grind: byggfönstret upptaget inför ny omgång — pausar kedjan (kvar: ${köade.length}); :x5-ropet återupptar`);
+      status.status = "vantar-deploy";
+      status.kvar = köade.map((u) => u.id);
+      skrivStatus(manifest, status);
+      loggrad({ händelse: "deploy-grind", manifest: manifest.id, kvar: köade.length });
+      process.exit(0); // finally släpper låset; löpande barn färdiga, inga nya startade
     }
     const omgång = köade.splice(0, PARALLELL_TAK);
     logga(`omgång: ${omgång.map((u) => u.id).join(", ")} (ram ${ram ?? "?"} MB)`);
@@ -1103,16 +1171,33 @@ async function huvud() {
   );
 }
 
-if (!taLås()) {
-  logga(TORR ? "annan fabrik håller låset — torrkörning avslutar (idempotent)" : "annan fabrik håller låset — avslutar (idempotent)");
-  process.exit(0);
-}
-try {
-  await huvud();
-} catch (e) {
-  logga(`FABRIKSFEL: ${String(e).slice(0, 300)}`);
-  loggrad({ händelse: "fabriksfel", fel: String(e).slice(0, 500) });
-  process.exitCode = 1;
-} finally {
-  släppLås();
+// Import-vakt (v225, mönster från prod-synk o43): kontraktstestet
+// (testa-agentfabrik-deploygrind.mjs) importerar denna moduls funktioner —
+// huvud() (fabrikskedjan!) får ENDAST köras som direkt program (pumpornas
+// :x5-rop), ALDRIG som sidoeffekt av en import. Före v225 körde varje import
+// HELA fabriken (bevisat 05:14:38Z: testet råkade plocka ett köat manifest
+// och process.exit:ade i registerhärdningen innan en enda assertion körts).
+const arDirektProgram = (() => {
+  try {
+    return Boolean(process.argv[1]) && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+  } catch {
+    return false;
+  }
+})();
+if (arDirektProgram) {
+  if (!taLås()) {
+    logga(TORR ? "annan fabrik håller låset — torrkörning avslutar (idempotent)" : "annan fabrik håller låset — avslutar (idempotent)");
+    process.exit(0);
+  }
+  registreraExitHook(); // V225: pausvägarnas process.exit släpper låset via hooken
+  try {
+    await huvud();
+  } catch (e) {
+    logga(`FABRIKSFEL: ${String(e).slice(0, 300)}`);
+    loggrad({ händelse: "fabriksfel", fel: String(e).slice(0, 500) });
+    process.exitCode = 1;
+  } finally {
+    slappLasetViaHook = true; // hooken ska inte dubbellösa efter finally
+    släppLås();
+  }
 }

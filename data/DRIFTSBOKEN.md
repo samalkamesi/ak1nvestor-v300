@@ -7158,6 +7158,38 @@ förbättrar). Första skivan levererad:
   22df62aa + vaktkörning GRÖN. Lärdom: räddnings-byte utan markör = larm-
   fönster fram till nästa omdeploy (markör/vakttolerans = nästa våg).
 
+## 2026-10-01 (s10-u3, manifest auto-s10-1790831128590) — KEDJA 2 PÅ SSD NODES: moln-JSON-bladets första restore på nya servern
+
+V193 portade kedja 1 (SQL-bladet) till userspace-PG18 men kedja 2 (moln-JSON
+→ system_events) blev kvar på Contabo-syskonet dr-kedja2.mjs (sudo +
+pg_ctlcluster PG17 — dör här av princip). Under tiden föddes moln-bladen
+varje natt (02:40) restore-oskyddade: senaste bevis 09-21 på Contabo.
+
+- **Nytt verktyg `verktyg/dr-kedja2-ssdnodes.mjs`:** v193:s recept på kedja
+  2, men userspace-PG18-lagret ÄRVS via import från dr-ovning-ssdnodes.mjs
+  (main-guard = sidoeffektfri import) i stället för kopierat.
+  Inmatningsverktyget aterstall-system-events.mjs körs OMODIFIERAT — det
+  spawnar psql UTAN host-flaggor; anslutningen styrs via PGHOST/PGPORT/
+  PGUSER-env (kanalen på denna server). Svit 14/14.
+- **Skarp jungfrukörning GRÖN (05:17–05:23Z, flock efter u2:s kvartalsfönster):**
+  system-events-full-2026-10-01.json.gz · header 187 737/sidor 38/truncerad
+  false · gzip-ström 0 fel/0 dubblett-id · COPY 187 737 · oberoende
+  omräkning 187 737 · unika id 187 737 = **fyra-samma-kontraktet EXAKT** —
+  E34:s nattkontroll av samma blad oberoende bekräftad av restore-vägen.
+  Fönster 09-03→10-01 02:40 · info 186 035/warning 1 702 · topp-typer
+  oversattning 146 190 · trafik 39 555 · sakerhet 1 874 · akm2_snapshot 101.
+  Städning oberoende eftermätt: skrap-DB raderad · PG18 stoppad · arkivets
+  SHA+mtime orörda (ENDAST LÄST tredubbelbelagt).
+- **F1 — RTO 298,0 s @631 r/s (seriens långsammaste; Contabo 25,0/34,3/104,5):**
+  rot BELAGD = load 7,85–8,64 under hela COPY-fönstret (deploytågets
+  next build 04:45→ + fabrikens 3 barn). Radkontraktet fasoberoende, RTO
+  fasberoende ⇒ F1-regeln utökas till kedja 2: lugnt-fönster-band [30,120] s,
+  full-last-band [250,350] s; kvartalsrepliken i lugn fas = köpost.
+- **Kvartalskommando härifrån (BÅDA kedjorna på nya servern):**
+  `node verktyg/dr-ovning-ssdnodes.mjs` (kedja 1) +
+  `node verktyg/dr-kedja2-ssdnodes.mjs` (kedja 2).
+- Protokoll: `data/forskning/DR-KEDJA2-2026-10-01-SSDNODES-AUTO.md`.
+
 ## KVARTALS-DR-PROV Q4 2026 (s10-u2, manifest auto-s10-1790831128590, 2026-10-01 — GODKÄNT, fönstrets första dag)
 
 Fullständigt protokoll: `data/forskning/DR-PROV-2026-10-01-SSDNODES-AUTO.md`

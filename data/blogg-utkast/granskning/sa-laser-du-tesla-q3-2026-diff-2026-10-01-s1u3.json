@@ -1,0 +1,71 @@
+{
+  "objekt": "sa-laser-du-tesla-q3-2026",
+  "bolag": "Tesla, Inc. (TSLA)",
+  "granskad": "2026-10-01",
+  "granskare": "s1-u3 (manifest auto-s1-1790858103968)",
+  "byggare": "s4-u1, commit 2c30664a8 2026-09-30 22:45:56Z",
+  "utkastMd5": "76fc745200e5ac27f3add76d89267cfb",
+  "dom": "GRÖN GRUND → FLYTTKLAR EFTER RÄTTNINGAR F1–F4",
+  "sond": "verktyg/_s1u3-tesla-q3-kontroll.mjs (utkast 114 PASS · 3 FEL · 5 NOT; paket 117 PASS · 0 FEL · 5 NOT) + verktyg/_s1u3-tesla-q3-paket.mjs (4 kurer, exakt-en-träff-assert per kur)",
+  "fynd": [
+    {
+      "id": "F1",
+      "allvarlighet": "VÄSENTLIGT (strukturgrind: title över wihlborgs-taket)",
+      "plats": "title (hela fältet)",
+      "fran": "461 tkn — 'Tesla (TSLA) Q3-rapport 2026: så läser du den — universumets högsta EV/EBIT (946,8) och näst högsta P/E (333,7) på en EBIT-marginal som sjunkit till 1,41 procent, kvartalskedjan 0,39+0,23+0,13+0,32 = 1,07 dollar som stänger P/E-fältet exakt, leveranssvängen 497 099 → 358 023 → 480 126, och balansräkningens friska hörn (skuldkvot 0,18 på grenens median) — rappdagen onsdagen 21 oktober efter amerikansk börsstängning (tredjepartskonvergens, ej bolagsbekräftad)'",
+      "till": "309 tkn — 'Tesla (TSLA) Q3-rapport 2026: så läser du den — universumets högsta EV/EBIT (946,8) och näst högsta P/E (333,7) på EBIT-marginalen 1,41 procent, EPS-kedjan 0,39+0,23+0,13+0,32 = 1,07 dollar, leveranssvängen 497 099 → 358 023 → 480 126 och skuldkvoten 0,18 — rappdagen 21 oktober efter amerikansk börsstängning'",
+      "belagg": "seriens title-tak 314 tkn (AT&T-passet 2026-09-30: '314 tkn = EXAKT wihlborgs-taket, grönt men gränsvärt') — utkastets 461 tkn ligger 147 över taket; ny titel behåller alla sex signaturtal + rappdagsklassen ('efter amerikansk börsstängning') och datumklassens fulla motivering lever kvar i description och Urvalssektionen"
+    },
+    {
+      "id": "F2",
+      "allvarlighet": "VÄSENTLIGT (strukturgrind: description över seriepraxis)",
+      "plats": "description (hela fältet)",
+      "fran": "905 tkn (fyra meningar med dubbla parentesstackar — bl.a. hela datumpanelen med fem källnamn + leveransförväntansanalytikern)",
+      "till": "653 tkn — datumpanelen stramad till tre källor + Zacks-divergensen, kvartalskedjans fyra_EPS-tal till 'kvartalskedjan som stänger P/E-fältet exakt på 1,07 dollar' (talen står kvar i titel + body), 'Allt som utbildning, aldrig råd.' behållen som sista mening",
+      "belagg": "seriepraxis 328–654 tkn (AT&T 625; OG-taket 155 gäller inte JSON-fältet) — utkastets 905 tkn ligger 251 över; ny description 653 tkn inom fönstret med datumklass, signaturtal och utbildningsdisclaimer intakta"
+    },
+    {
+      "id": "F3",
+      "allvarlighet": "formulering (osynligt tecken)",
+      "plats": "Så står sig bolaget mot branschen, läsart-rad två",
+      "fran": "TTM-intäkts\u00ADtillväxten +25,5 procent (mjukt bindestreck U+00AD mellan 'intäkts' och 'tillväxten')",
+      "till": "TTM-intäktstillväxten +25,5 procent",
+      "belagg": "AT&T-passets strukturkontroll sätter mjuka bindestreck (U+00AD) = 0 som seriegrön norm — osynligt i de flesta vyer men levande i sök/kopiering/extrahering; exakt en träff i utkastet, borttaget i paketet"
+    },
+    {
+      "id": "F4",
+      "allvarlighet": "n-klassfel i tabell (påståendena sanna, klasserna missvisande)",
+      "plats": "Branschtabellen, raderna P/E och EV/EBIT",
+      "fran": "näst högst av 14 (universumets näst högsta av 328) … högst av 14 (universumets högsta av 328)",
+      "till": "näst högst av 14 (universumets näst högsta av 315 bärande) … högst av 14 (universumets högsta av 297 bärande)",
+      "belagg": "328 = universumets TOTALA radantal; rangklassen ska bära fältets BÄRANDE antal — punktlistan ovanför tabellen har redan rätt klass ('näst högst bland universumets 315 P/E-bärande' / 'högst bland 297 bärande rader'), tabellen motsade sin egen punktlista; egenmätt: P/E-bärande n=315 (CRWD 5419,71 högst, TSLA rang 2), EV/EBIT-bärande n=297 (TSLA rang 1, ARM 310,87 närmaste följare)"
+    }
+  ],
+  "noterUtanKur": [
+    "resultatCAGR-fältet bär etiketten '5 år' men radens notering dokumenterar 4 räkenskapsår (källan ger 4) — FÄLTET är kanoniskt, texten följde fältet (AT&T-precedensen); räknat ur serien: (3 794/12 556)^(1/3)−1 = −32,9 % = fältet",
+    "källsektionen redovisar analysters målkursspann ('målkursnoter 250–480-spannet') med öppen not 'tredjepartsprognoser, redovisade som sådana' — källkritisk redovisning, inte egna råd: grönt",
+    "publishedAt 2026-10-21 = rappdagen (rapporten kommer efter stängning samma dag; seriepraxis var 2 dagar före — AT&T 19/10 mot 21/10): publiceringsdatum är kundens val (R2), vidarebefordras",
+    "kalender-kommunikation.json bär INGEN Tesla-rad — paketets datumpanel (WSH/Public/Yahoo-konvergens, MarketChameleon 21–23/10, Zacks 28/10) är byggarens egen sökverifierade insamling med öppen datumklass enligt GETI/Newmont-praxis: grönt, kontrollera ir.tesla.com före publicering",
+    "heltalsprocentklassen +16/+12/−37/−3 (räknade 15,9/11,6/−36,8/−2,9 på kända kvartalsbaser) — korrekt heltalsavrundning, grönt; fyra sondbuggar i v1 (avrundningstoleranser, MUSD-enhet, magnitudklass) ärligt bokförda och rättade under granskningen"
+  ],
+  "kallor": {
+    "byggvintage": "bolagsunivers.json 328 poster (db5e5f13e 2026-09-30 21:17:41Z) — tesla-commit 2c30664a8 22:45:56Z kom 1,5 h SENARE: paketet byggdes mot dagens exakta träd, ingen glidning; TSLA-rad + tillväxtgren n=19 fältnivåverifierad LIVE",
+    "kalender": "kvartal/2026-q3/kalender-kommunikation.json (ingen Tesla-rad — se noter)",
+    "universumSonder": "P/E-bärande n=315 · EV/EBIT-bärande n=297 · totalt 328 · CRWD högsta P/E 5419,71 · ARM näst högsta EV/EBIT 310,87 (textens 'ARM 310,9' = fältet avrundat)"
+  },
+  "juridik": {
+    "lagrumsfamiljer": ["2007:528 (2 kap 5 § utbildningsundantaget)"],
+    "radglossor": "13 mönster × 3 ytor = 0 träffar",
+    "negeradeRadformer": 2 ("inte en rekommendation att köpa, sälja eller behålla" i ingressen + "Inga köp-, sälj- eller behållningsrekommendationer förekommer" i slutstycket)",
+    "disclaimerSist": "R2-satsen är bodyns sista rad",
+    "referenser911": "7 mönster × 3 ytor = 0"
+  },
+  "leveransfiler": [
+    "granskning/sa-laser-du-tesla-q3-2026-KONTROLL-2026-10-01-s1u3.md",
+    "granskning/sa-laser-du-tesla-q3-2026-diff-2026-10-01-s1u3.json",
+    "granskning/sa-laser-du-tesla-q3-2026-FLYTTKLART-PAKET-2026-10-01-s1u3.json",
+    "verktyg/_s1u3-tesla-q3-kontroll.mjs",
+    "verktyg/_s1u3-tesla-q3-paket.mjs"
+  ],
+  "publicering": "kundens beslut (R2)"
+}

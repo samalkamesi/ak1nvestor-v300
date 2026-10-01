@@ -48,7 +48,9 @@ while (Date.now() - START < TAK_MS) {
     senasteDeployadRapporterad = deployad;
     console.log(`\nDEPLOYAD-RAD: ${deployad.slice(0, 160)}`);
   }
-  if (MAL_HASHAR.some((h) => markor.startsWith(h))) {
+  // Slutvillkor (enkelt + robust mot efterhands-pushar): markören har
+  // lämnat den gamla aa2f35eb OCH en DEPLOYAD-rad finns efter kurens push.
+  if (markor && !markor.startsWith('aa2f35eb') && deployad) {
     console.log(`\nMARKÖR = ${markor.slice(0, 8)} — LOOPEN BRUTEN, deploy i mål.`);
     console.log(`UTFALL: GRÖNT efter ${Math.round((Date.now() - START) / 60000)} min`);
     process.exit(0);

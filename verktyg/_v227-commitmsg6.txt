@@ -1,0 +1,1 @@
+studio: [organ:Φ] v227 väntare förenklad — slutvillkor = markören lämnat aa2f35eb + DEPLOYAD-rad efter kurens push (robust mot efterhandspushar; hashjakten slutar här). Lokal commit — push EFTER deployens avgörande (byggfönstret heligt).

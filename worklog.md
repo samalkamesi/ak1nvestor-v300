@@ -20221,3 +20221,29 @@ binären lever ej i sessionens PATH; abort förblir säker default, äkta
 versionen kontrolleras i app-serverns miljö vid körningstillfället).
 Körning sker först när grinderna öppnar (fönsterregel: fabrik tyst +
 bygg tyst + helst nattlugn).
+
+## ITERATION 2 (2026-10-01 00:4x–01:0xZ) — v219 på bevisad grund: versionssanningen + prefix-fällan
+
+**FYND 1 — VERSIONSSANNINGEN (registret korrigerat):** processonden
+(nyckelkommando: ps -eo i node-kanal) hittade app-servern = node
+/home/ak1a/.npm-global/bin/zcode app-server (PID 2398790) — och dess
+package.json bevisar installerad **3.11.2-22**, INTE -24 som registret
+trodde. Uppgraderingsgapet är ÅTTA versioner. Bonusfynd: ZCode Desktop
+3.14.3 körs LEVANDE på servern (AppImage, fabrikens UI-kartläggning
+startade den) — CLI:n ligger versionsmässigt efter Desktop runtime,
+ytterligare bränsle för post 37.
+
+**FYND 2 — PREFIX-FÄLLAN (tyst död fångad FÖRE skada):** sessionens
+miljö bär npm_config_prefix=/usr som ÖVERRIDER ~/.npmrc (prefix=/home/
+ak1a/.npm-global). En naiv "npm install -g" i v219-skriptet hade
+installerat 3.14.4-30 till /usr medan app-servern fortsatt köra gamla
+3.11.2-22 ur .npm-global — uppgraderingen hade VERKSTÄLLTS utan att
+verka (worst case: dubbla installationer). Kuren i skriptet:
+--prefix /home/ak1a/.npm-global + env-override + versionverifiering
+läser package.json PATH-oberoende.
+
+**G4 TORRKÖRD GRÖN:** "G4 OK — kör 3.11.2-22". G1/G2 stängda korrekt
+(fabrik auto-s5 pågår; deploy-lås lever). Iteration 2→3 (målmotorn
+arbetar). Byggståget friskt: TypeScript KLAR 9,2 min (det steget dödade
+förra tåget), render pågår. Commits: 0b25c487 + 6b0f3fcb + d659f4e8
+(väntar push tills fabrikens barn rensat prod-ytan).

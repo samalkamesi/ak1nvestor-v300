@@ -1,0 +1,156 @@
+{
+  "version": "1.0.0",
+  "id": "rapportakademin-hm-b-q4-2026",
+  "titel": "Rapportakademin: H&M Q4 2026 — från A till Ö",
+  "beskrivning": "Interaktivt lärande genom H&Ms kvartalsrapport med fokus på detaljhandel, varumärke och lagerhantering.",
+  "ticker": "HM-B.ST",
+  "bolag": "H & M Hennes & Mauritz AB",
+  "rapportPeriod": "Q4 2026 (sep-nov)",
+  "rappdag": "2027-01-estimerad",
+  "fas": 1,
+  "publiceringStatus": "OSYNLIG",
+
+  "laringsVag": [
+    {
+      "id": "sektion-1",
+      "titel": "Introduktion: H&M — global detaljhandel",
+      "typ": "lasning",
+      "innehall": "H&M är en av världens största modekoncerner med över 4 000 butiker i cirka 80 länder. Varumärken: H&M, COS, & Other Stories, Monki, Weekday, ARKET. Konkurrenter: Inditex (Zara), Uniqlo, Shein. H&M:s utmaning: snabb mode till rätt pris med hållbarhet.",
+      "mal": "Förstå detaljhandelns affärsmodell och H&M:s position"
+    },
+    {
+      "id": "sektion-2",
+      "titel": "Nyckeltal för detaljhandel",
+      "typ": "lasning",
+      "innehall": "Detaljhandels nyckeltal: jämförbar försäljning (samma butiker, valutajusterat), lageromsättningshastighet, bruttomarginal (inköpspris vs försäljningspris), kanalmix (fysiskt vs online), och sqm-produktivitet (intäkt per kvadratmeter butiksyta).",
+      "mal": "Förstå branschspecifika mått för retail"
+    },
+    {
+      "id": "sektion-3",
+      "titel": "🎨 BEDÖM FÖRST",
+      "typ": "bedomForst",
+      "fragor": [
+        {
+          "id": "bf-1-hm",
+          "fraga": "H&Ms bruttomarginal ligger historiskt på cirka 52-55%. Vad tror du Q4 blir?",
+          "typ": "sifferbedomning",
+          "svarsalternativ": [
+            {"id": "a", "text": "Lägre — under 50% (reakor, prispress)"},
+            {"id": "b", "text": "Normal — 52-54%"},
+            {"id": "c", "text": "Högre — över 55% (bättre fullpris-försäljning)"}
+          ],
+          "expertSvar": "H&Ms bruttomarginal är FÖR DET MESTA mellan 52-55%. Q4 (julhandel) tenderar att vara starkt men reor i januari kan dra ner. Nyckeln: andel fullpris vs rea. Om H&M minskar reor och säljer mer till fullpris stiger margin. Detta är ett KVALITETS-mått på varumärket."
+        },
+        {
+          "id": "bf-2-hm",
+          "fraga": "Vilken andel av H&Ms försäljning tror du sker online?",
+          "typ": "sifferbedomning",
+          "svarsalternativ": [
+            {"id": "a", "text": "Under 20% (fortfarande fysiskt-dominerat)"},
+            {"id": "b", "text": "20-30% (digital övergång pågår)"},
+            {"id": "c", "text": "Över 30% (digital-mogen)"}
+          ],
+          "expertSvar": "H&M har rapporterat online-andel kring 22-25% och det stiger långsamt. Digital är mer lönsamt per transaktion (ingen butikskostnad) men kräver investering i logistik och returhantering."
+        },
+        {
+          "id": "bf-3-hm",
+          "fraga": "Vad är den största risken med H&M just nu?",
+          "typ": "fritext-tankare",
+          "svarsalternativ": null,
+          "expertSvar": "Vanliga risker: Shein och Temu (ultrasnabb ultra-billig mode från Kina), hållbarhetskrav (ESG-lagstiftning), valutor (svag SEK ökar inköpskostnader i USD), och råvarupriser (bomull). Varumärkesrisken är störst: om H&M tappar sin position mellan 'billigt' och 'kvalitet' finns ingen tydlig kund."
+        }
+      ]
+    },
+    {
+      "id": "sektion-4",
+      "titel": "🎨 EXPERTLÄSNING",
+      "typ": "expertLasning",
+      "visasEfter": "sektion-3",
+      "nyckeltal": [
+        {"namn": "Jämförbar försäljning", "forklaring": "Samma butiker, lokala valutor — den 'äkta' tillväxten", "hmHistorik": "Historiskt -2% till +5%", "lasSatt": "Jämförbar försäljning är den viktigaste tillväxtmetricen: exkluderar butiksöppningar/stängningar och valutor"},
+        {"namn": "Bruttomarginal", "forklaring": "Intäkt minus inköps- och transportkostnad", "hmHistorik": "52-55%", "lasSatt": "Bruttomarginal är LIVSNERVER för retail: 1% högre margin på 250 miljarder = 2,5 miljarder extra rörelseresultat"},
+        {"namn": "Lageromsättning", "forklaring": "Hur snabbt lagret säljs", "hmHistorik": "Cirka 3-4 gånger per år", "lasSatt": "Låg omsättning = kapital binds i lager som kanske måste reas ut. Hög omsättning = färre reor, bättre margin"},
+        {"namn": "Lager / Intäkter", "forklaring": "Hur stort lagret är relativt till försäljning", "hmHistorik": "Cirka 20-25%", "lasSatt": "Stigande lager är en VARNING: bolaget köper in mer än det säljer — kommande reor?"},
+        {"namn": "Online / Total", "forklaring": "Digital kanals andel", "hmHistorik": "22-25%", "lasSatt": "Trenden uppåt = bättre marginalpotential men kräver logistik-investering"}
+      ]
+    },
+    {
+      "id": "sektion-5",
+      "titel": "📐 AKM1-ÖVNINGAR på H&Ms tal",
+      "typ": "ovningar",
+      "ovningar": [
+        {
+          "id": "ov-v01-hm",
+          "variabel": "V01 Försäljningstillväxt",
+          "fraga": "Om H&Ms jämförbara försäljning ökade från 63 000 Mkr till 64 800 Mkr, vad är tillväxten?",
+          "svar": "2.9%",
+          "rakneSatt": "(64800 - 63000) / 63000 = 1800/63000 = 0.0286 ≈ 2.9%",
+          "svarighetsgrad": 1
+        },
+        {
+          "id": "ov-v04-hm",
+          "variabel": "V04 P/S",
+          "fraga": "Om H&Ms börsvärde är 220 miljarder SEK och årsintäkten (TTM) är 250 miljarder SEK, vad är P/S-talet?",
+          "svar": "0.88",
+          "rakneSatt": "220 / 250 = 0.88",
+          "svarighetsgrad": 1
+        },
+        {
+          "id": "ov-v05-hm",
+          "variabel": "V05 P/B",
+          "fraga": "Om H&Ms börsvärde är 220 miljarder SEK och eget kapital är 130 miljarder SEK, vad är P/B-talet?",
+          "svar": "1.69",
+          "rakneSatt": "220 / 130 = 1.692 ≈ 1.69",
+          "svarighetsgrad": 1
+        },
+        {
+          "id": "ov-v08-hm",
+          "variabel": "V08 EBITDA-marginal",
+          "fraga": "Om EBITDA är 15 000 Mkr och intäkterna är 64 800 Mkr, vad är EBITDA-marginalen?",
+          "svar": "23.1%",
+          "rakneSatt": "15000 / 64800 = 0.2315 ≈ 23.1%",
+          "svarighetsgrad": 2,
+          "notis": "Detaljhandel med starkt varumärke (som H&M) har HÖGRE EBITDA-marginal än biltillverkning (Volvo ~11%) men LÄGRE än mjukvaru-/varumärkesbolag (Apple ~30%+). Varumärkesstyrkan = marginal."
+        },
+        {
+          "id": "ov-v10-hm",
+          "variabel": "V10 Varumärke",
+          "fraga": "H&Ms bruttomarginal är 53%. Inditex (Zara) har bruttomarginal på cirka 58%. Vad betyder skillnaden på 5 procentenheter?",
+          "svar": "Inditex har starkare prissättningskraft",
+          "rakneSatt": "Högre bruttomarginal = kunderna är villiga att betala mer relativt till inköpskostnad. Detta indikerar starkare varumärke, bättre positionering, eller mer differentierade produkter.",
+          "svarighetsgrad": 2,
+          "notis": "V10 i AKM1 bedömer varumärkesstyrka. Bruttomarginal vs konkurrenter är ETT indikator (inte det enda): vad säger den om H&M:s position?"
+        }
+      ]
+    },
+    {
+      "id": "sektion-6",
+      "titel": "🎯 DATATAKTEN: Säsongsvariationer",
+      "typ": "datavakt",
+      "innehall": "H&Ms Q4 (sep-nov) är julhandels-kvartalet — högst volym och intäkter. Hur jämför man säsongsvaryrande kvartal? Vad är 'jämförbar' försäljning och varför är den viktigare än total försäljning?",
+      "mal": "Förstå säsongsjustering och jämförbara mått"
+    },
+    {
+      "id": "sektion-7",
+      "titel": "📊 TRE BRANSCHER — EN JÄMFÖRELSE",
+      "typ": "scenarier",
+      "innehall": "Du har nu övat på tre branscher: BIL (Volvo), TELEKOM (Ericsson), DETALJHANDEL (H&M). Jämför: Volvo P/S=0.46, Ericsson P/S=0.92, H&M P/S=0.88. Ericsson EBITDA=15%, Volvo=11%, H&M=23%. VAD beror skillnaderna på?",
+      "mal": "Djup förståelse för branschskillnader i nyckeltal"
+    },
+    {
+      "id": "sektion-8",
+      "titel": "🎓 SAMMANFATTNING — tre branscher klar!",
+      "typ": "avslutning",
+      "innehall": "Du har nu genomfört Rapportakademins första tre moduler: ABB (teknik/industri), Volvo (bilar/konsument), Ericsson (telekom/B2B) och H&M (detaljhandel/varumärke). Du har övat 15 olika AKM1-variabler på RIKTIGA bolagsdata. Nästa steg: välj ett eget bolag från universumet (153+ bolag) och applicera samma metodik.",
+      "mal": "Konsolidera + självständigt analytiskt tänkande"
+    }
+  ],
+  "bedomForstKontrakt": {
+    "tabell": "rapportakademin_bedomningar",
+    "regler": ["Sektion-4 låses tills sektion-3 besvarats"]
+  },
+  "rubrik": {
+    "akm1Variabler": ["V01", "V04", "V05", "V08", "V10"],
+    "fas2Gate": true
+  }
+}

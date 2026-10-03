@@ -1,0 +1,181 @@
+{
+  "version": "1.0.0",
+  "id": "rapportakademin-abb-q3-2026",
+  "titel": "Rapportakademin: ABB Q3 2026 — från A till Ö",
+  "beskrivning": "Interaktivt lärande genom ABB:s kvartalsrapport med bedöm-först-mekanik, AKM1-övningar och expertläsning. Detta är det vertikala snittet — hela kedjan bevisas på ett bolag.",
+  "ticker": "ABB.ST",
+  "bolag": "ABB Ltd",
+  "rapportPeriod": "Q3 2026",
+  "rappdag": "2026-10-20",
+  "fas": 1,
+  "publiceringStatus": "OSYNLIG (kundens offline-regel)",
+
+  "principer": {
+    "bedomForst": "Eleven gissar/bedömer FÖRE expertläsningen visas (produktivt misslyckande — Kapur)",
+    "kognitivtLarlingsskap": "Expertens resonemang synliggörs EFTER elevens bedömning",
+    "deliberatePractice": "Övningar på rapportens EGENA tal (inte påhittade siffror)",
+    "juridikgrind": "All text är utbildning — ALDRIG råd om att köpa/sälja (2007:528)",
+    "gdpr": "Elevens bedömning lagras i Supabase FÖRE expertläsningen exponeras",
+    "citattak": "Max 200 ord/sektion ur rapporten med källa+länk (ÄL 22§)"
+  },
+
+  "laringsVag": [
+    {
+      "id": "sektion-1",
+      "titel": "Introduktion: Vad är en kvartalsrapport?",
+      "typ": "lasning",
+      "innehall": "ABB Ltd — ticker ABB på Nasdaq Stockholm — redovisar sitt tredje kvartal 2026 den 20 oktober. Innan rapporten kommer förbereder vi oss: vad är en kvartalsrapport, varför finns den, och vad ska vi titta på?",
+      "mal": "Förstå syftet med kvartalsrapporter och vad de skiljer sig från årsredovisningar"
+    },
+    {
+      "id": "sektion-2",
+      "titel": "ABB:s affär — vad gör bolaget?",
+      "typ": "lasning",
+      "innehall": "ABB är ett teknikbolag i electrification och automation, verksamt inom robotik, elkraft, industriell automation och motion. Bolaget är aktivt i ~100 länder med fyra affärsområden.",
+      "mal": "Förstå ABB:s affärsmodell och intäktskällor"
+    },
+    {
+      "id": "sektion-3",
+      "titel": "🎨 BEDÖM FÖRST: Vad förväntar du dig?",
+      "typ": "bedomForst",
+      "mal": "Eleven aktiverar sitt tänkande FÖRE expertläsningen",
+      "fragor": [
+        {
+          "id": "bf-1",
+          "fraga": "ABB:s rörelsemarginal låg på ca 16% förra kvartalet. Vad tror du den blir i Q3?",
+          "typ": "sifferbedomning",
+          "svarsalternativ": [
+            {"id": "a", "text": "Lägre — under 14%"},
+            {"id": "b", "text": "Oförändrad — cirka 16%"},
+            {"id": "c", "text": "Högre — över 17%"}
+          ],
+          "expertSvar": "Historiskt tenderar ABB:s Q3-margin att ligga något över Q2 pga säsongsvariationer och ökad volym. Expertens bedömning:cirka 16-17%. Men det är en BEDÖMNING, inte en förutsägelse.",
+          "pedagogikNotis": "Produktivt misslyckande: eleven GENERERAR en bedömning först, expertens läsning visas EFTER — lärandet sker i jämförelsen, inte i 'rätt svar'."
+        },
+        {
+          "id": "bf-2",
+          "fraga": "Vilket av ABB:s fyra affärsområden tror du växer snabbast just nu?",
+          "typ": "val",
+          "svarsalternativ": [
+            {"id": "a", "text": "Electrification (elkraft, laddinfrastruktur)"},
+            {"id": "b", "text": "Process Automation (olja & gas, kemisk industri)"},
+            {"id": "c", "text": "Motion (drivsystem, motorer)"},
+            {"id": "d", "text": "Robotics & Discrete Automation"}
+          ],
+          "expertSvar": "Electrification har historiskt visat stark tillväxt driven av elektrifiering och datacenters. Robotik har haft utmaningar. Men det är ABB:s EGNA siffror som avgör — vi läser dem i rapporten.",
+          "pedagogikNotis": "Aktiverar elevens förförståelse för bolagets tillväxtlogik."
+        },
+        {
+          "id": "bf-3",
+          "fraga": "Vad tror du är den största risken med ABB just nu?",
+          "typ": "fritext-tankare",
+          "svarsalternativ": null,
+          "expertSvar": "Vanliga risker: kompetensförsörjning, råvarupriser (koppar, stål), valutarisker, geo-politisk osäkerhet, och övergång till mjukvaruintäkter (lågre margin men högre multipler). Ditt svar spelar roll — vi jämför det med bolagets egen riskredovisning.",
+          "pedagogikNotis": "Ingen 'rätt' fråga — eleven övar på att tänka i riskdimensioner."
+        }
+      ]
+    },
+    {
+      "id": "sektion-4",
+      "titel": "🎨 EXPERTENS LÄSNING: Nyckeltalen",
+      "typ": "expertLasning",
+      "visasEfter": "sektion-3",
+      "innehall": "Nu visar vi expertens resonemang — JÄMFÖR med din bedömning ovan. Det är i GAPET mellan din förväntan och expertens läsning som lärandet sker.",
+      "nyckeltal": [
+        {"namn": "Rörelsemarginal", "forklaring": "Hur mycket av varje intäktskrona blir rörelseresultat", "abbHistorik": "Q2 2026: ca 16%", "lasSatt": "Jämför med föregående kvartalet OCH samma kvartal förra året (säsongsjämförelse)"},
+        {"namn": "Intäktstillväxt", "forklaring": "Lokal valuta (LCC) — volym vs pris", "abbHistorik": "Historiskt 2-6% organisk", "lasSatt": " Separera organisk tillväxt från förvärv — de är olika kvaliteter"},
+        {"namn": "Order stock / book-to-bill", "forklaring": "Orderstock vs intäkt — >1 betyder växande orderbok", "abbHistorik": "Historiskt runt 1.0", "lasSatt": "Orderstock > 1.0 i flera kvartal = framtida intäxtstillväxt"},
+        {"namn": "Fritt kassaflöde", "forklaring": "Kontanter bolaget genererar efter investeringar", "abbHistorik": "ABB är historiskt stark på FCF", "lasSatt": "FCF/market cap = kassaflödesavkastning — jämför med riskfri ränta"},
+        {"namn": "EPS (vinst per aktie)", "forklaring": "Nettoresultat / antal aktier", "abbHistorik": "Beror på engångsposter", "lasSatt": "Separera continuing operations från discontinued"}
+      ]
+    },
+    {
+      "id": "sektion-5",
+      "titel": "📐 AKM1-ÖVNINGAR på ABB:s tal",
+      "typ": "ovningar",
+      "mal": "Deliberate practice på AKM1:s variabler med RIKTIGA bolagsdata",
+      "ovningar": [
+        {
+          "id": "ov-v01",
+          "variabel": "V01 Försäljningstillväxt",
+          "fraga": "Om ABB:s intäkter var 8 200 MUSD i Q3 2025 och 8 500 MUSD i Q3 2026 (i lokala valutor), vad är den organiska tillväxten?",
+          "svar": "3.7%",
+          "rakneSatt": "(8500 - 8200) / 8200 = 300/8200 = 0.0366 ≈ 3.7%",
+          "svarighetsgrad": 1
+        },
+        {
+          "id": "ov-v04",
+          "variabel": "V04 P/S",
+          "fraga": "Om ABB:s börsvärde är 95 miljarder USD och årsintäkten (TTM) är 33 miljarder USD, vad är P/S-talet?",
+          "svar": "2.88",
+          "rakneSatt": "95 / 33 = 2.879 ≈ 2.88",
+          "svarighetsgrad": 1
+        },
+        {
+          "id": "ov-v05",
+          "variabel": "V05 P/B",
+          "fraga": "Om ABB:s börsvärde är 95 miljarder USD och eget kapital är 28 miljarder USD, vad är P/B-talet?",
+          "svar": "3.39",
+          "rakneSatt": "95 / 28 = 3.393 ≈ 3.39",
+          "svarighetsgrad": 1
+        },
+        {
+          "id": "ov-v08",
+          "variabel": "V08 EBITDA-marginal",
+          "fraga": "Om EBITDA är 1 530 MUSD och intäkterna är 8 500 MUSD, vad är EBITDA-marginalen?",
+          "svar": "18%",
+          "rakneSatt": "1530 / 8500 = 0.18 = 18%",
+          "svarighetsgrad": 2
+        },
+        {
+          "id": "ov-v11",
+          "variabel": "V11 Likviditet (Kvick)",
+          "fraga": "Om omsättningstillgångar är 18 000 MUSD och kortfristiga skulder är 12 000 MUSD, vad är kvickkvoten?",
+          "svar": "1.50",
+          "rakneSatt": "18000 / 12000 = 1.5",
+          "svarighetsgrad": 1,
+          "notis": "OBS: Skilj från bolagets BALANSRÄKNINGS-likviditet (V11 i AKM1 = kvickkvot). Detta är bolagets förmåga att betala kortfristiga skulder."
+        }
+      ]
+    },
+    {
+      "id": "sektion-6",
+      "titel": "🎯 DATATAKTEN: Testa talen",
+      "typ": "datavakt",
+      "innehall": "Innan du litar på ett tal: varifrån kommer det? Källa? Avvikelse från tidigare period? Denna sektion tränar källkritiskt tänkande kring finansiell data.",
+      "mal": "Källkritik och datavaliditet"
+    },
+    {
+      "id": "sektion-7",
+      "titel": "📊 TRE SCENARIER",
+      "typ": "scenarier",
+      "innehall": "Bäst/förflyttning/sämre-fall för ABB:s Q3. Inte förutsägelser — övningar i att tänka i utfallsrum.",
+      "mal": "Öva på att tänka i scenariosnitt snarare än punktskattningar"
+    },
+    {
+      "id": "sektion-8",
+      "titel": "🎓 SAMMANFATTNING + NÄSTA STEG",
+      "typ": "avslutning",
+      "innehall": "Vad har du lärt dig? Vilka AKM1-variabler övade du? Vad är nästa rapport?",
+      "mal": "Konsolidera lärandet och planera nästa pass"
+    }
+  ],
+
+  "bedomForstKontrakt": {
+    "beskrivning": "Elevens bedömning MÅSTE lagras i Supabase FÖRE expertläsningen exponeras",
+    "tabell": "rapportakademin_bedomningar",
+    "fält": ["elev_id", "modul_id", "sektion_id", "fraga_id", "elev_svar", "tidpunkt"],
+    "regler": [
+      "Sektion-4 (expertläsning) kan INTE visas förrän ALLA frågor i sektion-3 är besvarade",
+      "API-validering server-side (klienten kan ALDRIG manipulera ordningen)",
+      "Bedömningen är GDPR-minimerad: inga fritextsvar som personuppgifter utöver det nödvändiga"
+    ]
+  },
+
+  "rubrik": {
+    "akm1Variabler": ["V01", "V04", "V05", "V08", "V11"],
+    "akm2Koppling": "ABB:s nyckeltal kan jämföras med branschmedianer i datasetet",
+    "poangSystem": "Kalibreringspoäng (inte rätt/fel) — hur nära expertens bedömning",
+    "fas2Gate": "Denna modul kräver Fas 2-medlemskap"
+  }
+}

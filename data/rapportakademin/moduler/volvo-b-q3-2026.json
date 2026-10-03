@@ -1,0 +1,159 @@
+{
+  "version": "1.0.0",
+  "id": "rapportakademin-volvo-b-q3-2026",
+  "titel": "Rapportakademin: Volvo Cars Q3 2026 — från A till Ö",
+  "beskrivning": "Interaktivt lärande genom Volvo Cars kvartalsrapport med bedöm-först-mekanik och AKM1-övningar.",
+  "ticker": "VOLV-B.ST",
+  "bolag": "Volvo Car AB",
+  "rapportPeriod": "Q3 2026",
+  "rappdag": "2026-10-23",
+  "fas": 1,
+  "publiceringStatus": "OSYNLIG",
+
+  "laringsVag": [
+    {
+      "id": "sektion-1",
+      "titel": "Introduktion: Volvo Cars — vad gör bolaget?",
+      "typ": "lasning",
+      "innehall": "Volvo Cars tillverkar och säljer personbilar under varumärkena Volvo och Polestar. Bolaget har cirka 43 000 anställda och sålde drygt 750 000 bilar 2025. Huvudägare är Geely Holding. Volvo börsnoterades 2021 på Nasdaq Stockholm.",
+      "mal": "Förstå Volvos affärsmodell: biltillverkning med fokus på säkerhet, elektrifiering och premium-segmentet"
+    },
+    {
+      "id": "sektion-2",
+      "titel": "Nyckeltal att förstå för biltillverkare",
+      "typ": "lasning",
+      "innehall": "Biltillverkare har särskilda nyckeltal: sålda bilar (volymer), genomsnittligt pris per bil (ASP), bruttomarginal per bil, research & development som % av intäkter, och kapitalbindning i lager. Elektrifieringstakten (EV-mix) är avgörande för framtida värdering.",
+      "mal": "Förstå branschspecifika nyckeltal för fordonstillverkning"
+    },
+    {
+      "id": "sektion-3",
+      "titel": "🎨 BEDÖM FÖRST: Vad förväntar du dig?",
+      "typ": "bedomForst",
+      "fragor": [
+        {
+          "id": "bf-1",
+          "fraga": "Volvo Cars bruttomarginal låg på cirka 19% senaste kvartalet. Biltillverkning har pressade marginaler. Vad tror du Q3 blir?",
+          "typ": "sifferbedomning",
+          "svarsalternativ": [
+            {"id": "a", "text": "Lägre — under 17% (prispress, rabatter)"},
+            {"id": "b", "text": "Oförändrad — cirka 19%"},
+            {"id": "c", "text": "Högre — över 21% (bättre modellmix)"}
+          ],
+          "expertSvar": "Volvo har historiskt marginaler mellan 18-21%. Q3 tenderar att vara starkare pga högre volymer i Europa och Kina. Expertens bedömning: cirka 19-20%. Men elkundan (EV) påverkar margin — elbilar har ofta lägre bruttomargin i övergångsperioder."
+        },
+        {
+          "id": "bf-2",
+          "fraga": "Vilken andel av Volvos försäljning tror du är elbilar (RECHARGE/Polestar) just nu?",
+          "typ": "sifferbedomning",
+          "svarsalternativ": [
+            {"id": "a", "text": "Under 20% (övergången går långsamt)"},
+            {"id": "b", "text": "20-35% (på god väg)"},
+            {"id": "c", "text": "Över 35% (snabb elektrifiering)"}
+          ],
+          "expertSvar": "Volvo har varit tidig med elektrifiering. 2025 nådde de cirka 25-30% RECHARGE-försäljning. Trenden går uppåt men takten beryr på tredje parts batterileveranser och laddinfrastruktur."
+        },
+        {
+          "id": "bf-3",
+          "fraga": "Vad tror du är Volvos största utmaning de kommande 12 månaderna?",
+          "typ": "fritext-tankare",
+          "svarsalternativ": null,
+          "expertSvar": "Vanliga utmaningar: priskrig på elbilar (speciellt från kinesiska tillverkare), tariffar i USA, råvarukostnader (litium, kobolt), konkurrens från Tesla och BYD, samt risken att EL-marginalerna inte når ICE-marginaler i tid. Ditt svar jämförs med bolagets egen riskredovisning."
+        }
+      ]
+    },
+    {
+      "id": "sektion-4",
+      "titel": "🎨 EXPERTLÄSNING: Nyckeltalen",
+      "typ": "expertLasning",
+      "visasEfter": "sektion-3",
+      "nyckeltal": [
+        {"namn": "Sålda bilar (volymer)", "forklaring": "Antal sålda fordon per kvartal", "volvoHistorik": "Cirka 180-200k per kvartal", "lasSatt": "Jämför med samma kvartal i fjol (säsongsjämförelse). Tumregel: volymer + pris = intäktstillväxt"},
+        {"namn": "Bruttomarginal", "forklaring": "Hur mycket av intäkten som återstår efter tillverkningskostnad", "volvoHistorik": "Historiskt 18-21%", "lasSatt": "Bruttomarginal är KÄRN-måttet för biltillverkare. Trenden över tid viktigare än en enskild kvartal"},
+        {"namn": "EV-mix (andel elbilar)", "forklaring": "Procent av sålda bilar som är helt elektriska", "volvoHistorik": "2025: cirka 25-30%", "lasSatt": "EV-mix driver framtida värdering: högre mix = högre tillväxtförväntan men kortsiktigt marginalpress"},
+        {"namn": "R&D / Intäkter", "forklaring": "Hur mycket som investeras i utveckling", "volvoHistorik": "Cirka 6-8%", "lasSatt": "Hög R&D = investering i framtid men pressar dagens resultat. Jämför med konkurrenter"},
+        {"namn": "Fritt kassaflöde", "forklaring": "Kontanter efter investeringar", "volvoHistorik": "Varierar med kapitalcykeln", "lasSatt": "Bolag med tunga investeringar (fabriker, plattformar) kan ha negativt FCF i perioder — tolka i ljuset av investeringscykeln"}
+      ]
+    },
+    {
+      "id": "sektion-5",
+      "titel": "📐 AKM1-ÖVNINGAR på Volvos tal",
+      "typ": "ovningar",
+      "ovningar": [
+        {
+          "id": "ov-v01-volvo",
+          "variabel": "V01 Försäljningstillväxt",
+          "fraga": "Om Volvo sålde 185 000 bilar i Q3 2025 och 192 000 bilar i Q3 2026, vad är volymtillväxten?",
+          "svar": "3.8%",
+          "rakneSatt": "(192000 - 185000) / 185000 = 7000/185000 = 0.0378 ≈ 3.8%",
+          "svarighetsgrad": 1
+        },
+        {
+          "id": "ov-v04-volvo",
+          "variabel": "V04 P/S",
+          "fraga": "Om Volvos börsvärde är 180 miljarder SEK och årsintäkten (TTM) är 390 miljarder SEK, vad är P/S-talet?",
+          "svar": "0.46",
+          "rakneSatt": "180 / 390 = 0.462 ≈ 0.46",
+          "svarighetsgrad": 1,
+          "notis": "P/S under 0.5 är LÅGT för ett bolag — vanligt för cykliska biltillverkare. Jämför med tillväxtbolag som kan ha P/S på 5-10."
+        },
+        {
+          "id": "ov-v05-volvo",
+          "variabel": "V05 P/B",
+          "fraga": "Om Volvos börsvärde är 180 miljarder SEK och eget kapital är 85 miljarder SEK, vad är P/B-talet?",
+          "svar": "2.12",
+          "rakneSatt": "180 / 85 = 2.118 ≈ 2.12",
+          "svarighetsgrad": 1
+        },
+        {
+          "id": "ov-v08-volvo",
+          "variabel": "V08 EBITDA-marginal",
+          "fraga": "Om EBITDA är 11 200 Mkr och intäkterna är 98 000 Mkr, vad är EBITDA-marginalen?",
+          "svar": "11.4%",
+          "rakneSatt": "11200 / 98000 = 0.114 = 11.4%",
+          "svarighetsgrad": 2,
+          "notis": "EBITDA-marginal för biltillverkare är vanligtvis 10-15% — Volvo ligger i det normala spannet."
+        },
+        {
+          "id": "ov-v19-volvo",
+          "variabel": "V19 Kassatäckning",
+          "fraga": "Om kassa och bank är 45 000 Mkr och genomsnittlig månadsburn rate är 7 500 Mkr, hur många månader täcker kassan?",
+          "svar": "6.0 månader",
+          "rakneSatt": "45000 / 7500 = 6.0",
+          "svarighetsgrad": 1,
+          "notis": "V19 i AKM1 mäter kassatäckning — hur länge bolaget kan driva verksamheten utan ny inkomst. 6 månader är hyfsat för ett industriföretag."
+        }
+      ]
+    },
+    {
+      "id": "sektion-6",
+      "titel": "🎯 DATATAKTEN: Källkritik för bildata",
+      "typ": "datavakt",
+      "innehall": "Biltillverkare rapporterar volymer månadsvis men intäkter kvartalsvis. Hur hanterar du skillnaden? Vad händer om volymer stiger men intäkter sjunker (prisfall)?",
+      "mal": "Källkritiskt tänkande kring fordonstillverkarens data"
+    },
+    {
+      "id": "sektion-7",
+      "titel": "📊 TRE SCENARIER",
+      "typ": "scenarier",
+      "innehall": "Bäst: EV-mix > 35%, margin > 21%, stark Kina-tillväxt. Bas: margin ~19%, EV-mix ~28%. Sämre: prispress från Kina, margin < 17%, tariffar i USA.",
+      "mal": "Öva på scenariosnitt"
+    },
+    {
+      "id": "sektion-8",
+      "titel": "🎓 SAMMANFATTNING",
+      "typ": "avslutning",
+      "innehall": "Du har nu övat V01, V04, V05, V08 och V19 på Volvos tal. Nästa steg: Ericsson (telekom) för branschjämförelse.",
+      "mal": "Konsolidera + planera nästa"
+    }
+  ],
+
+  "bedomForstKontrakt": {
+    "tabell": "rapportakademin_bedomningar",
+    "regler": ["Sektion-4 låses tills sektion-3 besvarats (server-side)"]
+  },
+
+  "rubrik": {
+    "akm1Variabler": ["V01", "V04", "V05", "V08", "V19"],
+    "fas2Gate": true
+  }
+}

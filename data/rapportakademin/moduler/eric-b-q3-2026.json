@@ -1,0 +1,158 @@
+{
+  "version": "1.0.0",
+  "id": "rapportakademin-eric-b-q3-2026",
+  "titel": "Rapportakademin: Ericsson Q3 2026 — från A till Ö",
+  "beskrivning": "Interaktivt lärande genom Ericssons kvartalsrapport med fokus på telekominfrastruktur och kontraktstillväxt.",
+  "ticker": "ERIC-B.ST",
+  "bolag": "Telefonaktiebolaget LM Ericsson",
+  "rapportPeriod": "Q3 2026",
+  "rappdag": "2026-10-17",
+  "fas": 1,
+  "publiceringStatus": "OSYNLIG",
+
+  "laringsVag": [
+    {
+      "id": "sektion-1",
+      "titel": "Introduktion: Ericsson — nätverksinfrastruktur",
+      "typ": "lasning",
+      "innehall": "Ericsson levererar telekominfrastruktur (5G-basstationer, nätverk, molntjänster) till operatörer världen över. Cirka 100 000 anställda. Konkurrenter: Nokia, Huawei, Samsung. Affären är PROJEKT-BASERAD — stora kontrakt med operatörer.",
+      "mal": "Första Ericssons affärsmodell: B2B-infrastruktur med långa kontraktscyklar"
+    },
+    {
+      "id": "sektion-2",
+      "titel": "Nyckeltal för telekominfrastruktur",
+      "typ": "lasning",
+      "innehall": "Telekomleverantörer har unika mått: organisk tillväxt (justerad för valutor och förvärv), bruttomarginal per nätverk (Networks vs Digital Services vs Managed Services), FCF-konvertering, och R&D-intensitet. Kontraktstock och orderintag är viktiga framförare.",
+      "mal": "Förstå branschspecifika nyckeltal"
+    },
+    {
+      "id": "sektion-3",
+      "titel": "🎨 BEDÖM FÖRST",
+      "typ": "bedomForst",
+      "fragor": [
+        {
+          "id": "bf-1-eric",
+          "fraga": "Ericssons bruttomarginal i Networks-divisionen låg på cirka 44% senaste kvartalet. Vad tror du Q3 blir?",
+          "typ": "sifferbedomning",
+          "svarsalternativ": [
+            {"id": "a", "text": "Lägre — under 42% (prispress från Huawei)"},
+            {"id": "b", "text": "Oförändrad — cirka 44%"},
+            {"id": "c", "text": "Högre — över 46% (bättre geografisk mix)"}
+          ],
+          "expertSvar": "Networks-marginal beror på geografisk mix: Nordamerika och Europa ger högre margin än Asien. 5G-uppgraderingar i Indien har historiskt pressat marginaler. Expertens bedömning: cirka 43-45%. Kontinuitet är viktigare än stora överraskningar."
+        },
+        {
+          "id": "bf-2-eric",
+          "fraga": "Ericsson får allt mer intäkter från programvara (Digital Services, Managed Services). Vilken andel av totala intäkter tror du dessa utgör?",
+          "typ": "sifferbedomning",
+          "svarsalternativ": [
+            {"id": "a", "text": "Under 20% (fortfarande hårdvaru-dominerat)"},
+            {"id": "b", "text": "20-30% (övergång pågår)"},
+            {"id": "c", "text": "Över 30% (mjukvaru-bolag nu)"}
+          ],
+          "expertSvar": "Ericsson har historiskt cirka 25% av intäkterna från Digital Services + Managed Services (exklusive Emerging Business). Trenden går uppåt men långsamt. Mjukvaruintäkter är mer återkommande och värderas högre."
+        },
+        {
+          "id": "bf-3-eric",
+          "fraga": "Vad är den största risken med att investera i telekominfrastruktur just nu?",
+          "typ": "fritext-tankare",
+          "svarsalternativ": null,
+          "expertSvar": "Vanliga risker: operatörernas kapitalcykel (de investerar i cykler — 5G-bygget kan mattas), kinesisk konkurrens (Huawei), geopolitik (exportrestriktioner), och att mjukvaruövergången går långsammare än väntat. Jämför ditt svar med Ericssons riskredovisning."
+        }
+      ]
+    },
+    {
+      "id": "sektion-4",
+      "titel": "🎨 EXPERTLÄSNING",
+      "typ": "expertLasning",
+      "visasEfter": "sektion-3",
+      "nyckeltal": [
+        {"namn": "Organisk tillväxt", "forklaring": "Justerad för valuta (USD/SEK) och M&A", "ericHistorik": "Historiskt -5% till +5%", "lasSatt": "Valutaeffekten är STOR för Ericsson — en stark USD kan dölja svag underliggande tillväxt"},
+        {"namn": "Bruttomarginal (Networks)", "forklaring": "Kärndivisionens lönsamhet", "ericHistorik": "Cirka 42-46%", "lasSatt": "Trenden över tid. Margin > 42% är hälsosamt, < 40% är varning"},
+        {"namn": "FCF / EBITDA", "forklaring": "Hur mycket av EBITDA blir fritt kassaflöde", "ericHistorik": "Historiskt 40-60%", "lasSatt": "Låg konvertering = kapital binder i working capital (kontrakt, projekt)"},
+        {"namn": "R&D / Intäkter", "forklaring": "Innovationsinvestering", "ericHistorik": "Cirka 17-19%", "lasSatt": "Ericsson är R&D-intensivt — nästan 1 av 5 intäktskronor går till utveckling. Det är en investering i 6G-framtiden"},
+        {"namn": "Order book / backlog", "forklaring": "Tecknade men ej levererade kontrakt", "ericHistorik": "Ericsson rapporterar ej alltid detta tydligt", "lasSatt": "Orderintag > intäkter = växande orderbok = framtida intäkter"}
+      ]
+    },
+    {
+      "id": "sektion-5",
+      "titel": "📐 AKM1-ÖVNINGAR på Ericssons tal",
+      "typ": "ovningar",
+      "ovningar": [
+        {
+          "id": "ov-v01-eric",
+          "variabel": "V01 Försäljningstillväxt",
+          "fraga": "Om Ericssons organiska intäkter var 62 000 Mkr i Q3 2025 och 63 500 Mkr i Q3 2026, vad är den organiska tillväxten?",
+          "svar": "2.4%",
+          "rakneSatt": "(63500 - 62000) / 62000 = 1500/62000 = 0.0242 ≈ 2.4%",
+          "svarighetsgrad": 1
+        },
+        {
+          "id": "ov-v04-eric",
+          "variabel": "V04 P/S",
+          "fraga": "Om Ericssons börsvärde är 240 miljarder SEK och årsintäkten (TTM) är 260 miljarder SEK, vad är P/S-talet?",
+          "svar": "0.92",
+          "rakneSatt": "240 / 260 = 0.923 ≈ 0.92",
+          "svarighetsgrad": 1,
+          "notis": "P/S under 1.0 för Ericsson reflekterar marknadens låga tillväxtförväntan. Jämför: Volvos P/S var 0.46, ett tjänste-/mjukvarubolag kan ha P/S på 5-10."
+        },
+        {
+          "id": "ov-v05-eric",
+          "variabel": "V05 P/B",
+          "fraga": "Om Ericssons börsvärde är 240 miljarder SEK och eget kapital är 150 miljarder SEK, vad är P/B-talet?",
+          "svar": "1.60",
+          "rakneSatt": "240 / 150 = 1.60",
+          "svarighetsgrad": 1
+        },
+        {
+          "id": "ov-v08-eric",
+          "variabel": "V08 EBITDA-marginal",
+          "fraga": "Om EBITDA är 9 500 Mkr och intäkterna är 63 500 Mkr, vad är EBITDA-marginalen?",
+          "svar": "15.0%",
+          "rakneSatt": "9500 / 63500 = 0.1496 ≈ 15.0%",
+          "svarighetsgrad": 2,
+          "notis": "Telekom-infrastruktur har lägre EBITDA-marginal än konsument-varumärken men högre än biltillverkare. Ericsson ~15% vs Volvo ~11% vs Apple ~30%+."
+        },
+        {
+          "id": "ov-v20-eric",
+          "variabel": "V20 Återköp",
+          "fraga": "Om Ericsson återköper aktier för 6 000 Mkr under ett år och utestående aktieantal minskar från 3 300 miljoner till 3 200 miljoner, vad är minskningen i procent?",
+          "svar": "3.0%",
+          "rakneSatt": "(3300 - 3200) / 3300 = 100/3300 = 0.0303 ≈ 3.0%",
+          "svarighetsgrad": 1,
+          "notis": "Återköp ökar EPS (vinst per aktie) genom färre aktier. 3% minskning = 3% högre EPS, allt annat lika."
+        }
+      ]
+    },
+    {
+      "id": "sektion-6",
+      "titel": "🎯 DATATAKTEN: Valutaeffekter",
+      "typ": "datavakt",
+      "innehall": "Ericsson rapporterar i SEK men säljer i USD, EUR och andra valutor. Hur påverkar valutasvängar rapporten? Vad är organisk vs rapporterad tillväxt?",
+      "mal": "Förstå valutaeffekter på finansiella rapporter"
+    },
+    {
+      "id": "sektion-7",
+      "titel": "📊 BRANSCHJÄMFÖRELSE: Ericsson vs Volvo",
+      "typ": "scenarier",
+      "innehall": "Jämför nyckeltalen: Ericsson P/S 0.92 vs Volvo P/S 0.46. Ericsson EBITDA-margin 15% vs Volvo 11%. Vad beror skillnaderna på?",
+      "mal": "Öva på branschjämförelse och förstå varför nyckeltal skiljer sig mellan branscher"
+    },
+    {
+      "id": "sektion-8",
+      "titel": "🎓 SAMMANFATTNING",
+      "typ": "avslutning",
+      "innehall": "Du har övat V01, V04, V05, V08 och V20 på Ericssons tal. Jämför med Volvo-modulen: hur skiljer sig telekom-infrastruktur från biltillverkning?",
+      "mal": "Konsolidera + branschjämförelse"
+    }
+  ],
+
+  "bedomForstKontrakt": {
+    "tabell": "rapportakademin_bedomningar",
+    "regler": ["Sektion-4 låses tills sektion-3 besvarats"]
+  },
+  "rubrik": {
+    "akm1Variabler": ["V01", "V04", "V05", "V08", "V20"],
+    "fas2Gate": true
+  }
+}
